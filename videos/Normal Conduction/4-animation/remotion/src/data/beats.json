@@ -1,0 +1,12 @@
+[
+ {"id": "1 title", "start": 0, "dur": 4.7, "end": 4.7},
+ {"id": "2 heart", "start": 4.7, "dur": 2.6, "end": 7.3},
+ {"id": "3A SA node", "start": 7.3, "dur": 2.7, "end": 10.0},
+ {"id": "3B atria", "start": 10.0, "dur": 2.6, "end": 12.6},
+ {"id": "3C AV node", "start": 12.6, "dur": 3.0, "end": 15.6},
+ {"id": "3D His + branches", "start": 15.6, "dur": 3.3, "end": 18.9},
+ {"id": "3E Purkinje", "start": 18.9, "dur": 4.5, "end": 23.4},
+ {"id": "4A ECG slowed", "start": 23.4, "dur": 12.8, "end": 36.2},
+ {"id": "4B real speed", "start": 36.2, "dur": 5.2, "end": 41.4},
+ {"id": "5 outro", "start": 41.4, "dur": 6.1, "end": 47.5}
+]

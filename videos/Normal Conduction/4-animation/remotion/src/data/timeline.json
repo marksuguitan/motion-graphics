@@ -1,0 +1,149 @@
+{
+  "note": "Hand-set timeline for Normal Conduction (no VO). Seconds of video time. tau = seconds within one heartbeat (0 = SA node fires); conduction.json gives where the impulse is at each tau. Read by src/ and by 4-animation/build/sfx.py.",
+  "title": {
+    "text": "Normal conduction",
+    "typeOn": 0.3,
+    "typeOff": 4.0,
+    "retype": 43.45
+  },
+  "dot": {
+    "grow": 4.8,
+    "jump": 5.6,
+    "land": 6.35
+  },
+  "heart": {
+    "grow": 6.35,
+    "shrink": 42.2
+  },
+  "walk": {
+    "warp": [
+      [
+        7.3,
+        0
+      ],
+      [
+        10.0,
+        0
+      ],
+      [
+        12.6,
+        0.0506
+      ],
+      [
+        15.6,
+        0.125
+      ],
+      [
+        18.9,
+        0.181
+      ],
+      [
+        22.2,
+        0.225
+      ]
+    ],
+    "pings": [
+      7.55,
+      9.35
+    ],
+    "squeeze": 21.9,
+    "steps": [
+      {
+        "t": 7.3,
+        "head": "SA node",
+        "body": "fires the impulse"
+      },
+      {
+        "t": 10.0,
+        "head": "Atria",
+        "body": "it spreads across both atria"
+      },
+      {
+        "t": 12.6,
+        "head": "AV node",
+        "body": "a brief delay"
+      },
+      {
+        "t": 15.6,
+        "head": "Bundle of His",
+        "body": "then the right and left bundle branches"
+      },
+      {
+        "t": 18.9,
+        "head": "Purkinje fibers",
+        "body": "through the ventricular walls"
+      }
+    ],
+    "end": 23.4
+  },
+  "reset": {
+    "t": 23.4,
+    "orb": 24.2
+  },
+  "ecg": {
+    "axisOn": 24.0,
+    "kickerSlow": 24.2,
+    "slowWarp": [
+      [
+        25.0,
+        0
+      ],
+      [
+        27.6,
+        0.09
+      ],
+      [
+        30.2,
+        0.16
+      ],
+      [
+        32.8,
+        0.25
+      ],
+      [
+        35.0,
+        0.5
+      ],
+      [
+        35.8,
+        0.8
+      ]
+    ],
+    "labels": [
+      {
+        "t": 25.0,
+        "head": "P wave",
+        "body": "atria depolarize",
+        "from": 0.0,
+        "to": 0.09
+      },
+      {
+        "t": 27.6,
+        "head": "Flat line",
+        "body": "the AV node delay",
+        "from": 0.09,
+        "to": 0.16
+      },
+      {
+        "t": 30.2,
+        "head": "QRS",
+        "body": "ventricles depolarize",
+        "from": 0.16,
+        "to": 0.25
+      },
+      {
+        "t": 32.8,
+        "head": "T wave",
+        "body": "ventricles repolarize",
+        "from": 0.3,
+        "to": 0.5
+      }
+    ],
+    "realStart": 36.2,
+    "realBeats": 6,
+    "realHead": "Normal sinus rhythm",
+    "realBody": "the same path, every beat",
+    "off": 41.4
+  },
+  "end": 47.5
+}
