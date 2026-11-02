@@ -5,8 +5,8 @@
 <rect x="140" y="430" width="1640" height="220" rx="110" fill="none" stroke="#E7C9C3" stroke-width="4"/></g>
 <g id="Zone_x2F_Lungs"><rect x="140" y="430" width="700" height="220" rx="110" fill="#C94A44" opacity="0.08"/>
 <text x="490.0" y="740.0" text-anchor="middle" style="font-family:Inter;font-size:32px;font-weight:600" fill="#C94A44">Lungs: pick up O<tspan font-size="21" baseline-shift="sub">2</tspan></text></g>
-<g id="Zone_x2F_Tissues"><rect x="1080" y="430" width="700" height="220" rx="110" fill="#3D6FB6" opacity="0.08"/>
-<text x="1430.0" y="740.0" text-anchor="middle" style="font-family:Inter;font-size:32px;font-weight:600" fill="#3D6FB6">Tissues: let it go</text></g>
+<g id="Zone_x2F_Tissues"><rect x="1080" y="430" width="700" height="220" rx="110" fill="#8A3C6B" opacity="0.08"/>
+<text x="1430.0" y="740.0" text-anchor="middle" style="font-family:Inter;font-size:32px;font-weight:600" fill="#8A3C6B">Tissues: let it go</text></g>
 <g id="Cell_x2F_Lungs"><ellipse cx="490" cy="540" rx="110.0" ry="70.0" fill="#C94A44"/>
 <ellipse cx="490" cy="540" rx="52.8" ry="29.4" fill="#FFFFFF" opacity="0.22"/>
 <g><circle cx="481.0" cy="440.0" r="10" fill="#C94A44"/><circle cx="499.0" cy="440.0" r="10" fill="#C94A44"/></g>
@@ -17,7 +17,7 @@
 <g><circle cx="387.0" cy="610.7" r="10" fill="#C94A44"/><circle cx="405.0" cy="610.7" r="10" fill="#C94A44"/></g>
 <g><circle cx="348.0" cy="540.0" r="10" fill="#C94A44"/><circle cx="366.0" cy="540.0" r="10" fill="#C94A44"/></g>
 <g><circle cx="387.0" cy="469.3" r="10" fill="#C94A44"/><circle cx="405.0" cy="469.3" r="10" fill="#C94A44"/></g></g>
-<g id="Cell_x2F_Tissues"><ellipse cx="1430" cy="540" rx="110.0" ry="70.0" fill="#3D6FB6"/>
+<g id="Cell_x2F_Tissues"><ellipse cx="1430" cy="540" rx="110.0" ry="70.0" fill="#8A3C6B"/>
 <ellipse cx="1430" cy="540" rx="52.8" ry="29.4" fill="#FFFFFF" opacity="0.22"/>
 <g><circle cx="1421.0" cy="440.0" r="10" fill="#C94A44"/><circle cx="1439.0" cy="440.0" r="10" fill="#C94A44"/></g>
 <g><circle cx="1515.0" cy="469.3" r="10" fill="#C94A44"/><circle cx="1533.0" cy="469.3" r="10" fill="#C94A44"/></g>
@@ -30,6 +30,6 @@
 <g id="Label_x2F_Arrow"><path d="M700,540 H1200" stroke="#6A6A6A" stroke-width="4" stroke-dasharray="2 14" stroke-linecap="round"/>
 <path d="M1190,524 l18,16 l-18,16" fill="none" stroke="#6A6A6A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
 <g id="Readout_x2F_SO2"><rect x="400" y="300" width="180" height="56" rx="12" fill="#FFFFFF" stroke="#E6E4E0" stroke-width="2"/><text x="420.0" y="338.1" text-anchor="start" style="font-family:Inter;font-size:28px;font-weight:600" fill="#C94A44">SO<tspan font-size="19" baseline-shift="sub">2</tspan> 97%</text>
-<rect x="1340" y="300" width="180" height="56" rx="12" fill="#FFFFFF" stroke="#E6E4E0" stroke-width="2"/><text x="1360.0" y="338.1" text-anchor="start" style="font-family:Inter;font-size:28px;font-weight:600" fill="#3D6FB6">SO<tspan font-size="19" baseline-shift="sub">2</tspan> 75%</text></g>
+<rect x="1340" y="300" width="180" height="56" rx="12" fill="#FFFFFF" stroke="#E6E4E0" stroke-width="2"/><text x="1360.0" y="338.1" text-anchor="start" style="font-family:Inter;font-size:28px;font-weight:600" fill="#8A3C6B">SO<tspan font-size="19" baseline-shift="sub">2</tspan> 75%</text></g>
 <g id="Meta_x2F_BeatID"><text x="1880.0" y="1052.0" text-anchor="end" style="font-family:Inter;font-size:22px;font-weight:500" fill="#6A6A6A">1B</text></g>
 </svg>

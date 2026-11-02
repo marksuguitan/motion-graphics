@@ -3,7 +3,7 @@
 <g id="Background_x2F_Stage"><rect x="96" y="158" width="1728" height="780" rx="24" fill="#222222" opacity="0.08" filter="url(#soft)"/><rect x="96" y="150" width="1728" height="780" rx="24" fill="#FFFFFF"/></g>
 <g id="Vessel_x2F_Capillary"><rect x="140" y="430" width="1640" height="220" rx="110" fill="#F6E7E4"/>
 <rect x="140" y="430" width="1640" height="220" rx="110" fill="none" stroke="#E7C9C3" stroke-width="4"/></g>
-<g id="Cell_x2F_RBC"><ellipse cx="960" cy="540" rx="110.0" ry="70.0" fill="#3D6FB6"/>
+<g id="Cell_x2F_RBC"><ellipse cx="960" cy="540" rx="110.0" ry="70.0" fill="#8A3C6B"/>
 <ellipse cx="960" cy="540" rx="52.8" ry="29.4" fill="#FFFFFF" opacity="0.22"/></g>
 <g id="Label_x2F_Title"><text x="960.0" y="300.0" text-anchor="middle" style="font-family:Manrope;font-size:56px;font-weight:600" fill="#222222">Every red blood cell has two jobs</text></g>
 <g id="Meta_x2F_BeatID"><text x="1880.0" y="1052.0" text-anchor="end" style="font-family:Inter;font-size:22px;font-weight:500" fill="#6A6A6A">1A</text></g>

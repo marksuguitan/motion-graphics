@@ -6,7 +6,7 @@ N = 2.7
 def S(p, p50): return 0.0 if p <= 0 else 100 * p**N / (p**N + p50**N)
 def L(s): return s.replace("/", "_x2F_")
 C = dict(white="#FFFFFF", soft="#F7F7F5", div="#E6E4E0", ink="#222222", ink2="#6A6A6A", mute="#B9B5AE",
-         coral="#F0645A", coralsoft="#FDE3E0", teal="#2E9C8F", tealsoft="#DDF0ED", red="#C94A44", blue="#3D6FB6")
+         coral="#F0645A", coralsoft="#FDE3E0", teal="#2E9C8F", tealsoft="#DDF0ED", red="#C94A44", deoxy="#8A3C6B")
 H = "font-family:Manrope"; B = "font-family:Inter"
 def SUB(s, size=None):
     k=int((size or 30)*0.68)
@@ -112,18 +112,18 @@ def o2dot(x, y, col=C["red"]):
     return (f'<g><circle cx="{x-9:.1f}" cy="{y:.1f}" r="10" fill="{col}"/><circle cx="{x+9:.1f}" cy="{y:.1f}" r="10" fill="{col}"/></g>')
 
 f = F("1A", "red-cell", kicker=None)
-f.add(group("Background/Stage", card(96, 150, 1728, 780)), capillary(), rbc(960, 540, C["blue"]),
+f.add(group("Background/Stage", card(96, 150, 1728, 780)), capillary(), rbc(960, 540, C["deoxy"]),
       group("Label/Title", text(960, 300, "Every red blood cell has two jobs", 56, 600, C["ink"], H, anchor="middle")))
 f.save()
 
 f = F("1B", "lungs-tissues", kicker=None)
 f.add(group("Background/Stage", card(96, 150, 1728, 780)), capillary(),
       group("Zone/Lungs", f'<rect x="140" y="430" width="700" height="220" rx="110" fill="{C["red"]}" opacity="0.08"/>', text(490, 740, "Lungs: pick up O2", 32, 600, C["red"], anchor="middle")),
-      group("Zone/Tissues", f'<rect x="1080" y="430" width="700" height="220" rx="110" fill="{C["blue"]}" opacity="0.08"/>', text(1430, 740, "Tissues: let it go", 32, 600, C["blue"], anchor="middle")),
-      rbc(490, 540, C["red"], o2=8, name="Cell/Lungs"), rbc(1430, 540, C["blue"], o2=6, name="Cell/Tissues"),
+      group("Zone/Tissues", f'<rect x="1080" y="430" width="700" height="220" rx="110" fill="{C["deoxy"]}" opacity="0.08"/>', text(1430, 740, "Tissues: let it go", 32, 600, C["deoxy"], anchor="middle")),
+      rbc(490, 540, C["red"], o2=8, name="Cell/Lungs"), rbc(1430, 540, C["deoxy"], o2=6, name="Cell/Tissues"),
       group("Cell/Released", o2dot(1640, 400, C["red"]), o2dot(1700, 690, C["red"])),
       group("Label/Arrow", f'<path d="M700,540 H1200" stroke="{C["ink2"]}" stroke-width="4" stroke-dasharray="2 14" stroke-linecap="round"/>', f'<path d="M1190,524 l18,16 l-18,16" fill="none" stroke="{C["ink2"]}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>'),
-      group("Readout/SO2", chip(400, 300, 180, "SO2 97%", C["white"], C["div"], C["red"], 28, 600), chip(1340, 300, 180, "SO2 75%", C["white"], C["div"], C["blue"], 28, 600)))
+      group("Readout/SO2", chip(400, 300, 180, "SO2 97%", C["white"], C["div"], C["red"], 28, 600), chip(1340, 300, 180, "SO2 75%", C["white"], C["div"], C["deoxy"], 28, 600)))
 f.save()
 
 f = F("1C", "title", kicker=None)
