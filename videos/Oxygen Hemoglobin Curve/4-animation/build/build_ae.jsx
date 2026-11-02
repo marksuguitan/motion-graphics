@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 23;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows; v19: Mark's markers, Scene 10 sync; v20: 9D locks; v21: charcoal locks; v22: end screen B; v23: Mark's v22 markers
+    var VERSION = 24;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows; v19: Mark's markers, Scene 10 sync; v20: 9D locks; v21: charcoal locks; v22: end screen B; v23: Mark's v22 markers; v24: 1C title letters roll in around the "o"
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -219,6 +219,11 @@
         var tt = textLayer(pre, "Title line 1 (live)", "The oxyhemoglobin", "Manrope-SemiBold", 84, 0, ParagraphJustification.CENTER_JUSTIFY, [960, 500]);
         var tt2 = textLayer(pre, "Title line 2 (live)", "dissociation curve", "Manrope-SemiBold", 84, 0, ParagraphJustification.CENTER_JUSTIFY, [960, 600]);
         cutIn(tt, c); cutIn(tt2, c);                      // live text, so 2A can take it over without a swap
+        // Mark, v23 marker at 9.8 s: the letters roll up into place, spreading out from the "o" (character 5), which is already there;
+        // line 2 follows left to right. One letter a frame, each over 3 frames.
+        var F = 1 / PLAN.fps;
+        roll(tt, 84, c, F, 3 * F, 0, false, "textIndex == 5 ? -100 : Math.abs(textIndex - 5) - 1");
+        roll(tt2, 84, c + 4 * F, F * 0.75, 3 * F, 0, false);
         var O = a.o, dot = shapeLayer(pre, "Cell → o", "ellipse", [176, 112], mid, hex("#C94A44"), hex("#C94A44"), 0);
         cutIn(dot.layer, M[0] + M[1]);
         cm(dot.shape().property("ADBE Vector Ellipse Size"), [[DOT[0], [176, 112]], [DOT[0] + DOT[1], O.size]], "snap");
@@ -244,11 +249,11 @@
         POS(L).setValue(pos);
         return L;
     }
-    function roll(L, h, t0, dt, d, base, out) {          // each letter rolls up out of (or into) its own line: eased over d, one every dt, left to right
+    function roll(L, h, t0, dt, d, base, out, slot) {          // each letter rolls up out of (or into) its own line: eased over d, one every dt, left to right
         var an = L.property("ADBE Text Properties").property("ADBE Text Animators").addProperty("ADBE Text Animator");
         an.property("ADBE Text Animator Properties").addProperty("ADBE Text Position 3D").setValue([0, (out ? -h : h) * 1.15, 0]);   // a little past the band, so no descender is left in it
         var sel = an.property("ADBE Text Selectors").addProperty("ADBE Text Expressible Selector");
-        var t = "(" + t0 + " + (textIndex - 1 + " + base + ") * " + dt + ")";
+        var t = "(" + t0 + " + (" + (slot || "textIndex - 1 + " + base) + ") * " + dt + ")";
         sel.property("ADBE Text Expressible Amount").expression = "var v = ease(time, " + t + ", " + t + " + " + d + ", 0, 100); " + (out ? "[v, v, v]" : "[100 - v, 100 - v, 100 - v]");
         var mb = addMask(L, "Line band");                // letters are clipped to their own line as they roll
         mb.setValue(boxShape(-4000, -h * 0.82, 4000, h * 0.28));
