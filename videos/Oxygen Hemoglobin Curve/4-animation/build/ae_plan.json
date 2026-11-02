@@ -25,7 +25,15 @@
   "pulse_d": 0.3,
   "title_write": 0.6,
   "title_line2": 0.12,
-  "tick_d": 0.4
+  "tick_d": 0.4,
+  "draw_out": 0.12,
+  "ring_d": 0.3,
+  "ring_hold": 0.4,
+  "first_o2_d": 0.8,
+  "next_o2_d": 0.35,
+  "tr_swell": 1.08,
+  "swell_d": 0.5,
+  "swell_back_d": 0.3
  },
  "scenes": [
   {
@@ -571,6 +579,11 @@
       "Background/Stage",
       "Label/Header",
       "Hb/Tetramer",
+      "Heme/Circle \u03b11",
+      "Heme/Circle \u03b21",
+      "Heme/Circle \u03b22",
+      "Heme/Circle \u03b12",
+      "O2/First",
       "Panel/Card"
      ],
      "prev_order": [
@@ -598,40 +611,34 @@
        "t": 0.0
       },
       {
-       "layer": "Graph/GridV",
-       "do": "out",
-       "retract": "ttb",
-       "t": 0.063
-      },
-      {
        "layer": "Graph/TicksY",
        "do": "out",
        "retract": "ttb",
-       "t": 0.127
+       "t": 0.12
+      },
+      {
+       "layer": "Graph/AxisY",
+       "do": "out",
+       "retract": "ttb",
+       "t": 0.24
+      },
+      {
+       "layer": "Graph/GridV",
+       "do": "out",
+       "retract": "ttb",
+       "t": 0.36
       },
       {
        "layer": "Graph/TicksX",
        "do": "out",
        "retract": "rtl",
-       "t": 0.19
-      },
-      {
-       "layer": "Graph/AxisY",
-       "do": "out",
-       "to": [
-        636,
-        590
-       ],
-       "t": 0.25
+       "t": 0.48
       },
       {
        "layer": "Graph/AxisX",
        "do": "out",
-       "to": [
-        636,
-        590
-       ],
-       "t": 0.313
+       "retract": "rtl",
+       "t": 0.6
       },
       {
        "layer": "Panel/Card",
@@ -641,13 +648,58 @@
       {
        "layer": "Label/Header",
        "do": "in",
-       "t": 0.563
+       "t": 0.85
       },
       {
        "layer": "Hb/Tetramer",
        "do": "pop",
-       "d": 0.6,
+       "plain": true,
        "t": 1.053
+      },
+      {
+       "layer": "Heme/Circle \u03b11",
+       "do": "draw",
+       "d": 0.3,
+       "t": 3.453,
+       "t_off": 4.153
+      },
+      {
+       "layer": "Heme/Circle \u03b21",
+       "do": "draw",
+       "d": 0.3,
+       "t": 3.516,
+       "t_off": 4.216
+      },
+      {
+       "layer": "Heme/Circle \u03b22",
+       "do": "draw",
+       "d": 0.3,
+       "t": 3.58,
+       "t_off": 4.28
+      },
+      {
+       "layer": "Heme/Circle \u03b12",
+       "do": "draw",
+       "d": 0.3,
+       "t": 3.643,
+       "t_off": 4.343
+      },
+      {
+       "layer": "O2/First",
+       "do": "o2",
+       "d": 0.8,
+       "mol": [
+        1060,
+        590
+       ],
+       "to": [
+        414,
+        460
+       ],
+       "label_y": 570,
+       "kind": "cross",
+       "t": 4.493,
+       "t_go": 5.613
       },
       {
        "layer": "Background/Fill",
@@ -694,7 +746,13 @@
       "Header/Kicker",
       "Background/Stage",
       "Label/Header",
-      "Hb/Tetramer",
+      "Hb/\u03b11",
+      "Hb/\u03b21",
+      "Hb/\u03b22",
+      "Hb/\u03b12",
+      "O2/Next \u03b21",
+      "O2/Next \u03b22",
+      "O2/Next \u03b12",
       "Panel/Card"
      ],
      "prev_order": [
@@ -703,6 +761,11 @@
       "Background/Stage",
       "Label/Header",
       "Hb/Tetramer",
+      "Heme/Circle \u03b11",
+      "Heme/Circle \u03b21",
+      "Heme/Circle \u03b22",
+      "Heme/Circle \u03b12",
+      "O2/First",
       "Panel/Card"
      ],
      "start": 37.3,
@@ -710,8 +773,18 @@
      "acts": [
       {
        "layer": "Hb/Tetramer",
-       "do": "xfade",
-       "t": 2.48
+       "do": "out",
+       "t": 4.76
+      },
+      {
+       "layer": "O2/First",
+       "do": "out",
+       "shift": [
+        -646,
+        -130
+       ],
+       "label_y": 570,
+       "t": 4.76
       },
       {
        "layer": "Panel/Card",
@@ -719,9 +792,160 @@
        "t": 5.04
       },
       {
-       "layer": "Hb/Tetramer",
-       "do": "bump",
-       "t": 7.04
+       "layer": "Hb/\u03b11",
+       "do": "in",
+       "cut": true,
+       "t": 4.76
+      },
+      {
+       "layer": "Hb/\u03b21",
+       "do": "swell",
+       "c": [
+        766,
+        480
+       ],
+       "s": 1.08,
+       "d": 0.5,
+       "back_d": 0.3,
+       "t": 4.76,
+       "t_back": 6.83
+      },
+      {
+       "layer": "Hb/\u03b22",
+       "do": "swell",
+       "c": [
+        506,
+        700
+       ],
+       "s": 1.08,
+       "d": 0.5,
+       "back_d": 0.3,
+       "t": 4.76,
+       "t_back": 6.93
+      },
+      {
+       "layer": "Hb/\u03b12",
+       "do": "swell",
+       "c": [
+        766,
+        700
+       ],
+       "s": 1.08,
+       "d": 0.5,
+       "back_d": 0.3,
+       "t": 4.76,
+       "t_back": 7.03
+      },
+      {
+       "layer": "Hb/\u03b21",
+       "do": "ping",
+       "c": [
+        796,
+        460
+       ],
+       "r": 50,
+       "t": 5.26
+      },
+      {
+       "layer": "Hb/\u03b22",
+       "do": "ping",
+       "c": [
+        476,
+        720
+       ],
+       "r": 50,
+       "t": 5.26
+      },
+      {
+       "layer": "Hb/\u03b12",
+       "do": "ping",
+       "c": [
+        796,
+        720
+       ],
+       "r": 50,
+       "t": 5.26
+      },
+      {
+       "layer": "O2/Next \u03b21",
+       "do": "o2",
+       "d": 0.35,
+       "mol": [
+        1060,
+        470
+       ],
+       "to": [
+        858,
+        460
+       ],
+       "label_y": 450,
+       "kind": "accel",
+       "t": 5.84,
+       "t_go": 6.48
+      },
+      {
+       "layer": "O2/Next \u03b22",
+       "do": "o2",
+       "d": 0.35,
+       "mol": [
+        1060,
+        590
+       ],
+       "to": [
+        414,
+        720
+       ],
+       "label_y": 570,
+       "kind": "accel",
+       "t": 5.84,
+       "t_go": 6.58
+      },
+      {
+       "layer": "O2/Next \u03b12",
+       "do": "o2",
+       "d": 0.35,
+       "mol": [
+        1060,
+        710
+       ],
+       "to": [
+        858,
+        720
+       ],
+       "label_y": 690,
+       "kind": "accel",
+       "t": 5.84,
+       "t_go": 6.68
+      },
+      {
+       "layer": "O2/Next \u03b21",
+       "do": "ping",
+       "c": [
+        796,
+        460
+       ],
+       "r": 50,
+       "t": 6.83
+      },
+      {
+       "layer": "O2/Next \u03b22",
+       "do": "ping",
+       "c": [
+        476,
+        720
+       ],
+       "r": 50,
+       "t": 6.93
+      },
+      {
+       "layer": "O2/Next \u03b12",
+       "do": "ping",
+       "c": [
+        796,
+        720
+       ],
+       "r": 50,
+       "t": 7.03
       },
       {
        "layer": "Background/Fill",
@@ -738,6 +962,34 @@
       {
        "layer": "Label/Header",
        "do": "hold"
+      },
+      {
+       "layer": "Heme/Circle \u03b11",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Heme/Circle \u03b21",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Heme/Circle \u03b22",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Heme/Circle \u03b12",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
       }
      ]
     },
@@ -759,7 +1011,13 @@
       "Header/Kicker",
       "Background/Stage",
       "Label/Header",
-      "Hb/Tetramer",
+      "Hb/\u03b11",
+      "Hb/\u03b21",
+      "Hb/\u03b22",
+      "Hb/\u03b12",
+      "O2/Next \u03b21",
+      "O2/Next \u03b22",
+      "O2/Next \u03b12",
       "Panel/Card"
      ],
      "start": 45.46666666666667,
@@ -804,7 +1062,49 @@
        "auto": true
       },
       {
-       "layer": "Hb/Tetramer",
+       "layer": "Hb/\u03b11",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Hb/\u03b21",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Hb/\u03b22",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Hb/\u03b12",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "O2/Next \u03b21",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "O2/Next \u03b22",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "O2/Next \u03b12",
        "do": "out",
        "t": 0.0,
        "d": 0.4,

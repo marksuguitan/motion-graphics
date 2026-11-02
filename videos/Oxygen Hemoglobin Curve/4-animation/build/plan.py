@@ -27,7 +27,7 @@ Actions (do):
   bump     held layer scales to 103 % and back on its cue
 Run: python3 plan.py
 """
-import csv, json, pathlib, re
+import csv, json, math, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent
 VIDEO = HERE.parent.parent
@@ -65,11 +65,24 @@ MOTION = {
     "title_write": 0.6,       # 1C: the dot writes line 1 on "oxyhemoglobin" ...
     "title_line2": 0.12,      # ... and line 2 cuts on whole this much later
     "tick_d": 0.4,            # tick numbers sweep on (2 frames a tick, about)
+    "draw_out": 0.12,         # s between graph pieces drawing themselves out (3A): about 0.85 s in all
+    "ring_d": 0.3,            # heme circles draw on / off in this long ...
+    "ring_hold": 0.4,         # ... and hold this long in between
+    "first_o2_d": 0.8,        # s: the first O2's trip to α1 (cross curve)
+    "next_o2_d": 0.35,        # s: each of the next O2s (accelerating): quicker and more direct, "more easily"
+    "tr_swell": 1.08,         # T -> R (Mark: "just make the other subunits larger"): the empty subunits grow to 108 % ...
+    "swell_d": 0.5,           # ... over this long (snap) ...
+    "swell_back_d": 0.3,      # ... and settle back to 100 % this fast as their O2 lands
 }
 # Silence added before a beat, s (Mark 2026-11-02: more time to read the y note before Scene 3). Everything from that beat on
 # (picture, audio, markers) moves later by the same amount; the VO files and their word timings are unchanged.
 GAPS = {"3A": 1.5}
 TETRAMER_C = [636, 590]
+DRAW_OUT = MOTION["draw_out"]
+# 3B: subunit centres, heme centres and bound-O2 spots of tetramer(636, 590)
+SUB_C = {"α1": (506, 480), "β1": (766, 480), "β2": (506, 700), "α2": (766, 700)}
+HEME = {"β1": [796, 460], "β2": [476, 720], "α2": [796, 720]}
+BOUND = {"β1": [858, 460], "β2": [414, 720], "α2": [858, 720]}
 STAGGER = min(MOTION["stagger_frames"] / FPS, MOTION["stagger_max"] / 6)   # the 1B clear has 7 siblings
 P50_DOT = (GX(27), GY(50))
 
@@ -128,22 +141,40 @@ PLAN = {
         {"layer": "Note/Y", "do": "in", "at": "w:percentage"},
     ],
     "3A": [
-        # the grid and ticks retract the way they drew on, then the axes shrink into the spot the tetramer grows from
+        # Mark 2026-11-02: the graph draws itself out, the reverse of how it drew in (last drawn, first gone)
         {"layer": "Graph/GridH", "do": "out", "at": "start", "retract": "rtl"},
-        {"layer": "Graph/GridV", "do": "out", "at": f"start+{STAGGER:.3f}", "retract": "ttb"},
-        {"layer": "Graph/TicksY", "do": "out", "at": f"start+{2 * STAGGER:.3f}", "retract": "ttb"},
-        {"layer": "Graph/TicksX", "do": "out", "at": f"start+{3 * STAGGER:.3f}", "retract": "rtl"},
-        {"layer": "Graph/AxisY", "do": "out", "at": f"start+{MOTION['accel_d']:.3f}", "to": TETRAMER_C},
-        {"layer": "Graph/AxisX", "do": "out", "at": f"start+{MOTION['accel_d'] + STAGGER:.3f}", "to": TETRAMER_C},
+        {"layer": "Graph/TicksY", "do": "out", "at": f"start+{1 * DRAW_OUT:.3f}", "retract": "ttb"},
+        {"layer": "Graph/AxisY", "do": "out", "at": f"start+{2 * DRAW_OUT:.3f}", "retract": "ttb"},
+        {"layer": "Graph/GridV", "do": "out", "at": f"start+{3 * DRAW_OUT:.3f}", "retract": "ttb"},
+        {"layer": "Graph/TicksX", "do": "out", "at": f"start+{4 * DRAW_OUT:.3f}", "retract": "rtl"},
+        {"layer": "Graph/AxisX", "do": "out", "at": f"start+{5 * DRAW_OUT:.3f}", "retract": "rtl"},
         {"layer": "Panel/Card", "do": "xfade", "at": "start"},                 # the side card stays; its text cuts to STRUCTURE
-        {"layer": "Label/Header", "do": "in", "at": f"start+{2 * MOTION['accel_d'] + STAGGER:.3f}"},   # once the graph has gone
-        {"layer": "Hb/Tetramer", "do": "pop", "at": "four", "d": 0.6},
+        {"layer": "Label/Header", "do": "in", "at": f"start+{5 * DRAW_OUT + MOTION['accel_d']:.3f}"},   # once the graph has gone
+        {"layer": "Hb/Tetramer", "do": "pop", "at": "four", "plain": True},   # a diagram: grows from its centre, no overshoot
+        # "Each one holds a heme group": each circle draws on, holds, draws itself off (α1, β1, β2, α2)
+    ] + [{"layer": f"Heme/Circle {n}", "do": "draw", "at": f"w:heme+{STAGGER * k:.3f}", "off_at": f"w:heme+{STAGGER * k + MOTION['ring_d'] + MOTION['ring_hold']:.3f}",
+          "d": MOTION["ring_d"]} for k, n in enumerate(["α1", "β1", "β2", "α2"])] + [
+        # the first O2 grows in on "bind" and travels to α1, landing as "oxygen molecule" ends; its label goes on landing
+        {"layer": "O2/First", "do": "o2", "at": "w:bind", "go_at": f"we:molecule-{MOTION['first_o2_d']}", "d": MOTION["first_o2_d"],
+         "mol": [1060, 590], "to": [414, 460], "label_y": 570, "kind": "cross"},
     ],
     "3B": [
-        {"layer": "Hb/Tetramer", "do": "xfade", "at": "first"},
+        # until the shape change the 3A drawing holds (no rings yet); the four subunit layers take over on "changes"
+        {"layer": "Hb/Tetramer", "do": "out", "at": "w:changes"},
+        {"layer": "O2/First", "do": "out", "at": "w:changes", "shift": [414 - 1060, 460 - 590], "label_y": 570},
         {"layer": "Panel/Card", "do": "xfade", "at": "shape"},
-        {"layer": "Hb/Tetramer", "do": "bump", "at": "easily"},
-    ],
+        # Mark 2026-11-02: T -> R, simply: the three subunits without O2 grow (about their own centres); α1, with its O2, stays.
+        # Each settles back as its O2 lands, so by "easily" all four are equal again
+        {"layer": "Hb/α1", "do": "in", "at": "w:changes", "cut": True},
+    ] + [{"layer": f"Hb/{n}", "do": "swell", "at": "w:changes", "c": list(SUB_C[n]), "s": MOTION["tr_swell"], "d": MOTION["swell_d"],
+          "back_at": f"w:bind+{3 / FPS * k + MOTION['next_o2_d']:.3f}", "back_d": MOTION["swell_back_d"]} for k, n in enumerate(["β1", "β2", "α2"])] + [
+        # the rings on the empty sites ping as they settle: these sites now fill more easily
+    ] + [{"layer": f"Hb/{n}", "do": "ping", "at": f"w:changes+{MOTION['swell_d']:.3f}", "c": HEME[n], "r": 50} for n in ["β1", "β2", "α2"]] + [
+        # the next O2s grow in on "next", then fly in fast on "bind", 3 frames apart; each site pings as its O2 lands
+    ] + [{"layer": f"O2/Next {n}", "do": "o2", "at": "w:next", "go_at": f"w:bind+{3 / FPS * k:.3f}", "d": MOTION["next_o2_d"],
+          "mol": [1060, y], "to": BOUND[n], "label_y": y - 20, "kind": "accel"} for k, (n, y) in enumerate([("β1", 470), ("β2", 590), ("α2", 710)])] + [
+        {"layer": f"O2/Next {n}", "do": "ping", "at": f"w:bind+{3 / FPS * k + MOTION['next_o2_d']:.3f}", "c": HEME[n], "r": 50}
+        for k, n in enumerate(["β1", "β2", "α2"])],
     "3C": [
         {"layer": "Graph/Grid", "do": "in", "at": "start", "rise": 0},
         {"layer": "Graph/Axes", "do": "in", "at": "start", "rise": 0},
@@ -277,10 +308,11 @@ def main():
         shifts[b["beat"]] = shift
         beats.append((b["beat"], snap(b["start_in_full_s"] + shift)))
     total = -(-round((207.88 + shift) * FPS * 1000) // 1000) / FPS          # full.mp3 (207.88 s) + gaps, up to a whole frame
-    words = {}
+    words, wends = {}, {}
     for r in csv.DictReader(open(BOARD / "timings" / "word_timings.csv")):
         w = re.sub(r"[^A-Za-z0-9]", "", r["word"])
-        words.setdefault(r["beat"], {}).setdefault(w, float(r["start_in_full_s"]) + 0)
+        words.setdefault(r["beat"], {}).setdefault(w, float(r["start_in_full_s"]))
+        wends.setdefault(r["beat"], {}).setdefault(w, float(r["end_in_full_s"]))
     cues = {}
     for r in csv.DictReader(open(BOARD / "timings" / "sync_points.csv")):
         cues.setdefault(r["beat"], []).append((r["sync_on"].strip('"'), float(r["start_in_full_s"]) + 0, r["flag"]))
@@ -294,6 +326,7 @@ def main():
         sh = shifts[bid]
         bc = {c: t + sh - start for c, t, _ in cues[bid]}
         bw = {w: t + sh - start for w, t in words.get(bid, {}).items()}
+        bwe = {w: t + sh - start for w, t in wends.get(bid, {}).items()}
 
         def T(spec):
             m = re.fullmatch(r"(.+?)([+-]\d+(?:\.\d+)?)?", spec)
@@ -301,6 +334,7 @@ def main():
             if base == "start": t = 0.0
             elif base == "end": t = round((end - start) * FPS) / FPS
             elif base.startswith("w:"): t = bw[base[2:]]
+            elif base.startswith("we:"): t = bwe[base[3:]]
             else: t = bc[base]
             return round(max(0.0, t + off), 3)
 
@@ -313,6 +347,8 @@ def main():
             if "keys" in a: a["keys"] = [[T(k[0]), k[1]] for k in a["keys"]]
             if "rows" in a: a["rows"] = [[T(r[0]), r[1], r[2]] for r in a["rows"]]
             if "until" in a: a["t_end"] = T(a.pop("until"))
+            for k in ("go", "off", "out", "back"):
+                if k + "_at" in a: a["t_" + k] = T(a.pop(k + "_at"))
             acts.append(a)
             named.add((a["layer"], a["do"] in ("out", "gone")))
             if a["do"] == "carry":                       # the travelling copy replaces the previous layer's exit

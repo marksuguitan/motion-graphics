@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 9;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes
+    var VERSION = 10;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -252,6 +252,15 @@
             for (var q = 0; q < g.length; q++) {
                 try {
                     var go = copyLayer(bt.prev_ai, g[q].layer, pre, g[q].layer + " (out)");
+                    if (go && g[q].shift) {                   // held where the previous beat left it (e.g. an O2 that travelled and bound)
+                        var gp = POS(go).value, gr = rect(go);
+                        if (g[q].label_y !== undefined) {    // its label was switched off on landing: keep it off
+                            var GU = toLayer(go, gr[0] - 10, gr[1] - 10, gp), GV = toLayer(go, gr[2] + 10, g[q].label_y, gp);
+                            var gm = go.property("ADBE Mask Parade").addProperty("ADBE Mask Atom");
+                            gm.maskMode = MaskMode.SUBTRACT; gm.property("ADBE Mask Shape").setValue(boxShape(GU[0], GU[1], GV[0], GV[1]));
+                        }
+                        POS(go).setValue([gp[0] + g[q].shift[0], gp[1] + g[q].shift[1]]);
+                    }
                     if (go && g[q].retract) {                 // retracts the way it drew on, accelerating into the cut
                         var rr = rect(go), rp0 = POS(go).value, P0 = 6, D = g[q].retract;
                         var x0 = rr[0] - P0, y0 = rr[1] - P0, x1 = rr[2] + P0, y1 = rr[3] + P0;
@@ -290,7 +299,7 @@
         case "in":
             l = copyLayer(bt.ai, a.layer, pre); if (!l) return null;
             d = a.d || MO.snap_d;
-            if (isText(a.layer)) { cutIn(l, t); return l; }                    // text cuts on whole on its sync word
+            if (isText(a.layer) || a.cut || /^O2\/Label/.test(a.layer)) { cutIn(l, t); if (a.t_out) cutOut(l, a.t_out); return l; }   // text cuts on whole on its sync word
             if (isCard(a.layer)) {                                             // cards unfold from their left edge, already in frame
                 r = rect(l); setPivot(l, [r[0], (r[1] + r[3]) / 2]);
                 cutIn(l, t); cm(SC(l), [[t, [0, 100]], [t + d, [100, 100]]], "snap");
@@ -309,6 +318,7 @@
             if (isText(a.layer)) { cutIn(l, t); return l; }
             d = a.d || MO.snap_d;
             setPivot(l, centre(rect(l))); cutIn(l, t);
+            if (a.plain) { cm(SC(l), [[t, [0, 0]], [t + d, [100, 100]]], "snap"); return l; }   // diagrams grow without overshoot
             CommaEase.overshoot(SC(l), t, [0, 0], [100, 100], d, MO.land_over, MO.land_back);   // grows from a point, lands with one rebound
             return l;
         case "wipe":
@@ -360,6 +370,70 @@
                 if (!first) first = row;
             }
             return first;
+        case "rings":                                        // quick circles that draw on around points, then draw themselves out
+            for (var gi = 0; gi < a.c.length; gi++) {
+                var tg = t + gi * a.stagger, rg = shapeLayer(pre, "Ring " + (gi + 1), "ellipse", [a.r * 2, a.r * 2], a.c[gi], [1, 1, 1], hex(a.col), a.w || 6);
+                rg.fill().property("ADBE Vector Fill Opacity").setValue(0);
+                var tm = rg.layer.property("ADBE Root Vectors Group").addProperty("ADBE Vector Filter - Trim");
+                cm(tm.property("ADBE Vector Trim End"), [[tg, 0], [tg + a.d, 100]], "snap");
+                cm(tm.property("ADBE Vector Trim Start"), [[a.t_off + gi * a.stagger, 0], [a.t_off + gi * a.stagger + a.d, 100]], "accel");
+                rg.layer.inPoint = tg; rg.layer.outPoint = Math.min(pre.duration, a.t_off + gi * a.stagger + a.d + 0.04);
+            }
+            return l;
+        case "fly":                                          // appears at `from`, then travels to its place in the art (scaling to 100 %)
+            l = copyLayer(bt.ai, a.layer, pre); if (!l) return null;
+            var fc = centre(rect(l)); setPivot(l, fc); cutIn(l, t);
+            POS(l).setValue(a.from); SC(l).setValue([a.s0 * 100, a.s0 * 100]);
+            cm(POS(l), [[a.t_go, a.from], [a.t_go + a.d, fc]], "cross");
+            cm(SC(l), [[a.t_go, [a.s0 * 100, a.s0 * 100]], [a.t_go + a.d, [100, 100]]], "cross");
+            return l;
+        case "flyto":                                        // copies of another beat's layer travel from `from` to each target, one after another
+            for (var fi = 0; fi < a.to.length; fi++) {
+                var fl = copyLayer(a.src_ai, a.src_layer, pre, a.src_layer + " " + (fi + 2));
+                if (!fl) continue;
+                var fcc = centre(rect(fl)); setPivot(fl, fcc);
+                var tf = t + fi * a.stagger; cutIn(fl, tf);
+                POS(fl).setValue(a.from); SC(fl).setValue([a.s0 * 100, a.s0 * 100]);
+                cm(POS(fl), [[tf, a.from], [tf + a.d, a.to[fi]]], "snap");
+                cm(SC(fl), [[tf, [a.s0 * 100, a.s0 * 100]], [tf + a.d, [100, 100]]], "snap");
+            }
+            return l;
+        case "o2":                                           // an O2 grows in at its spot, then travels to `to` (molecule centre); its label is masked off on landing
+            l = copyLayer(bt.ai, a.layer, pre); if (!l) return null;
+            setPivot(l, a.mol); cutIn(l, t);
+            cm(SC(l), [[t, [0, 0]], [t + MO.snap_d * 0.6, [100, 100]]], "snap");
+            var pm = POS(l).value, tgt = [pm[0] + a.to[0] - a.mol[0], pm[1] + a.to[1] - a.mol[1]];
+            cm(POS(l), [[a.t_go, pm], [a.t_go + a.d, tgt]], a.kind || "cross");
+            if (a.label_y !== undefined) {                   // everything above label_y is the label: a subtract mask switches on at landing
+                var rl = rect(l), U2 = toLayer(l, rl[0] - 10, rl[1] - 10, pm), V2 = toLayer(l, rl[2] + 10, a.label_y, pm);
+                var mk = l.property("ADBE Mask Parade").addProperty("ADBE Mask Atom");
+                mk.name = "Label off"; mk.maskMode = MaskMode.SUBTRACT;
+                var ms = mk.property("ADBE Mask Shape");                    // empty until landing, then covers the label (hold keys)
+                ms.setValueAtTime(0, boxShape(U2[0], U2[1], U2[0] + 0.01, U2[1] + 0.01));
+                ms.setValueAtTime(a.t_go + a.d, boxShape(U2[0], U2[1], V2[0], V2[1]));
+                ms.setInterpolationTypeAtKey(1, KeyframeInterpolationType.HOLD, KeyframeInterpolationType.HOLD);
+            }
+            return l;
+        case "swell":                                        // grows about a point, holds, then settles back (the T -> R schematic)
+            l = copyLayer(bt.ai, a.layer, pre); if (!l) return null;
+            cutIn(l, t); setPivot(l, a.c);
+            cm(SC(l), [[t, [100, 100]], [t + a.d, [100 * a.s, 100 * a.s]]], "snap");
+            cm(SC(l), [[a.t_back, [100 * a.s, 100 * a.s]], [a.t_back + a.back_d, [100, 100]]], "snap");
+            return l;
+        case "pairturn":                                     // a subunit turns about the tetramer centre and draws in (T -> R schematic)
+            l = copyLayer(bt.ai, a.layer, pre); if (!l) return null;
+            cutIn(l, t);
+            setPivot(l, a.c);
+            cm(TR(l).property("ADBE Rotate Z"), [[t, 0], [t + a.d, a.deg]], "snap");
+            cm(POS(l), [[t, a.c], [t + a.d, [a.c[0] + a.move[0], a.c[1] + a.move[1]]]], "snap");
+            return l;
+        case "turn":                                         // a held layer turns and resizes about a point (the T -> R schematic)
+            if (!l) return l;
+            setPivot(l, a.c);
+            var RZ = TR(l).property("ADBE Rotate Z");
+            cm(RZ, [[t, 0], [t + a.d, a.deg]], "snap");
+            cm(SC(l), [[t, [100, 100]], [t + a.d, [100 * a.s, 100 * a.s]]], "snap");
+            return l;
         case "gone":                                         // left in the previous beat or handed to a custom move: nothing to copy
             return l;
         case "title1c":
@@ -423,6 +497,11 @@
             sh.name = a.layer;
             var tr = sh.property("ADBE Root Vectors Group").addProperty("ADBE Vector Filter - Trim");
             cm(tr.property("ADBE Vector Trim End"), [[t, 0], [t + d, 100]], "snap");
+            cutIn(sh, t);
+            if (a.t_off !== undefined) {                     // draws itself off again
+                cm(tr.property("ADBE Vector Trim Start"), [[a.t_off, 0], [a.t_off + d, 100]], "accel");
+                cutOut(sh, a.t_off + d);
+            }
             return sh;
         case "bump":
             if (!l) return l;
