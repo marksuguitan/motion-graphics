@@ -1,0 +1,19 @@
+Every red blood cell has two jobs. Pick up oxygen in the lungs. Then let it go in the tissues. One graph shows how hemoglobin does both. The oxyhemoglobin dissociation curve.
+
+Along the bottom is the partial pressure of oxygen, P O two, in millimeters of mercury. Up the side is hemoglobin saturation, the percentage of oxygen binding sites that are filled.
+
+Hemoglobin has four subunits. Each one holds a heem group that can bind one oxygen molecule. The binding is cooperative. Once the first oxygen binds, hemoglobin changes shape, and the next ones bind more easily. That is why the curve is not a straight line. It is an S shape. A sigmoid curve.
+
+Let's read it. In the lungs, P O two is about one hundred, and hemoglobin is about ninety-seven percent saturated. In resting tissue, P O two is about forty, and saturation falls to about seventy-five percent. So at rest, only about a quarter of the oxygen is unloaded.
+
+Halfway up the curve is a landmark called the P fifty. It is the P O two at which hemoglobin is fifty percent saturated. In a healthy adult, it is about twenty-seven millimeters of mercury.
+
+The shape matters. The top of the curve is flat. Even if P O two in the lungs falls from one hundred to sixty, saturation only drops to about ninety percent. That plateau protects oxygen loading. Below sixty, though, the curve gets steep. In the tissues, a small drop in P O two releases a large amount of oxygen. That steep slope makes unloading efficient.
+
+The curve can also shift. The P fifty tells you which way hemoglobin's grip on oxygen has changed.
+
+A shift to the right means lower affinity. Hemoglobin lets go of oxygen more easily, and the P fifty rises. Four changes cause it. A lower pH. More carbon dioxide. More two three D P G. And a higher temperature. The effect of acid and carbon dioxide is called the bore effect. Think of exercising muscle. It is warm, acidic, and full of carbon dioxide. That is exactly where oxygen needs to be released.
+
+A shift to the left is the opposite. Higher affinity. Hemoglobin holds on to oxygen more tightly, and the P fifty falls. A higher pH. Less carbon dioxide. Less two three D P G. And a lower temperature. Fetal hemoglobin also sits to the left. It binds two three D P G poorly, which helps the fetus pull oxygen from the mother's blood. Carbon monoxide shifts the curve left too, while also lowering how much oxygen the blood can carry.
+
+To sum up. Right shift: lower affinity, higher P fifty, more oxygen released. Left shift: higher affinity, lower P fifty, oxygen held more tightly. An easy way to remember it: right means release.
