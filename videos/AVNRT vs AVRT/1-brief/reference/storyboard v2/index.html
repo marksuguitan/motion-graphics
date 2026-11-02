@@ -1,0 +1,354 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>AVNRT vs AVRT Storyboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
+<style>
+/* Layout: one column of 16:9 frames on a warm paper ground, each with timecode, narration and a build note beside it. */
+:root { --bg: #F3EEE5; --paper: #FBF8F2; --ink: #22201E; --ink2: #5E5850; --line: #E3DBCF; --teal: #0A6A82; --coral: #B22F2F;
+  --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #1C1A18; --paper: #262321; --ink: #F1ECE4; --ink2: #B7AEA3; --line: #3A3531; --teal: #7FC4D6; --coral: #E0796D; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #1C1A18; --paper: #262321; --ink: #F1ECE4; --ink2: #B7AEA3; --line: #3A3531; --teal: #7FC4D6; --coral: #E0796D; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 64px; }
+main { max-width: 1180px; margin: 0 auto; display: grid; gap: 36px; }
+header { display: grid; gap: 14px; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink2); font-weight: 500; }
+h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.1; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h1 em { font-style: normal; color: var(--ink2); font-weight: 400; }
+.lede { color: var(--ink2); max-width: 65ch; margin: 0; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--ink2); }
+.facts b { color: var(--ink); font-weight: 500; }
+.audio { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; display: grid; gap: 8px; }
+.audio label { font-weight: 700; font-size: 15px; }
+.audio audio { width: 100%; }
+.sec { padding-top: 12px; }
+.sec h2 { font-size: 24px; margin: 0 0 6px; letter-spacing: -0.01em; }
+.frame { margin: 0; display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: 22px; align-items: start; padding-top: 28px; border-top: 1px solid var(--line); }
+.frame img { width: 100%; max-width: 100%; height: auto; border-radius: 10px; display: block; box-shadow: 0 2px 14px rgba(34,32,30,.10); }
+figcaption { display: grid; gap: 10px; min-width: 0; }
+.meta { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.tc { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 15px; background: var(--ink); color: var(--bg); padding: 3px 10px; border-radius: 6px; }
+.scene { font-weight: 700; font-size: 19px; }
+.vo { margin: 0; font-size: 16px; font-style: italic; color: var(--ink); }
+.note { margin: 0; font-size: 15px; color: var(--ink2); }
+.chg { margin: 0; font-size: 14px; color: var(--teal); background: color-mix(in srgb, var(--teal) 10%, transparent); border-radius: 8px; padding: 8px 12px; }
+.chg b { font-weight: 700; }
+footer { font-size: 13px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 18px; }
+@media (max-width: 760px) { .frame { grid-template-columns: minmax(0, 1fr); } }
+</style>
+<main>
+<header>
+  <div class="eyebrow">Storyboard v2 · script v2 draft</div>
+  <h1>AVNRT vs AVRT <em>· small loop, big loop</em></h1>
+  <p class="lede">Rebuilt for the script v2 draft, before any new voice-over. 35 frames: the 16 that changed carry a “Changed in v2” note, and frame 32 (pre-excited atrial fibrillation) is new. Timecodes are estimates from take A’s pace until the new voice-over is recorded.</p>
+  <div class="facts"><span><b>Format</b> 16:9, 1920×1080</span><span><b>Length</b> about 4:30 (estimated)</span><span><b>Voice</b> new markusguapo take after this storyboard is approved</span><span><b>Sources</b> StatPearls AVNRT, AVRT</span><span><b>Palette</b> warm white, charcoal, amber signal, coral = small loop (AVNRT), teal = big loop and accessory pathway</span></div>
+  </header>
+<section class="sec"><h2>Cold open</h2><p class="lede">Two patients, one rate. The loops behind them are very different sizes.</p></section>
+<figure class="frame">
+  <img src="f/f01.jpg" alt="Storyboard frame f01 at ≈ 0:02.8: Cold open: two strips" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 0:02.8</span><span class="scene">Cold open: two strips</span></div>
+    <p class="vo">Two patients. Both have a sudden, fast, narrow, regular rhythm.</p>
+    <p class="note">Two lead II strips print and scroll, one above the other. Same rate, both narrow and regular. Nothing says which is which yet.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f02.jpg" alt="Storyboard frame f02 at ≈ 0:12.1: One loop fits around the AV node" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 0:12.1</span><span class="scene">One loop fits around the AV node</span></div>
+    <p class="vo">One fits in and around the AV node, a structure about five millimeters long.</p>
+    <p class="note">The strips slide off and Mark's conduction heart lands. A small loop circles in and around the AV node. The amber pulse laps it.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f03.jpg" alt="Storyboard frame f03 at ≈ 0:16.9: The other: a much bigger circuit" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 0:16.9</span><span class="scene">The other: a much bigger circuit</span></div>
+    <p class="vo">The other is a much bigger circuit: through the atria, the ventricles, and back.</p>
+    <p class="note">The second loop draws itself through the heart: down the conduction system, back up an accessory pathway, across the atria. The path rides exactly on the illustrated tracts.</p>
+    <p class="chg"><b>Changed in v2:</b> Big loop now described as a circuit through the atria, the ventricles, and back.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f04.jpg" alt="Storyboard frame f04 at ≈ 0:21.4: Title" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 0:21.4</span><span class="scene">Title</span></div>
+    <p class="vo">(beat after "...and back.")</p>
+    <p class="note">Title lands while both loops keep running, one small and one big.</p>
+  </figcaption>
+</figure>
+<section class="sec"><h2>What a loop needs</h2><p class="lede">Insulating rings, one gate, then the two-lane diagram and a premature trigger.</p></section>
+<figure class="frame">
+  <img src="f/f05.jpg" alt="Storyboard frame f05 at ≈ 0:24.3: Fibrous rings insulate" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 0:24.3</span><span class="scene">Fibrous rings insulate</span></div>
+    <p class="vo">Normally, the atria and ventricles are electrically insulated from each other by fibrous rings around the valves.</p>
+    <p class="note">The AV plane is marked as a dotted ivory line along the valve rings. The atrial wave spreads and stops at the line.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f06.jpg" alt="Storyboard frame f06 at ≈ 0:28.8: The only normal connection" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 0:28.8</span><span class="scene">The only normal connection</span></div>
+    <p class="vo">The only normal connection runs through the AV node and the His bundle.</p>
+    <p class="note">One gap in the ring, where the AV node feeds the penetrating His bundle. The wave passes through it and only there.</p>
+    <p class="chg"><b>Changed in v2:</b> AV node and His bundle: the only normal connection.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f07.jpg" alt="Storyboard frame f07 at ≈ 0:34.5: Two pathways, joined at both ends" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 0:34.5</span><span class="scene">Two pathways, joined at both ends</span></div>
+    <p class="vo">A re-entry loop needs two pathways that are joined at both ends but behave differently.</p>
+    <p class="note">A clean diagram (not anatomy): two channels that split and rejoin. Every channel is drawn open.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f08.jpg" alt="Storyboard frame f08 at ≈ 0:40.0: Different speeds, different recovery" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 0:40.0</span><span class="scene">Different speeds, different recovery</span></div>
+    <p class="vo">One conducts fast, the other conducts slowly, and they take different amounts of time to recover.</p>
+    <p class="note">Each side gets its properties as the words land.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f09.jpg" alt="Storyboard frame f09 at ≈ 0:45.5: A trigger: a premature beat" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 0:45.5</span><span class="scene">A trigger: a premature beat</span></div>
+    <p class="vo">Then it needs a trigger, usually a premature beat that arrives at just the wrong moment.</p>
+    <p class="note">A premature beat arrives early on the strip and enters the top of the diagram.</p>
+  </figcaption>
+</figure>
+<section class="sec"><h2>AVNRT: the small loop</h2><p class="lede">Both pathways in the AV junction, shown on our own diagram so every channel reads as open.</p></section>
+<figure class="frame">
+  <img src="f/f10.jpg" alt="Storyboard frame f10 at ≈ 0:49.5: Typical AVNRT: both pathways in and around the AV node" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 0:49.5</span><span class="scene">Typical AVNRT: both pathways in and around the AV node</span></div>
+    <p class="vo">In typical AVNRT, both pathways sit in and around the AV node.</p>
+    <p class="note">Push in on the AV node of Mark's heart, then cut to the diagram of the same junction. Fast pathway higher, slow pathway lower, near the coronary sinus.</p>
+    <p class="chg"><b>Changed in v2:</b> Labelled typical (slow-fast) AVNRT.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f11.jpg" alt="Storyboard frame f11 at ≈ 0:55.5: Fast: quick, slow to recover. Slow: the reverse." loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 0:55.5</span><span class="scene">Fast: quick, slow to recover. Slow: the reverse.</span></div>
+    <p class="vo">The fast pathway conducts quickly but takes a long time to recover. The slow pathway conducts slowly but recovers quickly.</p>
+    <p class="note">Property cards attach to each side of the diagram.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f12.jpg" alt="Storyboard frame f12 at ≈ 1:02.5: Normal beats use the fast pathway" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 1:02.5</span><span class="scene">Normal beats use the fast pathway</span></div>
+    <p class="vo">Normal beats travel down the fast pathway...</p>
+    <p class="note">A sinus beat runs down the fast side and on to the His bundle.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f13.jpg" alt="Storyboard frame f13 at ≈ 1:07.5: Premature beat: fast pathway still recovering" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 1:07.5</span><span class="scene">Premature beat: fast pathway still recovering</span></div>
+    <p class="vo">...but a premature beat can arrive while the fast pathway is still recovering, so it travels down the slow pathway instead.</p>
+    <p class="note">The fast side is shaded as still recovering (the only state that is not open, and it is labelled). The wave takes the slow side.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f14.jpg" alt="Storyboard frame f14 at ≈ 1:12.0: At the bottom, the fast pathway has recovered" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 1:12.0</span><span class="scene">At the bottom, the fast pathway has recovered</span></div>
+    <p class="vo">By the time it reaches the bottom, the fast pathway has recovered.</p>
+    <p class="note">The shading clears from the fast side just as the wave reaches the node.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f15.jpg" alt="Storyboard frame f15 at ≈ 1:15.5: The signal turns back up" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 1:15.5</span><span class="scene">The signal turns back up</span></div>
+    <p class="vo">The signal turns and races back up it, then down the slow pathway again.</p>
+    <p class="note">The wave climbs the fast side back to the atrial end.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f16.jpg" alt="Storyboard frame f16 at ≈ 1:19.5: A self-sustaining loop" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 1:19.5</span><span class="scene">A self-sustaining loop</span></div>
+    <p class="vo">The loop is now self-sustaining.</p>
+    <p class="note">The circuit closes. The pulse keeps lapping it.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f17.jpg" alt="Storyboard frame f17 at ≈ 1:24.5: Every lap fires ventricles and atria together" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 1:24.5</span><span class="scene">Every lap fires ventricles and atria together</span></div>
+    <p class="vo">Every lap fires the ventricles and the atria at almost the same instant, so the P wave lands inside the QRS or just at its end.</p>
+    <p class="note">Each lap sends one wave down to the ventricles and one up to the atria together. The strip zooms in: the P wave sits at the end of the QRS.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f18.jpg" alt="Storyboard frame f18 at ≈ 1:31.5: Pseudo S and pseudo R prime" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 1:31.5</span><span class="scene">Pseudo S and pseudo R prime</span></div>
+    <p class="vo">Look for a small pseudo S wave in leads two, three, and AVF or a pseudo R prime in V1.</p>
+    <p class="note">Two leads, zoomed. Circles mark the pseudo S in II and the pseudo R prime in V1.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f19.jpg" alt="Storyboard frame f19 at ≈ 1:39.5: Who gets AVNRT" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 1:39.5</span><span class="scene">Who gets AVNRT</span></div>
+    <p class="vo">AVNRT is the most common paroxysmal SVT in adults, about half to sixty percent of cases. It usually shows up in young adults, and about two-thirds are women.</p>
+    <p class="note">Three stat cards build on the words.</p>
+    <p class="chg"><b>Changed in v2:</b> Paroxysmal SVT.</p>
+  </figcaption>
+</figure>
+<section class="sec"><h2>AVRT: the big loop</h2><p class="lede">Accessory pathway in teal inside the lateral wall. Every wavefront runs on your illustrated tracts.</p></section>
+<figure class="frame">
+  <img src="f/f20.jpg" alt="Storyboard frame f20 at ≈ 1:49.9: AVRT: an accessory pathway" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 1:49.9</span><span class="scene">AVRT: an accessory pathway</span></div>
+    <p class="vo">AVRT needs an accessory pathway, a strand of muscle that crosses the insulating ring between the atria and the ventricles.</p>
+    <p class="note">Back to the full heart. The accessory pathway appears in teal inside the lateral wall, crossing the ring at the mitral annulus.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f21.jpg" alt="Storyboard frame f21 at ≈ 1:57.9: Orthodromic: down the AV node and His-Purkinje" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 1:57.9</span><span class="scene">Orthodromic: down the AV node and His-Purkinje</span></div>
+    <p class="vo">In the usual form, called orthodromic, the signal goes down the AV node and the His-Purkinje system, so the QRS is usually narrow.</p>
+    <p class="note">The wavefront travels down the AV node, His bundle and bundle branches, exactly along the illustrated tracts, and the loop line draws with it.</p>
+    <p class="chg"><b>Changed in v2:</b> Usually narrow QRS.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f22.jpg" alt="Storyboard frame f22 at ≈ 2:05.3: Back up the accessory pathway" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 2:05.3</span><span class="scene">Back up the accessory pathway</span></div>
+    <p class="vo">Then it crosses back up the accessory pathway to the atria and returns to the AV node. That's the large majority of cases.</p>
+    <p class="note">The wave reaches the lateral wall, climbs the accessory pathway (it glows), spreads across the left atrium and returns to the AV node. The loop is closed.</p>
+    <p class="chg"><b>Changed in v2:</b> The large majority, not 4 in 5.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f23.jpg" alt="Storyboard frame f23 at ≈ 2:16.0: Big loop: P wave after the QRS" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 2:16.0</span><span class="scene">Big loop: P wave after the QRS</span></div>
+    <p class="vo">This loop is much longer. The atria fire noticeably later than the ventricles, so the P wave often shows up after the QRS in the ST segment. The RP interval is longer than in typical AVNRT, often more than seventy milliseconds.</p>
+    <p class="note">The strip zooms in on one beat. A teal marker finds the retrograde P in the ST segment. The bracket measures RP the way it is read on a surface ECG: from QRS onset to P-wave onset.</p>
+    <p class="chg"><b>Changed in v2:</b> RP bracket now runs from QRS onset to P-wave onset; RP framed as longer than typical AVNRT.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f24.jpg" alt="Storyboard frame f24 at ≈ 2:27.7: Antidromic: the other way round" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 2:27.7</span><span class="scene">Antidromic: the other way round</span></div>
+    <p class="vo">Less often, the loop runs the other way, down the accessory pathway and back up the node. This is antidromic AVRT... the QRS is wide.</p>
+    <p class="note">Arrows reverse. The ventricles light from the pathway end, spreading through the muscle, not along the His-Purkinje tracts. A wide-complex strip sits beside it.</p>
+    <p class="chg"><b>Changed in v2:</b> Antidromic is less common (no percentage).</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f25.jpg" alt="Storyboard frame f25 at ≈ 2:41.2: Adults vs children" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 2:41.2</span><span class="scene">Adults vs children</span></div>
+    <p class="vo">AVRT is the most common SVT in children, especially younger children.</p>
+    <p class="note">A two-column card. It is the first place the two loops are compared side by side.</p>
+    <p class="chg"><b>Changed in v2:</b> Paroxysmal SVT in adults; especially younger children.</p>
+  </figcaption>
+</figure>
+<section class="sec"><h2>The resting ECG</h2><p class="lede">Manifest versus concealed pathways.</p></section>
+<figure class="frame">
+  <img src="f/f26.jpg" alt="Storyboard frame f26 at ≈ 2:54.7: Manifest pathway: the WPW pattern" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 2:54.7</span><span class="scene">Manifest pathway: the WPW pattern</span></div>
+    <p class="vo">Some accessory pathways also conduct forward during normal rhythm. They let the ventricles start early. That shortens the PR interval, adds a slurred upstroke called a delta wave, and widens the QRS. That's the Wolff-Parkinson-White pattern.</p>
+    <p class="note">A normal-rate resting strip. Three marks build on the words: short PR, delta wave, wide QRS.</p>
+    <p class="chg"><b>Changed in v2:</b> Adds the wide QRS mark.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f27.jpg" alt="Storyboard frame f27 at ≈ 3:07.7: Concealed pathway: no pre-excitation" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 3:07.7</span><span class="scene">Concealed pathway: no pre-excitation</span></div>
+    <p class="vo">Other pathways only conduct backward. They're concealed, and show no sign of pre-excitation on the resting ECG. So a normal resting ECG does not rule out AVRT.</p>
+    <p class="note">Two resting strips stacked: manifest (delta wave) and concealed (normal). The concealed one still supports orthodromic AVRT.</p>
+    <p class="chg"><b>Changed in v2:</b> Concealed = no pre-excitation.</p>
+  </figcaption>
+</figure>
+<section class="sec"><h2>Breaking the loop, and curing it</h2><p class="lede">The shared segment is the AV node; ablation targets each loop separately.</p></section>
+<figure class="frame">
+  <img src="f/f28.jpg" alt="Storyboard frame f28 at ≈ 3:19.4: Both loops run through the AV node" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 3:19.4</span><span class="scene">Both loops run through the AV node</span></div>
+    <p class="vo">Here's what the two loops have in common. In both AVNRT and AVRT, the AV node is usually part of the circuit.</p>
+    <p class="note">Both loops side by side, each with its AV node ringed in amber.</p>
+    <p class="chg"><b>Changed in v2:</b> Line split moved: treatment now starts on the next frame.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f29.jpg" alt="Storyboard frame f29 at ≈ 3:30.9: Block the AV node, break either loop" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 3:30.9</span><span class="scene">Block the AV node, break either loop</span></div>
+    <p class="vo">So for a stable patient with a regular, narrow-complex tachycardia, the first steps are the same. Try a vagal maneuver, like Valsalva. If that fails, give adenosine, unless it's contraindicated. Blocking the AV node for a moment breaks either loop.</p>
+    <p class="note">The AV node blocks briefly in both views. Each loop falls quiet.</p>
+    <p class="chg"><b>Changed in v2:</b> Applies to stable, regular, narrow-complex tachycardia; adenosine unless contraindicated.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f30.jpg" alt="Storyboard frame f30 at ≈ 3:38.1: Stable vs unstable" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 3:38.1</span><span class="scene">Stable vs unstable</span></div>
+    <p class="vo">If the tachycardia is making the patient unstable, use synchronized cardioversion.</p>
+    <p class="note">A two-row card, with the strip converting to sinus after adenosine beneath it.</p>
+    <p class="chg"><b>Changed in v2:</b> Cardioversion when the tachycardia causes the instability.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f31.jpg" alt="Storyboard frame f31 at ≈ 3:45.3: Caution: wide-complex antidromic AVRT" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 3:45.3</span><span class="scene">Caution: wide-complex antidromic AVRT</span></div>
+    <p class="vo">Wide-complex rhythms need more caution. In antidromic AVRT, avoid AV nodal blockers. Procainamide is an alternative.</p>
+    <p class="note">A caution card with the wide-complex strip.</p>
+    <p class="chg"><b>Changed in v2:</b> Reframed as a caution, not the only exception.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f32.jpg" alt="Storyboard frame f32 at ≈ 3:55.6: Danger: pre-excited atrial fibrillation" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 3:55.6</span><span class="scene">Danger: pre-excited atrial fibrillation</span></div>
+    <p class="vo">And watch for pre-excited atrial fibrillation: a very fast, irregular, wide-complex rhythm in a patient with an accessory pathway. It can be lethal. AV nodal blockers, including adenosine, can make it worse. Stable patients can get procainamide. Unstable patients need electrical cardioversion.</p>
+    <p class="note">A separate arrhythmia, so it gets its own card. The strip prints fast, irregular and wide, with QRS widths changing beat to beat. The cautions build on the words.</p>
+    <p class="chg"><b>Changed in v2:</b> NEW: pre-excited atrial fibrillation warning.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f33.jpg" alt="Storyboard frame f33 at ≈ 4:11.9: Cure: ablate the slow pathway" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 4:11.9</span><span class="scene">Cure: ablate the slow pathway</span></div>
+    <p class="vo">For a cure, catheter ablation targets the loop itself. In AVNRT, that's the slow pathway, with success above ninety-five percent.</p>
+    <p class="note">An ablation mark lands on the slow side of the diagram. The loop can no longer close.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f34.jpg" alt="Storyboard frame f34 at ≈ 4:16.4: Cure: ablate the accessory pathway" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 4:16.4</span><span class="scene">Cure: ablate the accessory pathway</span></div>
+    <p class="vo">In AVRT, it's the accessory pathway.</p>
+    <p class="note">Close-up of the lateral wall. An ablation mark lands on the teal pathway.</p>
+  </figcaption>
+</figure>
+<section class="sec"><h2>Close</h2></section>
+<figure class="frame">
+  <img src="f/f35.jpg" alt="Storyboard frame f35 at ≈ 4:21.4: Close: same speed, different size" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">≈ 4:21.4</span><span class="scene">Close: same speed, different size</span></div>
+    <p class="vo">Same speed, different size. A small loop usually hides the P wave inside the QRS. A big loop usually leaves it trailing behind. It's a clue, not a rule.</p>
+    <p class="note">The opening strips return, now labelled. The small loop sits beside the top strip, the big loop beside the bottom one.</p>
+    <p class="chg"><b>Changed in v2:</b> Usually hidden / usually trails; a clue, not a rule.</p>
+  </figcaption>
+</figure>
+
+<footer>Still frames only. In motion: the ECG strips scroll and never redraw, the amber pulse laps each loop as one continuous wavefront, and text lands on the words. Anatomy: AV node at the base of the interatrial septum, His bundle and branches down the septum, Purkinje fans into both ventricles, accessory pathway inside the left lateral wall crossing the mitral ring. The AVNRT diagram is deliberately schematic (fast pathway near the septum, slow pathway near the coronary sinus).</footer>
+</main>
+
+</body></html>
