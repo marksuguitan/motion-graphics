@@ -278,8 +278,8 @@ f = F("6A", "flat-top"); f.add(stage(), axes(), normal_curve(), marker_bars(100,
       side_card("THE PLATEAU", "Relatively flat", ["PO2 100 → 60 mmHg", f"SO2 97% → {S(60,26.8):.0f}%"]))
 f.save()
 f = F("6B", "plateau-steep"); f.add(stage(), axes(),
-      group("Region/Plateau", f'<rect x="{X(60):.1f}" y="{GY}" width="{X(100)-X(60):.1f}" height="{GH}" fill="{C["teal"]}" opacity="0.07"/>', text(X(80), GY+44, "Plateau", 26, 600, C["teal"], anchor="middle")),
-      group("Region/Steep", f'<rect x="{X(10):.1f}" y="{GY}" width="{X(60)-X(10):.1f}" height="{GH}" fill="{C["coral"]}" opacity="0.07"/>', text(X(35), GY+44, "Steep", 26, 600, C["coral"], anchor="middle")),
+      group("Region/Plateau", f'<rect x="{X(60):.1f}" y="{GY}" width="{X(100)-X(60):.1f}" height="{GH}" fill="{C["teal"]}" opacity="0.07"/>', text(X(80), GY-18, "Plateau", 26, 600, C["teal"], anchor="middle")),
+      group("Region/Steep", f'<rect x="{X(10):.1f}" y="{GY}" width="{X(60)-X(10):.1f}" height="{GH}" fill="{C["coral"]}" opacity="0.07"/>', text(X(35), GY-18, "Steep", 26, 600, C["coral"], anchor="middle")),
       normal_curve(),
       side_card("THE SHAPE", "Two jobs, two parts", ["Plateau protects loading", "Below 60, it gets steep"]))
 f.save()
