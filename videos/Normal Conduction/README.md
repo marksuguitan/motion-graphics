@@ -1,6 +1,6 @@
 # Normal Conduction
 
-A 48.9 s motion piece with no VO, made Nov 2, 2026 at Mark's request: a small orb is the electrical impulse of one
+A 39.9 s motion piece with no VO, made Nov 2, 2026 at Mark's request: a small orb is the electrical impulse of one
 normal beat, travelling SA node → atria → AV node → bundle of His → bundle branches → Purkinje fibers, to show what
 normal conduction looks like. Mark waived the brief and script gates for this piece ("just show it to me when you are done").
 
@@ -19,14 +19,14 @@ normal conduction looks like. Mark waived the brief and script gates for this pi
 | 1 title | 0:00–0:03.3 | A dot pops in and types "Normal conduction." as its own period, then deletes it | Title |
 | 2 heart | 0:03.3–0:05.9 | The dot grows into the orb, hops, lands on the SA node; the heart unfolds from that point | — |
 | 2B preview | 0:05.9–0:08.7 | Three full beats at real speed, a preview of the whole path, then the orb settles back on the SA node | — |
-| 3A SA node | 0:08.7–0:11.4 | Orb pings twice (fires) | Step 1/5: SA node, "fires the impulse" |
-| 3B atria | 0:11.4–0:14.0 | Orb runs the internodal tracts to the AV node; small fronts light both atria (Bachmann's bundle to the LA) | Step 2: Atria |
-| 3C AV node | 0:14.0–0:17.0 | Orb squashes into the AV node and crawls through it (the delay); ring on the node | Step 3: AV node, "a brief delay" |
-| 3D His + branches | 0:17.0–0:20.3 | Orb exits fast down the His bundle and splits into two at the top of the septum: right and left bundle branches, which reach the ends of their Purkinje networks nearly together (right 215 ms, left 225 ms) | Step 4: Bundle of His |
-| 3E Purkinje | 0:20.3–0:24.8 | Fronts spread through the Purkinje fibers up the ventricular walls; the heart squeezes | Step 5: Purkinje fibers |
-| 4A ECG slowed | 0:24.8–0:37.6 | The path resets; one beat runs again in slow motion with its ECG drawing in sync; a bracket marks each part | P wave / Flat line (AV node delay) / QRS / T wave |
-| 4B real speed | 0:37.6–0:42.8 | Six beats at real speed (75/min), the ECG scrolling, a squeeze and a beep per beat | Normal sinus rhythm |
-| 5 outro | 0:42.8–0:48.9 | The ECG draws out, the heart folds back into the orb, which becomes the period of "Normal conduction." again | Title |
+| 3A SA node | 0:08.7–0:09.6 | Orb pings twice (fires) | Step 1/5: SA node, "fires the impulse" |
+| 3B atria | 0:09.6–0:10.8 | Orb runs the internodal tracts to the AV node; small fronts light both atria (Bachmann's bundle to the LA) | Step 2: Atria |
+| 3C AV node | 0:10.8–0:12.2 | Orb squashes into the AV node and crawls through it (the delay); ring on the node | Step 3: AV node, "a brief delay" |
+| 3D His + branches | 0:12.2–0:13.4 | Orb exits fast down the His bundle and splits into two at the top of the septum: right and left bundle branches, which reach the ends of their Purkinje networks nearly together (right 215 ms, left 225 ms) | Step 4: Bundle of His |
+| 3E Purkinje | 0:13.4–0:15.8 | Fronts spread through the Purkinje fibers up the ventricular walls; the heart squeezes | Step 5: Purkinje fibers |
+| 4A ECG slowed | 0:15.8–0:28.6 | The path resets; one beat runs again in slow motion with its ECG drawing in sync; a bracket marks each part | P wave / Flat line (AV node delay) / QRS / T wave |
+| 4B real speed | 0:28.6–0:33.8 | Six beats at real speed (75/min), the ECG scrolling, a squeeze and a beep per beat | Normal sinus rhythm |
+| 5 outro | 0:33.8–0:39.9 | The ECG draws out, the heart folds back into the orb, which becomes the period of "Normal conduction." again | Title |
 
 ## How the impulse is timed
 
@@ -63,3 +63,4 @@ npm run render:final                     # -> 6-delivery/
 | Nov 2, 2026 | v2 (Mark's notes): simplified natural heart in greys; right and left ventricular conduction end nearly together (215 / 225 ms); title hold 1.4 s shorter, so everything after it is 1.4 s earlier |
 | Nov 2, 2026 | v3 (Mark's note): three real-speed beats as a preview at 0:05.9, before the step-by-step walk; everything after moves 2.8 s later |
 | Nov 2, 2026 | v4 (Mark's note): no backflow in the lower atrial tract at 0:14. The two lower tracts touched just outside the AV node, so the impulse ran back up the longer one; that junction is now part of the node, the atrial pass runs with the node closed, and no front dot starts inside the node. Every atrial tract now runs SA node to AV node |
+| Nov 2, 2026 | v5 (Mark's note): the labeled SA node → Purkinje pass is brisk, 0.9–1.4 s per label with no long holds (7.1 s, was 16.1 s); the slowed-down beat and everything after it are 9 s earlier; 39.9 s total |
