@@ -295,21 +295,34 @@ PLAN = {
         {"layer": "Curves/Shift", "do": "out", "at": "different", "d": 0.6},
         {"layer": "Panel/Card", "do": "xfade", "at": "different"},
         {"layer": "Hb/COTetramer", "do": "pop", "at": "occupies", "d": 0.6},
+        # Mark 2026-11-02 (marker at "tightly"): show hemoglobin holding its O2 tightly. The mini tetramer draws in and coral
+        # rings snap in around its two bound O2s, and stay
+        {"layer": "Hb/COTetramer", "do": "clamp", "at": "tightly", "s": 0.94, "pts": [[1662.1, 428.5], [1417.9, 571.5]], "r": 24},
         {"layer": "Panel/Lines", "do": "wipe", "dir": "ttb", "stops": [["occupies+0.6", 716, 0.4], ["tightly", 770, 0.4]]},
         {"layer": "Footnote/Text", "do": "in", "at": "releases"},
     ],
+    # Mark 2026-11-02: each shift appears on the graph when the VO speaks about it, and the other one greys out
     "10A": [
         {"layer": "Panel/Card", "do": "out", "at": "start", "d": 0.4},
         {"layer": "Curves/Right", "do": "slidein", "dx": -(36 - 27) * 8.2, "dy": 0, "at": "Right", "clip": CLIP},
         {"layer": "Panel/RightShift", "do": "in", "at": "Right"},
-        {"layer": "Curves/Left", "do": "in", "at": "Right+1.0", "rise": 0, "d": 0.6},
-        {"layer": "Panel/LeftShift", "do": "in", "at": "Right+1.0"},
+        {"layer": "Curves/Left", "do": "skip"},
+        {"layer": "Panel/LeftShift", "do": "skip"},
     ],
     "10B": [
+        {"layer": "Curves/Right", "do": "hold"},
+        {"layer": "Curves/Right", "do": "grey", "at": "Left", "from": 0, "to": 100},
+        {"layer": "Curves/Left", "do": "wipe", "dir": "ltr", "at": "Left", "d": MOTION["snap_d"]},
         {"layer": "Panel/RightShift", "do": "xfade", "at": "Left"},
-        {"layer": "Panel/LeftShift", "do": "xfade", "at": "Left"},
+        {"layer": "Panel/LeftShift", "do": "in", "at": "Left"},
     ],
     "10C": [
+        # "right means release": the right shift returns to its colour and the left one greys
+        {"layer": "Curves/Right", "do": "hold"},
+        {"layer": "Curves/Right", "do": "grey", "at": "start", "from": 100, "to": 100, "d": 0.01},
+        {"layer": "Curves/Right", "do": "grey", "at": "w:right", "from": 100, "to": 0},
+        {"layer": "Curves/Left", "do": "hold"},
+        {"layer": "Curves/Left", "do": "grey", "at": "w:right", "from": 0, "to": 100},
         {"layer": "Panel/LeftShift", "do": "xfade", "at": "start"},
         {"layer": "Takeaway/Text", "do": "pop", "at": "release", "d": 0.6, "from": 0.9},
         {"layer": "Footnote/Text", "do": "in", "at": "release+0.8"},

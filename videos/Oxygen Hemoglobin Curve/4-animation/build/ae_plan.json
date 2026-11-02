@@ -4185,6 +4185,23 @@
        "t": 2.313
       },
       {
+       "layer": "Hb/COTetramer",
+       "do": "clamp",
+       "s": 0.94,
+       "pts": [
+        [
+         1662.1,
+         428.5
+        ],
+        [
+         1417.9,
+         571.5
+        ]
+       ],
+       "r": 24,
+       "t": 6.513
+      },
+      {
        "layer": "Panel/Lines",
        "do": "wipe",
        "dir": "ttb",
@@ -4358,15 +4375,11 @@
       },
       {
        "layer": "Curves/Left",
-       "do": "in",
-       "rise": 0,
-       "d": 0.6,
-       "t": 2.293
+       "do": "skip"
       },
       {
        "layer": "Panel/LeftShift",
-       "do": "in",
-       "t": 2.293
+       "do": "skip"
       },
       {
        "layer": "Background/Fill",
@@ -4449,13 +4462,31 @@
      "dur": 6.1,
      "acts": [
       {
+       "layer": "Curves/Right",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Right",
+       "do": "grey",
+       "from": 0,
+       "to": 100,
+       "t": 0.013
+      },
+      {
+       "layer": "Curves/Left",
+       "do": "wipe",
+       "dir": "ltr",
+       "d": 0.6,
+       "t": 0.013
+      },
+      {
        "layer": "Panel/RightShift",
        "do": "xfade",
        "t": 0.013
       },
       {
        "layer": "Panel/LeftShift",
-       "do": "xfade",
+       "do": "in",
        "t": 0.013
       },
       {
@@ -4480,14 +4511,6 @@
       },
       {
        "layer": "Curves/Normal",
-       "do": "hold"
-      },
-      {
-       "layer": "Curves/Right",
-       "do": "hold"
-      },
-      {
-       "layer": "Curves/Left",
        "do": "hold"
       }
      ],
@@ -4528,6 +4551,36 @@
      "dur": 5.633333333333334,
      "acts": [
       {
+       "layer": "Curves/Right",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Right",
+       "do": "grey",
+       "from": 100,
+       "to": 100,
+       "d": 0.01,
+       "t": 0.0
+      },
+      {
+       "layer": "Curves/Right",
+       "do": "grey",
+       "from": 100,
+       "to": 0,
+       "t": 1.933
+      },
+      {
+       "layer": "Curves/Left",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Left",
+       "do": "grey",
+       "from": 0,
+       "to": 100,
+       "t": 1.933
+      },
+      {
        "layer": "Panel/LeftShift",
        "do": "xfade",
        "t": 0.0
@@ -4566,14 +4619,6 @@
       },
       {
        "layer": "Curves/Normal",
-       "do": "hold"
-      },
-      {
-       "layer": "Curves/Right",
-       "do": "hold"
-      },
-      {
-       "layer": "Curves/Left",
        "do": "hold"
       },
       {

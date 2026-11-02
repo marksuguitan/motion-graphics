@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 18;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows
+    var VERSION = 19;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows; v19: Mark's markers, Scene 10 sync
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -512,6 +512,31 @@
             function cbox(x0, x1) { var Q1 = toLayer(l, x0, cr[1] - CP, cpp), Q2 = toLayer(l, x1, cr[3] + CP, cpp); return boxShape(Q1[0], Q1[1], Q2[0], Q2[1]); }
             cutIn(l, t);
             cm(addMask(l, "Open"), [[t, cbox(a.c[0] - a.half, a.c[0] + a.half)], [t + (a.d || MO.snap_d), cbox(cr[0] - CP, cr[2] + CP)]], "snap");
+            return l;
+        case "skip":                                         // left out of this beat (it arrives later on its own cue)
+            return null;
+        case "grey":                                         // a curve turns a muted grey (or back) on its cue: Tint to grey, ~0.3 s
+            if (!l) return l;
+            var fx = l.property("ADBE Effect Parade").property("Grey");
+            if (!fx) {
+                fx = l.property("ADBE Effect Parade").addProperty("ADBE Tint"); fx.name = "Grey";
+                fx.property("ADBE Tint-0001").setValue(hex(a.col || "#B9B5AE").concat([1]));   // map black to grey
+                fx.property("ADBE Tint-0002").setValue(hex(a.col || "#B9B5AE").concat([1]));   // map white to grey
+            }
+            cm(fx.property("ADBE Tint-0003"), [[t, a.from], [t + (a.d || 0.3), a.to]], "snap");   // amount to tint, %
+            return l;
+        case "clamp":                                        // the molecule tightens its grip: it draws in, and rings snap in around its bound O2s
+            if (!l) return l;
+            var pv = POS(l).value, k0 = SC(l).valueAtTime(t, false);
+            cm(SC(l), [[t, k0], [t + MO.snap_d * 0.6, [k0[0] * a.s, k0[1] * a.s]]], "snap");
+            for (var qi = 0; qi < a.pts.length; qi++) {
+                var qp = [pv[0] + a.s * (a.pts[qi][0] - pv[0]), pv[1] + a.s * (a.pts[qi][1] - pv[1])];
+                var cr2 = shapeLayer(pre, "Grip " + (qi + 1), "ellipse", [a.r * 2, a.r * 2], qp, [1, 1, 1], hex(a.col || "#F0645A"), 4);
+                cr2.fill().property("ADBE Vector Fill Opacity").setValue(0);
+                var tq = t + qi * MO.card_stagger * 2;
+                cutIn(cr2.layer, tq);
+                cm(SC(cr2.layer), [[tq, [220, 220]], [tq + MO.snap_d * 0.6, [100, 100]]], "snap");
+            }
             return l;
         case "undraw":                                       // a held layer draws itself out (mask retract, accelerating) and is gone
             if (!l) return l;
