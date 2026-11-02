@@ -6,19 +6,25 @@
 <g id="Hb_x2F_Tetramer"><rect x="386.0" y="380.0" width="240.0" height="200.0" rx="90.0" fill="#F1DCD6"/>
 <rect x="442.0" y="426.0" width="68.0" height="68.0" rx="14.0" fill="#FFFFFF" stroke="#6A6A6A" stroke-width="3.0"/>
 <circle cx="476.0" cy="460.0" r="9.0" fill="#6A6A6A"/>
-<text x="546.0" y="490.0" text-anchor="middle" style="font-family:Inter;font-size:30.0px;font-weight:600" fill="#222222">α1</text>
-<rect x="646.0" y="380.0" width="240.0" height="200.0" rx="90.0" fill="#DCE5F0"/>
+<text x="558.0" y="490.0" text-anchor="middle" style="font-family:Inter;font-size:30.0px;font-weight:600" fill="#222222">α1</text>
+<rect x="646.0" y="380.0" width="240.0" height="200.0" rx="90.0" fill="#F1DCD6"/>
 <rect x="762.0" y="426.0" width="68.0" height="68.0" rx="14.0" fill="#FFFFFF" stroke="#6A6A6A" stroke-width="3.0"/>
 <circle cx="796.0" cy="460.0" r="9.0" fill="#6A6A6A"/>
-<text x="726.0" y="490.0" text-anchor="middle" style="font-family:Inter;font-size:30.0px;font-weight:600" fill="#222222">β1</text>
-<rect x="386.0" y="600.0" width="240.0" height="200.0" rx="90.0" fill="#DCE5F0"/>
+<text x="714.0" y="490.0" text-anchor="middle" style="font-family:Inter;font-size:30.0px;font-weight:600" fill="#222222">β1</text>
+<rect x="386.0" y="600.0" width="240.0" height="200.0" rx="90.0" fill="#F1DCD6"/>
 <rect x="442.0" y="686.0" width="68.0" height="68.0" rx="14.0" fill="#FFFFFF" stroke="#6A6A6A" stroke-width="3.0"/>
 <circle cx="476.0" cy="720.0" r="9.0" fill="#6A6A6A"/>
-<text x="546.0" y="710.0" text-anchor="middle" style="font-family:Inter;font-size:30.0px;font-weight:600" fill="#222222">β2</text>
+<text x="558.0" y="710.0" text-anchor="middle" style="font-family:Inter;font-size:30.0px;font-weight:600" fill="#222222">β2</text>
 <rect x="646.0" y="600.0" width="240.0" height="200.0" rx="90.0" fill="#F1DCD6"/>
 <rect x="762.0" y="686.0" width="68.0" height="68.0" rx="14.0" fill="#FFFFFF" stroke="#6A6A6A" stroke-width="3.0"/>
 <circle cx="796.0" cy="720.0" r="9.0" fill="#6A6A6A"/>
-<text x="726.0" y="710.0" text-anchor="middle" style="font-family:Inter;font-size:30.0px;font-weight:600" fill="#222222">α2</text></g>
+<text x="714.0" y="710.0" text-anchor="middle" style="font-family:Inter;font-size:30.0px;font-weight:600" fill="#222222">α2</text></g>
+<g id="Heme_x2F_Circle α1"><circle cx="476.0" cy="460.0" r="50" fill="none" stroke="#E53935" stroke-width="6" stroke-linecap="round"/></g>
+<g id="Heme_x2F_Circle β1"><circle cx="796.0" cy="460.0" r="50" fill="none" stroke="#E53935" stroke-width="6" stroke-linecap="round"/></g>
+<g id="Heme_x2F_Circle β2"><circle cx="476.0" cy="720.0" r="50" fill="none" stroke="#E53935" stroke-width="6" stroke-linecap="round"/></g>
+<g id="Heme_x2F_Circle α2"><circle cx="796.0" cy="720.0" r="50" fill="none" stroke="#E53935" stroke-width="6" stroke-linecap="round"/></g>
+<g id="O2_x2F_First"><g><circle cx="1051.0" cy="590.0" r="10" fill="#C94A44"/><circle cx="1069.0" cy="590.0" r="10" fill="#C94A44"/></g>
+<text x="1060.0" y="556.0" text-anchor="middle" style="font-family:Manrope;font-size:30px;font-weight:700" fill="#C94A44">O<tspan font-size="20" baseline-shift="sub">2</tspan></text></g>
 <g id="Panel_x2F_Card"><rect x="1240" y="298" width="600" height="338" rx="24" fill="#222222" opacity="0.08" filter="url(#soft)"/><rect x="1240" y="290" width="600" height="338" rx="24" fill="#FFFFFF"/>
 <text x="1288.0" y="352.0" text-anchor="start" style="font-family:Manrope;font-size:23px;font-weight:700;letter-spacing:3px" fill="#6A6A6A">STRUCTURE</text>
 <text x="1288.0" y="414.0" text-anchor="start" style="font-family:Manrope;font-size:46px;font-weight:600" fill="#222222">4 subunits</text>

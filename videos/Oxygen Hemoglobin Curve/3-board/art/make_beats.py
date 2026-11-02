@@ -6,7 +6,8 @@ N = 2.7
 def S(p, p50): return 0.0 if p <= 0 else 100 * p**N / (p**N + p50**N)
 def L(s): return s.replace("/", "_x2F_")
 C = dict(white="#FFFFFF", soft="#F7F7F5", div="#E6E4E0", ink="#222222", ink2="#6A6A6A", mute="#B9B5AE",
-         coral="#F0645A", coralsoft="#FDE3E0", teal="#2E9C8F", tealsoft="#DDF0ED", red="#C94A44", deoxy="#8A3C6B")
+         coral="#F0645A", coralsoft="#FDE3E0", teal="#2E9C8F", tealsoft="#DDF0ED", red="#C94A44", deoxy="#8A3C6B",
+         alert="#E53935")  # alert: bright red highlight (heme circles, Mark Nov 2, 2026)
 H = "font-family:Manrope"; B = "font-family:Inter"
 def SUB(s, size=None):
     k=int((size or 30)*0.68)
@@ -183,12 +184,15 @@ f = F("2B", "y-axis"); f.add(stage(), *axes_parts(), *axes_card())
 f.save()
 
 # ---------- Scene 3: tetramer ----------
-def tetramer(cx, cy, bound=(), rings=(), co=None, scale=1.0, name="Hb/Tetramer", labels=True):
-    g = []
-    sub = [("α1", -1, -1, "#F1DCD6"), ("β1", 1, -1, "#DCE5F0"), ("β2", -1, 1, "#DCE5F0"), ("α2", 1, 1, "#F1DCD6")]
-    for i, (lab, sx, sy, fill) in enumerate(sub):
+def tetramer(cx, cy, bound=(), rings=(), co=None, scale=1.0, name="Hb/Tetramer", labels=True, split=False):
+    # Mark (Nov 2, 2026): all four subunits red (was alpha pink, beta blue). split=True gives one top-level layer per subunit
+    # ("Hb/α1" ...) so the T to R shape change can move them separately.
+    subs = []
+    sub = [("α1", -1, -1), ("β1", 1, -1), ("β2", -1, 1), ("α2", 1, 1)]
+    for i, (lab, sx, sy) in enumerate(sub):
+        g = []
         x, y = cx + sx*130*scale, cy + sy*110*scale
-        g.append(f'<rect x="{x-120*scale:.1f}" y="{y-100*scale:.1f}" width="{240*scale:.1f}" height="{200*scale:.1f}" rx="{90*scale:.1f}" fill="{fill}"/>')
+        g.append(f'<rect x="{x-120*scale:.1f}" y="{y-100*scale:.1f}" width="{240*scale:.1f}" height="{200*scale:.1f}" rx="{90*scale:.1f}" fill="{HB_FILL}"/>')
         hx, hy = x + sx*30*scale, y + sy*20*scale
         g.append(f'<rect x="{hx-34*scale:.1f}" y="{hy-34*scale:.1f}" width="{68*scale:.1f}" height="{68*scale:.1f}" rx="{14*scale:.1f}" fill="#FFFFFF" stroke="{C["ink2"]}" stroke-width="{3*scale:.1f}"/>')
         g.append(f'<circle cx="{hx:.1f}" cy="{hy:.1f}" r="{9*scale:.1f}" fill="{C["ink2"]}"/>')
@@ -196,17 +200,33 @@ def tetramer(cx, cy, bound=(), rings=(), co=None, scale=1.0, name="Hb/Tetramer",
         if i in bound: g.append(o2dot(hx + sx*62*scale, hy - 0*scale))
         if co is not None and i == co:
             g.append(f'<circle cx="{hx + sx*62*scale:.1f}" cy="{hy:.1f}" r="{34*scale:.1f}" fill="{C["mute"]}"/>' + text(hx + sx*62*scale, hy+10*scale, "CO", 30*scale, 700, "#FFFFFF", anchor="middle", sub=False))
-        if labels: g.append(text(x - sx*40*scale, y + 10*scale, lab, 30*scale, 600, C["ink"], anchor="middle", sub=False))
-    return group(name, *g)
+        if labels: g.append(text(x - sx*52*scale, y + 10*scale, lab, 30*scale, 600, C["ink"], anchor="middle", sub=False))
+        subs.append((lab, g))
+    if split: return "\n".join(group(f"Hb/{lab}", *g) for lab, g in subs)
+    return group(name, *[e for _, g in subs for e in g])
+HB_FILL = "#F1DCD6"
+def heme_xy(cx, cy, i, scale=1.0):
+    sx, sy = [(-1, -1), (1, -1), (-1, 1), (1, 1)][i]
+    return cx + sx*160*scale, cy + sy*130*scale
+def o2_mol(name, x, y, label=True):
+    # a free O2 with its label above; AE moves it onto its heme (bound spot = heme x -/+ 62)
+    return group(name, o2dot(x, y), *( [text(x, y-34, "O2", 30, 700, C["red"], H, anchor="middle")] if label else []))
 
 f = F("3A", "four-subunits"); f.add(group("Background/Stage", card(96, 150, 1080, 840)),
       group("Label/Header", text(636, 250, "Adult hemoglobin (HbA)", 48, 600, C["ink"], H, anchor="middle", sub=False)),
       tetramer(636, 590),
+      # Mark (Nov 2, 2026): on "heme" a bright red circle draws around each heme and draws itself out
+      *[group(f"Heme/Circle {lab}", f'<circle cx="{heme_xy(636, 590, i)[0]:.1f}" cy="{heme_xy(636, 590, i)[1]:.1f}" r="50" fill="none" stroke="{C["alert"]}" stroke-width="6" stroke-linecap="round"/>')
+        for i, lab in enumerate(["α1", "β1", "β2", "α2"])],
+      # Mark (Nov 2, 2026): an O2 appears at the right on "bind" and travels to α1's heme (bound spot 414,460)
+      o2_mol("O2/First", 1060, 590),
       side_card("STRUCTURE", "4 subunits", ["Each holds one heme", "Each heme binds one O2"]))
 f.save()
 f = F("3B", "cooperative"); f.add(group("Background/Stage", card(96, 150, 1080, 840)),
       group("Label/Header", text(636, 250, "Adult hemoglobin (HbA)", 48, 600, C["ink"], H, anchor="middle", sub=False)),
-      tetramer(636, 590, bound=(0,), rings=(1, 2, 3)),
+      tetramer(636, 590, bound=(0,), rings=(1, 2, 3), split=True),
+      # Mark (Nov 2, 2026): after the shape change the next O2s bind more easily: they come in fast to β1 (858,460), β2 (414,720), α2 (858,720)
+      o2_mol("O2/Next β1", 1060, 470), o2_mol("O2/Next β2", 1060, 590), o2_mol("O2/Next α2", 1060, 710),
       side_card("COOPERATIVE BINDING", "T state → R state", ["First O2 binds, shape changes"], chips=[lambda x, y: chip(x, y, 520, "Remaining sites: higher O2 affinity", C["coralsoft"], None, C["ink"], 26, 600)]))
 f.save()
 f = F("3C", "straight-line"); f.add(stage(), axes(),
