@@ -9,7 +9,7 @@
 **1B** · Is this heart answering a call? Or is it stuck in a loop?
 **1C** · (no narration)
 
-On-screen text: `170` · `Lead II · 25 mm/s` · `Answering?` · `Looping?` · `Sinus Tach vs SVT`
+On-screen text: `Lead II · 25 mm/s` · `170 /min` · `Answering a call,` · `or stuck in a loop?` · title `Sinus tach vs SVT` · `Answering, or looping?`
 
 ## Scene 2: The normal route
 
@@ -20,7 +20,7 @@ On-screen text: `170` · `Lead II · 25 mm/s` · `Answering?` · `Looping?` · `
 **2E** · That fast lane is why the QRS is narrow. [S1]
 **2F** · A narrow-complex tachycardia tells you the ventricles are still using it, so the problem starts at or above the AV node. Both rhythms in this video start up here. [S1]
 
-On-screen text: `SA node` · `Atria` · `AV node` · `~0.1 s hold` · `His-Purkinje` · `Narrow QRS` · `At or above the AV node`
+On-screen text: `SA node` · `AV node` · `holds ≈ 0.1 s` · `His-Purkinje` · `Lead II` · `QRS < 120 ms` · `Fast lane → narrow QRS` · `Both rhythms start at or above the AV node` · `Narrow QRS` · `→ ventricles still use the fast lane` · `→ origin at or above the AV node`
 
 ## Scene 3: Sinus tach, the heart answering
 
@@ -29,7 +29,7 @@ On-screen text: `SA node` · `Atria` · `AV node` · `~0.1 s hold` · `His-Purki
 **3C** · Sometimes it's serious, like low oxygen, blood loss, dehydration, or sepsis. A fast resting heart rate can be one of the earliest signs that something is wrong. [S2]
 **3D** · On the ECG, it looks like a normal beat, only faster. An upright P wave in leads one, two, and aVL, in front of every QRS. [S2]
 
-On-screen text: `Sinus tachycardia` · `> 100 /min` · `Exercise` · `Stress` · `Pain` · `Anxiety` · `Low oxygen` · `Blood loss` · `Dehydration` · `Sepsis` · `Upright P in I, II, aVL` · `P before every QRS`
+On-screen text: `Sinus tachycardia` · `The heart answering` · `SA node firing > 100 /min` · `same route, just faster` · `because the body is asking for more output` · `Harmless`: `Exercise` `Stress` `Pain` `Anxiety` · `Serious`: `Low oxygen` `Blood loss` `Dehydration` `Sepsis` · `A fast resting heart rate can be one of the earliest signs that something is wrong.` · `A normal beat, only faster` · `130 /min` · `P` (each P wave) · `Upright P in I, II and aVL` · `One P before every QRS`
 
 ## Scene 4: SVT, the heart in a loop
 
@@ -39,7 +39,7 @@ On-screen text: `Sinus tachycardia` · `> 100 /min` · `Exercise` · `Stress` ·
 **4D** · Every lap fires the ventricles. [S1]
 **4E** · And because the loop isn't following the body's needs, it starts suddenly, runs fast and regular, usually between one fifty and two twenty, and stops just as abruptly. [S1]
 
-On-screen text: `SVT` · `Re-entry` · `AVNRT` · `circuit inside the AV node` · `AVRT` · `extra (accessory) pathway` · `150–220 /min`
+On-screen text: `SVT` · `The heart in a loop` · `Re-entry` · `A signal caught in a circuit, going around and around.` · `AVNRT` · `circuit inside the AV node` · `the most common type` · `Two kinds of loop` · `AVRT` · `down the AV node, back up an extra pathway` · `Every lap fires the ventricles` · `Atria` `AV node` `His bundle` `Ventricles` · `180 /min` · `one lap → one QRS` · `A switch, not a dial` · `starts suddenly` · `Starts suddenly` · `150 – 220 /min, regular` · `Stops abruptly`
 
 ## Scene 5: What the mechanism predicts
 
@@ -47,7 +47,7 @@ On-screen text: `SVT` · `Re-entry` · `AVNRT` · `circuit inside the AV node` �
 **5B** · SVT often starts out of nowhere, sometimes after caffeine, stimulants, or stress, and it switches on and off. [S1]
 **5C** · And in AVNRT, you often can't find a P wave at all. It's hidden inside the QRS. [S1, S3]
 
-On-screen text: `Trigger` · `Start and stop` · `P waves` · `A reason you can find` · `Out of nowhere` · `Gradual` · `Abrupt on, abrupt off` · `Before every QRS` · `Hidden in the QRS`
+On-screen text: `Side by side` · `Sinus tach · answering` · `SVT · looping` · `Trigger`: `A reason you can find` / `Often none` `sometimes caffeine, stimulants, stress` · `Start and stop`: `Follows the reason` / `Switches on and off` · `P waves`: `Upright P before every QRS` / `Hidden inside the QRS`
 
 ## Scene 6: The AV node is the key
 
@@ -55,13 +55,13 @@ On-screen text: `Trigger` · `Start and stop` · `P waves` · `A reason you can 
 **6B** · For a stable patient, start with a vagal maneuver, like Valsalva, lying flat. Then adenosine, by rapid IV push. An unstable patient gets synchronized cardioversion. [S1]
 **6C** · Sinus tach has no loop to break. Slowing the rate doesn't fix the reason it's fast. Treat the cause. [S2]
 
-On-screen text: `Vagal maneuver (Valsalva, supine)` · `Adenosine, rapid IV push` · `Unstable: synchronized cardioversion` · `Treat the cause`
+On-screen text: `Breaking the loop` · `The AV node is the key` · `Atria` `AV node` `His bundle` `Ventricles` · `BLOCKED` · `Vagal maneuvers` · `Adenosine` · `→ slow conduction through the AV node` · `Block the node for a moment and the loop breaks.` · `adenosine` (marker on the strip) · `Stable`: `1 · Vagal maneuver  Valsalva, lying flat` `2 · Adenosine  rapid IV push` · `Unstable`: `Synchronized cardioversion` · `Sinus tachycardia` · `No loop to break` · `Treat the cause` · `Slowing the rate doesn't fix the reason it's fast.`
 
 ## Scene 7: Close
 
 **7A** · So when you see a fast, narrow, regular rhythm, ask one question. Is the heart answering, or is it looping?
 
-On-screen text: `Answering` · `Looping`
+On-screen text: `Answering?` · `Lead II · 25 mm/s` · `170 /min` · `Looping?`
 
 ## Sources
 
