@@ -16,24 +16,27 @@ Copied on Nov 2, 2026 from the Motion Style Guide (project knowledge, "Motion" s
 
 **From the production guide, Part 3:** one focal move at a time; every move lands on its measured sync point (`3-board/timings/sync_points.csv`); holds per the scene tables.
 
-## Playful override (Nov 2, 2026)
+## Comma Clinical (Nov 2, 2026)
 
-Mark asked for this video to be more playful. Motion only: art, VO and sync points stay locked, every move still starts on its measured sync point, and one focal move happens at a time. The numbers live in `MOTION` at the top of `plan.py`, so Mark can tune them there: change a value, run `plan.py`, then `build_ae.jsx`, and the next version picks it up. No bounce values are written into individual moves.
+Mark chose Comma Clinical for this video (production doc, Style row). It replaces the v6 "playful" override; the source is the Motion Style Guide, section "Comma Clinical: Warm Clinical with Comma motion", and its After Effects settings table. If this list and the guide disagree, the guide wins. The curves (snap, cross, accel, anti) come from `library/scripts/adobe/comma_easing.jsx`; the durations and amounts are the `MOTION` config at the top of `plan.py`. Change a value, run `plan.py`, then `build_ae.jsx`.
 
 | Setting | Value | Used for |
 | --- | --- | --- |
-| Spring overshoot | 10 % | Entrances and moves: one visible overshoot, a small rebound (30 % of the overshoot), then rest |
-| Spring settle | 0.6 s | From the start of the move to rest |
-| Spring shape | peak at 55 %, rebound at 80 % of the settle, rebound 30 % of the overshoot | Sets the apparent frequency and damping of every spring |
-| Stagger | 0.05 s, 0.3 s each | Siblings clearing together (the end of 1B) |
-| Pop | 0 → 115 % → 100 % | O2 dots, markers, tetramers |
-| Chip pop | 108 % | Chips with text (SO2 readouts): held back so the text stays steady |
-| Text overshoot | 4 % max | Labels, titles, notes and footnotes fade and rise; never bounced |
-| Card slide | 80 px from the right | Side cards entering (not cards that crossfade their text) |
-| Chip drop | 24 px from above (60 px crossed the card heading, so it was held back) | Factor chips (8B, 9B), one per cue, landing with a 4 % squash from the chip's base (`chip_squash`) |
-| Stretch / squash | 10 % / 8 % | Red cells travelling in 1B: stretch peaks at 40 % of the move, squash on arrival, settle in 0.25 s |
-| Idle bob | ±4 px, 2 s period | A red cell at rest (1A, 1B); it fades in and out over 0.4 s and is off during any move |
-| Emphasis | one ring ping, 0.4 s, to 180 % | The 4A and 4B points, the P50 dot (5A, 5B), the 6C "large" point; the art itself isn't scaled. The 8C "Bohr" chip pulses to 112 % (`pulse_scale`) |
-| Exits | 0.25 s, ease in, to 96 % | Layers leaving at a cut |
+| Snap and settle | 0.6 s (first key 16 % at 6x average speed, last key 70 % at speed 0) | The default for every move, mask reveal and draw-on |
+| Cross | 0.75 s | Moves the eye tracks across the frame: the 1B cell carry and travel, the 1C merge, the 2A stage and title-to-kicker carries |
+| Accelerate | 0.25 s | Forms collapsing into a cut (the end of 1B) |
+| Landing overshoot | 8 %, one rebound, settled in 0.2 s | Shapes growing from a point: the RBCs, tetramers, O2 dots, the P50 marker |
+| Squash | 75/125 on impact, recovering in 0.2 s | RBCs only (stretch 10 % along a move) |
+| Anticipation | 30 px counter-move over 0.2 s | The 1B cell carry and the 2A title-to-kicker carry |
+| Stagger | 2 frames, under 0.4 s in total | Siblings clearing together (the end of 1B) |
+| Hold | at least 0.4 s after a landing | Set by the sync points; not changed by the build |
+| Idle bob | ±2 px, 2.5 s period | A resting RBC (ambient life, kept subtle) |
+| Emphasis | ring snap to 160 % over 0.3 s; chip pulse 108 % over 0.3 s | The 4A and 4B points, the P50 dot (5A, 5B), the 6C "large" point; the 8C "Bohr" chip |
 
-Linear moves remain only for constant-rate processes.
+Rules applied in the build:
+- Text cuts on whole on its sync word: no fade and no rise. Secondary labels cut on just after the shape they name lands.
+- No crossfades between ideas: a card whose text changes cuts on the cue; anything leaving cuts.
+- Nothing slides in from off-screen: side cards unfold from their left edge, factor chips (8B, 9B) grow from their slot, shifted curves (8A, 9A, 10A) start on the normal curve and snap and settle into place with no spring.
+- No overshoot or squash on the graph, axes, curves or anatomy.
+- Landing sounds stay off.
+- The 1B to 1C transition keeps its morph (capsule to card, cell to dot to title), retimed to these curves; the dot writes line 1 on "oxyhemoglobin" and line 2 cuts on 0.12 s later.
