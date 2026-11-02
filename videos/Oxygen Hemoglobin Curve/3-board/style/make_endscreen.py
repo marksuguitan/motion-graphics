@@ -23,14 +23,15 @@ def logo(x, y, w, col=C["ink"]):
     k = w / 69.66
     pts = lambda p: " ".join(f"{x + p[i]*k:.1f},{y + p[i+1]*k:.1f}" for i in range(0, len(p), 2))
     return "".join(f'<polygon points="{pts(p)}" fill="{col}"/>' for p in POLYS)
+FINAL = False  # True for the build art: no placeholder words (YouTube's elements cover the plates)
 def plate(name, x, y, w, label, sub):
     h = w * 9 / 16
     return group(name, f'<rect x="{x}" y="{y}" width="{w}" height="{h:.0f}" rx="16" fill="{C["soft"]}" stroke="{C["mute"]}" stroke-width="3" stroke-dasharray="14 10"/>',
-                 text(x + w/2, y + h/2 - 6, label, 30, 600, C["ink2"], H, anchor="middle"),
-                 text(x + w/2, y + h/2 + 34, sub, 22, 400, C["ink2"], anchor="middle"))
+                 *([] if FINAL else [text(x + w/2, y + h/2 - 6, label, 30, 600, C["ink2"], H, anchor="middle"),
+                                     text(x + w/2, y + h/2 + 34, sub, 22, 400, C["ink2"], anchor="middle")]))
 def sub_circle(cx, cy, r=100):
     return group("Slot/Subscribe", f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{C["soft"]}" stroke="{C["mute"]}" stroke-width="3" stroke-dasharray="14 10"/>',
-                 text(cx, cy + 10, "Subscribe", 26, 600, C["ink2"], H, anchor="middle"))
+                 *([] if FINAL else [text(cx, cy + 10, "Subscribe", 26, 600, C["ink2"], H, anchor="middle")]))
 def save(name, *parts):
     svg = ('<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">'
            '<defs><filter id="soft" x="-20%" y="-20%" width="140%" height="160%"><feGaussianBlur stdDeviation="12"/></filter></defs>\n'
@@ -51,7 +52,8 @@ save("endscreen_A.svg",
      sub_circle(1540, 690))
 
 # B: two plates side by side (YouTube "next video" + "best for viewer"), logo, sign-off and subscribe across the top
-save("endscreen_B.svg",
+def layout_B(name):
+  save(name,
      group("Logo/Mark", logo(120, 112, 120)),
      group("Panel/Thanks", text(280, 150, "Thanks for watching", 52, 600, C["ink"], H),
            text(282, 200, "Right means release.", 28, 400, C["ink2"])),
@@ -59,4 +61,9 @@ save("endscreen_B.svg",
      group("Label/WatchNext", text(120, 356, "WATCH NEXT", 23, 700, C["ink2"], H, ls=3), text(1000, 356, "RECOMMENDED", 23, 700, C["ink2"], H, ls=3)),
      plate("Slot/Video", 120, 390, 800, "Next video", "YouTube end-screen element"),
      plate("Slot/Best", 1000, 390, 800, "Best for viewer", "YouTube end-screen element"))
+layout_B("endscreen_B.svg")
+# Mark chose B (Nov 2, 2026). Build art for After Effects: same layout, no placeholder words, in 3-board/art/
+FINAL = True
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "art")
+layout_B("END_endscreen.svg")
 print("done")
