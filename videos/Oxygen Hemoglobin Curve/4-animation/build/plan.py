@@ -87,7 +87,7 @@ MOTION = {
 # Silence added before a beat, s (Mark 2026-11-02: more time to read the y note before Scene 3). Everything from that beat on
 # (picture, audio, markers) moves later by the same amount; the VO files and their word timings are unchanged.
 GAPS = {"3A": 1.0,                      # Mark 2026-11-02: was 1.5 s, "a little too long, make it shorter, like 1s"
-        "4A": 2.0,                      # Mark 2026-11-02: time to read the 3D card before Scene 4 (1.0 s in v11-v13)
+        "4A": 1.0,                      # Mark 2026-11-02: time to read the 3D card before Scene 4 (2.0 s in v14-v15; "make scene 3 like 1 second shorter")
         "5A": 1.0,                      # Mark 2026-11-02 (v14): the 4C card was up under 2 s
         "8D": 1.0}                      # Mark 2026-11-02 (v14): the 8C card was up about 2 s
 TETRAMER_C = [636, 590]
