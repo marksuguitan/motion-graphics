@@ -291,7 +291,9 @@ f.save()
 f = F("7A", "shifts"); f.add(stage(), axes(),
       group("Curves/Ghosts", f'<path d="{curve_path(20)}" fill="none" stroke="{C["mute"]}" stroke-width="4" stroke-dasharray="10 10"/>', f'<path d="{curve_path(36)}" fill="none" stroke="{C["mute"]}" stroke-width="4" stroke-dasharray="10 10"/>'),
       normal_curve(), group("Marker/P50", point(26.8, 50, C["coral"]),
-      f'<path d="M{X(26.8)-26:.1f},{Y(50)-40} h-60 m14,-12 l-14,12 l14,12 M{X(26.8)+26:.1f},{Y(50)-40} h60 m-14,-12 l14,12 l-14,12" fill="none" stroke="{C["coral"]}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>'),
+      # Mark (Nov 2, 2026): the arrows sat 40 px above the dot. P50 is read at 50% saturation, so they now run along the
+      # 50% line from the dot to the left-shift (P50 20) and right-shift (P50 36) ghost curves.
+      f'<path d="M{X(26.8)-18:.1f},{Y(50):.1f} H{X(20)+6:.1f} m12,-10 l-12,10 l12,10 M{X(26.8)+18:.1f},{Y(50):.1f} H{X(36)-6:.1f} m-12,-10 l12,10 l-12,10" fill="none" stroke="{C["coral"]}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>'),
       side_card("SHIFTS", "Watch the P50", ["It shows which way", "affinity has changed"]))
 f.save()
 
