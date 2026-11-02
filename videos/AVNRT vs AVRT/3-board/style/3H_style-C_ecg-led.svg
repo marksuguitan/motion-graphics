@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<defs>
+  <filter id="soft" x="-20%" y="-20%" width="140%" height="160%">
+    <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#222222" flood-opacity="0.10"/>
+  </filter>
+  <marker id="arrAmber" viewBox="0 0 12 12" refX="3" refY="6" markerUnits="userSpaceOnUse" markerWidth="34" markerHeight="34" orient="auto-start-reverse">
+    <path d="M1,1 L11,6 L1,11 Z" fill="#C9861F"/>
+  </marker>
+  
+</defs>
+<rect id="Background" width="1920" height="1080" fill="#FFFFFF"/>
+<g id="Header"><text x="160" y="150" font-family="Manrope, Inter, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#6A6A6A" text-anchor="start" letter-spacing="2.5">AVNRT ON THE ECG</text><text x="160" y="214" font-family="Manrope, Inter, Helvetica, Arial, sans-serif" font-size="52" font-weight="600" fill="#222222" text-anchor="start">The P wave hides at the end of the QRS</text></g>
+<g id="ECG">
+<path id="ECG/Grid" d="M160,360 V840 M184,360 V840 M208,360 V840 M232,360 V840 M256,360 V840 M280,360 V840 M304,360 V840 M328,360 V840 M352,360 V840 M376,360 V840 M400,360 V840 M424,360 V840 M448,360 V840 M472,360 V840 M496,360 V840 M520,360 V840 M544,360 V840 M568,360 V840 M592,360 V840 M616,360 V840 M640,360 V840 M664,360 V840 M688,360 V840 M712,360 V840 M736,360 V840 M760,360 V840 M784,360 V840 M808,360 V840 M832,360 V840 M856,360 V840 M880,360 V840 M904,360 V840 M928,360 V840 M952,360 V840 M976,360 V840 M1000,360 V840 M1024,360 V840 M1048,360 V840 M1072,360 V840 M1096,360 V840 M1120,360 V840 M1144,360 V840 M1168,360 V840 M1192,360 V840 M1216,360 V840 M1240,360 V840 M1264,360 V840 M1288,360 V840 M1312,360 V840 M1336,360 V840 M160,360 H1340 M160,384 H1340 M160,408 H1340 M160,432 H1340 M160,456 H1340 M160,480 H1340 M160,504 H1340 M160,528 H1340 M160,552 H1340 M160,576 H1340 M160,600 H1340 M160,624 H1340 M160,648 H1340 M160,672 H1340 M160,696 H1340 M160,720 H1340 M160,744 H1340 M160,768 H1340 M160,792 H1340 M160,816 H1340 M160,840 H1340" stroke="#E6E4E0" stroke-width="1" opacity="0.6"/>
+<path id="ECG/Trace" d="M160.0,676.8 L230.8,676.8 L238.7,700.8 L252.4,376.8 L266.2,742.8 L278.0,682.8 L289.8,766.8 L305.5,676.8 L333.1,676.8 Q380.3,511.8 427.5,676.8 L553.3,676.8 M553.3,676.8 L624.1,676.8 L632.0,700.8 L645.8,376.8 L659.5,742.8 L671.3,682.8 L683.1,766.8 L698.9,676.8 L726.4,676.8 Q773.6,511.8 820.8,676.8 L946.7,676.8 M946.7,676.8 L1017.5,676.8 L1025.3,700.8 L1039.1,376.8 L1052.9,742.8 L1064.7,682.8 L1076.5,766.8 L1092.2,676.8 L1119.7,676.8 Q1166.9,511.8 1214.1,676.8 L1340.0,676.8" stroke="#222222" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<text x="160" y="340" font-family="Inter, Helvetica, Arial, sans-serif" font-size="24" font-weight="500" fill="#6A6A6A" text-anchor="start">Lead II</text>
+<g id="Focus/PWave"><circle cx="1076.4666666666667" cy="756.8" r="42" fill="none" stroke="#F0645A" stroke-width="6"/><line x1="1076.4666666666667" y1="800.8" x2="1076.4666666666667" y2="915" stroke="#F0645A" stroke-width="2"/><text x="1076.4666666666667" y="960" font-family="Inter, Helvetica, Arial, sans-serif" font-size="30" font-weight="600" fill="#F0645A" text-anchor="middle">P wave hides here</text></g>
+<rect x="1420" y="300" width="380" height="600" rx="24" fill="#F7F7F5"/>
+<g id="Diagram" transform="translate(0,0)">
+<g id="Diagram/Atria"><rect x="1492.2" y="400.12000000000006" width="235.6" height="52.08" rx="12.4" fill="#F7F7F5" stroke="#E6E4E0" stroke-width="2"/></g>
+<g id="Diagram/Channels"><line x1="1610" y1="452.20000000000005" x2="1610" y2="495.6" stroke="#E6E4E0" stroke-width="17.36" fill="none" stroke-linecap="round"/><circle cx="1610" cy="570" r="74.4" stroke="#E6E4E0" stroke-width="17.36" fill="none" stroke-linecap="round"/><line x1="1610" y1="644.4" x2="1610" y2="706.4" stroke="#E6E4E0" stroke-width="17.36" fill="none" stroke-linecap="round"/><path d="M1610,706.4 L1566.6,741.12 M1610,706.4 L1653.4,741.12" stroke="#E6E4E0" stroke-width="17.36" fill="none" stroke-linecap="round"/></g>
+<g id="Diagram/Loop"><path d="M1606.28,495.6 A74.4,74.4 0 0 0 1606.28,644.4" stroke="#E3A33B" stroke-width="11.16" fill="none" stroke-linecap="round"/><path d="M1613.72,644.4 A74.4,74.4 0 0 0 1613.72,495.6" stroke="#E3A33B" stroke-width="11.16" fill="none" stroke-linecap="round"/>
+<path d="M1525.06,562.56 L1546.1399999999999,562.56 L1535.6,579.92 Z" fill="#C9861F"/>
+<path d="M1673.8600000000001,577.44 L1694.94,577.44 L1684.4,560.08 Z" fill="#C9861F"/>
+</g>
+<g id="Diagram/WaveUp"><line x1="1610" y1="490.64000000000004" x2="1610" y2="462.12000000000006" stroke="#E3A33B" stroke-width="11.16" fill="none" stroke-linecap="round" marker-end="url(#arrAmber)"/><ellipse cx="1610" cy="426.1600000000001" rx="110.36" ry="19.84" fill="#E3A33B" opacity="0.22"/></g>
+<g id="Diagram/WaveDown"><line x1="1610" y1="659.28" x2="1610" y2="706.4" stroke="#E3A33B" stroke-width="11.16" fill="none" stroke-linecap="round"/><path d="M1610,706.4 L1571.56,737.4" stroke="#E3A33B" stroke-width="11.16" fill="none" stroke-linecap="round" marker-end="url(#arrAmber)"/><path d="M1610,706.4 L1648.44,737.4" stroke="#E3A33B" stroke-width="11.16" fill="none" stroke-linecap="round" marker-end="url(#arrAmber)"/></g>
+<g id="Diagram/AVNode"><ellipse cx="1610" cy="646.88" rx="33.48" ry="17.36" fill="#C9861F"/></g>
+</g>
+<g id="Labels/Inset"><text x="1610" y="860" font-family="Inter, Helvetica, Arial, sans-serif" font-size="26" font-weight="500" fill="#222222" text-anchor="middle">Up and down at once</text></g>
+<g id="BeatID"><text x="1888" y="1056" font-family="Inter, Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#6A6A6A" text-anchor="end">3H</text></g>
+</svg>
