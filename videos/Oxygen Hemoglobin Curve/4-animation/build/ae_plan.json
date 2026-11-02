@@ -3,7 +3,7 @@
  "fps": 30,
  "w": 1920,
  "h": 1080,
- "total": 211.9,
+ "total": 226.9,
  "motion": {
   "snap_d": 0.6,
   "cross_d": 0.75,
@@ -370,6 +370,7 @@
      "post": []
     }
    ],
+   "no_audio": false,
    "end": 13.733333333333333,
    "audio_end": 13.733333333333333
   },
@@ -650,6 +651,7 @@
      "post": []
     }
    ],
+   "no_audio": false,
    "end": 29.966666666666665,
    "audio_end": 28.966666666666665
   },
@@ -1526,6 +1528,7 @@
      "post": []
     }
    ],
+   "no_audio": false,
    "end": 53.233333333333334,
    "audio_end": 52.233333333333334
   },
@@ -2088,6 +2091,7 @@
      "post": []
     }
    ],
+   "no_audio": false,
    "end": 76.96666666666667,
    "audio_end": 75.96666666666667
   },
@@ -2368,6 +2372,7 @@
      "post": []
     }
    ],
+   "no_audio": false,
    "end": 91.5,
    "audio_end": 91.5
   },
@@ -2804,6 +2809,7 @@
      "post": []
     }
    ],
+   "no_audio": false,
    "end": 115.66666666666667,
    "audio_end": 115.66666666666667
   },
@@ -2978,6 +2984,7 @@
      "post": []
     }
    ],
+   "no_audio": false,
    "end": 122.56666666666666,
    "audio_end": 122.56666666666666
   },
@@ -3570,6 +3577,7 @@
      "post": []
     }
    ],
+   "no_audio": false,
    "end": 155.26666666666668,
    "audio_end": 154.26666666666668
   },
@@ -4332,6 +4340,7 @@
      "post": []
     }
    ],
+   "no_audio": false,
    "end": 192.06666666666666,
    "audio_end": 192.06666666666666
   },
@@ -4669,8 +4678,182 @@
      "post": []
     }
    ],
+   "no_audio": false,
    "end": 211.9,
    "audio_end": 211.9
+  },
+  {
+   "n": 11,
+   "name": "End \u00b7 YouTube",
+   "start": 211.9,
+   "audio_shift": 4.0,
+   "beats": [
+    {
+     "id": "END",
+     "key": "END_endscreen",
+     "ai": "END",
+     "prev_ai": "10C",
+     "order": [
+      "Background/Fill",
+      "Logo/Mark",
+      "Panel/Thanks",
+      "Slot/Subscribe",
+      "Label/WatchNext",
+      "Slot/Video",
+      "Slot/Best"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Right",
+      "Curves/Left",
+      "Panel/RightShift",
+      "Panel/LeftShift",
+      "Takeaway/Text",
+      "Footnote/Text"
+     ],
+     "start": 211.9,
+     "dur": 15.0,
+     "acts": [
+      {
+       "layer": "Panel/LeftShift",
+       "do": "out",
+       "to": [
+        1540,
+        605
+       ],
+       "t": 0.0
+      },
+      {
+       "layer": "Panel/RightShift",
+       "do": "out",
+       "to": [
+        1540,
+        339
+       ],
+       "t": 0.033
+      },
+      {
+       "layer": "Curves/Left",
+       "do": "out",
+       "retract": "rtl",
+       "grey": true,
+       "t": 0.0
+      },
+      {
+       "layer": "Curves/Right",
+       "do": "out",
+       "retract": "rtl",
+       "t": 0.033
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "out",
+       "retract": "rtl",
+       "t": 0.067
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "out",
+       "retract": "ttb",
+       "t": 0.1
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "out",
+       "retract": "rtl",
+       "t": 0.133
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "out",
+       "to": [
+        636,
+        570
+       ],
+       "t": 0.25
+      },
+      {
+       "layer": "Logo/Mark",
+       "do": "pop",
+       "over": 0.06,
+       "t": 0.45
+      },
+      {
+       "layer": "Panel/Thanks",
+       "do": "textlines",
+       "lines": [
+        [
+         100,
+         172,
+         0.55
+        ],
+        [
+         172,
+         214,
+         0.65
+        ]
+       ]
+      },
+      {
+       "layer": "Slot/Subscribe",
+       "do": "growdraw",
+       "d": 0.5,
+       "t": 0.6
+      },
+      {
+       "layer": "Label/WatchNext",
+       "do": "in",
+       "t": 0.75
+      },
+      {
+       "layer": "Slot/Video",
+       "do": "growdraw",
+       "d": 0.6,
+       "t": 0.8
+      },
+      {
+       "layer": "Slot/Best",
+       "do": "growdraw",
+       "d": 0.6,
+       "t": 0.9
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Takeaway/Text",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Footnote/Text",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ],
+     "post": []
+    }
+   ],
+   "no_audio": true,
+   "end": 226.9,
+   "audio_end": 226.9
   }
  ],
  "markers": [

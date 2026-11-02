@@ -86,6 +86,7 @@ MOTION = {
 }
 # Silence added before a beat, s (Mark 2026-11-02: more time to read the y note before Scene 3). Everything from that beat on
 # (picture, audio, markers) moves later by the same amount; the VO files and their word timings are unchanged.
+END_DUR = 15.0                  # s: the YouTube end screen comp (YouTube's elements start 1.0 s in)
 GAPS = {"3A": 1.0,                      # Mark 2026-11-02: was 1.5 s, "a little too long, make it shorter, like 1s"
         "4A": 1.0,                      # Mark 2026-11-02: time to read the 3D card before Scene 4 (2.0 s in v14-v15; "make scene 3 like 1 second shorter")
         "5A": 1.0,                      # Mark 2026-11-02 (v14): the 4C card was up under 2 s
@@ -329,6 +330,24 @@ PLAN = {
         {"layer": "Takeaway/Text", "do": "pop", "at": "release", "d": 0.6, "from": 0.9},
         {"layer": "Footnote/Text", "do": "in", "at": "release+0.8"},
     ],
+    # YouTube end screen, layout B (endscreen_spec.md). 0-0.45 s: 10C clears (draws out in reverse, cards and stage shrink
+    # into their centres, 2 frames apart); then the mark, the words and the three slots land; everything is in by about 1.4 s
+    "END": [
+        {"layer": "Panel/LeftShift", "do": "out", "at": "start", "to": [1540, 605]},
+        {"layer": "Panel/RightShift", "do": "out", "at": f"start+{1 / FPS:.3f}", "to": [1540, 339]},
+        {"layer": "Curves/Left", "do": "out", "at": "start", "retract": "rtl", "grey": True},   # it ended 10C grey
+        {"layer": "Curves/Right", "do": "out", "at": f"start+{1 / FPS:.3f}", "retract": "rtl"},
+        {"layer": "Curves/Normal", "do": "out", "at": f"start+{2 / FPS:.3f}", "retract": "rtl"},
+        {"layer": "Graph/Grid", "do": "out", "at": f"start+{3 / FPS:.3f}", "retract": "ttb"},
+        {"layer": "Graph/Axes", "do": "out", "at": f"start+{4 / FPS:.3f}", "retract": "rtl"},
+        {"layer": "Background/Stage", "do": "out", "at": "start+0.25", "to": [636, 570]},   # last, once the graph has nearly gone
+        {"layer": "Logo/Mark", "do": "pop", "at": "start+0.45", "over": 0.06},
+        {"layer": "Panel/Thanks", "do": "textlines", "lines": [[100, 172, 0.55], [172, 214, 0.55 + 3 / FPS]]},
+        {"layer": "Slot/Subscribe", "do": "growdraw", "at": "start+0.60", "d": 0.5},
+        {"layer": "Label/WatchNext", "do": "in", "at": "start+0.75"},
+        {"layer": "Slot/Video", "do": "growdraw", "at": "start+0.80", "d": 0.6},
+        {"layer": "Slot/Best", "do": "growdraw", "at": f"start+{0.80 + 3 / FPS:.3f}", "d": 0.6},
+    ],
 }
 
 
@@ -345,6 +364,9 @@ def main():
         shifts[b["beat"]] = shift
         beats.append((b["beat"], snap(b["start_in_full_s"] + shift)))
     total = -(-round((207.88 + shift) * FPS * 1000) // 1000) / FPS          # full.mp3 (207.88 s) + gaps, up to a whole frame
+    # YouTube end screen (layout B, Mark 2026-11-02; endscreen_spec.md): its own comp right after Scene 10, no audio
+    beats.append(("END", total)); shifts["END"] = shift
+    total = round((total + END_DUR) * FPS) / FPS
     words, wends = {}, {}
     for r in csv.DictReader(open(BOARD / "timings" / "word_timings.csv")):
         w = re.sub(r"[^A-Za-z0-9]", "", r["word"])
@@ -361,7 +383,7 @@ def main():
     for i, (bid, start) in enumerate(beats):
         end = beats[i + 1][1] if i + 1 < len(beats) else total
         sh = shifts[bid]
-        bc = {c: t + sh - start for c, t, _ in cues[bid]}
+        bc = {c: t + sh - start for c, t, _ in cues.get(bid, [])}
         bw = {w: t + sh - start for w, t in words.get(bid, {}).items()}
         bwe = {w: t + sh - start for w, t in wends.get(bid, {}).items()}
 
@@ -423,14 +445,15 @@ def main():
                         pb["acts"].append({"layer": ln, "do": "rollout", "t": round(pb["dur"] - MOTION["card_out_d"] + a["t"], 3),
                                            "clip": card_geom(prev_beat)["rect"]})
                     acts.append(cardswap(prev_beat, bid, 0, a["t"], "in"))
-        scene = int(re.match(r"\d+", bid).group())
+        scene = 11 if bid == "END" else int(re.match(r"\d+", bid).group())
         sc = next((s for s in out["scenes"] if s["n"] == scene), None)
         if not sc:
-            sc = {"n": scene, "name": f"Scene {scene} · {SCENES[scene]}", "start": start, "audio_shift": sh, "beats": []}
+            sc = {"n": scene, "name": "End · YouTube" if bid == "END" else f"Scene {scene} · {SCENES[scene]}", "start": start,
+                  "audio_shift": sh, "beats": [], "no_audio": bid == "END"}
             out["scenes"].append(sc)
         sc["beats"].append({"id": bid, "key": layers[bid]["file"][:-4], "ai": bid, "prev_ai": prev_beat,
                             "order": cur, "prev_order": prv, "start": start, "dur": round((end - start) * FPS) / FPS, "acts": acts, "post": post})
-        for c, t, flag in cues[bid]:
+        for c, t, flag in cues.get(bid, []):
             out["markers"].append({"t": round(t + sh, 3), "beat": bid, "cue": c, "flag": flag})
         prev_beat = bid
     for k, sc in enumerate(out["scenes"]):

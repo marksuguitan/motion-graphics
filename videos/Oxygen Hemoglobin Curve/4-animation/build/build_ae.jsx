@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 21;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows; v19: Mark's markers, Scene 10 sync; v20: 9D locks; v21: charcoal locks
+    var VERSION = 22;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows; v19: Mark's markers, Scene 10 sync; v20: 9D locks; v21: charcoal locks; v22: end screen B
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -260,6 +260,11 @@
             for (var q = 0; q < g.length; q++) {
                 try {
                     var go = copyLayer(bt.prev_ai, g[q].layer, pre, g[q].layer + " (out)");
+                    if (go && g[q].grey) {                    // it left the previous beat greyed: keep it grey
+                        var gfx = go.property("ADBE Effect Parade").addProperty("ADBE Tint"); gfx.name = "Grey";
+                        gfx.property("ADBE Tint-0001").setValue(hex("#B9B5AE").concat([1])); gfx.property("ADBE Tint-0002").setValue(hex("#B9B5AE").concat([1]));
+                        gfx.property("ADBE Tint-0003").setValue(100);
+                    }
                     if (go && g[q].shift) {                   // held where the previous beat left it (e.g. an O2 that travelled and bound)
                         var gp = POS(go).value, gr = rect(go);
                         if (g[q].label_y !== undefined) {    // its label was switched off on landing: keep it off
@@ -332,7 +337,7 @@
             d = a.d || MO.snap_d;
             setPivot(l, centre(rect(l))); cutIn(l, t);
             if (a.plain) { cm(SC(l), [[t, [0, 0]], [t + d, [100, 100]]], "snap"); return l; }   // diagrams grow without overshoot
-            CommaEase.overshoot(SC(l), t, [0, 0], [100, 100], d, MO.land_over, MO.land_back);   // grows from a point, lands with one rebound
+            CommaEase.overshoot(SC(l), t, [0, 0], [100, 100], d, a.over === undefined ? MO.land_over : a.over, MO.land_back);   // grows from a point, lands with one rebound
             return l;
         case "wipe":
             d = 0;
@@ -546,6 +551,33 @@
                 }
             }
             return l;
+        case "growdraw":                                     // grows from its centre while its outline traces on (end-screen slots)
+            l = copyLayer(bt.ai, a.layer, pre); if (!l) return null;
+            d = a.d || MO.snap_d;
+            pre.openInViewer();
+            var gsl = pre.selectedLayers; for (var gs = 0; gs < gsl.length; gs++) gsl[gs].selected = false;
+            l.selected = true;
+            app.executeCommand(app.findMenuCommandId("Create Shapes from Vector Layer"));
+            var gsh = pre.selectedLayers.length ? pre.selectedLayers[0] : null;
+            if (!gsh || !(gsh instanceof ShapeLayer)) { err(bt.id + " " + a.layer + ": no shape layer made"); gsh = l; }
+            else { gsh.selected = false; l.remove(); gsh.name = a.layer; }
+            var gc = centre(rect(gsh)); setPivot(gsh, gc); cutIn(gsh, t);
+            cm(SC(gsh), [[t, [0, 0]], [t + d, [100, 100]]], "snap");
+            if (gsh instanceof ShapeLayer) {
+                var gtr = gsh.property("ADBE Root Vectors Group").addProperty("ADBE Vector Filter - Trim");
+                cm(gtr.property("ADBE Vector Trim End"), [[t, 0], [t + d, 100]], "snap");
+            }
+            return gsh;
+        case "textlines":                                    // one text layer's lines cut on one after another (each line a masked copy)
+            var firstLine = null;
+            for (var tli = 0; tli < a.lines.length; tli++) {
+                var tl2 = copyLayer(bt.ai, a.layer, pre, a.layer + " line " + (tli + 1)); if (!tl2) continue;
+                var tr2 = rect(tl2), tp2 = POS(tl2).value, U3 = toLayer(tl2, tr2[0] - 10, a.lines[tli][0], tp2), V3 = toLayer(tl2, tr2[2] + 10, a.lines[tli][1], tp2);
+                addMask(tl2, "Line").setValue(boxShape(U3[0], U3[1], V3[0], V3[1]));
+                cutIn(tl2, a.lines[tli][2]);
+                if (!firstLine) firstLine = tl2;
+            }
+            return firstLine;
         case "undraw":                                       // a held layer draws itself out (mask retract, accelerating) and is gone
             if (!l) return l;
             var ur = rect(l), up = POS(l).value, UP = 6, ux0 = ur[0] - UP, uy0 = ur[1] - UP, ux1 = ur[2] + UP, uy1 = ur[3] + UP;
@@ -672,7 +704,7 @@
             pl.startTime = bt.start - S.start;
             pl.moveToEnd();
         }
-        if (full) {                                          // audio is shifted with any gap before this scene; a gap stays silent
+        if (full && !S.no_audio) {                           // audio is shifted with any gap before this scene; a gap stays silent
             var al = sc.layers.add(full); al.name = "VO full.mp3"; al.startTime = -(S.start - (S.audio_shift || 0)); al.inPoint = 0;
             al.outPoint = Math.min(sc.duration, (S.audio_end || S.end) - S.start);
         }
