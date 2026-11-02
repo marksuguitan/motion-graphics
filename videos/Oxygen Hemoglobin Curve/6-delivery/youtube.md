@@ -27,14 +27,14 @@ Remember: right means release.
 
 Chapters
 0:00 Two jobs of a red blood cell
-0:14 The axes
-0:30 Why the curve is S-shaped
-0:54 Arterial and venous landmarks
-1:17 P50
-1:32 Plateau and steep slope
-1:56 Right shift and the Bohr effect
-2:36 Left shift, fetal hemoglobin and carbon monoxide
-3:13 Summary: right means release
+0:15 The axes
+0:31 Why the curve is S-shaped
+0:55 Arterial and venous landmarks
+1:18 P50
+1:33 Plateau and steep slope
+1:57 Right shift and the Bohr effect
+2:37 Left shift, fetal hemoglobin and carbon monoxide
+3:14 Summary: right means release
 
 Sources
 1. Patel S, Jose A, Mohiuddin SS. Physiology, Oxygen Transport And Carbon Dioxide Dissociation Curve. StatPearls. https://www.ncbi.nlm.nih.gov/books/NBK539815/
