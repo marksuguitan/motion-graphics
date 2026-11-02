@@ -26,4 +26,4 @@ The video was first built in an earlier project as a Remotion (code-rendered) vi
 
 **Status on import:** Stage 2, Gates 1 and 2 pending.
 
-**Decision, Nov 2, 2026:** Mark chose to rebuild the video in After Effects under the production guide. The Remotion build won't be finished. Mark set the audience to medical students and the look to Warm Clinical.
+**Decision, Nov 2, 2026:** Mark chose to rebuild the video in After Effects under the production guide. The Remotion build won't be finished. Mark set the audience to medical students and the look to Warm Clinical, and passed Gates 1 and 2 on script v3 with the outside medical review waived. Now Stage 3 (style frames next).
