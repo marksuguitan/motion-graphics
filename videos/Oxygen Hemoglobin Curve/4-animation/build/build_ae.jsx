@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 12;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops
+    var VERSION = 13;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -413,6 +413,66 @@
                 ms.setValueAtTime(a.t_go + a.d, boxShape(U2[0], U2[1], V2[0], V2[1]));
                 ms.setInterpolationTypeAtKey(1, KeyframeInterpolationType.HOLD, KeyframeInterpolationType.HOLD);
             }
+            return l;
+        case "cardswap":                                     // side-card content rolls: old rows up and out, new rows up and in, clipped to the card
+            var CS = MO.card_stagger, RISE = MO.card_rise;
+            var OR = a.old.rect, NR = a.new.rect, nOld = a.old.rows.length, nNew = a.new.rows.length;
+            var outD = Math.max(0.1, MO.card_out_d - (nOld - 1) * CS);
+            var tDone = a.t_new + (nNew - 1) * CS + MO.card_in_d;
+            function ctr(R) { return [R[0] + R[2] / 2, R[1] + R[3] / 2]; }
+            // the card itself: a plain white card (and its soft shadow) under the moving rows; its height morphs old -> new
+            var shd = shapeLayer(pre, "Card shadow (swap)", "rect", [OR[2], OR[3]], [ctr(OR)[0], ctr(OR)[1] + 8], hex("#222222"), null, 0, 24);
+            OP(shd.layer).setValue(8);
+            shd.layer.property("ADBE Effect Parade").addProperty("ADBE Gaussian Blur 2").property(1).setValue(24);
+            var bse = shapeLayer(pre, "Card (swap)", "rect", [OR[2], OR[3]], ctr(OR), [1, 1, 1], null, 0, 24);
+            var parts = [shd, bse], tBase0 = a.phase === "in" ? 0 : a.t, tBase1 = a.phase === "out" ? pre.duration : tDone;
+            for (var bi = 0; bi < parts.length; bi++) {
+                var dyb = bi === 0 ? 8 : 0;
+                if (a.phase !== "out" && (OR[3] !== NR[3] || OR[1] !== NR[1])) {
+                    cm(parts[bi].shape().property("ADBE Vector Rect Size"), [[a.t_new, [OR[2], OR[3]]], [a.t_new + MO.card_in_d, [NR[2], NR[3]]]], "snap");
+                    cm(POS(parts[bi].layer), [[a.t_new, [ctr(OR)[0], ctr(OR)[1] + dyb]], [a.t_new + MO.card_in_d, [ctr(NR)[0], ctr(NR)[1] + dyb]]], "snap");
+                }
+                parts[bi].layer.inPoint = Math.max(0, tBase0); parts[bi].layer.outPoint = Math.min(pre.duration, tBase1);
+            }
+            function rowCopy(src, R, band, label) {
+                var rc = copyLayer(src, "Panel/Card", pre, "Panel/Card " + label); if (!rc) return null;
+                var rp = POS(rc).value, A1 = toLayer(rc, R[0] + 2, band[0], rp), B1 = toLayer(rc, R[0] + R[2] - 2, band[1], rp);
+                addMask(rc, "Row").setValue(boxShape(A1[0], A1[1], B1[0], B1[1]));
+                return rc;
+            }
+            function clipRow(rc, R, t0, t1, kind) {
+                clipKeys(rc, [R[0] + 3, R[1] + 3, R[0] + R[2] - 3, R[1] + R[3] - 3], [t0, t1], kind);
+                rc.property("ADBE Mask Parade").property(2).maskMode = MaskMode.INTERSECT;
+            }
+            if (a.phase !== "in") {                          // old rows leave
+                if (a.phase === "out") { if (l) cutOut(l, a.t); }
+                else { var oldFull = copyLayer(a.old_ai, "Panel/Card", pre, "Panel/Card (old)"); if (oldFull) cutOut(oldFull, a.t); }
+                for (var oi = 0; oi < nOld; oi++) {
+                    var ro = rowCopy(a.old_ai, OR, a.old.rows[oi], "old row " + (oi + 1)); if (!ro) continue;
+                    var to0 = a.t + oi * CS, rpo = POS(ro).value;
+                    cutIn(ro, a.t);
+                    cm(POS(ro), [[to0, rpo], [to0 + outD, [rpo[0], rpo[1] - RISE]]], "accel");
+                    clipRow(ro, OR, to0, to0 + outD, "accel");
+                    cutOut(ro, to0 + outD);
+                }
+            }
+            if (a.phase === "out") return null;
+            for (var ni = 0; ni < nNew; ni++) {              // new rows arrive from below
+                var rn = rowCopy(a.new_ai, NR, a.new.rows[ni], "new row " + (ni + 1)); if (!rn) continue;
+                var tn0 = a.t_new + ni * CS, rpn = POS(rn).value;
+                POS(rn).setValue([rpn[0], rpn[1] + RISE]);
+                cm(POS(rn), [[tn0, [rpn[0], rpn[1] + RISE]], [tn0 + MO.card_in_d, rpn]], "snap");
+                clipRow(rn, NR, tn0, tn0 + MO.card_in_d, "snap");
+                cutIn(rn, tn0); cutOut(rn, tDone);
+            }
+            var nf = copyLayer(a.new_ai, "Panel/Card", pre); if (nf) cutIn(nf, tDone);
+            return nf;
+        case "rollout":                                      // a layer that lives in the side card rolls out with the card's rows
+            if (!l) return l;
+            var rp0 = POS(l).valueAtTime(t, false);
+            cm(POS(l), [[t, rp0], [t + MO.card_out_d, [rp0[0], rp0[1] - MO.card_rise]]], "accel");
+            clipKeys(l, [a.clip[0] + 3, a.clip[1] + 3, a.clip[0] + a.clip[2] - 3, a.clip[1] + a.clip[3] - 3], [t, t + MO.card_out_d], "accel");
+            cutOut(l, t + MO.card_out_d);
             return l;
         case "undraw":                                       // a held layer draws itself out (mask retract, accelerating) and is gone
             if (!l) return l;

@@ -43,6 +43,8 @@ CLIP = [298, 150, 1176, 818]               # inside the graph card: hides anythi
 # 4 px feather fall on the rim, never on the guide line behind it. Wider (30 px in v1-v11, 16 in a v12 draft) let the next
 # piece leak in early: the end of the "Arterial" label (4A) and the venous horizontal guide (4B), Mark 2026-11-02
 POINT_EDGE = 12
+# Separate layers that sit inside the side card and leave with it at a card change on the next beat's first frame
+CARD_CONTENT = {"2B": ["Note/XTerm", "Note/XDef", "Note/Y"], "8C": ["Factors/List", "Factors/Bohr"]}
 
 # Comma Clinical (Mark 2026-11-02; replaces the v6 "playful" override). Motion only: art, VO and sync points stay locked.
 # Source: Motion Style Guide, "Comma Clinical: Warm Clinical with Comma motion". The curves themselves (snap, cross, accel,
@@ -69,6 +71,10 @@ MOTION = {
     "title_write": 0.6,       # 1C: the dot writes line 1 on "oxyhemoglobin" ...
     "title_line2": 0.12,      # ... and line 2 cuts on whole this much later
     "tick_d": 0.4,            # tick numbers sweep on (2 frames a tick, about)
+    "card_rise": 40,          # side-card content change (Mark 2026-11-02: the hard cut was abrupt): rows roll up this far
+    "card_out_d": 0.25,       # old rows clear in this long in all, ending on the cue (accelerate into the swap) ...
+    "card_in_d": 0.3,         # ... new rows arrive from the cue, each in this long (snap and settle), clipped to the card
+    "card_stagger": 1 / 30,   # rows 1 frame apart, from the top (Mark: the roll must not cost reading time)
     "draw_out": 0.09,         # s between graph pieces drawing themselves out (3A): about 0.7 s in all, inside the 1.0 s pause
     "ring_d": 0.3,            # heme circles draw on / off in this long ...
     "ring_hold": 0.4,         # ... and hold this long in between
@@ -373,6 +379,20 @@ def main():
         for n in prv:
             if n not in cur and (n, True) not in named:
                 acts.append({"layer": n, "do": "out", "t": 0.0, "d": 0.4, "auto": True})
+        # every side-card content change rolls instead of cutting, centred on its cue: the old rows clear in the last 0.25 s
+        # before it, the new rows arrive just after. A change on (or just after) a beat's first frame splits across the cut
+        for a in list(acts):
+            if a["layer"] == "Panel/Card" and a["do"] == "xfade":
+                acts.remove(a)
+                if a["t"] >= MOTION["card_out_d"]:
+                    acts.append(cardswap(prev_beat, bid, a["t"] - MOTION["card_out_d"], a["t"], "both"))
+                else:
+                    pb = next(b for sc_ in out["scenes"] for b in sc_["beats"] if b["id"] == prev_beat)
+                    pb["acts"].append(cardswap(prev_beat, bid, pb["dur"] - MOTION["card_out_d"] + a["t"], pb["dur"], "out"))
+                    for ln in CARD_CONTENT.get(prev_beat, []):     # layers that live in the card roll out with it
+                        pb["acts"].append({"layer": ln, "do": "rollout", "t": round(pb["dur"] - MOTION["card_out_d"] + a["t"], 3),
+                                           "clip": card_geom(prev_beat)["rect"]})
+                    acts.append(cardswap(prev_beat, bid, 0, a["t"], "in"))
         scene = int(re.match(r"\d+", bid).group())
         sc = next((s for s in out["scenes"] if s["n"] == scene), None)
         if not sc:
@@ -393,6 +413,33 @@ def main():
         print(sc["name"], sc["start"], "->", sc["end"])
         for b in sc["beats"]:
             print("  ", b["id"], b["start"], b["dur"], "; ".join(f"{a['layer']}:{a['do']}@{a.get('t', '')}" for a in b["acts"] if a["do"] != "hold"))
+
+
+def card_geom(beat, layer="Panel/Card"):
+    """The side card's white rect and its content rows (top to bottom), from the beat's art."""
+    import xml.etree.ElementTree as ET
+    NS = "{http://www.w3.org/2000/svg}"
+    m = {x["id"]: x["name"] for x in json.load(open(HERE / "ai_src" / "layers.json"))[beat]["layers"]}
+    g = next(c for c in ET.parse(HERE / "ai_src" / f"{beat}.svg").getroot() if m.get(c.get("id")) == layer)
+    rects = [[float(e.get(k)) for k in ("x", "y", "width", "height")] + [e.get("opacity")] for e in g.iter(NS + "rect")]
+    card = next(r[:4] for r in rects if r[4] is None and r[2] >= 500)
+    bands = []
+    for e in g.iter(NS + "text"):
+        y, size = float(e.get("y")), float(re.search(r"font-size:([\d.]+)", e.get("style")).group(1))
+        bands.append([y - 0.8 * size - 6, y + 0.3 * size + 6])
+    for r in rects:                                   # chips inside the card travel with their text
+        if r[4] is None and r[:4] != card: bands.append([r[1] - 2, r[1] + r[3] + 2])
+    bands.sort(); rows = []
+    for b in bands:
+        if rows and b[0] <= rows[-1][1]: rows[-1][1] = max(rows[-1][1], b[1])
+        else: rows.append(list(b))
+    return {"rect": card, "rows": [[round(a, 1), round(b, 1)] for a, b in rows]}
+
+
+def cardswap(old, new, t_out, t_in, phase):
+    """One side-card roll: old rows leave from t_out (out phase), new rows arrive from t_in (in phase); beat-local times."""
+    return {"layer": "Panel/Card", "do": "cardswap", "phase": phase, "old_ai": old, "new_ai": new, "old": card_geom(old),
+            "new": card_geom(new), "t": round(t_out, 3), "t_new": round(t_in, 3)}
 
 
 _cache = {}
