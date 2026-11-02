@@ -1,0 +1,256 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>SVT vs Sinus Tach Storyboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
+<style>
+/* Layout: one column of 16:9 frames on a warm paper ground, each with timecode, narration and a build note beside it. */
+:root { --bg: #F3EEE5; --paper: #FBF8F2; --ink: #22201E; --ink2: #5E5850; --line: #E3DBCF; --teal: #0A6A82; --coral: #B22F2F;
+  --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #1C1A18; --paper: #262321; --ink: #F1ECE4; --ink2: #B7AEA3; --line: #3A3531; --teal: #7FC4D6; --coral: #E0796D; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #1C1A18; --paper: #262321; --ink: #F1ECE4; --ink2: #B7AEA3; --line: #3A3531; --teal: #7FC4D6; --coral: #E0796D; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 64px; }
+main { max-width: 1180px; margin: 0 auto; display: grid; gap: 36px; }
+header { display: grid; gap: 14px; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink2); font-weight: 500; }
+h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.1; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h1 em { font-style: normal; color: var(--ink2); font-weight: 400; }
+.lede { color: var(--ink2); max-width: 65ch; margin: 0; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--ink2); }
+.facts b { color: var(--ink); font-weight: 500; }
+.audio { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; display: grid; gap: 8px; }
+.audio label { font-weight: 700; font-size: 15px; }
+.audio audio { width: 100%; }
+.sec { padding-top: 12px; }
+.sec h2 { font-size: 24px; margin: 0 0 6px; letter-spacing: -0.01em; }
+.frame { margin: 0; display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: 22px; align-items: start; padding-top: 28px; border-top: 1px solid var(--line); }
+.frame img { width: 100%; max-width: 100%; height: auto; border-radius: 10px; display: block; box-shadow: 0 2px 14px rgba(34,32,30,.10); }
+figcaption { display: grid; gap: 10px; min-width: 0; }
+.meta { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.tc { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 15px; background: var(--ink); color: var(--bg); padding: 3px 10px; border-radius: 6px; }
+.scene { font-weight: 700; font-size: 19px; }
+.vo { margin: 0; font-size: 16px; font-style: italic; color: var(--ink); }
+.note { margin: 0; font-size: 15px; color: var(--ink2); }
+footer { font-size: 13px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 18px; }
+@media (max-width: 760px) { .frame { grid-template-columns: minmax(0, 1fr); } }
+</style>
+<main>
+<header>
+  <div class="eyebrow">Storyboard v1 · step 2 of 4</div>
+  <h1>Sinus tach vs SVT <em>· answering, or looping?</em></h1>
+  <p class="lede">25 key frames rendered from the same SVG graphics the After Effects build will use: your chambers heart with the conduction system drawn on top, ECG strips generated on a fixed time grid, and the re-entry loops on a push-in of the AV junction. Timecodes are where each line of take B lands, with a 1.5 s lead before the first word.</p>
+  <div class="facts"><span><b>Format</b> 16:9, 1920×1080</span><span><b>Length</b> about 2:46</span><span><b>Voice</b> markusguapo, v4, take B (IPA)</span><span><b>Sources</b> StatPearls SVT, Sinus Tachycardia, AVNRT, AVRT</span><span><b>Palette</b> warm white, charcoal, amber signal, teal = answering, coral = looping</span></div>
+  <div class="audio"><label for="vo">Voice-over, take B, with the 1.5 s lead-in</label><audio id="vo" controls preload="none" src="voiceover-timed.mp3"></audio></div>
+</header>
+<section class="sec"><h2>Cold open</h2><p class="lede">One strip, one question. Nothing tells the viewer which rhythm this is yet.</p></section>
+<figure class="frame">
+  <img src="f/f01.jpg" alt="Storyboard frame f01 at 0:04.1: Cold open" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:04.1</span><span class="scene">Cold open</span></div>
+    <p class="vo">Narrow complexes, perfectly regular, a rate of one seventy.</p>
+    <p class="note">One strip prints and scrolls on a warm-white field. Nothing else on screen yet. The rate readout sits in the strip header, the way a monitor shows it.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f02.jpg" alt="Storyboard frame f02 at 0:08.3: The question" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:08.3</span><span class="scene">The question</span></div>
+    <p class="vo">Is this heart answering a call, or is it stuck in a loop?</p>
+    <p class="note">The two halves of the question land above and below the strip as the voice says them. Teal and coral are introduced here and stay with "answering" and "looping" for the whole video.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f03.jpg" alt="Storyboard frame f03 at 0:09.9: Title" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:09.9</span><span class="scene">Title</span></div>
+    <p class="vo">(no narration, 0.6 s)</p>
+    <p class="note">The question collapses into the title. The strip keeps scrolling underneath, dimmed, so the cut into the heart feels continuous.</p>
+  </figcaption>
+</figure>
+<section class="sec"><h2>The normal route</h2><p class="lede">The conduction system on your chambers heart. This is the reference everything else builds on.</p></section>
+<figure class="frame">
+  <img src="f/f04.jpg" alt="Storyboard frame f04 at 0:13.7: SA node" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:13.7</span><span class="scene">SA node</span></div>
+    <p class="vo">It starts in the SA node, high in the right atrium,</p>
+    <p class="note">Your conduction-system heart, full frame. The conduction system starts as a muted track and the SA node lights amber on the word. Labels use leader lines, outside the anatomy.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f05.jpg" alt="Storyboard frame f05 at 0:16.5: Atria" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:16.5</span><span class="scene">Atria</span></div>
+    <p class="vo">and spreads across both atria.</p>
+    <p class="note">The atrial tracts light up from the SA node toward the AV node and across to the left atrium. In AE this is a trim-path wipe along the tracts.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f06.jpg" alt="Storyboard frame f06 at 0:21.1: AV node holds" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:21.1</span><span class="scene">AV node holds</span></div>
+    <p class="vo">Then it reaches the AV node, which holds the signal for about a tenth of a second so the atria can finish emptying.</p>
+    <p class="note">The AV node lights and a chip shows the hold. The atrial arcs fade behind it. In motion the pulse visibly pauses here before it drops into the septum.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f07.jpg" alt="Storyboard frame f07 at 0:26.5: His-Purkinje" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:26.5</span><span class="scene">His-Purkinje</span></div>
+    <p class="vo">From there, it races down the His-Purkinje system into the ventricles.</p>
+    <p class="note">The bundle of His, both bundle branches and the Purkinje fans light in quick sequence down the septum and into both ventricles.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f08.jpg" alt="Storyboard frame f08 at 0:30.7: Narrow QRS" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:30.7</span><span class="scene">Narrow QRS</span></div>
+    <p class="vo">That fast lane is why the QRS is narrow.</p>
+    <p class="note">The heart slides left and a single beat prints on the right. A bracket measures the QRS. The chip ties the fast lane to the narrow complex.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f09.jpg" alt="Storyboard frame f09 at 0:37.3: At or above the AV node" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:37.3</span><span class="scene">At or above the AV node</span></div>
+    <p class="vo">A narrow complex tachycardia tells you the ventricles are still using it, so the problem starts at or above the AV node. Both rhythms in this video start up here.</p>
+    <p class="note">A dashed line crosses the heart at the level of the AV node. Everything above it is bracketed: this is where both rhythms in the video begin.</p>
+  </figcaption>
+</figure>
+<section class="sec"><h2>Sinus tachycardia: the heart answering</h2><p class="lede">Same route, faster, for a reason.</p></section>
+<figure class="frame">
+  <img src="f/f10.jpg" alt="Storyboard frame f10 at 0:46.3: Sinus tach: answering" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:46.3</span><span class="scene">Sinus tach: answering</span></div>
+    <p class="vo">In sinus tachycardia, nothing about the route changes. The SA node is just firing faster than one hundred because the body is asking for more output.</p>
+    <p class="note">Section title in teal. The same route, fully lit, with the SA node pulsing faster. The rate chip climbs past 100.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f11.jpg" alt="Storyboard frame f11 at 0:53.1: Harmless reasons" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:53.1</span><span class="scene">Harmless reasons</span></div>
+    <p class="vo">Sometimes the reason is harmless, like exercise, stress, pain, or anxiety.</p>
+    <p class="note">The reasons arrive as chips, one per word, in teal.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f12.jpg" alt="Storyboard frame f12 at 1:00.1: Serious reasons" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">1:00.1</span><span class="scene">Serious reasons</span></div>
+    <p class="vo">Sometimes it's serious, like low oxygen, blood loss, dehydration, or sepsis. A fast resting heart rate can be one of the earliest signs that something is wrong.</p>
+    <p class="note">A second column in coral for the serious causes, and the warning line lands under them.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f13.jpg" alt="Storyboard frame f13 at 1:10.7: Sinus tach on the ECG" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">1:10.7</span><span class="scene">Sinus tach on the ECG</span></div>
+    <p class="vo">On the ECG, it looks like a normal beat, only faster. An upright P wave in leads one, two, and AVL in front of every QRS.</p>
+    <p class="note">A sinus strip at 130 with every P wave marked as the voice names it. Two chips carry the rule.</p>
+  </figcaption>
+</figure>
+<section class="sec"><h2>SVT: the heart in a loop</h2><p class="lede">Re-entry on a push-in of the AV junction. AVNRT and AVRT are shown as two loops, no deeper than that.</p></section>
+<figure class="frame">
+  <img src="f/f14.jpg" alt="Storyboard frame f14 at 1:19.1: SVT: re-entry" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">1:19.1</span><span class="scene">SVT: re-entry</span></div>
+    <p class="vo">Most SVT works differently. It's re-entry, a signal caught in a circuit going around and around.</p>
+    <p class="note">Section title in coral. We push in on the AV junction of the same heart. A coral circuit appears and the amber pulse laps it.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f15.jpg" alt="Storyboard frame f15 at 1:25.7: AVNRT" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">1:25.7</span><span class="scene">AVNRT</span></div>
+    <p class="vo">In the most common type, AVNRT, the circuit sits inside the AV node itself.</p>
+    <p class="note">The AVNRT loop is labelled. Kept simple on purpose: a circuit inside the node, no slow/fast pathway detail.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f16.jpg" alt="Storyboard frame f16 at 1:33.5: AVRT" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">1:33.5</span><span class="scene">AVRT</span></div>
+    <p class="vo">In AVRT, the heart has an extra pathway between the atria and the ventricles. The signal goes down through the AV node and back up the extra pathway.</p>
+    <p class="note">The second card pulls out to the whole left heart: the circuit runs down the AV node and bundle to the apex, climbs the lateral wall, crosses back through the accessory pathway (amber band at the groove, like the reference) into the left atrium, and returns to the AV node.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f17.jpg" alt="Storyboard frame f17 at 1:38.1: Every lap fires the ventricles" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">1:38.1</span><span class="scene">Every lap fires the ventricles</span></div>
+    <p class="vo">Every lap fires the ventricles.</p>
+    <p class="note">The loop and a strip run together. Each lap of the pulse drops a QRS on the strip (amber dots mark the laps).</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f18.jpg" alt="Storyboard frame f18 at 1:44.7: Switches on and off" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">1:44.7</span><span class="scene">Switches on and off</span></div>
+    <p class="vo">And because the loop isn't following the body's needs, it starts suddenly, runs fast and regular, usually between one fifty and two twenty, and stops just as abruptly.</p>
+    <p class="note">One long strip: sinus at 80, then the loop switches on at 180 in a single beat, then off again. The onset and offset are ticked.</p>
+  </figcaption>
+</figure>
+<section class="sec"><h2>Side by side</h2><p class="lede">The mechanism predicts what you see.</p></section>
+<figure class="frame">
+  <img src="f/f19.jpg" alt="Storyboard frame f19 at 1:51.9: Side by side: trigger" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">1:51.9</span><span class="scene">Side by side: trigger</span></div>
+    <p class="vo">So put them side by side. Sinus tach has a reason you can find, and it follows that reason.</p>
+    <p class="note">A two-column comparison builds row by row. Teal column for sinus tach, coral for SVT.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f20.jpg" alt="Storyboard frame f20 at 2:01.1: Side by side: start and stop" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">2:01.1</span><span class="scene">Side by side: start and stop</span></div>
+    <p class="vo">SVT often starts out of nowhere, sometimes after caffeine, stimulants, or stress, and it switches on and off.</p>
+    <p class="note">Second row lands.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f21.jpg" alt="Storyboard frame f21 at 2:06.9: Side by side: P waves" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">2:06.9</span><span class="scene">Side by side: P waves</span></div>
+    <p class="vo">And in AVNRT, you often can't find a P wave at all. It's hidden inside the QRS.</p>
+    <p class="note">Third row: two short strips at the same rate. P waves marked on the sinus side; on the AVNRT side the P is gone, hidden in the QRS.</p>
+  </figcaption>
+</figure>
+<section class="sec"><h2>The AV node is the key</h2><p class="lede">Why vagal maneuvers and adenosine work, and why sinus tach needs its cause treated instead.</p></section>
+<figure class="frame">
+  <img src="f/f22.jpg" alt="Storyboard frame f22 at 2:14.5: Block the node" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">2:14.5</span><span class="scene">Block the node</span></div>
+    <p class="vo">That loop is also how we stop it. Vagal maneuvers and adenosine both slow conduction through the AV node. If the circuit runs through the node, blocking it for a moment breaks the loop.</p>
+    <p class="note">The circuit as a simple schematic (atria, AV node, His, ventricles) beside the zoomed heart. A block lands on the AV node; the loop goes grey and the pulse disappears.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f23.jpg" alt="Storyboard frame f23 at 2:22.5: Treatment steps" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">2:22.5</span><span class="scene">Treatment steps</span></div>
+    <p class="vo">For a stable patient, start with a vagal maneuver like Valsalva lying flat, then adenosine by rapid IV push. An unstable patient gets synchronized cardioversion.</p>
+    <p class="note">The strip converts: SVT at 180, a short pause after adenosine, then sinus rhythm. Steps are listed beside it; unstable gets its own line.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f24.jpg" alt="Storyboard frame f24 at 2:32.5: Treat the cause" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">2:32.5</span><span class="scene">Treat the cause</span></div>
+    <p class="vo">Sinus tach has no loop to break. Slowing the rate doesn't fix the reason it's fast. Treat the cause.</p>
+    <p class="note">Back to the whole heart with the normal route lit in teal territory. No loop anywhere. The takeaway is the only text.</p>
+  </figcaption>
+</figure>
+<section class="sec"><h2>Close</h2></section>
+<figure class="frame">
+  <img src="f/f25.jpg" alt="Storyboard frame f25 at 2:42.7: Close" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">2:42.7</span><span class="scene">Close</span></div>
+    <p class="vo">So when you see a fast, narrow, regular rhythm, ask one question: Is the heart answering or is it looping?</p>
+    <p class="note">The opening strip returns, and the two words resolve either side of the question.</p>
+  </figcaption>
+</figure>
+
+<footer>Still frames only. In motion: the ECG strips scroll and never redraw, the amber pulse travels the route and laps the loops, and text lands on the words. Anatomy: SA node at the SVC–right atrium junction, AV node at the base of the interatrial septum, His bundle and branches down the septum, Purkinje fans into both ventricles, accessory pathway on the left free wall.</footer>
+</main>
+
+</body></html>
