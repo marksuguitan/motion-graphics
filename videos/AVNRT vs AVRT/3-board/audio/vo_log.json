@@ -1,0 +1,967 @@
+{
+ "video": "AVNRT vs AVRT",
+ "flow": "AVNRT vs AVRT — scratch VO",
+ "flow_id": "y2vZTIHiDZ0gsVGZAhbE",
+ "voice": "Markus Guapo (45wlHoJDsEn5ruTlzdZI)",
+ "model": "eleven_v4",
+ "pass": 1,
+ "date": "2026-11-02",
+ "notes": "Saved take = last take generated (the active one on each speech node). Durations are decoded lengths (ffmpeg), which run ~40 ms shorter than ffprobe's container duration. Downloaded directly into the cloud workspace (no Mac). 1D is a silent title card (2.0 s, agent's call) plus its 1 s hold.",
+ "beats": [
+  {
+   "beat": "1A",
+   "node_id": "yfiOX3lSdjLYdzI1buJa",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "AgoBxN3f1ibbw7KtasO4",
+     "session_id": "Ru5xKjaPxu19iaVrhIJa",
+     "duration_s": 10.56,
+     "file": "takes/1A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "kM1TAswXGWzPd8tryHPh",
+     "session_id": "FvdIy95dhHREdFI6AqOn",
+     "duration_s": 10.64,
+     "file": "1A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "1A.mp3",
+   "tts_input": "Two patients. Both have a sudden, fast, narrow, regular rhythm. On the monitor, they look almost the same. But the loops driving them are very different sizes.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "GEfwNNvCDSEma8IMsfMA",
+   "start_in_full": 0.0,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "1B",
+   "node_id": "YdbsJZ4AemTiZghjgpt1",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "yLXMSSZFHgnX3Tnbul8K",
+     "session_id": "LRnhHmp5emndUbQbYmA3",
+     "duration_s": 5.12,
+     "file": "takes/1B_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "z72z9MHd5GiPB6f7hxW9",
+     "session_id": "KN9lGXSNPFkP5mo6oIAq",
+     "duration_s": 5.2,
+     "file": "1B.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "1B.mp3",
+   "tts_input": "One fits in and around the A V node, a structure about five millimeters long.",
+   "tts_input_respelling": [
+    "AV node -> A V node"
+   ],
+   "transcript_generation_id": "dhr9iAXujGZ9DqioILFI",
+   "start_in_full": 11.14,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "1C",
+   "node_id": "9xQNAtaEU4RaKph5qEpO",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "AYey5Yg6SPE5yHpjqmKW",
+     "session_id": "7sxcoMlee8C8vGaA6TCf",
+     "duration_s": 5.04,
+     "file": "takes/1C_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "1Juy6E5IgPMWVOo2nrU9",
+     "session_id": "SLJ1Z7cUUjjca8ZaStN1",
+     "duration_s": 5.2,
+     "file": "1C.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "1C.mp3",
+   "tts_input": "The other is a much bigger circuit: through the atria, the ventricles, and back.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "2lKeeX6VWPzOXZfQtq3O",
+   "start_in_full": 16.84,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "2A",
+   "node_id": "gapppn2IjTNU0a6bx3eb",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "TP6bQzBu8vGiu2ZSjUjw",
+     "session_id": "nGsKEhT0OPoL64mS1o7m",
+     "duration_s": 6.4,
+     "file": "takes/2A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "1DI5MmYU2R6b95Fw1DKq",
+     "session_id": "QANhByc2IbIAgRNQ0qPq",
+     "duration_s": 6.64,
+     "file": "2A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "2A.mp3",
+   "tts_input": "Normally, the atria and ventricles are electrically insulated from each other by fibrous rings around the valves.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "QKsAFCMMsahvhur58z6r",
+   "start_in_full": 25.54,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "2B",
+   "node_id": "2AQY6E3O5elWa1prjaog",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "NKvhogBADNn1RRpO8LHi",
+     "session_id": "sJL2XOBpnGYugD7K5Fqn",
+     "duration_s": 4.24,
+     "file": "takes/2B_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "jGnoumBurVtmKXyFqYrk",
+     "session_id": "IHDI2fb2nMxiFK1lbnFx",
+     "duration_s": 4.16,
+     "file": "2B.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "2B.mp3",
+   "tts_input": "The only normal connection runs through the A V node and the Hiss bundle.",
+   "tts_input_respelling": [
+    "His bundle -> Hiss bundle",
+    "AV node -> A V node"
+   ],
+   "transcript_generation_id": "q0eS6Iqo18iH6i8QNRNd",
+   "start_in_full": 32.68,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "2C",
+   "node_id": "4yRHrOFWCHK1iKdbjo8N",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "YGuugLF5R0gkUT4btBXb",
+     "session_id": "eYwIwBGdnvZd7q94wHDM",
+     "duration_s": 5.04,
+     "file": "takes/2C_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "Ks77E5zk4hVLGdo58R68",
+     "session_id": "8lQ16nytWs8yeHA6NvDP",
+     "duration_s": 5.12,
+     "file": "2C.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "2C.mp3",
+   "tts_input": "A re-entry loop needs two pathways that are joined at both ends, but behave differently.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "cNcY3u23wpsdViPUe04b",
+   "start_in_full": 37.34,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "2D",
+   "node_id": "Hq1yaG8rOyt9kK4Gc43b",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "oyY1HG2qFUeW1AscN8qP",
+     "session_id": "OoE2BTnRt9VpbABW3ffa",
+     "duration_s": 6.4,
+     "file": "takes/2D_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "XL1Lh8frKaRByxgpN5i5",
+     "session_id": "gBVRYtmzq2TcUe838kOF",
+     "duration_s": 6.4,
+     "file": "2D.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "2D.mp3",
+   "tts_input": "One conducts fast. The other conducts slowly. And they take different amounts of time to recover.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "fBeBZl6SDxNDsAbz7GQD",
+   "start_in_full": 42.96,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "2E",
+   "node_id": "F4JVUwEV4V4m0hn2oGBq",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "ELXXN2YgF5W56xmvtaX7",
+     "session_id": "Qco7VPYwJLgMNapFiVXN",
+     "duration_s": 5.28,
+     "file": "takes/2E_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "OljdnrALO8SOdn7eKHmB",
+     "session_id": "33l88OhSdNjEnoFXrJsD",
+     "duration_s": 5.28,
+     "file": "2E.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "2E.mp3",
+   "tts_input": "Then it needs a trigger, usually a premature beat that arrives at just the wrong moment.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "0Fqc5knrbWgDSK0fBc2x",
+   "start_in_full": 49.86,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "3A",
+   "node_id": "kZCePY99PdhUALxVpHVi",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "T91SUbQsQRJfqUvqWamf",
+     "session_id": "WS53lagHuPTstIAhefNR",
+     "duration_s": 5.12,
+     "file": "takes/3A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "bRj9viBex75MV1tS9WNa",
+     "session_id": "p8T03e7jYWsXokZieTQl",
+     "duration_s": 4.96,
+     "file": "3A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3A.mp3",
+   "tts_input": "In typical A V N R T, both pathways sit in and around the A V node.",
+   "tts_input_respelling": [
+    "AV node -> A V node"
+   ],
+   "transcript_generation_id": "d6vtITJ5HeXGmJrQNZUA",
+   "start_in_full": 55.64,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "3B",
+   "node_id": "50lclhQQQOlNpu5cKQ8n",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "OBeINo67pF3IAmq6ZGWn",
+     "session_id": "qxUGnDHFvrbjxnBJF268",
+     "duration_s": 7.84,
+     "file": "takes/3B_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "qhCJ6v2OH4W0XayZ1gyj",
+     "session_id": "rebvcepAjqabC4KQvexo",
+     "duration_s": 7.92,
+     "file": "3B.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3B.mp3",
+   "tts_input": "The fast pathway conducts quickly, but takes a long time to recover. The slow pathway conducts slowly, but recovers quickly.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "pvZtq92gT0QZ7UddJItU",
+   "start_in_full": 61.1,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "3C",
+   "node_id": "bcvw9cuGaxqa2GEl1g07",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "mCfUbglMDPnjYebzI16A",
+     "session_id": "OOYyFHAF3YgILVHImYrP",
+     "duration_s": 2.64,
+     "file": "takes/3C_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "x5Ax7ctGaRE20pKOwS1r",
+     "session_id": "MBZJeltRNNBct7kuquit",
+     "duration_s": 2.56,
+     "file": "3C.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3C.mp3",
+   "tts_input": "Normal beats travel down the fast pathway.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "EshQo9jInTi1YF9Tc0GL",
+   "start_in_full": 69.52,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "3D",
+   "node_id": "VAX8EdQLtLbAK2UnHqQC",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "nSVNjAH3CLua06DEZfEr",
+     "session_id": "441iUFRJWLFSffF4vyLB",
+     "duration_s": 7.12,
+     "file": "takes/3D_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "Ym08oyfiDv5kgKioroXB",
+     "session_id": "xAJS2ZmwlVM0wcGPJIOX",
+     "duration_s": 7.04,
+     "file": "3D.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3D.mp3",
+   "tts_input": "But a premature beat can arrive while the fast pathway is still recovering. So it travels down the slow pathway instead.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "hzizLUGwiPNesMBqKgqD",
+   "start_in_full": 72.58,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "3E",
+   "node_id": "e0j1pPXGd8kYy64lJlod",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "X2xgzyNe0fQV9nBUYsNG",
+     "session_id": "rt51ZWkNFOchuwpPjVFS",
+     "duration_s": 3.76,
+     "file": "takes/3E_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "kmXhygcEfaUbI4INdJtM",
+     "session_id": "RUaTA70qgScN3jR08AkR",
+     "duration_s": 3.68,
+     "file": "3E.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3E.mp3",
+   "tts_input": "By the time it reaches the bottom, the fast pathway has recovered.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "Jw1P0HeW2sscufcXstyD",
+   "start_in_full": 80.12,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "3F",
+   "node_id": "3GColUyN0gsCIKiyWQjY",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "EZn0rg2XedcnFkptNvTF",
+     "session_id": "Fmw4TdAbO93DqeJ6e0Ey",
+     "duration_s": 4.72,
+     "file": "takes/3F_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "3CopH6Sh0h5iTWfxSepf",
+     "session_id": "7YVXEkXXf0s5XCrUJRv6",
+     "duration_s": 4.72,
+     "file": "3F.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3F.mp3",
+   "tts_input": "The signal turns and races back up it, then down the slow pathway again.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "qCSiPJDCDaa8JcdhBT6b",
+   "start_in_full": 84.3,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "3G",
+   "node_id": "iqVdMcRKo7hXZeD6lFGv",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "tCzbPvqsnGgIrQQk25GO",
+     "session_id": "42M54UfPhpCg5iMhj0ad",
+     "duration_s": 2.24,
+     "file": "takes/3G_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "6gARYe48k4aziEUMae2e",
+     "session_id": "wNQ6PjigIBYIl2ZqKOrH",
+     "duration_s": 2.16,
+     "file": "3G.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3G.mp3",
+   "tts_input": "The loop is now self-sustaining.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "IOwS6olapsCH5rZndwqC",
+   "start_in_full": 89.52,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "3H",
+   "node_id": "nGLRVhosiL9rcLPAbe2k",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "kHlPRENQzn7MST7Jnkw8",
+     "session_id": "YbTlzjW6LnPpxE1Mq3zT",
+     "duration_s": 8.72,
+     "file": "takes/3H_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "c2hXRfl6VJbz4qNSOghc",
+     "session_id": "a4MRrGAF66F2ZzCOlYzo",
+     "duration_s": 8.72,
+     "file": "3H.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3H.mp3",
+   "tts_input": "Every lap fires the ventricles and the atria at almost the same instant. So the P wave lands inside the /ˌkjuːɑːrˈɛs/, or just at its end.",
+   "tts_input_respelling": [
+    "QRS -> /ˌkjuːɑːrˈɛs/"
+   ],
+   "transcript_generation_id": "pmCoqYtl21rwgTwUghjK",
+   "start_in_full": 92.18,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "3I",
+   "node_id": "iEE9aKVHDeh3cf3XyxzJ",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "ST2dwYUMtWsSJYRVVOKR",
+     "session_id": "X9erWHOmGcK5vpnKYQBW",
+     "duration_s": 7.52,
+     "file": "takes/3I_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "wu7jvd7zT564LCRNwOQt",
+     "session_id": "Evwj8jTPtH2ZcKt4SoD2",
+     "duration_s": 7.44,
+     "file": "3I.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3I.mp3",
+   "tts_input": "Look for a small pseudo S wave in leads two, three, and A V F, or a pseudo R prime in V one.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "BYrR5ZJU95kfwKUkW03q",
+   "start_in_full": 101.4,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "3J",
+   "node_id": "JHuRNeNeE1InZcBvSvGQ",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "6tY0IjDEhfuYxcdLsbbt",
+     "session_id": "oC3EdOVBcQspDORBpsez",
+     "duration_s": 10.64,
+     "file": "takes/3J_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "hG3rcmilv0MpzSqJgeF3",
+     "session_id": "l11hjnn27eZ2H8j2EjPp",
+     "duration_s": 10.48,
+     "file": "3J.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3J.mp3",
+   "tts_input": "A V N R T is the most common paroxysmal S V T in adults, about half to sixty percent of cases. It usually shows up in young adults, and about two thirds are women.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "hML8JnA6KTPSibgdJCCP",
+   "start_in_full": 109.34,
+   "hold_after": 1.0
+  },
+  {
+   "beat": "4A",
+   "node_id": "GGGuJ43Do8ZjJkK0DEPp",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "W12hea8fRbds8cHNQNjI",
+     "session_id": "ldDxA7rla9LcfFVHkWXN",
+     "duration_s": 7.36,
+     "file": "takes/4A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "r2Bia6FE00SvxXbvwOYd",
+     "session_id": "5gD1yl0AwZaw5ywv5YtQ",
+     "duration_s": 7.52,
+     "file": "4A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "4A.mp3",
+   "tts_input": "A V R T needs an accessory pathway: a strand of muscle that crosses the insulating ring between the atria and the ventricles.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "Htcl7vWSLEEN50n3yfkg",
+   "start_in_full": 120.82,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "4B",
+   "node_id": "1FX2CUQggND1G5KyqbYh",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "TSbK5uKAUDMes0wD0sPr",
+     "session_id": "fwIztj9JY5kJKQjggzlX",
+     "duration_s": 8.64,
+     "file": "takes/4B_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "OECqVotkDreiC1c2afyP",
+     "session_id": "v1kSfUii9bVxzpHigVpC",
+     "duration_s": 8.72,
+     "file": "4B.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "4B.mp3",
+   "tts_input": "In the usual form, called orthodromic, the signal goes down the A V node and the Hiss pur-KIN-jee system, so the /ˌkjuːɑːrˈɛs/ is usually narrow.",
+   "tts_input_respelling": [
+    "QRS -> /ˌkjuːɑːrˈɛs/",
+    "His-Purkinje -> Hiss pur-KIN-jee",
+    "AV node -> A V node"
+   ],
+   "transcript_generation_id": "DBS1R0SUcZEEa5s6PYIv",
+   "start_in_full": 128.84,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "4C",
+   "node_id": "v4SaZWh60htEEx8rgDhO",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "KLGcvkXS5bmmkPthD0YD",
+     "session_id": "biareaAr7hqMWTCcpldr",
+     "duration_s": 7.68,
+     "file": "takes/4C_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "BMzFBl1K4QWoBF7MVJU0",
+     "session_id": "lzEM6bjy2kPVX5aBOIMI",
+     "duration_s": 7.44,
+     "file": "4C.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "4C.mp3",
+   "tts_input": "Then it crosses back up the accessory pathway to the atria, and returns to the A V node. That's the large majority of cases.",
+   "tts_input_respelling": [
+    "AV node -> A V node"
+   ],
+   "transcript_generation_id": "ls3ZpTEZ5AOuFxWCnexA",
+   "start_in_full": 138.06,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "4D",
+   "node_id": "Adcxs3fklqbndAqtGoXd",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "GISNwwxiUXQt2cHyJSnz",
+     "session_id": "EL3Ox5HNkAzwnIn2gqCv",
+     "duration_s": 16.08,
+     "file": "takes/4D_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "p2eb0vkOY9MQLY3udcEe",
+     "session_id": "cI7FGqlbpCtIjZ1RwNZt",
+     "duration_s": 16.0,
+     "file": "4D.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "4D.mp3",
+   "tts_input": "This loop is much longer. The atria fire noticeably later than the ventricles. So the P wave often shows up after the /ˌkjuːɑːrˈɛs/, in the S T segment. The R P interval is longer than in typical A V N R T, often more than seventy milliseconds.",
+   "tts_input_respelling": [
+    "QRS -> /ˌkjuːɑːrˈɛs/"
+   ],
+   "transcript_generation_id": "6c226pvGClv1L26NqGH0",
+   "start_in_full": 146.0,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "4E",
+   "node_id": "DLNA33I0SvZeon0XzUZF",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "UQuZfGLy5Wxp9FblFpAt",
+     "session_id": "08gqWDNImGg4fsxAfYKT",
+     "duration_s": 15.04,
+     "file": "takes/4E_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "XWYFhpV29WlQsfy92ldU",
+     "session_id": "xgAq4FT57dDxYv4ompKw",
+     "duration_s": 15.12,
+     "file": "4E.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "4E.mp3",
+   "tts_input": "Less often, the loop runs the other way. Down the accessory pathway, and back up the node. This is antidromic A V R T, and because the ventricles are activated through the pathway instead of the fast Hiss pur-KIN-jee system, the /ˌkjuːɑːrˈɛs/ is wide.",
+   "tts_input_respelling": [
+    "QRS -> /ˌkjuːɑːrˈɛs/",
+    "His-Purkinje -> Hiss pur-KIN-jee"
+   ],
+   "transcript_generation_id": "HE2tIJIHp7RdshPTrqp0",
+   "start_in_full": 162.5,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "4F",
+   "node_id": "XTcqf04tKduY8oaUqSjo",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "Td9ySKERcsWRSEyhVp73",
+     "session_id": "qhIdvxUoazuwRI5W41CP",
+     "duration_s": 5.04,
+     "file": "takes/4F_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "O90vwOLLP5TbwG8AXuJU",
+     "session_id": "XkSWeRuikeYjDt9mcQEO",
+     "duration_s": 5.04,
+     "file": "4F.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "4F.mp3",
+   "tts_input": "A V R T is the most common S V T in children, especially younger children.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "B2RwVdqDxXWyNNi0FRd9",
+   "start_in_full": 178.12,
+   "hold_after": 1.0
+  },
+  {
+   "beat": "5A",
+   "node_id": "Eb1I7Li6W6a910NkplDv",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "0gD4J9Cy6uOPvF2SOrHJ",
+     "session_id": "U3POkQMLZyr1UxbSbePQ",
+     "duration_s": 18.48,
+     "file": "takes/5A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "ohZ3L1pC7cBMsAITuXCT",
+     "session_id": "wSfxK0g73QqugZUEHnBA",
+     "duration_s": 18.56,
+     "file": "5A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "5A.mp3",
+   "tts_input": "Between episodes, the resting /ˌiːsiːˈdʒiː/ can carry a clue. Some accessory pathways also conduct forward during normal rhythm. They let the ventricles start early. That shortens the P R interval, adds a slurred upstroke called a delta wave, and widens the /ˌkjuːɑːrˈɛs/. That's the Wolff Parkinson White pattern.",
+   "tts_input_respelling": [
+    "QRS -> /ˌkjuːɑːrˈɛs/",
+    "E C G -> /ˌiːsiːˈdʒiː/"
+   ],
+   "transcript_generation_id": "6yPA0t5NuKwEKnpVlZNg",
+   "start_in_full": 184.16,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "5B",
+   "node_id": "tEzwYi2Gd8TCDwThMvOx",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "iwQKIgtPaYpquppRcNcm",
+     "session_id": "vpPYm26FD4oTC0wMmSeR",
+     "duration_s": 11.2,
+     "file": "takes/5B_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "8HaSsPEoSzrmxS78Eyrw",
+     "session_id": "uMRkY88RzhZZb1gjI7P6",
+     "duration_s": 10.96,
+     "file": "5B.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "5B.mp3",
+   "tts_input": "Other pathways only conduct backward. They're concealed, and show no sign of pre-excitation on the resting /ˌiːsiːˈdʒiː/. So a normal resting /ˌiːsiːˈdʒiː/ does not rule out A V R T.",
+   "tts_input_respelling": [
+    "E C G -> /ˌiːsiːˈdʒiː/"
+   ],
+   "transcript_generation_id": "nrG9yp16MsFxEA6BKQ4l",
+   "start_in_full": 203.22,
+   "hold_after": 1.0
+  },
+  {
+   "beat": "6A",
+   "node_id": "FA1APKvuE1xM4reegiTm",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "YkVW3eaasQwI6mm27A3F",
+     "session_id": "2hwaVC5kZXfpHCF17Yj9",
+     "duration_s": 8.08,
+     "file": "takes/6A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "XrnmSduzr56wUm5vs8nW",
+     "session_id": "TflIij1ob4kVB8NgN3Fb",
+     "duration_s": 7.92,
+     "file": "6A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "6A.mp3",
+   "tts_input": "Here's what the two loops have in common. In both A V N R T and A V R T, the A V node is usually part of the circuit.",
+   "tts_input_respelling": [
+    "AV node -> A V node"
+   ],
+   "transcript_generation_id": "0UA3HdpFqYoZLC87OppL",
+   "start_in_full": 215.18,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "6B",
+   "node_id": "R4nzOwpMgps9GAzGTcwg",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "wo4az88qlIhRoWILSZlQ",
+     "session_id": "HjwXHGscW8acSSFecRw6",
+     "duration_s": 15.36,
+     "file": "takes/6B_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "6oFyMeEN7eKQLXNtTZwI",
+     "session_id": "t6acDguenXB8PFKfEW4Q",
+     "duration_s": 15.6,
+     "file": "6B.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "6B.mp3",
+   "tts_input": "So for a stable patient with a regular, narrow-complex tachycardia, the first steps are the same. Try a vagal maneuver, like Valsalva. If that fails, give adenosine, unless it's contraindicated. Blocking the A V node for a moment breaks either loop.",
+   "tts_input_respelling": [
+    "AV node -> A V node"
+   ],
+   "transcript_generation_id": "5xBb0vzNbbYS2GAeAoJX",
+   "start_in_full": 223.6,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "6C",
+   "node_id": "gKpDx8mUBeSfw8X7ALyH",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "O9tOVs9XpeWsbecLDFOe",
+     "session_id": "fq7O65NDxqsm5adcjS5E",
+     "duration_s": 4.88,
+     "file": "takes/6C_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "jSHnY7wWr5RCaNunDMxQ",
+     "session_id": "QSBuDgUAbHbVKlNXl2wB",
+     "duration_s": 4.88,
+     "file": "6C.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "6C.mp3",
+   "tts_input": "If the tachycardia is making the patient unstable, use synchronized cardioversion.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "OenWSGdsv0UiBUUasSan",
+   "start_in_full": 239.7,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "6D",
+   "node_id": "VFJuBfAdg1VRCqcpqaTj",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "9wiXMftq3bRP4wY2xss4",
+     "session_id": "nOFvpcopBIZ3THm28btA",
+     "duration_s": 8.96,
+     "file": "takes/6D_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "gZOsyqqTGXbvit8ygZbn",
+     "session_id": "WqH7hEFd0VFhdnK0o0N1",
+     "duration_s": 9.12,
+     "file": "6D.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "6D.mp3",
+   "tts_input": "Wide-complex rhythms need more caution. In antidromic A V R T, avoid A V nodal blockers. pro-KANE-uh-mide is an alternative.",
+   "tts_input_respelling": [
+    "AV nodal -> A V nodal",
+    "Procainamide -> pro-KANE-uh-mide"
+   ],
+   "transcript_generation_id": "qzyTF4nXrXUm1G97G5ly",
+   "start_in_full": 245.08,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "6E",
+   "node_id": "JQtgFmgEOeOBi9Zmlu0v",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "64Vi2rwzcUNXEUzVMWQb",
+     "session_id": "gM4HZ8di98QopyIP27RR",
+     "duration_s": 18.72,
+     "file": "takes/6E_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "SWh3LYOTSAPrOz9i1EVv",
+     "session_id": "iyQHYCMcvCwvSQK98wZt",
+     "duration_s": 18.72,
+     "file": "6E.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "6E.mp3",
+   "tts_input": "And watch for pre-excited atrial fibrillation: a very fast, irregular, wide-complex rhythm in a patient with an accessory pathway. It can be lethal. A V nodal blockers, including adenosine, can make it worse. Stable patients can get pro-KANE-uh-mide. Unstable patients need electrical cardioversion.",
+   "tts_input_respelling": [
+    "AV nodal -> A V nodal",
+    "procainamide -> pro-KANE-uh-mide"
+   ],
+   "transcript_generation_id": "ukDKhIZM0EergU6IBh1T",
+   "start_in_full": 254.7,
+   "hold_after": 1.0
+  },
+  {
+   "beat": "6F",
+   "node_id": "ILu7Xcj7G5gSjrWDQXWS",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "YtdEIUFy6q1UF9INStbr",
+     "session_id": "u5IxB4n0dB5ia7rLTRl3",
+     "duration_s": 9.2,
+     "file": "takes/6F_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "jME6injboB8wlvgOIQVN",
+     "session_id": "cwRPijyhuNkTyaiutGDL",
+     "duration_s": 9.04,
+     "file": "6F.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "6F.mp3",
+   "tts_input": "For a cure, catheter ablation targets the loop itself. In A V N R T, that's the slow pathway, with success above ninety-five percent.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "0jRW4Br6fayA9AWYI81t",
+   "start_in_full": 274.42,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "6G",
+   "node_id": "HuuLkXjuOF4iEioUJZ0E",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "19Qz2HGXz1WRREdJ5cCD",
+     "session_id": "iFccKMbH4v1mlcV9DdwA",
+     "duration_s": 3.04,
+     "file": "takes/6G_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "YKn8sSRuNpegy789ooev",
+     "session_id": "6zC2PfYtp5FpmSBvTkIq",
+     "duration_s": 2.96,
+     "file": "6G.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "6G.mp3",
+   "tts_input": "In A V R T, it's the accessory pathway.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "dAMcop29fRXdkGzLY4PR",
+   "start_in_full": 283.96,
+   "hold_after": 1.0
+  },
+  {
+   "beat": "7A",
+   "node_id": "SuY5MUSNWsevcQQZSfjy",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "W4ukO7kYHk6q6IrwdvYq",
+     "session_id": "NMJdyzBAP2umRGGXmPHg",
+     "duration_s": 11.44,
+     "file": "takes/7A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "S37TjBH1hMoy98F6Floa",
+     "session_id": "lmaoBkrfcs7LU5739MYk",
+     "duration_s": 11.28,
+     "file": "7A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "7A.mp3",
+   "tts_input": "Same speed. Different size. A small loop usually hides the P wave inside the /ˌkjuːɑːrˈɛs/. A big loop usually leaves it trailing behind. It's a clue, not a rule.",
+   "tts_input_respelling": [
+    "QRS -> /ˌkjuːɑːrˈɛs/"
+   ],
+   "transcript_generation_id": "XMDCfIgwAq2UAGdsdrQ9",
+   "start_in_full": 287.92,
+   "hold_after": 1.0
+  }
+ ]
+}
