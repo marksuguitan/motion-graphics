@@ -1,6 +1,6 @@
 # Pronunciations
 
-IPA respellings used in ElevenLabs speech input (speech input only; narration, board and captions keep normal spelling). Check here first. Status: "untested" until a transcript or Mark's listen confirms the read.
+IPA respellings used in ElevenLabs speech input (speech input only; narration, board and captions keep normal spelling). Check here first. Status: "untested" until Mark's listen confirms the read. A Scribe transcript can't confirm it: on a flow speech node Scribe returns the IPA as written (seen Nov 2, 2026).
 
 | Word | IPA | Video | Date | Status |
 | --- | --- | --- | --- | --- |

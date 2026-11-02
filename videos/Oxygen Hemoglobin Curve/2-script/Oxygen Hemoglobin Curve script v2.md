@@ -24,8 +24,8 @@ On-screen text: PO2 (mmHg) · PO2 = dissolved O2 · Hemoglobin saturation (%) ·
 On-screen text: Adult hemoglobin (HbA) · α · β · heme · T state · R state · Remaining sites: higher O2 affinity · Sigmoid
 
 ## Scene 4: Landmarks
-**4A** · In arterial blood leaving the lungs, PO2 is about 100, and hemoglobin is about 97 percent saturated. [S2; PO2 value: source pending]
-**4B** · After blood passes through resting tissues, mixed venous PO2 is about 40, and saturation is about 75 percent. [S2; PO2 value: source pending]
+**4A** · In arterial blood leaving the lungs, PO2 is about 100, and hemoglobin is about 97 percent saturated. [S2, S4]
+**4B** · After blood passes through resting tissues, mixed venous PO2 is about 40, and saturation is about 75 percent. [S2, S4]
 **4C** · So on each pass through the body at rest, only about a quarter of the oxygen is unloaded. [S2]
 
 On-screen text: Arterial: 100 mmHg, 97% · Mixed venous: 40 mmHg, 75% · At rest, per pass: (97 − 75) / 97 ≈ 23%, about 1/4 unloaded
@@ -75,3 +75,4 @@ On-screen text: More O2 released at the same PO2 · O2 held more tightly · Righ
 - S1: Patel S, Jose A, Mohiuddin SS. Physiology, Oxygen Transport And Carbon Dioxide Dissociation Curve. StatPearls (NCBI Bookshelf), updated Mar 27, 2023. https://www.ncbi.nlm.nih.gov/books/NBK539815/
 - S2: Collins JA, Rudenski A, Gibson J, Howard L, O'Driscoll R. Relating oxygen partial pressure, saturation and content: the haemoglobin–oxygen dissociation curve. Breathe (Sheff). 2015;11(3):194–201. PMID 26632351. doi:10.1183/20734735.001415
 - S3: Haller T, Lesser L, Woyke S. Effects of drugs on the oxygen dissociation curve: a scoping review. Eur J Clin Pharmacol. 2024;81(2):227–236. PMID 39585422. doi:10.1007/s00228-024-03781-8
+- S4: Castro D, Zubair M. Arterial Blood Gas Analysis: Fundamentals, Interpretation, and Clinical Utility. StatPearls (NCBI Bookshelf), updated Jul 5, 2026. https://www.ncbi.nlm.nih.gov/books/NBK536919/

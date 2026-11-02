@@ -30,7 +30,9 @@
    "saved_generation_id": "ywJG7DGCg5EiiqraKN46",
    "start_in_full_s": 0.0,
    "hold_s": 0.5,
-   "decoded_s": 2.4
+   "decoded_s": 2.4,
+   "scribe_session_id": "7aWWO6I1UqMbGTExFhOg",
+   "scribe_generation_id": "HBFidJr49ysF5eO7orYy"
   },
   {
    "beat": "1B",
@@ -56,7 +58,9 @@
    "saved_generation_id": "5XwPgiD8HpfKFKt9609l",
    "start_in_full_s": 2.9,
    "hold_s": 0.5,
-   "decoded_s": 4.48
+   "decoded_s": 4.48,
+   "scribe_session_id": "KBeNgH0pYGjOdCQMSmaV",
+   "scribe_generation_id": "zPNsjc3AgDofpQQ942ZH"
   },
   {
    "beat": "1C",
@@ -82,7 +86,9 @@
    "saved_generation_id": "Ae7tcxdGKmAx2g6UiI5C",
    "start_in_full_s": 7.88,
    "hold_s": 0.5,
-   "decoded_s": 5.36
+   "decoded_s": 5.36,
+   "scribe_session_id": "Y28bAIDRCdyKJvKv4m6l",
+   "scribe_generation_id": "qQ43FKhS35roz3HrE8PZ"
   },
   {
    "beat": "2A",
@@ -109,7 +115,9 @@
    "tts_input_respelling": "/ˌpiː oʊ ˈtuː/",
    "start_in_full_s": 13.74,
    "hold_s": 0.5,
-   "decoded_s": 8.24
+   "decoded_s": 8.24,
+   "scribe_session_id": "9VKw3M3GsVXJv82fsQgo",
+   "scribe_generation_id": "FBkk4iF1ZZakwtHdA1uv"
   },
   {
    "beat": "2B",
@@ -135,7 +143,9 @@
    "saved_generation_id": "40Wq0ScrRFJj5YZrwm0z",
    "start_in_full_s": 22.48,
    "hold_s": 0.5,
-   "decoded_s": 6.0
+   "decoded_s": 6.0,
+   "scribe_session_id": "p0d5PkvKy1W0mUVEFBuO",
+   "scribe_generation_id": "APtKiqkkIcYbeorMWRQa"
   },
   {
    "beat": "3A",
@@ -162,7 +172,9 @@
    "tts_input_respelling": "/hiːm/",
    "start_in_full_s": 28.98,
    "hold_s": 0.5,
-   "decoded_s": 6.32
+   "decoded_s": 6.32,
+   "scribe_session_id": "bJ1LnCEdPdChvmns4vtJ",
+   "scribe_generation_id": "7JwEPTALlL1v2lwZ1Cxs"
   },
   {
    "beat": "3B",
@@ -188,7 +200,9 @@
    "saved_generation_id": "M2M23J8IhYoYJ5vNXNNc",
    "start_in_full_s": 35.8,
    "hold_s": 0.5,
-   "decoded_s": 7.68
+   "decoded_s": 7.68,
+   "scribe_session_id": "nKI48DSPf8NpBcgp3GJf",
+   "scribe_generation_id": "37inkual9A3fei5d1FsJ"
   },
   {
    "beat": "3C",
@@ -214,7 +228,9 @@
    "saved_generation_id": "EDbI6o1RDzk3MbScYKBh",
    "start_in_full_s": 43.98,
    "hold_s": 0.5,
-   "decoded_s": 2.72
+   "decoded_s": 2.72,
+   "scribe_session_id": "CjhpVDae68zgEzAG1uCh",
+   "scribe_generation_id": "M6ToHEUuoIf0nZOYvZAt"
   },
   {
    "beat": "3D",
@@ -240,7 +256,9 @@
    "saved_generation_id": "5ZO8s6uy5vgBBPbhqRKw",
    "start_in_full_s": 47.2,
    "hold_s": 1,
-   "decoded_s": 3.04
+   "decoded_s": 3.04,
+   "scribe_session_id": "a6G2UelD59e4o2Ry1IWn",
+   "scribe_generation_id": "WKJW6E9gt9ZDQ72Nk5Hv"
   },
   {
    "beat": "4A",
@@ -267,7 +285,9 @@
    "tts_input_respelling": "/ˌpiː oʊ ˈtuː/",
    "start_in_full_s": 51.24,
    "hold_s": 0.5,
-   "decoded_s": 7.52
+   "decoded_s": 7.52,
+   "scribe_session_id": "ztkgyOH9Kn1b09x8ZZef",
+   "scribe_generation_id": "dndExe14DuzB3VgyjXdM"
   },
   {
    "beat": "4B",
@@ -294,7 +314,9 @@
    "tts_input_respelling": "/ˌpiː oʊ ˈtuː/",
    "start_in_full_s": 59.26,
    "hold_s": 0.5,
-   "decoded_s": 7.68
+   "decoded_s": 7.68,
+   "scribe_session_id": "22xBe7BTmnWxPOXV6eGQ",
+   "scribe_generation_id": "zQzBolYCAVZKPcr7Pjvm"
   },
   {
    "beat": "4C",
@@ -320,7 +342,9 @@
    "saved_generation_id": "DXcP06Kwknj3JmPmfu8w",
    "start_in_full_s": 67.44,
    "hold_s": 1,
-   "decoded_s": 5.52
+   "decoded_s": 5.52,
+   "scribe_session_id": "PJpWfwotDiyuZO4PpwMS",
+   "scribe_generation_id": "j5PgmCLIC6zKdoosMM43"
   },
   {
    "beat": "5A",
@@ -347,7 +371,9 @@
    "tts_input_respelling": "/ˌpiː oʊ ˈtuː/, /ˌpiː ˈfɪfti/",
    "start_in_full_s": 73.96,
    "hold_s": 0.5,
-   "decoded_s": 7.44
+   "decoded_s": 7.44,
+   "scribe_session_id": "xgedstSdImH9yvAlOYJB",
+   "scribe_generation_id": "AKKJYXYIkUcEZtWxCpRJ"
   },
   {
    "beat": "5B",
@@ -373,7 +399,9 @@
    "saved_generation_id": "NTQYSO6i7F6VKAgWgdQm",
    "start_in_full_s": 81.9,
    "hold_s": 1,
-   "decoded_s": 5.6
+   "decoded_s": 5.6,
+   "scribe_session_id": "ENM0Bjvj7OdiBQZ3PaVj",
+   "scribe_generation_id": "iRH9JbavODT2vJ62h9e4"
   },
   {
    "beat": "6A",
@@ -400,7 +428,9 @@
    "tts_input_respelling": "/ˌpiː oʊ ˈtuː/",
    "start_in_full_s": 88.5,
    "hold_s": 0.5,
-   "decoded_s": 8.96
+   "decoded_s": 8.96,
+   "scribe_session_id": "0fXyUGVBKalhf6XHHTJW",
+   "scribe_generation_id": "EwnLfB8YtfjdlGZX1MxV"
   },
   {
    "beat": "6B",
@@ -426,7 +456,9 @@
    "saved_generation_id": "f3JatuiwNiKcxmxPvkGt",
    "start_in_full_s": 97.96,
    "hold_s": 0.5,
-   "decoded_s": 5.52
+   "decoded_s": 5.52,
+   "scribe_session_id": "SUag7kEtE0mMGyfvehwQ",
+   "scribe_generation_id": "zGgnRCksPFvy1KYmedKY"
   },
   {
    "beat": "6C",
@@ -453,7 +485,9 @@
    "tts_input_respelling": "/ˌpiː oʊ ˈtuː/",
    "start_in_full_s": 103.98,
    "hold_s": 1,
-   "decoded_s": 7.68
+   "decoded_s": 7.68,
+   "scribe_session_id": "WSluyD58grs4HIY7Ji2X",
+   "scribe_generation_id": "96fgD2HBTalFqwiF4fjq"
   },
   {
    "beat": "7A",
@@ -480,7 +514,9 @@
    "tts_input_respelling": "/ˌpiː ˈfɪfti/",
    "start_in_full_s": 112.66,
    "hold_s": 0.5,
-   "decoded_s": 6.4
+   "decoded_s": 6.4,
+   "scribe_session_id": "WsQavPvTR5LKLi2ndU27",
+   "scribe_generation_id": "7v9HszBvVRqEorMD1Y7d"
   },
   {
    "beat": "8A",
@@ -507,7 +543,9 @@
    "tts_input_respelling": "/ˌpiː ˈfɪfti/",
    "start_in_full_s": 119.56,
    "hold_s": 0.5,
-   "decoded_s": 7.12
+   "decoded_s": 7.12,
+   "scribe_session_id": "iLAGukOo7x6viIvzv5lE",
+   "scribe_generation_id": "rZeopKnTBWWyxa7NzFzU"
   },
   {
    "beat": "8B",
@@ -534,7 +572,9 @@
    "tts_input_respelling": "/ˌtuː ˈθriː ˌdiː piː ˈdʒiː/",
    "start_in_full_s": 127.18,
    "hold_s": 0.5,
-   "decoded_s": 9.28
+   "decoded_s": 9.28,
+   "scribe_session_id": "VMpwMvSLfsQTL3fecEaD",
+   "scribe_generation_id": "sX2R8nG3jJvZuJiyd2tJ"
   },
   {
    "beat": "8C",
@@ -561,7 +601,9 @@
    "tts_input_respelling": "/bɔːr/",
    "start_in_full_s": 136.96,
    "hold_s": 0.5,
-   "decoded_s": 4.24
+   "decoded_s": 4.24,
+   "scribe_session_id": "O3MRJhlH6edaW2UZVGaS",
+   "scribe_generation_id": "fhj8tnUoI6yAfBGBxp21"
   },
   {
    "beat": "8D",
@@ -587,7 +629,9 @@
    "saved_generation_id": "lhqB5KMkkVyG2Wc9zQbc",
    "start_in_full_s": 141.7,
    "hold_s": 1,
-   "decoded_s": 8.56
+   "decoded_s": 8.56,
+   "scribe_session_id": "catuMxjeInquKjW5wIwT",
+   "scribe_generation_id": "4loxN68GLExJlz8xdeYT"
   },
   {
    "beat": "9A",
@@ -614,7 +658,9 @@
    "tts_input_respelling": "/ˌpiː ˈfɪfti/",
    "start_in_full_s": 151.26,
    "hold_s": 0.5,
-   "decoded_s": 8.08
+   "decoded_s": 8.08,
+   "scribe_session_id": "2gNOypPPzLRRGQijJIDy",
+   "scribe_generation_id": "GdKp2t5xhg3H7WEo8ArC"
   },
   {
    "beat": "9B",
@@ -641,7 +687,9 @@
    "tts_input_respelling": "/ˌtuː ˈθriː ˌdiː piː ˈdʒiː/",
    "start_in_full_s": 159.84,
    "hold_s": 0.5,
-   "decoded_s": 6.64
+   "decoded_s": 6.64,
+   "scribe_session_id": "X5H6C2M4Tv0V21dSfCaN",
+   "scribe_generation_id": "wQFzkEhEcEAQtWThbV3j"
   },
   {
    "beat": "9C",
@@ -668,7 +716,9 @@
    "tts_input_respelling": "/ˌtuː ˈθriː ˌdiː piː ˈdʒiː/",
    "start_in_full_s": 166.98,
    "hold_s": 0.5,
-   "decoded_s": 8.08
+   "decoded_s": 8.08,
+   "scribe_session_id": "qx03w50Mgrpfz3RaR2jB",
+   "scribe_generation_id": "ooTCjIpSC79QNY3mmQDv"
   },
   {
    "beat": "9D",
@@ -694,7 +744,9 @@
    "saved_generation_id": "0MLffnthQftRbiKJ5N6t",
    "start_in_full_s": 175.56,
    "hold_s": 1,
-   "decoded_s": 11.52
+   "decoded_s": 11.52,
+   "scribe_session_id": "tNMmlKud9mF3Ydbp2p4i",
+   "scribe_generation_id": "FggH63UQpr0ZiAPSEcRP"
   },
   {
    "beat": "10A",
@@ -721,7 +773,9 @@
    "tts_input_respelling": "/ˌpiː oʊ ˈtuː/, /ˌpiː ˈfɪfti/",
    "start_in_full_s": 188.08,
    "hold_s": 0.5,
-   "decoded_s": 7.6
+   "decoded_s": 7.6,
+   "scribe_session_id": "GBKq58FJfXoB6Ig9duAw",
+   "scribe_generation_id": "4wU90F4Fy16eKWAebfgp"
   },
   {
    "beat": "10B",
@@ -748,7 +802,9 @@
    "tts_input_respelling": "/ˌpiː ˈfɪfti/",
    "start_in_full_s": 196.18,
    "hold_s": 0.5,
-   "decoded_s": 5.6
+   "decoded_s": 5.6,
+   "scribe_session_id": "DumlLPuEUQ28YbvqD4Ta",
+   "scribe_generation_id": "i7nyGpQNafKS5S0OLwT1"
   },
   {
    "beat": "10C",
@@ -774,12 +830,15 @@
    "saved_generation_id": "2I9JAmEdFeJogtwKhccx",
    "start_in_full_s": 202.28,
    "hold_s": 2,
-   "decoded_s": 3.6
+   "decoded_s": 3.6,
+   "scribe_session_id": "9PY67b53sNPsplyRSEVU",
+   "scribe_generation_id": "FsfBHLLcyPQE58r6E866"
   }
  ],
  "full_track": {
   "file": "audio/full.mp3",
   "duration_s": 207.88,
   "note": "beat starts measured from decoded sample counts"
- }
+ },
+ "timings_note": "Word timings: saved take pinned (returns the speech node, as it is the active take), transcribed with eleven_scribe_v1; source link checked against saved_generation_id for all 29. Scribe returns the IPA respellings verbatim, so it confirms timing, not pronunciation."
 }
