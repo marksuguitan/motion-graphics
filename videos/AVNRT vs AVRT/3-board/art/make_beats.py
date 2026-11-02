@@ -30,7 +30,7 @@ def defs():
 </defs>"""
 
 def svg(bid, body):
-    hd = f"<defs>{heart_defs()}</defs>\n" if 'href="#MarkHeart"' in body else ""
+    hd = (f"<defs>{heart_defs()}</defs>\n" if 'href="#MarkHeart"' in body else "") + (f"<defs>{heart_bg_defs()}</defs>\n" if 'href="#MarkHeartBG"' in body else "")
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">\n{defs()}\n{hd}'
             f'<rect id="Background" width="1920" height="1080" fill="{SOFT}"/>\n{body}\n'
             f'<g id="BeatID">{T(1888, 1056, bid, 22, 600, SEC, BODY, "end")}</g>\n</svg>\n')
@@ -182,23 +182,26 @@ def junction(cx, cy, s=1.0, st=None):
     return "".join(g), dict(top=top, bot=bot, r=r, atr_y=atr_y, atr_h=atr_h, atr_w=atr_w, node_y=node_y, his_bot=his_bot, br=br)
 
 _bgc = [0]
-def hb_for(geo, cx, s, clip, kk=0.11):
-    # Heart AV node at the centre of the ring (the ring stands for the AV node region),
-    # heart atria under the Atria box; fades out from the bottom of the ring to the His bundle.
-    cy = geo["top"] + geo["r"]
-    return heart_backdrop(cx, cy, geo["bot"] - 20 * s, geo["his_bot"], clip, kk=kk * s)
+# Heart behind the AV-junction diagrams: Mark's own placement, set in Illustrator on 3E (Nov 2, 2026).
+# mark_heart_bg_body.svg is his repositioned heart in a frame that maps with translate(174.8 226) scale(0.11)
+# when the diagram ring centre is at (540, 600), s = 1.
+HEART_BG_BODY = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "mark_heart_bg_body.svg")).read()
+def heart_bg_defs():
+    return f'<g id="MarkHeartBG">{HEART_BG_BODY}</g>'
 
-def heart_backdrop(cx, node_y, top_y, bot_y, clip, kk=0.11, op=0.5):
-    """Mark's heart behind a junction schematic: his AV node sits on the diagram's node,
-    full strength over the atria, fading out by the ventricles. clip = card (x, y, w, h)."""
+_bgc = [0]
+def hb_for(geo, cx, s, clip, op=0.5):
+    """Mark's heart behind a junction diagram, faded from top left to bottom right. clip = card (x, y, w, h)."""
     _bgc[0] += 1; n = _bgc[0]
-    tx, ty = cx - NODE_U[0] * kk, node_y - NODE_U[1] * kk
+    cy = geo["top"] + geo["r"]
+    tx, ty = cx + (174.8 - 540) * s, cy + (226 - 600) * s
     x, y, w, h = clip
+    x1, y1, x2, y2 = cx - 300 * s, cy - 300 * s, cx + 250 * s, cy + 330 * s
     return (f'<g id="HeartBackdrop"><defs><clipPath id="hbClip{n}"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="24"/></clipPath>'
-            f'<linearGradient id="hbFade{n}" gradientUnits="userSpaceOnUse" x1="0" y1="{top_y:.1f}" x2="0" y2="{bot_y:.1f}">'
-            f'<stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+            f'<linearGradient id="hbFade{n}" gradientUnits="userSpaceOnUse" x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}">'
+            f'<stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="0.45" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
             f'<mask id="hbMask{n}" maskUnits="userSpaceOnUse" x="{x}" y="{y}" width="{w}" height="{h}"><rect x="{x}" y="{y}" width="{w}" height="{h}" fill="url(#hbFade{n})"/></mask></defs>'
-            f'<g clip-path="url(#hbClip{n})" mask="url(#hbMask{n})" opacity="{op}"><g transform="translate({tx:.1f} {ty:.1f}) scale({kk})"><use href="#MarkHeart"/></g></g></g>')
+            f'<g clip-path="url(#hbClip{n})" mask="url(#hbMask{n})" opacity="{op}"><g transform="translate({tx:.1f} {ty:.1f}) scale({0.11 * s:.4f})"><use href="#MarkHeartBG"/></g></g></g>')
 
 def xmark(x, y, r):
     return (f'<g id="Ablation"><circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.1f}" fill="{BG}" stroke="{INK}" stroke-width="5"/>'
