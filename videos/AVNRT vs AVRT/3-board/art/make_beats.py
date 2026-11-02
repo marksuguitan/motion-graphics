@@ -181,6 +181,22 @@ def junction(cx, cy, s=1.0, st=None):
     g.append('</g>')
     return "".join(g), dict(top=top, bot=bot, r=r, atr_y=atr_y, atr_h=atr_h, atr_w=atr_w, node_y=node_y, his_bot=his_bot, br=br)
 
+_bgc = [0]
+def hb_for(geo, cx, s, clip):
+    return heart_backdrop(cx, geo["node_y"], geo["node_y"] - 60 * s, geo["his_bot"] + 10 * s, clip, kk=0.18 * s)
+
+def heart_backdrop(cx, node_y, top_y, bot_y, clip, kk=0.18, op=0.42):
+    """Mark's heart behind a junction schematic: his AV node sits on the diagram's node,
+    full strength over the atria, fading out by the ventricles. clip = card (x, y, w, h)."""
+    _bgc[0] += 1; n = _bgc[0]
+    tx, ty = cx - NODE_U[0] * kk, node_y - NODE_U[1] * kk
+    x, y, w, h = clip
+    return (f'<g id="HeartBackdrop"><defs><clipPath id="hbClip{n}"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="24"/></clipPath>'
+            f'<linearGradient id="hbFade{n}" gradientUnits="userSpaceOnUse" x1="0" y1="{top_y:.1f}" x2="0" y2="{bot_y:.1f}">'
+            f'<stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+            f'<mask id="hbMask{n}" maskUnits="userSpaceOnUse" x="{x}" y="{y}" width="{w}" height="{h}"><rect x="{x}" y="{y}" width="{w}" height="{h}" fill="url(#hbFade{n})"/></mask></defs>'
+            f'<g clip-path="url(#hbClip{n})" mask="url(#hbMask{n})" opacity="{op}"><g transform="translate({tx:.1f} {ty:.1f}) scale({kk})"><use href="#MarkHeart"/></g></g></g>')
+
 def xmark(x, y, r):
     return (f'<g id="Ablation"><circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.1f}" fill="{BG}" stroke="{INK}" stroke-width="5"/>'
             f'<path d="M{x-r*0.5:.1f},{y-r*0.5:.1f} L{x+r*0.5:.1f},{y+r*0.5:.1f} M{x+r*0.5:.1f},{y-r*0.5:.1f} L{x-r*0.5:.1f},{y+r*0.5:.1f}" stroke="{INK}" stroke-width="5" stroke-linecap="round"/></g>')
@@ -279,8 +295,10 @@ def leader(x1, y1, x2, y2):
 def heart_left(o, s=1.0):
     return card(120, 120, 840, 840, "Cards/Heart") + heart(540, 560, s, o)[0]
 
-def diag_left(st, s=1.0, cx=540, cy=600):
-    return card(120, 120, 840, 840, "Cards/Diagram") + junction(cx, cy, s, st)[0]
+def diag_left(st, s=1.0, cx=540, cy=600, bg=True):
+    j, geo = junction(cx, cy, s, st)
+    hb = heart_backdrop(cx, geo["node_y"], geo["node_y"] - 60 * s, geo["his_bot"] + 10 * s, (120, 120, 840, 840)) if bg else ""
+    return card(120, 120, 840, 840, "Cards/Diagram") + hb + j
 
 F = {}
 def frame(bid, name):
@@ -371,7 +389,8 @@ def _():
 
 @frame("3B", "property-cards")
 def _():
-    b = [card(600, 120, 720, 840, "Cards/Diagram"), junction(960, 600, 1.0, full_st(node="off", labels=False))[0]]
+    j, geo = junction(960, 600, 1.0, full_st(node="off", labels=False))
+    b = [card(600, 120, 720, 840, "Cards/Diagram"), hb_for(geo, 960, 1.0, (600, 120, 720, 840)), j]
     for i, (t1, t2, t3) in enumerate((("Slow", "conducts slowly", "recovers quickly"), ("Fast", "conducts quickly", "recovers slowly"))):
         x = 120 if i == 0 else 1380
         b.append(card(x, 440, 420, 220, f"Cards/{t1}"))
@@ -385,7 +404,7 @@ def _():
 @frame("3D", "slow-instead")
 def _():
     j, geo = junction(540, 600, 1.0, full_st(stem="on", left="on", right="shade", arrows={"left": "down", "stem": "down"}))
-    b = [card(120, 120, 840, 840, "Cards/Diagram"), j]
+    b = [card(120, 120, 840, 840, "Cards/Diagram"), hb_for(geo, 540, 1.0, (120, 120, 840, 840)), j]
     c, _ = chip(540 + 120 + 30, 600 - 90, "recovering", "dark"); b.append(c)
     b.append(side_text(1060, 380, ("Premature beat", "amber"), ["Down the", "slow pathway"]))
     return "".join(b)
@@ -407,6 +426,7 @@ def _():
     b = ['<g id="Header">' + T(120, 132, "AVNRT · THE SMALL LOOP", 22, 700, SEC, HEAD, ls="2.5") + T(120, 196, "Atria and ventricles fire together", 52, 600, INK, HEAD) + '</g>']
     b.append(card(120, 250, 760, 740, "Cards/Diagram") + card(940, 250, 860, 740, "Cards/ECG"))
     j, geo = junction(420, 590, 0.95, full_st(left="on", right="on", stem="on", his="on", arrows={"left": "down", "right": "up", "stem": "up"}, labels=False, atria_on=True))
+    b.append(hb_for(geo, 420, 0.95, (120, 250, 760, 740)))
     b.append(j)
     ay = geo["atr_y"] + geo["atr_h"] / 2
     c, _ = chip(420 + geo["atr_w"] / 2 + 20, ay - 25, "Up to the atria"); b.append(c)
@@ -552,6 +572,7 @@ def two_loops(blocked=False):
     stt = full_st(left="dim" if blocked else "on", right="dim" if blocked else "on", arrows={} if blocked else {"left": "down", "right": "up"},
                   node="blocked" if blocked else "on", tags=False, labels=False)
     j, geo = junction(530, 650, 0.9, stt)
+    b.append(hb_for(geo, 530, 0.9, (120, 260, 820, 720)))
     b.append(j)
     if not blocked:
         b.append(ring(530, geo["node_y"], 72, CORAL, "Focus/NodeRing"))
