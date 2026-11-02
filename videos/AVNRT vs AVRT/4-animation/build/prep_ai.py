@@ -99,6 +99,8 @@ def main():
         spec = []
 
         def add(name, el, fx):
+            if not any(e.tag in (Q(t) for t in ("path", "line", "circle", "ellipse", "rect", "text", "polyline", "polygon")) for e in el.iter()):
+                return                                           # empty group (nothing to draw): no layer
             lid = f"L{len(spec) + 1:03d}"
             base, j = name, 2
             while any(x["name"] == name for x in spec): name = f"{base} {j}"; j += 1
