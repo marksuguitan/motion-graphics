@@ -7,16 +7,16 @@ import {AbsoluteFill, cancelRender, continueRender, delayRender, staticFile} fro
 import {useTime} from '../lib/timing';
 import {ease, keys, overshoot, progress, squash, typeOff, typeOn} from '../style/comma';
 import {COND, T_BIF, TL, along, alongClamped, ecg, recovery, warp} from '../lib/conduction';
-import {COND_PATHS, HEART, HIGHLIGHTS} from '../data/heartArt';
+import {COND_ART} from '../data/heartArt';
 import {Caption, CaptionItem} from './Caption';
 import {M, FONT_HEAD} from '../style/mono';
 
 // ------------------------------------------------------------------ layout
-const VB = COND.viewBox; // 210 108 672 887
-const K = 1.06; // heart scale (SVG unit -> px)
-const OX = 257.5; // screen x of SVG x = VB[0]
-const OY = 71; // screen y of SVG y = VB[1]
-const HEART_C: [number, number] = [552, 560]; // squeeze origin (SVG units)
+const VB = COND.viewBox; // Mark's simplified heart: 984 391 6031 7351
+const K = 960 / VB[3]; // must match DISPLAY_H in conduction_geo.py // heart scale (SVG unit -> px): the heart is 960 px tall
+const OX = 620 - (VB[2] / 2) * K; // screen x of SVG x = VB[0]: heart centred at x 620
+const OY = 60; // screen y of SVG y = VB[1]
+const HEART_C: [number, number] = [VB[0] + VB[2] / 2, VB[1] + VB[3] * 0.55]; // squeeze origin (SVG units)
 const ORB_R = 15; // px
 const FRONT_R = 5.5; // px
 const [SA_X, SA_Y] = COND.points.SA;
@@ -26,29 +26,30 @@ const TITLE_BASE = 568; // baseline y of the title
 const DOT_R = 7; // the period
 const DOT_GAP = 5;
 
-// ------------------------------------------------------------------ the activation map, loaded once as a data URL
-let actUrl: string | null = null;
-let actPromise: Promise<string> | null = null;
-const loadAct = () =>
-  (actPromise ??= fetch(staticFile('maps/act.png'))
+// ------------------------------------------------------------------ images (heart, activation map), loaded once as data URLs
+// so they are in the frame before Remotion captures it
+const cache: Record<string, string> = {};
+const pending: Record<string, Promise<string>> = {};
+const load = (file: string) =>
+  (pending[file] ??= fetch(staticFile(file))
     .then((r) => r.blob())
     .then((b) => new Promise<string>((res) => {
       const fr = new FileReader();
-      fr.onload = () => res((actUrl = fr.result as string));
+      fr.onload = () => res((cache[file] = fr.result as string));
       fr.readAsDataURL(b);
     })));
-function useActMap(): string | null {
-  const [url, setUrl] = useState<string | null>(actUrl);
-  const [handle] = useState(() => (actUrl ? null : delayRender('Loading the activation map')));
+function useDataUrl(file: string): string | null {
+  const [url, setUrl] = useState<string | null>(cache[file] ?? null);
+  const [handle] = useState(() => (cache[file] ? null : delayRender(`Loading ${file}`)));
   useEffect(() => {
     if (url) return;
-    loadAct()
+    load(file)
       .then((u) => {
         setUrl(u);
         if (handle !== null) continueRender(handle);
       })
       .catch((e) => cancelRender(e));
-  }, [url, handle]);
+  }, [url, handle, file]);
   return url;
 }
 
@@ -74,7 +75,8 @@ function beatState(t: number) {
   if (t < E.realStart) total = warp(t, E.slowWarp);
   else total = COND.beat + Math.min(t, realEnd) - E.realStart;
   if (t >= E.off) return {mode: 'post' as Mode, tau: 0, total};
-  return {mode: 'ecg' as Mode, tau: total % COND.beat, total};
+  const n = Math.floor(total / COND.beat + 1e-6); // tolerate float error at a beat boundary
+  return {mode: 'ecg' as Mode, tau: Math.max(0, total - n * COND.beat), total};
 }
 
 // time (video) at which the beat reaches tau, inside the current walk or ECG segment (for shrink timings)
@@ -90,13 +92,15 @@ function timeOfTau(tau: number, t: number): number {
     for (let i = 1; i < k.length; i++) if (tau <= k[i][1]) return k[i - 1][0] + ((tau - k[i - 1][1]) / (k[i][1] - k[i - 1][1])) * (k[i][0] - k[i - 1][0]);
     return k[k.length - 1][0];
   }
-  const beatStart = E.realStart + Math.floor((t - E.realStart) / COND.beat) * COND.beat;
+  const beatStart = E.realStart + Math.floor((t - E.realStart) / COND.beat + 1e-6) * COND.beat;
   return beatStart + tau;
 }
 
 export const NormalConduction: React.FC = () => {
   const t = useTime();
-  const act = useActMap();
+  const act = useDataUrl('maps/act.png');
+  const heartPng = useDataUrl('maps/heart.png');
+  const HI = COND.heartImage;
   const st = beatState(t);
 
   // ---------------------------------------------------------------- heart transform
@@ -249,7 +253,7 @@ export const NormalConduction: React.FC = () => {
   if (t >= tAV && t < tAV + 1.0) {
     const on = progress(t, tAV, 0.3, 'snap');
     const off = progress(t, tAV + 0.7, 0.3, 'accel');
-    const c = toScreen(480, 488);
+    const c = toScreen(COND.points.AV[0], COND.points.AV[1]);
     rings.push({...c, r: 44, w: 4, dash: on - off});
   }
 
@@ -267,9 +271,6 @@ export const NormalConduction: React.FC = () => {
     <AbsoluteFill style={{background: M.bg}}>
       <svg width={1920} height={1080} viewBox="0 0 1920 1080" style={{position: 'absolute', inset: 0}}>
         <defs>
-          <filter id="soft" x="-10%" y="-10%" width="120%" height="125%">
-            <feDropShadow dx="0" dy="10" stdDeviation="14" floodColor="#000" floodOpacity="0.10" />
-          </filter>
           <filter id="thr" x="0" y="0" width="1" height="1" colorInterpolationFilters="sRGB">
             <feColorMatrix type="matrix" values={`0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  ${-KT} 0 0 0 ${KT * tauN + 0.5}`} />
           </filter>
@@ -284,19 +285,16 @@ export const NormalConduction: React.FC = () => {
           <g transform={layoutT}>
             <g transform={growT}>
               <g transform={sqT}>
-                <g filter="url(#soft)">
-                  <g dangerouslySetInnerHTML={{__html: HEART}} />
-                </g>
-                <g dangerouslySetInnerHTML={{__html: HIGHLIGHTS}} />
-                <g fill={M.path}>
-                  {COND_PATHS.map((d, i) => (
-                    <path key={i} d={d} />
+                {heartPng ? <image href={heartPng} x={HI.x} y={HI.y} width={HI.w} height={HI.h} /> : null}
+                <g>
+                  {COND_ART.map(([d, fill], i) => (
+                    <path key={i} d={d} fill={fill} stroke={fill} strokeWidth={0.73} />
                   ))}
                 </g>
                 {litTau >= 0 ? (
-                  <g fill={M.lit} mask="url(#lit)" opacity={litOpacity}>
-                    {COND_PATHS.map((d, i) => (
-                      <path key={i} d={d} />
+                  <g mask="url(#lit)" opacity={litOpacity}>
+                    {COND_ART.map(([d, , lit], i) => (
+                      <path key={i} d={d} fill={lit} stroke={lit} strokeWidth={0.73} />
                     ))}
                   </g>
                 ) : null}
@@ -369,7 +367,7 @@ const StepDots: React.FC<{t: number; index: number; n: number; x: number; y: num
       {Array.from({length: n}).map((_, i) => {
         const s = t < off ? overshoot(t, on + i * (2 / 30), 0.4, 0, 1, 0.1) : 1 - progress(t, off - 0.25 + i * (1 / 30), 0.25, 'accel');
         const done = i <= index;
-        const pulse = i === index ? 1 + 0.25 * (1 - progress(t, [7.3, 10, 12.6, 15.6, 18.9][i] ?? 0, 0.3, 'snap')) : 1;
+        const pulse = i === index ? 1 + 0.25 * (1 - progress(t, TL.walk.steps[i]?.t ?? 0, 0.3, 'snap')) : 1;
         return <circle key={i} cx={10 + i * 30} cy={20} r={7 * Math.max(0, s) * pulse} fill={done ? M.ink : 'none'} stroke={done ? M.ink : M.inactive} strokeWidth={2.5} />;
       })}
     </svg>

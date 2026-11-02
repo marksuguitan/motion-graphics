@@ -2,148 +2,148 @@
   "note": "Hand-set timeline for Normal Conduction (no VO). Seconds of video time. tau = seconds within one heartbeat (0 = SA node fires); conduction.json gives where the impulse is at each tau. Read by src/ and by 4-animation/build/sfx.py.",
   "title": {
     "text": "Normal conduction",
-    "typeOn": 0.3,
-    "typeOff": 4.0,
-    "retype": 43.45
+    "typeOn": 0.2,
+    "typeOff": 2.6,
+    "retype": 42.05
   },
   "dot": {
-    "grow": 4.8,
-    "jump": 5.6,
-    "land": 6.35
+    "grow": 3.4,
+    "jump": 4.2,
+    "land": 4.95
   },
   "heart": {
-    "grow": 6.35,
-    "shrink": 42.2
+    "grow": 4.95,
+    "shrink": 40.8
   },
   "walk": {
     "warp": [
       [
-        7.3,
+        5.9,
         0
       ],
       [
-        10.0,
+        8.6,
         0
       ],
       [
-        12.6,
-        0.0506
+        11.2,
+        0.042
       ],
       [
-        15.6,
+        14.2,
         0.125
       ],
       [
-        18.9,
+        17.5,
         0.181
       ],
       [
-        22.2,
+        20.8,
         0.225
       ]
     ],
     "pings": [
-      7.55,
-      9.35
+      6.15,
+      7.95
     ],
-    "squeeze": 21.9,
+    "squeeze": 20.5,
     "steps": [
       {
-        "t": 7.3,
+        "t": 5.9,
         "head": "SA node",
         "body": "fires the impulse"
       },
       {
-        "t": 10.0,
+        "t": 8.6,
         "head": "Atria",
         "body": "it spreads across both atria"
       },
       {
-        "t": 12.6,
+        "t": 11.2,
         "head": "AV node",
         "body": "a brief delay"
       },
       {
-        "t": 15.6,
+        "t": 14.2,
         "head": "Bundle of His",
         "body": "then the right and left bundle branches"
       },
       {
-        "t": 18.9,
+        "t": 17.5,
         "head": "Purkinje fibers",
         "body": "through the ventricular walls"
       }
     ],
-    "end": 23.4
+    "end": 22.0
   },
   "reset": {
-    "t": 23.4,
-    "orb": 24.2
+    "t": 22.0,
+    "orb": 22.8
   },
   "ecg": {
-    "axisOn": 24.0,
-    "kickerSlow": 24.2,
+    "axisOn": 22.6,
+    "kickerSlow": 22.8,
     "slowWarp": [
       [
-        25.0,
+        23.6,
         0
       ],
       [
-        27.6,
+        26.2,
         0.09
       ],
       [
-        30.2,
+        28.8,
         0.16
       ],
       [
-        32.8,
+        31.4,
         0.25
       ],
       [
-        35.0,
+        33.6,
         0.5
       ],
       [
-        35.8,
+        34.4,
         0.8
       ]
     ],
     "labels": [
       {
-        "t": 25.0,
+        "t": 23.6,
         "head": "P wave",
         "body": "atria depolarize",
         "from": 0.0,
         "to": 0.09
       },
       {
-        "t": 27.6,
+        "t": 26.2,
         "head": "Flat line",
         "body": "the AV node delay",
         "from": 0.09,
         "to": 0.16
       },
       {
-        "t": 30.2,
+        "t": 28.8,
         "head": "QRS",
         "body": "ventricles depolarize",
         "from": 0.16,
         "to": 0.25
       },
       {
-        "t": 32.8,
+        "t": 31.4,
         "head": "T wave",
         "body": "ventricles repolarize",
         "from": 0.3,
         "to": 0.5
       }
     ],
-    "realStart": 36.2,
+    "realStart": 34.8,
     "realBeats": 6,
     "realHead": "Normal sinus rhythm",
     "realBody": "the same path, every beat",
-    "off": 41.4
+    "off": 40.0
   },
-  "end": 47.5
+  "end": 46.1
 }

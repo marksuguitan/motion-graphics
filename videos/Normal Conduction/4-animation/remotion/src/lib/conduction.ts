@@ -7,6 +7,7 @@ import timelineJson from '../data/timeline.json';
 type P3 = [number, number, number];
 export const COND = conductionJson as unknown as {
   viewBox: [number, number, number, number];
+  heartImage: {x: number; y: number; w: number; h: number};
   actMax: number;
   beat: number;
   times: {avIn: number; avOut: number; ventEnd: number; atriaEnd: number};
