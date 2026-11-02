@@ -158,12 +158,28 @@ f.add(group("Background/Stage", card(96, 150, 1728, 780)),
 f.save()
 
 # ---------- Scene 2 ----------
-f = F("2A", "x-axis"); f.add(stage(), axes(yaxis=False, grid=False),
-      group("Note/X", chip(GX+GW/2-170, GY+GH+122, 340, "PO2 = dissolved O2", C["tealsoft"], None, C["ink"], 26, 500, 52)))
+# Mark 2026-11-02 (v9): the axes come apart so each piece can arrive on its word (line, tick numbers, gridlines), and the
+# notes move out from under the axes into a side card to the right of the graph, as in later scenes. Wording unchanged.
+def axes_parts(yaxis=True):
+    g = [group("Graph/GridV", *[f'<line x1="{X(v):.1f}" y1="{GY}" x2="{X(v):.1f}" y2="{GY+GH}" stroke="{C["div"]}" stroke-width="2"/>' for v in range(20, 101, 20)])]
+    if yaxis: g.append(group("Graph/GridH", *[f'<line x1="{GX}" y1="{Y(v):.1f}" x2="{GX+GW}" y2="{Y(v):.1f}" stroke="{C["div"]}" stroke-width="2"/>' for v in range(20, 101, 20)]))
+    g.append(group("Graph/AxisX", f'<line x1="{GX}" y1="{GY+GH}" x2="{GX+GW}" y2="{GY+GH}" stroke="{C["ink"]}" stroke-width="3" stroke-linecap="round"/>',
+                   text(GX+GW/2, GY+GH+98, "PO2 (mmHg)", 30, 500, anchor="middle")))
+    g.append(group("Graph/TicksX", *[text(X(v), GY+GH+44, str(v), 26, 500, C["ink2"], anchor="middle") for v in range(0, 101, 20)]))
+    if yaxis:
+        g.append(group("Graph/AxisY", f'<line x1="{GX}" y1="{GY}" x2="{GX}" y2="{GY+GH}" stroke="{C["ink"]}" stroke-width="3" stroke-linecap="round"/>',
+                       f'<text transform="translate({GX-92},{GY+GH/2}) rotate(-90)" text-anchor="middle" style="{B};font-size:30px;font-weight:500" fill="{C["ink"]}">Hemoglobin saturation (%)</text>'))
+        g.append(group("Graph/TicksY", *[text(GX-18, Y(v)+9, str(v), 26, 500, C["ink2"], anchor="end") for v in range(0, 101, 20)]))
+    return g
+def axes_card(y_note=True):
+    g = [group("Panel/Card", card(1240, 290, 600, 384), text(1288, 352, "THE AXES", 23, 700, C["ink2"], H, ls=3)),
+         group("Note/XTerm", text(1288, 424, "PO2", 40, 600, C["ink"], H)),
+         group("Note/XDef", text(1288, 484, "= dissolved O2", 28, 400, C["ink"]))]
+    if y_note: g.append(group("Note/Y", text(1288, 566, "SO2", 40, 600, C["ink"], H), text(1288, 626, "= Hb binding sites filled", 28, 400, C["ink"])))
+    return g
+f = F("2A", "x-axis"); f.add(stage(), *[x for x in axes_parts(yaxis=False)], *axes_card(y_note=False))
 f.save()
-f = F("2B", "y-axis"); f.add(stage(), axes(),
-      group("Note/X", note(GX+GW/2+160, GY+GH+96, "= dissolved O2")),
-      group("Note/Y", chip(GX-40, GY-56, 420, "SO2 = Hb binding sites filled", C["tealsoft"], None, C["ink"], 26, 500, 52)))
+f = F("2B", "y-axis"); f.add(stage(), *axes_parts(), *axes_card())
 f.save()
 
 # ---------- Scene 3: tetramer ----------

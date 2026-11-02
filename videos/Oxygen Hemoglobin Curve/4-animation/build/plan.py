@@ -64,7 +64,12 @@ MOTION = {
     "pulse_d": 0.3,
     "title_write": 0.6,       # 1C: the dot writes line 1 on "oxyhemoglobin" ...
     "title_line2": 0.12,      # ... and line 2 cuts on whole this much later
+    "tick_d": 0.4,            # tick numbers sweep on (2 frames a tick, about)
 }
+# Silence added before a beat, s (Mark 2026-11-02: more time to read the y note before Scene 3). Everything from that beat on
+# (picture, audio, markers) moves later by the same amount; the VO files and their word timings are unchanged.
+GAPS = {"3A": 1.5}
+TETRAMER_C = [636, 590]
 STAGGER = min(MOTION["stagger_frames"] / FPS, MOTION["stagger_max"] / 6)   # the 1B clear has 7 siblings
 P50_DOT = (GX(27), GY(50))
 
@@ -103,23 +108,36 @@ PLAN = {
         {"layer": "Title/Fact", "do": "in", "at": "oxyhemoglobin+0.9"},
     ] + [{"layer": l, "do": "gone"} for l in ["Vessel/Capillary", "Cell/Lungs", "Cell/Tissues", "Zone/Lungs", "Zone/Tissues", "Icon/Lungs",
                                              "Icon/Tissues", "Cell/Released", "Label/Arrow", "Readout/SO2"]],
+    # Mark 2026-11-02 (v9): fill the 2A gap with the axis detail and the side card, bring the grid in sooner, give the y note
+    # time to read, and grow Scene 3 out of Scene 2. "w:<word>" is a measured word time from word_timings.csv.
     "2A": [
         {"layer": "Background/Stage", "do": "carry", "at": "start", "uniform": False},
         {"layer": "Header/Kicker", "do": "carry", "prev": "Title/Text", "at": "start", "fit": "w", "top": True, "anticipate": True},
         {"layer": "Title/Fact", "do": "out", "at": "start", "d": 0.3},
-        {"layer": "Graph/Axes", "do": "wipe", "dir": "ltr", "at": "bottom", "d": 1.0},
-        {"layer": "Note/X", "do": "in", "at": "dissolved"},
+        {"layer": "Graph/AxisX", "do": "wipe", "dir": "ltr", "at": "bottom", "d": MOTION["cross_d"]},
+        {"layer": "Panel/Card", "do": "in", "at": "w:PO2"},
+        {"layer": "Note/XTerm", "do": "in", "at": f"w:PO2+{MOTION['snap_d']}"},
+        {"layer": "Graph/TicksX", "do": "wipe", "dir": "ltr", "at": "w:millimeters", "d": MOTION["tick_d"]},
+        {"layer": "Graph/GridV", "do": "wipe", "dir": "btt", "at": "w:mercury", "d": MOTION["snap_d"]},
+        {"layer": "Note/XDef", "do": "in", "at": "dissolved"},
     ],
     "2B": [
-        {"layer": "Graph/Axes", "do": "wipe", "dir": "btt", "keep": True, "at": "side", "d": 1.0},
-        {"layer": "Note/X", "do": "xfade", "at": "side"},
-        {"layer": "Note/Y", "do": "in", "at": "filled"},
-        {"layer": "Graph/Grid", "do": "in", "at": "filled+0.6", "rise": 0, "d": 0.6},
+        {"layer": "Graph/AxisY", "do": "wipe", "dir": "btt", "at": "side", "d": MOTION["cross_d"]},
+        {"layer": "Graph/TicksY", "do": "wipe", "dir": "btt", "at": "w:saturation", "d": MOTION["tick_d"]},
+        {"layer": "Graph/GridH", "do": "wipe", "dir": "ltr", "at": "w:saturation", "d": MOTION["snap_d"]},
+        {"layer": "Note/Y", "do": "in", "at": "w:percentage"},
     ],
     "3A": [
-        {"layer": "Label/Header", "do": "in", "at": "start+0.4"},
+        # the grid and ticks retract the way they drew on, then the axes shrink into the spot the tetramer grows from
+        {"layer": "Graph/GridH", "do": "out", "at": "start", "retract": "rtl"},
+        {"layer": "Graph/GridV", "do": "out", "at": f"start+{STAGGER:.3f}", "retract": "ttb"},
+        {"layer": "Graph/TicksY", "do": "out", "at": f"start+{2 * STAGGER:.3f}", "retract": "ttb"},
+        {"layer": "Graph/TicksX", "do": "out", "at": f"start+{3 * STAGGER:.3f}", "retract": "rtl"},
+        {"layer": "Graph/AxisY", "do": "out", "at": f"start+{MOTION['accel_d']:.3f}", "to": TETRAMER_C},
+        {"layer": "Graph/AxisX", "do": "out", "at": f"start+{MOTION['accel_d'] + STAGGER:.3f}", "to": TETRAMER_C},
+        {"layer": "Panel/Card", "do": "xfade", "at": "start"},                 # the side card stays; its text cuts to STRUCTURE
+        {"layer": "Label/Header", "do": "in", "at": f"start+{2 * MOTION['accel_d'] + STAGGER:.3f}"},   # once the graph has gone
         {"layer": "Hb/Tetramer", "do": "pop", "at": "four", "d": 0.6},
-        {"layer": "Panel/Card", "do": "in", "at": "heme"},
     ],
     "3B": [
         {"layer": "Hb/Tetramer", "do": "xfade", "at": "first"},
@@ -253,11 +271,19 @@ def main():
     # at the cut (Mark 2026-11-02: 0:00:13:22, 0:00:51:07). Starts snap to the nearest frame and each comp runs to the
     # next start; moves stay on the measured cue times, counted from the snapped start.
     snap = lambda t: round(t * FPS) / FPS
-    beats = [(b["beat"], snap(b["start_in_full_s"])) for b in vo["beats"]]
-    total = -(-round(207.88 * FPS * 1000) // 1000) / FPS          # full.mp3 (207.88 s), rounded up to a whole frame
+    shift, beats, shifts = 0.0, [], {}
+    for b in vo["beats"]:
+        shift += GAPS.get(b["beat"], 0.0)
+        shifts[b["beat"]] = shift
+        beats.append((b["beat"], snap(b["start_in_full_s"] + shift)))
+    total = -(-round((207.88 + shift) * FPS * 1000) // 1000) / FPS          # full.mp3 (207.88 s) + gaps, up to a whole frame
+    words = {}
+    for r in csv.DictReader(open(BOARD / "timings" / "word_timings.csv")):
+        w = re.sub(r"[^A-Za-z0-9]", "", r["word"])
+        words.setdefault(r["beat"], {}).setdefault(w, float(r["start_in_full_s"]) + 0)
     cues = {}
     for r in csv.DictReader(open(BOARD / "timings" / "sync_points.csv")):
-        cues.setdefault(r["beat"], []).append((r["sync_on"].strip('"'), float(r["start_in_full_s"]), r["flag"]))
+        cues.setdefault(r["beat"], []).append((r["sync_on"].strip('"'), float(r["start_in_full_s"]) + 0, r["flag"]))
     layers = json.load(open(HERE / "ai_src" / "layers.json"))
     names = {b: [x["name"] for x in v["layers"] if x["name"] != "Meta/BeatID"] for b, v in layers.items()}
 
@@ -265,12 +291,17 @@ def main():
     prev_beat = None
     for i, (bid, start) in enumerate(beats):
         end = beats[i + 1][1] if i + 1 < len(beats) else total
-        bc = {c: t - start for c, t, _ in cues[bid]}
+        sh = shifts[bid]
+        bc = {c: t + sh - start for c, t, _ in cues[bid]}
+        bw = {w: t + sh - start for w, t in words.get(bid, {}).items()}
 
         def T(spec):
             m = re.fullmatch(r"(.+?)([+-]\d+(?:\.\d+)?)?", spec)
             base, off = m.group(1), float(m.group(2) or 0)
-            t = 0.0 if base == "start" else (round((end - start) * FPS) / FPS if base == "end" else bc[base])
+            if base == "start": t = 0.0
+            elif base == "end": t = round((end - start) * FPS) / FPS
+            elif base.startswith("w:"): t = bw[base[2:]]
+            else: t = bc[base]
             return round(max(0.0, t + off), 3)
 
         cur, prv = names[bid], names[prev_beat] if prev_beat else []
@@ -301,15 +332,18 @@ def main():
         scene = int(re.match(r"\d+", bid).group())
         sc = next((s for s in out["scenes"] if s["n"] == scene), None)
         if not sc:
-            sc = {"n": scene, "name": f"Scene {scene} · {SCENES[scene]}", "start": start, "beats": []}
+            sc = {"n": scene, "name": f"Scene {scene} · {SCENES[scene]}", "start": start, "audio_shift": sh, "beats": []}
             out["scenes"].append(sc)
         sc["beats"].append({"id": bid, "key": layers[bid]["file"][:-4], "ai": bid, "prev_ai": prev_beat,
                             "order": cur, "prev_order": prv, "start": start, "dur": round((end - start) * FPS) / FPS, "acts": acts})
         for c, t, flag in cues[bid]:
-            out["markers"].append({"t": t, "beat": bid, "cue": c, "flag": flag})
+            out["markers"].append({"t": round(t + sh, 3), "beat": bid, "cue": c, "flag": flag})
         prev_beat = bid
     for k, sc in enumerate(out["scenes"]):
         sc["end"] = out["scenes"][k + 1]["start"] if k + 1 < len(out["scenes"]) else total
+        # the VO stops where the next scene's audio would begin, so an added gap is silence
+        nxt = out["scenes"][k + 1] if k + 1 < len(out["scenes"]) else None
+        sc["audio_end"] = (nxt["start"] - nxt["audio_shift"] + sc["audio_shift"]) if nxt else total
     (HERE / "ae_plan.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
     for sc in out["scenes"]:
         print(sc["name"], sc["start"], "->", sc["end"])

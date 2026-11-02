@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 8;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon
+    var VERSION = 9;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -250,7 +250,21 @@
         function placeGone(k) {
             var g = after[k] || [];
             for (var q = 0; q < g.length; q++) {
-                try { fadeOut(copyLayer(bt.prev_ai, g[q].layer, pre, g[q].layer + " (out)"), g[q].t, g[q].d || 0.4); }
+                try {
+                    var go = copyLayer(bt.prev_ai, g[q].layer, pre, g[q].layer + " (out)");
+                    if (go && g[q].retract) {                 // retracts the way it drew on, accelerating into the cut
+                        var rr = rect(go), rp0 = POS(go).value, P0 = 6, D = g[q].retract;
+                        var x0 = rr[0] - P0, y0 = rr[1] - P0, x1 = rr[2] + P0, y1 = rr[3] + P0;
+                        var shut = { rtl: [x0, y0, x0, y1], ltr: [x1, y0, x1, y1], ttb: [x0, y1, x1, y1], btt: [x0, y0, x1, y0] }[D];
+                        var A0 = toLayer(go, x0, y0, rp0), B0 = toLayer(go, x1, y1, rp0), A1 = toLayer(go, shut[0], shut[1], rp0), B1 = toLayer(go, shut[2], shut[3], rp0);
+                        cm(addMask(go, "Retract"), [[g[q].t, boxShape(A0[0], A0[1], B0[0], B0[1])], [g[q].t + MO.accel_d, boxShape(A1[0], A1[1], B1[0], B1[1])]], "accel");
+                        cutOut(go, g[q].t + MO.accel_d);
+                    } else if (go && g[q].to) {               // collapses into a point, accelerating into the cut
+                        setPivot(go, g[q].to);
+                        cm(SC(go), [[g[q].t, [100, 100]], [g[q].t + MO.accel_d, [0, 0]]], "accel");
+                        cutOut(go, g[q].t + MO.accel_d);
+                    } else fadeOut(go, g[q].t, g[q].d || 0.4);
+                }
                 catch (x) { err(bt.id + " out " + g[q].layer + ": " + x); }
             }
         }
@@ -439,7 +453,10 @@
             pl.startTime = bt.start - S.start;
             pl.moveToEnd();
         }
-        if (full) { var al = sc.layers.add(full); al.name = "VO full.mp3"; al.startTime = -S.start; al.inPoint = 0; al.outPoint = sc.duration; }
+        if (full) {                                          // audio is shifted with any gap before this scene; a gap stays silent
+            var al = sc.layers.add(full); al.name = "VO full.mp3"; al.startTime = -(S.start - (S.audio_shift || 0)); al.inPoint = 0;
+            al.outPoint = Math.min(sc.duration, (S.audio_end || S.end) - S.start);
+        }
         for (var m = 0; m < PLAN.markers.length; m++) {
             var M = PLAN.markers[m];
             if (M.t >= S.start && M.t < S.end) mark(sc, M.t - S.start, M.beat + " · " + M.cue + (M.flag ? " (" + M.flag + ")" : ""));
