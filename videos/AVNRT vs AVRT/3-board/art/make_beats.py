@@ -24,12 +24,14 @@ def defs():
     return f"""<defs>
   <filter id="soft" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="{INK}" flood-opacity="0.10"/></filter>
   <filter id="blur"><feGaussianBlur stdDeviation="22"/></filter>
+  <filter id="blurU" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="200"/></filter>
   <marker id="arr" viewBox="0 0 12 12" refX="3" refY="6" markerUnits="userSpaceOnUse" markerWidth="30" markerHeight="30" orient="auto-start-reverse"><path d="M1,1 L11,6 L1,11 Z" fill="{AMBER_DEEP}"/></marker>
   <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="{DIV}"/><line x1="0" y1="0" x2="0" y2="12" stroke="{SEC}" stroke-width="4" opacity="0.5"/></pattern>
 </defs>"""
 
 def svg(bid, body):
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">\n{defs()}\n'
+    hd = f"<defs>{heart_defs()}</defs>\n" if 'href="#MarkHeart"' in body else ""
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">\n{defs()}\n{hd}'
             f'<rect id="Background" width="1920" height="1080" fill="{SOFT}"/>\n{body}\n'
             f'<g id="BeatID">{T(1888, 1056, bid, 22, 600, SEC, BODY, "end")}</g>\n</svg>\n')
 
@@ -183,73 +185,84 @@ def xmark(x, y, r):
     return (f'<g id="Ablation"><circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.1f}" fill="{BG}" stroke="{INK}" stroke-width="5"/>'
             f'<path d="M{x-r*0.5:.1f},{y-r*0.5:.1f} L{x+r*0.5:.1f},{y+r*0.5:.1f} M{x+r*0.5:.1f},{y-r*0.5:.1f} L{x-r*0.5:.1f},{y+r*0.5:.1f}" stroke="{INK}" stroke-width="5" stroke-linecap="round"/></g>')
 
-# ---------------- schematic heart ----------------
-_hc = [0]
+# ---------------- Mark's illustrated conduction heart ----------------
+# Base art: Mark's heart-conduction-system.svg (8000x8000 units), muscle + conduction groups,
+# from the SVT circuit graphics he supplied (Nov 2, 2026). Overlays are drawn in the same units.
+HEART_SRC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "mark_heart_body.svg")
+HEART_BODY = open(HEART_SRC).read()
+HVB = (1157, 564, 5685, 7005)            # tight viewBox of the art
+HC = (HVB[0] + HVB[2] / 2, HVB[1] + HVB[3] / 2)
+NODE_U = (3320, 3400)                     # AV node centre
+AP_U = "M6295 3770 L6200 3440 L6010 3110" # left lateral accessory pathway
+AP_MID_U = (6200, 3440)
+_pts = [tuple(map(int, p.split())) for p in """3352 3396|3384 3385|3416 3376|3448 3372|3480 3370|3512 3374|3544 3379|3576 3380|3608 3381|3640 3384|3672 3386|3704 3391|3736 3397|3768 3405|3800 3415|3832 3429|3864 3445|3892 3463|3920 3485|3944 3508|3968 3532|3991 3556|4014 3584|4033 3612|4050 3640|4066 3672|4081 3704|4092 3736|4103 3768|4115 3800|4124 3832|4138 3864|4157 3891|4184 3913|4212 3929|4242 3951|4265 3976|4288 4004|4312 4032|4334 4060|4355 4088|4374 4116|4393 4144|4411 4172|4428 4200|4444 4228|4461 4256|4478 4288|4494 4316|4512 4348|4529 4380|4545 4412|4560 4444|4574 4476|4588 4508|4602 4540|4615 4572|4629 4604|4642 4636|4655 4668|4668 4700|4681 4732|4693 4764|4705 4796|4717 4828|4729 4860|4740 4892|4752 4924|4764 4956|4775 4988|4787 5020|4800 5052|4814 5084|4828 5116|4841 5148|4857 5180|4873 5212|4889 5244|4900 5276|4905 5308|4909 5340|4915 5372|4924 5404|4936 5436|4948 5468|4960 5500|4972 5532|4984 5564|4996 5596|5008 5628|5021 5660|5033 5692|5046 5724|5058 5756|5071 5788|5083 5820|5096 5852|5109 5884|5122 5916|5135 5948|5150 5980|5165 6012|5180 6044|5195 6076|5209 6108|5225 6140|5241 6172|5258 6204|5274 6232|5290 6260|5307 6288|5324 6316|5342 6344|5360 6372|5380 6400|5401 6428|5423 6456|5447 6484|5469 6508|5492 6531|5520 6555|5548 6576|5576 6595|5604 6612|5636 6628|5668 6641|5700 6649|5732 6652|5764 6650|5796 6644|5828 6635|5860 6623|5892 6605|5920 6585|5944 6564|5967 6540|5991 6512|6012 6484|6030 6456|6047 6428|6064 6396|6078 6364|6089 6332|6099 6300|6107 6268|6122 6237|6144 6212|6165 6184|6175 6152|6182 6120|6190 6088|6198 6056|6207 6024|6214 5992|6222 5960|6229 5928|6236 5896|6242 5864|6248 5832|6254 5800|6260 5768|6265 5736|6269 5704|6271 5672|6273 5640|6276 5608|6282 5576|6295 5544|6306 5512|6308 5480|6308 5448|6311 5416|6314 5384|6318 5352|6321 5320|6324 5288|6327 5256|6328 5224|6330 5192|6333 5160|6335 5128|6336 5096|6336 5064|6336 5032|6335 5000|6335 4968|6339 4936|6346 4904|6350 4872|6352 4840|6352 4808|6352 4776|6354 4744|6357 4712|6358 4680|6356 4648|6354 4616|6353 4584|6352 4552|6352 4520|6352 4488|6352 4456|6350 4424|6348 4392|6348 4360|6345 4328|6342 4296|6339 4264|6336 4232|6330 4200|6329 4168|6331 4136|6331 4104|6328 4072|6324 4040|6321 4008|6317 3976|6313 3944|6308 3912|6304 3880|6300 3848|6300 3820|6295 3770""".split("|")]
+_low = _pts.index((5732, 6652))
+DOWN_U = "M3320 3400 " + " ".join(f"L{x} {y}" for x, y in _pts[:_low + 1])
+UP_U = f"M5732 6652 " + " ".join(f"L{x} {y}" for x, y in _pts[_low + 1:])
+ACROSS_U = "M6010 3110 C5700 2850 4800 2950 4300 3050 C3800 3150 3450 3250 3320 3400"
+# Mark's direction arrows (position, angle in degrees) for orthodromic flow
+ARR_ACROSS = [(3659.2, 3210.4, 161.0), (5828.6, 3014.4, -162.2)]
+ARR_DOWN = [(4344.9, 4074.6, 53.1), (5031.9, 5689.1, 69.4)]
+ARR_UP = [(6092.4, 6321.1, -72.6), (6353.5, 4598.9, -91.8)]
+# AV plane (fibrous rings): dashed guide between atria and ventricles, through the node and the pathway
+PLANE_U = "M1330 4330 C2300 3980 2900 3700 3320 3640 C4300 3560 5300 3520 6260 3470 L6780 3420"
+PLANE_L_U, PLANE_R_U = (1330, 4330), (6780, 3420)
+
+def heart_defs():
+    return f'<g id="MarkHeart">{HEART_BODY}</g>'
+
 def heart(cx, cy, s=1.0, o=None):
-    """Schematic heart (placeholder for Mark's illustrated conduction heart).
-    o keys: small_loop, big ('ortho'|'anti'|'path'|'down'), plane ('show'|'gate'), atria_wave, node_ring, node_blocked, ablate_path, his_on"""
+    """Mark's illustrated conduction heart with overlays.
+    o keys: small_loop, big ('ortho'|'anti'|'down'), pathway, plane, atria_wave, vent_glow, gate, his_on,
+    node_ring, node_blocked, ablate_path"""
     o = o or {}
-    _hc[0] += 1; cid = f"heartclip{_hc[0]}"
-    P = lambda x, y: f"{cx + x*s:.1f},{cy + y*s:.1f}"
-    outline = (f"M{P(-190,-235)} C{P(-262,-232)} {P(-285,-150)} {P(-275,-80)} C{P(-262,70)} {P(-130,250)} {P(15,330)} "
-               f"C{P(170,250)} {P(290,70)} {P(282,-80)} C{P(278,-170)} {P(232,-245)} {P(150,-245)} "
-               f"C{P(90,-246)} {P(50,-214)} {P(0,-214)} C{P(-60,-250)} {P(-140,-242)} {P(-190,-235)} Z")
-    plane = f"M{P(-276,-74)} Q{P(0,-6)} {P(283,-92)}"
-    node = (cx - 20*s, cy - 46*s)
-    g = [f'<g id="Heart"><clipPath id="{cid}"><path d="{outline}"/></clipPath>']
-    g.append(f'<path id="Heart/Wall" d="{outline}" fill="#FFF4F1" stroke="#E7B8AE" stroke-width="{4*s:.1f}"/>')
-    # atria tint above plane
-    g.append(f'<g clip-path="url(#{cid})"><path id="Heart/Atria" d="{plane} L{P(283,-300)} L{P(-276,-300)} Z" fill="#FBE6E0"/>')
+    k = 0.108 * s
+    tx, ty = cx - HC[0] * k, cy - 10 * s - HC[1] * k
+    M = lambda u: (tx + u[0] * k, ty + u[1] * k)
+    sw = lambda px: f"{px / k:.0f}"           # screen px -> units
+    on = f'fill="none" stroke="{AMBER}" stroke-width="{sw(7)}" stroke-linecap="round" stroke-linejoin="round"'
+    def arrows(lst, flip=False, col=AMBER_DEEP, sc=0.95):
+        out = []
+        for x, y, a in lst:
+            a = a + 180 if flip else a
+            out.append(f'<path d="M-105 -84 L105 0 L-105 84 Z" fill="{col}" transform="translate({x} {y}) rotate({a:.1f}) scale({sc * 0.108 / k * s:.3f})"/>')
+        return "".join(out)
+    g = [f'<g id="Heart" transform="translate({tx:.1f} {ty:.1f}) scale({k:.5f})">', '<use href="#MarkHeart"/>']
     if o.get("atria_wave"):
-        g.append(f'<ellipse id="Heart/AtrialWave" cx="{cx-40*s:.1f}" cy="{cy-150*s:.1f}" rx="{230*s:.1f}" ry="{90*s:.1f}" fill="{AMBER}" opacity="0.45" filter="url(#blur)"/>')
+        g.append(f'<ellipse id="Heart/AtrialWave" cx="3800" cy="2750" rx="1900" ry="850" fill="{AMBER}" opacity="0.42" filter="url(#blurU)"/>')
     if o.get("vent_glow"):
-        g.append(f'<ellipse id="Heart/VentGlow" cx="{cx+170*s:.1f}" cy="{cy+60*s:.1f}" rx="{120*s:.1f}" ry="{150*s:.1f}" fill="{AMBER}" opacity="0.55" filter="url(#blur)"/>')
-    g.append('</g>')
-    # conduction system (neutral)
-    cs = f'stroke="#D9A79C" stroke-width="{10*s:.1f}" fill="none" stroke-linecap="round" stroke-linejoin="round"'
-    his = f"M{node[0]:.1f},{node[1]:.1f} L{P(-10,40)}"
-    lbb = f"M{P(-10,40)} C{P(40,90)} {P(110,150)} {P(120,250)}"
-    rbb = f"M{P(-10,40)} C{P(-60,110)} {P(-120,170)} {P(-110,240)}"
-    sa = f"M{P(-170,-175)} C{P(-120,-140)} {P(-60,-80)} {node[0]:.1f},{node[1]:.1f}"
-    g.append(f'<g id="Heart/Conduction"><path d="{sa}" {cs}/><path d="{his}" {cs}/><path d="{lbb}" {cs}/><path d="{rbb}" {cs}/>'
-             f'<circle cx="{cx-170*s:.1f}" cy="{cy-175*s:.1f}" r="{12*s:.1f}" fill="#D9A79C"/></g>')
+        g.append(f'<ellipse id="Heart/VentGlow" cx="4600" cy="5600" rx="1700" ry="1500" fill="{AMBER}" opacity="0.45" filter="url(#blurU)"/>')
     if o.get("plane"):
-        dash = f'stroke="{SEC}" stroke-width="{4*s:.1f}" stroke-dasharray="{14*s:.1f} {10*s:.1f}" fill="none"'
-        g.append(f'<path id="Heart/FibrousRing" d="{plane}" {dash}/>')
-    on = f'stroke="{AMBER}" stroke-width="{12*s:.1f}" fill="none" stroke-linecap="round" stroke-linejoin="round"'
-    if o.get("his_on"):
-        g.append(f'<g id="Heart/HisActive"><path d="{his}" {on}/><path d="{lbb}" {on}/><path d="{rbb}" {on}/></g>')
-    if o.get("gate"):
-        g.append(f'<circle id="Heart/Gate" cx="{node[0]:.1f}" cy="{node[1]:.1f}" r="{34*s:.1f}" fill="none" stroke="{AMBER_DEEP}" stroke-width="{5*s:.1f}"/>')
-    # accessory pathway: crosses the ring on the lateral (left heart) wall
-    ap0, ap1 = (cx + 262*s, cy - 128*s), (cx + 268*s, cy - 40*s)
+        g.append(f'<path id="Heart/FibrousRing" d="{PLANE_U}" fill="none" stroke="{BG}" stroke-width="{sw(4)}" stroke-dasharray="{sw(14)} {sw(10)}" opacity="0.95"/>')
     big = o.get("big")
+    if o.get("his_on"):
+        g.append(f'<path id="Heart/HisActive" d="{DOWN_U}" {on}/>')
     if big or o.get("pathway"):
         col = AMBER if big in ("ortho", "anti") else INK
-        g.append(f'<line id="Heart/AccessoryPathway" x1="{ap0[0]:.1f}" y1="{ap0[1]:.1f}" x2="{ap1[0]:.1f}" y2="{ap1[1]:.1f}" stroke="{col}" stroke-width="{16*s:.1f}" stroke-linecap="round"/>')
+        g.append(f'<g id="Heart/AccessoryPathway"><path d="{AP_U}" fill="none" stroke="{col}" stroke-width="{sw(11)}" stroke-linecap="round" stroke-linejoin="round"/>'
+                 f'<path d="{AP_U}" fill="none" stroke="{BG}" stroke-width="{sw(3)}" stroke-linecap="round" stroke-dasharray="{sw(1)} {sw(6)}"/></g>')
     if big in ("ortho", "anti", "down"):
-        down = f"M{node[0]:.1f},{node[1]:.1f} L{P(-10,40)} C{P(40,90)} {P(110,150)} {P(150,200)}"
-        g.append(f'<path id="Heart/Loop/Down" d="{down}" {on} ' + ('marker-end="url(#arr)"' if big == "down" else '') + '/>')
-        if big in ("ortho", "anti"):
-            up = f"M{P(150,200)} C{P(220,140)} {P(262,40)} {ap1[0]:.1f},{ap1[1]:.1f}"
-            across = f"M{ap0[0]:.1f},{ap0[1]:.1f} C{P(200,-200)} {P(60,-150)} {node[0]+20*s:.1f},{node[1]-16*s:.1f}"
-            g.append(f'<path id="Heart/Loop/Up" d="{up}" {on}/><path id="Heart/Loop/Across" d="{across}" {on}/>')
-            # direction arrows
-            if big == "ortho":
-                g.append(arrowhead(cx + 248*s, cy + 60*s, -1.2, s) + arrowhead(cx + 140*s, cy - 168*s, 3.0, s) + arrowhead(cx + 30*s, cy + 75*s, 0.9, s))
-            else:
-                g.append(arrowhead(cx + 248*s, cy + 60*s, 1.94, s) + arrowhead(cx + 140*s, cy - 168*s, -0.14, s) + arrowhead(cx + 30*s, cy + 75*s, 4.04, s))
+        g.append(f'<path id="Heart/Loop/Down" d="{DOWN_U}" {on}/>')
+        if big == "down":
+            g.append(arrows(ARR_DOWN))
+        else:
+            g.append(f'<path id="Heart/Loop/Up" d="{UP_U}" {on}/><path id="Heart/Loop/Across" d="{ACROSS_U}" {on}/>')
+            g.append('<g id="Heart/Loop/Arrows">' + arrows(ARR_ACROSS + ARR_DOWN + ARR_UP, flip=(big == "anti")) + '</g>')
     if o.get("small_loop"):
-        g.append(f'<g id="Heart/SmallLoop"><circle cx="{node[0]:.1f}" cy="{node[1]:.1f}" r="{44*s:.1f}" fill="none" stroke="{AMBER}" stroke-width="{11*s:.1f}"/>'
-                 + arrowhead(node[0] + 44*s, node[1], 1.57, s * 0.8) + '</g>')
-    nfill = INK if o.get("node_blocked") else AMBER_DEEP
-    g.append(f'<ellipse id="Heart/AVNode" cx="{node[0]:.1f}" cy="{node[1]:.1f}" rx="{22*s:.1f}" ry="{15*s:.1f}" fill="{nfill}"/>')
+        g.append(f'<g id="Heart/SmallLoop"><circle cx="3320" cy="3400" r="380" fill="#F0A030" opacity="0.32"/>'
+                 f'<path d="M3320 3150a330 250 0 1 1 -0.1 0" {on}/>'
+                 + arrows([(3553.3, 3223.2, 37.1), (3553.3, 3576.8, 142.9), (3086.7, 3576.8, -142.9), (3086.7, 3223.2, -37.1)], sc=0.6) + '</g>')
+    if o.get("gate"):
+        g.append(f'<circle id="Heart/Gate" cx="3320" cy="3400" r="330" fill="none" stroke="{AMBER}" stroke-width="{sw(5)}"/>')
+    if o.get("node_blocked"):
+        g.append(f'<ellipse id="Heart/AVNodeBlocked" cx="3320" cy="3400" rx="250" ry="190" fill="{INK}"/>')
     if o.get("node_ring"):
-        g.append(f'<circle id="Focus/NodeRing" cx="{node[0]:.1f}" cy="{node[1]:.1f}" r="{64*s:.1f}" fill="none" stroke="{CORAL}" stroke-width="5"/>')
-    if o.get("ablate_path"):
-        g.append(xmark((ap0[0] + ap1[0]) / 2, (ap0[1] + ap1[1]) / 2, 26 * s))
+        g.append(f'<circle id="Focus/NodeRing" cx="3320" cy="3400" r="520" fill="none" stroke="{CORAL}" stroke-width="{sw(5)}"/>')
     g.append('</g>')
-    return "".join(g), dict(node=node, ap=((ap0[0]+ap1[0])/2, (ap0[1]+ap1[1])/2), plane_r=(cx + 283*s, cy - 92*s), plane_l=(cx - 276*s, cy - 74*s))
+    node = M(NODE_U); ap = M(AP_MID_U)
+    if o.get("ablate_path"):
+        g.append(xmark(ap[0], ap[1], 26 * s))
+    return "".join(g), dict(node=node, ap=ap, plane_r=M(PLANE_R_U), plane_l=M(PLANE_L_U), plane_mid=M((5000, 3545)))
 
 def arrowhead(x, y, ang, s=1.0):
     """Filled triangle pointing along angle ang (radians, 0 = +x, screen coords)."""
@@ -442,8 +455,8 @@ def _():
     b.append(side_text(1060, 300, ("AVRT", "amber"), ["The big loop"], "A strand of muscle that crosses the ring"))
     x, y = geo["ap"]
     b.append(leader(x + 14, y, 1040, 640)); c, _ = chip(1060, 615, "Accessory pathway", "dark"); b.append(c)
-    x2, y2 = geo["plane_r"]
-    b.append(leader(x2 - 40, y2 + 30, 1040, 740)); c, _ = chip(1060, 715, "Fibrous ring"); b.append(c)
+    x2, y2 = geo["plane_mid"]
+    b.append(leader(x2, y2, 1040, 740)); c, _ = chip(1060, 715, "Fibrous ring"); b.append(c)
     return "".join(b)
 
 @frame("4B", "ortho-down-node")
