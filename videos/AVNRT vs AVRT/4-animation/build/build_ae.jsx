@@ -17,7 +17,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 2;                                         // v1: first build; v2: 6C adenosine label, pulses under the labels
+    var VERSION = 3;                                         // v1: first build; v2: 6C adenosine label, pulses under the labels; v3: glows not clipped to a box
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -73,7 +73,12 @@
     function cutIn(l, t) { if (t > 0.001) l.inPoint = Math.min(l.containingComp.duration - FR, t); }
     function cutOut(l, t) { if (!l) return; if (t <= 0.001) { l.remove(); return; } l.outPoint = Math.min(l.containingComp.duration, t); }
     function rect(l) {                                        // comp-space bounds at rest (scale 100 %)
-        var r = l.sourceRectAtTime(0, false), p = POS(l).value, a = ANC(l).value;
+        var p = POS(l).value, a = ANC(l).value;
+        if (l.comment && l.comment.indexOf("rect:") === 0) {  // a glow in its own comp-size precomp: the art's bounds, kept when it was made
+            var v = l.comment.substr(5).split(",");
+            return [+v[0] + p[0] - a[0], +v[1] + p[1] - a[1], +v[2] + p[0] - a[0], +v[3] + p[1] - a[1]];
+        }
+        var r = l.sourceRectAtTime(0, false);
         return [p[0] - a[0] + r.left, p[1] - a[1] + r.top, p[0] - a[0] + r.left + r.width, p[1] - a[1] + r.top + r.height];
     }
     function setPivot(l, c) {                                 // anchor to comp point c without moving the art
@@ -129,7 +134,19 @@
         var n = pre.layer(1);
         n.name = newName || name; n.enabled = true;
         n.startTime = 0; n.inPoint = 0; n.outPoint = pre.duration;
+        if (fx && fx.blur) n = roomy(pre, n);
         addFx(n, fx);
+        return n;
+    }
+    var fGlow = null;
+    function roomy(pre, l) {                                  // a cropped Illustrator layer clips its own blur to its box (v2's square glows):
+        var r = rect(l), idx = l.index, nm = l.name;          // move it into a comp-size precomp and blur that instead
+        var pc = pre.layers.precompose([idx], CUR + " " + nm.replace(/\//g, " ") + " glow", true);
+        if (!fGlow) { fGlow = proj.items.addFolder("Glows"); fGlow.parentFolder = fBeats; }
+        pc.parentFolder = fGlow;
+        var n = pre.layer(idx);
+        n.name = nm; n.comment = "rect:" + r.join(",");
+        n.startTime = 0; n.inPoint = 0; n.outPoint = pre.duration;
         return n;
     }
     function toShapes(pre, l) {                               // vector layer -> shape layer (for Trim Paths); null if AE can't

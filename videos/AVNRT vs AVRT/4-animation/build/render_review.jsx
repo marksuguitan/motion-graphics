@@ -4,7 +4,7 @@
 // half resolution, H.264, to 5-finish/renders/AVNRT vs AVRT review v<N>.mp4 (gitignored). The master comp is left untouched.
 #target aftereffects
 (function () {
-    var VERSION = 2;
+    var VERSION = 3;
     var buildDir = File($.fileName).parent.fsName, animDir = Folder(buildDir).parent.fsName, videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
