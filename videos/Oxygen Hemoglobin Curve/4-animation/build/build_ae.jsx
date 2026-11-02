@@ -257,7 +257,7 @@
         for (i = 0; i < bt.order.length; i++) {
             var name = bt.order[i], acts = by[name] || [{ layer: name, "do": "hold" }], l = null;
             for (j = 0; j < acts.length; j++) {
-                try { l = doAct(pre, bt, acts[j], l); } catch (x) { err(bt.id + " " + name + " (" + acts[j]["do"] + "): " + x + " line " + x.line); }
+                try { l = doAct(pre, bt, acts[j], l); } catch (x) { err(bt.id + " " + name + " (" + acts[j]["do"] + "): " + String(x.message) + " line " + String(x.line)); l = null; }
             }
             placeGone(name);
         }

@@ -23,7 +23,8 @@ var CommaEase = (function () {
 
     function dims(prop) {
         var t = prop.propertyValueType;
-        if (t === PropertyValueType.TwoD_SPATIAL || t === PropertyValueType.ThreeD_SPATIAL || t === PropertyValueType.SHAPE) return 1;
+        if (t === PropertyValueType.TwoD_SPATIAL || t === PropertyValueType.ThreeD_SPATIAL || t === PropertyValueType.SHAPE ||
+            t === PropertyValueType.COLOR) return 1;           // AE takes one temporal ease for a colour, not one per channel
         var v = prop.keyValue(1);
         return (v instanceof Array) ? v.length : 1;
     }
@@ -36,7 +37,7 @@ var CommaEase = (function () {
         var dt = prop.keyTime(k2) - prop.keyTime(k1);
         if (dt <= 0) return [0];
         var a = prop.keyValue(k1), b = prop.keyValue(k2), out = [], i, d = 0;
-        if (prop.propertyValueType === PropertyValueType.SHAPE) return [0];
+        if (prop.propertyValueType === PropertyValueType.SHAPE || prop.propertyValueType === PropertyValueType.COLOR) return [0];
         if (!(a instanceof Array)) return [Math.abs(b - a) / dt];
         if (spatial(prop)) { for (i = 0; i < a.length; i++) d += (b[i] - a[i]) * (b[i] - a[i]); return [Math.sqrt(d) / dt]; }
         for (i = 0; i < a.length; i++) out.push(Math.abs(b[i] - a[i]) / dt);
