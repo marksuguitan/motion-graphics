@@ -252,7 +252,8 @@ PLAN = {
         {"layer": "Panel/Card", "do": "xfade", "at": "shift"},
         {"layer": "Curves/Ghosts", "do": "in", "at": "shift", "rise": 0},
         {"layer": "Curves/Normal", "do": "nudge", "keys": [["shift", 0], ["shift+0.35", 40], ["shift+0.75", -40], ["P50", 0]], "clip": CLIP},
-        {"layer": "Marker/P50", "do": "in", "at": "P50"},
+        # the P50 dot appears on "P50" and its arrows draw outward along the 50% line to the ghost curves' P50s (art b9e1fe7)
+        {"layer": "Marker/P50", "do": "centrewipe", "at": "P50", "c": [519.8, 510], "half": 16},
     ],
     "8A": [
         {"layer": "Curves/Normal", "do": "xfade", "at": "right"},

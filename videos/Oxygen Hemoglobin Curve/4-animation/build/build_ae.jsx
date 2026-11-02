@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 17;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels
+    var VERSION = 18;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -505,6 +505,13 @@
             var ar = rect(l), ap = POS(l).value, AP = 6, ax0 = ar[0] - AP, ay0 = ar[1] - AP, ax1 = ar[2] + AP, ay1 = ar[3] + AP, yb = a.y_split;
             function abox(x0, y0, x1, y1) { var P1 = toLayer(l, x0, y0, ap), P2 = toLayer(l, x1, y1, ap); return boxShape(P1[0], P1[1], P2[0], P2[1]); }
             cm(addMask(l, "Axes draw"), [[t, abox(ax0, yb, ax0 + 0.5, ay1)], [t + a.dx, abox(ax0, yb, ax1, ay1)], [t + a.dx + a.dy, abox(ax0, ay0, ax1, ay1)]], "snap");
+            return l;
+        case "centrewipe":                                   // appears at a point, then opens sideways from it (arrows drawing outward)
+            l = copyLayer(bt.ai, a.layer, pre); if (!l) return null;
+            var cr = rect(l), cpp = POS(l).value, CP = 6;
+            function cbox(x0, x1) { var Q1 = toLayer(l, x0, cr[1] - CP, cpp), Q2 = toLayer(l, x1, cr[3] + CP, cpp); return boxShape(Q1[0], Q1[1], Q2[0], Q2[1]); }
+            cutIn(l, t);
+            cm(addMask(l, "Open"), [[t, cbox(a.c[0] - a.half, a.c[0] + a.half)], [t + (a.d || MO.snap_d), cbox(cr[0] - CP, cr[2] + CP)]], "snap");
             return l;
         case "undraw":                                       // a held layer draws itself out (mask retract, accelerating) and is gone
             if (!l) return l;
