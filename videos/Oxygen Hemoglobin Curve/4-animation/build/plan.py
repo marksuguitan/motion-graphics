@@ -172,6 +172,8 @@ PLAN = {
          "mol": [1060, 590], "to": [414, 460], "label_y": 570, "kind": "cross"},
     ],
     "3B": [
+        # v15: at the end the tetramer and its O2s shrink together into the centre, accelerating, before 3C draws the graph
+        {"layer": "Hb/α1", "do": "gather", "post": True, "at": "end-0.3", "c": TETRAMER_C, "prefixes": ["Hb/", "O2/"], "d": 0.3},
         # until the shape change the 3A drawing holds (no rings yet); the four subunit layers take over on "changes"
         {"layer": "Hb/Tetramer", "do": "out", "at": "w:changes"},
         {"layer": "O2/First", "do": "out", "at": "w:changes", "shift": [414 - 1060, 460 - 590], "label_y": 570},
@@ -189,9 +191,12 @@ PLAN = {
         {"layer": f"O2/Next {n}", "do": "ping", "at": f"w:bind+{3 / FPS * k + MOTION['next_o2_d']:.3f}", "c": HEME[n], "r": 50}
         for k, n in enumerate(["β1", "β2", "α2"])],
     "3C": [
-        {"layer": "Graph/Grid", "do": "in", "at": "start", "rise": 0},
-        {"layer": "Graph/Axes", "do": "in", "at": "start", "rise": 0},
+        # Mark 2026-11-02 (v15): the graph draws itself on (as in 2A/2B) instead of cutting in, done before "curve";
+        # the side card keeps 3B's content through 3C and rolls to 3D's on "sigmoid"
+        {"layer": "Graph/Axes", "do": "axisdraw", "at": "start", "dx": 0.35, "dy": 0.3, "y_split": GY(0) - 20},
+        {"layer": "Graph/Grid", "do": "wipe", "dir": "btt", "at": "start+0.45", "d": 0.4},
         {"layer": "Curves/Straight", "do": "wipe", "dir": "ltr", "at": "straight", "d": 0.8},
+        {"layer": "Panel/Card", "do": "out", "at": "end"},
     ],
     "3D": [
         # Mark 2026-11-02: no time to read the card before Scene 4. It comes in with "sigmoid"; in the pause before 4A the
@@ -200,7 +205,7 @@ PLAN = {
         {"layer": "Curves/Straight", "do": "undraw", "dir": "rtl", "at": f"end-{MOTION['snap_d'] + MOTION['card_out_d']:.2f}"},
         {"layer": "Curves/Normal", "do": "wipe", "dir": "ltr", "at": "sigmoid", "d": 1.2},
         {"layer": "Label/Sigmoid", "do": "in", "at": "sigmoid+1.0", "out_at": f"end-{MOTION['snap_d'] + MOTION['card_out_d']:.2f}"},
-        {"layer": "Panel/Card", "do": "in", "at": "sigmoid"},
+        {"layer": "Panel/Card", "do": "cardswap", "phase": "both", "old_ai": "3B", "new_ai": "3D", "at": "sigmoid-0.25", "new_at": "sigmoid"},
     ],
     "4A": [
         {"layer": "Panel/Card", "do": "xfade", "at": "start"},
@@ -355,7 +360,7 @@ def main():
             return round(max(0.0, t + off), 3)
 
         cur, prv = names[bid], names[prev_beat] if prev_beat else []
-        acts, named = [], set()
+        acts, named, post = [], set(), []
         for a in PLAN.get(bid, []):
             a = dict(a)
             if "at" in a: a["t"] = T(a.pop("at"))
@@ -363,8 +368,12 @@ def main():
             if "keys" in a: a["keys"] = [[T(k[0]), k[1]] for k in a["keys"]]
             if "rows" in a: a["rows"] = [[T(r[0]), r[1], r[2]] for r in a["rows"]]
             if "until" in a: a["t_end"] = T(a.pop("until"))
-            for k in ("go", "off", "out", "back"):
+            for k in ("go", "off", "out", "back", "new"):
                 if k + "_at" in a: a["t_" + k] = T(a.pop(k + "_at"))
+            if a["do"] == "cardswap" and "old" not in a:    # a roll written into the plan by hand: fill in both cards' geometry
+                a["old"], a["new"] = card_geom(a["old_ai"]), card_geom(a["new_ai"])
+            if a.pop("post", False):
+                post.append(a); continue
             acts.append(a)
             named.add((a["layer"], a["do"] in ("out", "gone")))
             if a["do"] == "carry":                       # the travelling copy replaces the previous layer's exit
@@ -404,7 +413,7 @@ def main():
             sc = {"n": scene, "name": f"Scene {scene} · {SCENES[scene]}", "start": start, "audio_shift": sh, "beats": []}
             out["scenes"].append(sc)
         sc["beats"].append({"id": bid, "key": layers[bid]["file"][:-4], "ai": bid, "prev_ai": prev_beat,
-                            "order": cur, "prev_order": prv, "start": start, "dur": round((end - start) * FPS) / FPS, "acts": acts})
+                            "order": cur, "prev_order": prv, "start": start, "dur": round((end - start) * FPS) / FPS, "acts": acts, "post": post})
         for c, t, flag in cues[bid]:
             out["markers"].append({"t": round(t + sh, 3), "beat": bid, "cue": c, "flag": flag})
         prev_beat = bid

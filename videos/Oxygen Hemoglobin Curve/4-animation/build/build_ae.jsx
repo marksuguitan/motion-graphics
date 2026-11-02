@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 14;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses
+    var VERSION = 15;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -295,6 +295,9 @@
             }
             placeGone(name);
         }
+        if (bt.post) for (i = 0; i < bt.post.length; i++) {   // moves on several finished layers at once (after the stack is built)
+            try { doAct(pre, bt, bt.post[i], null); } catch (x) { err(bt.id + " post " + bt.post[i]["do"] + ": " + String(x.message) + " line " + String(x.line)); }
+        }
         for (i = TOPS.length - 1; i >= 0; i--) TOPS[i].moveToBeginning();
         TOPS = [];
         report.beats.push({ beat: bt.id, layers: pre.numLayers });
@@ -486,6 +489,22 @@
             function rowNo(L) { var m = L.name.match(/ row (\d+)$/); return m ? parseInt(m[1], 10) : 0; }
             rl.sort(function (x, y) { return rowNo(x) - rowNo(y); });   // rows are numbered top to bottom
             for (ri2 = 0; ri2 < rl.length; ri2++) rollLayer(rl[ri2], t + ri2 * MO.card_stagger, a.clip);
+            return l;
+        case "gather":                                       // several layers shrink together into one point (a null parent, identity until it scales)
+            var gn = pre.layers.addNull(pre.duration); gn.name = "Gather " + a.c.join(",");
+            ANC(gn).setValue(a.c); POS(gn).setValue(a.c);
+            for (var gk = 1; gk <= pre.numLayers; gk++) {
+                var GL = pre.layer(gk);
+                if (GL === gn) continue;
+                for (var gp = 0; gp < a.prefixes.length; gp++) if (GL.name.indexOf(a.prefixes[gp]) === 0 && GL.outPoint > t) { GL.parent = gn; break; }
+            }
+            cm(SC(gn), [[t, [100, 100]], [t + a.d, [0, 0]]], "accel");
+            return null;
+        case "axisdraw":                                     // the axes draw on as in 2A/2B: x axis left to right, then the y axis bottom to top
+            l = copyLayer(bt.ai, a.layer, pre); if (!l) return null;
+            var ar = rect(l), ap = POS(l).value, AP = 6, ax0 = ar[0] - AP, ay0 = ar[1] - AP, ax1 = ar[2] + AP, ay1 = ar[3] + AP, yb = a.y_split;
+            function abox(x0, y0, x1, y1) { var P1 = toLayer(l, x0, y0, ap), P2 = toLayer(l, x1, y1, ap); return boxShape(P1[0], P1[1], P2[0], P2[1]); }
+            cm(addMask(l, "Axes draw"), [[t, abox(ax0, yb, ax0 + 0.5, ay1)], [t + a.dx, abox(ax0, yb, ax1, ay1)], [t + a.dx + a.dy, abox(ax0, ay0, ax1, ay1)]], "snap");
             return l;
         case "undraw":                                       // a held layer draws itself out (mask retract, accelerating) and is gone
             if (!l) return l;
