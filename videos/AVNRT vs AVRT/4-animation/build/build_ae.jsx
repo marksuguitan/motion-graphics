@@ -17,7 +17,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 1;                                         // v1: first build
+    var VERSION = 2;                                         // v1: first build; v2: 6C adenosine label, pulses under the labels
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -356,8 +356,12 @@
             run(name, parts[1].length ? parts[1] : [{ layer: name, "do": "hold" }]);
             placeGone(name);
         }
-        for (i = 0; i < laps.length; i++) {                  // pulses ride on top
-            try { lap(pre, laps[i]).moveToBeginning(); } catch (x) { err(bt.id + " lap " + laps[i].name + ": " + String(x.message || x) + " line " + String(x.line)); }
+        // pulses ride just above the loops they lap, under the node, tags and labels
+        var top = null;
+        for (i = pre.numLayers; i >= 1; i--) if (/^(Diagram\/(Halo|Channels|Slow|Fast|Stem|His|Active)|Heart\/(Base|Loop|AccessoryPathway|SmallLoop|FibrousRing))/.test(pre.layer(i).name)) top = pre.layer(i);
+        for (i = 0; i < laps.length; i++) {
+            try { var pl0 = lap(pre, laps[i]); if (top) pl0.moveBefore(top); else pl0.moveToBeginning(); }
+            catch (x) { err(bt.id + " lap " + laps[i].name + ": " + String(x.message || x) + " line " + String(x.line)); }
         }
         report.beats.push({ beat: bt.id, layers: pre.numLayers });
         return pre;

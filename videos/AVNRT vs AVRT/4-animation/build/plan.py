@@ -396,7 +396,7 @@ PLAN = {
         {"layer": "Cards/Steps", "do": "unfold", "at": "start+0.25"},
         {"layer": "Text/Steps", "do": "cut", "at": "start+0.5"},
         {"layer": "Label/1 Vagal maneuver", "do": "cut", "at": "start+0.5"},
-        {"layer": "Label/2 Adenosine, unless ", "do": "cut", "at": "start+0.5"},
+        {"layer": "Label/2 Adenosine, unless", "do": "cut", "at": "start+0.5"},
         {"layer": "Cards/Strip", "do": "unfold", "at": "start+0.35"},
         {"layer": "Text/Strip", "do": "cut", "at": "start+0.6"},
         {"layer": "ECG/Grid", "do": "wipe", "dir": "ltr", "at": "start+0.45"},

@@ -15092,7 +15092,7 @@
       "Cards/Steps",
       "Text/Steps",
       "Label/1 Vagal maneuver",
-      "Label/2 Adenosine, unless ",
+      "Label/2 Adenosine, unless",
       "Label/Synchronized cardiov",
       "Text/Synchronized cardiov",
       "Cards/Strip",
@@ -15146,7 +15146,7 @@
        "t": 0.5
       },
       {
-       "layer": "Label/2 Adenosine, unless ",
+       "layer": "Label/2 Adenosine, unless",
        "do": "cut",
        "t": 0.5
       },
@@ -15330,7 +15330,7 @@
       "Cards/Steps",
       "Text/Steps",
       "Label/1 Vagal maneuver",
-      "Label/2 Adenosine, unless ",
+      "Label/2 Adenosine, unless",
       "Label/Synchronized cardiov",
       "Text/Synchronized cardiov",
       "Cards/Strip",
@@ -15434,7 +15434,7 @@
        "auto": true
       },
       {
-       "layer": "Label/2 Adenosine, unless ",
+       "layer": "Label/2 Adenosine, unless",
        "do": "out",
        "how": "cut",
        "t": 0.0,

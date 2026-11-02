@@ -147,7 +147,7 @@ def main():
                     if parent_tf:
                         g = ET.Element(Q("g")); g.set("transform", parent_tf); g.append(c); el = g
                     else: el = c
-                    el_name = cid
+                    el_name = cid.strip()            # After Effects drops trailing spaces from layer names
                     add(el_name, el, fx)
                     last_named[0] = cid
                 else:
