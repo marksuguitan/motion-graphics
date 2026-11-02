@@ -16,7 +16,9 @@ IPA respellings used in the ElevenLabs speech input with Markus Guapo. Check her
 | AV node | `A V node` (plain letters) | eleven_v4 | AVNRT vs AVRT, Sinus Tach vs SVT | Nov 2, 2026 | Scribe heard "AV node"; Mark's listen pending |
 | His-Purkinje | `Hiss pur-KIN-jee` | eleven_v4 | AVNRT vs AVRT, Sinus Tach vs SVT | Nov 2, 2026 | Scribe heard "His-Purkinje"; Mark's listen pending |
 | AVNRT | `A V N R T` | eleven_v4 | Sinus Tach vs SVT | Nov 2, 2026 | Scribe heard "AVNRT"; Mark's listen pending |
-| AVRT | `A V R T` | eleven_v4 | Sinus Tach vs SVT | Nov 2, 2026 | Scribe heard "AVRT"; Mark's listen pending |
+| AVRT | `A V R T` | eleven_v4 | Sinus Tach vs SVT | Nov 2, 2026 | Scribe heard "AVRT"; Mark's listen pending. Read wrong in AVNRT vs AVRT (Mark, Nov 2, 2026); use the IPA row below |
+| AVRT | `/ˌeɪviːɑːrˈtiː/` | eleven_v4 | AVNRT vs AVRT (4A, 4F) | Nov 2, 2026 | replaces `A V R T` after Mark flagged it; Scribe on the uploaded take heard "AVRT"; Mark's listen pending |
+| AV (as in AV nodal) | `/ˌeɪˈviː/` | eleven_v4 | AVNRT vs AVRT (6E) | Nov 2, 2026 | replaces `A V` after Mark flagged it; Scribe on the uploaded take heard "AV nodal"; Mark's listen pending |
 | SVT | `S V T` | eleven_v4 | Sinus Tach vs SVT | Nov 2, 2026 | Scribe heard "SVT"; Mark's listen pending |
 | aVL | `A V L` | eleven_v4 | Sinus Tach vs SVT | Nov 2, 2026 | Scribe heard "AVL"; Mark's listen pending |
 | adenosine | `uh-DEN-oh-seen` | eleven_v4 | Sinus Tach vs SVT | Nov 2, 2026 | Scribe heard "adenosine"; Mark's listen pending |

@@ -6,7 +6,7 @@
  "model": "eleven_v4",
  "pass": 1,
  "date": "2026-11-02",
- "notes": "Saved take = last take generated (the active one on each speech node). Durations are decoded lengths (ffmpeg), which run ~40 ms shorter than ffprobe's container duration. Downloaded directly into the cloud workspace (no Mac). 1D is a silent title card (2.0 s, agent's call) plus its 1 s hold.",
+ "notes": "Saved take = last take generated (the active one on each speech node). Durations are decoded lengths (ffmpeg), which run ~40 ms shorter than ffprobe's container duration. Downloaded directly into the cloud workspace (no Mac). 1D is a silent title card (2.0 s, agent's call) plus its 1 s hold. Nov 2, 2026: 4A, 4F and 6E re-voiced with IPA (AVRT /ˌeɪviːɑːrˈtiː/, AV /ˌeɪˈviː/) after Mark's review; earlier saved takes moved to takes/.",
  "beats": [
   {
    "beat": "1A",
@@ -505,7 +505,7 @@
   },
   {
    "beat": "4A",
-   "node_id": "GGGuJ43Do8ZjJkK0DEPp",
+   "node_id": "xvQ7Il4ysMLW7JTZSvis",
    "takes": [
     {
      "take": 1,
@@ -519,16 +519,37 @@
      "generation_id": "r2Bia6FE00SvxXbvwOYd",
      "session_id": "5gD1yl0AwZaw5ywv5YtQ",
      "duration_s": 7.52,
-     "file": "4A.mp3"
+     "file": "takes/4A_take2.mp3"
+    },
+    {
+     "take": 3,
+     "generation_id": "8frB6KSq2YIQqgbEloHP",
+     "session_id": "2ChJWlEu1pxDUIqwizTo",
+     "duration_s": 7.2,
+     "file": "takes/4A_take3.mp3",
+     "node_id": "xvQ7Il4ysMLW7JTZSvis",
+     "note": "IPA redo, Nov 2, 2026"
+    },
+    {
+     "take": 4,
+     "generation_id": "yR5exhQbOjjMWDvU4EAH",
+     "session_id": "sf1FS4h7wtDJoKdB2mdZ",
+     "duration_s": 7.2,
+     "file": "4A.mp3",
+     "node_id": "xvQ7Il4ysMLW7JTZSvis",
+     "note": "IPA redo, Nov 2, 2026"
     }
    ],
-   "saved_take": 2,
+   "saved_take": 4,
    "saved_file": "4A.mp3",
-   "tts_input": "A V R T needs an accessory pathway: a strand of muscle that crosses the insulating ring between the atria and the ventricles.",
-   "tts_input_respelling": [],
-   "transcript_generation_id": "Htcl7vWSLEEN50n3yfkg",
+   "tts_input": "/ˌeɪviːɑːrˈtiː/ needs an accessory pathway: a strand of muscle that crosses the insulating ring between the atria and the ventricles.",
+   "tts_input_respelling": [
+    "AVRT -> /ˌeɪviːɑːrˈtiː/ (IPA)"
+   ],
+   "transcript_generation_id": "4Sd08jmukGkLTZRSHKXz",
    "start_in_full": 120.82,
-   "hold_after": 0.5
+   "hold_after": 0.5,
+   "updated_vo": "2026-11-02: IPA redo (Mark flagged AVRT/AV pronunciation)"
   },
   {
    "beat": "4B",
@@ -558,7 +579,7 @@
     "AV node -> A V node"
    ],
    "transcript_generation_id": "DBS1R0SUcZEEa5s6PYIv",
-   "start_in_full": 128.84,
+   "start_in_full": 128.52,
    "hold_after": 0.5
   },
   {
@@ -587,7 +608,7 @@
     "AV node -> A V node"
    ],
    "transcript_generation_id": "ls3ZpTEZ5AOuFxWCnexA",
-   "start_in_full": 138.06,
+   "start_in_full": 137.74,
    "hold_after": 0.5
   },
   {
@@ -616,7 +637,7 @@
     "QRS -> /ˌkjuːɑːrˈɛs/"
    ],
    "transcript_generation_id": "6c226pvGClv1L26NqGH0",
-   "start_in_full": 146.0,
+   "start_in_full": 145.68,
    "hold_after": 0.5
   },
   {
@@ -646,12 +667,12 @@
     "His-Purkinje -> Hiss pur-KIN-jee"
    ],
    "transcript_generation_id": "HE2tIJIHp7RdshPTrqp0",
-   "start_in_full": 162.5,
+   "start_in_full": 162.18,
    "hold_after": 0.5
   },
   {
    "beat": "4F",
-   "node_id": "XTcqf04tKduY8oaUqSjo",
+   "node_id": "kOwh2cFuJ6wHjsSjVBsK",
    "takes": [
     {
      "take": 1,
@@ -665,16 +686,37 @@
      "generation_id": "O90vwOLLP5TbwG8AXuJU",
      "session_id": "XkSWeRuikeYjDt9mcQEO",
      "duration_s": 5.04,
-     "file": "4F.mp3"
+     "file": "takes/4F_take2.mp3"
+    },
+    {
+     "take": 3,
+     "generation_id": "KqJOHe8ZePPlV71PZsyI",
+     "session_id": "cneMOYHb0RBiHEsUP38U",
+     "duration_s": 5.04,
+     "file": "takes/4F_take3.mp3",
+     "node_id": "kOwh2cFuJ6wHjsSjVBsK",
+     "note": "IPA redo, Nov 2, 2026"
+    },
+    {
+     "take": 4,
+     "generation_id": "TmhMVJo3Uowuo8cHsFNx",
+     "session_id": "VpUF3MAh13FFDs5rKKuS",
+     "duration_s": 4.96,
+     "file": "4F.mp3",
+     "node_id": "kOwh2cFuJ6wHjsSjVBsK",
+     "note": "IPA redo, Nov 2, 2026"
     }
    ],
-   "saved_take": 2,
+   "saved_take": 4,
    "saved_file": "4F.mp3",
-   "tts_input": "A V R T is the most common S V T in children, especially younger children.",
-   "tts_input_respelling": [],
-   "transcript_generation_id": "B2RwVdqDxXWyNNi0FRd9",
-   "start_in_full": 178.12,
-   "hold_after": 1.0
+   "tts_input": "/ˌeɪviːɑːrˈtiː/ is the most common S V T in children, especially younger children.",
+   "tts_input_respelling": [
+    "AVRT -> /ˌeɪviːɑːrˈtiː/ (IPA)"
+   ],
+   "transcript_generation_id": "YHHwue7FIV5yEgIZR94D",
+   "start_in_full": 177.8,
+   "hold_after": 1.0,
+   "updated_vo": "2026-11-02: IPA redo (Mark flagged AVRT/AV pronunciation)"
   },
   {
    "beat": "5A",
@@ -703,7 +745,7 @@
     "E C G -> /ˌiːsiːˈdʒiː/"
    ],
    "transcript_generation_id": "6yPA0t5NuKwEKnpVlZNg",
-   "start_in_full": 184.16,
+   "start_in_full": 183.76,
    "hold_after": 0.5
   },
   {
@@ -732,7 +774,7 @@
     "E C G -> /ˌiːsiːˈdʒiː/"
    ],
    "transcript_generation_id": "nrG9yp16MsFxEA6BKQ4l",
-   "start_in_full": 203.22,
+   "start_in_full": 202.82,
    "hold_after": 1.0
   },
   {
@@ -761,7 +803,7 @@
     "AV node -> A V node"
    ],
    "transcript_generation_id": "0UA3HdpFqYoZLC87OppL",
-   "start_in_full": 215.18,
+   "start_in_full": 214.78,
    "hold_after": 0.5
   },
   {
@@ -790,7 +832,7 @@
     "AV node -> A V node"
    ],
    "transcript_generation_id": "5xBb0vzNbbYS2GAeAoJX",
-   "start_in_full": 223.6,
+   "start_in_full": 223.2,
    "hold_after": 0.5
   },
   {
@@ -817,7 +859,7 @@
    "tts_input": "If the tachycardia is making the patient unstable, use synchronized cardioversion.",
    "tts_input_respelling": [],
    "transcript_generation_id": "OenWSGdsv0UiBUUasSan",
-   "start_in_full": 239.7,
+   "start_in_full": 239.3,
    "hold_after": 0.5
   },
   {
@@ -847,12 +889,12 @@
     "Procainamide -> pro-KANE-uh-mide"
    ],
    "transcript_generation_id": "qzyTF4nXrXUm1G97G5ly",
-   "start_in_full": 245.08,
+   "start_in_full": 244.68,
    "hold_after": 0.5
   },
   {
    "beat": "6E",
-   "node_id": "JQtgFmgEOeOBi9Zmlu0v",
+   "node_id": "q8Cs3EEruygE7LRyGZCS",
    "takes": [
     {
      "take": 1,
@@ -866,19 +908,38 @@
      "generation_id": "SWh3LYOTSAPrOz9i1EVv",
      "session_id": "iyQHYCMcvCwvSQK98wZt",
      "duration_s": 18.72,
-     "file": "6E.mp3"
+     "file": "takes/6E_take2.mp3"
+    },
+    {
+     "take": 3,
+     "generation_id": "WnQaQl69UQJ4ZW8XG7tY",
+     "session_id": "JVoG7yxBaaTFOGIjEv5W",
+     "duration_s": 18.48,
+     "file": "takes/6E_take3.mp3",
+     "node_id": "q8Cs3EEruygE7LRyGZCS",
+     "note": "IPA redo, Nov 2, 2026"
+    },
+    {
+     "take": 4,
+     "generation_id": "1QbHsIoZhD7Ul6khvvYh",
+     "session_id": "TLQBqndHA2TzZWRSmKIC",
+     "duration_s": 18.56,
+     "file": "6E.mp3",
+     "node_id": "q8Cs3EEruygE7LRyGZCS",
+     "note": "IPA redo, Nov 2, 2026"
     }
    ],
-   "saved_take": 2,
+   "saved_take": 4,
    "saved_file": "6E.mp3",
-   "tts_input": "And watch for pre-excited atrial fibrillation: a very fast, irregular, wide-complex rhythm in a patient with an accessory pathway. It can be lethal. A V nodal blockers, including adenosine, can make it worse. Stable patients can get pro-KANE-uh-mide. Unstable patients need electrical cardioversion.",
+   "tts_input": "And watch for pre-excited atrial fibrillation: a very fast, irregular, wide-complex rhythm in a patient with an accessory pathway. It can be lethal. /ˌeɪˈviː/ nodal blockers, including adenosine, can make it worse. Stable patients can get pro-KANE-uh-mide. Unstable patients need electrical cardioversion.",
    "tts_input_respelling": [
-    "AV nodal -> A V nodal",
+    "AV nodal -> /ˌeɪˈviː/ nodal (IPA)",
     "procainamide -> pro-KANE-uh-mide"
    ],
-   "transcript_generation_id": "ukDKhIZM0EergU6IBh1T",
-   "start_in_full": 254.7,
-   "hold_after": 1.0
+   "transcript_generation_id": "mBYooRy8MQeSBoSfd5BU",
+   "start_in_full": 254.3,
+   "hold_after": 1.0,
+   "updated_vo": "2026-11-02: IPA redo (Mark flagged AVRT/AV pronunciation)"
   },
   {
    "beat": "6F",
@@ -904,7 +965,7 @@
    "tts_input": "For a cure, catheter ablation targets the loop itself. In A V N R T, that's the slow pathway, with success above ninety-five percent.",
    "tts_input_respelling": [],
    "transcript_generation_id": "0jRW4Br6fayA9AWYI81t",
-   "start_in_full": 274.42,
+   "start_in_full": 273.86,
    "hold_after": 0.5
   },
   {
@@ -931,7 +992,7 @@
    "tts_input": "In A V R T, it's the accessory pathway.",
    "tts_input_respelling": [],
    "transcript_generation_id": "dAMcop29fRXdkGzLY4PR",
-   "start_in_full": 283.96,
+   "start_in_full": 283.4,
    "hold_after": 1.0
   },
   {
@@ -960,8 +1021,9 @@
     "QRS -> /ˌkjuːɑːrˈɛs/"
    ],
    "transcript_generation_id": "XMDCfIgwAq2UAGdsdrQ9",
-   "start_in_full": 287.92,
+   "start_in_full": 287.36,
    "hold_after": 1.0
   }
- ]
+ ],
+ "full_mp3_s": 299.64
 }
