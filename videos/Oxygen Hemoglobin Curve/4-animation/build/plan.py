@@ -39,6 +39,10 @@ SCENES = {1: "Hook", 2: "Axes", 3: "Cooperativity", 4: "Landmarks", 5: "P50", 6:
 GX = lambda po2: 300 + po2 * 8.2           # graph: PO2 0..100 -> x 300..1120
 GY = lambda so2: 810 - so2 * 6.0           # SO2 0..100 -> y 810..210
 CLIP = [298, 150, 1176, 818]               # inside the graph card: hides anything pushed past the axes
+# A wipe stop that reveals a point stops inside the point's white rim (radius 11 + stroke 4 = 15 px), so the mask edge and its
+# 4 px feather fall on the rim, never on the guide line behind it. Wider (30 px in v1-v11, 16 in a v12 draft) let the next
+# piece leak in early: the end of the "Arterial" label (4A) and the venous horizontal guide (4B), Mark 2026-11-02
+POINT_EDGE = 12
 
 # Comma Clinical (Mark 2026-11-02; replaces the v6 "playful" override). Motion only: art, VO and sync points stay locked.
 # Source: Motion Style Guide, "Comma Clinical: Warm Clinical with Comma motion". The curves themselves (snap, cross, accel,
@@ -192,13 +196,13 @@ PLAN = {
     ],
     "4A": [
         {"layer": "Panel/Card", "do": "xfade", "at": "start"},
-        {"layer": "Point/Arterial", "do": "wipe", "dir": "rtl", "stops": [["100", GX(100) - 30, 0.5], ["97", 220, 0.8]]},
+        {"layer": "Point/Arterial", "do": "wipe", "dir": "rtl", "stops": [["100", GX(100) - POINT_EDGE, 0.5], ["97", 220, 0.8]]},
         {"layer": "Point/Arterial", "do": "ping", "at": "100+0.3", "c": [GX(100), GY(97)], "r": 14},
     ],
     "4B": [
         {"layer": "Panel/Card", "do": "xfade", "at": "start"},
         {"layer": "Point/Arterial", "do": "xfade", "at": "40"},
-        {"layer": "Point/Venous", "do": "wipe", "dir": "rtl", "stops": [["40", GX(40) - 30, 0.5], ["75", 220, 0.8]]},
+        {"layer": "Point/Venous", "do": "wipe", "dir": "rtl", "stops": [["40", GX(40) - POINT_EDGE, 0.5], ["75", 220, 0.8]]},
         {"layer": "Point/Venous", "do": "ping", "at": "40+0.3", "c": [GX(40), GY(75)], "r": 14},
     ],
     "4C": [
@@ -219,7 +223,7 @@ PLAN = {
     "6A": [
         {"layer": "Panel/Card", "do": "xfade", "at": "flat"},
         # the marker leaves 100 and reaches 60 on "60"; the SO2 bar comes in on "90"
-        {"layer": "Marker/Bars", "do": "wipe", "dir": "rtl", "stops": [["60-1.6", GX(60) - 14, 1.6], ["90", 270, 0.4]]},
+        {"layer": "Marker/Bars", "do": "wipe", "dir": "rtl", "stops": [["60-1.6", GX(60) - POINT_EDGE, 1.6], ["90", 270, 0.4]]},
     ],
     "6B": [
         {"layer": "Region/Plateau", "do": "in", "at": "plateau", "rise": 0},
@@ -228,7 +232,7 @@ PLAN = {
     ],
     "6C": [
         {"layer": "Panel/Card", "do": "xfade", "at": "small"},
-        {"layer": "Marker/Bars", "do": "wipe", "dir": "rtl", "stops": [["small", GX(30) - 14, 0.8], ["large", 270, 0.5]]},
+        {"layer": "Marker/Bars", "do": "wipe", "dir": "rtl", "stops": [["small", GX(30) - POINT_EDGE, 0.8], ["large", 270, 0.5]]},
         {"layer": "Marker/Bars", "do": "ping", "at": "large", "c": [GX(30), 462], "r": 14},
     ],
     "7A": [

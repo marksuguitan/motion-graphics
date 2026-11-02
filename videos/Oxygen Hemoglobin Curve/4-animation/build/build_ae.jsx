@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 11;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause
+    var VERSION = 12;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
