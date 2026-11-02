@@ -68,6 +68,13 @@ function beatState(t: number) {
   const W = TL.walk;
   const E = TL.ecg;
   const realEnd = E.realStart + E.realBeats * COND.beat;
+  const P = TL.preview;
+  if (t >= P.start && t < P.start + P.beats * COND.beat) {
+    // the preview: a few beats at real speed before the step-by-step walk
+    const x = t - P.start;
+    const n = Math.floor(x / COND.beat + 1e-6);
+    return {mode: 'ecg' as Mode, tau: Math.max(0, x - n * COND.beat), total: 0};
+  }
   if (t < W.warp[0][0]) return {mode: 'pre' as Mode, tau: 0, total: 0};
   if (t < TL.reset.t) return {mode: 'walk' as Mode, tau: warp(t, W.warp), total: 0};
   if (t < E.slowWarp[0][0]) return {mode: 'reset' as Mode, tau: 0, total: 0};
@@ -82,6 +89,8 @@ function beatState(t: number) {
 // time (video) at which the beat reaches tau, inside the current walk or ECG segment (for shrink timings)
 function timeOfTau(tau: number, t: number): number {
   const E = TL.ecg;
+  const P = TL.preview;
+  if (t >= P.start && t < P.start + P.beats * COND.beat) return P.start + Math.floor((t - P.start) / COND.beat + 1e-6) * COND.beat + tau;
   if (t < TL.reset.t) {
     const k = TL.walk.warp;
     for (let i = 1; i < k.length; i++) if (tau <= k[i][1] && k[i][1] > k[i - 1][1]) return k[i - 1][0] + ((tau - k[i - 1][1]) / (k[i][1] - k[i - 1][1])) * (k[i][0] - k[i - 1][0]);
@@ -185,7 +194,7 @@ export const NormalConduction: React.FC = () => {
       p = {x: 960 + (saScreen.x - 960) * k, y: (t < tj + 0.15 ? yA : 556 + (saScreen.y - 556) * k) - lift};
     }
     orbs.push({...p, r});
-  } else if (t < TL.reset.t) {
+  } else if (t < TL.reset.t && st.mode !== 'ecg') {
     // walk-through: orb A rides the left-bundle route, orb B splits off at the bifurcation down the right bundle
     const tau = st.tau;
     const sqA = squash(t, TL.dot.land, 'y', 0.25);
@@ -194,7 +203,10 @@ export const NormalConduction: React.FC = () => {
     const sA = toScreen(a.x, a.y);
     // a small squash as the orb runs into the AV node's slow tissue
     const sqAV = squash(t, TL.walk.warp[2][0], 'x', 0.18);
-    orbs.push({...sA, r: ORB_R * shrinkA, sx: sqA.sx * sqAV.sx, sy: sqA.sy * sqAV.sy});
+    // after the preview beats the orb grows back on the SA node
+    const pEnd = TL.preview.start + TL.preview.beats * COND.beat;
+    const regrow = t >= pEnd && t < pEnd + 0.6 ? overshoot(t, pEnd, 0.5, 0, 1, 0.1) : 1;
+    orbs.push({...sA, r: ORB_R * shrinkA * regrow, sx: sqA.sx * sqAV.sx, sy: sqA.sy * sqAV.sy});
     if (tau >= T_BIF) {
       const b = alongClamped(R.rbb, Math.max(tau, T_BIF));
       const shrinkB = tau >= endB ? 1 - progress(t, timeOfTau(endB, t), 0.3, 'accel') : 1;
@@ -207,8 +219,11 @@ export const NormalConduction: React.FC = () => {
   } else if (st.mode === 'ecg') {
     const tau = st.tau;
     let rA = ORB_R;
-    if (tau >= endA) rA = ORB_R * (1 - progress(t, timeOfTau(endA, t), t < TL.ecg.realStart ? 0.3 : 0.05, 'accel'));
-    else if (t >= TL.ecg.slowWarp[TL.ecg.slowWarp.length - 1][0]) {
+    if (tau >= endA) rA = ORB_R * (1 - progress(t, timeOfTau(endA, t), t < TL.ecg.realStart && t > TL.walk.warp[0][0] ? 0.3 : 0.05, 'accel'));
+    else if (t < TL.walk.warp[0][0]) {
+      // preview beats after the first: the orb reappears on the SA node as each beat starts
+      if (t - TL.preview.start >= COND.beat) rA = ORB_R * progress(t, timeOfTau(0, t), 0.04, 'snap');
+    } else if (t >= TL.ecg.slowWarp[TL.ecg.slowWarp.length - 1][0]) {
       // later beats: the orb reappears on the SA node as each beat starts
       const tb = timeOfTau(0, t);
       rA = t < TL.ecg.realStart ? ease(t, TL.ecg.slowWarp[TL.ecg.slowWarp.length - 1][0], 0.4, 0, ORB_R) : ORB_R * progress(t, tb, 0.04, 'snap');
@@ -217,7 +232,7 @@ export const NormalConduction: React.FC = () => {
     orbs.push({...toScreen(a.x, a.y), r: rA});
     if (tau >= T_BIF && tau < endB + 0.02) {
       const b = alongClamped(R.rbb, tau);
-      const rB = tau >= endB ? ORB_R * (1 - progress(t, timeOfTau(endB, t), t < TL.ecg.realStart ? 0.3 : 0.05, 'accel')) : ORB_R;
+      const rB = tau >= endB ? ORB_R * (1 - progress(t, timeOfTau(endB, t), t < TL.ecg.realStart && t > TL.walk.warp[0][0] ? 0.3 : 0.05, 'accel')) : ORB_R;
       orbs.push({...toScreen(b.x, b.y), r: rB});
     }
   } else if (st.mode === 'post') {

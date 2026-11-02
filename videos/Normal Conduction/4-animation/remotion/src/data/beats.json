@@ -12,51 +12,57 @@
   "end": 5.9
  },
  {
-  "id": "3A SA node",
+  "id": "2B preview",
   "start": 5.9,
+  "dur": 2.8,
+  "end": 8.7
+ },
+ {
+  "id": "3A SA node",
+  "start": 8.7,
   "dur": 2.7,
-  "end": 8.6
+  "end": 11.4
  },
  {
   "id": "3B atria",
-  "start": 8.6,
+  "start": 11.4,
   "dur": 2.6,
-  "end": 11.2
+  "end": 14.0
  },
  {
   "id": "3C AV node",
-  "start": 11.2,
+  "start": 14.0,
   "dur": 3.0,
-  "end": 14.2
+  "end": 17.0
  },
  {
   "id": "3D His + branches",
-  "start": 14.2,
+  "start": 17.0,
   "dur": 3.3,
-  "end": 17.5
+  "end": 20.3
  },
  {
   "id": "3E Purkinje",
-  "start": 17.5,
+  "start": 20.3,
   "dur": 4.5,
-  "end": 22.0
+  "end": 24.8
  },
  {
   "id": "4A ECG slowed",
-  "start": 22.0,
+  "start": 24.8,
   "dur": 12.8,
-  "end": 34.8
+  "end": 37.6
  },
  {
   "id": "4B real speed",
-  "start": 34.8,
+  "start": 37.6,
   "dur": 5.2,
-  "end": 40.0
+  "end": 42.8
  },
  {
   "id": "5 outro",
-  "start": 40.0,
+  "start": 42.8,
   "dur": 6.1,
-  "end": 46.1
+  "end": 48.9
  }
 ]

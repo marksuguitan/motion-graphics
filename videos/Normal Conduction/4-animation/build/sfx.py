@@ -119,6 +119,10 @@ place(tone(300, 600, 0.25, 0.08), TL['dot']['grow'], -26)
 place(thud(), TL['dot']['land'], -16)
 place(pop(), TL['dot']['land'], -24)
 place(swell(0.7, 300, 2500), TL['heart']['grow'] - 0.05, -32)
+# preview: a few beats at real speed, a soft thump on each ventricular beat
+PV = TL['preview']
+for k in range(PV['beats']):
+    place(lub(), PV['start'] + k * CD['beat'] + 0.2, -17)
 # walk-through
 W = TL['walk']
 for tp in W['pings']:

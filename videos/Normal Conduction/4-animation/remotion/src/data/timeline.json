@@ -4,7 +4,7 @@
     "text": "Normal conduction",
     "typeOn": 0.2,
     "typeOff": 2.6,
-    "retype": 42.05
+    "retype": 44.85
   },
   "dot": {
     "grow": 3.4,
@@ -13,137 +13,142 @@
   },
   "heart": {
     "grow": 4.95,
-    "shrink": 40.8
+    "shrink": 43.6
   },
   "walk": {
     "warp": [
       [
-        5.9,
+        8.7,
         0
       ],
       [
-        8.6,
+        11.4,
         0
       ],
       [
-        11.2,
+        14.0,
         0.042
       ],
       [
-        14.2,
+        17.0,
         0.125
       ],
       [
-        17.5,
+        20.3,
         0.181
       ],
       [
-        20.8,
+        23.6,
         0.225
       ]
     ],
     "pings": [
-      6.15,
-      7.95
+      8.95,
+      10.75
     ],
-    "squeeze": 20.5,
+    "squeeze": 23.3,
     "steps": [
       {
-        "t": 5.9,
+        "t": 8.7,
         "head": "SA node",
         "body": "fires the impulse"
       },
       {
-        "t": 8.6,
+        "t": 11.4,
         "head": "Atria",
         "body": "it spreads across both atria"
       },
       {
-        "t": 11.2,
+        "t": 14.0,
         "head": "AV node",
         "body": "a brief delay"
       },
       {
-        "t": 14.2,
+        "t": 17.0,
         "head": "Bundle of His",
         "body": "then the right and left bundle branches"
       },
       {
-        "t": 17.5,
+        "t": 20.3,
         "head": "Purkinje fibers",
         "body": "through the ventricular walls"
       }
     ],
-    "end": 22.0
+    "end": 24.8
   },
   "reset": {
-    "t": 22.0,
-    "orb": 22.8
+    "t": 24.8,
+    "orb": 25.6
   },
   "ecg": {
-    "axisOn": 22.6,
-    "kickerSlow": 22.8,
+    "axisOn": 25.4,
+    "kickerSlow": 25.6,
     "slowWarp": [
       [
-        23.6,
+        26.4,
         0
       ],
       [
-        26.2,
+        29.0,
         0.09
       ],
       [
-        28.8,
+        31.6,
         0.16
       ],
       [
-        31.4,
+        34.2,
         0.25
       ],
       [
-        33.6,
+        36.4,
         0.5
       ],
       [
-        34.4,
+        37.2,
         0.8
       ]
     ],
     "labels": [
       {
-        "t": 23.6,
+        "t": 26.4,
         "head": "P wave",
         "body": "atria depolarize",
         "from": 0.0,
         "to": 0.09
       },
       {
-        "t": 26.2,
+        "t": 29.0,
         "head": "Flat line",
         "body": "the AV node delay",
         "from": 0.09,
         "to": 0.16
       },
       {
-        "t": 28.8,
+        "t": 31.6,
         "head": "QRS",
         "body": "ventricles depolarize",
         "from": 0.16,
         "to": 0.25
       },
       {
-        "t": 31.4,
+        "t": 34.2,
         "head": "T wave",
         "body": "ventricles repolarize",
         "from": 0.3,
         "to": 0.5
       }
     ],
-    "realStart": 34.8,
+    "realStart": 37.6,
     "realBeats": 6,
     "realHead": "Normal sinus rhythm",
     "realBody": "the same path, every beat",
-    "off": 40.0
+    "off": 42.8
   },
-  "end": 46.1
+  "end": 48.9,
+  "preview": {
+    "start": 5.9,
+    "beats": 3,
+    "note": "three beats at real speed as a preview, before the step-by-step walk"
+  }
 }
