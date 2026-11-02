@@ -26,7 +26,7 @@ Mark chose Comma Clinical for this video (production doc, Style row). It replace
 | Cross | 0.75 s | Moves the eye tracks across the frame: the 1B cell carry and travel, the 1C merge, the 2A stage and title-to-kicker carries |
 | Accelerate | 0.25 s | Forms collapsing into a cut (the end of 1B) |
 | Landing overshoot | 8 %, one rebound, settled in 0.2 s | Shapes growing from a point: the RBCs, tetramers, O2 dots, the P50 marker |
-| Squash | 75/125 on impact, recovering in 0.2 s | RBCs only (stretch 10 % along a move) |
+| Squash | off (was 75/125 on impact, stretch 10 % along a move) | Mark, Nov 2, 2026: no squish on the RBCs. `squash` and `stretch` in `MOTION` turn it back on |
 | Anticipation | 30 px counter-move over 0.2 s | The 1B cell carry and the 2A title-to-kicker carry |
 | Stagger | 2 frames, under 0.4 s in total | Siblings clearing together (the end of 1B) |
 | Hold | at least 0.4 s after a landing | Set by the sync points; not changed by the build |

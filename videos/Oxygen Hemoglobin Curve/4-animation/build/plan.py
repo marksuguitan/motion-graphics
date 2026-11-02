@@ -49,8 +49,8 @@ MOTION = {
     "accel_d": 0.25,          # s: accelerating into a swap (forms collapsing before a cut)
     "land_over": 0.08,        # landings overshoot 8 % with one rebound ...
     "land_back": 0.2,         # ... settled in 0.2 s
-    "squash": 0.25,           # squash on impact 75/125, recovering in 0.2 s (shapes only: the RBCs)
-    "stretch": 0.10,          # RBCs stretch 10 % along a move
+    "squash": 0,              # squash on impact (0.25 = 75/125). 0: Mark 2026-11-02 didn't like the RBCs squishing
+    "stretch": 0,             # RBC stretch along a move (was 0.10). 0: same note
     "anticipation_px": 30,    # counter-move before a big move ...
     "anticipation_d": 0.2,    # ... over 0.2 s
     "stagger_frames": 2,      # frames between siblings ...

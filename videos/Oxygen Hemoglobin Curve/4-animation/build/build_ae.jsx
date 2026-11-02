@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 7;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical
+    var VERSION = 8;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -160,6 +160,7 @@
     // Mark 2026-11-02 ("a sleek transition from scene 1 to the title"). Motion only; the art is unchanged. The title starts on its
     // measured cue ("oxyhemoglobin"); everything before it runs from the 1C start.
     function squash(l, t, d, dx, dy) {                      // shapes only: stretch along the move, 75/125 squash on impact, recover
+        if (!MO.squash && !MO.stretch) return;
         var horiz = Math.abs(dx) >= Math.abs(dy), st = MO.stretch;
         var b = SC(l).numKeys ? SC(l).valueAtTime(t + d, false) : [100, 100];
         var S1 = horiz ? [b[0] * (1 + st), b[1] * (1 - st)] : [b[0] * (1 - st), b[1] * (1 + st)];
@@ -219,7 +220,7 @@
         var x0 = R[0] - 18, x1 = R[2] + 6;
         var dot = shapeLayer(pre, "Cell → dot", "ellipse", [176, 112], mid, hex("#C94A44"));
         cutIn(dot.layer, M[0] + M[1]);
-        CommaEase.squash(SC(dot.layer), M[0] + M[1], [100, 100], 0, MO.squash);               // the two cells land as one
+        if (MO.squash) CommaEase.squash(SC(dot.layer), M[0] + M[1], [100, 100], 0, MO.squash);   // the two cells land as one
         cm(dot.shape().property("ADBE Vector Ellipse Size"), [[DOT[0], [176, 112]], [DOT[0] + DOT[1], [14, 14]]], "snap");
         cm(POS(dot.layer), [[DOT[0], mid], [DOT[0] + DOT[1], [x0, y1]]], "cross");
         cm(POS(dot.layer), [[c, [x0, y1]], [c + W, [x1, y1]]], "snap");
