@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 10;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes
+    var VERSION = 11;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -413,6 +413,14 @@
                 ms.setValueAtTime(a.t_go + a.d, boxShape(U2[0], U2[1], V2[0], V2[1]));
                 ms.setInterpolationTypeAtKey(1, KeyframeInterpolationType.HOLD, KeyframeInterpolationType.HOLD);
             }
+            return l;
+        case "undraw":                                       // a held layer draws itself out (mask retract, accelerating) and is gone
+            if (!l) return l;
+            var ur = rect(l), up = POS(l).value, UP = 6, ux0 = ur[0] - UP, uy0 = ur[1] - UP, ux1 = ur[2] + UP, uy1 = ur[3] + UP;
+            var ushut = { rtl: [ux0, uy0, ux0, uy1], ltr: [ux1, uy0, ux1, uy1], ttb: [ux0, uy1, ux1, uy1], btt: [ux0, uy0, ux1, uy0] }[a.dir];
+            var UA0 = toLayer(l, ux0, uy0, up), UB0 = toLayer(l, ux1, uy1, up), UA1 = toLayer(l, ushut[0], ushut[1], up), UB1 = toLayer(l, ushut[2], ushut[3], up);
+            cm(addMask(l, "Draw out"), [[t, boxShape(UA0[0], UA0[1], UB0[0], UB0[1])], [t + (a.d || MO.snap_d), boxShape(UA1[0], UA1[1], UB1[0], UB1[1])]], "accel");
+            cutOut(l, t + (a.d || MO.snap_d));
             return l;
         case "swell":                                        // grows about a point, holds, then settles back (the T -> R schematic)
             l = copyLayer(bt.ai, a.layer, pre); if (!l) return null;

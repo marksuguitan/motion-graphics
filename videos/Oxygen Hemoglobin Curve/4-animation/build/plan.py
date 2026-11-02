@@ -76,7 +76,8 @@ MOTION = {
 }
 # Silence added before a beat, s (Mark 2026-11-02: more time to read the y note before Scene 3). Everything from that beat on
 # (picture, audio, markers) moves later by the same amount; the VO files and their word timings are unchanged.
-GAPS = {"3A": 1.0}                      # Mark 2026-11-02: was 1.5 s, "a little too long, make it shorter, like 1s"
+GAPS = {"3A": 1.0,                      # Mark 2026-11-02: was 1.5 s, "a little too long, make it shorter, like 1s"
+        "4A": 1.0}                      # Mark 2026-11-02: time to read the 3D card before Scene 4
 TETRAMER_C = [636, 590]
 DRAW_OUT = MOTION["draw_out"]
 # 3B: subunit centres, heme centres and bound-O2 spots of tetramer(636, 590)
@@ -181,10 +182,13 @@ PLAN = {
         {"layer": "Curves/Straight", "do": "wipe", "dir": "ltr", "at": "straight", "d": 0.8},
     ],
     "3D": [
+        # Mark 2026-11-02: no time to read the card before Scene 4. It comes in with "sigmoid"; in the pause before 4A the
+        # dashed line draws itself out and "S-shaped" clears, while the curve and the card stay
         {"layer": "Curves/Straight", "do": "xfade", "at": "sigmoid"},
+        {"layer": "Curves/Straight", "do": "undraw", "dir": "rtl", "at": f"end-{GAPS['4A'] - 0.1:.2f}"},
         {"layer": "Curves/Normal", "do": "wipe", "dir": "ltr", "at": "sigmoid", "d": 1.2},
-        {"layer": "Label/Sigmoid", "do": "in", "at": "sigmoid+1.0"},
-        {"layer": "Panel/Card", "do": "in", "at": "sigmoid+1.4"},
+        {"layer": "Label/Sigmoid", "do": "in", "at": "sigmoid+1.0", "out_at": f"end-{GAPS['4A'] - 0.1:.2f}"},
+        {"layer": "Panel/Card", "do": "in", "at": "sigmoid"},
     ],
     "4A": [
         {"layer": "Panel/Card", "do": "xfade", "at": "start"},
