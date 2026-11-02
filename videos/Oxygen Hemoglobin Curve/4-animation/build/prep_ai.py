@@ -40,7 +40,10 @@ def main():
                 c.set("id", lid)
         txt = ET.tostring(root, encoding="unicode")
         txt = re.sub(r'style="([^"]*font-family:[^"]*)"', face, txt)
-        (OUT / f"{beat}.svg").write_text(txt, encoding="utf-8")
+        dst = OUT / f"{beat}.svg"
+        if not dst.exists() or dst.read_text(encoding="utf-8") != txt:   # untouched beats keep their date, so build_ai.jsx skips them
+            dst.write_text(txt, encoding="utf-8")
+            print("updated", beat)
         allmap[beat] = {"file": f.name, "layers": spec}
     (OUT / "layers.json").write_text(json.dumps(allmap, indent=1), encoding="utf-8")
     for b, v in allmap.items():
