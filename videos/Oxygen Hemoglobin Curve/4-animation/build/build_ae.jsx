@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 22;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows; v19: Mark's markers, Scene 10 sync; v20: 9D locks; v21: charcoal locks; v22: end screen B
+    var VERSION = 23;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows; v19: Mark's markers, Scene 10 sync; v20: 9D locks; v21: charcoal locks; v22: end screen B; v23: Mark's v22 markers
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -213,27 +213,66 @@
             cm(SC(cl), [[M[0], [100, 100]], [M[0] + M[1], [80, 80]]], "cross");
             cutOut(cl, M[0] + M[1] * cells[i][1]);
         }
-        // title lines: two copies of Title/Text, each masked to one line; line 1 is written by the dot, line 2 cuts on whole
-        var t1 = copyLayer(bt.ai, "Title/Text", pre, "Title/Text line 1"), t2 = copyLayer(bt.ai, "Title/Text", pre, "Title/Text line 2");
-        if (!t1 || !t2) return t1;
-        var R = rect(t1), split = (R[1] + R[3]) / 2, P = 8, y1 = (R[1] + split) / 2;
-        var p1 = POS(t1).value, A = toLayer(t1, R[0] - P, R[1] - P, p1), B = toLayer(t1, R[2] + P, split, p1);
-        addMask(t1, "Line 1").setValue(boxShape(A[0], A[1], B[0], B[1]));
-        wipe(t1, { dir: "ltr", t: c, d: W });
-        t1.property("ADBE Mask Parade").property(2).maskMode = MaskMode.INTERSECT;
-        var p2 = POS(t2).value, C2 = toLayer(t2, R[0] - P, split, p2), D2 = toLayer(t2, R[2] + P, R[3] + P, p2);
-        addMask(t2, "Line 2").setValue(boxShape(C2[0], C2[1], D2[0], D2[1]));
-        cutIn(t2, c + a.line2);
-        // the merged cell shrinks to a 14 px dot at the start of line 1, waits, then leads the wipe and is gone as the line completes
-        var x0 = R[0] - 18, x1 = R[2] + 6;
-        var dot = shapeLayer(pre, "Cell → dot", "ellipse", [176, 112], mid, hex("#C94A44"));
+        // Mark 2026-11-02 (marker at 10.7 s): the cell becomes the "o" of "oxyhemoglobin". It shrinks to the glyph's size and
+        // place, turns from a red disc into a charcoal ring; on "oxyhemoglobin" the title cuts on whole around it and the ring
+        // hands over to the real glyph on the same frame
+        var tt = textLayer(pre, "Title line 1 (live)", "The oxyhemoglobin", "Manrope-SemiBold", 84, 0, ParagraphJustification.CENTER_JUSTIFY, [960, 500]);
+        var tt2 = textLayer(pre, "Title line 2 (live)", "dissociation curve", "Manrope-SemiBold", 84, 0, ParagraphJustification.CENTER_JUSTIFY, [960, 600]);
+        cutIn(tt, c); cutIn(tt2, c);                      // live text, so 2A can take it over without a swap
+        var O = a.o, dot = shapeLayer(pre, "Cell → o", "ellipse", [176, 112], mid, hex("#C94A44"), hex("#C94A44"), 0);
         cutIn(dot.layer, M[0] + M[1]);
-        if (MO.squash) CommaEase.squash(SC(dot.layer), M[0] + M[1], [100, 100], 0, MO.squash);   // the two cells land as one
-        cm(dot.shape().property("ADBE Vector Ellipse Size"), [[DOT[0], [176, 112]], [DOT[0] + DOT[1], [14, 14]]], "snap");
-        cm(POS(dot.layer), [[DOT[0], mid], [DOT[0] + DOT[1], [x0, y1]]], "cross");
-        cm(POS(dot.layer), [[c, [x0, y1]], [c + W, [x1, y1]]], "snap");
-        cutOut(dot.layer, c + W);
-        return t2;
+        cm(dot.shape().property("ADBE Vector Ellipse Size"), [[DOT[0], [176, 112]], [DOT[0] + DOT[1], O.size]], "snap");
+        cm(POS(dot.layer), [[DOT[0], mid], [DOT[0] + DOT[1], O.c]], "cross");
+        cm(dot.fill().property("ADBE Vector Fill Opacity"), [[DOT[0] + DOT[1] * 0.4, 100], [DOT[0] + DOT[1], 0]], "snap");
+        cm(dot.stroke().property("ADBE Vector Stroke Width"), [[DOT[0] + DOT[1] * 0.4, 0], [DOT[0] + DOT[1], O.stroke]], "snap");
+        cm(dot.fill().property("ADBE Vector Fill Color"), [[DOT[0], hex("#C94A44")], [DOT[0] + DOT[1], hex("#222222")]], "snap");
+        cm(dot.stroke().property("ADBE Vector Stroke Color"), [[DOT[0], hex("#C94A44")], [DOT[0] + DOT[1], hex("#222222")]], "snap");
+        cutOut(dot.layer, c);
+        return tt;
+    }
+
+    // ---------- 1C -> 2A: the title becomes the kicker without a swap ----------
+    // Mark 2026-11-02 (marker at 14.3 s): the two title lines join into one line, the line shrinks and travels to the kicker's
+    // place, and during the last third of the trip each letter rolls up to its capital (1 frame apart, left to right), so it
+    // lands already as the kicker. Live text (Manrope) so the letters can roll; it stays as the kicker for the rest of the beat.
+    function textLayer(pre, name, str, font, size, track, just, pos, fill) {
+        var L = pre.layers.addText(str); L.name = name;
+        var tp = L.property("ADBE Text Properties").property("ADBE Text Document"), td = tp.value;
+        td.resetCharStyle(); td.font = font; td.fontSize = size; td.fillColor = fill || [0.1333, 0.1333, 0.1333]; td.applyFill = true; td.applyStroke = false;
+        td.tracking = track; td.justification = just;
+        tp.setValue(td);
+        POS(L).setValue(pos);
+        return L;
+    }
+    function roll(L, h, t0, dt, d, base, out) {          // each letter rolls up out of (or into) its own line: eased over d, one every dt, left to right
+        var an = L.property("ADBE Text Properties").property("ADBE Text Animators").addProperty("ADBE Text Animator");
+        an.property("ADBE Text Animator Properties").addProperty("ADBE Text Position 3D").setValue([0, (out ? -h : h) * 1.15, 0]);   // a little past the band, so no descender is left in it
+        var sel = an.property("ADBE Text Selectors").addProperty("ADBE Text Expressible Selector");
+        var t = "(" + t0 + " + (textIndex - 1 + " + base + ") * " + dt + ")";
+        sel.property("ADBE Text Expressible Amount").expression = "var v = ease(time, " + t + ", " + t + " + " + d + ", 0, 100); " + (out ? "[v, v, v]" : "[100 - v, 100 - v, 100 - v]");
+        var mb = addMask(L, "Line band");                // letters are clipped to their own line as they roll
+        mb.setValue(boxShape(-4000, -h * 0.82, 4000, h * 0.28));
+        L.property("ADBE Mask Parade").property(1).property("ADBE Mask Feather").setValue([0, 0]);
+    }
+    function titleKicker(pre, bt, a) {
+        var g = a.geo, J1 = a.join[0], J2 = a.join[1], T0 = a.travel[0], T1 = a.travel[1];
+        var L1 = textLayer(pre, "Title line 1 (live)", "The oxyhemoglobin", "Manrope-SemiBold", 84, 0, ParagraphJustification.CENTER_JUSTIFY, g.l1);
+        var L2 = textLayer(pre, "Title line 2 (live)", "dissociation curve", "Manrope-SemiBold", 84, 0, ParagraphJustification.CENTER_JUSTIFY, g.l2);
+        var K = textLayer(pre, "Header/Kicker", "THE OXYHEMOGLOBIN DISSOCIATION CURVE", "Manrope-Bold", 23, g.track, ParagraphJustification.LEFT_JUSTIFY, g.k, hex("#6A6A6A"));   // the art kicker's grey, so 2B takes over without a change
+        // 1. the lines join into one, centred
+        cm(POS(L1), [[J1, g.l1], [J2, g.l1j]], "snap"); cm(POS(L2), [[J1, g.l2], [J2, g.l2j]], "snap");
+        // 2. a null (identity until it moves) carries the line to the kicker's place and size
+        var N = pre.layers.addNull(pre.duration); N.name = "Title → kicker";
+        ANC(N).setValue(g.left); POS(N).setValue(g.left);
+        L1.parent = N; L2.parent = N;
+        cm(POS(N), [[T0, g.left], [T1, g.k]], "cross"); cm(SC(N), [[T0, [100, 100]], [T1, [100 * g.s, 100 * g.s]]], "cross");
+        // 3. the caps ride with it at the matching size, letters rolling in while the mixed-case letters roll out
+        K.parent = N; POS(K).setValue(g.left); SC(K).setValue([100 / g.s, 100 / g.s]);
+        var R0 = T0 + (T1 - T0) * 2 / 3, D = 3 / PLAN.fps, DT = (T1 - R0 - D) / 35;   // 36 letter slots, the last lands on T1
+        roll(L1, 84, R0, DT, D, 0, true); roll(L2, 84, R0, DT, D, 18, true); roll(K, 84 * g.s, R0, DT, D, 0, false);   // the same band and roll as the title line, in screen terms
+        TOPS.push(L1, L2, K);                             // above the stage card while it travels
+        cutIn(K, R0); cutOut(L1, T1 + 0.04); cutOut(L2, T1 + 0.04);
+        return K;
     }
 
     function buildBeat(bt) {
@@ -610,6 +649,8 @@
             return l;
         case "title1c":
             return title1c(pre, bt, a);
+        case "titlekicker":
+            return titleKicker(pre, bt, a);
         case "out":                                          // same name: the previous version leaves (cut), a new one follows
             fadeOut(copyLayer(bt.prev_ai, a.layer, pre, a.layer + " (out)"), t);
             return l;

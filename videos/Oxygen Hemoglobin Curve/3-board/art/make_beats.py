@@ -155,7 +155,7 @@ f.save()
 f = F("1C", "title", kicker=None)
 f.add(group("Background/Stage", card(96, 150, 1728, 780)),
       group("Title/Text", text(960, 500, "The oxyhemoglobin", 84, 600, C["ink"], H, anchor="middle"), text(960, 600, "dissociation curve", 84, 600, C["ink"], H, anchor="middle")),
-      group("Title/Fact", chip(660, 680, 600, "Hemoglobin carries 98% of blood O2", C["soft"], None, C["ink2"], 28, 500)))
+      group("Title/Fact", chip(694, 680, 532, "Hemoglobin carries 98% of blood O2", C["soft"], None, C["ink2"], 28, 500)))   # chip fitted to the words (Mark, Nov 2, 2026; was 600 wide)
 f.save()
 
 # ---------- Scene 2 ----------

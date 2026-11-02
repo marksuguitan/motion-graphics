@@ -43,6 +43,11 @@ CLIP = [298, 150, 1176, 818]               # inside the graph card: hides anythi
 # 4 px feather fall on the rim, never on the guide line behind it. Wider (30 px in v1-v11, 16 in a v12 draft) let the next
 # piece leak in early: the end of the "Arterial" label (4A) and the venous horizontal guide (4B), Mark 2026-11-02
 POINT_EDGE = 12
+# 1C -> 2A title -> kicker (measured in Chrome with the installed Manrope): line widths 785.74 and 733.99 px at 84 px, space 16.8,
+# one line 1536.53; the kicker (Manrope 700, 23 px, tracking 3 px) is 600.28 px wide from x 120, baseline 96
+_W1 = 1536.53; _LX = 960 - _W1 / 2
+TITLE_KICKER = {"l1": [960, 500], "l2": [960, 600], "l1j": [round(_LX + 785.74 / 2, 2), 550], "l2j": [round(_LX + 785.74 + 16.8 + 733.99 / 2, 2), 550],
+                "left": [round(_LX, 2), 550], "k": [120, 96], "s": round(600.28 / _W1, 5), "track": round(3 / 23 * 1000)}
 # Separate layers that sit inside the side card and leave with it at a card change on the next beat's first frame
 CARD_CONTENT = {"2B": ["Note/XTerm", "Note/XDef", "Note/Y"], "8C": ["Factors/List", "Factors/Bohr"], "9B": ["Factors/List"]}
 
@@ -131,7 +136,8 @@ PLAN = {
         # capillary grows into the card (from +0.4 s, 0.7 s), the cell shrinks to a dot at the start of line 1 (0.5 s) and waits;
         # on "oxyhemoglobin" the dot leads a wipe that writes line 1 (0.6 s) and line 2 rises in 0.12 s later.
         {"layer": "Title/Text", "do": "title1c", "at": "oxyhemoglobin", "merge": [0.0, MOTION["cross_d"]], "capsule": [MOTION["cross_d"] - 0.2, 0.7],
-         "dot": [MOTION["cross_d"] + 0.5, MOTION["snap_d"]], "write": MOTION["title_write"], "line2": MOTION["title_line2"]},
+         "dot": [MOTION["cross_d"] + 0.5, MOTION["snap_d"]], "write": MOTION["title_write"], "line2": MOTION["title_line2"],
+         "o": {"c": [762.0, 477.3], "size": [34.5, 37.9], "stroke": 10}},   # the "o" of "oxyhemoglobin" (measured, Manrope 600 84 px)
         {"layer": "Title/Fact", "do": "in", "at": "oxyhemoglobin+0.9"},
     ] + [{"layer": l, "do": "gone"} for l in ["Vessel/Capillary", "Cell/Lungs", "Cell/Tissues", "Zone/Lungs", "Zone/Tissues", "Icon/Lungs",
                                              "Icon/Tissues", "Cell/Released", "Label/Arrow", "Readout/SO2"]],
@@ -139,8 +145,10 @@ PLAN = {
     # time to read, and grow Scene 3 out of Scene 2. "w:<word>" is a measured word time from word_timings.csv.
     "2A": [
         {"layer": "Background/Stage", "do": "carry", "at": "start", "uniform": False},
-        {"layer": "Header/Kicker", "do": "carry", "prev": "Title/Text", "at": "start", "fit": "w", "top": True, "anticipate": True},
-        {"layer": "Title/Fact", "do": "out", "at": "start", "d": 0.3},
+        # Mark 2026-11-02 (marker at 14.3 s): the title becomes the kicker without a swap (join, travel, letters roll to caps)
+        {"layer": "Header/Kicker", "do": "titlekicker", "at": "start", "join": [0.0, 0.35], "travel": [0.35, 0.35 + MOTION["cross_d"]], "geo": TITLE_KICKER},
+        {"layer": "Title/Text", "do": "gone"},
+        {"layer": "Title/Fact", "do": "out", "at": "start+0.65", "to": [960, 708]},   # read 2.5 s+ before it goes
         {"layer": "Graph/AxisX", "do": "wipe", "dir": "ltr", "at": "bottom", "d": MOTION["cross_d"]},
         {"layer": "Panel/Card", "do": "in", "at": "w:PO2"},
         {"layer": "Note/XTerm", "do": "in", "at": f"w:PO2+{MOTION['snap_d']}"},
