@@ -129,13 +129,18 @@ def junction(cx, cy, s=1.0, st=None):
         if state == "on": return f'stroke="{AMBER}" stroke-width="{sw}"'
         if state == "shade": return f'stroke="url(#hatch)" stroke-width="{sw+8*s}"'
         return None
-    neutral = f'stroke="{DIV}" stroke-width="{sw+10*s}" fill="none" stroke-linecap="round"'
+    NEU = "#D3CEC6" if os.environ.get("HB_HALO", "1") == "1" else DIV
+    neutral = f'stroke="{NEU}" stroke-width="{sw+10*s}" fill="none" stroke-linecap="round"'
     g = ['<g id="Diagram">']
-    if st.get("atria", True):
-        fill = AMBER_TINT if st.get("atria_on") else SOFT
-        g.append(f'<g id="Diagram/Atria"><rect x="{cx-atr_w/2:.1f}" y="{atr_y:.1f}" width="{atr_w:.1f}" height="{atr_h:.1f}" rx="{20*s:.1f}" fill="{fill}" stroke="{DIV}" stroke-width="2"/>'
-                 + (T(cx - atr_w/2 + 24*s, atr_y + atr_h/2 + 9*s, "Atria", 24, 500, SEC) if st.get("tags", True) else "") + '</g>')
-    g.append(f'<g id="Diagram/Channels"><line x1="{cx}" y1="{atr_y+atr_h if st.get("atria", True) else top-70*s:.1f}" x2="{cx}" y2="{top:.1f}" {neutral}/>'
+    halo = os.environ.get("HB_HALO", "1") == "1"
+    if st.get("atria_label"):
+        g.append(f'<g id="Diagram/AtriaLabel" stroke="{BG}" stroke-width="8" paint-order="stroke" stroke-linejoin="round">{T(cx, atr_y + atr_h - 30*s, "Atria", 26, 600, INK, BODY, "middle")}</g>')
+    stem_top = atr_y + atr_h if st.get("atria", True) else top - 70*s
+    if halo:
+        hl = f'stroke="{BG}" stroke-width="{sw+24*s}" fill="none" stroke-linecap="round" stroke-linejoin="round"'
+        g.append(f'<g id="Diagram/Halo"><line x1="{cx}" y1="{stem_top:.1f}" x2="{cx}" y2="{top:.1f}" {hl}/><circle cx="{cx}" cy="{cy}" r="{r:.1f}" {hl}/>'
+                 f'<line x1="{cx}" y1="{bot:.1f}" x2="{cx}" y2="{his_bot:.1f}" {hl}/><path d="M{cx},{his_bot:.1f} L{cx-br:.1f},{his_bot+br*0.8:.1f} M{cx},{his_bot:.1f} L{cx+br:.1f},{his_bot+br*0.8:.1f}" {hl}/></g>')
+    g.append(f'<g id="Diagram/Channels"><line x1="{cx}" y1="{stem_top:.1f}" x2="{cx}" y2="{top:.1f}" {neutral}/>'
              f'<circle cx="{cx}" cy="{cy}" r="{r:.1f}" {neutral}/>'
              f'<line x1="{cx}" y1="{bot:.1f}" x2="{cx}" y2="{his_bot:.1f}" {neutral}/>'
              f'<path d="M{cx},{his_bot:.1f} L{cx-br:.1f},{his_bot+br*0.8:.1f} M{cx},{his_bot:.1f} L{cx+br:.1f},{his_bot+br*0.8:.1f}" {neutral}/></g>')
@@ -167,10 +172,10 @@ def junction(cx, cy, s=1.0, st=None):
         g.append(f'<g id="Diagram/AVNode"><ellipse cx="{cx}" cy="{node_y:.1f}" rx="{58*s:.1f}" ry="{28*s:.1f}" fill="{fill}"/>'
                  + (T(cx, node_y + 8*s, "AV node", 22, 600, fg, BODY, "middle") if st.get("tags", True) else "") + '</g>')
     if st.get("tags", True):
-        g.append(f'<g id="Diagram/Tags">{T(cx + 24*s, his_top + 40*s, "His bundle", 22, 500, SEC)}'
+        g.append(f'<g id="Diagram/Tags" stroke="{BG}" stroke-width="7" paint-order="stroke" stroke-linejoin="round">{T(cx + 24*s, his_top + 40*s, "His bundle", 22, 500, SEC)}'
                  f'{T(cx, his_bot + br*0.8 + 40*s, "Ventricles", 24, 500, SEC, BODY, "middle")}</g>')
     if st.get("labels", True):
-        g.append(f'<g id="Diagram/PathLabels">{T(cx-r-(62 if st.get("ablate") else 30)*s, cy+9, "Slow", 28, 600, INK, BODY, "end")}{T(cx+r+30*s, cy+9, "Fast", 28, 600, INK)}</g>')
+        g.append(f'<g id="Diagram/PathLabels" stroke="{BG}" stroke-width="8" paint-order="stroke" stroke-linejoin="round">{T(cx-r-(62 if st.get("ablate") else 30)*s, cy+9, "Slow", 28, 600, INK, BODY, "end")}{T(cx+r+30*s, cy+9, "Fast", 28, 600, INK)}</g>')
     dot = st.get("dot")
     if dot:
         px, py = {"top": (cx, top), "node": (cx, node_y - 30*s), "stemtop": (cx, atr_y + atr_h + 6*s)}[dot]
@@ -186,11 +191,13 @@ _bgc = [0]
 # mark_heart_bg_body.svg is his repositioned heart in a frame that maps with translate(174.8 226) scale(0.11)
 # when the diagram ring centre is at (540, 600), s = 1.
 HEART_BG_BODY = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "mark_heart_bg_body.svg")).read()
+# Muscle only: the heart's own conduction tracts look too much like the schematic's channels.
+HEART_BG_BODY = HEART_BG_BODY[:HEART_BG_BODY.find('<g id="MarkHeart_x2F_Conduction">')].rstrip()
 def heart_bg_defs():
     return f'<g id="MarkHeartBG">{HEART_BG_BODY}</g>'
 
 _bgc = [0]
-def hb_for(geo, cx, s, clip, op=0.5):
+def hb_for(geo, cx, s, clip, op=float(os.environ.get("HB_OP", "0.35"))):
     """Mark's heart behind a junction diagram, faded from top left to bottom right. clip = card (x, y, w, h)."""
     _bgc[0] += 1; n = _bgc[0]
     cy = geo["top"] + geo["r"]
@@ -364,7 +371,7 @@ def open_st(**kw):
 
 @frame("2C", "two-pathways")
 def _():
-    return diag_left(open_st()) + '<g id="Eyebrow">' + T(1060, 360, "WHAT A LOOP NEEDS", 22, 700, SEC, HEAD, ls="2.5") + '</g>' + side_text(1060, 390, None, ["Two pathways,", "joined at both ends"])
+    return diag_left(open_st(atria_label=True)) + '<g id="Eyebrow">' + T(1060, 360, "WHAT A LOOP NEEDS", 22, 700, SEC, HEAD, ls="2.5") + '</g>' + side_text(1060, 390, None, ["Two pathways,", "joined at both ends"])
 
 @frame("2D", "properties")
 def _():
