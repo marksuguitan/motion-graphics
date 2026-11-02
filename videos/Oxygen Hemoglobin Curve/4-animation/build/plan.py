@@ -65,7 +65,7 @@ MOTION = {
     "title_write": 0.6,       # 1C: the dot writes line 1 on "oxyhemoglobin" ...
     "title_line2": 0.12,      # ... and line 2 cuts on whole this much later
     "tick_d": 0.4,            # tick numbers sweep on (2 frames a tick, about)
-    "draw_out": 0.12,         # s between graph pieces drawing themselves out (3A): about 0.85 s in all
+    "draw_out": 0.09,         # s between graph pieces drawing themselves out (3A): about 0.7 s in all, inside the 1.0 s pause
     "ring_d": 0.3,            # heme circles draw on / off in this long ...
     "ring_hold": 0.4,         # ... and hold this long in between
     "first_o2_d": 0.8,        # s: the first O2's trip to α1 (cross curve)
@@ -76,7 +76,7 @@ MOTION = {
 }
 # Silence added before a beat, s (Mark 2026-11-02: more time to read the y note before Scene 3). Everything from that beat on
 # (picture, audio, markers) moves later by the same amount; the VO files and their word timings are unchanged.
-GAPS = {"3A": 1.5}
+GAPS = {"3A": 1.0}                      # Mark 2026-11-02: was 1.5 s, "a little too long, make it shorter, like 1s"
 TETRAMER_C = [636, 590]
 DRAW_OUT = MOTION["draw_out"]
 # 3B: subunit centres, heme centres and bound-O2 spots of tetramer(636, 590)

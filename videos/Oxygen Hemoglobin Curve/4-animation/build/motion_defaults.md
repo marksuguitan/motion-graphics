@@ -41,4 +41,4 @@ Rules applied in the build:
 - Landing sounds stay off.
 - The 1B to 1C transition keeps its morph (capsule to card, cell to dot to title), retimed to these curves; the dot writes line 1 on "oxyhemoglobin" and line 2 cuts on 0.12 s later.
 
-**Timing change, Nov 2, 2026 (v9, Mark):** 1.5 s of silence after 2B, so the y note can be read before Scene 3 (`GAPS` in `plan.py`). Every beat, marker and the audio from 3A on are 1.5 s later than in `3-board/timings/sync_points.csv`; the VO files and word timings are unchanged. The video is 209.40 s.
+**Timing change, Nov 2, 2026 (v9-v10, Mark):** 1.0 s of silence after 2B (1.5 s in v9), so the y note can be read before Scene 3 (`GAPS` in `plan.py`). Every beat, marker and the audio from 3A on are 1.0 s later than in `3-board/timings/sync_points.csv`; the VO files and word timings are unchanged. The video is 208.90 s.

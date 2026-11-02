@@ -3,7 +3,7 @@
  "fps": 30,
  "w": 1920,
  "h": 1080,
- "total": 209.4,
+ "total": 208.9,
  "motion": {
   "snap_d": 0.6,
   "cross_d": 0.75,
@@ -26,7 +26,7 @@
   "title_write": 0.6,
   "title_line2": 0.12,
   "tick_d": 0.4,
-  "draw_out": 0.12,
+  "draw_out": 0.09,
   "ring_d": 0.3,
   "ring_hold": 0.4,
   "first_o2_d": 0.8,
@@ -492,7 +492,7 @@
       "Note/XDef"
      ],
      "start": 22.466666666666665,
-     "dur": 8.0,
+     "dur": 7.5,
      "acts": [
       {
        "layer": "Graph/AxisY",
@@ -559,14 +559,14 @@
      ]
     }
    ],
-   "end": 30.466666666666665,
+   "end": 29.966666666666665,
    "audio_end": 28.966666666666665
   },
   {
    "n": 3,
    "name": "Scene 3 \u00b7 Cooperativity",
-   "start": 30.466666666666665,
-   "audio_shift": 1.5,
+   "start": 29.966666666666665,
+   "audio_shift": 1.0,
    "beats": [
     {
      "id": "3A",
@@ -601,7 +601,7 @@
       "Note/XDef",
       "Note/Y"
      ],
-     "start": 30.466666666666665,
+     "start": 29.966666666666665,
      "dur": 6.833333333333333,
      "acts": [
       {
@@ -614,31 +614,31 @@
        "layer": "Graph/TicksY",
        "do": "out",
        "retract": "ttb",
-       "t": 0.12
+       "t": 0.09
       },
       {
        "layer": "Graph/AxisY",
        "do": "out",
        "retract": "ttb",
-       "t": 0.24
+       "t": 0.18
       },
       {
        "layer": "Graph/GridV",
        "do": "out",
        "retract": "ttb",
-       "t": 0.36
+       "t": 0.27
       },
       {
        "layer": "Graph/TicksX",
        "do": "out",
        "retract": "rtl",
-       "t": 0.48
+       "t": 0.36
       },
       {
        "layer": "Graph/AxisX",
        "do": "out",
        "retract": "rtl",
-       "t": 0.6
+       "t": 0.45
       },
       {
        "layer": "Panel/Card",
@@ -648,7 +648,7 @@
       {
        "layer": "Label/Header",
        "do": "in",
-       "t": 0.85
+       "t": 0.7
       },
       {
        "layer": "Hb/Tetramer",
@@ -768,7 +768,7 @@
       "O2/First",
       "Panel/Card"
      ],
-     "start": 37.3,
+     "start": 36.8,
      "dur": 8.166666666666666,
      "acts": [
       {
@@ -1020,7 +1020,7 @@
       "O2/Next \u03b12",
       "Panel/Card"
      ],
-     "start": 45.46666666666667,
+     "start": 44.96666666666667,
      "dur": 3.2333333333333334,
      "acts": [
       {
@@ -1143,7 +1143,7 @@
       "Graph/Axes",
       "Curves/Straight"
      ],
-     "start": 48.7,
+     "start": 48.2,
      "dur": 4.033333333333333,
      "acts": [
       {
@@ -1191,14 +1191,14 @@
      ]
     }
    ],
-   "end": 52.733333333333334,
-   "audio_end": 52.733333333333334
+   "end": 52.233333333333334,
+   "audio_end": 52.233333333333334
   },
   {
    "n": 4,
    "name": "Scene 4 \u00b7 Landmarks",
-   "start": 52.733333333333334,
-   "audio_shift": 1.5,
+   "start": 52.233333333333334,
+   "audio_shift": 1.0,
    "beats": [
     {
      "id": "4A",
@@ -1226,7 +1226,7 @@
       "Label/Sigmoid",
       "Panel/Card"
      ],
-     "start": 52.733333333333334,
+     "start": 52.233333333333334,
      "dur": 8.033333333333333,
      "acts": [
       {
@@ -1327,7 +1327,7 @@
       "Point/Arterial",
       "Panel/Card"
      ],
-     "start": 60.766666666666666,
+     "start": 60.266666666666666,
      "dur": 8.166666666666666,
      "acts": [
       {
@@ -1421,7 +1421,7 @@
       "Point/Venous",
       "Panel/Card"
      ],
-     "start": 68.93333333333334,
+     "start": 68.43333333333334,
      "dur": 6.533333333333333,
      "acts": [
       {
@@ -1472,14 +1472,14 @@
      ]
     }
    ],
-   "end": 75.46666666666667,
-   "audio_end": 75.46666666666667
+   "end": 74.96666666666667,
+   "audio_end": 74.96666666666667
   },
   {
    "n": 5,
    "name": "Scene 5 \u00b7 P50",
-   "start": 75.46666666666667,
-   "audio_shift": 1.5,
+   "start": 74.96666666666667,
+   "audio_shift": 1.0,
    "beats": [
     {
      "id": "5A",
@@ -1508,7 +1508,7 @@
       "Point/Venous",
       "Panel/Card"
      ],
-     "start": 75.46666666666667,
+     "start": 74.96666666666667,
      "dur": 7.933333333333334,
      "acts": [
       {
@@ -1605,7 +1605,7 @@
       "Guide/Fifty",
       "Panel/Card"
      ],
-     "start": 83.4,
+     "start": 82.9,
      "dur": 6.6,
      "acts": [
       {
@@ -1658,14 +1658,14 @@
      ]
     }
    ],
-   "end": 90.0,
-   "audio_end": 90.0
+   "end": 89.5,
+   "audio_end": 89.5
   },
   {
    "n": 6,
    "name": "Scene 6 \u00b7 Shape",
-   "start": 90.0,
-   "audio_shift": 1.5,
+   "start": 89.5,
+   "audio_shift": 1.0,
    "beats": [
     {
      "id": "6A",
@@ -1692,7 +1692,7 @@
       "Guide/Fifty",
       "Panel/Card"
      ],
-     "start": 90.0,
+     "start": 89.5,
      "dur": 9.466666666666667,
      "acts": [
       {
@@ -1776,7 +1776,7 @@
       "Marker/Bars",
       "Panel/Card"
      ],
-     "start": 99.46666666666667,
+     "start": 98.96666666666667,
      "dur": 6.0,
      "acts": [
       {
@@ -1855,7 +1855,7 @@
       "Curves/Normal",
       "Panel/Card"
      ],
-     "start": 105.46666666666667,
+     "start": 104.96666666666667,
      "dur": 8.7,
      "acts": [
       {
@@ -1931,14 +1931,14 @@
      ]
     }
    ],
-   "end": 114.16666666666667,
-   "audio_end": 114.16666666666667
+   "end": 113.66666666666667,
+   "audio_end": 113.66666666666667
   },
   {
    "n": 7,
    "name": "Scene 7 \u00b7 Shifts",
-   "start": 114.16666666666667,
-   "audio_shift": 1.5,
+   "start": 113.66666666666667,
+   "audio_shift": 1.0,
    "beats": [
     {
      "id": "7A",
@@ -1966,7 +1966,7 @@
       "Marker/Bars",
       "Panel/Card"
      ],
-     "start": 114.16666666666667,
+     "start": 113.66666666666667,
      "dur": 6.9,
      "acts": [
       {
@@ -2043,14 +2043,14 @@
      ]
     }
    ],
-   "end": 121.06666666666666,
-   "audio_end": 121.06666666666666
+   "end": 120.56666666666666,
+   "audio_end": 120.56666666666666
   },
   {
    "n": 8,
    "name": "Scene 8 \u00b7 Right shift",
-   "start": 121.06666666666666,
-   "audio_shift": 1.5,
+   "start": 120.56666666666666,
+   "audio_shift": 1.0,
    "beats": [
     {
      "id": "8A",
@@ -2079,7 +2079,7 @@
       "Marker/P50",
       "Panel/Card"
      ],
-     "start": 121.06666666666666,
+     "start": 120.56666666666666,
      "dur": 7.6,
      "acts": [
       {
@@ -2174,7 +2174,7 @@
       "Panel/Card",
       "Footnote/Text"
      ],
-     "start": 128.66666666666666,
+     "start": 128.16666666666666,
      "dur": 9.8,
      "acts": [
       {
@@ -2272,7 +2272,7 @@
       "Factors/List",
       "Footnote/Text"
      ],
-     "start": 138.46666666666667,
+     "start": 137.96666666666667,
      "dur": 4.733333333333333,
      "acts": [
       {
@@ -2361,7 +2361,7 @@
       "Factors/Bohr",
       "Footnote/Text"
      ],
-     "start": 143.2,
+     "start": 142.7,
      "dur": 9.566666666666666,
      "acts": [
       {
@@ -2427,14 +2427,14 @@
      ]
     }
    ],
-   "end": 152.76666666666668,
-   "audio_end": 152.76666666666668
+   "end": 152.26666666666668,
+   "audio_end": 152.26666666666668
   },
   {
    "n": 9,
    "name": "Scene 9 \u00b7 Left shift",
-   "start": 152.76666666666668,
-   "audio_shift": 1.5,
+   "start": 152.26666666666668,
+   "audio_shift": 1.0,
    "beats": [
     {
      "id": "9A",
@@ -2465,7 +2465,7 @@
       "Panel/Card",
       "Footnote/Text"
      ],
-     "start": 152.76666666666668,
+     "start": 152.26666666666668,
      "dur": 8.566666666666666,
      "acts": [
       {
@@ -2564,7 +2564,7 @@
       "Panel/Card",
       "Footnote/Text"
      ],
-     "start": 161.33333333333334,
+     "start": 160.83333333333334,
      "dur": 7.133333333333334,
      "acts": [
       {
@@ -2666,7 +2666,7 @@
       "Factors/List",
       "Footnote/Text"
      ],
-     "start": 168.46666666666667,
+     "start": 167.96666666666667,
      "dur": 8.6,
      "acts": [
       {
@@ -2746,7 +2746,7 @@
       "Curves/Shift",
       "Panel/Card"
      ],
-     "start": 177.06666666666666,
+     "start": 176.56666666666666,
      "dur": 12.5,
      "acts": [
       {
@@ -2815,14 +2815,14 @@
      ]
     }
    ],
-   "end": 189.56666666666666,
-   "audio_end": 189.56666666666666
+   "end": 189.06666666666666,
+   "audio_end": 189.06666666666666
   },
   {
    "n": 10,
    "name": "Scene 10 \u00b7 Summary",
-   "start": 189.56666666666666,
-   "audio_shift": 1.5,
+   "start": 189.06666666666666,
+   "audio_shift": 1.0,
    "beats": [
     {
      "id": "10A",
@@ -2853,7 +2853,7 @@
       "Panel/Lines",
       "Footnote/Text"
      ],
-     "start": 189.56666666666666,
+     "start": 189.06666666666666,
      "dur": 8.1,
      "acts": [
       {
@@ -2968,7 +2968,7 @@
       "Panel/RightShift",
       "Panel/LeftShift"
      ],
-     "start": 197.66666666666666,
+     "start": 197.16666666666666,
      "dur": 6.1,
      "acts": [
       {
@@ -3046,7 +3046,7 @@
       "Panel/RightShift",
       "Panel/LeftShift"
      ],
-     "start": 203.76666666666668,
+     "start": 203.26666666666668,
      "dur": 5.633333333333334,
      "acts": [
       {
@@ -3105,8 +3105,8 @@
      ]
     }
    ],
-   "end": 209.4,
-   "audio_end": 209.4
+   "end": 208.9,
+   "audio_end": 208.9
   }
  ],
  "markers": [
@@ -3159,283 +3159,283 @@
    "flag": ""
   },
   {
-   "t": 31.52,
+   "t": 31.02,
    "beat": "3A",
    "cue": "four",
    "flag": ""
   },
   {
-   "t": 33.92,
+   "t": 33.42,
    "beat": "3A",
    "cue": "heme",
    "flag": ""
   },
   {
-   "t": 39.78,
+   "t": 39.28,
    "beat": "3B",
    "cue": "first",
    "flag": ""
   },
   {
-   "t": 42.34,
+   "t": 41.84,
    "beat": "3B",
    "cue": "shape",
    "flag": ""
   },
   {
-   "t": 44.34,
+   "t": 43.84,
    "beat": "3B",
    "cue": "easily",
    "flag": ""
   },
   {
-   "t": 47.32,
+   "t": 46.82,
    "beat": "3C",
    "cue": "straight",
    "flag": ""
   },
   {
-   "t": 50.62,
+   "t": 50.12,
    "beat": "3D",
    "cue": "sigmoid",
    "flag": ""
   },
   {
-   "t": 56.1,
+   "t": 55.6,
    "beat": "4A",
    "cue": "100",
    "flag": ""
   },
   {
-   "t": 58.42,
+   "t": 57.92,
    "beat": "4A",
    "cue": "97",
    "flag": ""
   },
   {
-   "t": 65.08,
+   "t": 64.58,
    "beat": "4B",
    "cue": "40",
    "flag": ""
   },
   {
-   "t": 67.16,
+   "t": 66.66,
    "beat": "4B",
    "cue": "75",
    "flag": ""
   },
   {
-   "t": 72.54,
+   "t": 72.04,
    "beat": "4C",
    "cue": "quarter",
    "flag": ""
   },
   {
-   "t": 75.46,
+   "t": 74.96,
    "beat": "5A",
    "cue": "Halfway",
    "flag": ""
   },
   {
-   "t": 81.38,
+   "t": 80.88,
    "beat": "5A",
    "cue": "50",
    "flag": ""
   },
   {
-   "t": 86.92,
+   "t": 86.42,
    "beat": "5B",
    "cue": "27",
    "flag": ""
   },
   {
-   "t": 91.76,
+   "t": 91.26,
    "beat": "6A",
    "cue": "flat",
    "flag": ""
   },
   {
-   "t": 95.52,
+   "t": 95.02,
    "beat": "6A",
    "cue": "60",
    "flag": ""
   },
   {
-   "t": 98.0,
+   "t": 97.5,
    "beat": "6A",
    "cue": "90",
    "flag": ""
   },
   {
-   "t": 99.7,
+   "t": 99.2,
    "beat": "6B",
    "cue": "plateau",
    "flag": ""
   },
   {
-   "t": 104.46,
+   "t": 103.96,
    "beat": "6B",
    "cue": "steep",
    "flag": ""
   },
   {
-   "t": 106.8,
+   "t": 106.3,
    "beat": "6C",
    "cue": "small",
    "flag": ""
   },
   {
-   "t": 108.96,
+   "t": 108.46,
    "beat": "6C",
    "cue": "large",
    "flag": ""
   },
   {
-   "t": 115.36,
+   "t": 114.86,
    "beat": "7A",
    "cue": "shift",
    "flag": ""
   },
   {
-   "t": 116.4,
+   "t": 115.9,
    "beat": "7A",
    "cue": "P50",
    "flag": ""
   },
   {
-   "t": 121.78,
+   "t": 121.28,
    "beat": "8A",
    "cue": "right",
    "flag": ""
   },
   {
-   "t": 127.38,
+   "t": 126.88,
    "beat": "8A",
    "cue": "rises",
    "flag": ""
   },
   {
-   "t": 131.88,
+   "t": 131.38,
    "beat": "8B",
    "cue": "pH",
    "flag": ""
   },
   {
-   "t": 133.16,
+   "t": 132.66,
    "beat": "8B",
    "cue": "carbon",
    "flag": ""
   },
   {
-   "t": 134.92,
+   "t": 134.42,
    "beat": "8B",
    "cue": "DPG",
    "flag": "not verbatim in narration; timed on partial match"
   },
   {
-   "t": 137.24,
+   "t": 136.74,
    "beat": "8B",
    "cue": "temperature",
    "flag": ""
   },
   {
-   "t": 141.66,
+   "t": 141.16,
    "beat": "8C",
    "cue": "Bohr",
    "flag": ""
   },
   {
-   "t": 144.32,
+   "t": 143.82,
    "beat": "8D",
    "cue": "muscle",
    "flag": ""
   },
   {
-   "t": 151.32,
+   "t": 150.82,
    "beat": "8D",
    "cue": "released",
    "flag": ""
   },
   {
-   "t": 153.48,
+   "t": 152.98,
    "beat": "9A",
    "cue": "left",
    "flag": ""
   },
   {
-   "t": 160.2,
+   "t": 159.7,
    "beat": "9A",
    "cue": "falls",
    "flag": ""
   },
   {
-   "t": 161.9,
+   "t": 161.4,
    "beat": "9B",
    "cue": "pH",
    "flag": ""
   },
   {
-   "t": 163.18,
+   "t": 162.68,
    "beat": "9B",
    "cue": "carbon",
    "flag": ""
   },
   {
-   "t": 164.94,
+   "t": 164.44,
    "beat": "9B",
    "cue": "DPG",
    "flag": "not verbatim in narration; timed on partial match"
   },
   {
-   "t": 167.26,
+   "t": 166.76,
    "beat": "9B",
    "cue": "temperature",
    "flag": ""
   },
   {
-   "t": 168.48,
+   "t": 167.98,
    "beat": "9C",
    "cue": "Fetal",
    "flag": ""
   },
   {
-   "t": 178.26,
+   "t": 177.76,
    "beat": "9D",
    "cue": "different",
    "flag": ""
   },
   {
-   "t": 179.38,
+   "t": 178.88,
    "beat": "9D",
    "cue": "occupies",
    "flag": ""
   },
   {
-   "t": 183.58,
+   "t": 183.08,
    "beat": "9D",
    "cue": "tightly",
    "flag": ""
   },
   {
-   "t": 186.58,
+   "t": 186.08,
    "beat": "9D",
    "cue": "releases",
    "flag": ""
   },
   {
-   "t": 190.86,
+   "t": 190.36,
    "beat": "10A",
    "cue": "Right",
    "flag": ""
   },
   {
-   "t": 197.68,
+   "t": 197.18,
    "beat": "10B",
    "cue": "Left",
    "flag": ""
   },
   {
-   "t": 206.58,
+   "t": 206.08,
    "beat": "10C",
    "cue": "release",
    "flag": ""
