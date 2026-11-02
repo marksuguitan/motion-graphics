@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <g id="Background/Fill"><rect width="1920" height="1080" fill="#F7F7F5"/></g>
+  <g id="Shape/Disc"><circle cx="960" cy="540" r="90" fill="#F0645A"/></g>
+  <g id="Label/Text"><text x="960" y="710" text-anchor="middle" font-family="Inter" font-weight="500" font-size="30" fill="#222222">One idea</text></g>
+  <g id="Meta/BeatID"><text x="1880" y="1056" text-anchor="end" font-family="Inter" font-size="22" fill="#6A6A6A">1A</text></g>
+</svg>

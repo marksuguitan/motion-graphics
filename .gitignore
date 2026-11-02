@@ -28,3 +28,7 @@ __pycache__/
 *.pyc
 **/4-animation/build/ai_src/
 **/4-animation/build/ae_check_times.json
+
+# Remotion build path (library/remotion/.gitignore covers the copied project too)
+**/remotion/node_modules/
+**/remotion/out/

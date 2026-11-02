@@ -1,0 +1,50 @@
+[
+ {
+  "beat": "1A",
+  "sync_on": "\"One\"",
+  "word": "One",
+  "t_beat": 0.1,
+  "t": 0.1,
+  "flag": ""
+ },
+ {
+  "beat": "1A",
+  "sync_on": "\"shape\"",
+  "word": "shape",
+  "t_beat": 0.4,
+  "t": 0.4,
+  "flag": ""
+ },
+ {
+  "beat": "1A",
+  "sync_on": "\"idea\"",
+  "word": "idea",
+  "t_beat": 1.65,
+  "t": 1.65,
+  "flag": ""
+ },
+ {
+  "beat": "1B",
+  "sync_on": "\"Snap\"",
+  "word": "Snap",
+  "t_beat": 0.1,
+  "t": 3.2,
+  "flag": ""
+ },
+ {
+  "beat": "1B",
+  "sync_on": "\"settle\"",
+  "word": "settle",
+  "t_beat": 1.2,
+  "t": 4.3,
+  "flag": ""
+ },
+ {
+  "beat": "1B",
+  "sync_on": "\"softly\"",
+  "word": "softly",
+  "t_beat": 1.7,
+  "t": 4.8,
+  "flag": ""
+ }
+]

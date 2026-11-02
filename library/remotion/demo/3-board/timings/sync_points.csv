@@ -1,0 +1,7 @@
+beat,sync_on,word_heard,start_in_beat_s,start_in_full_s,flag
+1A,"""One""",One,0.1,0.1,
+1A,"""shape""",shape,0.4,0.4,
+1A,"""idea""",idea,1.65,1.65,
+1B,"""Snap""",Snap,0.1,3.2,
+1B,"""settle""",settle,1.2,4.3,
+1B,"""softly""",softly,1.7,4.8,

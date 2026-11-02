@@ -1,6 +1,7 @@
 // comma_easing.jsx: Comma Clinical easing for After Effects build scripts (ExtendScript).
 // The values come from the Motion Style Guide, section "Comma Clinical", table "After Effects settings".
 // If the guide and this file disagree, the guide wins: update this file to match.
+// Its Remotion twin is library/remotion/src/style/comma.ts: change both together.
 //
 // Use: #include "comma_easing.jsx" (or paste it in), then
 //   CommaEase.move(prop, [[t0, v0], [t1, v1]], "snap");              // two keys + the named curve
