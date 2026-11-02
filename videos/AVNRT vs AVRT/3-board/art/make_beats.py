@@ -197,8 +197,11 @@ def heart_bg_defs():
     return f'<g id="MarkHeartBG">{HEART_BG_BODY}</g>'
 
 _bgc = [0]
-def hb_for(geo, cx, s, clip, op=float(os.environ.get("HB_OP", "0.35"))):
+CUR = [None]
+HB_FIRST, HB_LATER = 0.35, 0.18   # heart shows at 35% where the schematic first appears (2C), then sits back
+def hb_for(geo, cx, s, clip, op=None):
     """Mark's heart behind a junction diagram, faded from top left to bottom right. clip = card (x, y, w, h)."""
+    if op is None: op = HB_FIRST if CUR[0] == "2C" else HB_LATER
     _bgc[0] += 1; n = _bgc[0]
     cy = geo["top"] + geo["r"]
     tx, ty = cx + (174.8 - 540) * s, cy + (226 - 600) * s
@@ -691,6 +694,7 @@ def _():
     return "".join(b)
 
 for bid, (name, fn) in F.items():
+    CUR[0] = bid
     with open(os.path.join(OUT, f"{bid}_{name}.svg"), "w") as f:
         f.write(svg(bid, fn()))
 print(len(F))
