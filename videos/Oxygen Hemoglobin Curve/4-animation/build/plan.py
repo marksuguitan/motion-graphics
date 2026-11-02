@@ -137,7 +137,8 @@ PLAN = {
         # on "oxyhemoglobin" the dot leads a wipe that writes line 1 (0.6 s) and line 2 rises in 0.12 s later.
         {"layer": "Title/Text", "do": "title1c", "at": "oxyhemoglobin", "merge": [0.0, MOTION["cross_d"]], "capsule": [MOTION["cross_d"] - 0.2, 0.7],
          "dot": [MOTION["cross_d"] + 0.5, MOTION["snap_d"]], "write": MOTION["title_write"], "line2": MOTION["title_line2"],
-         "o": {"c": [762.0, 477.3], "size": [34.5, 37.9], "stroke": 10}},   # the "o" of "oxyhemoglobin" (measured, Manrope 600 84 px)
+         "o": {"c": [762.0, 477.3], "size": [34.5, 37.9], "stroke": 10},
+         "dot_to_cue": True},   # Mark 2026-11-02 (v24 marker at 9.8 s): the cell waits, then morphs into the "o" ending on "oxyhemoglobin"   # the "o" of "oxyhemoglobin" (measured, Manrope 600 84 px)
         {"layer": "Title/Fact", "do": "in", "at": "oxyhemoglobin+0.9"},
     ] + [{"layer": l, "do": "gone"} for l in ["Vessel/Capillary", "Cell/Lungs", "Cell/Tissues", "Zone/Lungs", "Zone/Tissues", "Icon/Lungs",
                                              "Icon/Tissues", "Cell/Released", "Label/Arrow", "Readout/SO2"]],

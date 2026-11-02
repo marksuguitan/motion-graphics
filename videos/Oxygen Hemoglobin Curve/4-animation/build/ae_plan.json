@@ -322,6 +322,7 @@
         ],
         "stroke": 10
        },
+       "dot_to_cue": true,
        "t": 3.053
       },
       {

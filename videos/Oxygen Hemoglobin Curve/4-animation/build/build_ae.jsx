@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 24;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows; v19: Mark's markers, Scene 10 sync; v20: 9D locks; v21: charcoal locks; v22: end screen B; v23: Mark's v22 markers; v24: 1C title letters roll in around the "o"
+    var VERSION = 25;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows; v19: Mark's markers, Scene 10 sync; v20: 9D locks; v21: charcoal locks; v22: end screen B; v23: Mark's v22 markers; v24: 1C title letters roll in around the "o"; v25: the "o" morph ends on the title cue
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -194,6 +194,7 @@
     function hex(h) { return [parseInt(h.substr(1, 2), 16) / 255, parseInt(h.substr(3, 2), 16) / 255, parseInt(h.substr(5, 2), 16) / 255]; }
     function title1c(pre, bt, a) {
         var c = a.t, M = a.merge, CAP = a.capsule, DOT = a.dot, W = a.write;     // times (beat-local) from the plan
+        if (a.dot_to_cue) DOT = [c - DOT[1], DOT[1]];        // Mark, v24 marker: the morph into the "o" finishes on the title's cue, so the letters follow at once
         var mid = [960, 540];
         // capsule -> card (replaces the capillary art at the same size and colours): accelerates into the swap, settles out of it
         var cap = shapeLayer(pre, "Capillary → card", "rect", [1640, 220], mid, hex("#F6E7E4"), hex("#E7C9C3"), 4, 110);
