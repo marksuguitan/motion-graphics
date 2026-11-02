@@ -4,6 +4,8 @@
  "w": 1920,
  "h": 1080,
  "total": 226.9,
+ "intro": 1.0,
+ "intro_logo_w": 240,
  "motion": {
   "snap_d": 0.6,
   "cross_d": 0.75,

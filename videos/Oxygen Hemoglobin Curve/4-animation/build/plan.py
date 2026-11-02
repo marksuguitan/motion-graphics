@@ -91,6 +91,7 @@ MOTION = {
 }
 # Silence added before a beat, s (Mark 2026-11-02: more time to read the y note before Scene 3). Everything from that beat on
 # (picture, audio, markers) moves later by the same amount; the VO files and their word timings are unchanged.
+INTRO = 1.0                     # s: Mark 2026-11-02: a static Medzcool logo before Scene 1 (master only; scene and beat times are unchanged)
 END_DUR = 15.0                  # s: the YouTube end screen comp (YouTube's elements start 1.0 s in)
 GAPS = {"3A": 1.0,                      # Mark 2026-11-02: was 1.5 s, "a little too long, make it shorter, like 1s"
         "4A": 1.0,                      # Mark 2026-11-02: time to read the 3D card before Scene 4 (2.0 s in v14-v15; "make scene 3 like 1 second shorter")
@@ -387,7 +388,7 @@ def main():
     layers = json.load(open(HERE / "ai_src" / "layers.json"))
     names = {b: [x["name"] for x in v["layers"] if x["name"] != "Meta/BeatID"] for b, v in layers.items()}
 
-    out = {"title": TITLE, "fps": FPS, "w": W, "h": H, "total": total, "motion": MOTION, "scenes": [], "markers": []}
+    out = {"title": TITLE, "fps": FPS, "w": W, "h": H, "total": total, "intro": INTRO, "intro_logo_w": 240, "motion": MOTION, "scenes": [], "markers": []}
     prev_beat = None
     for i, (bid, start) in enumerate(beats):
         end = beats[i + 1][1] if i + 1 < len(beats) else total

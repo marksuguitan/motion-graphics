@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 25;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows; v19: Mark's markers, Scene 10 sync; v20: 9D locks; v21: charcoal locks; v22: end screen B; v23: Mark's v22 markers; v24: 1C title letters roll in around the "o"; v25: the "o" morph ends on the title cue
+    var VERSION = 26;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows; v19: Mark's markers, Scene 10 sync; v20: 9D locks; v21: charcoal locks; v22: end screen B; v23: Mark's v22 markers; v24: 1C title letters roll in around the "o"; v25: the "o" morph ends on the title cue; v26: 1 s logo intro
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -740,7 +740,26 @@
     try { full = proj.importFile(new ImportOptions(File(videoDir + "/3-board/audio/full.mp3"))); full.parentFolder = fAud; }
     catch (x) { err("audio full.mp3: " + x); }
     function mark(comp, t, label) { comp.markerProperty.setValueAtTime(t, new MarkerValue(label)); }
-    var master = proj.items.addComp(PLAN.title, PLAN.w, PLAN.h, 1, PLAN.total, PLAN.fps);
+    // Mark 2026-11-02 (after v25): a short static Medzcool logo before Scene 1, then a hard cut; everything else starts INTRO later
+    var INTRO = PLAN.intro || 0;
+    var master = proj.items.addComp(PLAN.title, PLAN.w, PLAN.h, 1, PLAN.total + INTRO, PLAN.fps);
+    if (INTRO) {
+        var ic = proj.items.addComp("Intro · Logo", PLAN.w, PLAN.h, 1, INTRO, PLAN.fps); ic.parentFolder = fScenes;
+        var bg = ic.layers.addSolid(hex("#F7F7F5"), "Background", PLAN.w, PLAN.h, 1, INTRO); bg.name = "Background";
+        var lg = ic.layers.addShape(); lg.name = "Medzcool logo";
+        var lw = PLAN.intro_logo_w, k = lw / 69.66, ox = -lw / 2, oy = -44.72 * k / 2;   // shape points are relative to the layer, which sits at the centre of the frame
+        var LP = [[13.98, 28.07, 4.31, 28.07, 0, 35.85, 18.54, 35.85, 23.46, 27.04, 34.59, 44.72, 38.86, 36.91, 23.06, 11.81],   // the mark, as in make_endscreen.py
+                  [61.63, 19.81, 50.85, 1.86, 41.25, 18.59, 29.55, 0, 25.33, 7.9, 41.56, 33.67, 51, 17.22, 57.23, 27.59, 65.77, 27.59, 69.66, 19.81]];
+        var lgv = lg.property("ADBE Root Vectors Group").addProperty("ADBE Vector Group").property("ADBE Vectors Group");
+        for (var lp = 0; lp < LP.length; lp++) {
+            var shp = new Shape(), vv = [], zz = [];
+            for (var lq = 0; lq < LP[lp].length; lq += 2) { vv.push([ox + LP[lp][lq] * k, oy + LP[lp][lq + 1] * k]); zz.push([0, 0]); }   // not `q`: that would replace the q() helper the report uses
+            shp.vertices = vv; shp.inTangents = zz; shp.outTangents = zz; shp.closed = true;
+            lgv.addProperty("ADBE Vector Shape - Group").property("ADBE Vector Shape").setValue(shp);
+        }
+        lgv.addProperty("ADBE Vector Graphic - Fill").property("ADBE Vector Fill Color").setValue(hex("#222222"));
+        var il = master.layers.add(ic); il.startTime = 0;
+    }
     var sceneComps = [];
     for (var s = 0; s < PLAN.scenes.length; s++) {
         var S = PLAN.scenes[s];
@@ -759,12 +778,12 @@
             var M = PLAN.markers[m];
             if (M.t >= S.start && M.t < S.end) mark(sc, M.t - S.start, M.beat + " · " + M.cue + (M.flag ? " (" + M.flag + ")" : ""));
         }
-        var ml = master.layers.add(sc); ml.startTime = S.start; ml.moveToEnd();
+        var ml = master.layers.add(sc); ml.startTime = S.start + INTRO; ml.moveToEnd();
         sceneComps.push(sc);
     }
     for (var m2 = 0; m2 < PLAN.markers.length; m2++) {
         var M2 = PLAN.markers[m2];
-        mark(master, M2.t, M2.beat + " · " + M2.cue + (M2.flag ? " (" + M2.flag + ")" : ""));
+        mark(master, M2.t + INTRO, M2.beat + " · " + M2.cue + (M2.flag ? " (" + M2.flag + ")" : ""));
     }
     // every frame of the master shows a scene, and every frame of a scene shows a beat (no black frames at the cuts)
     report.gaps = [];
@@ -784,8 +803,8 @@
     var chk = Folder(buildDir + "/ae_check");
     if (!chk.exists) chk.create();
     var times = [];
-    for (s = 0; s < PLAN.scenes.length; s++) for (b = 0; b < PLAN.scenes[s].beats.length; b++) times.push([PLAN.scenes[s].beats[b].start, PLAN.scenes[s].beats[b].id + "_start"]);
-    for (m = 0; m < PLAN.markers.length; m++) times.push([PLAN.markers[m].t, PLAN.markers[m].beat + "_" + PLAN.markers[m].cue]);
+    for (s = 0; s < PLAN.scenes.length; s++) for (b = 0; b < PLAN.scenes[s].beats.length; b++) times.push([PLAN.scenes[s].beats[b].start + INTRO, PLAN.scenes[s].beats[b].id + "_start"]);
+    for (m = 0; m < PLAN.markers.length; m++) times.push([PLAN.markers[m].t + INTRO, PLAN.markers[m].beat + "_" + PLAN.markers[m].cue]);
     report.check_times = times.length;
     var tf = File(buildDir + "/ae_check_times.json"); tf.encoding = "UTF-8"; tf.open("w");
     var tl = []; for (var c = 0; c < times.length; c++) tl.push('[' + times[c][0] + ',"' + times[c][1] + '"]');
@@ -797,13 +816,24 @@
         try { master.saveFrameToPng(times[c][0], File(chk.fsName + "/" + fn)); report.checks.push(fn); }
         catch (x) { err("frame " + times[c][0] + ": " + x); }
     }
-    master.resolutionFactor = [1, 1];
-    proj.save(aep);
-    sceneComps[0].openInViewer();
+    function step(msg) { var lf = File(buildDir + "/ae_build_log.txt"); lf.encoding = "UTF-8"; lf.open("a"); lf.writeln(new Date().toTimeString().substr(0, 8) + " " + msg); lf.close(); }
+    step("frames queued: " + report.checks.length);
+    try { master.resolutionFactor = [1, 1]; } catch (x) { err("resolution: " + x); }
+    step("resolution reset");
+    try { proj.save(aep); } catch (x) { err("save: " + x); }
+    step("saved");
+    try { sceneComps[0].openInViewer(); } catch (x) { err("viewer: " + x); }
+    step("viewer");
     function q(x) { return '"' + String(x).replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'; }
     function arr(a) { var o = []; for (var i = 0; i < a.length; i++) o.push(typeof a[i] === "string" ? q(a[i]) : '{"beat":' + q(a[i].beat) + ',"layers":' + a[i].layers + '}'); return "[" + o.join(",") + "]"; }
+    var parts = {}, keys = ["errors", "missing", "beats", "gaps"];           // each part on its own, so one bad entry can't lose the report
+    for (var pk = 0; pk < keys.length; pk++) {
+        step("report " + keys[pk] + ": " + (report[keys[pk]] ? report[keys[pk]].length : "none"));
+        try { parts[keys[pk]] = arr(report[keys[pk]] || []); } catch (x) { parts[keys[pk]] = "[" + q("could not list: " + x) + "]"; step("report " + keys[pk] + " failed: " + x); }
+    }
     var out = File(buildDir + "/ae_build_report.json"); out.encoding = "UTF-8"; out.open("w");
-    out.write('{"aep":' + q(aep.fsName) + ',"errors":' + arr(report.errors) + ',"missing":' + arr(report.missing) + ',"beats":' + arr(report.beats) + ',"gaps":' + arr(report.gaps) + "}\n");
+    out.write('{"aep":' + q(aep.fsName) + ',"errors":' + parts.errors + ',"missing":' + parts.missing + ',"beats":' + parts.beats + ',"gaps":' + parts.gaps + "}\n");
     out.close();
+    step("report written");
     return "built " + report.beats.length + " beats in " + PLAN.scenes.length + " scenes; errors " + report.errors.length + ", missing " + report.missing.length;
 })();

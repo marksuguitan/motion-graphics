@@ -32,3 +32,5 @@ __pycache__/
 # Remotion build path (library/remotion/.gitignore covers the copied project too)
 **/remotion/node_modules/
 **/remotion/out/
+**/4-animation/build/ae_build_log.txt
+**/4-animation/build/ae_build_result.txt
