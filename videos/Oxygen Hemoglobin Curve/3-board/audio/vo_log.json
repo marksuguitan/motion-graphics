@@ -1,0 +1,785 @@
+{
+ "flow_id": "N1xdIfFoYw5q9dLfmy2s",
+ "flow_name": "Oxygen Hemoglobin Curve — scratch VO",
+ "voice": "Markus Guapo (45wlHoJDsEn5ruTlzdZI)",
+ "model": "eleven_v4",
+ "generated": "2026-11-02",
+ "note": "Pass 1. Saved take = the node's active take (the later-created of the two). Other take in takes/<beat>_take1.mp3. Downloaded directly into the agent workspace from the content URL (no Mac needed).",
+ "beats": [
+  {
+   "beat": "1A",
+   "node_id": "SeHG0AXbVGyrmFJyusQh",
+   "tts_input": "Every red blood cell has two jobs.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "LnJiuvJf0xcgrBBlV9sw",
+     "generation_id": "BxsIPvoz6Y9EmZy4DiEH",
+     "file": "audio/takes/1A_take1.mp3",
+     "duration_s": 2.429
+    },
+    {
+     "take": 2,
+     "session_id": "Mvtrymcr9eC474E9Dehz",
+     "generation_id": "ywJG7DGCg5EiiqraKN46",
+     "file": "audio/1A.mp3",
+     "duration_s": 2.429
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "ywJG7DGCg5EiiqraKN46",
+   "start_in_full_s": 0.0,
+   "hold_s": 0.5,
+   "decoded_s": 2.4
+  },
+  {
+   "beat": "1B",
+   "node_id": "iBSApKQ5rumgcNabitch",
+   "tts_input": "Pick up oxygen in the lungs. Then let it go in the tissues.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "SD0H3pcE7FQtLzfcIdrs",
+     "generation_id": "uiKdmTkXs3DvF6ydcaed",
+     "file": "audio/takes/1B_take1.mp3",
+     "duration_s": 4.598
+    },
+    {
+     "take": 2,
+     "session_id": "taNBCyTtLIr0eoktPOGu",
+     "generation_id": "5XwPgiD8HpfKFKt9609l",
+     "file": "audio/1B.mp3",
+     "duration_s": 4.519
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "5XwPgiD8HpfKFKt9609l",
+   "start_in_full_s": 2.9,
+   "hold_s": 0.5,
+   "decoded_s": 4.48
+  },
+  {
+   "beat": "1C",
+   "node_id": "WyjxyTun0L7sKgv1Re3M",
+   "tts_input": "One graph shows how hemoglobin does both. The oxyhemoglobin dissociation curve.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "093AgJMm5qHS6F1aJPpq",
+     "generation_id": "hkOIZ0EBiNUWnq2soaMe",
+     "file": "audio/takes/1C_take1.mp3",
+     "duration_s": 5.407
+    },
+    {
+     "take": 2,
+     "session_id": "DzQazH09w6RoHUilAp5C",
+     "generation_id": "Ae7tcxdGKmAx2g6UiI5C",
+     "file": "audio/1C.mp3",
+     "duration_s": 5.407
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "Ae7tcxdGKmAx2g6UiI5C",
+   "start_in_full_s": 7.88,
+   "hold_s": 0.5,
+   "decoded_s": 5.36
+  },
+  {
+   "beat": "2A",
+   "node_id": "xocpfmB4zG8JkYhU0NF0",
+   "tts_input": "Along the bottom is the partial pressure of oxygen, /ˌpiː oʊ ˈtuː/, in millimeters of mercury. It reflects the oxygen dissolved in the blood.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "cvL0cUWAfL0fginFMBD5",
+     "generation_id": "oO7UL7qvLKM8lKoezHlh",
+     "file": "audio/takes/2A_take1.mp3",
+     "duration_s": 8.281
+    },
+    {
+     "take": 2,
+     "session_id": "mxbScKEWW7KDBqd0vyDG",
+     "generation_id": "BWbVsqndVczmQX9DKppp",
+     "file": "audio/2A.mp3",
+     "duration_s": 8.281
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "BWbVsqndVczmQX9DKppp",
+   "tts_input_respelling": "/ˌpiː oʊ ˈtuː/",
+   "start_in_full_s": 13.74,
+   "hold_s": 0.5,
+   "decoded_s": 8.24
+  },
+  {
+   "beat": "2B",
+   "node_id": "ICNb19TdaQWkb2369zRJ",
+   "tts_input": "Up the side is hemoglobin saturation, the percentage of hemoglobin's oxygen binding sites that are filled.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "h3R0nYQm1MbkcWlb2A0X",
+     "generation_id": "Nn0K5BNIGyNhwqfAZBoG",
+     "file": "audio/takes/2B_take1.mp3",
+     "duration_s": 6.113
+    },
+    {
+     "take": 2,
+     "session_id": "Km4Q4OKrmT5voFlz9z1j",
+     "generation_id": "40Wq0ScrRFJj5YZrwm0z",
+     "file": "audio/2B.mp3",
+     "duration_s": 6.034
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "40Wq0ScrRFJj5YZrwm0z",
+   "start_in_full_s": 22.48,
+   "hold_s": 0.5,
+   "decoded_s": 6.0
+  },
+  {
+   "beat": "3A",
+   "node_id": "WatT4iLyrKb1VyR5eKJL",
+   "tts_input": "Hemoglobin has four subunits. Each one holds a /hiːm/ group that can bind one oxygen molecule.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "aLNbIZdb96miiWYBzK0a",
+     "generation_id": "gSLRXykftkyLwYbCTDto",
+     "file": "audio/takes/3A_take1.mp3",
+     "duration_s": 6.348
+    },
+    {
+     "take": 2,
+     "session_id": "05gjfxKHqouFGB54YZV5",
+     "generation_id": "Bk1CuVwJcBDUeCTmV8Va",
+     "file": "audio/3A.mp3",
+     "duration_s": 6.348
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "Bk1CuVwJcBDUeCTmV8Va",
+   "tts_input_respelling": "/hiːm/",
+   "start_in_full_s": 28.98,
+   "hold_s": 0.5,
+   "decoded_s": 6.32
+  },
+  {
+   "beat": "3B",
+   "node_id": "Ajon78Zm9ARYo5ZFmTAE",
+   "tts_input": "The binding is cooperative. Once the first oxygen binds, hemoglobin changes shape, and the next ones bind more easily.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "jJONdW7BDm1RfzDNSdO5",
+     "generation_id": "fV64OuMmSvNtEWHjDRkn",
+     "file": "audio/takes/3B_take1.mp3",
+     "duration_s": 7.471
+    },
+    {
+     "take": 2,
+     "session_id": "pYHqYDqMOLDZUzNle6vY",
+     "generation_id": "M2M23J8IhYoYJ5vNXNNc",
+     "file": "audio/3B.mp3",
+     "duration_s": 7.706
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "M2M23J8IhYoYJ5vNXNNc",
+   "start_in_full_s": 35.8,
+   "hold_s": 0.5,
+   "decoded_s": 7.68
+  },
+  {
+   "beat": "3C",
+   "node_id": "WXjpIsDiW7zxY2s7Jn5k",
+   "tts_input": "That is why the curve is not a straight line.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "KxlgqB9OHvzrXwN957Og",
+     "generation_id": "SzDt3wiwVrlBJS7h0wIH",
+     "file": "audio/takes/3C_take1.mp3",
+     "duration_s": 2.847
+    },
+    {
+     "take": 2,
+     "session_id": "Nrvqvxte9h92LcxktYJW",
+     "generation_id": "EDbI6o1RDzk3MbScYKBh",
+     "file": "audio/3C.mp3",
+     "duration_s": 2.769
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "EDbI6o1RDzk3MbScYKBh",
+   "start_in_full_s": 43.98,
+   "hold_s": 0.5,
+   "decoded_s": 2.72
+  },
+  {
+   "beat": "3D",
+   "node_id": "1fZAdwizbCwNVxtqb2MA",
+   "tts_input": "It is an S shape. A sigmoid curve.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "Lu1UABDRgH9d1A60qjFJ",
+     "generation_id": "I87qsPuDRVlmDW7t3YMP",
+     "file": "audio/takes/3D_take1.mp3",
+     "duration_s": 3.161
+    },
+    {
+     "take": 2,
+     "session_id": "3ZBIu2WOJm1Wbyv9295p",
+     "generation_id": "5ZO8s6uy5vgBBPbhqRKw",
+     "file": "audio/3D.mp3",
+     "duration_s": 3.082
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "5ZO8s6uy5vgBBPbhqRKw",
+   "start_in_full_s": 47.2,
+   "hold_s": 1,
+   "decoded_s": 3.04
+  },
+  {
+   "beat": "4A",
+   "node_id": "9P1NbPb6PH4uEOhv3m1g",
+   "tts_input": "In arterial blood leaving the lungs, /ˌpiː oʊ ˈtuː/ is about 100, and hemoglobin is about 97 percent saturated.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "iBZjRe7Wla7I6v9TDiYC",
+     "generation_id": "qpiqdMCfuuYDGO7i8uNX",
+     "file": "audio/takes/4A_take1.mp3",
+     "duration_s": 7.549
+    },
+    {
+     "take": 2,
+     "session_id": "xOx3lfTqCRloXN6Dh404",
+     "generation_id": "l98ZHAvwqxWLg9jkkmOL",
+     "file": "audio/4A.mp3",
+     "duration_s": 7.549
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "l98ZHAvwqxWLg9jkkmOL",
+   "tts_input_respelling": "/ˌpiː oʊ ˈtuː/",
+   "start_in_full_s": 51.24,
+   "hold_s": 0.5,
+   "decoded_s": 7.52
+  },
+  {
+   "beat": "4B",
+   "node_id": "Oj60MaVu7B0PS4EupUCc",
+   "tts_input": "After blood passes through resting tissues, mixed venous /ˌpiː oʊ ˈtuː/ is about 40, and saturation is about 75 percent.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "KdkgbucrTrUHCEwXDNEz",
+     "generation_id": "3a7z586QILVryBByxZVF",
+     "file": "audio/takes/4B_take1.mp3",
+     "duration_s": 7.549
+    },
+    {
+     "take": 2,
+     "session_id": "7w9gh3ZBfprqiovnOWrw",
+     "generation_id": "i8a5HMugpPpR1xt0D7N0",
+     "file": "audio/4B.mp3",
+     "duration_s": 7.706
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "i8a5HMugpPpR1xt0D7N0",
+   "tts_input_respelling": "/ˌpiː oʊ ˈtuː/",
+   "start_in_full_s": 59.26,
+   "hold_s": 0.5,
+   "decoded_s": 7.68
+  },
+  {
+   "beat": "4C",
+   "node_id": "vUjhQI8R22poEJsk9SyX",
+   "tts_input": "So on each pass through the body at rest, only about a quarter of the oxygen is unloaded.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "wcxrUmFfJ9BRfoOQvULn",
+     "generation_id": "cx0rVSWAWWuVY3X4fIPA",
+     "file": "audio/takes/4C_take1.mp3",
+     "duration_s": 5.564
+    },
+    {
+     "take": 2,
+     "session_id": "UjiaOX81m8vWfD5Hp2gk",
+     "generation_id": "DXcP06Kwknj3JmPmfu8w",
+     "file": "audio/4C.mp3",
+     "duration_s": 5.564
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "DXcP06Kwknj3JmPmfu8w",
+   "start_in_full_s": 67.44,
+   "hold_s": 1,
+   "decoded_s": 5.52
+  },
+  {
+   "beat": "5A",
+   "node_id": "pFGnEggP9rKtI4YfGcZf",
+   "tts_input": "Halfway up the curve is a landmark called the /ˌpiː ˈfɪfti/. It is the /ˌpiː oʊ ˈtuː/ at which hemoglobin is 50 percent saturated.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "ZXhASSzhf4cUfhITr80Q",
+     "generation_id": "VK9w8zNpryptuuYCqFcJ",
+     "file": "audio/takes/5A_take1.mp3",
+     "duration_s": 7.628
+    },
+    {
+     "take": 2,
+     "session_id": "Py9vpk6LbWAbQbEXnKtL",
+     "generation_id": "SZ2oaNAKBFsCiZgqg736",
+     "file": "audio/5A.mp3",
+     "duration_s": 7.471
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "SZ2oaNAKBFsCiZgqg736",
+   "tts_input_respelling": "/ˌpiː oʊ ˈtuː/, /ˌpiː ˈfɪfti/",
+   "start_in_full_s": 73.96,
+   "hold_s": 0.5,
+   "decoded_s": 7.44
+  },
+  {
+   "beat": "5B",
+   "node_id": "VusI1i7yN4xIH2pAsAGB",
+   "tts_input": "For normal adult blood, under standard conditions, it is about 27 millimeters of mercury.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "TRmMLTbeaKs0FqOUNVHS",
+     "generation_id": "oeqPPpxkbBon7OFloF8Y",
+     "file": "audio/takes/5B_take1.mp3",
+     "duration_s": 5.642
+    },
+    {
+     "take": 2,
+     "session_id": "GsUOKRTFcRkNTmj8wZHW",
+     "generation_id": "NTQYSO6i7F6VKAgWgdQm",
+     "file": "audio/5B.mp3",
+     "duration_s": 5.642
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "NTQYSO6i7F6VKAgWgdQm",
+   "start_in_full_s": 81.9,
+   "hold_s": 1,
+   "decoded_s": 5.6
+  },
+  {
+   "beat": "6A",
+   "node_id": "n0aXadWsKJAj26AKxbuj",
+   "tts_input": "The top of the curve is relatively flat. Even if /ˌpiː oʊ ˈtuː/ in the lungs falls from 100 to 60, saturation only drops to about 90 percent.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "MF1cm6Wa7KnIyI6K93lU",
+     "generation_id": "K9v9B7U5aTIQUDDyrJVL",
+     "file": "audio/takes/6A_take1.mp3",
+     "duration_s": 8.986
+    },
+    {
+     "take": 2,
+     "session_id": "KzylWprevwOHN7jcELro",
+     "generation_id": "GHkzpMVxP6ffpk1Ta6BC",
+     "file": "audio/6A.mp3",
+     "duration_s": 8.986
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "GHkzpMVxP6ffpk1Ta6BC",
+   "tts_input_respelling": "/ˌpiː oʊ ˈtuː/",
+   "start_in_full_s": 88.5,
+   "hold_s": 0.5,
+   "decoded_s": 8.96
+  },
+  {
+   "beat": "6B",
+   "node_id": "xelZ5XbBzGREgy0bBBR7",
+   "tts_input": "That plateau protects oxygen loading. Below 60, though, the curve gets steep.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "WF7WV16eRrwSOCnFYt8X",
+     "generation_id": "UOdWxIoySQgPv9V8S0nB",
+     "file": "audio/takes/6B_take1.mp3",
+     "duration_s": 5.564
+    },
+    {
+     "take": 2,
+     "session_id": "Zkv9WsZBbGFIuOKX8AAJ",
+     "generation_id": "f3JatuiwNiKcxmxPvkGt",
+     "file": "audio/6B.mp3",
+     "duration_s": 5.564
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "f3JatuiwNiKcxmxPvkGt",
+   "start_in_full_s": 97.96,
+   "hold_s": 0.5,
+   "decoded_s": 5.52
+  },
+  {
+   "beat": "6C",
+   "node_id": "DcD4B8vIeP3D3CtM8udu",
+   "tts_input": "In the tissues, a small drop in /ˌpiː oʊ ˈtuː/ releases a large amount of oxygen. That steep slope makes unloading efficient.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "BjDBYOhzbJXKyflxc2m9",
+     "generation_id": "KtWrFuKYIO4gMCXj9l66",
+     "file": "audio/takes/6C_take1.mp3",
+     "duration_s": 8.046
+    },
+    {
+     "take": 2,
+     "session_id": "UdxeKz6GSXfSFfsyNdin",
+     "generation_id": "gIWCurAatjAubuPooqih",
+     "file": "audio/6C.mp3",
+     "duration_s": 7.706
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "gIWCurAatjAubuPooqih",
+   "tts_input_respelling": "/ˌpiː oʊ ˈtuː/",
+   "start_in_full_s": 103.98,
+   "hold_s": 1,
+   "decoded_s": 7.68
+  },
+  {
+   "beat": "7A",
+   "node_id": "6l7w5o3N4V4OMPA6UaII",
+   "tts_input": "The curve can also shift. The /ˌpiː ˈfɪfti/ tells you which way hemoglobin's grip on oxygen has changed.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "pqX4W7AmugXctfnhA7f0",
+     "generation_id": "hYPX0Cz2tq74rdNQ5APT",
+     "file": "audio/takes/7A_take1.mp3",
+     "duration_s": 6.348
+    },
+    {
+     "take": 2,
+     "session_id": "IUFC9IJYQXLsiAcCavIV",
+     "generation_id": "6yNETBwWPZATBbXuG1Ia",
+     "file": "audio/7A.mp3",
+     "duration_s": 6.426
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "6yNETBwWPZATBbXuG1Ia",
+   "tts_input_respelling": "/ˌpiː ˈfɪfti/",
+   "start_in_full_s": 112.66,
+   "hold_s": 0.5,
+   "decoded_s": 6.4
+  },
+  {
+   "beat": "8A",
+   "node_id": "gXYQsl6Y9zAb3NGJOKTt",
+   "tts_input": "A shift to the right means lower affinity. Hemoglobin lets go of oxygen more easily, and the /ˌpiː ˈfɪfti/ rises.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "Lm1A5naLBIQ426hMnF0J",
+     "generation_id": "6fJy6Es2T17fvzMVYREs",
+     "file": "audio/takes/8A_take1.mp3",
+     "duration_s": 7.236
+    },
+    {
+     "take": 2,
+     "session_id": "BlDH95a8bVgulkY3MZNp",
+     "generation_id": "ATD9UhTWCYvLZPEHqvx9",
+     "file": "audio/8A.mp3",
+     "duration_s": 7.158
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "ATD9UhTWCYvLZPEHqvx9",
+   "tts_input_respelling": "/ˌpiː ˈfɪfti/",
+   "start_in_full_s": 119.56,
+   "hold_s": 0.5,
+   "decoded_s": 7.12
+  },
+  {
+   "beat": "8B",
+   "node_id": "AhML35qNWPIwQsOby03t",
+   "tts_input": "Four common factors shift it right. A lower pH. More carbon dioxide. More /ˌtuː ˈθriː ˌdiː piː ˈdʒiː/. And a higher temperature.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "bZ4fqbgmyZNC5xFkF1Dx",
+     "generation_id": "QPBZ6XnIGyZiK01nrSX5",
+     "file": "audio/takes/8B_take1.mp3",
+     "duration_s": 9.247
+    },
+    {
+     "take": 2,
+     "session_id": "xIY5K18d9PhwyPJjn5xO",
+     "generation_id": "PG6StB3G9KSq4ybi6f1K",
+     "file": "audio/8B.mp3",
+     "duration_s": 9.326
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "PG6StB3G9KSq4ybi6f1K",
+   "tts_input_respelling": "/ˌtuː ˈθriː ˌdiː piː ˈdʒiː/",
+   "start_in_full_s": 127.18,
+   "hold_s": 0.5,
+   "decoded_s": 9.28
+  },
+  {
+   "beat": "8C",
+   "node_id": "VbwElV7LzeDI5hHtWvSl",
+   "tts_input": "The effect of acid and carbon dioxide is called the /bɔːr/ effect.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "GFM5G97psiBkVCdQHO4Z",
+     "generation_id": "ChOa09Ns86mWzTut6pHH",
+     "file": "audio/takes/8C_take1.mp3",
+     "duration_s": 4.284
+    },
+    {
+     "take": 2,
+     "session_id": "hxNE65voIYX6gP5kfswV",
+     "generation_id": "KA0qPbsNiHsSGXxjT0Lw",
+     "file": "audio/8C.mp3",
+     "duration_s": 4.284
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "KA0qPbsNiHsSGXxjT0Lw",
+   "tts_input_respelling": "/bɔːr/",
+   "start_in_full_s": 136.96,
+   "hold_s": 0.5,
+   "decoded_s": 4.24
+  },
+  {
+   "beat": "8D",
+   "node_id": "rVugPszUKpEBkPIX4Cg1",
+   "tts_input": "Think of exercising muscle. It is warm, acidic, and full of carbon dioxide. That is exactly where oxygen needs to be released.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "Kf23oyYqFj1cRIszYkTF",
+     "generation_id": "xXmQaUVPK0x7T8y1sj7I",
+     "file": "audio/takes/8D_take1.mp3",
+     "duration_s": 8.751
+    },
+    {
+     "take": 2,
+     "session_id": "VIytSQL4rCSBrHk9y7sD",
+     "generation_id": "lhqB5KMkkVyG2Wc9zQbc",
+     "file": "audio/8D.mp3",
+     "duration_s": 8.594
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "lhqB5KMkkVyG2Wc9zQbc",
+   "start_in_full_s": 141.7,
+   "hold_s": 1,
+   "decoded_s": 8.56
+  },
+  {
+   "beat": "9A",
+   "node_id": "9qnuIMHTXbRw0yltQhFv",
+   "tts_input": "A shift to the left is the opposite. Higher affinity. Hemoglobin holds on to oxygen more tightly, and the /ˌpiː ˈfɪfti/ falls.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "xPBsfEG6UxPTA6EF1S68",
+     "generation_id": "h4c4Ss2x0sNU42i39Kth",
+     "file": "audio/takes/9A_take1.mp3",
+     "duration_s": 7.889
+    },
+    {
+     "take": 2,
+     "session_id": "FJ7zH7BKml7N37EQnLt9",
+     "generation_id": "h22ON62pUEY3XWPVzPdI",
+     "file": "audio/9A.mp3",
+     "duration_s": 8.124
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "h22ON62pUEY3XWPVzPdI",
+   "tts_input_respelling": "/ˌpiː ˈfɪfti/",
+   "start_in_full_s": 151.26,
+   "hold_s": 0.5,
+   "decoded_s": 8.08
+  },
+  {
+   "beat": "9B",
+   "node_id": "zwom979an0zh0SvdqVf2",
+   "tts_input": "A higher pH. Less carbon dioxide. Less /ˌtuː ˈθriː ˌdiː piː ˈdʒiː/. And a lower temperature.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "Ua9RE5RgKJKiLr5ENCf3",
+     "generation_id": "vKWvFHkBMZ0kwSzVlZBw",
+     "file": "audio/takes/9B_take1.mp3",
+     "duration_s": 6.922
+    },
+    {
+     "take": 2,
+     "session_id": "NQUpf6khIZGziyqlERb5",
+     "generation_id": "FqhsS7zgRzhwALHAo3lE",
+     "file": "audio/9B.mp3",
+     "duration_s": 6.687
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "FqhsS7zgRzhwALHAo3lE",
+   "tts_input_respelling": "/ˌtuː ˈθriː ˌdiː piː ˈdʒiː/",
+   "start_in_full_s": 159.84,
+   "hold_s": 0.5,
+   "decoded_s": 6.64
+  },
+  {
+   "beat": "9C",
+   "node_id": "tWPf6KnUH8w7H1O29DXu",
+   "tts_input": "Fetal hemoglobin also sits to the left. It binds /ˌtuː ˈθriː ˌdiː piː ˈdʒiː/ poorly, which helps the fetus pull oxygen from the mother's blood.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "TUitxW8EP4kwYcrT32GD",
+     "generation_id": "6t7iGpRFmUyqXPxiv3a2",
+     "file": "audio/takes/9C_take1.mp3",
+     "duration_s": 8.202
+    },
+    {
+     "take": 2,
+     "session_id": "OoZFfmJ4j65UXUMYMWck",
+     "generation_id": "Eu6rs3X7Fdo4PhngXKve",
+     "file": "audio/9C.mp3",
+     "duration_s": 8.124
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "Eu6rs3X7Fdo4PhngXKve",
+   "tts_input_respelling": "/ˌtuː ˈθriː ˌdiː piː ˈdʒiː/",
+   "start_in_full_s": 166.98,
+   "hold_s": 0.5,
+   "decoded_s": 8.08
+  },
+  {
+   "beat": "9D",
+   "node_id": "HnEWvaLXg6RqLPdanmi2",
+   "tts_input": "Carbon monoxide is different. It occupies oxygen binding sites, and makes the remaining sites hold oxygen more tightly. So the blood carries less oxygen, and releases less of what it carries.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "GY5qQmLSrJfjuHyxTgbB",
+     "generation_id": "uuwcSbMIz05RGeISDAx5",
+     "file": "audio/takes/9D_take1.mp3",
+     "duration_s": 11.651
+    },
+    {
+     "take": 2,
+     "session_id": "l1EK8tAxuIX2N1DkkRNk",
+     "generation_id": "0MLffnthQftRbiKJ5N6t",
+     "file": "audio/9D.mp3",
+     "duration_s": 11.546
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "0MLffnthQftRbiKJ5N6t",
+   "start_in_full_s": 175.56,
+   "hold_s": 1,
+   "decoded_s": 11.52
+  },
+  {
+   "beat": "10A",
+   "node_id": "L2fNyLC4qKg2EFfNAYY7",
+   "tts_input": "To sum up. Right shift: lower affinity, higher /ˌpiː ˈfɪfti/, more oxygen released at a given /ˌpiː oʊ ˈtuː/.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "JBGnHTCWjCGelIN8J723",
+     "generation_id": "Yb8lGyy3pz8IBbVBM5Gm",
+     "file": "audio/takes/10A_take1.mp3",
+     "duration_s": 7.628
+    },
+    {
+     "take": 2,
+     "session_id": "BJHRN09sY4QP2FQrs7EH",
+     "generation_id": "ppqVihXLQBwtX3pecb1t",
+     "file": "audio/10A.mp3",
+     "duration_s": 7.628
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "ppqVihXLQBwtX3pecb1t",
+   "tts_input_respelling": "/ˌpiː oʊ ˈtuː/, /ˌpiː ˈfɪfti/",
+   "start_in_full_s": 188.08,
+   "hold_s": 0.5,
+   "decoded_s": 7.6
+  },
+  {
+   "beat": "10B",
+   "node_id": "eFhNQuMzEQ1qvYwL2DlN",
+   "tts_input": "Left shift: higher affinity, lower /ˌpiː ˈfɪfti/, oxygen held more tightly.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "oFTrDCxxrb8UmONaXh9L",
+     "generation_id": "CmaVVQkdFRON8uFdysoF",
+     "file": "audio/takes/10B_take1.mp3",
+     "duration_s": 5.642
+    },
+    {
+     "take": 2,
+     "session_id": "w3QVF4wXl8SIHE8mgwYv",
+     "generation_id": "KmPfBRzkuvK8LBtkloKq",
+     "file": "audio/10B.mp3",
+     "duration_s": 5.642
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "KmPfBRzkuvK8LBtkloKq",
+   "tts_input_respelling": "/ˌpiː ˈfɪfti/",
+   "start_in_full_s": 196.18,
+   "hold_s": 0.5,
+   "decoded_s": 5.6
+  },
+  {
+   "beat": "10C",
+   "node_id": "j0xjjz8tNc5opmGdoVVN",
+   "tts_input": "An easy way to remember it: right means release.",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "6yvUHJ8NpiGSxyFOWxRv",
+     "generation_id": "K8ybKky014S3QONwMIJw",
+     "file": "audio/takes/10C_take1.mp3",
+     "duration_s": 3.474
+    },
+    {
+     "take": 2,
+     "session_id": "5FXSQdBdRAJq7VYN4LOd",
+     "generation_id": "2I9JAmEdFeJogtwKhccx",
+     "file": "audio/10C.mp3",
+     "duration_s": 3.631
+    }
+   ],
+   "saved_take": 2,
+   "saved_generation_id": "2I9JAmEdFeJogtwKhccx",
+   "start_in_full_s": 202.28,
+   "hold_s": 2,
+   "decoded_s": 3.6
+  }
+ ],
+ "full_track": {
+  "file": "audio/full.mp3",
+  "duration_s": 207.88,
+  "note": "beat starts measured from decoded sample counts"
+ }
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><filter id="soft" x="-20%" y="-20%" width="140%" height="160%"><feGaussianBlur stdDeviation="12"/></filter></defs>
+<g id="Background_x2F_Fill"><rect width="1920" height="1080" fill="#F7F7F5"/></g>
+<g id="Background_x2F_Stage"><rect x="96" y="158" width="1728" height="780" rx="24" fill="#222222" opacity="0.08" filter="url(#soft)"/><rect x="96" y="150" width="1728" height="780" rx="24" fill="#FFFFFF"/></g>
+<g id="Title_x2F_Text"><text x="960.0" y="500.0" text-anchor="middle" style="font-family:Manrope;font-size:84px;font-weight:600" fill="#222222">The oxyhemoglobin</text>
+<text x="960.0" y="600.0" text-anchor="middle" style="font-family:Manrope;font-size:84px;font-weight:600" fill="#222222">dissociation curve</text></g>
+<g id="Title_x2F_Fact"><rect x="660" y="680" width="600" height="56" rx="12" fill="#F7F7F5"/><text x="680.0" y="718.1" text-anchor="start" style="font-family:Inter;font-size:28px;font-weight:500" fill="#6A6A6A">Hemoglobin carries 98% of blood O<tspan font-size="19" baseline-shift="sub">2</tspan></text></g>
+<g id="Meta_x2F_BeatID"><text x="1880.0" y="1052.0" text-anchor="end" style="font-family:Inter;font-size:22px;font-weight:500" fill="#6A6A6A">1C</text></g>
+</svg>
