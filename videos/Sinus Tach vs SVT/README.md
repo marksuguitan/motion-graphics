@@ -24,4 +24,6 @@ The video was first built in an earlier project as a Remotion (code-rendered) vi
 | 6 The AV node is the key | 6A–6C | f22–f24 |
 | 7 Close | 7A | f25 |
 
-**Status on import:** Stage 2, Gates 1 and 2 pending. Audience, look and build tool (After Effects rebuild or finish in Remotion) are waiting on Mark.
+**Status on import:** Stage 2, Gates 1 and 2 pending.
+
+**Decision, Nov 2, 2026:** Mark chose to rebuild the video in After Effects under the production guide. The Remotion build won't be finished. Audience and look are still waiting on Mark.
