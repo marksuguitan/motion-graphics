@@ -160,6 +160,9 @@ rr, cc = np.mgrid[0:H, 0:W]
 X = cc / S + VB[0]
 Y = rr / S + VB[1]
 in_av = (X >= AV_BOX[0]) & (X <= AV_BOX[2]) & (Y >= AV_BOX[1]) & (Y <= AV_BOX[3])
+# the node's left lobe, where the two lower atrial tracts meet it: part of the node, so the tracts touch only through
+# the node and an impulse arriving by one tract can't run back out along the other (Mark, Nov 2, 2026)
+in_av |= (X >= 2985) & (X < AV_BOX[0]) & (Y >= 3440) & (Y <= 3560)
 # below the AV node is ventricular, except the atrial tract that runs down the right atrium's back wall (lower left)
 vent = (((Y > AV_BOX[3]) & ~((X < AV_BOX[0]) & (Y < 4400))) | ((X > AV_BOX[2]) & (Y > AV_BOX[1]))) & ~in_av
 (sx0, sy0), (sx1, sy1) = SEPTUM
@@ -179,6 +182,11 @@ def solve(v):
     cost[walk & lv] = 1.0 / v['lv']
     mcp = MCP_Geometric(cost * 1.0 / S)
     t, _ = mcp.find_costs([px(*SA)])
+    # the atrial tracts conduct only from the SA node toward the AV node: their times come from a pass with the AV
+    # node closed, so an impulse that reaches the node by a short tract can't run back up a longer one
+    cost_a = np.where(walk & atr, cost, np.inf)
+    t_a, _ = MCP_Geometric(cost_a * 1.0 / S).find_costs([px(*SA)])
+    t = np.where(atr, t_a, t)
     return t, mcp
 
 
@@ -261,7 +269,7 @@ sk = skeletonize(m)
 nb = ndimage.convolve(sk.astype(int), np.ones((3, 3), int), mode='constant') - 1
 nb = np.where(sk, nb, 0)
 junction = sk & (nb >= 3)
-seg = sk & ~ndimage.binary_dilation(junction, iterations=1)
+seg = sk & ~ndimage.binary_dilation(junction, iterations=1) & ~in_av  # no front dot runs out of the AV node
 lab, n = ndimage.label(seg, structure=np.ones((3, 3)))
 fronts = []
 for k in range(1, n + 1):

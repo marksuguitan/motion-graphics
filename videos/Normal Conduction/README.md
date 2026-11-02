@@ -62,3 +62,4 @@ npm run render:final                     # -> 6-delivery/
 | Nov 2, 2026 | v1 built and rendered (review v1 and final) |
 | Nov 2, 2026 | v2 (Mark's notes): simplified natural heart in greys; right and left ventricular conduction end nearly together (215 / 225 ms); title hold 1.4 s shorter, so everything after it is 1.4 s earlier |
 | Nov 2, 2026 | v3 (Mark's note): three real-speed beats as a preview at 0:05.9, before the step-by-step walk; everything after moves 2.8 s later |
+| Nov 2, 2026 | v4 (Mark's note): no backflow in the lower atrial tract at 0:14. The two lower tracts touched just outside the AV node, so the impulse ran back up the longer one; that junction is now part of the node, the atrial pass runs with the node closed, and no front dot starts inside the node. Every atrial tract now runs SA node to AV node |
