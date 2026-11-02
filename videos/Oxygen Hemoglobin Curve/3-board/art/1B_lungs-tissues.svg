@@ -4,9 +4,9 @@
 <g id="Vessel_x2F_Capillary"><rect x="140" y="430" width="1640" height="220" rx="110" fill="#F6E7E4"/>
 <rect x="140" y="430" width="1640" height="220" rx="110" fill="none" stroke="#E7C9C3" stroke-width="4"/></g>
 <g id="Zone_x2F_Lungs"><rect x="140" y="430" width="700" height="220" rx="110" fill="#C94A44" opacity="0.08"/>
-<text x="490.0" y="740.0" text-anchor="middle" style="font-family:Inter;font-size:32px;font-weight:600" fill="#C94A44">Lungs: pick up O<tspan font-size="21" baseline-shift="sub">2</tspan></text></g>
+<text x="490.0" y="862.0" text-anchor="middle" style="font-family:Inter;font-size:32px;font-weight:600" fill="#C94A44">Lungs: pick up O<tspan font-size="21" baseline-shift="sub">2</tspan></text></g>
 <g id="Zone_x2F_Tissues"><rect x="1080" y="430" width="700" height="220" rx="110" fill="#8A3C6B" opacity="0.08"/>
-<text x="1430.0" y="740.0" text-anchor="middle" style="font-family:Inter;font-size:32px;font-weight:600" fill="#8A3C6B">Tissues: let it go</text></g>
+<text x="1430.0" y="862.0" text-anchor="middle" style="font-family:Inter;font-size:32px;font-weight:600" fill="#8A3C6B">Tissues: let it go</text></g>
 <g id="Cell_x2F_Lungs"><ellipse cx="490" cy="540" rx="110.0" ry="70.0" fill="#C94A44"/>
 <ellipse cx="490" cy="540" rx="52.8" ry="29.4" fill="#FFFFFF" opacity="0.22"/>
 <g><circle cx="481.0" cy="440.0" r="10" fill="#C94A44"/><circle cx="499.0" cy="440.0" r="10" fill="#C94A44"/></g>
@@ -25,6 +25,8 @@
 <g><circle cx="1515.0" cy="610.7" r="10" fill="#C94A44"/><circle cx="1533.0" cy="610.7" r="10" fill="#C94A44"/></g>
 <g><circle cx="1421.0" cy="640.0" r="10" fill="#C94A44"/><circle cx="1439.0" cy="640.0" r="10" fill="#C94A44"/></g>
 <g><circle cx="1327.0" cy="610.7" r="10" fill="#C94A44"/><circle cx="1345.0" cy="610.7" r="10" fill="#C94A44"/></g></g>
+<g id="Icon_x2F_Lungs"><g transform="translate(430.0,680) scale(1.200)" fill="none" stroke="#C94A44" stroke-width="4.58" stroke-linecap="round" stroke-linejoin="round"><path d="M50 6 V36 M50 36 L40 45 M50 36 L60 45"/><path d="M42 24 C29 25 14 48 12 76 C11 87 19 92 29 88 L41 83 C44 81 45 77 45 73 V31 C45 27 44 24 42 24 Z"/><path d="M58 24 C71 25 86 48 88 76 C89 87 81 92 71 88 L59 83 C56 81 55 77 55 73 V31 C55 27 56 24 58 24 Z"/><path d="M40 45 L27 57 M33 51 L31 42 M27 57 L19 58 M27 57 L26 68"/><path d="M60 45 L73 57 M67 51 L69 42 M73 57 L81 58 M73 57 L74 68"/></g></g>
+<g id="Icon_x2F_Tissues"><g transform="translate(1370.0,680) scale(1.200)" fill="none" stroke="#8A3C6B" stroke-width="4.58" stroke-linecap="round" stroke-linejoin="round"><path d="M28 30 C22 28 20 20 24 14 C28 8 40 6 48 10 C54 13 55 24 50 30 Z"/><path d="M36 10 V19 M43 10 V19"/><path d="M27 30 C18 44 11 62 14 80 C18 90 36 93 56 89 C70 86 82 81 94 77"/><path d="M49 30 C45 40 41 50 40 58 C46 46 64 44 72 54 C78 46 86 42 95 40"/><path d="M34 72 C46 76 62 73 72 62"/></g></g>
 <g id="Cell_x2F_Released"><g><circle cx="1631.0" cy="400.0" r="10" fill="#C94A44"/><circle cx="1649.0" cy="400.0" r="10" fill="#C94A44"/></g>
 <g><circle cx="1691.0" cy="690.0" r="10" fill="#C94A44"/><circle cx="1709.0" cy="690.0" r="10" fill="#C94A44"/></g></g>
 <g id="Label_x2F_Arrow"><path d="M700,540 H1200" stroke="#6A6A6A" stroke-width="4" stroke-dasharray="2 14" stroke-linecap="round"/>

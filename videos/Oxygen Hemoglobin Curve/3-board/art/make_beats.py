@@ -116,11 +116,28 @@ f.add(group("Background/Stage", card(96, 150, 1728, 780)), capillary(), rbc(960,
       group("Label/Title", text(960, 300, "Every red blood cell has two jobs", 56, 600, C["ink"], H, anchor="middle")))
 f.save()
 
+
+# Simple line icons (drawn for this video, 100x100 box, Nov 2, 2026)
+LUNGS_D = ["M50 6 V36 M50 36 L40 45 M50 36 L60 45",
+           "M42 24 C29 25 14 48 12 76 C11 87 19 92 29 88 L41 83 C44 81 45 77 45 73 V31 C45 27 44 24 42 24 Z",
+           "M58 24 C71 25 86 48 88 76 C89 87 81 92 71 88 L59 83 C56 81 55 77 55 73 V31 C55 27 56 24 58 24 Z",
+           "M40 45 L27 57 M33 51 L31 42 M27 57 L19 58 M27 57 L26 68",
+           "M60 45 L73 57 M67 51 L69 42 M73 57 L81 58 M73 57 L74 68"]
+ARM_D = ["M28 30 C22 28 20 20 24 14 C28 8 40 6 48 10 C54 13 55 24 50 30 Z",
+         "M36 10 V19 M43 10 V19",
+         "M27 30 C18 44 11 62 14 80 C18 90 36 93 56 89 C70 86 82 81 94 77",
+         "M49 30 C45 40 41 50 40 58 C46 46 64 44 72 54 C78 46 86 42 95 40",
+         "M34 72 C46 76 62 73 72 62"]
+def line_icon(name, paths, cx, top, size, col, weight=5.5):
+    k = size/100
+    body = "".join(f'<path d="{d}"/>' for d in paths)
+    return group(name, f'<g transform="translate({cx-50*k:.1f},{top}) scale({k:.3f})" fill="none" stroke="{col}" stroke-width="{weight/k:.2f}" stroke-linecap="round" stroke-linejoin="round">{body}</g>')
 f = F("1B", "lungs-tissues", kicker=None)
 f.add(group("Background/Stage", card(96, 150, 1728, 780)), capillary(),
-      group("Zone/Lungs", f'<rect x="140" y="430" width="700" height="220" rx="110" fill="{C["red"]}" opacity="0.08"/>', text(490, 740, "Lungs: pick up O2", 32, 600, C["red"], anchor="middle")),
-      group("Zone/Tissues", f'<rect x="1080" y="430" width="700" height="220" rx="110" fill="{C["deoxy"]}" opacity="0.08"/>', text(1430, 740, "Tissues: let it go", 32, 600, C["deoxy"], anchor="middle")),
+      group("Zone/Lungs", f'<rect x="140" y="430" width="700" height="220" rx="110" fill="{C["red"]}" opacity="0.08"/>', text(490, 862, "Lungs: pick up O2", 32, 600, C["red"], anchor="middle")),
+      group("Zone/Tissues", f'<rect x="1080" y="430" width="700" height="220" rx="110" fill="{C["deoxy"]}" opacity="0.08"/>', text(1430, 862, "Tissues: let it go", 32, 600, C["deoxy"], anchor="middle")),
       rbc(490, 540, C["red"], o2=8, name="Cell/Lungs"), rbc(1430, 540, C["deoxy"], o2=6, name="Cell/Tissues"),
+      line_icon("Icon/Lungs", LUNGS_D, 490, 680, 120, C["red"]), line_icon("Icon/Tissues", ARM_D, 1430, 680, 120, C["deoxy"]),
       group("Cell/Released", o2dot(1640, 400, C["red"]), o2dot(1700, 690, C["red"])),
       group("Label/Arrow", f'<path d="M700,540 H1200" stroke="{C["ink2"]}" stroke-width="4" stroke-dasharray="2 14" stroke-linecap="round"/>', f'<path d="M1190,524 l18,16 l-18,16" fill="none" stroke="{C["ink2"]}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>'),
       group("Readout/SO2", chip(400, 300, 180, "SO2 97%", C["white"], C["div"], C["red"], 28, 600), chip(1340, 300, 180, "SO2 75%", C["white"], C["div"], C["deoxy"], 28, 600)))
