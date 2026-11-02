@@ -26,3 +26,5 @@ Auto-Save/
 .DS_Store
 __pycache__/
 *.pyc
+**/4-animation/build/ai_src/
+**/4-animation/build/ae_check_times.json

@@ -1,0 +1,2864 @@
+{
+ "title": "Oxygen Hemoglobin Curve",
+ "fps": 30,
+ "w": 1920,
+ "h": 1080,
+ "total": 207.88,
+ "scenes": [
+  {
+   "n": 1,
+   "name": "Scene 1 \u00b7 Hook",
+   "start": 0.0,
+   "beats": [
+    {
+     "id": "1A",
+     "key": "1A_red-cell",
+     "ai": "1A",
+     "prev_ai": null,
+     "order": [
+      "Background/Fill",
+      "Background/Stage",
+      "Vessel/Capillary",
+      "Cell/RBC",
+      "Label/Title"
+     ],
+     "prev_order": [],
+     "start": 0.0,
+     "dur": 2.9,
+     "acts": [
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "in",
+       "rise": 0,
+       "d": 0.4,
+       "t": 0.0
+      },
+      {
+       "layer": "Vessel/Capillary",
+       "do": "in",
+       "rise": 0,
+       "d": 0.4,
+       "t": 0.0
+      },
+      {
+       "layer": "Cell/RBC",
+       "do": "pop",
+       "d": 0.6,
+       "t": 0.4
+      },
+      {
+       "layer": "Label/Title",
+       "do": "in",
+       "t": 0.9
+      }
+     ]
+    },
+    {
+     "id": "1B",
+     "key": "1B_lungs-tissues",
+     "ai": "1B",
+     "prev_ai": "1A",
+     "order": [
+      "Background/Fill",
+      "Background/Stage",
+      "Vessel/Capillary",
+      "Zone/Lungs",
+      "Zone/Tissues",
+      "Cell/Lungs",
+      "Cell/Tissues",
+      "Cell/Released",
+      "Label/Arrow",
+      "Readout/SO2"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Background/Stage",
+      "Vessel/Capillary",
+      "Cell/RBC",
+      "Label/Title"
+     ],
+     "start": 2.9,
+     "dur": 4.98,
+     "acts": [
+      {
+       "layer": "Zone/Lungs",
+       "do": "in",
+       "rise": 0,
+       "d": 0.6,
+       "t": 0.0
+      },
+      {
+       "layer": "Cell/Lungs",
+       "do": "carry",
+       "prev": "Cell/RBC",
+       "d": 0.8,
+       "t": 0.0
+      },
+      {
+       "layer": "Readout/SO2",
+       "do": "in",
+       "t": 0.8
+      },
+      {
+       "layer": "Label/Arrow",
+       "do": "wipe",
+       "dir": "ltr",
+       "d": 1.4,
+       "t": 1.72
+      },
+      {
+       "layer": "Cell/Tissues",
+       "do": "slidein",
+       "dx": -960,
+       "dy": 0,
+       "d": 1.4,
+       "t": 1.72
+      },
+      {
+       "layer": "Zone/Tissues",
+       "do": "in",
+       "rise": 0,
+       "d": 0.6,
+       "t": 3.12
+      },
+      {
+       "layer": "Cell/Released",
+       "do": "in",
+       "rise": 20,
+       "t": 3.42
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Vessel/Capillary",
+       "do": "hold"
+      },
+      {
+       "layer": "Label/Title",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    },
+    {
+     "id": "1C",
+     "key": "1C_title",
+     "ai": "1C",
+     "prev_ai": "1B",
+     "order": [
+      "Background/Fill",
+      "Background/Stage",
+      "Title/Text",
+      "Title/Fact"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Background/Stage",
+      "Vessel/Capillary",
+      "Zone/Lungs",
+      "Zone/Tissues",
+      "Cell/Lungs",
+      "Cell/Tissues",
+      "Cell/Released",
+      "Label/Arrow",
+      "Readout/SO2"
+     ],
+     "start": 7.88,
+     "dur": 5.86,
+     "acts": [
+      {
+       "layer": "Vessel/Capillary",
+       "do": "out",
+       "d": 0.5,
+       "t": 2.44
+      },
+      {
+       "layer": "Zone/Lungs",
+       "do": "out",
+       "d": 0.5,
+       "t": 2.44
+      },
+      {
+       "layer": "Zone/Tissues",
+       "do": "out",
+       "d": 0.5,
+       "t": 2.44
+      },
+      {
+       "layer": "Cell/Lungs",
+       "do": "out",
+       "d": 0.5,
+       "t": 2.44
+      },
+      {
+       "layer": "Cell/Tissues",
+       "do": "out",
+       "d": 0.5,
+       "t": 2.44
+      },
+      {
+       "layer": "Cell/Released",
+       "do": "out",
+       "d": 0.5,
+       "t": 2.44
+      },
+      {
+       "layer": "Label/Arrow",
+       "do": "out",
+       "d": 0.5,
+       "t": 2.44
+      },
+      {
+       "layer": "Readout/SO2",
+       "do": "out",
+       "d": 0.5,
+       "t": 2.44
+      },
+      {
+       "layer": "Title/Text",
+       "do": "in",
+       "d": 0.6,
+       "t": 3.04
+      },
+      {
+       "layer": "Title/Fact",
+       "do": "in",
+       "t": 3.94
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      }
+     ]
+    }
+   ],
+   "end": 13.74
+  },
+  {
+   "n": 2,
+   "name": "Scene 2 \u00b7 Axes",
+   "start": 13.74,
+   "beats": [
+    {
+     "id": "2A",
+     "key": "2A_x-axis",
+     "ai": "2A",
+     "prev_ai": "1C",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Axes",
+      "Note/X"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Background/Stage",
+      "Title/Text",
+      "Title/Fact"
+     ],
+     "start": 13.74,
+     "dur": 8.74,
+     "acts": [
+      {
+       "layer": "Background/Stage",
+       "do": "carry",
+       "d": 0.8,
+       "uniform": false,
+       "t": 0.0
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "carry",
+       "prev": "Title/Text",
+       "d": 0.8,
+       "fit": "w",
+       "top": true,
+       "t": 0.0
+      },
+      {
+       "layer": "Title/Fact",
+       "do": "out",
+       "d": 0.3,
+       "t": 0.0
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "wipe",
+       "dir": "ltr",
+       "d": 1.0,
+       "t": 0.48
+      },
+      {
+       "layer": "Note/X",
+       "do": "in",
+       "t": 7.04
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      }
+     ]
+    },
+    {
+     "id": "2B",
+     "key": "2B_y-axis",
+     "ai": "2B",
+     "prev_ai": "2A",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Note/X",
+      "Note/Y"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Axes",
+      "Note/X"
+     ],
+     "start": 22.48,
+     "dur": 6.5,
+     "acts": [
+      {
+       "layer": "Graph/Axes",
+       "do": "wipe",
+       "dir": "btt",
+       "keep": true,
+       "d": 1.0,
+       "t": 0.32
+      },
+      {
+       "layer": "Note/X",
+       "do": "xfade",
+       "t": 0.32
+      },
+      {
+       "layer": "Note/Y",
+       "do": "in",
+       "t": 5.64
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "in",
+       "rise": 0,
+       "d": 0.6,
+       "t": 6.24
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      }
+     ]
+    }
+   ],
+   "end": 28.98
+  },
+  {
+   "n": 3,
+   "name": "Scene 3 \u00b7 Cooperativity",
+   "start": 28.98,
+   "beats": [
+    {
+     "id": "3A",
+     "key": "3A_four-subunits",
+     "ai": "3A",
+     "prev_ai": "2B",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Label/Header",
+      "Hb/Tetramer",
+      "Panel/Card"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Note/X",
+      "Note/Y"
+     ],
+     "start": 28.98,
+     "dur": 6.82,
+     "acts": [
+      {
+       "layer": "Label/Header",
+       "do": "in",
+       "t": 0.4
+      },
+      {
+       "layer": "Hb/Tetramer",
+       "do": "pop",
+       "d": 0.6,
+       "t": 1.04
+      },
+      {
+       "layer": "Panel/Card",
+       "do": "in",
+       "t": 3.44
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Note/X",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Note/Y",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    },
+    {
+     "id": "3B",
+     "key": "3B_cooperative",
+     "ai": "3B",
+     "prev_ai": "3A",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Label/Header",
+      "Hb/Tetramer",
+      "Panel/Card"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Label/Header",
+      "Hb/Tetramer",
+      "Panel/Card"
+     ],
+     "start": 35.8,
+     "dur": 8.18,
+     "acts": [
+      {
+       "layer": "Hb/Tetramer",
+       "do": "xfade",
+       "t": 2.48
+      },
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 5.04
+      },
+      {
+       "layer": "Hb/Tetramer",
+       "do": "bump",
+       "t": 7.04
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Label/Header",
+       "do": "hold"
+      }
+     ]
+    },
+    {
+     "id": "3C",
+     "key": "3C_straight-line",
+     "ai": "3C",
+     "prev_ai": "3B",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Straight"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Label/Header",
+      "Hb/Tetramer",
+      "Panel/Card"
+     ],
+     "start": 43.98,
+     "dur": 3.22,
+     "acts": [
+      {
+       "layer": "Graph/Grid",
+       "do": "in",
+       "rise": 0,
+       "t": 0.0
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "in",
+       "rise": 0,
+       "t": 0.0
+      },
+      {
+       "layer": "Curves/Straight",
+       "do": "wipe",
+       "dir": "ltr",
+       "d": 0.8,
+       "t": 1.84
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Label/Header",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Hb/Tetramer",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Panel/Card",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    },
+    {
+     "id": "3D",
+     "key": "3D_sigmoid",
+     "ai": "3D",
+     "prev_ai": "3C",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Straight",
+      "Curves/Normal",
+      "Label/Sigmoid",
+      "Panel/Card"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Straight"
+     ],
+     "start": 47.2,
+     "dur": 4.04,
+     "acts": [
+      {
+       "layer": "Curves/Straight",
+       "do": "xfade",
+       "t": 1.92
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "wipe",
+       "dir": "ltr",
+       "d": 1.2,
+       "t": 1.92
+      },
+      {
+       "layer": "Label/Sigmoid",
+       "do": "in",
+       "t": 2.92
+      },
+      {
+       "layer": "Panel/Card",
+       "do": "in",
+       "t": 3.32
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      }
+     ]
+    }
+   ],
+   "end": 51.24
+  },
+  {
+   "n": 4,
+   "name": "Scene 4 \u00b7 Landmarks",
+   "start": 51.24,
+   "beats": [
+    {
+     "id": "4A",
+     "key": "4A_arterial",
+     "ai": "4A",
+     "prev_ai": "3D",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Point/Arterial",
+      "Panel/Card"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Straight",
+      "Curves/Normal",
+      "Label/Sigmoid",
+      "Panel/Card"
+     ],
+     "start": 51.24,
+     "dur": 8.02,
+     "acts": [
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 0.0
+      },
+      {
+       "layer": "Point/Arterial",
+       "do": "wipe",
+       "dir": "rtl",
+       "stops": [
+        [
+         3.36,
+         1090.0,
+         0.5
+        ],
+        [
+         5.68,
+         220,
+         0.8
+        ]
+       ]
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Straight",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Label/Sigmoid",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    },
+    {
+     "id": "4B",
+     "key": "4B_mixed-venous",
+     "ai": "4B",
+     "prev_ai": "4A",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Point/Arterial",
+      "Point/Venous",
+      "Panel/Card"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Point/Arterial",
+      "Panel/Card"
+     ],
+     "start": 59.26,
+     "dur": 8.18,
+     "acts": [
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 0.0
+      },
+      {
+       "layer": "Point/Arterial",
+       "do": "xfade",
+       "t": 4.32
+      },
+      {
+       "layer": "Point/Venous",
+       "do": "wipe",
+       "dir": "rtl",
+       "stops": [
+        [
+         4.32,
+         598.0,
+         0.5
+        ],
+        [
+         6.4,
+         220,
+         0.8
+        ]
+       ]
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      }
+     ]
+    },
+    {
+     "id": "4C",
+     "key": "4C_quarter",
+     "ai": "4C",
+     "prev_ai": "4B",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Band/Unloaded",
+      "Curves/Normal",
+      "Point/Arterial",
+      "Point/Venous",
+      "Panel/Card"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Point/Arterial",
+      "Point/Venous",
+      "Panel/Card"
+     ],
+     "start": 67.44,
+     "dur": 6.52,
+     "acts": [
+      {
+       "layer": "Point/Venous",
+       "do": "xfade",
+       "t": 3.6
+      },
+      {
+       "layer": "Band/Unloaded",
+       "do": "in",
+       "rise": 0,
+       "d": 0.6,
+       "t": 3.6
+      },
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 4.0
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Point/Arterial",
+       "do": "hold"
+      }
+     ]
+    }
+   ],
+   "end": 73.96
+  },
+  {
+   "n": 5,
+   "name": "Scene 5 \u00b7 P50",
+   "start": 73.96,
+   "beats": [
+    {
+     "id": "5A",
+     "key": "5A_halfway",
+     "ai": "5A",
+     "prev_ai": "4C",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Guide/Fifty",
+      "Panel/Card"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Band/Unloaded",
+      "Curves/Normal",
+      "Point/Arterial",
+      "Point/Venous",
+      "Panel/Card"
+     ],
+     "start": 73.96,
+     "dur": 7.94,
+     "acts": [
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 0.0
+      },
+      {
+       "layer": "Guide/Fifty",
+       "do": "wipe",
+       "dir": "ltr",
+       "d": 0.8,
+       "t": 5.92
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Band/Unloaded",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Point/Arterial",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Point/Venous",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    },
+    {
+     "id": "5B",
+     "key": "5B_p50-value",
+     "ai": "5B",
+     "prev_ai": "5A",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Guide/Fifty",
+      "Panel/Card"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Guide/Fifty",
+      "Panel/Card"
+     ],
+     "start": 81.9,
+     "dur": 6.6,
+     "acts": [
+      {
+       "layer": "Guide/Fifty",
+       "do": "wipe",
+       "dir": "ttb",
+       "keep": true,
+       "d": 0.6,
+       "t": 3.52
+      },
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 3.82
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      }
+     ]
+    }
+   ],
+   "end": 88.5
+  },
+  {
+   "n": 6,
+   "name": "Scene 6 \u00b7 Shape",
+   "start": 88.5,
+   "beats": [
+    {
+     "id": "6A",
+     "key": "6A_flat-top",
+     "ai": "6A",
+     "prev_ai": "5B",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Marker/Bars",
+      "Panel/Card"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Guide/Fifty",
+      "Panel/Card"
+     ],
+     "start": 88.5,
+     "dur": 9.46,
+     "acts": [
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 1.76
+      },
+      {
+       "layer": "Marker/Bars",
+       "do": "wipe",
+       "dir": "rtl",
+       "stops": [
+        [
+         3.92,
+         778.0,
+         1.6
+        ],
+        [
+         8.0,
+         270,
+         0.4
+        ]
+       ]
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Guide/Fifty",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    },
+    {
+     "id": "6B",
+     "key": "6B_plateau-steep",
+     "ai": "6B",
+     "prev_ai": "6A",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Region/Plateau",
+      "Region/Steep",
+      "Curves/Normal",
+      "Panel/Card"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Marker/Bars",
+      "Panel/Card"
+     ],
+     "start": 97.96,
+     "dur": 6.02,
+     "acts": [
+      {
+       "layer": "Region/Plateau",
+       "do": "in",
+       "rise": 0,
+       "t": 0.24
+      },
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 0.64
+      },
+      {
+       "layer": "Region/Steep",
+       "do": "in",
+       "rise": 0,
+       "t": 5.0
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Marker/Bars",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    },
+    {
+     "id": "6C",
+     "key": "6C_steep-unloading",
+     "ai": "6C",
+     "prev_ai": "6B",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Marker/Bars",
+      "Panel/Card"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Region/Plateau",
+      "Region/Steep",
+      "Curves/Normal",
+      "Panel/Card"
+     ],
+     "start": 103.98,
+     "dur": 8.68,
+     "acts": [
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 1.32
+      },
+      {
+       "layer": "Marker/Bars",
+       "do": "wipe",
+       "dir": "rtl",
+       "stops": [
+        [
+         1.32,
+         532.0,
+         0.8
+        ],
+        [
+         3.48,
+         270,
+         0.5
+        ]
+       ]
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Region/Plateau",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Region/Steep",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    }
+   ],
+   "end": 112.66
+  },
+  {
+   "n": 7,
+   "name": "Scene 7 \u00b7 Shifts",
+   "start": 112.66,
+   "beats": [
+    {
+     "id": "7A",
+     "key": "7A_shifts",
+     "ai": "7A",
+     "prev_ai": "6C",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Ghosts",
+      "Curves/Normal",
+      "Marker/P50",
+      "Panel/Card"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Marker/Bars",
+      "Panel/Card"
+     ],
+     "start": 112.66,
+     "dur": 6.9,
+     "acts": [
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 1.2
+      },
+      {
+       "layer": "Curves/Ghosts",
+       "do": "in",
+       "rise": 0,
+       "t": 1.2
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "nudge",
+       "keys": [
+        [
+         1.2,
+         0
+        ],
+        [
+         1.55,
+         40
+        ],
+        [
+         1.95,
+         -40
+        ],
+        [
+         2.24,
+         0
+        ]
+       ],
+       "clip": [
+        298,
+        150,
+        1176,
+        818
+       ]
+      },
+      {
+       "layer": "Marker/P50",
+       "do": "in",
+       "t": 2.24
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Marker/Bars",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    }
+   ],
+   "end": 119.56
+  },
+  {
+   "n": 8,
+   "name": "Scene 8 \u00b7 Right shift",
+   "start": 119.56,
+   "beats": [
+    {
+     "id": "8A",
+     "key": "8A_right-shift",
+     "ai": "8A",
+     "prev_ai": "7A",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Panel/Card",
+      "Footnote/Text"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Ghosts",
+      "Curves/Normal",
+      "Marker/P50",
+      "Panel/Card"
+     ],
+     "start": 119.56,
+     "dur": 7.62,
+     "acts": [
+      {
+       "layer": "Curves/Normal",
+       "do": "xfade",
+       "t": 0.72
+      },
+      {
+       "layer": "Curves/Shift",
+       "do": "slidein",
+       "dx": -73.8,
+       "dy": 0,
+       "d": 1.0,
+       "clip": [
+        298,
+        150,
+        1176,
+        818
+       ],
+       "t": 0.72
+      },
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 1.12
+      },
+      {
+       "layer": "Footnote/Text",
+       "do": "in",
+       "t": 6.32
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Ghosts",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Marker/P50",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    },
+    {
+     "id": "8B",
+     "key": "8B_right-factors",
+     "ai": "8B",
+     "prev_ai": "8A",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Panel/Card",
+      "Factors/List",
+      "Footnote/Text"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Panel/Card",
+      "Footnote/Text"
+     ],
+     "start": 127.18,
+     "dur": 9.78,
+     "acts": [
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 0.3
+      },
+      {
+       "layer": "Factors/List",
+       "do": "wipe",
+       "dir": "ttb",
+       "stops": [
+        [
+         3.2,
+         514,
+         0.4
+        ],
+        [
+         4.48,
+         588,
+         0.4
+        ],
+        [
+         6.24,
+         662,
+         0.4
+        ],
+        [
+         8.56,
+         760,
+         0.4
+        ]
+       ]
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Shift",
+       "do": "hold"
+      },
+      {
+       "layer": "Footnote/Text",
+       "do": "hold"
+      }
+     ]
+    },
+    {
+     "id": "8C",
+     "key": "8C_bohr",
+     "ai": "8C",
+     "prev_ai": "8B",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Panel/Card",
+      "Factors/List",
+      "Factors/Bohr",
+      "Footnote/Text"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Panel/Card",
+      "Factors/List",
+      "Footnote/Text"
+     ],
+     "start": 136.96,
+     "dur": 4.74,
+     "acts": [
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 3.2
+      },
+      {
+       "layer": "Factors/List",
+       "do": "xfade",
+       "t": 3.2
+      },
+      {
+       "layer": "Factors/Bohr",
+       "do": "in",
+       "rise": 0,
+       "t": 3.2
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Shift",
+       "do": "hold"
+      },
+      {
+       "layer": "Footnote/Text",
+       "do": "hold"
+      }
+     ]
+    },
+    {
+     "id": "8D",
+     "key": "8D_exercising-muscle",
+     "ai": "8D",
+     "prev_ai": "8C",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Marker/Extra",
+      "Panel/Card",
+      "Footnote/Text"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Panel/Card",
+      "Factors/List",
+      "Factors/Bohr",
+      "Footnote/Text"
+     ],
+     "start": 141.7,
+     "dur": 9.56,
+     "acts": [
+      {
+       "layer": "Curves/Normal",
+       "do": "xfade",
+       "t": 1.12
+      },
+      {
+       "layer": "Curves/Shift",
+       "do": "xfade",
+       "t": 1.12
+      },
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 1.12
+      },
+      {
+       "layer": "Marker/Extra",
+       "do": "wipe",
+       "dir": "ttb",
+       "d": 0.8,
+       "t": 8.12
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Footnote/Text",
+       "do": "hold"
+      },
+      {
+       "layer": "Factors/List",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Factors/Bohr",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    }
+   ],
+   "end": 151.26
+  },
+  {
+   "n": 9,
+   "name": "Scene 9 \u00b7 Left shift",
+   "start": 151.26,
+   "beats": [
+    {
+     "id": "9A",
+     "key": "9A_left-shift",
+     "ai": "9A",
+     "prev_ai": "8D",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/RightGhost",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Panel/Card",
+      "Footnote/Text"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Marker/Extra",
+      "Panel/Card",
+      "Footnote/Text"
+     ],
+     "start": 151.26,
+     "dur": 8.58,
+     "acts": [
+      {
+       "layer": "Curves/RightGhost",
+       "do": "in",
+       "rise": 0,
+       "t": 0.72
+      },
+      {
+       "layer": "Curves/Shift",
+       "do": "out",
+       "d": 0.6,
+       "t": 0.72
+      },
+      {
+       "layer": "Curves/Shift",
+       "do": "slidein",
+       "dx": 57.39999999999999,
+       "dy": 0,
+       "d": 1.0,
+       "clip": [
+        0,
+        150,
+        1176,
+        818
+       ],
+       "t": 0.72
+      },
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 1.12
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Footnote/Text",
+       "do": "hold"
+      },
+      {
+       "layer": "Marker/Extra",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    },
+    {
+     "id": "9B",
+     "key": "9B_left-factors",
+     "ai": "9B",
+     "prev_ai": "9A",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Panel/Card",
+      "Factors/List",
+      "Footnote/Text"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/RightGhost",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Panel/Card",
+      "Footnote/Text"
+     ],
+     "start": 159.84,
+     "dur": 7.14,
+     "acts": [
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 0.0
+      },
+      {
+       "layer": "Factors/List",
+       "do": "wipe",
+       "dir": "ttb",
+       "stops": [
+        [
+         0.56,
+         514,
+         0.4
+        ],
+        [
+         1.84,
+         588,
+         0.4
+        ],
+        [
+         3.6,
+         662,
+         0.4
+        ],
+        [
+         5.92,
+         760,
+         0.4
+        ]
+       ]
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Shift",
+       "do": "hold"
+      },
+      {
+       "layer": "Footnote/Text",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/RightGhost",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    },
+    {
+     "id": "9C",
+     "key": "9C_fetal-hb",
+     "ai": "9C",
+     "prev_ai": "9B",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Panel/Card"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Panel/Card",
+      "Factors/List",
+      "Footnote/Text"
+     ],
+     "start": 166.98,
+     "dur": 8.58,
+     "acts": [
+      {
+       "layer": "Curves/Shift",
+       "do": "xfade",
+       "t": 0.0
+      },
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 0.0
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Factors/List",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Footnote/Text",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    },
+    {
+     "id": "9D",
+     "key": "9D_carbon-monoxide",
+     "ai": "9D",
+     "prev_ai": "9C",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Panel/Card",
+      "Hb/COTetramer",
+      "Panel/Lines",
+      "Footnote/Text"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Shift",
+      "Panel/Card"
+     ],
+     "start": 175.56,
+     "dur": 12.52,
+     "acts": [
+      {
+       "layer": "Curves/Shift",
+       "do": "out",
+       "d": 0.6,
+       "t": 1.2
+      },
+      {
+       "layer": "Panel/Card",
+       "do": "xfade",
+       "t": 1.2
+      },
+      {
+       "layer": "Hb/COTetramer",
+       "do": "pop",
+       "d": 0.6,
+       "t": 2.32
+      },
+      {
+       "layer": "Panel/Lines",
+       "do": "wipe",
+       "dir": "ttb",
+       "stops": [
+        [
+         2.92,
+         716,
+         0.4
+        ],
+        [
+         6.52,
+         770,
+         0.4
+        ]
+       ]
+      },
+      {
+       "layer": "Footnote/Text",
+       "do": "in",
+       "t": 9.52
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      }
+     ]
+    }
+   ],
+   "end": 188.08
+  },
+  {
+   "n": 10,
+   "name": "Scene 10 \u00b7 Summary",
+   "start": 188.08,
+   "beats": [
+    {
+     "id": "10A",
+     "key": "10A_summary-right",
+     "ai": "10A",
+     "prev_ai": "9D",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Right",
+      "Curves/Left",
+      "Panel/RightShift",
+      "Panel/LeftShift"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Panel/Card",
+      "Hb/COTetramer",
+      "Panel/Lines",
+      "Footnote/Text"
+     ],
+     "start": 188.08,
+     "dur": 8.1,
+     "acts": [
+      {
+       "layer": "Panel/Card",
+       "do": "out",
+       "d": 0.4,
+       "t": 0.0
+      },
+      {
+       "layer": "Curves/Right",
+       "do": "slidein",
+       "dx": -73.8,
+       "dy": 0,
+       "d": 1.0,
+       "clip": [
+        298,
+        150,
+        1176,
+        818
+       ],
+       "t": 1.28
+      },
+      {
+       "layer": "Panel/RightShift",
+       "do": "in",
+       "t": 1.28
+      },
+      {
+       "layer": "Curves/Left",
+       "do": "in",
+       "rise": 0,
+       "d": 0.6,
+       "t": 2.28
+      },
+      {
+       "layer": "Panel/LeftShift",
+       "do": "in",
+       "t": 2.28
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Hb/COTetramer",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Panel/Lines",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Footnote/Text",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      }
+     ]
+    },
+    {
+     "id": "10B",
+     "key": "10B_summary-left",
+     "ai": "10B",
+     "prev_ai": "10A",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Right",
+      "Curves/Left",
+      "Panel/RightShift",
+      "Panel/LeftShift"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Right",
+      "Curves/Left",
+      "Panel/RightShift",
+      "Panel/LeftShift"
+     ],
+     "start": 196.18,
+     "dur": 6.1,
+     "acts": [
+      {
+       "layer": "Panel/RightShift",
+       "do": "xfade",
+       "t": 0.0
+      },
+      {
+       "layer": "Panel/LeftShift",
+       "do": "xfade",
+       "t": 0.0
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Right",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Left",
+       "do": "hold"
+      }
+     ]
+    },
+    {
+     "id": "10C",
+     "key": "10C_right-means-release",
+     "ai": "10C",
+     "prev_ai": "10B",
+     "order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Right",
+      "Curves/Left",
+      "Panel/RightShift",
+      "Panel/LeftShift",
+      "Takeaway/Text",
+      "Footnote/Text"
+     ],
+     "prev_order": [
+      "Background/Fill",
+      "Header/Kicker",
+      "Background/Stage",
+      "Graph/Grid",
+      "Graph/Axes",
+      "Curves/Normal",
+      "Curves/Right",
+      "Curves/Left",
+      "Panel/RightShift",
+      "Panel/LeftShift"
+     ],
+     "start": 202.28,
+     "dur": 5.6,
+     "acts": [
+      {
+       "layer": "Panel/LeftShift",
+       "do": "xfade",
+       "t": 0.0
+      },
+      {
+       "layer": "Takeaway/Text",
+       "do": "pop",
+       "d": 0.6,
+       "from": 0.9,
+       "t": 2.8
+      },
+      {
+       "layer": "Footnote/Text",
+       "do": "in",
+       "t": 3.6
+      },
+      {
+       "layer": "Background/Fill",
+       "do": "hold"
+      },
+      {
+       "layer": "Header/Kicker",
+       "do": "hold"
+      },
+      {
+       "layer": "Background/Stage",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Grid",
+       "do": "hold"
+      },
+      {
+       "layer": "Graph/Axes",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Normal",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Right",
+       "do": "hold"
+      },
+      {
+       "layer": "Curves/Left",
+       "do": "hold"
+      },
+      {
+       "layer": "Panel/RightShift",
+       "do": "hold"
+      }
+     ]
+    }
+   ],
+   "end": 207.88
+  }
+ ],
+ "markers": [
+  {
+   "t": 0.4,
+   "beat": "1A",
+   "cue": "red",
+   "flag": ""
+  },
+  {
+   "t": 2.9,
+   "beat": "1B",
+   "cue": "Pick",
+   "flag": ""
+  },
+  {
+   "t": 6.02,
+   "beat": "1B",
+   "cue": "go",
+   "flag": ""
+  },
+  {
+   "t": 10.92,
+   "beat": "1C",
+   "cue": "oxyhemoglobin",
+   "flag": ""
+  },
+  {
+   "t": 14.22,
+   "beat": "2A",
+   "cue": "bottom",
+   "flag": ""
+  },
+  {
+   "t": 20.78,
+   "beat": "2A",
+   "cue": "dissolved",
+   "flag": ""
+  },
+  {
+   "t": 22.8,
+   "beat": "2B",
+   "cue": "side",
+   "flag": ""
+  },
+  {
+   "t": 28.12,
+   "beat": "2B",
+   "cue": "filled",
+   "flag": ""
+  },
+  {
+   "t": 30.02,
+   "beat": "3A",
+   "cue": "four",
+   "flag": ""
+  },
+  {
+   "t": 32.42,
+   "beat": "3A",
+   "cue": "heme",
+   "flag": ""
+  },
+  {
+   "t": 38.28,
+   "beat": "3B",
+   "cue": "first",
+   "flag": ""
+  },
+  {
+   "t": 40.84,
+   "beat": "3B",
+   "cue": "shape",
+   "flag": ""
+  },
+  {
+   "t": 42.84,
+   "beat": "3B",
+   "cue": "easily",
+   "flag": ""
+  },
+  {
+   "t": 45.82,
+   "beat": "3C",
+   "cue": "straight",
+   "flag": ""
+  },
+  {
+   "t": 49.12,
+   "beat": "3D",
+   "cue": "sigmoid",
+   "flag": ""
+  },
+  {
+   "t": 54.6,
+   "beat": "4A",
+   "cue": "100",
+   "flag": ""
+  },
+  {
+   "t": 56.92,
+   "beat": "4A",
+   "cue": "97",
+   "flag": ""
+  },
+  {
+   "t": 63.58,
+   "beat": "4B",
+   "cue": "40",
+   "flag": ""
+  },
+  {
+   "t": 65.66,
+   "beat": "4B",
+   "cue": "75",
+   "flag": ""
+  },
+  {
+   "t": 71.04,
+   "beat": "4C",
+   "cue": "quarter",
+   "flag": ""
+  },
+  {
+   "t": 73.96,
+   "beat": "5A",
+   "cue": "Halfway",
+   "flag": ""
+  },
+  {
+   "t": 79.88,
+   "beat": "5A",
+   "cue": "50",
+   "flag": ""
+  },
+  {
+   "t": 85.42,
+   "beat": "5B",
+   "cue": "27",
+   "flag": ""
+  },
+  {
+   "t": 90.26,
+   "beat": "6A",
+   "cue": "flat",
+   "flag": ""
+  },
+  {
+   "t": 94.02,
+   "beat": "6A",
+   "cue": "60",
+   "flag": ""
+  },
+  {
+   "t": 96.5,
+   "beat": "6A",
+   "cue": "90",
+   "flag": ""
+  },
+  {
+   "t": 98.2,
+   "beat": "6B",
+   "cue": "plateau",
+   "flag": ""
+  },
+  {
+   "t": 102.96,
+   "beat": "6B",
+   "cue": "steep",
+   "flag": ""
+  },
+  {
+   "t": 105.3,
+   "beat": "6C",
+   "cue": "small",
+   "flag": ""
+  },
+  {
+   "t": 107.46,
+   "beat": "6C",
+   "cue": "large",
+   "flag": ""
+  },
+  {
+   "t": 113.86,
+   "beat": "7A",
+   "cue": "shift",
+   "flag": ""
+  },
+  {
+   "t": 114.9,
+   "beat": "7A",
+   "cue": "P50",
+   "flag": ""
+  },
+  {
+   "t": 120.28,
+   "beat": "8A",
+   "cue": "right",
+   "flag": ""
+  },
+  {
+   "t": 125.88,
+   "beat": "8A",
+   "cue": "rises",
+   "flag": ""
+  },
+  {
+   "t": 130.38,
+   "beat": "8B",
+   "cue": "pH",
+   "flag": ""
+  },
+  {
+   "t": 131.66,
+   "beat": "8B",
+   "cue": "carbon",
+   "flag": ""
+  },
+  {
+   "t": 133.42,
+   "beat": "8B",
+   "cue": "DPG",
+   "flag": "not verbatim in narration; timed on partial match"
+  },
+  {
+   "t": 135.74,
+   "beat": "8B",
+   "cue": "temperature",
+   "flag": ""
+  },
+  {
+   "t": 140.16,
+   "beat": "8C",
+   "cue": "Bohr",
+   "flag": ""
+  },
+  {
+   "t": 142.82,
+   "beat": "8D",
+   "cue": "muscle",
+   "flag": ""
+  },
+  {
+   "t": 149.82,
+   "beat": "8D",
+   "cue": "released",
+   "flag": ""
+  },
+  {
+   "t": 151.98,
+   "beat": "9A",
+   "cue": "left",
+   "flag": ""
+  },
+  {
+   "t": 158.7,
+   "beat": "9A",
+   "cue": "falls",
+   "flag": ""
+  },
+  {
+   "t": 160.4,
+   "beat": "9B",
+   "cue": "pH",
+   "flag": ""
+  },
+  {
+   "t": 161.68,
+   "beat": "9B",
+   "cue": "carbon",
+   "flag": ""
+  },
+  {
+   "t": 163.44,
+   "beat": "9B",
+   "cue": "DPG",
+   "flag": "not verbatim in narration; timed on partial match"
+  },
+  {
+   "t": 165.76,
+   "beat": "9B",
+   "cue": "temperature",
+   "flag": ""
+  },
+  {
+   "t": 166.98,
+   "beat": "9C",
+   "cue": "Fetal",
+   "flag": ""
+  },
+  {
+   "t": 176.76,
+   "beat": "9D",
+   "cue": "different",
+   "flag": ""
+  },
+  {
+   "t": 177.88,
+   "beat": "9D",
+   "cue": "occupies",
+   "flag": ""
+  },
+  {
+   "t": 182.08,
+   "beat": "9D",
+   "cue": "tightly",
+   "flag": ""
+  },
+  {
+   "t": 185.08,
+   "beat": "9D",
+   "cue": "releases",
+   "flag": ""
+  },
+  {
+   "t": 189.36,
+   "beat": "10A",
+   "cue": "Right",
+   "flag": ""
+  },
+  {
+   "t": 196.18,
+   "beat": "10B",
+   "cue": "Left",
+   "flag": ""
+  },
+  {
+   "t": 205.08,
+   "beat": "10C",
+   "cue": "release",
+   "flag": ""
+  }
+ ]
+}
