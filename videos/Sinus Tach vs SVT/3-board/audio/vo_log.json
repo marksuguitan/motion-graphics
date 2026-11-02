@@ -1,0 +1,744 @@
+{
+ "video": "Sinus Tach vs SVT",
+ "flow": "Sinus Tach vs SVT — scratch VO",
+ "flow_id": "MoNbJuiMddzcvgOYSSlX",
+ "voice": "Markus Guapo (45wlHoJDsEn5ruTlzdZI)",
+ "model": "eleven_v4",
+ "pass": 1,
+ "date": "2026-11-02",
+ "notes": "Saved take = last take generated (the active one on each speech node). Durations are decoded lengths (ffmpeg). Downloaded directly into the cloud workspace. 1C is a silent title card (2.0 s, agent's call) plus its 0.6 s hold. Holds from the production doc scene tables; 0.5 s where the table says —.",
+ "total_s": 184.9,
+ "beats": [
+  {
+   "beat": "1A",
+   "node_id": "fwZ6WbKYOPfJqfwciWeS",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "sissqJed2Hf5fp3pYo7I",
+     "session_id": "8oDvagSj2wnAUEjwerB7",
+     "duration_s": 4.72,
+     "file": "takes/1A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "kf3MvE8aoWb7DWFTisVe",
+     "session_id": "HjaT2g1NYD48EsRli8Hk",
+     "duration_s": 4.72,
+     "file": "1A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "1A.mp3",
+   "tts_input": "Narrow complexes. Perfectly regular. A rate of one seventy.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 4.72,
+   "start_in_full": 0.0,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "1B",
+   "node_id": "SIcXDiqXm79Bq0T6q4FW",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "cYs3nyPYkbh1VQ63rCZz",
+     "session_id": "ahtjQpjroXdE78IBH0ZK",
+     "duration_s": 4.16,
+     "file": "takes/1B_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "BSR3ewRbQzP72m0hRKxC",
+     "session_id": "B0YOqVRnZ2Qq1OZL66j2",
+     "duration_s": 4.16,
+     "file": "1B.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "1B.mp3",
+   "tts_input": "Is this heart answering a call? Or is it stuck in a loop?",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 4.16,
+   "start_in_full": 5.22,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "1C",
+   "node_id": null,
+   "takes": [],
+   "saved_take": null,
+   "saved_file": "1C.mp3",
+   "tts_input": null,
+   "tts_input_respelling": [],
+   "transcript_generation_id": null,
+   "duration_s": 2.0,
+   "start_in_full": 9.88,
+   "hold_after": 0.6
+  },
+  {
+   "beat": "2A",
+   "node_id": "VBtDA8jfmjyFAw0EkRhI",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "dskU7xSAQM5y8p1Vku3j",
+     "session_id": "ciX12WxOKjwhFE4JffdU",
+     "duration_s": 6.4,
+     "file": "takes/2A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "hlFkAuTITMvMCgzy8yo8",
+     "session_id": "8VOOcp42isDJPuqqVAUF",
+     "duration_s": 6.16,
+     "file": "2A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "2A.mp3",
+   "tts_input": "Every normal beat follows the same route. It starts in the S A node, high in the right atrium,",
+   "tts_input_respelling": [
+    "SA node -> S A node"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 6.16,
+   "start_in_full": 12.48,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "2B",
+   "node_id": "lV3HOrHdP4UepJRsFh7L",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "7NGEkuzz7Kzp2YJ2QpiW",
+     "session_id": "DITAV3noW3XpFWRdbYwR",
+     "duration_s": 2.0,
+     "file": "takes/2B_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "mK1NmCLKF7SwnWT8vBAg",
+     "session_id": "3WWRTbscZLSWavzUKrQd",
+     "duration_s": 2.0,
+     "file": "2B.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "2B.mp3",
+   "tts_input": "and spreads across both atria.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 2.0,
+   "start_in_full": 19.14,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "2C",
+   "node_id": "q59llJqN6aXVb1ioSI2n",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "ttiffHr17SKm4OoNWTfl",
+     "session_id": "N6hliWNJeFYZDbzM0LZw",
+     "duration_s": 6.72,
+     "file": "takes/2C_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "UebzfBU4sIxoiaiJtkUD",
+     "session_id": "G2csbuaIxurZKKDpvSwq",
+     "duration_s": 6.72,
+     "file": "2C.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "2C.mp3",
+   "tts_input": "Then it reaches the A V node, which holds the signal for about a tenth of a second, so the atria can finish emptying.",
+   "tts_input_respelling": [
+    "AV node -> A V node"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 6.72,
+   "start_in_full": 21.64,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "2D",
+   "node_id": "MpaatTQ0cDPUwu4N0sJH",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "3XWJGqbxxc4rwO2eaH0z",
+     "session_id": "4s5lXt2kJGJ3U1gBqZPl",
+     "duration_s": 4.24,
+     "file": "takes/2D_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "yYHUu3tQFIAYVuXhFRxN",
+     "session_id": "QCSUSBJRB9LbGjGuyi0Q",
+     "duration_s": 4.32,
+     "file": "2D.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "2D.mp3",
+   "tts_input": "From there it races down the Hiss pur-KIN-jee system into the ventricles.",
+   "tts_input_respelling": [
+    "His-Purkinje -> Hiss pur-KIN-jee"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 4.32,
+   "start_in_full": 28.86,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "2E",
+   "node_id": "zo1r5aqxqzsMRt29fiz4",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "Q3ytWwRdoL5sGVFT28hD",
+     "session_id": "oh9KIoQmyvrkVggbRXru",
+     "duration_s": 3.04,
+     "file": "takes/2E_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "0HH1gWm9B9cZmA5Tx8BH",
+     "session_id": "OTIGn5ARQDIy0Bp8Gg2r",
+     "duration_s": 2.8,
+     "file": "2E.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "2E.mp3",
+   "tts_input": "That fast lane is why the /ˌkjuːɑːrˈɛs/ is narrow.",
+   "tts_input_respelling": [
+    "QRS -> /ˌkjuːɑːrˈɛs/"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 2.8,
+   "start_in_full": 33.68,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "2F",
+   "node_id": "3bEc0uY1PoALiaudnQCT",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "lNhoi0twIJAjo93P7LBy",
+     "session_id": "5lD76ifi0L8UVOGcsjkn",
+     "duration_s": 9.76,
+     "file": "takes/2F_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "yjhSHEa2MKob3wx4TaTg",
+     "session_id": "WV22cdpfpFCJ7YErhCZr",
+     "duration_s": 9.6,
+     "file": "2F.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "2F.mp3",
+   "tts_input": "A narrow-complex tachycardia tells you the ventricles are still using it, so the problem starts at or above the A V node. Both rhythms in this video start up here.",
+   "tts_input_respelling": [
+    "AV node -> A V node"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 9.6,
+   "start_in_full": 36.98,
+   "hold_after": 1.0
+  },
+  {
+   "beat": "3A",
+   "node_id": "c264ijm9ClibvjTTtdV7",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "NogljpsnIkd3VC3VaPNj",
+     "session_id": "hfO4OHtKiBSCme6EhfXe",
+     "duration_s": 8.88,
+     "file": "takes/3A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "KIwjLUH6PruFN8AXcRYj",
+     "session_id": "FWV6Xaaz1YU7UYcjUYy1",
+     "duration_s": 9.2,
+     "file": "3A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3A.mp3",
+   "tts_input": "In sinus tachycardia, nothing about the route changes. The S A node is just firing faster than one hundred, because the body is asking for more output.",
+   "tts_input_respelling": [
+    "SA node -> S A node"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 9.2,
+   "start_in_full": 47.58,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "3B",
+   "node_id": "6WggwEyHsYBmgIpix9yZ",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "BNeyYjQ3YFtp0ycE081l",
+     "session_id": "lD9KQlVYHTRua1sVEnUY",
+     "duration_s": 5.68,
+     "file": "takes/3B_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "HMjALFmwMcnWEiVpu9A4",
+     "session_id": "wosNlpXvtYkYvUHnXFRK",
+     "duration_s": 5.68,
+     "file": "3B.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3B.mp3",
+   "tts_input": "Sometimes the reason is harmless, like exercise, stress, pain, or anxiety.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 5.68,
+   "start_in_full": 57.28,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "3C",
+   "node_id": "pzmjgW4nk2V2QKvEBUfQ",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "wajicLAYJd629YHJr8uf",
+     "session_id": "Mgeyeid1pq1qLMR9MisH",
+     "duration_s": 10.4,
+     "file": "takes/3C_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "RsDhvpOULwTJkTl751ZC",
+     "session_id": "SAUcFSuv5yrThsJNUDGv",
+     "duration_s": 10.32,
+     "file": "3C.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3C.mp3",
+   "tts_input": "Sometimes it's serious, like low oxygen, blood loss, dehydration, or sepsis. A fast resting heart rate can be one of the earliest signs that something is wrong.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 10.32,
+   "start_in_full": 63.46,
+   "hold_after": 1.0
+  },
+  {
+   "beat": "3D",
+   "node_id": "xvU4W9Eo9LIntK5NmWa7",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "7EKRTSBJDHzkmqL5bPnD",
+     "session_id": "G9NMpADgqc0C2zZ7sEyQ",
+     "duration_s": 9.44,
+     "file": "takes/3D_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "z7hdBC2ZQ519PtpykepC",
+     "session_id": "gRTuTCDPvWu66fVgfaks",
+     "duration_s": 9.52,
+     "file": "3D.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "3D.mp3",
+   "tts_input": "On the /ˌiːsiːˈdʒiː/, it looks like a normal beat, only faster. An upright P wave in leads one, two, and A V L, in front of every /ˌkjuːɑːrˈɛs/.",
+   "tts_input_respelling": [
+    "ECG -> /ˌiːsiːˈdʒiː/",
+    "aVL -> A V L",
+    "QRS -> /ˌkjuːɑːrˈɛs/"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 9.52,
+   "start_in_full": 74.78,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "4A",
+   "node_id": "wsv4kx7xI5M6ErsjdKjt",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "3fdb8H8EROVZDdPzTuaw",
+     "session_id": "OO6mylz3bXqunnMPxXN9",
+     "duration_s": 7.12,
+     "file": "takes/4A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "cu17Tj6V2QBR5QwYuv1K",
+     "session_id": "yafqfjqMOxInGhNQfyji",
+     "duration_s": 7.12,
+     "file": "4A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "4A.mp3",
+   "tts_input": "Most S V T works differently. It's re-entry: a signal caught in a circuit, going around and around.",
+   "tts_input_respelling": [
+    "SVT -> S V T"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 7.12,
+   "start_in_full": 84.8,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "4B",
+   "node_id": "6QB8xxU7GTyN4TOZBvka",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "GVGR2C6z9YZ29uY3WdaB",
+     "session_id": "SVbeo2nHTwbaimoHrDVE",
+     "duration_s": 6.0,
+     "file": "takes/4B_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "LkZc0TIbi0wdCXr7DsAG",
+     "session_id": "0NBJhuMdx6eopWJQmAmF",
+     "duration_s": 5.84,
+     "file": "4B.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "4B.mp3",
+   "tts_input": "In the most common type, A V N R T, the circuit sits inside the A V node itself.",
+   "tts_input_respelling": [
+    "AVNRT -> A V N R T",
+    "AV node -> A V node"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 5.84,
+   "start_in_full": 92.42,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "4C",
+   "node_id": "qsY4RjCq3UlFgaw6v7lC",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "kWbQs0q4Dwitp8gXoczR",
+     "session_id": "1ykHVB06hs9uzv92q4Tl",
+     "duration_s": 9.28,
+     "file": "takes/4C_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "y1UIuXlPigEtH2RlVVTU",
+     "session_id": "vqY9tUKlwXxXU43sswG0",
+     "duration_s": 9.52,
+     "file": "4C.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "4C.mp3",
+   "tts_input": "In A V R T, the heart has an extra pathway between the atria and the ventricles. The signal goes down through the A V node, and back up the extra pathway.",
+   "tts_input_respelling": [
+    "AVRT -> A V R T",
+    "AV node -> A V node"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 9.52,
+   "start_in_full": 98.76,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "4D",
+   "node_id": "YvyGfloLqLOtNTd6rvR1",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "fOqNshcry4ILVfOsBzd6",
+     "session_id": "R5bTrJFfs3gC1xewSpu1",
+     "duration_s": 2.32,
+     "file": "takes/4D_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "ztaanelkRJsQR2f2PmjF",
+     "session_id": "8Irsk74czAkWeL4nIwYl",
+     "duration_s": 2.24,
+     "file": "4D.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "4D.mp3",
+   "tts_input": "Every lap fires the ventricles.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 2.24,
+   "start_in_full": 108.78,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "4E",
+   "node_id": "SMvvTHaC5FGeqgf10zLi",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "KpLbkk9rSbBdDf95iDDk",
+     "session_id": "hHPvats0Gec2dUtmoIbK",
+     "duration_s": 10.0,
+     "file": "takes/4E_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "5vCTM33wT8AqFjpvudR3",
+     "session_id": "fwcMAUahJmqp6itfZra9",
+     "duration_s": 9.92,
+     "file": "4E.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "4E.mp3",
+   "tts_input": "And because the loop isn't following the body's needs, it starts suddenly, runs fast and regular, usually between one fifty and two twenty, and stops just as abruptly.",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 9.92,
+   "start_in_full": 111.52,
+   "hold_after": 1.0
+  },
+  {
+   "beat": "5A",
+   "node_id": "tHqPFIG5AKK4xwMCjrqs",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "lr6Bf9VqLRtpwGNTVLid",
+     "session_id": "wXUKKBjvDdi2qK669HUv",
+     "duration_s": 6.24,
+     "file": "takes/5A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "WSAfTdNuaSOyX14mm9e9",
+     "session_id": "kb6r81Or7P6nZlR9Gc2t",
+     "duration_s": 5.92,
+     "file": "5A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "5A.mp3",
+   "tts_input": "So put them side by side. Sinus tack has a reason you can find, and it follows that reason.",
+   "tts_input_respelling": [
+    "Sinus tach -> Sinus tack"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 5.92,
+   "start_in_full": 122.44,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "5B",
+   "node_id": "DlTwb0OVB93pQiO9Skdr",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "F3Kj04Y1ll64z9DCzFmO",
+     "session_id": "DxxbJB2ztBwNyKtYnswK",
+     "duration_s": 7.68,
+     "file": "takes/5B_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "t3Alf0rW5eAXjsKU5BXe",
+     "session_id": "81F55Xe7wkqXf68RRUUc",
+     "duration_s": 7.84,
+     "file": "5B.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "5B.mp3",
+   "tts_input": "S V T often starts out of nowhere, sometimes after caffeine, stimulants, or stress, and it switches on and off.",
+   "tts_input_respelling": [
+    "SVT -> S V T"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 7.84,
+   "start_in_full": 128.86,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "5C",
+   "node_id": "pYVJqf9h2LofzJ41016D",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "RlZJdd69Wt5wqeqwzr3x",
+     "session_id": "zsIuJTVnvwmAhL4JIVMU",
+     "duration_s": 6.0,
+     "file": "takes/5C_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "iuzfbg4bYappFmGqxhzP",
+     "session_id": "92gGtWmyK5YOYAjxhtZ0",
+     "duration_s": 6.0,
+     "file": "5C.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "5C.mp3",
+   "tts_input": "And in A V N R T, you often can't find a P wave at all. It's hidden inside the /ˌkjuːɑːrˈɛs/.",
+   "tts_input_respelling": [
+    "AVNRT -> A V N R T",
+    "QRS -> /ˌkjuːɑːrˈɛs/"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 6.0,
+   "start_in_full": 137.2,
+   "hold_after": 1.0
+  },
+  {
+   "beat": "6A",
+   "node_id": "kFVai5j3MviuNdgeSqXG",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "IdpeE5u7X8yajAvTHqXG",
+     "session_id": "nagN6DEBCjgRvMAeJiT3",
+     "duration_s": 11.28,
+     "file": "takes/6A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "TM79F6PyY8FY1JRqezOp",
+     "session_id": "x4uslfXac5jqMwQk9tqm",
+     "duration_s": 11.36,
+     "file": "6A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "6A.mp3",
+   "tts_input": "That loop is also how we stop it. Vagal maneuvers and uh-DEN-oh-seen both slow conduction through the A V node. If the circuit runs through the node, blocking it for a moment breaks the loop.",
+   "tts_input_respelling": [
+    "adenosine -> uh-DEN-oh-seen",
+    "AV node -> A V node"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 11.36,
+   "start_in_full": 144.2,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "6B",
+   "node_id": "cWE2gK1FKfGE3f2OAHVu",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "ZbfwG5zdGPAgMleacQ9b",
+     "session_id": "mY0OzYUmVaQJmt8LYQeE",
+     "duration_s": 11.84,
+     "file": "takes/6B_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "h6o9bbsQkQxao6AC38zp",
+     "session_id": "z6Pz5zyAgJKhw4pXVKuy",
+     "duration_s": 11.68,
+     "file": "6B.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "6B.mp3",
+   "tts_input": "For a stable patient, start with a vagal maneuver, like val-SAL-vuh, lying flat. Then uh-DEN-oh-seen, by rapid I V push. An unstable patient gets synchronized cardioversion.",
+   "tts_input_respelling": [
+    "Valsalva -> val-SAL-vuh",
+    "adenosine -> uh-DEN-oh-seen",
+    "IV -> I V"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 11.68,
+   "start_in_full": 156.06,
+   "hold_after": 0.5
+  },
+  {
+   "beat": "6C",
+   "node_id": "nErn0FyxNryMrwDoPNrx",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "iF7yZcLrX60rjkO9I9F2",
+     "session_id": "jp9oMSvijwxbrlJjAQ5I",
+     "duration_s": 6.64,
+     "file": "takes/6C_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "zo9B1tNamcAlkqgtaDHT",
+     "session_id": "1paC1nzbckN0D2BP425E",
+     "duration_s": 6.64,
+     "file": "6C.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "6C.mp3",
+   "tts_input": "Sinus tack has no loop to break. Slowing the rate doesn't fix the reason it's fast. Treat the cause.",
+   "tts_input_respelling": [
+    "Sinus tach -> Sinus tack"
+   ],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 6.64,
+   "start_in_full": 168.24,
+   "hold_after": 1.0
+  },
+  {
+   "beat": "7A",
+   "node_id": "XZpgjqEYenuWq9OGy2Ku",
+   "takes": [
+    {
+     "take": 1,
+     "generation_id": "aPj5niRhspAF6T80qtsl",
+     "session_id": "r30u1RdPdUNz4TT3kU9E",
+     "duration_s": 7.28,
+     "file": "takes/7A_take1.mp3"
+    },
+    {
+     "take": 2,
+     "generation_id": "XI4Fm63yE8Zj5DbOTANx",
+     "session_id": "y3YGIWQ4UXnAWLCR3oKe",
+     "duration_s": 7.52,
+     "file": "7A.mp3"
+    }
+   ],
+   "saved_take": 2,
+   "saved_file": "7A.mp3",
+   "tts_input": "So when you see a fast, narrow, regular rhythm, ask one question. Is the heart answering, or is it looping?",
+   "tts_input_respelling": [],
+   "transcript_generation_id": "es590oQop47C15OUcNpD",
+   "duration_s": 7.52,
+   "start_in_full": 175.88,
+   "hold_after": 1.5
+  }
+ ],
+ "transcript": {
+  "generation_id": "es590oQop47C15OUcNpD",
+  "asset_id": "qFPXJBgZkvV5nPzBMr27",
+  "source": "full.mp3 uploaded and transcribed with Scribe (eleven_scribe_v1); real speech-to-text, so it also checks the respellings read as the intended words",
+  "words_file": "../timings/scribe_full_words.json"
+ }
+}

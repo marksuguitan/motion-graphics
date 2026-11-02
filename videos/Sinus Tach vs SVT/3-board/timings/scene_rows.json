@@ -1,0 +1,177 @@
+[
+[
+"1A",
+"Narrow complexes. Perfectly regular. A rate of one seventy. \\[S1\\]",
+"One lead II strip prints and scrolls; the rate readout sits in the strip header like a monitor. Nothing says which rhythm it is",
+"\"seventy\"",
+"—"
+],
+[
+"1B",
+"Is this heart answering a call? Or is it stuck in a loop?",
+"The two halves of the question land on the words; answering and looping each get their color here and keep it",
+"\"answering\"; \"loop\"",
+"—"
+],
+[
+"1C",
+"(no narration)",
+"The question collapses into the title; the strip keeps scrolling, dimmed, into the heart",
+"—",
+"0.6 s"
+],
+[
+"2A",
+"Every normal beat follows the same route. It starts in the SA node, high in the right atrium, \\[no source yet\\]",
+"Mark's chambers heart, full frame; the conduction system starts muted and the SA node lights on the word",
+"\"SA\"",
+"—"
+],
+[
+"2B",
+"and spreads across both atria.",
+"Wipe along the atrial tracts from the SA node to the AV node and across to the left atrium",
+"\"spreads\"",
+"—"
+],
+[
+"2C",
+"Then it reaches the AV node, which holds the signal for about a tenth of a second, so the atria can finish emptying. \\[S1\\]",
+"The AV node lights and the pulse visibly pauses; a chip shows the hold",
+"\"holds\"",
+"—"
+],
+[
+"2D",
+"From there it races down the His-Purkinje system into the ventricles.",
+"Bundle of His, branches and Purkinje fans light in quick sequence",
+"\"races\"",
+"—"
+],
+[
+"2E",
+"That fast lane is why the QRS is narrow. \\[S1\\]",
+"Heart slides left; one beat prints; a bracket measures the QRS",
+"\"narrow\"",
+"—"
+],
+[
+"2F",
+"A narrow-complex tachycardia tells you the ventricles are still using it, so the problem starts at or above the AV node. Both rhythms in this video start up here. \\[S1\\]",
+"A dashed line crosses the heart at the AV node; everything above it is where both rhythms start",
+"\"above\"",
+"1 s"
+],
+[
+"3A",
+"In sinus tachycardia, nothing about the route changes. The SA node is just firing faster than one hundred, because the body is asking for more output. \\[S2\\]",
+"Section title in the answering color; the same route, lit, running faster",
+"\"faster\"",
+"—"
+],
+[
+"3B",
+"Sometimes the reason is harmless, like exercise, stress, pain, or anxiety. \\[S2\\]",
+"Causes arrive as chips, one per word",
+"\"exercise\"; \"stress\"; \"pain\"; \"anxiety\"",
+"—"
+],
+[
+"3C",
+"Sometimes it's serious, like low oxygen, blood loss, dehydration, or sepsis. A fast resting heart rate can be one of the earliest signs that something is wrong. \\[S2\\]",
+"A second column for the serious causes; the warning line lands under them",
+"\"oxygen\"; \"blood\"; \"dehydration\"; \"sepsis\"; \"earliest\"",
+"1 s"
+],
+[
+"3D",
+"On the ECG, it looks like a normal beat, only faster. An upright P wave in leads one, two, and aVL, in front of every QRS. \\[S2\\]",
+"A sinus strip at 130; every P wave marked as the voice names it",
+"\"upright\"; \"every\"",
+"—"
+],
+[
+"4A",
+"Most SVT works differently. It's re-entry: a signal caught in a circuit, going around and around. \\[S1\\]",
+"Section title in the looping color; push in on the AV junction; a circuit appears and the pulse starts lapping",
+"\"re-entry\"",
+"—"
+],
+[
+"4B",
+"In the most common type, AVNRT, the circuit sits inside the AV node itself. \\[S1, S3\\]",
+"Label the AVNRT loop; a circuit inside the node, no slow/fast pathway detail",
+"\"AVNRT\"",
+"—"
+],
+[
+"4C",
+"In AVRT, the heart has an extra pathway between the atria and the ventricles. The signal goes down through the AV node, and back up the extra pathway. \\[S1, S4\\]",
+"Pull out to the left heart; the loop runs down the node and back up an accessory pathway on the left free wall",
+"\"down\"; \"up\"",
+"—"
+],
+[
+"4D",
+"Every lap fires the ventricles. \\[S1\\]",
+"Loop and strip together: each lap drops a QRS",
+"\"lap\"",
+"—"
+],
+[
+"4E",
+"And because the loop isn't following the body's needs, it starts suddenly, runs fast and regular, usually between one fifty and two twenty, and stops just as abruptly. \\[S1\\]",
+"One long strip: sinus at 80, the loop switches on, then off",
+"\"suddenly\"; \"abruptly\"",
+"1 s"
+],
+[
+"5A",
+"So put them side by side. Sinus tach has a reason you can find, and it follows that reason. \\[S2\\]",
+"Two-column comparison builds; first row: trigger",
+"\"reason\"",
+"—"
+],
+[
+"5B",
+"SVT often starts out of nowhere, sometimes after caffeine, stimulants, or stress, and it switches on and off. \\[S1\\]",
+"Second row: start and stop",
+"\"nowhere\"; \"switches\"",
+"—"
+],
+[
+"5C",
+"And in AVNRT, you often can't find a P wave at all. It's hidden inside the QRS. \\[S1, S3\\]",
+"Third row: two short strips at the same rate; P marked on the sinus side, gone on the AVNRT side",
+"\"hidden\"",
+"1 s"
+],
+[
+"6A",
+"That loop is also how we stop it. Vagal maneuvers and adenosine both slow conduction through the AV node. If the circuit runs through the node, blocking it for a moment breaks the loop. \\[S1\\]",
+"The circuit as a schematic; a block lands on the node and the circulating pulse stops",
+"\"blocking\"; \"breaks\"",
+"—"
+],
+[
+"6B",
+"For a stable patient, start with a vagal maneuver, like Valsalva, lying flat. Then adenosine, by rapid IV push. An unstable patient gets synchronized cardioversion. \\[S1\\]",
+"The strip converts: SVT at 180, a pause, sinus resumes; the three steps list beside it",
+"\"Valsalva\"; \"adenosine\"; \"synchronized\"",
+"—"
+],
+[
+"6C",
+"Sinus tach has no loop to break. Slowing the rate doesn't fix the reason it's fast. Treat the cause. \\[S2\\]",
+"Back to the whole heart, normal route lit, no loop; the takeaway is the only text",
+"\"cause\"",
+"1 s"
+],
+[
+"7A",
+"So when you see a fast, narrow, regular rhythm, ask one question. Is the heart answering, or is it looping?",
+"The opening strip returns at 170; the two words resolve either side of the question",
+"\"answering\"; \"looping\"",
+"1.5 s"
+]
+]

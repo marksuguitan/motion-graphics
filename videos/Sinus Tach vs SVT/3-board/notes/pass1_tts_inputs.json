@@ -1,0 +1,138 @@
+{
+"1A": [
+"Narrow complexes. Perfectly regular. A rate of one seventy.",
+[]
+],
+"1B": [
+"Is this heart answering a call? Or is it stuck in a loop?",
+[]
+],
+"2A": [
+"Every normal beat follows the same route. It starts in the S A node, high in the right atrium,",
+[
+"SA node -> S A node"
+]
+],
+"2B": [
+"and spreads across both atria.",
+[]
+],
+"2C": [
+"Then it reaches the A V node, which holds the signal for about a tenth of a second, so the atria can finish emptying.",
+[
+"AV node -> A V node"
+]
+],
+"2D": [
+"From there it races down the Hiss pur-KIN-jee system into the ventricles.",
+[
+"His-Purkinje -> Hiss pur-KIN-jee"
+]
+],
+"2E": [
+"That fast lane is why the /ˌkjuːɑːrˈɛs/ is narrow.",
+[
+"QRS -> /ˌkjuːɑːrˈɛs/"
+]
+],
+"2F": [
+"A narrow-complex tachycardia tells you the ventricles are still using it, so the problem starts at or above the A V node. Both rhythms in this video start up here.",
+[
+"AV node -> A V node"
+]
+],
+"3A": [
+"In sinus tachycardia, nothing about the route changes. The S A node is just firing faster than one hundred, because the body is asking for more output.",
+[
+"SA node -> S A node"
+]
+],
+"3B": [
+"Sometimes the reason is harmless, like exercise, stress, pain, or anxiety.",
+[]
+],
+"3C": [
+"Sometimes it's serious, like low oxygen, blood loss, dehydration, or sepsis. A fast resting heart rate can be one of the earliest signs that something is wrong.",
+[]
+],
+"3D": [
+"On the /ˌiːsiːˈdʒiː/, it looks like a normal beat, only faster. An upright P wave in leads one, two, and A V L, in front of every /ˌkjuːɑːrˈɛs/.",
+[
+"ECG -> /ˌiːsiːˈdʒiː/",
+"aVL -> A V L",
+"QRS -> /ˌkjuːɑːrˈɛs/"
+]
+],
+"4A": [
+"Most S V T works differently. It's re-entry: a signal caught in a circuit, going around and around.",
+[
+"SVT -> S V T"
+]
+],
+"4B": [
+"In the most common type, A V N R T, the circuit sits inside the A V node itself.",
+[
+"AVNRT -> A V N R T",
+"AV node -> A V node"
+]
+],
+"4C": [
+"In A V R T, the heart has an extra pathway between the atria and the ventricles. The signal goes down through the A V node, and back up the extra pathway.",
+[
+"AVRT -> A V R T",
+"AV node -> A V node"
+]
+],
+"4D": [
+"Every lap fires the ventricles.",
+[]
+],
+"4E": [
+"And because the loop isn't following the body's needs, it starts suddenly, runs fast and regular, usually between one fifty and two twenty, and stops just as abruptly.",
+[]
+],
+"5A": [
+"So put them side by side. Sinus tack has a reason you can find, and it follows that reason.",
+[
+"Sinus tach -> Sinus tack"
+]
+],
+"5B": [
+"S V T often starts out of nowhere, sometimes after caffeine, stimulants, or stress, and it switches on and off.",
+[
+"SVT -> S V T"
+]
+],
+"5C": [
+"And in A V N R T, you often can't find a P wave at all. It's hidden inside the /ˌkjuːɑːrˈɛs/.",
+[
+"AVNRT -> A V N R T",
+"QRS -> /ˌkjuːɑːrˈɛs/"
+]
+],
+"6A": [
+"That loop is also how we stop it. Vagal maneuvers and uh-DEN-oh-seen both slow conduction through the A V node. If the circuit runs through the node, blocking it for a moment breaks the loop.",
+[
+"adenosine -> uh-DEN-oh-seen",
+"AV node -> A V node"
+]
+],
+"6B": [
+"For a stable patient, start with a vagal maneuver, like val-SAL-vuh, lying flat. Then uh-DEN-oh-seen, by rapid I V push. An unstable patient gets synchronized cardioversion.",
+[
+"Valsalva -> val-SAL-vuh",
+"adenosine -> uh-DEN-oh-seen",
+"IV -> I V"
+]
+],
+"6C": [
+"Sinus tack has no loop to break. Slowing the rate doesn't fix the reason it's fast. Treat the cause.",
+[
+"Sinus tach -> Sinus tack"
+]
+],
+"7A": [
+"So when you see a fast, narrow, regular rhythm, ask one question. Is the heart answering, or is it looping?",
+[]
+]
+}
