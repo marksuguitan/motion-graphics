@@ -44,7 +44,7 @@ CLIP = [298, 150, 1176, 818]               # inside the graph card: hides anythi
 # piece leak in early: the end of the "Arterial" label (4A) and the venous horizontal guide (4B), Mark 2026-11-02
 POINT_EDGE = 12
 # Separate layers that sit inside the side card and leave with it at a card change on the next beat's first frame
-CARD_CONTENT = {"2B": ["Note/XTerm", "Note/XDef", "Note/Y"], "8C": ["Factors/List", "Factors/Bohr"]}
+CARD_CONTENT = {"2B": ["Note/XTerm", "Note/XDef", "Note/Y"], "8C": ["Factors/List", "Factors/Bohr"], "9B": ["Factors/List"]}
 
 # Comma Clinical (Mark 2026-11-02; replaces the v6 "playful" override). Motion only: art, VO and sync points stay locked.
 # Source: Motion Style Guide, "Comma Clinical: Warm Clinical with Comma motion". The curves themselves (snap, cross, accel,
@@ -386,6 +386,9 @@ def main():
                 acts.remove(a)
                 if a["t"] >= MOTION["card_out_d"]:
                     acts.append(cardswap(prev_beat, bid, a["t"] - MOTION["card_out_d"], a["t"], "both"))
+                    for g in acts:                           # card content that leaves in this beat rolls out with the old rows
+                        if g["do"] == "out" and g["layer"] in CARD_CONTENT.get(prev_beat, []):
+                            g["t"] = round(a["t"] - MOTION["card_out_d"], 3); g["roll"] = card_geom(prev_beat)["rect"]
                 else:
                     pb = next(b for sc_ in out["scenes"] for b in sc_["beats"] if b["id"] == prev_beat)
                     pb["acts"].append(cardswap(prev_beat, bid, pb["dur"] - MOTION["card_out_d"] + a["t"], pb["dur"], "out"))

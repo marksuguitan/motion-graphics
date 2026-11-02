@@ -167,6 +167,14 @@
         cm(SC(l), [[t + 0.5 * d, S1]], "snap");
         CommaEase.squash(SC(l), t + d, b, horiz ? 0 : 1, MO.squash);
     }
+    function rollLayer(L, t, clip) {                         // rolls up out of a card's inner area, accelerating, clipped
+        var rp0 = POS(L).valueAtTime(t, false), d = Math.max(0.1, MO.card_out_d - 0.05);
+        cm(POS(L), [[t, rp0], [t + d, [rp0[0], rp0[1] - MO.card_rise]]], "accel");
+        var nm = L.property("ADBE Mask Parade").numProperties;
+        clipKeys(L, [clip[0] + 3, clip[1] + 3, clip[0] + clip[2] - 3, clip[1] + clip[3] - 3], [t, t + d], "accel");
+        if (nm > 0) L.property("ADBE Mask Parade").property(nm + 1).maskMode = MaskMode.INTERSECT;
+        cutOut(L, t + d);
+    }
     function shapeLayer(pre, name, kind, size, pos, fill, stroke, sw, round) {
         var l = pre.layers.addShape(); l.name = name;
         var root = function () { return l.property("ADBE Root Vectors Group"); };
@@ -268,6 +276,8 @@
                         var A0 = toLayer(go, x0, y0, rp0), B0 = toLayer(go, x1, y1, rp0), A1 = toLayer(go, shut[0], shut[1], rp0), B1 = toLayer(go, shut[2], shut[3], rp0);
                         cm(addMask(go, "Retract"), [[g[q].t, boxShape(A0[0], A0[1], B0[0], B0[1])], [g[q].t + MO.accel_d, boxShape(A1[0], A1[1], B1[0], B1[1])]], "accel");
                         cutOut(go, g[q].t + MO.accel_d);
+                    } else if (go && g[q].roll) {             // lived in the side card: rolls out with the card's old rows
+                        rollLayer(go, g[q].t, g[q].roll);
                     } else if (go && g[q].to) {               // collapses into a point, accelerating into the cut
                         setPivot(go, g[q].to);
                         cm(SC(go), [[g[q].t, [100, 100]], [g[q].t + MO.accel_d, [0, 0]]], "accel");
@@ -468,11 +478,14 @@
             var nf = copyLayer(a.new_ai, "Panel/Card", pre); if (nf) cutIn(nf, tDone);
             return nf;
         case "rollout":                                      // a layer that lives in the side card rolls out with the card's rows
-            if (!l) return l;
-            var rp0 = POS(l).valueAtTime(t, false);
-            cm(POS(l), [[t, rp0], [t + MO.card_out_d, [rp0[0], rp0[1] - MO.card_rise]]], "accel");
-            clipKeys(l, [a.clip[0] + 3, a.clip[1] + 3, a.clip[0] + a.clip[2] - 3, a.clip[1] + a.clip[3] - 3], [t, t + MO.card_out_d], "accel");
-            cutOut(l, t + MO.card_out_d);
+            var rl = [];                                     // the layer itself, or each of its rows (chips that dropped in one per cue)
+            for (var ri2 = 1; ri2 <= pre.numLayers; ri2++) {
+                var Lr = pre.layer(ri2);
+                if (Lr.name === a.layer || Lr.name.indexOf(a.layer + " row ") === 0) rl.push(Lr);
+            }
+            function rowNo(L) { var m = L.name.match(/ row (\d+)$/); return m ? parseInt(m[1], 10) : 0; }
+            rl.sort(function (x, y) { return rowNo(x) - rowNo(y); });   // rows are numbered top to bottom
+            for (ri2 = 0; ri2 < rl.length; ri2++) rollLayer(rl[ri2], t + ri2 * MO.card_stagger, a.clip);
             return l;
         case "undraw":                                       // a held layer draws itself out (mask retract, accelerating) and is gone
             if (!l) return l;
