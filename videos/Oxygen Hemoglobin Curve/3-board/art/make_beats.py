@@ -202,8 +202,7 @@ f = F("5A", "halfway"); f.add(stage(), axes(), normal_curve(),
 f.save()
 f = F("5B", "p50-value"); f.add(stage(), axes(), normal_curve(),
       group("Guide/Fifty", guides(26.8, 50, C["coral"]), point(26.8, 50, C["coral"]), text(X(26.8)+14, Y(0)-16, "27", 28, 700, C["coral"])),
-      side_card("NORMAL ADULT BLOOD", "P50 ≈ 27 mmHg", [], h=230),
-      group("Panel/Note", note(1288, 500, "Standard conditions: 37 °C, pH 7.4, PCO2 40 mmHg".replace("PCO2", "PCO₂"))))
+      side_card("NORMAL ADULT BLOOD", "P50 ≈ 27 mmHg", [], h=170))
 f.save()
 
 # ---------- Scene 6 ----------

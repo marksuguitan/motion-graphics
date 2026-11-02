@@ -34,7 +34,7 @@ On-screen text: Arterial: 100 mmHg, 97% · Mixed venous: 40 mmHg, 75% · At rest
 **5A** · Halfway up the curve is a landmark called the P50. It is the PO2 at which hemoglobin is 50 percent saturated. [S2, S3]
 **5B** · For normal adult blood, under standard conditions, it is about 27 millimeters of mercury. [S2, S3]
 
-On-screen text: P50 · Normal adult blood · P50 ≈ 27 mmHg · Standard conditions: 37 °C, pH 7.4, PCO2 40 mmHg [source pending]
+On-screen text: P50 · Normal adult blood · P50 ≈ 27 mmHg
 
 ## Scene 6: Shape
 **6A** · The top of the curve is relatively flat. Even if PO2 in the lungs falls from 100 to 60, saturation only drops to about 90 percent. [S2]

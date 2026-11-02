@@ -34,9 +34,8 @@
 <g id="Guide_x2F_Fifty"><path d="M519.8,810.0 V510.0 H300.0" fill="none" stroke="#F0645A" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round"/>
 <circle cx="519.8" cy="510.0" r="11" fill="#F0645A" stroke="#FFFFFF" stroke-width="4"/>
 <text x="533.8" y="794.0" text-anchor="start" style="font-family:Inter;font-size:28px;font-weight:700" fill="#F0645A">27</text></g>
-<g id="Panel_x2F_Card"><rect x="1240" y="298" width="600" height="230" rx="24" fill="#222222" opacity="0.08" filter="url(#soft)"/><rect x="1240" y="290" width="600" height="230" rx="24" fill="#FFFFFF"/>
+<g id="Panel_x2F_Card"><rect x="1240" y="298" width="600" height="170" rx="24" fill="#222222" opacity="0.08" filter="url(#soft)"/><rect x="1240" y="290" width="600" height="170" rx="24" fill="#FFFFFF"/>
 <text x="1288.0" y="352.0" text-anchor="start" style="font-family:Manrope;font-size:23px;font-weight:700;letter-spacing:3px" fill="#6A6A6A">NORMAL ADULT BLOOD</text>
 <text x="1288.0" y="414.0" text-anchor="start" style="font-family:Manrope;font-size:46px;font-weight:600" fill="#222222">P<tspan font-size="31" baseline-shift="sub">50</tspan> ≈ 27 mmHg</text></g>
-<g id="Panel_x2F_Note"><text x="1288.0" y="500.0" text-anchor="start" style="font-family:Inter;font-size:22px;font-weight:400" fill="#6A6A6A">Standard conditions: 37 °C, pH 7.4, PCO₂ 40 mmHg</text></g>
 <g id="Meta_x2F_BeatID"><text x="1880.0" y="1052.0" text-anchor="end" style="font-family:Inter;font-size:22px;font-weight:500" fill="#6A6A6A">5B</text></g>
 </svg>
