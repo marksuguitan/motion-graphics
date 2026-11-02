@@ -182,10 +182,13 @@ def junction(cx, cy, s=1.0, st=None):
     return "".join(g), dict(top=top, bot=bot, r=r, atr_y=atr_y, atr_h=atr_h, atr_w=atr_w, node_y=node_y, his_bot=his_bot, br=br)
 
 _bgc = [0]
-def hb_for(geo, cx, s, clip):
-    return heart_backdrop(cx, geo["node_y"], geo["node_y"] - 60 * s, geo["his_bot"] + 10 * s, clip, kk=0.18 * s)
+def hb_for(geo, cx, s, clip, kk=0.11):
+    # Heart AV node at the centre of the ring (the ring stands for the AV node region),
+    # heart atria under the Atria box; fades out from the bottom of the ring to the His bundle.
+    cy = geo["top"] + geo["r"]
+    return heart_backdrop(cx, cy, geo["bot"] - 20 * s, geo["his_bot"], clip, kk=kk * s)
 
-def heart_backdrop(cx, node_y, top_y, bot_y, clip, kk=0.18, op=0.42):
+def heart_backdrop(cx, node_y, top_y, bot_y, clip, kk=0.11, op=0.5):
     """Mark's heart behind a junction schematic: his AV node sits on the diagram's node,
     full strength over the atria, fading out by the ventricles. clip = card (x, y, w, h)."""
     _bgc[0] += 1; n = _bgc[0]
@@ -297,7 +300,7 @@ def heart_left(o, s=1.0):
 
 def diag_left(st, s=1.0, cx=540, cy=600, bg=True):
     j, geo = junction(cx, cy, s, st)
-    hb = heart_backdrop(cx, geo["node_y"], geo["node_y"] - 60 * s, geo["his_bot"] + 10 * s, (120, 120, 840, 840)) if bg else ""
+    hb = hb_for(geo, cx, s, (120, 120, 840, 840)) if bg else ""
     return card(120, 120, 840, 840, "Cards/Diagram") + hb + j
 
 F = {}
