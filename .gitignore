@@ -1,0 +1,28 @@
+# Big binaries stay on Mark's Mac, inside the clone, next to the tracked files.
+# They are never committed.
+*.aep
+*.aep Logs/
+*.aep_AME/
+Auto-Save/
+*.ai
+*.psd
+*.mp4
+*.mov
+*.m4v
+*.zip
+*.gz
+*.tgz
+
+# Regenerable build output
+**/4-animation/build/aep_backup/
+**/4-animation/build/ae_check/
+**/4-animation/build/ai_check/
+**/4-animation/build/tmp_zip/
+**/4-animation/build/keyframes_png/
+**/3-board/art/*.png
+**/5-finish/renders/
+
+# System and tooling
+.DS_Store
+__pycache__/
+*.pyc

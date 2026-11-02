@@ -1,0 +1,51 @@
+{
+ "patient": {
+  "sbp_expiration": 132.0,
+  "sbp_inspiration": 116.0,
+  "dbp": 78.0,
+  "hr": 76,
+  "breath_s": 5.0,
+  "inspiration_s": 2.0
+ },
+ "cueA": {
+  "file": "cueA_1A.wav",
+  "cuff_mmHg": 125,
+  "starts_at_s": 0.0,
+  "breath_bands": [
+   [
+    3.0,
+    5.0
+   ],
+   [
+    8.0,
+    10.0
+   ],
+   [
+    13.0,
+    15.0
+   ]
+  ]
+ },
+ "cueB": {
+  "file": "cueB_5B-5E.wav",
+  "starts_at_video_s": 184.781,
+  "start_cuff_mmHg": 144.5,
+  "rate_mmHg_s": 2.0,
+  "first_tap_expiration": {
+   "cue_s": 6.724,
+   "video_s": 191.505,
+   "cuff": 131.0
+  },
+  "first_tap_inspiration": {
+   "cue_s": 14.561,
+   "video_s": 199.342,
+   "cuff": 115.3
+  },
+  "taps_every_beat_from": {
+   "cue_s": 14.561,
+   "video_s": 199.342,
+   "cuff": 115.3
+  },
+  "breath_t0_cue_s": 5.729
+ }
+}

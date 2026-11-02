@@ -1,0 +1,650 @@
+[
+ {
+  "beat": "1A",
+  "layer": "Breath/Chip",
+  "sync": "in",
+  "word": "in,",
+  "start_in_beat_s": 7.2,
+  "animatic_s": 8.2,
+  "note": ""
+ },
+ {
+  "beat": "1A",
+  "layer": "Breath/Chip",
+  "sync": "out",
+  "word": "out,",
+  "start_in_beat_s": 9.92,
+  "animatic_s": 10.92,
+  "note": ""
+ },
+ {
+  "beat": "1A",
+  "layer": "Waveform/Trace",
+  "sync": "OUT",
+  "word": "out,",
+  "start_in_beat_s": 9.92,
+  "animatic_s": 10.92,
+  "note": ""
+ },
+ {
+  "beat": "1B",
+  "layer": "(beat)",
+  "sync": "gap",
+  "word": "gap",
+  "start_in_beat_s": 0.4,
+  "animatic_s": 13.55,
+  "note": ""
+ },
+ {
+  "beat": "1B",
+  "layer": "(beat)",
+  "sync": "ten",
+  "word": "ten",
+  "start_in_beat_s": 1.48,
+  "animatic_s": 14.63,
+  "note": ""
+ },
+ {
+  "beat": "1B",
+  "layer": "Title/Pulsus_paradoxus",
+  "sync": "pulsus paradoxus",
+  "word": "pulsus",
+  "start_in_beat_s": 4.27,
+  "animatic_s": 17.42,
+  "note": ""
+ },
+ {
+  "beat": "1C",
+  "layer": "Promise/Why",
+  "sync": "why",
+  "word": "why",
+  "start_in_beat_s": 0.64,
+  "animatic_s": 23.38,
+  "note": ""
+ },
+ {
+  "beat": "1C",
+  "layer": "Promise/Catch",
+  "sync": "catch",
+  "word": "catch",
+  "start_in_beat_s": 2.39,
+  "animatic_s": 25.13,
+  "note": ""
+ },
+ {
+  "beat": "2A",
+  "layer": "Axial/Chest",
+  "sync": "breathe in",
+  "word": "breathe",
+  "start_in_beat_s": 2.35,
+  "animatic_s": 30.77,
+  "note": ""
+ },
+ {
+  "beat": "2A",
+  "layer": "Axial/Chest",
+  "sync": "breathe in",
+  "word": "breathe",
+  "start_in_beat_s": 2.35,
+  "animatic_s": 30.77,
+  "note": ""
+ },
+ {
+  "beat": "2A",
+  "layer": "Coronal/Diaphragm_arrows",
+  "sync": "drops",
+  "word": "drops,",
+  "start_in_beat_s": 3.84,
+  "animatic_s": 32.26,
+  "note": ""
+ },
+ {
+  "beat": "2A",
+  "layer": "Label/Pressure",
+  "sync": "falls",
+  "word": "falls.",
+  "start_in_beat_s": 6.0,
+  "animatic_s": 34.42,
+  "note": ""
+ },
+ {
+  "beat": "2B",
+  "layer": "Flow/Venous_dots",
+  "sync": "draws",
+  "word": "draws",
+  "start_in_beat_s": 1.15,
+  "animatic_s": 36.83,
+  "note": ""
+ },
+ {
+  "beat": "2B",
+  "layer": "Heart/RV",
+  "sync": "fills more",
+  "word": "fills",
+  "start_in_beat_s": 5.19,
+  "animatic_s": 40.87,
+  "note": "phrase not verbatim in narration; timed on \"fills\""
+ },
+ {
+  "beat": "2B",
+  "layer": "Label/RV",
+  "sync": "more",
+  "word": "more",
+  "start_in_beat_s": 5.96,
+  "animatic_s": 41.64,
+  "note": "word occurs 2x in beat (1.55, 5.96 s); occurrence chosen to match the Intent line, check at Stage 6"
+ },
+ {
+  "beat": "2C",
+  "layer": "Flow/Pulmonary_dots",
+  "sync": "hold on",
+  "word": "hold",
+  "start_in_beat_s": 6.125,
+  "animatic_s": 49.39,
+  "note": ""
+ },
+ {
+  "beat": "2C",
+  "layer": "Lungs/Vessels",
+  "sync": "stretch",
+  "word": "stretch",
+  "start_in_beat_s": 4.55,
+  "animatic_s": 47.81,
+  "note": ""
+ },
+ {
+  "beat": "2C",
+  "layer": "Label/Lungs",
+  "sync": "moment",
+  "word": "moment.",
+  "start_in_beat_s": 7.06,
+  "animatic_s": 50.32,
+  "note": ""
+ },
+ {
+  "beat": "2D",
+  "layer": "Heart/LV",
+  "sync": "less",
+  "word": "less",
+  "start_in_beat_s": 3.87,
+  "animatic_s": 55.26,
+  "note": "word occurs 3x in beat (3.87, 5.10, 8.04 s); occurrence chosen to match the Intent line, check at Stage 6"
+ },
+ {
+  "beat": "2D",
+  "layer": "Gauge/Needle",
+  "sync": "dips",
+  "word": "dips,",
+  "start_in_beat_s": 6.7,
+  "animatic_s": 58.09,
+  "note": ""
+ },
+ {
+  "beat": "2D",
+  "layer": "Label/LV",
+  "sync": "less",
+  "word": "less",
+  "start_in_beat_s": 3.87,
+  "animatic_s": 55.26,
+  "note": "word occurs 3x in beat (3.87, 5.10, 8.04 s); occurrence chosen to match the Intent line, check at Stage 6"
+ },
+ {
+  "beat": "2D",
+  "layer": "Label/Systolic",
+  "sync": "ten",
+  "word": "ten",
+  "start_in_beat_s": 8.47,
+  "animatic_s": 59.86,
+  "note": ""
+ },
+ {
+  "beat": "2D",
+  "layer": "Axial/Chest",
+  "sync": "out",
+  "word": "out,",
+  "start_in_beat_s": 10.98,
+  "animatic_s": 62.37,
+  "note": ""
+ },
+ {
+  "beat": "2D",
+  "layer": "Heart/LV, Heart/RV",
+  "sync": "back",
+  "word": "back.",
+  "start_in_beat_s": 12.34,
+  "animatic_s": 63.73,
+  "note": ""
+ },
+ {
+  "beat": "2D",
+  "layer": "Gauge/Needle",
+  "sync": "back",
+  "word": "back.",
+  "start_in_beat_s": 12.34,
+  "animatic_s": 63.73,
+  "note": ""
+ },
+ {
+  "beat": "2E",
+  "layer": "Gauge/Threshold_line",
+  "sync": "ten",
+  "word": "ten",
+  "start_in_beat_s": 1.39,
+  "animatic_s": 65.95,
+  "note": ""
+ },
+ {
+  "beat": "2E",
+  "layer": "Gauge/Needle",
+  "sync": "bigger",
+  "word": "bigger",
+  "start_in_beat_s": 0.91,
+  "animatic_s": 65.47,
+  "note": ""
+ },
+ {
+  "beat": "2E",
+  "layer": "Title/Threshold",
+  "sync": "paradoxus",
+  "word": "Paradoxus.",
+  "start_in_beat_s": 4.16,
+  "animatic_s": 68.72,
+  "note": ""
+ },
+ {
+  "beat": "3A",
+  "layer": "Pericardium/Fluid",
+  "sync": "fluid",
+  "word": "fluid.",
+  "start_in_beat_s": 1.84,
+  "animatic_s": 78.08,
+  "note": "word occurs 2x in beat (1.84, 7.48 s); occurrence chosen to match the Intent line, check at Stage 6"
+ },
+ {
+  "beat": "3A",
+  "layer": "Pericardium/Sac",
+  "sync": "can't stretch",
+  "word": "can't",
+  "start_in_beat_s": 5.82,
+  "animatic_s": 82.06,
+  "note": ""
+ },
+ {
+  "beat": "3A",
+  "layer": "Pericardium/Fluid",
+  "sync": "fluid builds",
+  "word": "fluid",
+  "start_in_beat_s": 7.48,
+  "animatic_s": 83.72,
+  "note": ""
+ },
+ {
+  "beat": "3A",
+  "layer": "Pericardium/Fluid",
+  "sync": "climbs",
+  "word": "climbs",
+  "start_in_beat_s": 9.74,
+  "animatic_s": 85.98,
+  "note": ""
+ },
+ {
+  "beat": "3A",
+  "layer": "Pericardium/Fluid",
+  "sync": "restrict filling",
+  "word": "restrict",
+  "start_in_beat_s": 11.14,
+  "animatic_s": 87.38,
+  "note": ""
+ },
+ {
+  "beat": "3A",
+  "layer": "Label/Effusion",
+  "sync": "pericardium",
+  "word": "pericardium",
+  "start_in_beat_s": 0.97,
+  "animatic_s": 77.21,
+  "note": ""
+ },
+ {
+  "beat": "3B",
+  "layer": "Chest/Diaphragm",
+  "sync": "in",
+  "word": "in,",
+  "start_in_beat_s": 1.02,
+  "animatic_s": 90.04,
+  "note": ""
+ },
+ {
+  "beat": "3B",
+  "layer": "Flow/Venous_dots",
+  "sync": "fill",
+  "word": "fill,",
+  "start_in_beat_s": 3.5,
+  "animatic_s": 92.52,
+  "note": ""
+ },
+ {
+  "beat": "3B",
+  "layer": "Heart/RV_free_wall",
+  "sync": "pinned",
+  "word": "pinned",
+  "start_in_beat_s": 5.17,
+  "animatic_s": 94.19,
+  "note": ""
+ },
+ {
+  "beat": "3B",
+  "layer": "Label/Pinned",
+  "sync": "pinned",
+  "word": "pinned",
+  "start_in_beat_s": 5.17,
+  "animatic_s": 94.19,
+  "note": ""
+ },
+ {
+  "beat": "3B",
+  "layer": "Heart/Septum",
+  "sync": "push",
+  "word": "pushing",
+  "start_in_beat_s": 8.8,
+  "animatic_s": 97.82,
+  "note": "partial word"
+ },
+ {
+  "beat": "3B",
+  "layer": "Heart/LV",
+  "sync": "left ventricle",
+  "word": "left",
+  "start_in_beat_s": 10.13,
+  "animatic_s": 99.15,
+  "note": ""
+ },
+ {
+  "beat": "3B",
+  "layer": "Label/Septum",
+  "sync": "septum",
+  "word": "septum",
+  "start_in_beat_s": 9.16,
+  "animatic_s": 98.18,
+  "note": ""
+ },
+ {
+  "beat": "3C",
+  "layer": "Flow/Aortic_dots",
+  "sync": "smaller stroke",
+  "word": "smaller",
+  "start_in_beat_s": 3.76,
+  "animatic_s": 104.44,
+  "note": ""
+ },
+ {
+  "beat": "3C",
+  "layer": "Gauge/Needle",
+  "sync": "much further",
+  "word": "much",
+  "start_in_beat_s": 6.31,
+  "animatic_s": 106.98,
+  "note": ""
+ },
+ {
+  "beat": "3C",
+  "layer": "Label/LV",
+  "sync": "fills less",
+  "word": "fills",
+  "start_in_beat_s": 2.44,
+  "animatic_s": 103.11,
+  "note": ""
+ },
+ {
+  "beat": "3D",
+  "layer": "Card/Stat",
+  "sync": "think tamponade",
+  "word": "think",
+  "start_in_beat_s": 4.16,
+  "animatic_s": 120.33,
+  "note": ""
+ },
+ {
+  "beat": "3D",
+  "layer": "Card/Action",
+  "sync": "bedside echo",
+  "word": "bedside",
+  "start_in_beat_s": 7.42,
+  "animatic_s": 123.59,
+  "note": ""
+ },
+ {
+  "beat": "3D",
+  "layer": "Card/Action",
+  "sync": "rule tamponade out",
+  "word": "rule",
+  "start_in_beat_s": 9.68,
+  "animatic_s": 125.85,
+  "note": ""
+ },
+ {
+  "beat": "3E",
+  "layer": "Trace/Systolic_line",
+  "sync": "falls",
+  "word": "falls",
+  "start_in_beat_s": 4.635,
+  "animatic_s": 132.3,
+  "note": ""
+ },
+ {
+  "beat": "3E",
+  "layer": "Trace/Systolic_line",
+  "sync": "barely moves",
+  "word": "barely",
+  "start_in_beat_s": 6.2,
+  "animatic_s": 133.87,
+  "note": ""
+ },
+ {
+  "beat": "3E",
+  "layer": "Label/PP",
+  "sync": "narrows",
+  "word": "narrows.",
+  "start_in_beat_s": 8.26,
+  "animatic_s": 135.93,
+  "note": ""
+ },
+ {
+  "beat": "4A",
+  "layer": "Lungs/Bronchi",
+  "sync": "COPD",
+  "word": "COPD.",
+  "start_in_beat_s": 6.67,
+  "animatic_s": 144.43,
+  "note": ""
+ },
+ {
+  "beat": "4A",
+  "layer": "Inflammation",
+  "sync": "COPD",
+  "word": "COPD.",
+  "start_in_beat_s": 6.67,
+  "animatic_s": 144.43,
+  "note": ""
+ },
+ {
+  "beat": "4A",
+  "layer": "Title/Cause",
+  "sync": "asthma",
+  "word": "asthma",
+  "start_in_beat_s": 5.82,
+  "animatic_s": 143.58,
+  "note": ""
+ },
+ {
+  "beat": "4B",
+  "layer": "Coronal/Diaphragm",
+  "sync": "pull",
+  "word": "pull",
+  "start_in_beat_s": 0.24,
+  "animatic_s": 146.05,
+  "note": ""
+ },
+ {
+  "beat": "4B",
+  "layer": "Coronal/Diaphragm_arrows",
+  "sync": "pull",
+  "word": "pull",
+  "start_in_beat_s": 0.24,
+  "animatic_s": 146.05,
+  "note": ""
+ },
+ {
+  "beat": "4B",
+  "layer": "Axial/Chest",
+  "sync": "enormous",
+  "word": "enormous",
+  "start_in_beat_s": 3.49,
+  "animatic_s": 149.3,
+  "note": ""
+ },
+ {
+  "beat": "4B",
+  "layer": "Readout/Pressure",
+  "sync": "forty",
+  "word": "forty",
+  "start_in_beat_s": 6.48,
+  "animatic_s": 152.29,
+  "note": ""
+ },
+ {
+  "beat": "4C",
+  "layer": "Heart/LV_arrow",
+  "sync": "left-heart filling too",
+  "word": "left-heart",
+  "start_in_beat_s": 4.16,
+  "animatic_s": 159.64,
+  "note": ""
+ },
+ {
+  "beat": "4C",
+  "layer": "Heart/LV_arrow",
+  "sync": "And",
+  "word": "And",
+  "start_in_beat_s": 5.77,
+  "animatic_s": 161.25,
+  "note": "word occurs 2x in beat (3.36, 5.77 s); occurrence chosen to match the Intent line, check at Stage 6"
+ },
+ {
+  "beat": "4C",
+  "layer": "Heart/LV_arrow",
+  "sync": "negative pressure",
+  "word": "negative",
+  "start_in_beat_s": 6.21,
+  "animatic_s": 161.69,
+  "note": ""
+ },
+ {
+  "beat": "4C",
+  "layer": "Label/Afterload",
+  "sync": "afterload",
+  "word": "afterload,",
+  "start_in_beat_s": 8.94,
+  "animatic_s": 164.42,
+  "note": ""
+ },
+ {
+  "beat": "4C",
+  "layer": "Gauge/Needle",
+  "sync": "falls",
+  "word": "falls.",
+  "start_in_beat_s": 11.08,
+  "animatic_s": 166.56,
+  "note": ""
+ },
+ {
+  "beat": "4C",
+  "layer": "Trace/Systolic_line",
+  "sync": "systolic",
+  "word": "systolic",
+  "start_in_beat_s": 10.19,
+  "animatic_s": 165.67,
+  "note": ""
+ },
+ {
+  "beat": "4C",
+  "layer": "Trace/Systolic_line",
+  "sync": "diastolic",
+  "word": "diastolic",
+  "start_in_beat_s": 12.85,
+  "animatic_s": 168.33,
+  "note": ""
+ },
+ {
+  "beat": "4C",
+  "layer": "Label/Shape",
+  "sync": "with it",
+  "word": "with",
+  "start_in_beat_s": 14.53,
+  "animatic_s": 170.01,
+  "note": ""
+ },
+ {
+  "beat": "5A",
+  "layer": "Card/Setup",
+  "sync": "stethoscope",
+  "word": "stethoscope,",
+  "start_in_beat_s": 2.41,
+  "animatic_s": 173.96,
+  "note": ""
+ },
+ {
+  "beat": "5A",
+  "layer": "Card/Breathing",
+  "sync": "normally",
+  "word": "normally,",
+  "start_in_beat_s": 7.3,
+  "animatic_s": 178.85,
+  "note": ""
+ },
+ {
+  "beat": "5E",
+  "layer": "Readout/Equation",
+  "sync": "difference",
+  "word": "difference",
+  "start_in_beat_s": 0.32,
+  "animatic_s": 203.95,
+  "note": ""
+ },
+ {
+  "beat": "5E",
+  "layer": "Readout/Threshold",
+  "sync": "paradoxus",
+  "word": "paradoxus.",
+  "start_in_beat_s": 5.85,
+  "animatic_s": 209.48,
+  "note": ""
+ },
+ {
+  "beat": "5F",
+  "layer": "Rule_1",
+  "sync": "lowers",
+  "word": "lowers",
+  "start_in_beat_s": 1.67,
+  "animatic_s": 212.72,
+  "note": ""
+ },
+ {
+  "beat": "5F",
+  "layer": "Rule_2",
+  "sync": "bigger",
+  "word": "bigger.",
+  "start_in_beat_s": 7.53,
+  "animatic_s": 218.58,
+  "note": ""
+ },
+ {
+  "beat": "5F",
+  "layer": "Rule_3",
+  "sync": "tamponade",
+  "word": "tamponade.",
+  "start_in_beat_s": 11.98,
+  "animatic_s": 223.03,
+  "note": ""
+ }
+]

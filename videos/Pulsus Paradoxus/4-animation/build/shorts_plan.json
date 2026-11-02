@@ -1,0 +1,723 @@
+{
+ "master": "Pulsus Paradoxus",
+ "w": 1080,
+ "h": 1920,
+ "fps": 30,
+ "bg": "#151515",
+ "grid": "#1F2021",
+ "acc": "#FF4057",
+ "fg": "#F2F2F2",
+ "video": {
+  "scale": 56.25,
+  "pos": [
+   540,
+   964
+  ]
+ },
+ "cta": {
+  "audio": "audio/cues/Heartbeat_endcard.wav",
+  "lub": 0.4,
+  "lines": [
+   "Watch the full video",
+   "on YouTube"
+  ],
+  "sub": "Pulsus paradoxus, explained in 4 minutes",
+  "pill": "TAP THE LINK BELOW"
+ },
+ "shorts": [
+  {
+   "n": 1,
+   "name": "Short 1 - What is it",
+   "title": [
+    "Your pulse fades",
+    "when you breathe in"
+   ],
+   "segs": [
+    [
+     4.0,
+     26.04,
+     [
+      "1A",
+      "1B"
+     ]
+    ],
+    [
+     54.69,
+     67.86,
+     [
+      "2D"
+     ]
+    ]
+   ],
+   "dur": 35.21,
+   "layers": [
+    {
+     "start": -4.0,
+     "inp": 0.0,
+     "out": 22.04,
+     "master_in": 4.0,
+     "master_out": 26.04
+    },
+    {
+     "start": -32.65,
+     "inp": 22.04,
+     "out": 35.21,
+     "master_in": 54.69,
+     "master_out": 67.86
+    }
+   ],
+   "caps": [
+    {
+     "t": 0.33,
+     "end": 1.35,
+     "text": "Picture a blood pressure",
+     "off": 1.44
+    },
+    {
+     "t": 1.44,
+     "end": 2.64,
+     "text": "cuff on a patient's arm.",
+     "off": 3.18
+    },
+    {
+     "t": 3.18,
+     "end": 4.47,
+     "text": "As you let the pressure down,",
+     "off": 4.77
+    },
+    {
+     "t": 4.77,
+     "end": 5.96,
+     "text": "you hear the first tap,",
+     "off": 6.46
+    },
+    {
+     "t": 6.46,
+     "end": 7.02,
+     "text": "but when the patient",
+     "off": 7.1
+    },
+    {
+     "t": 7.1,
+     "end": 7.77,
+     "text": "breathes in,",
+     "off": 8.05
+    },
+    {
+     "t": 8.05,
+     "end": 9.21,
+     "text": "the tap disappears,",
+     "off": 9.58
+    },
+    {
+     "t": 9.58,
+     "end": 10.41,
+     "text": "and when they breathe out,",
+     "off": 10.72
+    },
+    {
+     "t": 10.72,
+     "end": 11.75,
+     "text": "it comes right back.",
+     "off": 12.35
+    },
+    {
+     "t": 12.501,
+     "end": 13.526,
+     "text": "When that gap is bigger",
+     "off": 13.611
+    },
+    {
+     "t": 13.611,
+     "end": 14.731,
+     "text": "than ten millimeters of",
+     "off": 14.801
+    },
+    {
+     "t": 14.801,
+     "end": 15.251,
+     "text": "mercury,",
+     "off": 15.561
+    },
+    {
+     "t": 15.561,
+     "end": 16.141,
+     "text": "it has a name:",
+     "off": 16.721
+    },
+    {
+     "t": 16.721,
+     "end": 18.161,
+     "text": "pulsus paradoxus.",
+     "off": 18.511
+    },
+    {
+     "t": 18.511,
+     "end": 19.551,
+     "text": "And in the right patient,",
+     "off": 19.871
+    },
+    {
+     "t": 19.871,
+     "end": 21.251,
+     "text": "it signals an emergency.",
+     "off": 21.851
+    },
+    {
+     "t": 22.06,
+     "end": 23.78,
+     "text": "So with each breath in,",
+     "off": 24.08
+    },
+    {
+     "t": 24.08,
+     "end": 25.29,
+     "text": "the left ventricle fills",
+     "off": 25.4
+    },
+    {
+     "t": 25.4,
+     "end": 26.65,
+     "text": "a little less and pumps",
+     "off": 26.73
+    },
+    {
+     "t": 26.73,
+     "end": 27.41,
+     "text": "a little less,",
+     "off": 27.68
+    },
+    {
+     "t": 27.68,
+     "end": 29.14,
+     "text": "and systolic pressure dips,",
+     "off": 29.46
+    },
+    {
+     "t": 29.46,
+     "end": 30.43,
+     "text": "normally by less than",
+     "off": 30.51
+    },
+    {
+     "t": 30.51,
+     "end": 31.78,
+     "text": "ten millimeters of mercury.",
+     "off": 32.38
+    },
+    {
+     "t": 32.44,
+     "end": 33.31,
+     "text": "When you breathe out,",
+     "off": 33.58
+    },
+    {
+     "t": 33.58,
+     "end": 34.56,
+     "text": "everything comes back.",
+     "off": 35.06
+    }
+   ],
+   "cta": 35.21,
+   "total": 38.71,
+   "checks": [
+    1.0,
+    17.61,
+    34.71,
+    35.71,
+    38.41
+   ]
+  },
+  {
+   "n": 2,
+   "name": "Short 2 - Why tamponade",
+   "title": [
+    "Why tamponade",
+    "causes pulsus paradoxus"
+   ],
+   "segs": [
+    [
+     80.54,
+     132.78,
+     [
+      "3A",
+      "3B",
+      "3C",
+      "3D"
+     ]
+    ]
+   ],
+   "dur": 52.24,
+   "layers": [
+    {
+     "start": -80.54,
+     "inp": 0.0,
+     "out": 52.24,
+     "master_in": 80.54,
+     "master_out": 132.78
+    }
+   ],
+   "caps": [
+    {
+     "t": 0.503,
+     "end": 1.463,
+     "text": "Now let's fill the",
+     "off": 1.543
+    },
+    {
+     "t": 1.543,
+     "end": 3.17,
+     "text": "pericardial cavity with fluid.",
+     "off": 3.679
+    },
+    {
+     "t": 3.679,
+     "end": 4.891,
+     "text": "The heart is still beating,",
+     "off": 5.163
+    },
+    {
+     "t": 5.163,
+     "end": 5.943,
+     "text": "but it's sitting inside",
+     "off": 6.023
+    },
+    {
+     "t": 6.023,
+     "end": 7.863,
+     "text": "a sac that can't stretch,",
+     "off": 7.883
+    },
+    {
+     "t": 7.883,
+     "end": 9.178,
+     "text": "so as the fluid builds,",
+     "off": 9.387
+    },
+    {
+     "t": 9.387,
+     "end": 10.183,
+     "text": "the pressure around the",
+     "off": 10.263
+    },
+    {
+     "t": 10.263,
+     "end": 11.543,
+     "text": "heart climbs until it",
+     "off": 11.623
+    },
+    {
+     "t": 11.623,
+     "end": 13.094,
+     "text": "starts to restrict filling.",
+     "off": 13.634
+    },
+    {
+     "t": 13.634,
+     "end": 14.124,
+     "text": "When the patient",
+     "off": 14.204
+    },
+    {
+     "t": 14.204,
+     "end": 14.954,
+     "text": "breathes in,",
+     "off": 15.254
+    },
+    {
+     "t": 15.254,
+     "end": 16.104,
+     "text": "the right ventricle",
+     "off": 16.234
+    },
+    {
+     "t": 16.234,
+     "end": 17.264,
+     "text": "still tries to fill,",
+     "off": 17.634
+    },
+    {
+     "t": 17.634,
+     "end": 18.724,
+     "text": "but its outer wall is",
+     "off": 18.764
+    },
+    {
+     "t": 18.764,
+     "end": 19.854,
+     "text": "pinned against the fluid,",
+     "off": 20.294
+    },
+    {
+     "t": 20.294,
+     "end": 21.244,
+     "text": "so the only way it can",
+     "off": 21.324
+    },
+    {
+     "t": 21.324,
+     "end": 22.594,
+     "text": "make room is by pushing",
+     "off": 22.674
+    },
+    {
+     "t": 22.674,
+     "end": 23.944,
+     "text": "the septum into the left",
+     "off": 24.014
+    },
+    {
+     "t": 24.014,
+     "end": 24.434,
+     "text": "ventricle.",
+     "off": 25.034
+    },
+    {
+     "t": 25.288,
+     "end": 26.568,
+     "text": "With less room on the left,",
+     "off": 26.808
+    },
+    {
+     "t": 26.808,
+     "end": 28.428,
+     "text": "the left ventricle fills less,",
+     "off": 28.628
+    },
+    {
+     "t": 28.628,
+     "end": 29.848,
+     "text": "ejects a smaller stroke,",
+     "off": 30.078
+    },
+    {
+     "t": 30.078,
+     "end": 31.013,
+     "text": "and systolic pressure",
+     "off": 31.098
+    },
+    {
+     "t": 31.098,
+     "end": 32.268,
+     "text": "drops much further than",
+     "off": 32.348
+    },
+    {
+     "t": 32.348,
+     "end": 32.588,
+     "text": "normal.",
+     "off": 33.188
+    },
+    {
+     "t": 33.218,
+     "end": 34.368,
+     "text": "This is ventricular",
+     "off": 34.448
+    },
+    {
+     "t": 34.448,
+     "end": 35.388,
+     "text": "interdependence:",
+     "off": 35.803
+    },
+    {
+     "t": 35.803,
+     "end": 36.998,
+     "text": "inside a tight sac,",
+     "off": 37.298
+    },
+    {
+     "t": 37.298,
+     "end": 38.508,
+     "text": "one ventricle can only",
+     "off": 38.598
+    },
+    {
+     "t": 38.598,
+     "end": 40.048,
+     "text": "fill at the other's expense.",
+     "off": 40.648
+    },
+    {
+     "t": 40.782,
+     "end": 41.552,
+     "text": "In a patient with a",
+     "off": 41.622
+    },
+    {
+     "t": 41.622,
+     "end": 42.852,
+     "text": "pericardial effusion,",
+     "off": 43.182
+    },
+    {
+     "t": 43.182,
+     "end": 44.462,
+     "text": "pulsus paradoxus should",
+     "off": 44.542
+    },
+    {
+     "t": 44.542,
+     "end": 45.762,
+     "text": "make you think tamponade,",
+     "off": 46.112
+    },
+    {
+     "t": 46.112,
+     "end": 47.012,
+     "text": "and the next step is",
+     "off": 47.172
+    },
+    {
+     "t": 47.172,
+     "end": 48.082,
+     "text": "urgent assessment with",
+     "off": 48.162
+    },
+    {
+     "t": 48.162,
+     "end": 48.862,
+     "text": "bedside echo.",
+     "off": 49.412
+    },
+    {
+     "t": 49.412,
+     "end": 50.602,
+     "text": "Its absence doesn't rule",
+     "off": 50.672
+    },
+    {
+     "t": 50.672,
+     "end": 51.562,
+     "text": "tamponade out.",
+     "off": 52.062
+    }
+   ],
+   "cta": 52.24,
+   "total": 55.74,
+   "checks": [
+    1.0,
+    26.12,
+    51.74,
+    52.74,
+    55.44
+   ]
+  },
+  {
+   "n": 3,
+   "name": "Short 3 - How to measure",
+   "title": [
+    "How to measure",
+    "pulsus paradoxus"
+   ],
+   "segs": [
+    [
+     179.86,
+     219.66,
+     [
+      "5A",
+      "5B",
+      "5C",
+      "5D",
+      "5E"
+     ]
+    ]
+   ],
+   "dur": 39.8,
+   "layers": [
+    {
+     "start": -179.86,
+     "inp": 0.0,
+     "out": 39.8,
+     "master_in": 179.86,
+     "master_out": 219.66
+    }
+   ],
+   "caps": [
+    {
+     "t": 0.362,
+     "end": 1.072,
+     "text": "To measure it,",
+     "off": 1.262
+    },
+    {
+     "t": 1.262,
+     "end": 2.072,
+     "text": "you'll need a manual",
+     "off": 2.162
+    },
+    {
+     "t": 2.162,
+     "end": 3.442,
+     "text": "cuff and a stethoscope,",
+     "off": 3.662
+    },
+    {
+     "t": 3.662,
+     "end": 4.802,
+     "text": "because automatic cuffs",
+     "off": 4.862
+    },
+    {
+     "t": 4.862,
+     "end": 6.082,
+     "text": "can't measure it accurately.",
+     "off": 6.602
+    },
+    {
+     "t": 6.602,
+     "end": 7.522,
+     "text": "Let the patient breathe",
+     "off": 7.602
+    },
+    {
+     "t": 7.602,
+     "end": 8.322,
+     "text": "normally,",
+     "off": 8.402
+    },
+    {
+     "t": 8.402,
+     "end": 9.332,
+     "text": "since asking for deep",
+     "off": 9.412
+    },
+    {
+     "t": 9.412,
+     "end": 10.542,
+     "text": "breaths will exaggerate",
+     "off": 10.582
+    },
+    {
+     "t": 10.582,
+     "end": 10.922,
+     "text": "the number.",
+     "off": 11.522
+    },
+    {
+     "t": 11.761,
+     "end": 12.921,
+     "text": "Inflate the cuff until",
+     "off": 13.101
+    },
+    {
+     "t": 13.101,
+     "end": 14.221,
+     "text": "every sound is gone,",
+     "off": 14.601
+    },
+    {
+     "t": 14.601,
+     "end": 15.471,
+     "text": "and then let the",
+     "off": 15.561
+    },
+    {
+     "t": 15.561,
+     "end": 16.721,
+     "text": "pressure fall slowly.",
+     "off": 17.321
+    },
+    {
+     "t": 17.59,
+     "end": 18.28,
+     "text": "At first,",
+     "off": 18.46
+    },
+    {
+     "t": 18.46,
+     "end": 19.54,
+     "text": "you'll hear taps only",
+     "off": 19.62
+    },
+    {
+     "t": 19.62,
+     "end": 20.19,
+     "text": "when the patient",
+     "off": 20.28
+    },
+    {
+     "t": 20.28,
+     "end": 21.03,
+     "text": "breathes out.",
+     "off": 21.51
+    },
+    {
+     "t": 21.51,
+     "end": 22.65,
+     "text": "Make a note of that pressure.",
+     "off": 23.25
+    },
+    {
+     "t": 24.967,
+     "end": 25.507,
+     "text": "Keep letting the",
+     "off": 25.597
+    },
+    {
+     "t": 25.597,
+     "end": 26.877,
+     "text": "pressure down until you",
+     "off": 26.997
+    },
+    {
+     "t": 26.997,
+     "end": 28.457,
+     "text": "hear taps on every beat,",
+     "off": 28.837
+    },
+    {
+     "t": 28.837,
+     "end": 30.027,
+     "text": "both in and out,",
+     "off": 30.397
+    },
+    {
+     "t": 30.397,
+     "end": 31.497,
+     "text": "and note that pressure too.",
+     "off": 32.097
+    },
+    {
+     "t": 32.419,
+     "end": 33.179,
+     "text": "The difference between",
+     "off": 33.319
+    },
+    {
+     "t": 33.319,
+     "end": 34.519,
+     "text": "those two numbers is the",
+     "off": 34.669
+    },
+    {
+     "t": 34.669,
+     "end": 35.689,
+     "text": "size of the pulsus,",
+     "off": 36.029
+    },
+    {
+     "t": 36.029,
+     "end": 37.099,
+     "text": "and anything over ten",
+     "off": 37.359
+    },
+    {
+     "t": 37.359,
+     "end": 39.089,
+     "text": "counts as pulsus paradoxus.",
+     "off": 39.589
+    }
+   ],
+   "cta": 39.8,
+   "total": 43.3,
+   "checks": [
+    1.0,
+    19.9,
+    39.3,
+    40.3,
+    43.0
+   ]
+  }
+ ]
+}

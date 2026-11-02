@@ -1,0 +1,502 @@
+[
+ {
+  "t": 0.3,
+  "file": "0000.30_1A_start.png"
+ },
+ {
+  "t": 4.0,
+  "file": "0004.00_1A_insp1.png"
+ },
+ {
+  "t": 6.25,
+  "file": "0006.25_1A_first_tap.png"
+ },
+ {
+  "t": 8.8,
+  "file": "0008.80_1A_Breath-Chip_in.png"
+ },
+ {
+  "t": 9.0,
+  "file": "0009.00_1A_insp2_quiet.png"
+ },
+ {
+  "t": 10.9,
+  "file": "0010.90_1A_taps_back.png"
+ },
+ {
+  "t": 11.52,
+  "file": "0011.52_1A_Breath-Chip_out.png"
+ },
+ {
+  "t": 12.95,
+  "file": "0012.95_1A_end.png"
+ },
+ {
+  "t": 13.0,
+  "file": "0013.00_1A_cue_end.png"
+ },
+ {
+  "t": 13.45,
+  "file": "0013.45_1B_start.png"
+ },
+ {
+  "t": 14.15,
+  "file": "0014.15_1B_(beat)_gap.png"
+ },
+ {
+  "t": 15.23,
+  "file": "0015.23_1B_(beat)_ten.png"
+ },
+ {
+  "t": 18.02,
+  "file": "0018.02_1B_Title-Pulsus_paradoxus_pulsus.png"
+ },
+ {
+  "t": 22.54,
+  "file": "0022.54_1B_end.png"
+ },
+ {
+  "t": 23.04,
+  "file": "0023.04_1C_start.png"
+ },
+ {
+  "t": 23.98,
+  "file": "0023.98_1C_Promise-Why_why.png"
+ },
+ {
+  "t": 25.73,
+  "file": "0025.73_1C_Promise-Catch_catch.png"
+ },
+ {
+  "t": 27.4,
+  "file": "0027.40_1C_morph_starts.png"
+ },
+ {
+  "t": 27.65,
+  "file": "0027.65_1C_morph_mid.png"
+ },
+ {
+  "t": 27.72,
+  "file": "0027.72_1C_end.png"
+ },
+ {
+  "t": 27.85,
+  "file": "0027.85_1C_morph_cut.png"
+ },
+ {
+  "t": 28.07,
+  "file": "0028.07_2A_morph_line.png"
+ },
+ {
+  "t": 28.22,
+  "file": "0028.22_2A_start.png"
+ },
+ {
+  "t": 28.47,
+  "file": "0028.47_2A_morph_curl.png"
+ },
+ {
+  "t": 28.77,
+  "file": "0028.77_2A_morph_late.png"
+ },
+ {
+  "t": 29.07,
+  "file": "0029.07_2A_morph_done.png"
+ },
+ {
+  "t": 29.37,
+  "file": "0029.37_2A_heart_in.png"
+ },
+ {
+  "t": 30.12,
+  "file": "0030.12_2A_chest_in.png"
+ },
+ {
+  "t": 31.37,
+  "file": "0031.37_2A_Axial-Chest_breathe.png"
+ },
+ {
+  "t": 32.86,
+  "file": "0032.86_2A_Coronal-Diaphragm_arrows_drops.png"
+ },
+ {
+  "t": 35.02,
+  "file": "0035.02_2A_Label-Pressure_falls.png"
+ },
+ {
+  "t": 35.48,
+  "file": "0035.48_2A_end.png"
+ },
+ {
+  "t": 35.98,
+  "file": "0035.98_2B_start.png"
+ },
+ {
+  "t": 37.43,
+  "file": "0037.43_2B_Flow-Venous_dots_draws.png"
+ },
+ {
+  "t": 41.47,
+  "file": "0041.47_2B_Heart-RV_fills.png"
+ },
+ {
+  "t": 42.24,
+  "file": "0042.24_2B_Label-RV_more.png"
+ },
+ {
+  "t": 43.06,
+  "file": "0043.06_2B_end.png"
+ },
+ {
+  "t": 43.56,
+  "file": "0043.56_2C_start.png"
+ },
+ {
+  "t": 48.41,
+  "file": "0048.41_2C_Lungs-Vessels_stretch.png"
+ },
+ {
+  "t": 49.99,
+  "file": "0049.99_2C_Flow-Pulmonary_dots_hold.png"
+ },
+ {
+  "t": 50.92,
+  "file": "0050.92_2C_Label-Lungs_moment.png"
+ },
+ {
+  "t": 51.19,
+  "file": "0051.19_2C_end.png"
+ },
+ {
+  "t": 51.69,
+  "file": "0051.69_2D_start.png"
+ },
+ {
+  "t": 55.86,
+  "file": "0055.86_2D_Heart-LV_less.png"
+ },
+ {
+  "t": 58.69,
+  "file": "0058.69_2D_Gauge-Needle_dips.png"
+ },
+ {
+  "t": 60.46,
+  "file": "0060.46_2D_Label-Systolic_ten.png"
+ },
+ {
+  "t": 62.97,
+  "file": "0062.97_2D_Axial-Chest_out.png"
+ },
+ {
+  "t": 64.33,
+  "file": "0064.33_2D_Heart-LV_back.png"
+ },
+ {
+  "t": 64.36,
+  "file": "0064.36_2D_end.png"
+ },
+ {
+  "t": 64.86,
+  "file": "0064.86_2E_start.png"
+ },
+ {
+  "t": 66.07,
+  "file": "0066.07_2E_Gauge-Needle_bigger.png"
+ },
+ {
+  "t": 66.55,
+  "file": "0066.55_2E_Gauge-Threshold_line_ten.png"
+ },
+ {
+  "t": 69.32,
+  "file": "0069.32_2E_Title-Threshold_paradoxus.png"
+ },
+ {
+  "t": 75.94,
+  "file": "0075.94_2E_end.png"
+ },
+ {
+  "t": 76.04,
+  "file": "0076.04_3A_start.png"
+ },
+ {
+  "t": 77.81,
+  "file": "0077.81_3A_Label-Effusion_pericardium.png"
+ },
+ {
+  "t": 78.68,
+  "file": "0078.68_3A_Pericardium-Fluid_fluid.png"
+ },
+ {
+  "t": 79.75,
+  "file": "0079.75_3A_Label-Myocardium.png"
+ },
+ {
+  "t": 82.66,
+  "file": "0082.66_3A_Pericardium-Sac_can't.png"
+ },
+ {
+  "t": 84.32,
+  "file": "0084.32_3A_Pericardium-Fluid_fluid.png"
+ },
+ {
+  "t": 86.58,
+  "file": "0086.58_3A_Pericardium-Fluid_climbs.png"
+ },
+ {
+  "t": 87.98,
+  "file": "0087.98_3A_Pericardium-Fluid_restrict.png"
+ },
+ {
+  "t": 88.82,
+  "file": "0088.82_3A_end.png"
+ },
+ {
+  "t": 89.32,
+  "file": "0089.32_3B_start.png"
+ },
+ {
+  "t": 93.12,
+  "file": "0093.12_3B_Flow-Venous_dots_fill.png"
+ },
+ {
+  "t": 94.79,
+  "file": "0094.79_3B_Heart-RV_free_wall_pinned.png"
+ },
+ {
+  "t": 98.42,
+  "file": "0098.42_3B_Heart-Septum_push.png"
+ },
+ {
+  "t": 98.78,
+  "file": "0098.78_3B_Label-Septum_septum.png"
+ },
+ {
+  "t": 99.75,
+  "file": "0099.75_3B_Heart-LV_left.png"
+ },
+ {
+  "t": 100.47,
+  "file": "0100.47_3B_end.png"
+ },
+ {
+  "t": 100.97,
+  "file": "0100.97_3C_start.png"
+ },
+ {
+  "t": 103.71,
+  "file": "0103.71_3C_Label-LV_fills.png"
+ },
+ {
+  "t": 105.04,
+  "file": "0105.04_3C_Flow-Aortic_dots_smaller.png"
+ },
+ {
+  "t": 107.58,
+  "file": "0107.58_3C_Gauge-Needle_much.png"
+ },
+ {
+  "t": 115.97,
+  "file": "0115.97_3C_end.png"
+ },
+ {
+  "t": 116.47,
+  "file": "0116.47_3D_start.png"
+ },
+ {
+  "t": 120.93,
+  "file": "0120.93_3D_Card-Stat_think.png"
+ },
+ {
+  "t": 124.19,
+  "file": "0124.19_3D_Card-Action_bedside.png"
+ },
+ {
+  "t": 126.45,
+  "file": "0126.45_3D_Card-Action_rule.png"
+ },
+ {
+  "t": 127.47,
+  "file": "0127.47_3D_end.png"
+ },
+ {
+  "t": 127.97,
+  "file": "0127.97_3E_start.png"
+ },
+ {
+  "t": 132.9,
+  "file": "0132.90_3E_Trace-Systolic_line_falls.png"
+ },
+ {
+  "t": 134.47,
+  "file": "0134.47_3E_Trace-Systolic_line_barely.png"
+ },
+ {
+  "t": 136.53,
+  "file": "0136.53_3E_Label-PP_narrows.png"
+ },
+ {
+  "t": 137.46,
+  "file": "0137.46_3E_end.png"
+ },
+ {
+  "t": 137.56,
+  "file": "0137.56_4A_start.png"
+ },
+ {
+  "t": 144.18,
+  "file": "0144.18_4A_Title-Cause_asthma.png"
+ },
+ {
+  "t": 145.03,
+  "file": "0145.03_4A_Lungs-Bronchi_COPD.png"
+ },
+ {
+  "t": 145.61,
+  "file": "0145.61_4A_end.png"
+ },
+ {
+  "t": 146.11,
+  "file": "0146.11_4B_start.png"
+ },
+ {
+  "t": 146.65,
+  "file": "0146.65_4B_Coronal-Diaphragm_pull.png"
+ },
+ {
+  "t": 149.9,
+  "file": "0149.90_4B_Axial-Chest_enormous.png"
+ },
+ {
+  "t": 152.89,
+  "file": "0152.89_4B_Readout-Pressure_forty.png"
+ },
+ {
+  "t": 155.28,
+  "file": "0155.28_4B_end.png"
+ },
+ {
+  "t": 155.78,
+  "file": "0155.78_4C_start.png"
+ },
+ {
+  "t": 160.24,
+  "file": "0160.24_4C_Heart-LV_arrow_left-heart.png"
+ },
+ {
+  "t": 161.85,
+  "file": "0161.85_4C_Heart-LV_arrow_And.png"
+ },
+ {
+  "t": 162.29,
+  "file": "0162.29_4C_Heart-LV_arrow_negative.png"
+ },
+ {
+  "t": 165.02,
+  "file": "0165.02_4C_Label-Afterload_afterload.png"
+ },
+ {
+  "t": 166.27,
+  "file": "0166.27_4C_Trace-Systolic_line_systolic.png"
+ },
+ {
+  "t": 167.16,
+  "file": "0167.16_4C_Gauge-Needle_falls.png"
+ },
+ {
+  "t": 168.93,
+  "file": "0168.93_4C_Trace-Systolic_line_diastolic.png"
+ },
+ {
+  "t": 170.61,
+  "file": "0170.61_4C_Label-Shape_with.png"
+ },
+ {
+  "t": 170.85,
+  "file": "0170.85_4C_end.png"
+ },
+ {
+  "t": 171.35,
+  "file": "0171.35_5A_start.png"
+ },
+ {
+  "t": 174.56,
+  "file": "0174.56_5A_Card-Setup_stethoscope.png"
+ },
+ {
+  "t": 179.45,
+  "file": "0179.45_5A_Card-Breathing_normally.png"
+ },
+ {
+  "t": 182.77,
+  "file": "0182.77_5A_end.png"
+ },
+ {
+  "t": 183.27,
+  "file": "0183.27_5B_start.png"
+ },
+ {
+  "t": 188.6,
+  "file": "0188.60_5B_end.png"
+ },
+ {
+  "t": 189.1,
+  "file": "0189.10_5C_start.png"
+ },
+ {
+  "t": 190.09,
+  "file": "0190.09_5C_first_tap.png"
+ },
+ {
+  "t": 196.0,
+  "file": "0196.00_5C_end.png"
+ },
+ {
+  "t": 196.5,
+  "file": "0196.50_5D_start.png"
+ },
+ {
+  "t": 199.1,
+  "file": "0199.10_5D_whole_breath.png"
+ },
+ {
+  "t": 203.43,
+  "file": "0203.43_5D_end.png"
+ },
+ {
+  "t": 203.93,
+  "file": "0203.93_5E_start.png"
+ },
+ {
+  "t": 204.55,
+  "file": "0204.55_5E_Readout-Equation_difference.png"
+ },
+ {
+  "t": 210.08,
+  "file": "0210.08_5E_Readout-Threshold_paradoxus.png"
+ },
+ {
+  "t": 210.85,
+  "file": "0210.85_5E_end.png"
+ },
+ {
+  "t": 211.35,
+  "file": "0211.35_5F_start.png"
+ },
+ {
+  "t": 213.32,
+  "file": "0213.32_5F_Rule_1_lowers.png"
+ },
+ {
+  "t": 219.18,
+  "file": "0219.18_5F_Rule_2_bigger.png"
+ },
+ {
+  "t": 223.63,
+  "file": "0223.63_5F_Rule_3_tamponade.png"
+ },
+ {
+  "t": 226.18,
+  "file": "0226.18_5F_end.png"
+ }
+]

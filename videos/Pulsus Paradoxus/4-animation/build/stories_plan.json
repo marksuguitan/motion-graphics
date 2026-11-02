@@ -1,0 +1,316 @@
+{
+ "master": "Pulsus Paradoxus",
+ "w": 1080,
+ "h": 1920,
+ "fps": 30,
+ "bg": "#151515",
+ "grid": "#1F2021",
+ "acc": "#FF4057",
+ "fg": "#F2F2F2",
+ "video": {
+  "scale": 56.25,
+  "pos": [
+   540,
+   964
+  ]
+ },
+ "cta": {
+  "audio": "audio/cues/Heartbeat_endcard.wav",
+  "lub": 0.4,
+  "lines": [
+   "Watch the full video",
+   "on YouTube"
+  ],
+  "sub": "Pulsus paradoxus, explained in 4 minutes",
+  "pill": "TAP THE LINK BELOW"
+ },
+ "folder": "Stories",
+ "shorts": [
+  {
+   "n": 1,
+   "name": "Story 1 - Hook",
+   "title": [
+    "Why does the pulse fade",
+    "when you breathe in?"
+   ],
+   "segs": [
+    [
+     4.0,
+     15.95,
+     [
+      "1A"
+     ]
+    ]
+   ],
+   "dur": 11.95,
+   "layers": [
+    {
+     "start": -4.0,
+     "inp": 0.0,
+     "out": 11.95,
+     "master_in": 4.0,
+     "master_out": 15.95
+    }
+   ],
+   "caps": [
+    {
+     "t": 0.33,
+     "end": 1.35,
+     "text": "Picture a blood pressure",
+     "off": 1.44
+    },
+    {
+     "t": 1.44,
+     "end": 2.64,
+     "text": "cuff on a patient's arm.",
+     "off": 3.18
+    },
+    {
+     "t": 3.18,
+     "end": 4.47,
+     "text": "As you let the pressure down,",
+     "off": 4.77
+    },
+    {
+     "t": 4.77,
+     "end": 5.96,
+     "text": "you hear the first tap,",
+     "off": 6.46
+    },
+    {
+     "t": 6.46,
+     "end": 7.02,
+     "text": "but when the patient",
+     "off": 7.1
+    },
+    {
+     "t": 7.1,
+     "end": 7.77,
+     "text": "breathes in,",
+     "off": 8.05
+    },
+    {
+     "t": 8.05,
+     "end": 9.21,
+     "text": "the tap disappears,",
+     "off": 9.58
+    },
+    {
+     "t": 9.58,
+     "end": 10.41,
+     "text": "and when they breathe out,",
+     "off": 10.72
+    },
+    {
+     "t": 10.72,
+     "end": 11.75,
+     "text": "it comes right back.",
+     "off": 12.25
+    }
+   ],
+   "cta": null,
+   "total": 11.95,
+   "checks": [
+    1.0,
+    5.97,
+    11.45
+   ]
+  },
+  {
+   "n": 2,
+   "name": "Story 2 - Definition",
+   "title": [
+    "More than 10 mmHg?",
+    "That has a name."
+   ],
+   "segs": [
+    [
+     16.45,
+     25.55,
+     [
+      "1B"
+     ]
+    ]
+   ],
+   "dur": 9.1,
+   "layers": [
+    {
+     "start": -16.45,
+     "inp": 0.0,
+     "out": 9.1,
+     "master_in": 16.45,
+     "master_out": 25.55
+    }
+   ],
+   "caps": [
+    {
+     "t": 0.051,
+     "end": 1.076,
+     "text": "When that gap is bigger",
+     "off": 1.161
+    },
+    {
+     "t": 1.161,
+     "end": 2.281,
+     "text": "than ten millimeters of",
+     "off": 2.351
+    },
+    {
+     "t": 2.351,
+     "end": 2.801,
+     "text": "mercury,",
+     "off": 3.111
+    },
+    {
+     "t": 3.111,
+     "end": 3.691,
+     "text": "it has a name:",
+     "off": 4.271
+    },
+    {
+     "t": 4.271,
+     "end": 5.711,
+     "text": "pulsus paradoxus.",
+     "off": 6.061
+    },
+    {
+     "t": 6.061,
+     "end": 7.101,
+     "text": "And in the right patient,",
+     "off": 7.421
+    },
+    {
+     "t": 7.421,
+     "end": 8.801,
+     "text": "it signals an emergency.",
+     "off": 9.301
+    }
+   ],
+   "cta": null,
+   "total": 9.1,
+   "checks": [
+    1.0,
+    4.55,
+    8.6
+   ]
+  },
+  {
+   "n": 3,
+   "name": "Story 3 - Tamponade",
+   "title": [
+    "Why tamponade",
+    "makes the drop bigger"
+   ],
+   "segs": [
+    [
+     105.79,
+     120.89,
+     [
+      "3C"
+     ]
+    ]
+   ],
+   "dur": 15.1,
+   "layers": [
+    {
+     "start": -105.79,
+     "inp": 0.0,
+     "out": 15.1,
+     "master_in": 105.79,
+     "master_out": 120.89
+    }
+   ],
+   "caps": [
+    {
+     "t": 0.038,
+     "end": 1.318,
+     "text": "With less room on the left,",
+     "off": 1.558
+    },
+    {
+     "t": 1.558,
+     "end": 3.178,
+     "text": "the left ventricle fills less,",
+     "off": 3.378
+    },
+    {
+     "t": 3.378,
+     "end": 4.598,
+     "text": "ejects a smaller stroke,",
+     "off": 4.828
+    },
+    {
+     "t": 4.828,
+     "end": 5.763,
+     "text": "and systolic pressure",
+     "off": 5.848
+    },
+    {
+     "t": 5.848,
+     "end": 7.018,
+     "text": "drops much further than",
+     "off": 7.098
+    },
+    {
+     "t": 7.098,
+     "end": 7.338,
+     "text": "normal.",
+     "off": 7.938
+    },
+    {
+     "t": 7.968,
+     "end": 9.118,
+     "text": "This is ventricular",
+     "off": 9.198
+    },
+    {
+     "t": 9.198,
+     "end": 10.138,
+     "text": "interdependence:",
+     "off": 10.553
+    },
+    {
+     "t": 10.553,
+     "end": 11.748,
+     "text": "inside a tight sac,",
+     "off": 12.048
+    },
+    {
+     "t": 12.048,
+     "end": 13.258,
+     "text": "one ventricle can only",
+     "off": 13.348
+    },
+    {
+     "t": 13.348,
+     "end": 14.798,
+     "text": "fill at the other's expense.",
+     "off": 15.298
+    }
+   ],
+   "cta": null,
+   "total": 15.1,
+   "checks": [
+    1.0,
+    7.55,
+    14.6
+   ]
+  },
+  {
+   "n": 4,
+   "name": "Story 4 - Watch",
+   "title": [],
+   "segs": [],
+   "dur": 5.0,
+   "layers": [],
+   "caps": [],
+   "cta": 0.0,
+   "total": 5.0,
+   "checks": [
+    0.5,
+    2.0,
+    4.7
+   ]
+  }
+ ]
+}

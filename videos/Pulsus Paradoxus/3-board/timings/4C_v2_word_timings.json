@@ -1,0 +1,216 @@
+{
+ "file": "audio/4C_v2.wav",
+ "note": "4C.mp3 with 2.0 s silence inserted at 11.72 s (after \"falls.\"); word times from 4C carried over, +2.0 s from \"But\"",
+ "words": [
+  {
+   "text": "Those",
+   "start": 0.03,
+   "end": 0.24
+  },
+  {
+   "text": "big",
+   "start": 0.4,
+   "end": 0.56
+  },
+  {
+   "text": "pressure",
+   "start": 0.65,
+   "end": 0.97
+  },
+  {
+   "text": "swings",
+   "start": 1.06,
+   "end": 1.45
+  },
+  {
+   "text": "change",
+   "start": 1.52,
+   "end": 1.84
+  },
+  {
+   "text": "how",
+   "start": 1.92,
+   "end": 2.01
+  },
+  {
+   "text": "the",
+   "start": 2.05,
+   "end": 2.09
+  },
+  {
+   "text": "right",
+   "start": 2.18,
+   "end": 2.33
+  },
+  {
+   "text": "heart",
+   "start": 2.41,
+   "end": 2.57
+  },
+  {
+   "text": "fills",
+   "start": 2.74,
+   "end": 3.16
+  },
+  {
+   "text": "and",
+   "start": 3.36,
+   "end": 3.52
+  },
+  {
+   "text": "can",
+   "start": 3.6,
+   "end": 3.68
+  },
+  {
+   "text": "reduce",
+   "start": 3.88,
+   "end": 4.08
+  },
+  {
+   "text": "left-heart",
+   "start": 4.16,
+   "end": 4.57
+  },
+  {
+   "text": "filling",
+   "start": 4.65,
+   "end": 4.89
+  },
+  {
+   "text": "too.",
+   "start": 4.99,
+   "end": 5.16
+  },
+  {
+   "text": "And",
+   "start": 5.77,
+   "end": 5.85
+  },
+  {
+   "text": "the",
+   "start": 5.89,
+   "end": 5.93
+  },
+  {
+   "text": "more",
+   "start": 6.0,
+   "end": 6.14
+  },
+  {
+   "text": "negative",
+   "start": 6.21,
+   "end": 6.52
+  },
+  {
+   "text": "pressure",
+   "start": 6.6,
+   "end": 6.99
+  },
+  {
+   "text": "around",
+   "start": 7.13,
+   "end": 7.26
+  },
+  {
+   "text": "the",
+   "start": 7.3,
+   "end": 7.35
+  },
+  {
+   "text": "left",
+   "start": 7.43,
+   "end": 7.61
+  },
+  {
+   "text": "ventricle",
+   "start": 7.7,
+   "end": 8.16
+  },
+  {
+   "text": "raises",
+   "start": 8.32,
+   "end": 8.66
+  },
+  {
+   "text": "its",
+   "start": 8.71,
+   "end": 8.86
+  },
+  {
+   "text": "afterload,",
+   "start": 8.94,
+   "end": 9.5
+  },
+  {
+   "text": "so",
+   "start": 9.87,
+   "end": 10.13
+  },
+  {
+   "text": "systolic",
+   "start": 10.19,
+   "end": 10.67
+  },
+  {
+   "text": "pressure",
+   "start": 10.82,
+   "end": 10.96
+  },
+  {
+   "text": "falls.",
+   "start": 11.08,
+   "end": 11.54
+  },
+  {
+   "text": "But",
+   "start": 13.9,
+   "end": 13.98
+  },
+  {
+   "text": "this",
+   "start": 14.07,
+   "end": 14.22
+  },
+  {
+   "text": "time,",
+   "start": 14.29,
+   "end": 14.59
+  },
+  {
+   "text": "diastolic",
+   "start": 14.85,
+   "end": 15.44
+  },
+  {
+   "text": "pressure",
+   "start": 15.51,
+   "end": 15.83
+  },
+  {
+   "text": "tends",
+   "start": 15.86,
+   "end": 16.05
+  },
+  {
+   "text": "to",
+   "start": 16.14,
+   "end": 16.225
+  },
+  {
+   "text": "fall",
+   "start": 16.35,
+   "end": 16.45
+  },
+  {
+   "text": "with",
+   "start": 16.53,
+   "end": 16.69
+  },
+  {
+   "text": "it.",
+   "start": 16.81,
+   "end": 16.83
+  }
+ ]
+}

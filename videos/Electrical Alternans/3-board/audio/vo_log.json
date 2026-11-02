@@ -1,0 +1,680 @@
+{
+ "flow_id": "wmDLCer72WpKrOUlcTtN",
+ "flow_name": "Electrical Alternans — scratch VO",
+ "voice": "Markus Guapo (45wlHoJDsEn5ruTlzdZI)",
+ "model": "eleven_v4",
+ "generated": "2026-10-23",
+ "note": "Saved take = take 2, the node's active take (last generated). Take 1 is in takes/<beat>_take1.mp3. Downloaded through the built-in browser; files matched by SHA-256. Oct 24: 1A, 2A, 3B, 5A, 6C regenerated with an IPA respelling of QRS/QT/ECG; saved take 3, previous saved take kept as takes/<beat>_v1_take2.mp3.",
+ "beats": [
+  {
+   "beat": "1A",
+   "node_id": "rauw7ytfeKWWMMNeS4gP",
+   "saved_take": 3,
+   "saved_generation_id": "VmcXFMIoJwAR50TpxlZT",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "lEMcXaOigslfOdIpouu9",
+     "generation_id": "csG6y9hXo8PlRDN6gWaa",
+     "file": "audio/takes/1A_take1.mp3",
+     "duration_s": 10.841
+    },
+    {
+     "take": 2,
+     "session_id": "MYAmjsbedKoQaLogxMPQ",
+     "generation_id": "IIHbC1ENtFINCoaYC1fg",
+     "file": "audio/takes/1A_v1_take2.mp3",
+     "duration_s": 10.606
+    },
+    {
+     "take": 3,
+     "node_id": "XfU8WwCSiPkCS8751G9b",
+     "session_id": "jUUE0GHbRO6gEVIaWVw4",
+     "generation_id": "VmcXFMIoJwAR50TpxlZT",
+     "file": "audio/1A.mp3",
+     "duration_s": 10.449,
+     "tts_input_respelling": "QRS -> /ˌkjuːɑːrˈɛs/"
+    },
+    {
+     "take": 4,
+     "node_id": "XfU8WwCSiPkCS8751G9b",
+     "session_id": "zvFwb3mCrMnFtgq7sid2",
+     "generation_id": "75xnQ2V7FxhD98m7iyZT",
+     "file": "audio/takes/1A_ipa_take2.mp3",
+     "duration_s": 10.371,
+     "tts_input_respelling": "QRS -> /ˌkjuːɑːrˈɛs/"
+    }
+   ],
+   "status": "scratch",
+   "change": "2026-10-24: regenerated with IPA respelling in the TTS input only (narration unchanged); Mark chose take 3"
+  },
+  {
+   "beat": "1B",
+   "node_id": "JrdP5gdg2RQdnH4U98Rf",
+   "saved_take": 2,
+   "saved_generation_id": "ba8NNhoc8IAQzv0ymfDZ",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "WUh7Zw6huADQVLavkl2s",
+     "generation_id": "71T89mD9l2i1cJqsLGJv",
+     "file": "audio/takes/1B_take1.mp3",
+     "duration_s": 5.329
+    },
+    {
+     "take": 2,
+     "session_id": "4IIvG10qKYPQii6MLYg1",
+     "generation_id": "ba8NNhoc8IAQzv0ymfDZ",
+     "file": "audio/1B.mp3",
+     "duration_s": 5.251
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "2A",
+   "node_id": "EzgOewzYFOmhUB0QChSO",
+   "saved_take": 3,
+   "saved_generation_id": "7mPemaYTUSab0qgNHiEI",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "uJVj1DuXDB07WYbkYSuZ",
+     "generation_id": "SCdxKm9Z2P8X7r2xAvZt",
+     "file": "audio/takes/2A_take1.mp3",
+     "duration_s": 9.326
+    },
+    {
+     "take": 2,
+     "session_id": "6NRRHEG7bjk00YjkDTrD",
+     "generation_id": "oim5yP4hVSUa5tTY18cM",
+     "file": "audio/takes/2A_v1_take2.mp3",
+     "duration_s": 9.169
+    },
+    {
+     "take": 3,
+     "node_id": "BPn1t9Hl5QX1XJYXld9z",
+     "session_id": "SBJpujBszsMfQSp2yqTM",
+     "generation_id": "7mPemaYTUSab0qgNHiEI",
+     "file": "audio/2A.mp3",
+     "duration_s": 8.986,
+     "tts_input_respelling": "QRS -> /ˌkjuːɑːrˈɛs/"
+    },
+    {
+     "take": 4,
+     "node_id": "BPn1t9Hl5QX1XJYXld9z",
+     "session_id": "DXzQFrQDjkZttoZQO9yV",
+     "generation_id": "F3aUK8Qpb2JtZC0d1b92",
+     "file": "audio/takes/2A_ipa_take2.mp3",
+     "duration_s": 9.169,
+     "tts_input_respelling": "QRS -> /ˌkjuːɑːrˈɛs/"
+    }
+   ],
+   "status": "scratch",
+   "change": "2026-10-24: regenerated with IPA respelling in the TTS input only (narration unchanged); Mark chose take 3"
+  },
+  {
+   "beat": "2B",
+   "node_id": "5llTweXDlzynmxIEGDzv",
+   "saved_take": 2,
+   "saved_generation_id": "3PVRgg6L10a3JbgGt2KY",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "M3nAIBXzHg12Pc5jpsWn",
+     "generation_id": "M82oFHI5CWDEYVIM8HL2",
+     "file": "audio/takes/2B_take1.mp3",
+     "duration_s": 7.314
+    },
+    {
+     "take": 2,
+     "session_id": "AdBZjZ7TqBfuF9dJuoPU",
+     "generation_id": "3PVRgg6L10a3JbgGt2KY",
+     "file": "audio/2B.mp3",
+     "duration_s": 7.393
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "2C",
+   "node_id": "28wjj3MBgPrQdR1mzwEa",
+   "saved_take": 2,
+   "saved_generation_id": "qA49C0DFIWSOzCQTvO3L",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "gp2IndMWNU3dg2e1ihXf",
+     "generation_id": "a515NW7qc19stTsjVXli",
+     "file": "audio/takes/2C_take1.mp3",
+     "duration_s": 5.878
+    },
+    {
+     "take": 2,
+     "session_id": "j0FJ1bDpfWdRL5xwU2Ad",
+     "generation_id": "qA49C0DFIWSOzCQTvO3L",
+     "file": "audio/2C.mp3",
+     "duration_s": 6.113
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "3A",
+   "node_id": "QbvX2YXxPpQhaVxZqpZG",
+   "saved_take": 2,
+   "saved_generation_id": "AS8HapUSsmt0yS0xA3e4",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "mbDhvRd7KGednSBhaLHA",
+     "generation_id": "adAy4P7BUZN3suKycMFU",
+     "file": "audio/takes/3A_take1.mp3",
+     "duration_s": 7.236
+    },
+    {
+     "take": 2,
+     "session_id": "a9GVSjNT7XevR2SPATF3",
+     "generation_id": "AS8HapUSsmt0yS0xA3e4",
+     "file": "audio/3A.mp3",
+     "duration_s": 7.158
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "3B",
+   "node_id": "VZAp1NZ8epEKYcwMOY6c",
+   "saved_take": 3,
+   "saved_generation_id": "mgFW3jDKbpaoj56OPYwW",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "jQ15r5qDtyAXMOj31NJd",
+     "generation_id": "LTQqsuMKBpb5TNKTY3iY",
+     "file": "audio/takes/3B_take1.mp3",
+     "duration_s": 11.729
+    },
+    {
+     "take": 2,
+     "session_id": "QFIFYpVrUIMOsnpTTsVr",
+     "generation_id": "DvsMrM1oGeXyXuaiLUDa",
+     "file": "audio/takes/3B_v1_take2.mp3",
+     "duration_s": 11.886
+    },
+    {
+     "take": 3,
+     "node_id": "gnpaMsQgEZ2pxWs5rFrk",
+     "session_id": "t0hwaSYgIuXCsOphwW7c",
+     "generation_id": "mgFW3jDKbpaoj56OPYwW",
+     "file": "audio/3B.mp3",
+     "duration_s": 12.042,
+     "tts_input_respelling": "QT -> /ˌkjuːˈtiː/"
+    },
+    {
+     "take": 4,
+     "node_id": "gnpaMsQgEZ2pxWs5rFrk",
+     "session_id": "RPSq8smEIHK20sl3nCCI",
+     "generation_id": "UajR4phr2i4S5I5O3Ch5",
+     "file": "audio/takes/3B_ipa_take2.mp3",
+     "duration_s": 11.964,
+     "tts_input_respelling": "QT -> /ˌkjuːˈtiː/"
+    }
+   ],
+   "status": "scratch",
+   "change": "2026-10-24: regenerated with IPA respelling in the TTS input only (narration unchanged); Mark chose take 3"
+  },
+  {
+   "beat": "3C",
+   "node_id": "LRFMbt24alRgtXbVyVfI",
+   "saved_take": 2,
+   "saved_generation_id": "uHXn9PZvFqncs1zJNXXS",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "nkhrB5edwhUt1VsH42gJ",
+     "generation_id": "AyVuzEiDd72pEqkhpM8J",
+     "file": "audio/takes/3C_take1.mp3",
+     "duration_s": 6.844
+    },
+    {
+     "take": 2,
+     "session_id": "0JdZDZmRuvvgIC5atI1a",
+     "generation_id": "uHXn9PZvFqncs1zJNXXS",
+     "file": "audio/3C.mp3",
+     "duration_s": 6.844
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "3D",
+   "node_id": "mz44L7aIQLJiMMj9P7TW",
+   "saved_take": 2,
+   "saved_generation_id": "TCNYVCypWRVtzxWrUu56",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "rkAJAtPDn4BPdII7kjiA",
+     "generation_id": "Fmot1VtuXNTzt0GWFrl5",
+     "file": "audio/takes/3D_take1.mp3",
+     "duration_s": 10.109
+    },
+    {
+     "take": 2,
+     "session_id": "fqq51iqR2hNsLCl1bO5N",
+     "generation_id": "TCNYVCypWRVtzxWrUu56",
+     "file": "audio/3D.mp3",
+     "duration_s": 10.109
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "3E",
+   "node_id": "aNCsi2gWugxda0BaMUZq",
+   "saved_take": 2,
+   "saved_generation_id": "rLtR4m8w7aK9QyI1TuLS",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "BcNDgFxRc7gxBFKcHWPK",
+     "generation_id": "Lawz0DRtSxgUJ53e0HK6",
+     "file": "audio/takes/3E_take1.mp3",
+     "duration_s": 4.206
+    },
+    {
+     "take": 2,
+     "session_id": "cHORy06AGS3U23urDzaq",
+     "generation_id": "rLtR4m8w7aK9QyI1TuLS",
+     "file": "audio/3E.mp3",
+     "duration_s": 4.284
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "4A",
+   "node_id": "NZ38mXbtAhOhOmwxylQM",
+   "saved_take": 2,
+   "saved_generation_id": "zoUzKoLiVd4pnLJDE8BO",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "0dVmLUBqy2CFTfMxON6O",
+     "generation_id": "Dh8ufDOfNOUzgZVvTSAo",
+     "file": "audio/takes/4A_take1.mp3",
+     "duration_s": 10.841
+    },
+    {
+     "take": 2,
+     "session_id": "TI7KG9lyUhFCHv6JgXIL",
+     "generation_id": "zoUzKoLiVd4pnLJDE8BO",
+     "file": "audio/4A.mp3",
+     "duration_s": 10.841
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "4B",
+   "node_id": "qFeld2IECOV6pxE4VX9I",
+   "saved_take": 2,
+   "saved_generation_id": "UivLvijhhmElmeRDr8sB",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "dENUAUYgVNrA1wDadGeh",
+     "generation_id": "HAQrC4iclpFLlSFb4Ov5",
+     "file": "audio/takes/4B_take1.mp3",
+     "duration_s": 8.124
+    },
+    {
+     "take": 2,
+     "session_id": "hTGs25adY3N8hj1hJfxB",
+     "generation_id": "UivLvijhhmElmeRDr8sB",
+     "file": "audio/4B.mp3",
+     "duration_s": 8.124
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "4C",
+   "node_id": "FTFzVty9ovJJmw2cOZje",
+   "saved_take": 2,
+   "saved_generation_id": "RdNb9ZIum8dkPLNYImDv",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "qGJFLxcYYtCnSMmqxDrW",
+     "generation_id": "s2wf82qrcUW9kqqL1hvb",
+     "file": "audio/takes/4C_take1.mp3",
+     "duration_s": 8.516
+    },
+    {
+     "take": 2,
+     "session_id": "Cv81QuXykEhhAyMQmW15",
+     "generation_id": "RdNb9ZIum8dkPLNYImDv",
+     "file": "audio/4C.mp3",
+     "duration_s": 8.516
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "4D",
+   "node_id": "oKiIrtQUw5Bk9WGd2Ipv",
+   "saved_take": 2,
+   "saved_generation_id": "yPUA8iHkB9poauj32fWr",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "U6C8hdgOZm92Mb9bFoZl",
+     "generation_id": "Yxq6pZUzXc2thLfM3xH7",
+     "file": "audio/takes/4D_take1.mp3",
+     "duration_s": 13.714
+    },
+    {
+     "take": 2,
+     "session_id": "evu47SSRg5lk00sVbbR6",
+     "generation_id": "yPUA8iHkB9poauj32fWr",
+     "file": "audio/4D.mp3",
+     "duration_s": 14.211
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "4E",
+   "node_id": "D22o4P0up0Bt4cheKJTw",
+   "saved_take": 2,
+   "saved_generation_id": "YoTKmhFyd2mGxefG6Y08",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "ZtNgEnUFIPz7dynRtvlG",
+     "generation_id": "xmqWEsgfSfURVk4fZcDs",
+     "file": "audio/takes/4E_take1.mp3",
+     "duration_s": 5.407
+    },
+    {
+     "take": 2,
+     "session_id": "ab9Cg05Ytq5LMlaDEhKu",
+     "generation_id": "YoTKmhFyd2mGxefG6Y08",
+     "file": "audio/4E.mp3",
+     "duration_s": 5.486
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "4F",
+   "node_id": "WXHFn765J49rZ5mtlk5X",
+   "saved_take": 2,
+   "saved_generation_id": "LWRtiEdkVHjjitGGJE3G",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "OQDTdir9UIk9WIPfUgEn",
+     "generation_id": "lxQgAYG5jlU97AfFlcb1",
+     "file": "audio/takes/4F_take1.mp3",
+     "duration_s": 9.091
+    },
+    {
+     "take": 2,
+     "session_id": "emnSmkAdYOyfFZunuwsg",
+     "generation_id": "LWRtiEdkVHjjitGGJE3G",
+     "file": "audio/4F.mp3",
+     "duration_s": 8.829
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "5A",
+   "node_id": "anfQjgPfgdTwmxll326s",
+   "saved_take": 3,
+   "saved_generation_id": "ad8NIjyHVxDtTg4n1iyW",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "3JLmRX1va8p8j2aEZSJI",
+     "generation_id": "936lagZetK4Wn5aobwNI",
+     "file": "audio/takes/5A_take1.mp3",
+     "duration_s": 7.393
+    },
+    {
+     "take": 2,
+     "session_id": "YVBn38T64hYFkcIwnLsg",
+     "generation_id": "4Che2V95mSl9gmI70ZFf",
+     "file": "audio/takes/5A_v1_take2.mp3",
+     "duration_s": 7.393
+    },
+    {
+     "take": 3,
+     "node_id": "ZMAYctmnbbRSDoj4TLFC",
+     "session_id": "cmCCkRamBuGePS4EXyz6",
+     "generation_id": "ad8NIjyHVxDtTg4n1iyW",
+     "file": "audio/5A.mp3",
+     "duration_s": 7.314,
+     "tts_input_respelling": "ECG -> /ˌiːsiːˈdʒiː/"
+    },
+    {
+     "take": 4,
+     "node_id": "ZMAYctmnbbRSDoj4TLFC",
+     "session_id": "zLUGWPrBzu09SnUx6txG",
+     "generation_id": "ezyDJzPPovUhHAMdjmf5",
+     "file": "audio/takes/5A_ipa_take2.mp3",
+     "duration_s": 7.393,
+     "tts_input_respelling": "ECG -> /ˌiːsiːˈdʒiː/"
+    }
+   ],
+   "status": "scratch",
+   "change": "2026-10-24: regenerated with IPA respelling in the TTS input only (narration unchanged); Mark chose take 3"
+  },
+  {
+   "beat": "5B",
+   "node_id": "BxlGSyeGLaHlWYeIiJaX",
+   "saved_take": 2,
+   "saved_generation_id": "M5yZI2YuxosvTST0MBYU",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "Ougqz1tfyKblR6l8afjl",
+     "generation_id": "m6KdaoiP5Mv7mtecpCQw",
+     "file": "audio/takes/5B_take1.mp3",
+     "duration_s": 6.766
+    },
+    {
+     "take": 2,
+     "session_id": "q98MmQF51ILmtMuL3ltR",
+     "generation_id": "M5yZI2YuxosvTST0MBYU",
+     "file": "audio/5B.mp3",
+     "duration_s": 6.844
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "5C",
+   "node_id": "EYF6H1BD1zEaDda0tTw3",
+   "saved_take": 2,
+   "saved_generation_id": "gFRrujPpZ9hcNEvhJ6wh",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "9NOr6YBnGLJYXnuEmIFm",
+     "generation_id": "sXbkwR1G68hppkNw8Meb",
+     "file": "audio/takes/5C_take1.mp3",
+     "duration_s": 12.042
+    },
+    {
+     "take": 2,
+     "session_id": "qLKbAxV1CebjDFM4E3cr",
+     "generation_id": "gFRrujPpZ9hcNEvhJ6wh",
+     "file": "audio/5C.mp3",
+     "duration_s": 12.121
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "5D",
+   "node_id": "bD72zl8YrepOjKnrJamz",
+   "saved_take": 2,
+   "saved_generation_id": "XiOxi5M0ZkLWq9Y3tfnG",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "Y3q6MtgXG3AZ0EKe47hL",
+     "generation_id": "gA7srUjbdeKajXvmtsQR",
+     "file": "audio/takes/5D_take1.mp3",
+     "duration_s": 9.091
+    },
+    {
+     "take": 2,
+     "session_id": "TTPJsyK74v8DxXQ3MmaC",
+     "generation_id": "XiOxi5M0ZkLWq9Y3tfnG",
+     "file": "audio/5D.mp3",
+     "duration_s": 8.908
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "5E",
+   "node_id": "ijmffJrtCmffnxXQWu99",
+   "saved_take": 2,
+   "saved_generation_id": "86rNjOWJQMM4DDslKJiL",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "21uikr6QNVlX3OUFdnah",
+     "generation_id": "EYCA5SdcF3a8R18fNt1w",
+     "file": "audio/takes/5E_take1.mp3",
+     "duration_s": 9.639
+    },
+    {
+     "take": 2,
+     "session_id": "vFMGdfoDL8qpqwdLz3DH",
+     "generation_id": "86rNjOWJQMM4DDslKJiL",
+     "file": "audio/5E.mp3",
+     "duration_s": 9.639
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "5F",
+   "node_id": "xBR7z4F1CcjgBP0p6Sjb",
+   "saved_take": 2,
+   "saved_generation_id": "t8PtCIh4f1X3H2b91oTD",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "xnUeQTsvbpV7SUhcsgXE",
+     "generation_id": "REa48qNlUd7xeawJrLEE",
+     "file": "audio/takes/5F_take1.mp3",
+     "duration_s": 4.284
+    },
+    {
+     "take": 2,
+     "session_id": "ukvNUsTVveowdvImBjBE",
+     "generation_id": "t8PtCIh4f1X3H2b91oTD",
+     "file": "audio/5F.mp3",
+     "duration_s": 4.127
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "6A",
+   "node_id": "eMUq4TU8V68nwT2MvHvd",
+   "saved_take": 2,
+   "saved_generation_id": "jU6M3av0nY4fDir2Ywn9",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "1dtf9wAKK10MFFbPo60f",
+     "generation_id": "JyqJ8Y3mCK0jbYzUwDVi",
+     "file": "audio/takes/6A_take1.mp3",
+     "duration_s": 7.811
+    },
+    {
+     "take": 2,
+     "session_id": "KtMi5FOhE5JXHoRErZuh",
+     "generation_id": "jU6M3av0nY4fDir2Ywn9",
+     "file": "audio/6A.mp3",
+     "duration_s": 7.706
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "6B",
+   "node_id": "fqcOBjEcRy9NW5g5Gt9n",
+   "saved_take": 2,
+   "saved_generation_id": "FCGyN7spoNgqGAk3B5YY",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "1fRz8sK4TZBsh3tqaSmh",
+     "generation_id": "o5eYRc9zcTvQ71WcZWia",
+     "file": "audio/takes/6B_take1.mp3",
+     "duration_s": 7.811
+    },
+    {
+     "take": 2,
+     "session_id": "FLbz1OkMOkKsWoJYXhT5",
+     "generation_id": "FCGyN7spoNgqGAk3B5YY",
+     "file": "audio/6B.mp3",
+     "duration_s": 7.967
+    }
+   ],
+   "status": "scratch"
+  },
+  {
+   "beat": "6C",
+   "node_id": "ibtzVpR3MbKSRPaSFfKb",
+   "saved_take": 3,
+   "saved_generation_id": "wGK0NI43YQ4luRUYY1jq",
+   "takes": [
+    {
+     "take": 1,
+     "session_id": "txPzm3d8pV6SfDw0Qkb7",
+     "generation_id": "z4wveK5CWVQR9MHIs8TI",
+     "file": "audio/takes/6C_take1.mp3",
+     "duration_s": 5.407
+    },
+    {
+     "take": 2,
+     "session_id": "Ty0Slpd1S3Ocfa0ePI8O",
+     "generation_id": "IWpR4PJ4EUqx4pmaqADw",
+     "file": "audio/takes/6C_v1_take2.mp3",
+     "duration_s": 5.407
+    },
+    {
+     "take": 3,
+     "node_id": "mMZEWFW0hsCpabEGD06j",
+     "session_id": "DWNPvgBMo2THXVEDrTA4",
+     "generation_id": "wGK0NI43YQ4luRUYY1jq",
+     "file": "audio/6C.mp3",
+     "duration_s": 5.329,
+     "tts_input_respelling": "ECG -> /ˌiːsiːˈdʒiː/"
+    },
+    {
+     "take": 4,
+     "node_id": "mMZEWFW0hsCpabEGD06j",
+     "session_id": "yg6QkrFolB7njYFliTYZ",
+     "generation_id": "d5VDDyrVyes8mhv9rIx5",
+     "file": "audio/takes/6C_ipa_take2.mp3",
+     "duration_s": 5.329,
+     "tts_input_respelling": "ECG -> /ˌiːsiːˈdʒiː/"
+    }
+   ],
+   "status": "scratch",
+   "change": "2026-10-24: regenerated with IPA respelling in the TTS input only (narration unchanged); Mark chose take 3"
+  }
+ ]
+}

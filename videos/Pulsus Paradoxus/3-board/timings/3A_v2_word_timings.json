@@ -1,0 +1,202 @@
+{
+ "beat": "3A",
+ "file": "audio/3A.mp3 (= audio/takes/3A_v2_take1.mp3)",
+ "source": "ElevenLabs Scribe on the take itself, starts snapped to measured pauses",
+ "words": [
+  {
+   "text": "Now",
+   "start": 0,
+   "end": 0.24
+  },
+  {
+   "text": "let's",
+   "start": 0.48,
+   "end": 0.64
+  },
+  {
+   "text": "fill",
+   "start": 0.72,
+   "end": 0.88
+  },
+  {
+   "text": "the",
+   "start": 0.92,
+   "end": 0.96
+  },
+  {
+   "text": "pericardial",
+   "start": 1.04,
+   "end": 1.52
+  },
+  {
+   "text": "cavity",
+   "start": 1.68,
+   "end": 2
+  },
+  {
+   "text": "with",
+   "start": 2.08,
+   "end": 2.16
+  },
+  {
+   "text": "fluid.",
+   "start": 2.24,
+   "end": 2.667
+  },
+  {
+   "text": "The",
+   "start": 3.176,
+   "end": 3.2
+  },
+  {
+   "text": "heart",
+   "start": 3.32,
+   "end": 3.44
+  },
+  {
+   "text": "is",
+   "start": 3.52,
+   "end": 3.6
+  },
+  {
+   "text": "still",
+   "start": 3.72,
+   "end": 3.84
+  },
+  {
+   "text": "beating,",
+   "start": 3.92,
+   "end": 4.388
+  },
+  {
+   "text": "but",
+   "start": 4.66,
+   "end": 4.68
+  },
+  {
+   "text": "it's",
+   "start": 4.66,
+   "end": 4.88
+  },
+  {
+   "text": "sitting",
+   "start": 4.96,
+   "end": 5.12
+  },
+  {
+   "text": "inside",
+   "start": 5.28,
+   "end": 5.44
+  },
+  {
+   "text": "a",
+   "start": 5.52,
+   "end": 5.6
+  },
+  {
+   "text": "sac",
+   "start": 5.64,
+   "end": 5.92
+  },
+  {
+   "text": "that",
+   "start": 6,
+   "end": 6.08
+  },
+  {
+   "text": "can't",
+   "start": 6.16,
+   "end": 6.4
+  },
+  {
+   "text": "stretch,",
+   "start": 6.48,
+   "end": 7.36
+  },
+  {
+   "text": "so",
+   "start": 7.38,
+   "end": 7.52
+  },
+  {
+   "text": "as",
+   "start": 7.6,
+   "end": 7.68
+  },
+  {
+   "text": "the",
+   "start": 7.76,
+   "end": 7.8
+  },
+  {
+   "text": "fluid",
+   "start": 7.84,
+   "end": 8.08
+  },
+  {
+   "text": "builds,",
+   "start": 8.16,
+   "end": 8.675
+  },
+  {
+   "text": "the",
+   "start": 8.884,
+   "end": 8.96
+  },
+  {
+   "text": "pressure",
+   "start": 9.12,
+   "end": 9.28
+  },
+  {
+   "text": "around",
+   "start": 9.36,
+   "end": 9.6
+  },
+  {
+   "text": "the",
+   "start": 9.64,
+   "end": 9.68
+  },
+  {
+   "text": "heart",
+   "start": 9.76,
+   "end": 10
+  },
+  {
+   "text": "climbs",
+   "start": 10.08,
+   "end": 10.64
+  },
+  {
+   "text": "until",
+   "start": 10.76,
+   "end": 10.88
+  },
+  {
+   "text": "it",
+   "start": 10.96,
+   "end": 11.04
+  },
+  {
+   "text": "starts",
+   "start": 11.12,
+   "end": 11.36
+  },
+  {
+   "text": "to",
+   "start": 11.4,
+   "end": 11.44
+  },
+  {
+   "text": "restrict",
+   "start": 11.52,
+   "end": 11.92
+  },
+  {
+   "text": "filling.",
+   "start": 12,
+   "end": 12.591
+  }
+ ]
+}

@@ -1,0 +1,3881 @@
+{
+ "_about": "Word start/end per beat, seconds from the start of each beat file in audio/ (start_in_beat) and from the start of animatic v4 (animatic). Measured 2026-10-23: ElevenLabs Scribe transcript of a reference take, carried onto our file by MFCC + DTW alignment (build/word_timings/align_words.py). Validated: 99% of word starts within 1 frame (33 ms) on stretched test recordings; every measured pause in our files falls on a word boundary. Word ends before punctuation are cut at the start of the following silence.",
+ "_qc": {
+  "1A": {
+   "path_cost": 3.581,
+   "onset_err": -0.03,
+   "offset_err": 0.0,
+   "pause_hits": "1/1",
+   "file_dur": 11.6
+  },
+  "1B": {
+   "path_cost": 3.741,
+   "onset_err": -0.05,
+   "offset_err": 0.0,
+   "pause_hits": "2/3",
+   "file_dur": 9.04
+  },
+  "1C": {
+   "path_cost": 3.744,
+   "onset_err": -0.03,
+   "offset_err": 0.0,
+   "pause_hits": "0/0",
+   "file_dur": 4.64
+  },
+  "2A": {
+   "path_cost": 3.661,
+   "onset_err": -0.03,
+   "offset_err": 0.0,
+   "pause_hits": "1/1",
+   "file_dur": 6.72
+  },
+  "2B": {
+   "path_cost": 3.647,
+   "onset_err": -0.01,
+   "offset_err": 0.0,
+   "pause_hits": "0/1",
+   "file_dur": 7.04
+  },
+  "2C": {
+   "path_cost": 3.526,
+   "onset_err": -0.08,
+   "offset_err": 0.0,
+   "pause_hits": "0/0",
+   "file_dur": 7.6
+  },
+  "2D": {
+   "path_cost": 3.62,
+   "onset_err": -0.02,
+   "offset_err": 0.0,
+   "pause_hits": "2/3",
+   "file_dur": 12.64
+  },
+  "2E": {
+   "path_cost": 3.85,
+   "onset_err": -0.1,
+   "offset_err": 0.0,
+   "pause_hits": "3/4",
+   "file_dur": 10.684
+  },
+  "3A": {
+   "path_cost": 3.651,
+   "onset_err": -0.02,
+   "offset_err": 0.0,
+   "pause_hits": "1/1",
+   "file_dur": 12.24
+  },
+  "3B": {
+   "path_cost": 3.673,
+   "onset_err": -0.04,
+   "offset_err": 0.0,
+   "pause_hits": "0/0",
+   "file_dur": 11.12
+  },
+  "3C": {
+   "path_cost": 3.701,
+   "onset_err": -0.04,
+   "offset_err": 0.0,
+   "pause_hits": "1/1",
+   "file_dur": 14.96
+  },
+  "3D": {
+   "path_cost": 3.682,
+   "onset_err": -0.04,
+   "offset_err": 0.0,
+   "pause_hits": "0/0",
+   "file_dur": 10.96
+  },
+  "3E": {
+   "path_cost": 3.703,
+   "onset_err": -0.08,
+   "offset_err": 0.0,
+   "pause_hits": "1/1",
+   "file_dur": 9.091
+  },
+  "4A": {
+   "path_cost": 3.643,
+   "onset_err": -0.03,
+   "offset_err": 0.0,
+   "pause_hits": "0/1",
+   "file_dur": 7.52
+  },
+  "4B": {
+   "path_cost": 3.473,
+   "onset_err": -0.06,
+   "offset_err": 0.0,
+   "pause_hits": "1/3",
+   "file_dur": 9.12
+  },
+  "4C": {
+   "path_cost": 3.716,
+   "onset_err": -0.03,
+   "offset_err": 0.0,
+   "pause_hits": "3/3",
+   "file_dur": 15.04
+  },
+  "5A": {
+   "path_cost": 3.637,
+   "onset_err": -0.06,
+   "offset_err": 0.0,
+   "pause_hits": "2/3",
+   "file_dur": 10.88
+  },
+  "5B": {
+   "path_cost": 3.807,
+   "onset_err": -0.04,
+   "offset_err": 0.0,
+   "pause_hits": "1/1",
+   "file_dur": 5.28
+  },
+  "5C": {
+   "path_cost": 3.653,
+   "onset_err": -0.035,
+   "offset_err": 0.0,
+   "pause_hits": "1/2",
+   "file_dur": 5.36
+  },
+  "5D": {
+   "path_cost": 3.722,
+   "onset_err": -0.01,
+   "offset_err": 0.0,
+   "pause_hits": "1/1",
+   "file_dur": 6.88
+  },
+  "5E": {
+   "path_cost": 3.574,
+   "onset_err": -0.04,
+   "offset_err": 0.0,
+   "pause_hits": "1/1",
+   "file_dur": 6.88
+  },
+  "5F": {
+   "path_cost": 3.708,
+   "onset_err": 0.0,
+   "offset_err": 0.0,
+   "pause_hits": "1/1",
+   "file_dur": 12.8
+  }
+ },
+ "1A": [
+  {
+   "word": "Picture",
+   "start": 0.03,
+   "end": 0.32,
+   "animatic_start": 1.03
+  },
+  {
+   "word": "a",
+   "start": 0.36,
+   "end": 0.4,
+   "animatic_start": 1.36
+  },
+  {
+   "word": "blood",
+   "start": 0.48,
+   "end": 0.73,
+   "animatic_start": 1.48
+  },
+  {
+   "word": "pressure",
+   "start": 0.8,
+   "end": 1.05,
+   "animatic_start": 1.8
+  },
+  {
+   "word": "cuff",
+   "start": 1.14,
+   "end": 1.36,
+   "animatic_start": 2.14
+  },
+  {
+   "word": "on",
+   "start": 1.44,
+   "end": 1.52,
+   "animatic_start": 2.44
+  },
+  {
+   "word": "a",
+   "start": 1.56,
+   "end": 1.6,
+   "animatic_start": 2.56
+  },
+  {
+   "word": "patient's",
+   "start": 1.76,
+   "end": 1.99,
+   "animatic_start": 2.76
+  },
+  {
+   "word": "arm.",
+   "start": 2.07,
+   "end": 2.34,
+   "animatic_start": 3.07
+  },
+  {
+   "word": "As",
+   "start": 2.88,
+   "end": 2.96,
+   "animatic_start": 3.88
+  },
+  {
+   "word": "you",
+   "start": 3.04,
+   "end": 3.13,
+   "animatic_start": 4.04
+  },
+  {
+   "word": "let",
+   "start": 3.21,
+   "end": 3.29,
+   "animatic_start": 4.21
+  },
+  {
+   "word": "the",
+   "start": 3.34,
+   "end": 3.38,
+   "animatic_start": 4.34
+  },
+  {
+   "word": "pressure",
+   "start": 3.45,
+   "end": 3.68,
+   "animatic_start": 4.45
+  },
+  {
+   "word": "down,",
+   "start": 3.76,
+   "end": 4.17,
+   "animatic_start": 4.76
+  },
+  {
+   "word": "you",
+   "start": 4.47,
+   "end": 4.55,
+   "animatic_start": 5.47
+  },
+  {
+   "word": "hear",
+   "start": 4.63,
+   "end": 4.71,
+   "animatic_start": 5.63
+  },
+  {
+   "word": "the",
+   "start": 4.79,
+   "end": 4.87,
+   "animatic_start": 5.79
+  },
+  {
+   "word": "first",
+   "start": 4.94,
+   "end": 5.17,
+   "animatic_start": 5.94
+  },
+  {
+   "word": "tap,",
+   "start": 5.29,
+   "end": 5.66,
+   "animatic_start": 6.29
+  },
+  {
+   "word": "but",
+   "start": 6.16,
+   "end": 6.24,
+   "animatic_start": 7.16
+  },
+  {
+   "word": "when",
+   "start": 6.28,
+   "end": 6.32,
+   "animatic_start": 7.28
+  },
+  {
+   "word": "the",
+   "start": 6.4,
+   "end": 6.43,
+   "animatic_start": 7.4
+  },
+  {
+   "word": "patient",
+   "start": 6.47,
+   "end": 6.72,
+   "animatic_start": 7.47
+  },
+  {
+   "word": "breathes",
+   "start": 6.8,
+   "end": 7.12,
+   "animatic_start": 7.8
+  },
+  {
+   "word": "in,",
+   "start": 7.2,
+   "end": 7.47,
+   "animatic_start": 8.2
+  },
+  {
+   "word": "the",
+   "start": 7.75,
+   "end": 7.83,
+   "animatic_start": 8.75
+  },
+  {
+   "word": "tap",
+   "start": 7.96,
+   "end": 8.08,
+   "animatic_start": 8.96
+  },
+  {
+   "word": "disappears,",
+   "start": 8.16,
+   "end": 8.91,
+   "animatic_start": 9.16
+  },
+  {
+   "word": "and",
+   "start": 9.28,
+   "end": 9.37,
+   "animatic_start": 10.28
+  },
+  {
+   "word": "when",
+   "start": 9.4,
+   "end": 9.44,
+   "animatic_start": 10.4
+  },
+  {
+   "word": "they",
+   "start": 9.52,
+   "end": 9.6,
+   "animatic_start": 10.52
+  },
+  {
+   "word": "breathe",
+   "start": 9.65,
+   "end": 9.84,
+   "animatic_start": 10.65
+  },
+  {
+   "word": "out,",
+   "start": 9.92,
+   "end": 10.11,
+   "animatic_start": 10.92
+  },
+  {
+   "word": "it",
+   "start": 10.42,
+   "end": 10.5,
+   "animatic_start": 11.42
+  },
+  {
+   "word": "comes",
+   "start": 10.61,
+   "end": 10.73,
+   "animatic_start": 11.61
+  },
+  {
+   "word": "right",
+   "start": 10.88,
+   "end": 11.04,
+   "animatic_start": 11.88
+  },
+  {
+   "word": "back.",
+   "start": 11.12,
+   "end": 11.45,
+   "animatic_start": 12.12
+  }
+ ],
+ "1B": [
+  {
+   "word": "When",
+   "start": 0.05,
+   "end": 0.16,
+   "animatic_start": 13.201
+  },
+  {
+   "word": "that",
+   "start": 0.24,
+   "end": 0.32,
+   "animatic_start": 13.391
+  },
+  {
+   "word": "gap",
+   "start": 0.4,
+   "end": 0.56,
+   "animatic_start": 13.551
+  },
+  {
+   "word": "is",
+   "start": 0.64,
+   "end": 0.815,
+   "animatic_start": 13.791
+  },
+  {
+   "word": "bigger",
+   "start": 0.86,
+   "end": 1.075,
+   "animatic_start": 14.011
+  },
+  {
+   "word": "than",
+   "start": 1.16,
+   "end": 1.4,
+   "animatic_start": 14.311
+  },
+  {
+   "word": "ten",
+   "start": 1.48,
+   "end": 1.56,
+   "animatic_start": 14.631
+  },
+  {
+   "word": "millimeters",
+   "start": 1.73,
+   "end": 2.14,
+   "animatic_start": 14.881
+  },
+  {
+   "word": "of",
+   "start": 2.22,
+   "end": 2.28,
+   "animatic_start": 15.371
+  },
+  {
+   "word": "mercury,",
+   "start": 2.35,
+   "end": 2.8,
+   "animatic_start": 15.501
+  },
+  {
+   "word": "it",
+   "start": 3.11,
+   "end": 3.2,
+   "animatic_start": 16.261
+  },
+  {
+   "word": "has",
+   "start": 3.28,
+   "end": 3.36,
+   "animatic_start": 16.431
+  },
+  {
+   "word": "a",
+   "start": 3.4,
+   "end": 3.44,
+   "animatic_start": 16.551
+  },
+  {
+   "word": "name:",
+   "start": 3.52,
+   "end": 3.69,
+   "animatic_start": 16.671
+  },
+  {
+   "word": "pulsus",
+   "start": 4.27,
+   "end": 4.72,
+   "animatic_start": 17.421
+  },
+  {
+   "word": "paradoxus.",
+   "start": 4.8,
+   "end": 5.71,
+   "animatic_start": 17.951
+  },
+  {
+   "word": "And",
+   "start": 6.06,
+   "end": 6.155,
+   "animatic_start": 19.211
+  },
+  {
+   "word": "in",
+   "start": 6.24,
+   "end": 6.28,
+   "animatic_start": 19.391
+  },
+  {
+   "word": "the",
+   "start": 6.31,
+   "end": 6.39,
+   "animatic_start": 19.461
+  },
+  {
+   "word": "right",
+   "start": 6.5,
+   "end": 6.6,
+   "animatic_start": 19.651
+  },
+  {
+   "word": "patient,",
+   "start": 6.82,
+   "end": 7.1,
+   "animatic_start": 19.971
+  },
+  {
+   "word": "it",
+   "start": 7.42,
+   "end": 7.5,
+   "animatic_start": 20.571
+  },
+  {
+   "word": "signals",
+   "start": 7.57,
+   "end": 7.9,
+   "animatic_start": 20.721
+  },
+  {
+   "word": "an",
+   "start": 7.99,
+   "end": 8.07,
+   "animatic_start": 21.141
+  },
+  {
+   "word": "emergency.",
+   "start": 8.45,
+   "end": 8.8,
+   "animatic_start": 21.601
+  }
+ ],
+ "1C": [
+  {
+   "word": "Let's",
+   "start": 0.03,
+   "end": 0.24,
+   "animatic_start": 22.771
+  },
+  {
+   "word": "look",
+   "start": 0.32,
+   "end": 0.4,
+   "animatic_start": 23.061
+  },
+  {
+   "word": "at",
+   "start": 0.44,
+   "end": 0.48,
+   "animatic_start": 23.181
+  },
+  {
+   "word": "why",
+   "start": 0.64,
+   "end": 0.8,
+   "animatic_start": 23.381
+  },
+  {
+   "word": "it",
+   "start": 0.84,
+   "end": 0.88,
+   "animatic_start": 23.581
+  },
+  {
+   "word": "happens,",
+   "start": 0.96,
+   "end": 1.68,
+   "animatic_start": 23.701
+  },
+  {
+   "word": "and",
+   "start": 1.81,
+   "end": 1.93,
+   "animatic_start": 24.551
+  },
+  {
+   "word": "how",
+   "start": 2.02,
+   "end": 2.1,
+   "animatic_start": 24.761
+  },
+  {
+   "word": "to",
+   "start": 2.18,
+   "end": 2.26,
+   "animatic_start": 24.921
+  },
+  {
+   "word": "catch",
+   "start": 2.39,
+   "end": 2.5,
+   "animatic_start": 25.131
+  },
+  {
+   "word": "it",
+   "start": 2.59,
+   "end": 2.75,
+   "animatic_start": 25.331
+  },
+  {
+   "word": "with",
+   "start": 2.83,
+   "end": 2.91,
+   "animatic_start": 25.571
+  },
+  {
+   "word": "just",
+   "start": 2.99,
+   "end": 3.06,
+   "animatic_start": 25.731
+  },
+  {
+   "word": "a",
+   "start": 3.14,
+   "end": 3.22,
+   "animatic_start": 25.881
+  },
+  {
+   "word": "cuff",
+   "start": 3.29,
+   "end": 3.7,
+   "animatic_start": 26.031
+  },
+  {
+   "word": "and",
+   "start": 3.72,
+   "end": 3.76,
+   "animatic_start": 26.461
+  },
+  {
+   "word": "a",
+   "start": 3.8,
+   "end": 3.84,
+   "animatic_start": 26.541
+  },
+  {
+   "word": "stethoscope.",
+   "start": 3.88,
+   "end": 4.49,
+   "animatic_start": 26.621
+  }
+ ],
+ "2A": [
+  {
+   "word": "Let's",
+   "start": 0.03,
+   "end": 0.2,
+   "animatic_start": 28.447
+  },
+  {
+   "word": "start",
+   "start": 0.25,
+   "end": 0.48,
+   "animatic_start": 28.667
+  },
+  {
+   "word": "with",
+   "start": 0.55,
+   "end": 0.63,
+   "animatic_start": 28.967
+  },
+  {
+   "word": "a",
+   "start": 0.67,
+   "end": 0.71,
+   "animatic_start": 29.087
+  },
+  {
+   "word": "healthy",
+   "start": 0.79,
+   "end": 1.11,
+   "animatic_start": 29.207
+  },
+  {
+   "word": "chest.",
+   "start": 1.2,
+   "end": 1.62,
+   "animatic_start": 29.617
+  },
+  {
+   "word": "When",
+   "start": 2.04,
+   "end": 2.19,
+   "animatic_start": 30.457
+  },
+  {
+   "word": "you",
+   "start": 2.23,
+   "end": 2.27,
+   "animatic_start": 30.647
+  },
+  {
+   "word": "breathe",
+   "start": 2.35,
+   "end": 2.59,
+   "animatic_start": 30.767
+  },
+  {
+   "word": "in,",
+   "start": 2.71,
+   "end": 2.91,
+   "animatic_start": 31.127
+  },
+  {
+   "word": "the",
+   "start": 3.2,
+   "end": 3.27,
+   "animatic_start": 31.617
+  },
+  {
+   "word": "diaphragm",
+   "start": 3.35,
+   "end": 3.76,
+   "animatic_start": 31.767
+  },
+  {
+   "word": "drops,",
+   "start": 3.84,
+   "end": 4.45,
+   "animatic_start": 32.257
+  },
+  {
+   "word": "and",
+   "start": 4.49,
+   "end": 4.53,
+   "animatic_start": 32.907
+  },
+  {
+   "word": "the",
+   "start": 4.61,
+   "end": 4.69,
+   "animatic_start": 33.027
+  },
+  {
+   "word": "pressure",
+   "start": 4.85,
+   "end": 5.01,
+   "animatic_start": 33.267
+  },
+  {
+   "word": "inside",
+   "start": 5.09,
+   "end": 5.42,
+   "animatic_start": 33.507
+  },
+  {
+   "word": "the",
+   "start": 5.46,
+   "end": 5.51,
+   "animatic_start": 33.877
+  },
+  {
+   "word": "chest",
+   "start": 5.58,
+   "end": 5.92,
+   "animatic_start": 33.997
+  },
+  {
+   "word": "falls.",
+   "start": 6.0,
+   "end": 6.55,
+   "animatic_start": 34.417
+  }
+ ],
+ "2B": [
+  {
+   "word": "That",
+   "start": 0.01,
+   "end": 0.23,
+   "animatic_start": 35.693
+  },
+  {
+   "word": "lower",
+   "start": 0.31,
+   "end": 0.56,
+   "animatic_start": 35.993
+  },
+  {
+   "word": "pressure",
+   "start": 0.64,
+   "end": 1.05,
+   "animatic_start": 36.323
+  },
+  {
+   "word": "draws",
+   "start": 1.15,
+   "end": 1.4,
+   "animatic_start": 36.833
+  },
+  {
+   "word": "more",
+   "start": 1.55,
+   "end": 1.7,
+   "animatic_start": 37.233
+  },
+  {
+   "word": "blood",
+   "start": 1.8,
+   "end": 2.04,
+   "animatic_start": 37.483
+  },
+  {
+   "word": "back",
+   "start": 2.14,
+   "end": 2.36,
+   "animatic_start": 37.823
+  },
+  {
+   "word": "into",
+   "start": 2.49,
+   "end": 2.61,
+   "animatic_start": 38.173
+  },
+  {
+   "word": "the",
+   "start": 2.65,
+   "end": 2.69,
+   "animatic_start": 38.333
+  },
+  {
+   "word": "right",
+   "start": 2.77,
+   "end": 2.92,
+   "animatic_start": 38.453
+  },
+  {
+   "word": "side",
+   "start": 3.0,
+   "end": 3.15,
+   "animatic_start": 38.683
+  },
+  {
+   "word": "of",
+   "start": 3.23,
+   "end": 3.27,
+   "animatic_start": 38.913
+  },
+  {
+   "word": "the",
+   "start": 3.315,
+   "end": 3.36,
+   "animatic_start": 38.998
+  },
+  {
+   "word": "heart,",
+   "start": 3.4,
+   "end": 3.79,
+   "animatic_start": 39.083
+  },
+  {
+   "word": "so",
+   "start": 4.16,
+   "end": 4.24,
+   "animatic_start": 39.843
+  },
+  {
+   "word": "the",
+   "start": 4.28,
+   "end": 4.32,
+   "animatic_start": 39.963
+  },
+  {
+   "word": "right",
+   "start": 4.4,
+   "end": 4.55,
+   "animatic_start": 40.083
+  },
+  {
+   "word": "ventricle",
+   "start": 4.64,
+   "end": 5.03,
+   "animatic_start": 40.323
+  },
+  {
+   "word": "fills",
+   "start": 5.19,
+   "end": 5.44,
+   "animatic_start": 40.873
+  },
+  {
+   "word": "a",
+   "start": 5.53,
+   "end": 5.61,
+   "animatic_start": 41.213
+  },
+  {
+   "word": "little",
+   "start": 5.72,
+   "end": 5.88,
+   "animatic_start": 41.403
+  },
+  {
+   "word": "more",
+   "start": 5.96,
+   "end": 6.11,
+   "animatic_start": 41.643
+  },
+  {
+   "word": "than",
+   "start": 6.19,
+   "end": 6.34,
+   "animatic_start": 41.873
+  },
+  {
+   "word": "usual.",
+   "start": 6.58,
+   "end": 6.77,
+   "animatic_start": 42.263
+  }
+ ],
+ "2C": [
+  {
+   "word": "The",
+   "start": 0.08,
+   "end": 0.16,
+   "animatic_start": 43.342
+  },
+  {
+   "word": "left",
+   "start": 0.28,
+   "end": 0.41,
+   "animatic_start": 43.542
+  },
+  {
+   "word": "side",
+   "start": 0.49,
+   "end": 0.72,
+   "animatic_start": 43.752
+  },
+  {
+   "word": "doesn't",
+   "start": 0.8,
+   "end": 1.1,
+   "animatic_start": 44.062
+  },
+  {
+   "word": "get",
+   "start": 1.2,
+   "end": 1.29,
+   "animatic_start": 44.462
+  },
+  {
+   "word": "that",
+   "start": 1.37,
+   "end": 1.45,
+   "animatic_start": 44.632
+  },
+  {
+   "word": "extra",
+   "start": 1.61,
+   "end": 1.76,
+   "animatic_start": 44.872
+  },
+  {
+   "word": "blood",
+   "start": 1.84,
+   "end": 1.99,
+   "animatic_start": 45.102
+  },
+  {
+   "word": "right",
+   "start": 2.08,
+   "end": 2.16,
+   "animatic_start": 45.342
+  },
+  {
+   "word": "away,",
+   "start": 2.24,
+   "end": 2.595,
+   "animatic_start": 45.502
+  },
+  {
+   "word": "though,",
+   "start": 2.64,
+   "end": 2.93,
+   "animatic_start": 45.902
+  },
+  {
+   "word": "because",
+   "start": 3.24,
+   "end": 3.35,
+   "animatic_start": 46.502
+  },
+  {
+   "word": "the",
+   "start": 3.43,
+   "end": 3.46,
+   "animatic_start": 46.692
+  },
+  {
+   "word": "expanding",
+   "start": 3.5,
+   "end": 4.05,
+   "animatic_start": 46.762
+  },
+  {
+   "word": "lungs",
+   "start": 4.13,
+   "end": 4.47,
+   "animatic_start": 47.392
+  },
+  {
+   "word": "stretch",
+   "start": 4.55,
+   "end": 4.95,
+   "animatic_start": 47.812
+  },
+  {
+   "word": "their",
+   "start": 5.02,
+   "end": 5.11,
+   "animatic_start": 48.282
+  },
+  {
+   "word": "blood",
+   "start": 5.23,
+   "end": 5.34,
+   "animatic_start": 48.492
+  },
+  {
+   "word": "vessels",
+   "start": 5.38,
+   "end": 5.81,
+   "animatic_start": 48.642
+  },
+  {
+   "word": "and",
+   "start": 5.86,
+   "end": 6.02,
+   "animatic_start": 49.122
+  },
+  {
+   "word": "hold",
+   "start": 6.125,
+   "end": 6.31,
+   "animatic_start": 49.387
+  },
+  {
+   "word": "on",
+   "start": 6.39,
+   "end": 6.47,
+   "animatic_start": 49.652
+  },
+  {
+   "word": "to",
+   "start": 6.56,
+   "end": 6.64,
+   "animatic_start": 49.822
+  },
+  {
+   "word": "it",
+   "start": 6.68,
+   "end": 6.73,
+   "animatic_start": 49.942
+  },
+  {
+   "word": "for",
+   "start": 6.81,
+   "end": 6.89,
+   "animatic_start": 50.072
+  },
+  {
+   "word": "a",
+   "start": 6.93,
+   "end": 6.96,
+   "animatic_start": 50.192
+  },
+  {
+   "word": "moment.",
+   "start": 7.06,
+   "end": 7.43,
+   "animatic_start": 50.322
+  }
+ ],
+ "2D": [
+  {
+   "word": "So",
+   "start": 0.02,
+   "end": 0.32,
+   "animatic_start": 51.41
+  },
+  {
+   "word": "with",
+   "start": 0.64,
+   "end": 0.8,
+   "animatic_start": 52.03
+  },
+  {
+   "word": "each",
+   "start": 0.88,
+   "end": 1.04,
+   "animatic_start": 52.27
+  },
+  {
+   "word": "breath",
+   "start": 1.13,
+   "end": 1.38,
+   "animatic_start": 52.52
+  },
+  {
+   "word": "in,",
+   "start": 1.45,
+   "end": 1.74,
+   "animatic_start": 52.84
+  },
+  {
+   "word": "the",
+   "start": 2.04,
+   "end": 2.08,
+   "animatic_start": 53.43
+  },
+  {
+   "word": "left",
+   "start": 2.16,
+   "end": 2.32,
+   "animatic_start": 53.55
+  },
+  {
+   "word": "ventricle",
+   "start": 2.4,
+   "end": 2.87,
+   "animatic_start": 53.79
+  },
+  {
+   "word": "fills",
+   "start": 3.0,
+   "end": 3.25,
+   "animatic_start": 54.39
+  },
+  {
+   "word": "a",
+   "start": 3.36,
+   "end": 3.46,
+   "animatic_start": 54.75
+  },
+  {
+   "word": "little",
+   "start": 3.51,
+   "end": 3.67,
+   "animatic_start": 54.9
+  },
+  {
+   "word": "less",
+   "start": 3.87,
+   "end": 4.055,
+   "animatic_start": 55.26
+  },
+  {
+   "word": "and",
+   "start": 4.15,
+   "end": 4.29,
+   "animatic_start": 55.54
+  },
+  {
+   "word": "pumps",
+   "start": 4.36,
+   "end": 4.61,
+   "animatic_start": 55.75
+  },
+  {
+   "word": "a",
+   "start": 4.69,
+   "end": 4.735,
+   "animatic_start": 56.08
+  },
+  {
+   "word": "little",
+   "start": 4.78,
+   "end": 4.95,
+   "animatic_start": 56.17
+  },
+  {
+   "word": "less,",
+   "start": 5.1,
+   "end": 5.37,
+   "animatic_start": 56.49
+  },
+  {
+   "word": "and",
+   "start": 5.64,
+   "end": 5.68,
+   "animatic_start": 57.03
+  },
+  {
+   "word": "systolic",
+   "start": 5.76,
+   "end": 6.25,
+   "animatic_start": 57.15
+  },
+  {
+   "word": "pressure",
+   "start": 6.44,
+   "end": 6.63,
+   "animatic_start": 57.83
+  },
+  {
+   "word": "dips,",
+   "start": 6.7,
+   "end": 7.1,
+   "animatic_start": 58.09
+  },
+  {
+   "word": "normally",
+   "start": 7.42,
+   "end": 7.8,
+   "animatic_start": 58.81
+  },
+  {
+   "word": "by",
+   "start": 7.88,
+   "end": 7.96,
+   "animatic_start": 59.27
+  },
+  {
+   "word": "less",
+   "start": 8.045,
+   "end": 8.13,
+   "animatic_start": 59.435
+  },
+  {
+   "word": "than",
+   "start": 8.21,
+   "end": 8.39,
+   "animatic_start": 59.6
+  },
+  {
+   "word": "ten",
+   "start": 8.47,
+   "end": 8.56,
+   "animatic_start": 59.86
+  },
+  {
+   "word": "millimeters",
+   "start": 8.72,
+   "end": 9.12,
+   "animatic_start": 60.11
+  },
+  {
+   "word": "of",
+   "start": 9.21,
+   "end": 9.28,
+   "animatic_start": 60.6
+  },
+  {
+   "word": "mercury.",
+   "start": 9.36,
+   "end": 9.74,
+   "animatic_start": 60.75
+  },
+  {
+   "word": "When",
+   "start": 10.4,
+   "end": 10.48,
+   "animatic_start": 61.79
+  },
+  {
+   "word": "you",
+   "start": 10.52,
+   "end": 10.56,
+   "animatic_start": 61.91
+  },
+  {
+   "word": "breathe",
+   "start": 10.64,
+   "end": 10.87,
+   "animatic_start": 62.03
+  },
+  {
+   "word": "out,",
+   "start": 10.98,
+   "end": 11.27,
+   "animatic_start": 62.37
+  },
+  {
+   "word": "everything",
+   "start": 11.54,
+   "end": 11.95,
+   "animatic_start": 62.93
+  },
+  {
+   "word": "comes",
+   "start": 12.06,
+   "end": 12.18,
+   "animatic_start": 63.45
+  },
+  {
+   "word": "back.",
+   "start": 12.34,
+   "end": 12.52,
+   "animatic_start": 63.73
+  }
+ ],
+ "2E": [
+  {
+   "word": "When",
+   "start": 0.1,
+   "end": 0.2,
+   "animatic_start": 64.659
+  },
+  {
+   "word": "the",
+   "start": 0.24,
+   "end": 0.28,
+   "animatic_start": 64.799
+  },
+  {
+   "word": "drop",
+   "start": 0.41,
+   "end": 0.54,
+   "animatic_start": 64.969
+  },
+  {
+   "word": "is",
+   "start": 0.62,
+   "end": 0.83,
+   "animatic_start": 65.179
+  },
+  {
+   "word": "bigger",
+   "start": 0.91,
+   "end": 1.07,
+   "animatic_start": 65.469
+  },
+  {
+   "word": "than",
+   "start": 1.19,
+   "end": 1.32,
+   "animatic_start": 65.749
+  },
+  {
+   "word": "ten",
+   "start": 1.39,
+   "end": 1.47,
+   "animatic_start": 65.949
+  },
+  {
+   "word": "mmHg,",
+   "start": 1.63,
+   "end": 2.77,
+   "animatic_start": 66.189
+  },
+  {
+   "word": "we",
+   "start": 3.11,
+   "end": 3.17,
+   "animatic_start": 67.669
+  },
+  {
+   "word": "call",
+   "start": 3.25,
+   "end": 3.33,
+   "animatic_start": 67.809
+  },
+  {
+   "word": "it",
+   "start": 3.41,
+   "end": 3.49,
+   "animatic_start": 67.969
+  },
+  {
+   "word": "Pulsus",
+   "start": 3.65,
+   "end": 4.06,
+   "animatic_start": 68.209
+  },
+  {
+   "word": "Paradoxus.",
+   "start": 4.16,
+   "end": 5.02,
+   "animatic_start": 68.719
+  },
+  {
+   "word": "Kussmaul",
+   "start": 5.445,
+   "end": 5.94,
+   "animatic_start": 70.004
+  },
+  {
+   "word": "named",
+   "start": 6.06,
+   "end": 6.18,
+   "animatic_start": 70.619
+  },
+  {
+   "word": "it",
+   "start": 6.26,
+   "end": 6.34,
+   "animatic_start": 70.819
+  },
+  {
+   "word": "for",
+   "start": 6.41,
+   "end": 6.48,
+   "animatic_start": 70.969
+  },
+  {
+   "word": "a",
+   "start": 6.52,
+   "end": 6.57,
+   "animatic_start": 71.079
+  },
+  {
+   "word": "pulse",
+   "start": 6.65,
+   "end": 6.91,
+   "animatic_start": 71.209
+  },
+  {
+   "word": "that",
+   "start": 6.98,
+   "end": 7.06,
+   "animatic_start": 71.539
+  },
+  {
+   "word": "faded",
+   "start": 7.23,
+   "end": 7.54,
+   "animatic_start": 71.789
+  },
+  {
+   "word": "and",
+   "start": 7.625,
+   "end": 7.71,
+   "animatic_start": 72.184
+  },
+  {
+   "word": "returned",
+   "start": 8.02,
+   "end": 8.34,
+   "animatic_start": 72.579
+  },
+  {
+   "word": "even",
+   "start": 8.58,
+   "end": 8.83,
+   "animatic_start": 73.139
+  },
+  {
+   "word": "though",
+   "start": 8.87,
+   "end": 8.925,
+   "animatic_start": 73.429
+  },
+  {
+   "word": "the",
+   "start": 9.02,
+   "end": 9.1,
+   "animatic_start": 73.579
+  },
+  {
+   "word": "heart",
+   "start": 9.25,
+   "end": 9.41,
+   "animatic_start": 73.809
+  },
+  {
+   "word": "kept",
+   "start": 9.49,
+   "end": 9.57,
+   "animatic_start": 74.049
+  },
+  {
+   "word": "a",
+   "start": 9.65,
+   "end": 9.73,
+   "animatic_start": 74.209
+  },
+  {
+   "word": "regular",
+   "start": 9.92,
+   "end": 10.13,
+   "animatic_start": 74.479
+  },
+  {
+   "word": "beat.",
+   "start": 10.21,
+   "end": 10.52,
+   "animatic_start": 74.769
+  }
+ ],
+ "3A": [
+  {
+   "word": "Now",
+   "start": 0.02,
+   "end": 0.24,
+   "animatic_start": 76.263
+  },
+  {
+   "word": "let's",
+   "start": 0.41,
+   "end": 0.62,
+   "animatic_start": 76.653
+  },
+  {
+   "word": "fill",
+   "start": 0.7,
+   "end": 0.82,
+   "animatic_start": 76.943
+  },
+  {
+   "word": "the",
+   "start": 0.86,
+   "end": 0.9,
+   "animatic_start": 77.103
+  },
+  {
+   "word": "pericardium",
+   "start": 0.97,
+   "end": 1.6,
+   "animatic_start": 77.213
+  },
+  {
+   "word": "with",
+   "start": 1.68,
+   "end": 1.76,
+   "animatic_start": 77.923
+  },
+  {
+   "word": "fluid.",
+   "start": 1.84,
+   "end": 2.24,
+   "animatic_start": 78.083
+  },
+  {
+   "word": "The",
+   "start": 2.72,
+   "end": 2.79,
+   "animatic_start": 78.963
+  },
+  {
+   "word": "heart",
+   "start": 2.91,
+   "end": 3.04,
+   "animatic_start": 79.153
+  },
+  {
+   "word": "is",
+   "start": 3.14,
+   "end": 3.24,
+   "animatic_start": 79.383
+  },
+  {
+   "word": "still",
+   "start": 3.36,
+   "end": 3.48,
+   "animatic_start": 79.603
+  },
+  {
+   "word": "beating,",
+   "start": 3.59,
+   "end": 3.98,
+   "animatic_start": 79.833
+  },
+  {
+   "word": "but",
+   "start": 4.29,
+   "end": 4.33,
+   "animatic_start": 80.533
+  },
+  {
+   "word": "it's",
+   "start": 4.375,
+   "end": 4.5,
+   "animatic_start": 80.618
+  },
+  {
+   "word": "sitting",
+   "start": 4.545,
+   "end": 4.76,
+   "animatic_start": 80.788
+  },
+  {
+   "word": "inside",
+   "start": 4.92,
+   "end": 5.09,
+   "animatic_start": 81.163
+  },
+  {
+   "word": "a",
+   "start": 5.17,
+   "end": 5.24,
+   "animatic_start": 81.413
+  },
+  {
+   "word": "sac",
+   "start": 5.28,
+   "end": 5.57,
+   "animatic_start": 81.523
+  },
+  {
+   "word": "that",
+   "start": 5.65,
+   "end": 5.73,
+   "animatic_start": 81.893
+  },
+  {
+   "word": "can't",
+   "start": 5.82,
+   "end": 6.05,
+   "animatic_start": 82.063
+  },
+  {
+   "word": "stretch,",
+   "start": 6.16,
+   "end": 6.67,
+   "animatic_start": 82.403
+  },
+  {
+   "word": "so",
+   "start": 7.08,
+   "end": 7.18,
+   "animatic_start": 83.323
+  },
+  {
+   "word": "as",
+   "start": 7.24,
+   "end": 7.32,
+   "animatic_start": 83.483
+  },
+  {
+   "word": "the",
+   "start": 7.4,
+   "end": 7.44,
+   "animatic_start": 83.643
+  },
+  {
+   "word": "fluid",
+   "start": 7.48,
+   "end": 7.73,
+   "animatic_start": 83.723
+  },
+  {
+   "word": "builds,",
+   "start": 7.81,
+   "end": 8.3,
+   "animatic_start": 84.053
+  },
+  {
+   "word": "the",
+   "start": 8.57,
+   "end": 8.66,
+   "animatic_start": 84.813
+  },
+  {
+   "word": "pressure",
+   "start": 8.8,
+   "end": 8.96,
+   "animatic_start": 85.043
+  },
+  {
+   "word": "around",
+   "start": 9.04,
+   "end": 9.28,
+   "animatic_start": 85.283
+  },
+  {
+   "word": "the",
+   "start": 9.32,
+   "end": 9.36,
+   "animatic_start": 85.563
+  },
+  {
+   "word": "heart",
+   "start": 9.52,
+   "end": 9.66,
+   "animatic_start": 85.763
+  },
+  {
+   "word": "climbs",
+   "start": 9.74,
+   "end": 10.26,
+   "animatic_start": 85.983
+  },
+  {
+   "word": "until",
+   "start": 10.33,
+   "end": 10.48,
+   "animatic_start": 86.573
+  },
+  {
+   "word": "it",
+   "start": 10.56,
+   "end": 10.65,
+   "animatic_start": 86.803
+  },
+  {
+   "word": "starts",
+   "start": 10.73,
+   "end": 10.97,
+   "animatic_start": 86.973
+  },
+  {
+   "word": "to",
+   "start": 11.05,
+   "end": 11.09,
+   "animatic_start": 87.293
+  },
+  {
+   "word": "restrict",
+   "start": 11.14,
+   "end": 11.57,
+   "animatic_start": 87.383
+  },
+  {
+   "word": "filling.",
+   "start": 11.65,
+   "end": 11.99,
+   "animatic_start": 87.893
+  }
+ ],
+ "3B": [
+  {
+   "word": "When",
+   "start": 0.04,
+   "end": 0.15,
+   "animatic_start": 89.061
+  },
+  {
+   "word": "the",
+   "start": 0.18,
+   "end": 0.22,
+   "animatic_start": 89.201
+  },
+  {
+   "word": "patient",
+   "start": 0.3,
+   "end": 0.53,
+   "animatic_start": 89.321
+  },
+  {
+   "word": "breathes",
+   "start": 0.61,
+   "end": 0.94,
+   "animatic_start": 89.631
+  },
+  {
+   "word": "in,",
+   "start": 1.02,
+   "end": 1.36,
+   "animatic_start": 90.041
+  },
+  {
+   "word": "the",
+   "start": 1.66,
+   "end": 1.7,
+   "animatic_start": 90.681
+  },
+  {
+   "word": "right",
+   "start": 1.77,
+   "end": 1.94,
+   "animatic_start": 90.791
+  },
+  {
+   "word": "ventricle",
+   "start": 2.03,
+   "end": 2.51,
+   "animatic_start": 91.051
+  },
+  {
+   "word": "still",
+   "start": 2.64,
+   "end": 2.76,
+   "animatic_start": 91.661
+  },
+  {
+   "word": "tries",
+   "start": 2.84,
+   "end": 3.1,
+   "animatic_start": 91.861
+  },
+  {
+   "word": "to",
+   "start": 3.18,
+   "end": 3.34,
+   "animatic_start": 92.201
+  },
+  {
+   "word": "fill,",
+   "start": 3.5,
+   "end": 3.67,
+   "animatic_start": 92.521
+  },
+  {
+   "word": "but",
+   "start": 4.04,
+   "end": 4.08,
+   "animatic_start": 93.061
+  },
+  {
+   "word": "its",
+   "start": 4.2,
+   "end": 4.32,
+   "animatic_start": 93.221
+  },
+  {
+   "word": "outer",
+   "start": 4.44,
+   "end": 4.56,
+   "animatic_start": 93.461
+  },
+  {
+   "word": "wall",
+   "start": 4.64,
+   "end": 4.88,
+   "animatic_start": 93.661
+  },
+  {
+   "word": "is",
+   "start": 4.95,
+   "end": 5.13,
+   "animatic_start": 93.971
+  },
+  {
+   "word": "pinned",
+   "start": 5.17,
+   "end": 5.46,
+   "animatic_start": 94.191
+  },
+  {
+   "word": "against",
+   "start": 5.6,
+   "end": 5.76,
+   "animatic_start": 94.621
+  },
+  {
+   "word": "the",
+   "start": 5.8,
+   "end": 5.84,
+   "animatic_start": 94.821
+  },
+  {
+   "word": "fluid,",
+   "start": 5.92,
+   "end": 6.26,
+   "animatic_start": 94.941
+  },
+  {
+   "word": "so",
+   "start": 6.7,
+   "end": 6.78,
+   "animatic_start": 95.721
+  },
+  {
+   "word": "the",
+   "start": 6.86,
+   "end": 6.94,
+   "animatic_start": 95.881
+  },
+  {
+   "word": "only",
+   "start": 7.02,
+   "end": 7.18,
+   "animatic_start": 96.041
+  },
+  {
+   "word": "way",
+   "start": 7.27,
+   "end": 7.35,
+   "animatic_start": 96.291
+  },
+  {
+   "word": "it",
+   "start": 7.41,
+   "end": 7.49,
+   "animatic_start": 96.431
+  },
+  {
+   "word": "can",
+   "start": 7.57,
+   "end": 7.65,
+   "animatic_start": 96.591
+  },
+  {
+   "word": "make",
+   "start": 7.73,
+   "end": 7.81,
+   "animatic_start": 96.751
+  },
+  {
+   "word": "room",
+   "start": 7.89,
+   "end": 8.28,
+   "animatic_start": 96.911
+  },
+  {
+   "word": "is",
+   "start": 8.36,
+   "end": 8.44,
+   "animatic_start": 97.381
+  },
+  {
+   "word": "by",
+   "start": 8.565,
+   "end": 8.68,
+   "animatic_start": 97.586
+  },
+  {
+   "word": "pushing",
+   "start": 8.8,
+   "end": 9.0,
+   "animatic_start": 97.821
+  },
+  {
+   "word": "the",
+   "start": 9.08,
+   "end": 9.12,
+   "animatic_start": 98.101
+  },
+  {
+   "word": "septum",
+   "start": 9.16,
+   "end": 9.59,
+   "animatic_start": 98.181
+  },
+  {
+   "word": "into",
+   "start": 9.75,
+   "end": 9.99,
+   "animatic_start": 98.771
+  },
+  {
+   "word": "the",
+   "start": 10.01,
+   "end": 10.05,
+   "animatic_start": 99.031
+  },
+  {
+   "word": "left",
+   "start": 10.13,
+   "end": 10.35,
+   "animatic_start": 99.151
+  },
+  {
+   "word": "ventricle.",
+   "start": 10.42,
+   "end": 10.84,
+   "animatic_start": 99.441
+  }
+ ],
+ "3C": [
+  {
+   "word": "With",
+   "start": 0.04,
+   "end": 0.16,
+   "animatic_start": 100.715
+  },
+  {
+   "word": "less",
+   "start": 0.295,
+   "end": 0.42,
+   "animatic_start": 100.97
+  },
+  {
+   "word": "room",
+   "start": 0.53,
+   "end": 0.66,
+   "animatic_start": 101.205
+  },
+  {
+   "word": "on",
+   "start": 0.7,
+   "end": 0.73,
+   "animatic_start": 101.375
+  },
+  {
+   "word": "the",
+   "start": 0.77,
+   "end": 0.81,
+   "animatic_start": 101.445
+  },
+  {
+   "word": "left,",
+   "start": 0.89,
+   "end": 1.32,
+   "animatic_start": 101.565
+  },
+  {
+   "word": "the",
+   "start": 1.56,
+   "end": 1.6,
+   "animatic_start": 102.235
+  },
+  {
+   "word": "left",
+   "start": 1.68,
+   "end": 1.84,
+   "animatic_start": 102.355
+  },
+  {
+   "word": "ventricle",
+   "start": 1.92,
+   "end": 2.29,
+   "animatic_start": 102.595
+  },
+  {
+   "word": "fills",
+   "start": 2.44,
+   "end": 2.68,
+   "animatic_start": 103.115
+  },
+  {
+   "word": "less,",
+   "start": 2.76,
+   "end": 3.18,
+   "animatic_start": 103.435
+  },
+  {
+   "word": "ejects",
+   "start": 3.38,
+   "end": 3.64,
+   "animatic_start": 104.055
+  },
+  {
+   "word": "a",
+   "start": 3.68,
+   "end": 3.72,
+   "animatic_start": 104.355
+  },
+  {
+   "word": "smaller",
+   "start": 3.76,
+   "end": 4.09,
+   "animatic_start": 104.435
+  },
+  {
+   "word": "stroke,",
+   "start": 4.18,
+   "end": 4.6,
+   "animatic_start": 104.855
+  },
+  {
+   "word": "and",
+   "start": 4.83,
+   "end": 4.87,
+   "animatic_start": 105.505
+  },
+  {
+   "word": "systolic",
+   "start": 4.95,
+   "end": 5.43,
+   "animatic_start": 105.625
+  },
+  {
+   "word": "pressure",
+   "start": 5.51,
+   "end": 5.765,
+   "animatic_start": 106.185
+  },
+  {
+   "word": "drops",
+   "start": 5.85,
+   "end": 6.14,
+   "animatic_start": 106.525
+  },
+  {
+   "word": "much",
+   "start": 6.31,
+   "end": 6.48,
+   "animatic_start": 106.985
+  },
+  {
+   "word": "further",
+   "start": 6.56,
+   "end": 6.86,
+   "animatic_start": 107.235
+  },
+  {
+   "word": "than",
+   "start": 6.94,
+   "end": 7.02,
+   "animatic_start": 107.615
+  },
+  {
+   "word": "normal.",
+   "start": 7.1,
+   "end": 7.34,
+   "animatic_start": 107.775
+  },
+  {
+   "word": "This",
+   "start": 7.97,
+   "end": 8.28,
+   "animatic_start": 108.645
+  },
+  {
+   "word": "is",
+   "start": 8.44,
+   "end": 8.51,
+   "animatic_start": 109.115
+  },
+  {
+   "word": "ventricular",
+   "start": 8.63,
+   "end": 9.12,
+   "animatic_start": 109.305
+  },
+  {
+   "word": "interdependence:",
+   "start": 9.2,
+   "end": 10.14,
+   "animatic_start": 109.875
+  },
+  {
+   "word": "inside",
+   "start": 10.555,
+   "end": 10.88,
+   "animatic_start": 111.23
+  },
+  {
+   "word": "a",
+   "start": 10.96,
+   "end": 11.04,
+   "animatic_start": 111.635
+  },
+  {
+   "word": "tight",
+   "start": 11.19,
+   "end": 11.34,
+   "animatic_start": 111.865
+  },
+  {
+   "word": "sac,",
+   "start": 11.38,
+   "end": 11.75,
+   "animatic_start": 112.055
+  },
+  {
+   "word": "one",
+   "start": 12.05,
+   "end": 12.2,
+   "animatic_start": 112.725
+  },
+  {
+   "word": "ventricle",
+   "start": 12.32,
+   "end": 12.69,
+   "animatic_start": 112.995
+  },
+  {
+   "word": "can",
+   "start": 12.77,
+   "end": 12.94,
+   "animatic_start": 113.445
+  },
+  {
+   "word": "only",
+   "start": 13.02,
+   "end": 13.26,
+   "animatic_start": 113.695
+  },
+  {
+   "word": "fill",
+   "start": 13.35,
+   "end": 13.64,
+   "animatic_start": 114.025
+  },
+  {
+   "word": "at",
+   "start": 13.67,
+   "end": 13.71,
+   "animatic_start": 114.345
+  },
+  {
+   "word": "the",
+   "start": 13.79,
+   "end": 13.83,
+   "animatic_start": 114.465
+  },
+  {
+   "word": "other's",
+   "start": 13.88,
+   "end": 14.12,
+   "animatic_start": 114.555
+  },
+  {
+   "word": "expense.",
+   "start": 14.2,
+   "end": 14.8,
+   "animatic_start": 114.875
+  }
+ ],
+ "3D": [
+  {
+   "word": "In",
+   "start": 0.04,
+   "end": 0.1,
+   "animatic_start": 116.209
+  },
+  {
+   "word": "a",
+   "start": 0.14,
+   "end": 0.17,
+   "animatic_start": 116.309
+  },
+  {
+   "word": "patient",
+   "start": 0.24,
+   "end": 0.58,
+   "animatic_start": 116.409
+  },
+  {
+   "word": "with",
+   "start": 0.62,
+   "end": 0.66,
+   "animatic_start": 116.789
+  },
+  {
+   "word": "a",
+   "start": 0.73,
+   "end": 0.81,
+   "animatic_start": 116.899
+  },
+  {
+   "word": "pericardial",
+   "start": 0.88,
+   "end": 1.45,
+   "animatic_start": 117.049
+  },
+  {
+   "word": "effusion,",
+   "start": 1.6,
+   "end": 2.11,
+   "animatic_start": 117.769
+  },
+  {
+   "word": "pulsus",
+   "start": 2.44,
+   "end": 2.72,
+   "animatic_start": 118.609
+  },
+  {
+   "word": "paradoxus",
+   "start": 2.8,
+   "end": 3.53,
+   "animatic_start": 118.969
+  },
+  {
+   "word": "should",
+   "start": 3.62,
+   "end": 3.72,
+   "animatic_start": 119.789
+  },
+  {
+   "word": "make",
+   "start": 3.8,
+   "end": 3.87,
+   "animatic_start": 119.969
+  },
+  {
+   "word": "you",
+   "start": 3.94,
+   "end": 4.02,
+   "animatic_start": 120.109
+  },
+  {
+   "word": "think",
+   "start": 4.16,
+   "end": 4.29,
+   "animatic_start": 120.329
+  },
+  {
+   "word": "tamponade,",
+   "start": 4.4,
+   "end": 5.02,
+   "animatic_start": 120.569
+  },
+  {
+   "word": "and",
+   "start": 5.37,
+   "end": 5.44,
+   "animatic_start": 121.539
+  },
+  {
+   "word": "the",
+   "start": 5.48,
+   "end": 5.52,
+   "animatic_start": 121.649
+  },
+  {
+   "word": "next",
+   "start": 5.59,
+   "end": 5.67,
+   "animatic_start": 121.759
+  },
+  {
+   "word": "step",
+   "start": 5.75,
+   "end": 6.05,
+   "animatic_start": 121.919
+  },
+  {
+   "word": "is",
+   "start": 6.15,
+   "end": 6.27,
+   "animatic_start": 122.319
+  },
+  {
+   "word": "urgent",
+   "start": 6.43,
+   "end": 6.59,
+   "animatic_start": 122.599
+  },
+  {
+   "word": "assessment",
+   "start": 6.67,
+   "end": 7.17,
+   "animatic_start": 122.839
+  },
+  {
+   "word": "with",
+   "start": 7.255,
+   "end": 7.34,
+   "animatic_start": 123.424
+  },
+  {
+   "word": "bedside",
+   "start": 7.42,
+   "end": 7.8,
+   "animatic_start": 123.589
+  },
+  {
+   "word": "echo.",
+   "start": 7.88,
+   "end": 8.12,
+   "animatic_start": 124.049
+  },
+  {
+   "word": "Its",
+   "start": 8.67,
+   "end": 8.78,
+   "animatic_start": 124.839
+  },
+  {
+   "word": "absence",
+   "start": 8.87,
+   "end": 9.27,
+   "animatic_start": 125.039
+  },
+  {
+   "word": "doesn't",
+   "start": 9.4,
+   "end": 9.6,
+   "animatic_start": 125.569
+  },
+  {
+   "word": "rule",
+   "start": 9.68,
+   "end": 9.86,
+   "animatic_start": 125.849
+  },
+  {
+   "word": "tamponade",
+   "start": 9.93,
+   "end": 10.42,
+   "animatic_start": 126.099
+  },
+  {
+   "word": "out.",
+   "start": 10.49,
+   "end": 10.82,
+   "animatic_start": 126.659
+  }
+ ],
+ "3E": [
+  {
+   "word": "There's",
+   "start": 0.09,
+   "end": 0.33,
+   "animatic_start": 127.757
+  },
+  {
+   "word": "one",
+   "start": 0.415,
+   "end": 0.5,
+   "animatic_start": 128.082
+  },
+  {
+   "word": "more",
+   "start": 0.58,
+   "end": 0.75,
+   "animatic_start": 128.247
+  },
+  {
+   "word": "clue",
+   "start": 0.82,
+   "end": 1.08,
+   "animatic_start": 128.487
+  },
+  {
+   "word": "in",
+   "start": 1.12,
+   "end": 1.16,
+   "animatic_start": 128.787
+  },
+  {
+   "word": "the",
+   "start": 1.24,
+   "end": 1.28,
+   "animatic_start": 128.907
+  },
+  {
+   "word": "waveform.",
+   "start": 1.32,
+   "end": 1.67,
+   "animatic_start": 128.987
+  },
+  {
+   "word": "In",
+   "start": 2.33,
+   "end": 2.41,
+   "animatic_start": 129.997
+  },
+  {
+   "word": "cardiac",
+   "start": 2.49,
+   "end": 2.8,
+   "animatic_start": 130.157
+  },
+  {
+   "word": "tamponade,",
+   "start": 2.87,
+   "end": 3.45,
+   "animatic_start": 130.537
+  },
+  {
+   "word": "systolic",
+   "start": 3.71,
+   "end": 4.14,
+   "animatic_start": 131.377
+  },
+  {
+   "word": "pressure",
+   "start": 4.22,
+   "end": 4.54,
+   "animatic_start": 131.887
+  },
+  {
+   "word": "falls",
+   "start": 4.635,
+   "end": 5.15,
+   "animatic_start": 132.302
+  },
+  {
+   "word": "while",
+   "start": 5.25,
+   "end": 5.4,
+   "animatic_start": 132.917
+  },
+  {
+   "word": "diastolic",
+   "start": 5.47,
+   "end": 6.07,
+   "animatic_start": 133.137
+  },
+  {
+   "word": "barely",
+   "start": 6.2,
+   "end": 6.51,
+   "animatic_start": 133.867
+  },
+  {
+   "word": "moves,",
+   "start": 6.58,
+   "end": 7.06,
+   "animatic_start": 134.247
+  },
+  {
+   "word": "so",
+   "start": 7.34,
+   "end": 7.42,
+   "animatic_start": 135.007
+  },
+  {
+   "word": "the",
+   "start": 7.5,
+   "end": 7.58,
+   "animatic_start": 135.167
+  },
+  {
+   "word": "pulse",
+   "start": 7.7,
+   "end": 7.81,
+   "animatic_start": 135.367
+  },
+  {
+   "word": "pressure",
+   "start": 7.89,
+   "end": 8.19,
+   "animatic_start": 135.557
+  },
+  {
+   "word": "narrows.",
+   "start": 8.26,
+   "end": 8.89,
+   "animatic_start": 135.927
+  }
+ ],
+ "4A": [
+  {
+   "word": "The",
+   "start": 0.03,
+   "end": 0.11,
+   "animatic_start": 137.787
+  },
+  {
+   "word": "pericardium",
+   "start": 0.19,
+   "end": 0.85,
+   "animatic_start": 137.947
+  },
+  {
+   "word": "isn't",
+   "start": 0.92,
+   "end": 1.08,
+   "animatic_start": 138.677
+  },
+  {
+   "word": "the",
+   "start": 1.19,
+   "end": 1.29,
+   "animatic_start": 138.947
+  },
+  {
+   "word": "only",
+   "start": 1.36,
+   "end": 1.6,
+   "animatic_start": 139.117
+  },
+  {
+   "word": "place",
+   "start": 1.68,
+   "end": 1.84,
+   "animatic_start": 139.437
+  },
+  {
+   "word": "this",
+   "start": 1.92,
+   "end": 2.08,
+   "animatic_start": 139.677
+  },
+  {
+   "word": "can",
+   "start": 2.16,
+   "end": 2.24,
+   "animatic_start": 139.917
+  },
+  {
+   "word": "start.",
+   "start": 2.32,
+   "end": 2.67,
+   "animatic_start": 140.077
+  },
+  {
+   "word": "Outside",
+   "start": 3.25,
+   "end": 3.45,
+   "animatic_start": 141.007
+  },
+  {
+   "word": "the",
+   "start": 3.49,
+   "end": 3.53,
+   "animatic_start": 141.247
+  },
+  {
+   "word": "heart,",
+   "start": 3.69,
+   "end": 3.91,
+   "animatic_start": 141.447
+  },
+  {
+   "word": "the",
+   "start": 4.12,
+   "end": 4.16,
+   "animatic_start": 141.877
+  },
+  {
+   "word": "most",
+   "start": 4.28,
+   "end": 4.41,
+   "animatic_start": 142.037
+  },
+  {
+   "word": "common",
+   "start": 4.49,
+   "end": 4.72,
+   "animatic_start": 142.247
+  },
+  {
+   "word": "cause",
+   "start": 4.8,
+   "end": 5.11,
+   "animatic_start": 142.557
+  },
+  {
+   "word": "is",
+   "start": 5.17,
+   "end": 5.33,
+   "animatic_start": 142.927
+  },
+  {
+   "word": "severe",
+   "start": 5.41,
+   "end": 5.75,
+   "animatic_start": 143.167
+  },
+  {
+   "word": "asthma",
+   "start": 5.82,
+   "end": 6.29,
+   "animatic_start": 143.577
+  },
+  {
+   "word": "or",
+   "start": 6.42,
+   "end": 6.59,
+   "animatic_start": 144.177
+  },
+  {
+   "word": "COPD.",
+   "start": 6.67,
+   "end": 7.31,
+   "animatic_start": 144.427
+  }
+ ],
+ "4B": [
+  {
+   "word": "To",
+   "start": 0.06,
+   "end": 0.16,
+   "animatic_start": 145.867
+  },
+  {
+   "word": "pull",
+   "start": 0.24,
+   "end": 0.4,
+   "animatic_start": 146.047
+  },
+  {
+   "word": "air",
+   "start": 0.48,
+   "end": 0.7,
+   "animatic_start": 146.287
+  },
+  {
+   "word": "through",
+   "start": 0.8,
+   "end": 0.91,
+   "animatic_start": 146.607
+  },
+  {
+   "word": "narrowed",
+   "start": 0.95,
+   "end": 1.29,
+   "animatic_start": 146.757
+  },
+  {
+   "word": "airways,",
+   "start": 1.41,
+   "end": 1.97,
+   "animatic_start": 147.217
+  },
+  {
+   "word": "the",
+   "start": 2.27,
+   "end": 2.35,
+   "animatic_start": 148.077
+  },
+  {
+   "word": "chest",
+   "start": 2.47,
+   "end": 2.58,
+   "animatic_start": 148.277
+  },
+  {
+   "word": "has",
+   "start": 2.67,
+   "end": 2.76,
+   "animatic_start": 148.477
+  },
+  {
+   "word": "to",
+   "start": 2.83,
+   "end": 2.91,
+   "animatic_start": 148.637
+  },
+  {
+   "word": "generate",
+   "start": 3.12,
+   "end": 3.32,
+   "animatic_start": 148.927
+  },
+  {
+   "word": "an",
+   "start": 3.37,
+   "end": 3.41,
+   "animatic_start": 149.177
+  },
+  {
+   "word": "enormous",
+   "start": 3.49,
+   "end": 4.16,
+   "animatic_start": 149.297
+  },
+  {
+   "word": "negative",
+   "start": 4.23,
+   "end": 4.52,
+   "animatic_start": 150.037
+  },
+  {
+   "word": "pressure,",
+   "start": 4.73,
+   "end": 4.92,
+   "animatic_start": 150.537
+  },
+  {
+   "word": "sometimes",
+   "start": 5.63,
+   "end": 5.85,
+   "animatic_start": 151.437
+  },
+  {
+   "word": "close",
+   "start": 5.98,
+   "end": 6.11,
+   "animatic_start": 151.787
+  },
+  {
+   "word": "to",
+   "start": 6.23,
+   "end": 6.36,
+   "animatic_start": 152.037
+  },
+  {
+   "word": "forty",
+   "start": 6.48,
+   "end": 6.69,
+   "animatic_start": 152.287
+  },
+  {
+   "word": "millimeters",
+   "start": 6.77,
+   "end": 7.18,
+   "animatic_start": 152.577
+  },
+  {
+   "word": "of",
+   "start": 7.25,
+   "end": 7.35,
+   "animatic_start": 153.057
+  },
+  {
+   "word": "mercury",
+   "start": 7.43,
+   "end": 7.82,
+   "animatic_start": 153.237
+  },
+  {
+   "word": "below",
+   "start": 7.89,
+   "end": 8.16,
+   "animatic_start": 153.697
+  },
+  {
+   "word": "atmospheric.",
+   "start": 8.24,
+   "end": 8.98,
+   "animatic_start": 154.047
+  }
+ ],
+ "4C": [
+  {
+   "word": "Those",
+   "start": 0.03,
+   "end": 0.24,
+   "animatic_start": 155.506
+  },
+  {
+   "word": "big",
+   "start": 0.4,
+   "end": 0.56,
+   "animatic_start": 155.876
+  },
+  {
+   "word": "pressure",
+   "start": 0.65,
+   "end": 0.97,
+   "animatic_start": 156.126
+  },
+  {
+   "word": "swings",
+   "start": 1.06,
+   "end": 1.45,
+   "animatic_start": 156.536
+  },
+  {
+   "word": "change",
+   "start": 1.52,
+   "end": 1.84,
+   "animatic_start": 156.996
+  },
+  {
+   "word": "how",
+   "start": 1.92,
+   "end": 2.01,
+   "animatic_start": 157.396
+  },
+  {
+   "word": "the",
+   "start": 2.05,
+   "end": 2.09,
+   "animatic_start": 157.526
+  },
+  {
+   "word": "right",
+   "start": 2.18,
+   "end": 2.33,
+   "animatic_start": 157.656
+  },
+  {
+   "word": "heart",
+   "start": 2.41,
+   "end": 2.57,
+   "animatic_start": 157.886
+  },
+  {
+   "word": "fills",
+   "start": 2.74,
+   "end": 3.16,
+   "animatic_start": 158.216
+  },
+  {
+   "word": "and",
+   "start": 3.36,
+   "end": 3.52,
+   "animatic_start": 158.836
+  },
+  {
+   "word": "can",
+   "start": 3.6,
+   "end": 3.68,
+   "animatic_start": 159.076
+  },
+  {
+   "word": "reduce",
+   "start": 3.88,
+   "end": 4.08,
+   "animatic_start": 159.356
+  },
+  {
+   "word": "left-heart",
+   "start": 4.16,
+   "end": 4.57,
+   "animatic_start": 159.636
+  },
+  {
+   "word": "filling",
+   "start": 4.65,
+   "end": 4.89,
+   "animatic_start": 160.126
+  },
+  {
+   "word": "too.",
+   "start": 4.99,
+   "end": 5.16,
+   "animatic_start": 160.466
+  },
+  {
+   "word": "And",
+   "start": 5.77,
+   "end": 5.85,
+   "animatic_start": 161.246
+  },
+  {
+   "word": "the",
+   "start": 5.89,
+   "end": 5.93,
+   "animatic_start": 161.366
+  },
+  {
+   "word": "more",
+   "start": 6.0,
+   "end": 6.14,
+   "animatic_start": 161.476
+  },
+  {
+   "word": "negative",
+   "start": 6.21,
+   "end": 6.52,
+   "animatic_start": 161.686
+  },
+  {
+   "word": "pressure",
+   "start": 6.6,
+   "end": 6.99,
+   "animatic_start": 162.076
+  },
+  {
+   "word": "around",
+   "start": 7.13,
+   "end": 7.26,
+   "animatic_start": 162.606
+  },
+  {
+   "word": "the",
+   "start": 7.3,
+   "end": 7.35,
+   "animatic_start": 162.776
+  },
+  {
+   "word": "left",
+   "start": 7.43,
+   "end": 7.61,
+   "animatic_start": 162.906
+  },
+  {
+   "word": "ventricle",
+   "start": 7.7,
+   "end": 8.16,
+   "animatic_start": 163.176
+  },
+  {
+   "word": "raises",
+   "start": 8.32,
+   "end": 8.66,
+   "animatic_start": 163.796
+  },
+  {
+   "word": "its",
+   "start": 8.71,
+   "end": 8.86,
+   "animatic_start": 164.186
+  },
+  {
+   "word": "afterload,",
+   "start": 8.94,
+   "end": 9.5,
+   "animatic_start": 164.416
+  },
+  {
+   "word": "so",
+   "start": 9.87,
+   "end": 10.13,
+   "animatic_start": 165.346
+  },
+  {
+   "word": "systolic",
+   "start": 10.19,
+   "end": 10.67,
+   "animatic_start": 165.666
+  },
+  {
+   "word": "pressure",
+   "start": 10.82,
+   "end": 10.96,
+   "animatic_start": 166.296
+  },
+  {
+   "word": "falls.",
+   "start": 11.08,
+   "end": 11.54,
+   "animatic_start": 166.556
+  },
+  {
+   "word": "But",
+   "start": 11.9,
+   "end": 11.98,
+   "animatic_start": 167.376
+  },
+  {
+   "word": "this",
+   "start": 12.07,
+   "end": 12.22,
+   "animatic_start": 167.546
+  },
+  {
+   "word": "time,",
+   "start": 12.29,
+   "end": 12.59,
+   "animatic_start": 167.766
+  },
+  {
+   "word": "diastolic",
+   "start": 12.85,
+   "end": 13.44,
+   "animatic_start": 168.326
+  },
+  {
+   "word": "pressure",
+   "start": 13.51,
+   "end": 13.83,
+   "animatic_start": 168.986
+  },
+  {
+   "word": "tends",
+   "start": 13.86,
+   "end": 14.05,
+   "animatic_start": 169.336
+  },
+  {
+   "word": "to",
+   "start": 14.14,
+   "end": 14.225,
+   "animatic_start": 169.616
+  },
+  {
+   "word": "fall",
+   "start": 14.35,
+   "end": 14.45,
+   "animatic_start": 169.826
+  },
+  {
+   "word": "with",
+   "start": 14.53,
+   "end": 14.69,
+   "animatic_start": 170.006
+  },
+  {
+   "word": "it.",
+   "start": 14.81,
+   "end": 14.83,
+   "animatic_start": 170.286
+  }
+ ],
+ "5A": [
+  {
+   "word": "To",
+   "start": 0.06,
+   "end": 0.17,
+   "animatic_start": 171.609
+  },
+  {
+   "word": "measure",
+   "start": 0.34,
+   "end": 0.49,
+   "animatic_start": 171.889
+  },
+  {
+   "word": "it,",
+   "start": 0.57,
+   "end": 0.77,
+   "animatic_start": 172.119
+  },
+  {
+   "word": "you'll",
+   "start": 0.96,
+   "end": 1.03,
+   "animatic_start": 172.509
+  },
+  {
+   "word": "need",
+   "start": 1.12,
+   "end": 1.2,
+   "animatic_start": 172.669
+  },
+  {
+   "word": "a",
+   "start": 1.28,
+   "end": 1.37,
+   "animatic_start": 172.829
+  },
+  {
+   "word": "manual",
+   "start": 1.56,
+   "end": 1.77,
+   "animatic_start": 173.109
+  },
+  {
+   "word": "cuff",
+   "start": 1.86,
+   "end": 2.17,
+   "animatic_start": 173.409
+  },
+  {
+   "word": "and",
+   "start": 2.25,
+   "end": 2.33,
+   "animatic_start": 173.799
+  },
+  {
+   "word": "a",
+   "start": 2.36,
+   "end": 2.38,
+   "animatic_start": 173.909
+  },
+  {
+   "word": "stethoscope,",
+   "start": 2.41,
+   "end": 3.14,
+   "animatic_start": 173.959
+  },
+  {
+   "word": "because",
+   "start": 3.36,
+   "end": 3.6,
+   "animatic_start": 174.909
+  },
+  {
+   "word": "automatic",
+   "start": 3.85,
+   "end": 4.11,
+   "animatic_start": 175.399
+  },
+  {
+   "word": "cuffs",
+   "start": 4.15,
+   "end": 4.5,
+   "animatic_start": 175.699
+  },
+  {
+   "word": "can't",
+   "start": 4.56,
+   "end": 4.8,
+   "animatic_start": 176.109
+  },
+  {
+   "word": "measure",
+   "start": 4.93,
+   "end": 5.04,
+   "animatic_start": 176.479
+  },
+  {
+   "word": "it",
+   "start": 5.12,
+   "end": 5.2,
+   "animatic_start": 176.669
+  },
+  {
+   "word": "accurately.",
+   "start": 5.28,
+   "end": 5.78,
+   "animatic_start": 176.829
+  },
+  {
+   "word": "Let",
+   "start": 6.3,
+   "end": 6.38,
+   "animatic_start": 177.849
+  },
+  {
+   "word": "the",
+   "start": 6.46,
+   "end": 6.54,
+   "animatic_start": 178.009
+  },
+  {
+   "word": "patient",
+   "start": 6.71,
+   "end": 6.88,
+   "animatic_start": 178.259
+  },
+  {
+   "word": "breathe",
+   "start": 6.96,
+   "end": 7.22,
+   "animatic_start": 178.509
+  },
+  {
+   "word": "normally,",
+   "start": 7.3,
+   "end": 8.02,
+   "animatic_start": 178.849
+  },
+  {
+   "word": "since",
+   "start": 8.1,
+   "end": 8.185,
+   "animatic_start": 179.649
+  },
+  {
+   "word": "asking",
+   "start": 8.28,
+   "end": 8.54,
+   "animatic_start": 179.829
+  },
+  {
+   "word": "for",
+   "start": 8.62,
+   "end": 8.8,
+   "animatic_start": 180.169
+  },
+  {
+   "word": "deep",
+   "start": 8.91,
+   "end": 9.03,
+   "animatic_start": 180.459
+  },
+  {
+   "word": "breaths",
+   "start": 9.11,
+   "end": 9.44,
+   "animatic_start": 180.659
+  },
+  {
+   "word": "will",
+   "start": 9.52,
+   "end": 9.6,
+   "animatic_start": 181.069
+  },
+  {
+   "word": "exaggerate",
+   "start": 9.72,
+   "end": 10.24,
+   "animatic_start": 181.269
+  },
+  {
+   "word": "the",
+   "start": 10.28,
+   "end": 10.32,
+   "animatic_start": 181.829
+  },
+  {
+   "word": "number.",
+   "start": 10.5,
+   "end": 10.62,
+   "animatic_start": 182.049
+  }
+ ],
+ "5B": [
+  {
+   "word": "Inflate",
+   "start": 0.04,
+   "end": 0.45,
+   "animatic_start": 183.008
+  },
+  {
+   "word": "the",
+   "start": 0.49,
+   "end": 0.53,
+   "animatic_start": 183.458
+  },
+  {
+   "word": "cuff",
+   "start": 0.61,
+   "end": 0.84,
+   "animatic_start": 183.578
+  },
+  {
+   "word": "until",
+   "start": 0.915,
+   "end": 1.2,
+   "animatic_start": 183.883
+  },
+  {
+   "word": "every",
+   "start": 1.38,
+   "end": 1.64,
+   "animatic_start": 184.348
+  },
+  {
+   "word": "sound",
+   "start": 1.72,
+   "end": 1.93,
+   "animatic_start": 184.688
+  },
+  {
+   "word": "is",
+   "start": 2.01,
+   "end": 2.08,
+   "animatic_start": 184.978
+  },
+  {
+   "word": "gone,",
+   "start": 2.17,
+   "end": 2.5,
+   "animatic_start": 185.138
+  },
+  {
+   "word": "and",
+   "start": 2.88,
+   "end": 2.96,
+   "animatic_start": 185.848
+  },
+  {
+   "word": "then",
+   "start": 3.04,
+   "end": 3.28,
+   "animatic_start": 186.008
+  },
+  {
+   "word": "let",
+   "start": 3.52,
+   "end": 3.67,
+   "animatic_start": 186.488
+  },
+  {
+   "word": "the",
+   "start": 3.71,
+   "end": 3.75,
+   "animatic_start": 186.678
+  },
+  {
+   "word": "pressure",
+   "start": 3.84,
+   "end": 4.16,
+   "animatic_start": 186.808
+  },
+  {
+   "word": "fall",
+   "start": 4.29,
+   "end": 4.49,
+   "animatic_start": 187.258
+  },
+  {
+   "word": "slowly.",
+   "start": 4.63,
+   "end": 5.0,
+   "animatic_start": 187.598
+  }
+ ],
+ "5C": [
+  {
+   "word": "At",
+   "start": 0.04,
+   "end": 0.16,
+   "animatic_start": 188.837
+  },
+  {
+   "word": "first,",
+   "start": 0.24,
+   "end": 0.73,
+   "animatic_start": 189.037
+  },
+  {
+   "word": "you'll",
+   "start": 0.91,
+   "end": 1.04,
+   "animatic_start": 189.707
+  },
+  {
+   "word": "hear",
+   "start": 1.12,
+   "end": 1.27,
+   "animatic_start": 189.917
+  },
+  {
+   "word": "taps",
+   "start": 1.31,
+   "end": 1.68,
+   "animatic_start": 190.107
+  },
+  {
+   "word": "only",
+   "start": 1.76,
+   "end": 1.99,
+   "animatic_start": 190.557
+  },
+  {
+   "word": "when",
+   "start": 2.07,
+   "end": 2.15,
+   "animatic_start": 190.867
+  },
+  {
+   "word": "the",
+   "start": 2.18,
+   "end": 2.22,
+   "animatic_start": 190.977
+  },
+  {
+   "word": "patient",
+   "start": 2.3,
+   "end": 2.64,
+   "animatic_start": 191.097
+  },
+  {
+   "word": "breathes",
+   "start": 2.73,
+   "end": 3.07,
+   "animatic_start": 191.527
+  },
+  {
+   "word": "out.",
+   "start": 3.15,
+   "end": 3.48,
+   "animatic_start": 191.947
+  },
+  {
+   "word": "Make",
+   "start": 3.96,
+   "end": 4.04,
+   "animatic_start": 192.757
+  },
+  {
+   "word": "a",
+   "start": 4.12,
+   "end": 4.16,
+   "animatic_start": 192.917
+  },
+  {
+   "word": "note",
+   "start": 4.2,
+   "end": 4.37,
+   "animatic_start": 192.997
+  },
+  {
+   "word": "of",
+   "start": 4.41,
+   "end": 4.46,
+   "animatic_start": 193.207
+  },
+  {
+   "word": "that",
+   "start": 4.54,
+   "end": 4.71,
+   "animatic_start": 193.337
+  },
+  {
+   "word": "pressure.",
+   "start": 4.92,
+   "end": 5.1,
+   "animatic_start": 193.717
+  }
+ ],
+ "5D": [
+  {
+   "word": "Keep",
+   "start": 0.01,
+   "end": 0.24,
+   "animatic_start": 196.214
+  },
+  {
+   "word": "letting",
+   "start": 0.32,
+   "end": 0.48,
+   "animatic_start": 196.524
+  },
+  {
+   "word": "the",
+   "start": 0.51,
+   "end": 0.55,
+   "animatic_start": 196.714
+  },
+  {
+   "word": "pressure",
+   "start": 0.64,
+   "end": 0.95,
+   "animatic_start": 196.844
+  },
+  {
+   "word": "down",
+   "start": 1.03,
+   "end": 1.44,
+   "animatic_start": 197.234
+  },
+  {
+   "word": "until",
+   "start": 1.52,
+   "end": 1.75,
+   "animatic_start": 197.724
+  },
+  {
+   "word": "you",
+   "start": 1.83,
+   "end": 1.92,
+   "animatic_start": 198.034
+  },
+  {
+   "word": "hear",
+   "start": 2.04,
+   "end": 2.16,
+   "animatic_start": 198.244
+  },
+  {
+   "word": "taps",
+   "start": 2.2,
+   "end": 2.52,
+   "animatic_start": 198.404
+  },
+  {
+   "word": "on",
+   "start": 2.63,
+   "end": 2.68,
+   "animatic_start": 198.834
+  },
+  {
+   "word": "every",
+   "start": 2.84,
+   "end": 3.11,
+   "animatic_start": 199.044
+  },
+  {
+   "word": "beat,",
+   "start": 3.18,
+   "end": 3.5,
+   "animatic_start": 199.384
+  },
+  {
+   "word": "both",
+   "start": 3.88,
+   "end": 4.015,
+   "animatic_start": 200.084
+  },
+  {
+   "word": "in",
+   "start": 4.09,
+   "end": 4.32,
+   "animatic_start": 200.294
+  },
+  {
+   "word": "and",
+   "start": 4.48,
+   "end": 4.64,
+   "animatic_start": 200.684
+  },
+  {
+   "word": "out,",
+   "start": 4.72,
+   "end": 5.07,
+   "animatic_start": 200.924
+  },
+  {
+   "word": "and",
+   "start": 5.44,
+   "end": 5.52,
+   "animatic_start": 201.644
+  },
+  {
+   "word": "note",
+   "start": 5.64,
+   "end": 5.76,
+   "animatic_start": 201.844
+  },
+  {
+   "word": "that",
+   "start": 5.83,
+   "end": 5.97,
+   "animatic_start": 202.034
+  },
+  {
+   "word": "pressure",
+   "start": 6.17,
+   "end": 6.36,
+   "animatic_start": 202.374
+  },
+  {
+   "word": "too.",
+   "start": 6.51,
+   "end": 6.54,
+   "animatic_start": 202.714
+  }
+ ],
+ "5E": [
+  {
+   "word": "The",
+   "start": 0.04,
+   "end": 0.16,
+   "animatic_start": 203.666
+  },
+  {
+   "word": "difference",
+   "start": 0.32,
+   "end": 0.47,
+   "animatic_start": 203.946
+  },
+  {
+   "word": "between",
+   "start": 0.55,
+   "end": 0.8,
+   "animatic_start": 204.176
+  },
+  {
+   "word": "those",
+   "start": 0.94,
+   "end": 1.08,
+   "animatic_start": 204.566
+  },
+  {
+   "word": "two",
+   "start": 1.16,
+   "end": 1.22,
+   "animatic_start": 204.786
+  },
+  {
+   "word": "numbers",
+   "start": 1.29,
+   "end": 1.7,
+   "animatic_start": 204.916
+  },
+  {
+   "word": "is",
+   "start": 1.785,
+   "end": 1.88,
+   "animatic_start": 205.411
+  },
+  {
+   "word": "the",
+   "start": 1.96,
+   "end": 2.14,
+   "animatic_start": 205.586
+  },
+  {
+   "word": "size",
+   "start": 2.29,
+   "end": 2.45,
+   "animatic_start": 205.916
+  },
+  {
+   "word": "of",
+   "start": 2.495,
+   "end": 2.54,
+   "animatic_start": 206.121
+  },
+  {
+   "word": "the",
+   "start": 2.62,
+   "end": 2.66,
+   "animatic_start": 206.246
+  },
+  {
+   "word": "pulsus,",
+   "start": 2.69,
+   "end": 3.31,
+   "animatic_start": 206.316
+  },
+  {
+   "word": "and",
+   "start": 3.65,
+   "end": 3.73,
+   "animatic_start": 207.276
+  },
+  {
+   "word": "anything",
+   "start": 3.77,
+   "end": 4.09,
+   "animatic_start": 207.396
+  },
+  {
+   "word": "over",
+   "start": 4.17,
+   "end": 4.4,
+   "animatic_start": 207.796
+  },
+  {
+   "word": "ten",
+   "start": 4.56,
+   "end": 4.72,
+   "animatic_start": 208.186
+  },
+  {
+   "word": "counts",
+   "start": 4.98,
+   "end": 5.22,
+   "animatic_start": 208.606
+  },
+  {
+   "word": "as",
+   "start": 5.26,
+   "end": 5.3,
+   "animatic_start": 208.886
+  },
+  {
+   "word": "pulsus",
+   "start": 5.47,
+   "end": 5.77,
+   "animatic_start": 209.096
+  },
+  {
+   "word": "paradoxus.",
+   "start": 5.85,
+   "end": 6.71,
+   "animatic_start": 209.476
+  }
+ ],
+ "5F": [
+  {
+   "word": "So:",
+   "start": 0.0,
+   "end": 0.34,
+   "animatic_start": 211.049
+  },
+  {
+   "word": "breathing",
+   "start": 0.85,
+   "end": 1.17,
+   "animatic_start": 211.899
+  },
+  {
+   "word": "in",
+   "start": 1.26,
+   "end": 1.55,
+   "animatic_start": 212.309
+  },
+  {
+   "word": "lowers",
+   "start": 1.67,
+   "end": 2.0,
+   "animatic_start": 212.719
+  },
+  {
+   "word": "systolic",
+   "start": 2.04,
+   "end": 2.49,
+   "animatic_start": 213.089
+  },
+  {
+   "word": "pressure",
+   "start": 2.65,
+   "end": 2.84,
+   "animatic_start": 213.699
+  },
+  {
+   "word": "a",
+   "start": 2.92,
+   "end": 3.0,
+   "animatic_start": 213.969
+  },
+  {
+   "word": "little,",
+   "start": 3.05,
+   "end": 3.3,
+   "animatic_start": 214.099
+  },
+  {
+   "word": "and",
+   "start": 3.73,
+   "end": 3.77,
+   "animatic_start": 214.779
+  },
+  {
+   "word": "a",
+   "start": 3.85,
+   "end": 3.92,
+   "animatic_start": 214.899
+  },
+  {
+   "word": "tight",
+   "start": 4.04,
+   "end": 4.16,
+   "animatic_start": 215.089
+  },
+  {
+   "word": "pericardium",
+   "start": 4.23,
+   "end": 4.95,
+   "animatic_start": 215.279
+  },
+  {
+   "word": "or",
+   "start": 5.03,
+   "end": 5.11,
+   "animatic_start": 216.079
+  },
+  {
+   "word": "a",
+   "start": 5.19,
+   "end": 5.28,
+   "animatic_start": 216.239
+  },
+  {
+   "word": "straining",
+   "start": 5.36,
+   "end": 5.69,
+   "animatic_start": 216.409
+  },
+  {
+   "word": "chest",
+   "start": 5.775,
+   "end": 6.17,
+   "animatic_start": 216.824
+  },
+  {
+   "word": "makes",
+   "start": 6.32,
+   "end": 6.48,
+   "animatic_start": 217.369
+  },
+  {
+   "word": "that",
+   "start": 6.55,
+   "end": 6.71,
+   "animatic_start": 217.599
+  },
+  {
+   "word": "dip",
+   "start": 6.79,
+   "end": 7.12,
+   "animatic_start": 217.839
+  },
+  {
+   "word": "much",
+   "start": 7.2,
+   "end": 7.45,
+   "animatic_start": 218.249
+  },
+  {
+   "word": "bigger.",
+   "start": 7.53,
+   "end": 7.78,
+   "animatic_start": 218.579
+  },
+  {
+   "word": "Over",
+   "start": 8.43,
+   "end": 8.58,
+   "animatic_start": 219.479
+  },
+  {
+   "word": "ten",
+   "start": 8.64,
+   "end": 8.72,
+   "animatic_start": 219.689
+  },
+  {
+   "word": "millimeters",
+   "start": 8.79,
+   "end": 9.25,
+   "animatic_start": 219.839
+  },
+  {
+   "word": "of",
+   "start": 9.32,
+   "end": 9.415,
+   "animatic_start": 220.369
+  },
+  {
+   "word": "mercury",
+   "start": 9.5,
+   "end": 9.89,
+   "animatic_start": 220.549
+  },
+  {
+   "word": "in",
+   "start": 9.92,
+   "end": 9.96,
+   "animatic_start": 220.969
+  },
+  {
+   "word": "a",
+   "start": 10.05,
+   "end": 10.17,
+   "animatic_start": 221.099
+  },
+  {
+   "word": "patient",
+   "start": 10.28,
+   "end": 10.38,
+   "animatic_start": 221.329
+  },
+  {
+   "word": "with",
+   "start": 10.46,
+   "end": 10.53,
+   "animatic_start": 221.509
+  },
+  {
+   "word": "an",
+   "start": 10.57,
+   "end": 10.61,
+   "animatic_start": 221.619
+  },
+  {
+   "word": "effusion,",
+   "start": 10.73,
+   "end": 11.17,
+   "animatic_start": 221.779
+  },
+  {
+   "word": "think",
+   "start": 11.6,
+   "end": 11.75,
+   "animatic_start": 222.649
+  },
+  {
+   "word": "tamponade.",
+   "start": 11.98,
+   "end": 12.58,
+   "animatic_start": 223.029
+  }
+ ]
+}

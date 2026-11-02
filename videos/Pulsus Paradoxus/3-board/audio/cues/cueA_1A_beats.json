@@ -1,0 +1,114 @@
+[
+ {
+  "time_s": 0.4,
+  "cuff_mmHg": 142.8,
+  "sbp_mmHg": 132.0,
+  "breath": "OUT",
+  "audible": false
+ },
+ {
+  "time_s": 1.202,
+  "cuff_mmHg": 141.2,
+  "sbp_mmHg": 132.0,
+  "breath": "OUT",
+  "audible": false
+ },
+ {
+  "time_s": 1.978,
+  "cuff_mmHg": 139.6,
+  "sbp_mmHg": 132.0,
+  "breath": "OUT",
+  "audible": false
+ },
+ {
+  "time_s": 2.752,
+  "cuff_mmHg": 138.1,
+  "sbp_mmHg": 129.2,
+  "breath": "OUT",
+  "audible": false
+ },
+ {
+  "time_s": 3.551,
+  "cuff_mmHg": 136.5,
+  "sbp_mmHg": 116.0,
+  "breath": "IN",
+  "audible": false
+ },
+ {
+  "time_s": 4.349,
+  "cuff_mmHg": 134.9,
+  "sbp_mmHg": 116.0,
+  "breath": "IN",
+  "audible": false
+ },
+ {
+  "time_s": 5.147,
+  "cuff_mmHg": 133.3,
+  "sbp_mmHg": 123.8,
+  "breath": "OUT",
+  "audible": false
+ },
+ {
+  "time_s": 5.936,
+  "cuff_mmHg": 131.7,
+  "sbp_mmHg": 132.0,
+  "breath": "OUT",
+  "audible": true
+ },
+ {
+  "time_s": 6.743,
+  "cuff_mmHg": 130.1,
+  "sbp_mmHg": 132.0,
+  "breath": "OUT",
+  "audible": true
+ },
+ {
+  "time_s": 7.547,
+  "cuff_mmHg": 128.5,
+  "sbp_mmHg": 132.0,
+  "breath": "OUT",
+  "audible": true
+ },
+ {
+  "time_s": 8.325,
+  "cuff_mmHg": 126.9,
+  "sbp_mmHg": 116.0,
+  "breath": "IN",
+  "audible": false
+ },
+ {
+  "time_s": 9.107,
+  "cuff_mmHg": 125.4,
+  "sbp_mmHg": 116.0,
+  "breath": "IN",
+  "audible": false
+ },
+ {
+  "time_s": 9.888,
+  "cuff_mmHg": 123.8,
+  "sbp_mmHg": 116.0,
+  "breath": "IN",
+  "audible": false
+ },
+ {
+  "time_s": 10.672,
+  "cuff_mmHg": 122.3,
+  "sbp_mmHg": 132.0,
+  "breath": "OUT",
+  "audible": true
+ },
+ {
+  "time_s": 11.475,
+  "cuff_mmHg": 120.7,
+  "sbp_mmHg": 132.0,
+  "breath": "OUT",
+  "audible": true
+ },
+ {
+  "time_s": 12.258,
+  "cuff_mmHg": 119.1,
+  "sbp_mmHg": 132.0,
+  "breath": "OUT",
+  "audible": true
+ }
+]
