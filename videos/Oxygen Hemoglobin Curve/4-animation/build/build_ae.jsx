@@ -16,7 +16,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 19;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows; v19: Mark's markers, Scene 10 sync
+    var VERSION = 20;                                        // v2: whole-frame starts; v3: red-purple cells; v4: 1B icons; v5: 1B→1C transition; v6: playful; v7: Comma Clinical; v8: no RBC squish, Mark's arm icon; v9: Scene 2 notes; v10: Scene 3 notes; v11: 3->4 pause; v12: point wipe stops; v13: side-card roll; v14: card pauses; v15: 3B-3D; v16: shorter 3D pause; v17: 6B labels; v18: 7A arrows; v19: Mark's markers, Scene 10 sync; v20: 9D locks
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {
@@ -536,6 +536,14 @@
                 var tq = t + qi * MO.card_stagger * 2;
                 cutIn(cr2.layer, tq);
                 cm(SC(cr2.layer), [[tq, [220, 220]], [tq + MO.snap_d * 0.6, [100, 100]]], "snap");
+                if (a.locks && a.locks[qi]) {                // a small lock snaps on at the ring's edge once the ring has landed
+                    var lk = copyLayer(bt.ai, a.locks[qi], pre); if (!lk) continue;
+                    var lc = centre(rect(lk)); setPivot(lk, lc);
+                    POS(lk).setValue([qp[0] + a.badge[qi][0], qp[1] + a.badge[qi][1]]);
+                    var tl = tq + MO.snap_d * 0.6 + qi * 2 / PLAN.fps;
+                    cutIn(lk, tl);
+                    cm(SC(lk), [[tl, [0, 0]], [tl + 0.3, [100, 100]]], "snap");
+                }
             }
             return l;
         case "undraw":                                       // a held layer draws itself out (mask retract, accelerating) and is gone

@@ -357,9 +357,18 @@ f.save()
 f = F("9C", "fetal-hb"); f.add(stage(), axes(), normal_curve(), shifted(20, label="Fetal Hb\nsits left", below=False),
       side_card("FETAL HEMOGLOBIN", "HbF: 2α + 2γ", ["Binds 2,3-DPG poorly", "Pulls O2 from the", "mother's blood"]))
 f.save()
+# Mark 2026-11-02 (marker at 9D "tightly"): a small lock on each grip ring. The solid lock ("filled_lock") from his
+# lock-icons.svg.ai (exported to 1-brief/reference/lock.svg): at about 28 px the line variants' outlines fall under 1 px.
+LOCK_D = "M3405.31,960.21h-20.36V709.39c0-55.88-10.96-110.13-32.58-161.24c-20.86-49.33-50.72-93.61-88.73-131.63 c-38.02-38.02-82.3-67.87-131.63-88.73c-51.11-21.62-105.36-32.58-161.24-32.58c-55.88,0-110.13,10.96-161.24,32.58 c-49.33,20.86-93.61,50.72-131.63,88.73c-38.02,38.01-67.87,82.3-88.73,131.63c-21.62,51.11-32.58,105.35-32.58,161.24v250.82 h-20.35c-58.68,0-106.24,47.56-106.24,106.23v584.07c0,58.68,47.56,106.24,106.24,106.24h869.07c58.67,0,106.23-47.56,106.23-106.24 v-584.07C3511.54,1007.78,3463.98,960.21,3405.31,960.21z M2695.14,709.39c0-151.99,123.65-275.64,275.64-275.64 c151.99,0,275.64,123.65,275.64,275.64v250.82h-551.27V709.39z M3004.83,1368.68c4.94,55.64,9.89,111.29,14.83,166.94h-97.78 c5-55.63,10.01-111.25,15.01-166.88c-36.72-13.74-62.87-49.13-62.87-90.65c0-53.43,43.31-96.74,96.74-96.74s96.76,43.31,96.76,96.74 C3067.52,1319.54,3041.46,1354.9,3004.83,1368.68z"
+LOCK_BOX = (2430.0, 295.21, 1081.54, 1461.54)
+def lock_icon(name, cx, cy, h=28, col=C["coral"]):
+    x0, y0, w, hh = LOCK_BOX; k = h / hh
+    return group(name, f'<path transform="translate({cx - w * k / 2:.2f},{cy - h / 2:.2f}) scale({k:.5f}) translate({-x0},{-y0})" d="{LOCK_D}" fill="{col}"/>')
+
 f = F("9D", "carbon-monoxide"); f.add(stage(), axes(), normal_curve(),
       group("Panel/Card", card(1240, 210, 600, 700), text(1288, 272, "CARBON MONOXIDE", 23, 700, C["ink2"], H, ls=3), text(1288, 334, "Different", 46, 600, C["ink"], H)),
       tetramer(1540, 500, bound=(1, 2), co=0, rings=(), scale=0.55, name="Hb/COTetramer", labels=False),
+      lock_icon("Lock/Grip 1", 1672, 416), lock_icon("Lock/Grip 2", 1408, 550),   # on the grip rings, outside the tetramer
       group("Panel/Lines", text(1288, 700, "Blocks O2 binding sites → O2 capacity ↓", 24, 500), text(1288, 748, "Remaining sites hold O2 tighter → unloading ↓", 24, 500)),
       group("Footnote/Text", note(1288, 860, "Curve shown is for normal Hb; with CO the"), note(1288, 890, "maximum O2 content also falls.")))
 f.save()

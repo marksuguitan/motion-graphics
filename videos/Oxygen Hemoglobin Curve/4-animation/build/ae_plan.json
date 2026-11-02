@@ -4156,6 +4156,8 @@
       "Curves/Normal",
       "Panel/Card",
       "Hb/COTetramer",
+      "Lock/Grip 1",
+      "Lock/Grip 2",
       "Panel/Lines",
       "Footnote/Text"
      ],
@@ -4199,7 +4201,29 @@
         ]
        ],
        "r": 24,
+       "locks": [
+        "Lock/Grip 1",
+        "Lock/Grip 2"
+       ],
+       "badge": [
+        [
+         18,
+         -20
+        ],
+        [
+         -18,
+         -20
+        ]
+       ],
        "t": 6.513
+      },
+      {
+       "layer": "Lock/Grip 1",
+       "do": "skip"
+      },
+      {
+       "layer": "Lock/Grip 2",
+       "do": "skip"
       },
       {
        "layer": "Panel/Lines",
@@ -4343,6 +4367,8 @@
       "Curves/Normal",
       "Panel/Card",
       "Hb/COTetramer",
+      "Lock/Grip 1",
+      "Lock/Grip 2",
       "Panel/Lines",
       "Footnote/Text"
      ],
@@ -4407,6 +4433,20 @@
       },
       {
        "layer": "Hb/COTetramer",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Lock/Grip 1",
+       "do": "out",
+       "t": 0.0,
+       "d": 0.4,
+       "auto": true
+      },
+      {
+       "layer": "Lock/Grip 2",
        "do": "out",
        "t": 0.0,
        "d": 0.4,
