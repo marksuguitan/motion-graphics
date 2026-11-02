@@ -123,21 +123,29 @@ LUNGS_D = ["M50 6 V36 M50 36 L40 45 M50 36 L60 45",
            "M58 24 C71 25 86 48 88 76 C89 87 81 92 71 88 L59 83 C56 81 55 77 55 73 V31 C55 27 56 24 58 24 Z",
            "M40 45 L27 57 M33 51 L31 42 M27 57 L19 58 M27 57 L26 68",
            "M60 45 L73 57 M67 51 L69 42 M73 57 L81 58 M73 57 L74 68"]
-ARM_D = ["M28 30 C22 28 20 20 24 14 C28 8 40 6 48 10 C54 13 55 24 50 30 Z",
-         "M36 10 V19 M43 10 V19",
-         "M27 30 C18 44 11 62 14 80 C18 90 36 93 56 89 C70 86 82 81 94 77",
-         "M49 30 C45 40 41 50 40 58 C46 46 64 44 72 54 C78 46 86 42 95 40",
-         "M34 72 C46 76 62 73 72 62"]
-def line_icon(name, paths, cx, top, size, col, weight=5.5):
+# Flexed arm: Mark's drawing (arm-flex.svg, Nov 2, 2026; 4000-unit art board), fitted into the 100-unit icon box
+# by ARM_FIT = (scale, dx, dy): bbox x 1442.7-2557.3, y 1267.3-2735.7 -> 88 units tall, centred on x 50, top at y 4.
+ARM_D = ["M1442.68,2129.28c220.45-167.33,585.04-90.76,757.39,238.18",
+         "M2027.72,2158.66s279.21-243.51,206.37-509.33",
+         "M1442.68,2657.91c517.88,175.11,1054.39,0,1054.39,0,127.21-495.07,16.69-1080.19-4.07-1202.75-2.43-14.35-10.09-27.31-21.6-36.21-46.56-36.02-215.82-124.4-460.17-151.36-19.88-2.19-38.63,9.7-45.05,28.65l-67.59,212.77,56.86,95.04",
+         "M1531.13,2418.41c127.77,63.89,225.28,78.49,348.2,67.25",
+         "M2097.06,1535.11l-181.51,88.35c-23.6,14.24-22.31,48.88,2.27,61.34,0,0,131.65-2.49,174.99,3.51,27.55,3.82,139.72,17.17,139.72,17.17"]
+ARM_FIT = (0.05993, -69.86, -71.95)
+def line_icon(name, paths, cx, top, size, col, weight=5.5, fit=None):
     k = size/100
     body = "".join(f'<path d="{d}"/>' for d in paths)
-    return group(name, f'<g transform="translate({cx-50*k:.1f},{top}) scale({k:.3f})" fill="none" stroke="{col}" stroke-width="{weight/k:.2f}" stroke-linecap="round" stroke-linejoin="round">{body}</g>')
+    sw = weight/k
+    if fit:  # art drawn on another board: map it into the 100-unit box, keeping the same on-screen line weight
+        sc, dx, dy = fit
+        body = f'<g transform="translate({dx},{dy}) scale({sc})">{body}</g>'
+        sw = weight/(k*sc)
+    return group(name, f'<g transform="translate({cx-50*k:.1f},{top}) scale({k:.3f})" fill="none" stroke="{col}" stroke-width="{sw:.2f}" stroke-linecap="round" stroke-linejoin="round">{body}</g>')
 f = F("1B", "lungs-tissues", kicker=None)
 f.add(group("Background/Stage", card(96, 150, 1728, 780)), capillary(),
       group("Zone/Lungs", f'<rect x="140" y="430" width="700" height="220" rx="110" fill="{C["red"]}" opacity="0.08"/>', text(490, 862, "Lungs: pick up O2", 32, 600, C["red"], anchor="middle")),
       group("Zone/Tissues", f'<rect x="1080" y="430" width="700" height="220" rx="110" fill="{C["deoxy"]}" opacity="0.08"/>', text(1430, 862, "Tissues: let it go", 32, 600, C["deoxy"], anchor="middle")),
       rbc(490, 540, C["red"], o2=8, name="Cell/Lungs"), rbc(1430, 540, C["deoxy"], o2=6, name="Cell/Tissues"),
-      line_icon("Icon/Lungs", LUNGS_D, 490, 680, 120, C["red"]), line_icon("Icon/Tissues", ARM_D, 1430, 680, 120, C["deoxy"]),
+      line_icon("Icon/Lungs", LUNGS_D, 490, 680, 120, C["red"]), line_icon("Icon/Tissues", ARM_D, 1430, 680, 120, C["deoxy"], fit=ARM_FIT),
       group("Cell/Released", o2dot(1640, 400, C["red"]), o2dot(1700, 690, C["red"])),
       group("Label/Arrow", f'<path d="M700,540 H1200" stroke="{C["ink2"]}" stroke-width="4" stroke-dasharray="2 14" stroke-linecap="round"/>', f'<path d="M1190,524 l18,16 l-18,16" fill="none" stroke="{C["ink2"]}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>'),
       group("Readout/SO2", chip(400, 300, 180, "SO2 97%", C["white"], C["div"], C["red"], 28, 600), chip(1340, 300, 180, "SO2 75%", C["white"], C["div"], C["deoxy"], 28, 600)))
