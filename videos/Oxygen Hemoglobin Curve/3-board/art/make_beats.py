@@ -302,7 +302,11 @@ def shifted(p50, col=C["coral"], label=None, name="Curves/Shift", below=True):
     g = [f'<path d="{curve_path(p50)}" fill="none" stroke="{col}" stroke-width="7" stroke-linecap="round"/>',
          f'<line x1="{X(26.8):.1f}" y1="{Y(50):.1f}" x2="{X(p50):.1f}" y2="{Y(50):.1f}" stroke="{col}" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>',
          point(p50, 50, col, r=9)]
-    if label: g.append(text(X(p50)+(18 if below else -18), Y(50)+(38 if below else -24), label, 26, 600, col, anchor="start" if below else "end"))
+    if label:  # "\n" stacks the label (Mark, Nov 2, 2026: left-side labels overlapped the y axis); lines grow upward when above
+        lines = label.split("\n")
+        for i, ln in enumerate(lines):
+            dy = 38 + i*30 if below else -24 - (len(lines)-1-i)*30
+            g.append(text(X(p50)+(18 if below else -18), Y(50)+dy, ln, 26, 600, col, anchor="start" if below else "end"))
     return group(name, *g)
 def factor_chips(rows, bohr_rows=(), accent=C["coral"], bohr=False, y0=486):
     g = []
@@ -344,13 +348,13 @@ f.save()
 
 # ---------- Scene 9 ----------
 GHOSTR = group("Curves/RightGhost", f'<path d="{curve_path(36)}" fill="none" stroke="{C["mute"]}" stroke-width="4" stroke-dasharray="10 10"/>')
-f = F("9A", "left-shift"); f.add(stage(), axes(), GHOSTR, normal_curve(label=False), shifted(20, label="Left shift · P50 20*", below=False),
+f = F("9A", "left-shift"); f.add(stage(), axes(), GHOSTR, normal_curve(label=False), shifted(20, label="Left shift\nP50 20*", below=False),
       side_card("LEFT SHIFT", "Higher affinity", ["O2 held more tightly", "P50 falls"]), group("Footnote/Text", note(1240, 900, "*Shifted curve illustrative (Hill equation, n = 2.7).")))
 f.save()
-f = F("9B", "left-factors"); f.add(stage(), axes(), normal_curve(), shifted(20, label="Left shift · P50 20*", below=False),
+f = F("9B", "left-factors"); f.add(stage(), axes(), normal_curve(), shifted(20, label="Left shift\nP50 20*", below=False),
       factor_card("LEFT SHIFT", "The opposite factors", LEFT), group("Footnote/Text", note(1240, 900, "*Shifted curve illustrative (Hill equation, n = 2.7).")))
 f.save()
-f = F("9C", "fetal-hb"); f.add(stage(), axes(), normal_curve(), shifted(20, label="Fetal Hb sits left", below=False),
+f = F("9C", "fetal-hb"); f.add(stage(), axes(), normal_curve(), shifted(20, label="Fetal Hb\nsits left", below=False),
       side_card("FETAL HEMOGLOBIN", "HbF: 2α + 2γ", ["Binds 2,3-DPG poorly", "Pulls O2 from the", "mother's blood"]))
 f.save()
 f = F("9D", "carbon-monoxide"); f.add(stage(), axes(), normal_curve(),
