@@ -1,0 +1,214 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Oxygen Curve Storyboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
+<style>
+/* Layout: one column of 16:9 frames on a warm paper ground, each with timecode, narration and notes beside or below. */
+:root {
+  --bg: #F3EEE5; --paper: #FBF8F2; --ink: #22201E; --ink2: #5E5850; --line: #E3DBCF; --red: #B23A30; --blue: #36589A;
+  --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #1C1A18; --paper: #262321; --ink: #F1ECE4; --ink2: #B7AEA3; --line: #3A3531; --red: #E0796D; --blue: #8EA9DB; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #1C1A18; --paper: #262321; --ink: #F1ECE4; --ink2: #B7AEA3; --line: #3A3531; --red: #E0796D; --blue: #8EA9DB; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 64px; }
+main { max-width: 1180px; margin: 0 auto; display: grid; gap: 36px; }
+header { display: grid; gap: 14px; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink2); font-weight: 500; }
+h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.1; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+.lede { color: var(--ink2); max-width: 65ch; margin: 0; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--ink2); }
+.facts b { color: var(--ink); font-weight: 500; }
+.audio { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; display: grid; gap: 8px; }
+.audio label { font-weight: 700; font-size: 15px; }
+.audio audio { width: 100%; }
+.frame { margin: 0; display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: 22px; align-items: start; padding-top: 28px; border-top: 1px solid var(--line); }
+.frame img { width: 100%; height: auto; border-radius: 10px; display: block; box-shadow: 0 2px 14px rgba(34,32,30,.10); }
+figcaption { display: grid; gap: 10px; min-width: 0; }
+.meta { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.tc { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 15px; background: var(--ink); color: var(--bg); padding: 3px 10px; border-radius: 6px; }
+.scene { font-weight: 700; font-size: 19px; }
+.vo { margin: 0; font-size: 16px; font-style: italic; color: var(--ink); }
+.note { margin: 0; font-size: 15px; color: var(--ink2); }
+section.new h2 { font-size: 24px; margin: 8px 0 6px; }
+section.new { padding-top: 8px; }
+footer { font-size: 13px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 18px; }
+@media (max-width: 760px) { .frame { grid-template-columns: minmax(0, 1fr); } }
+</style>
+<main>
+<header>
+  <div class="eyebrow">Storyboard v1.2 · step 2 of 3</div>
+  <h1>The Oxyhemoglobin Dissociation Curve</h1>
+  <p class="lede">These 16 key frames are rendered from the video's code at the moment each line of the approved voice-over (take A) plays. Nothing here is a mock-up: the final render animates between these exact frames.</p>
+  <div class="facts"><span><b>Format</b> 16:9, 1920×1080, 30 fps</span><span><b>Length</b> 3:10</span><span><b>Curves</b> Hill equation, n 2.7, P₅₀ 26.8 / 20 / 36 mmHg</span><span><b>Source</b> StatPearls NBK539815</span></div>
+  <div class="audio"><label for="vo">Voice-over, timed to the cut (take A with pauses added between sections)</label><audio id="vo" controls preload="none" src="voiceover-timed.mp3"></audio></div>
+</header>
+<section class="new">
+  <h2>New in v1.2: logo intro</h2>
+  <p class="lede">These four frames are new. The opening now runs 2.1 seconds longer, so every frame below happens 2.1 s later than its label shows. Nothing else has changed.</p>
+</section>
+<figure class="frame">
+  <img src="f/logo0.6.jpg" alt="Logo intro frame at 0.6 s: Logo" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:00.6</span><span class="scene">Logo</span></div>
+    <p class="vo">(no narration)</p>
+    <p class="note">The Medzcool logo from your SVG settles in at the centre in charcoal.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/logo2.4.jpg" alt="Logo intro frame at 2.4 s: Logo morph" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:02.4</span><span class="scene">Logo morph</span></div>
+    <p class="vo">(no narration)</p>
+    <p class="note">Both logo shapes morph point-for-point toward an ellipse while gliding to the red cell's spot in the capillary. The colour shifts from charcoal to deoxygenated red.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/logo2.8.jpg" alt="Logo intro frame at 2.8 s: Logo morph" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:02.8</span><span class="scene">Logo morph</span></div>
+    <p class="vo">(no narration)</p>
+    <p class="note">Near the end of the morph the logo has become the cell's outline, and the capillary and labels start to fade in.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/logo3.2.jpg" alt="Logo intro frame at 3.2 s: Hand-off" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:03.2</span><span class="scene">Hand-off</span></div>
+    <p class="vo">(no narration)</p>
+    <p class="note">The finished red cell (with its central pallor) takes over, carrying O₂ at 75% saturation. The narration starts at 0:03.6, and the rest of the video is unchanged.</p>
+  </figcaption>
+</figure>
+<section class="new"><h2>Approved v1.1 frames</h2></section>
+<figure class="frame">
+  <img src="f/f6.04.jpg" alt="Storyboard frame at 0:06: Opening" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:06</span><span class="scene">Opening</span></div>
+    <p class="vo">“Every red blood cell has two jobs. Pick up oxygen in the lungs…”</p>
+    <p class="note">A red cell in a capillary loads O₂ (now highlighter blue) in the lungs. Saturation counts up from 75% to 97%, and the cell brightens from dark red to bright red.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f8.31.jpg" alt="Storyboard frame at 0:08: Opening" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:08</span><span class="scene">Opening</span></div>
+    <p class="vo">“…then let it go in the tissues.”</p>
+    <p class="note">The cell travels to the tissues and releases two of its eight O₂ molecules. Saturation falls back to 75%.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f13.36.jpg" alt="Storyboard frame at 0:13: Title" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:13</span><span class="scene">Title</span></div>
+    <p class="vo">“One graph shows how hemoglobin does both. The oxyhemoglobin dissociation curve.”</p>
+    <p class="note">The title types in, with the StatPearls fact that hemoglobin carries 98% of blood oxygen. The title then shrinks to the top-left header.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f25.22.jpg" alt="Storyboard frame at 0:25: Axes" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:25</span><span class="scene">Axes</span></div>
+    <p class="vo">“Along the bottom is PO₂… Up the side is hemoglobin saturation…”</p>
+    <p class="note">The x-axis draws first with its title, then the y-axis. Then the grid fades in.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f37.jpg" alt="Storyboard frame at 0:37: Cooperative binding" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:37</span><span class="scene">Cooperative binding</span></div>
+    <p class="vo">“Once the first oxygen binds, hemoglobin changes shape…”</p>
+    <p class="note">New ribbon tetramer: α chains in red, β chains in purple-blue, each globin chain cradling a heme (porphyrin ring with Fe²⁺). The first O₂ docks on α₁ while hemoglobin is still in the T state.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f40.4.jpg" alt="Storyboard frame at 0:40: Cooperative binding" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:40</span><span class="scene">Cooperative binding</span></div>
+    <p class="vo">“…and the next ones bind more easily.”</p>
+    <p class="note">The two αβ pairs rotate into the R state, and the other three O₂ bind quickly. Labels: T to R state, positive cooperativity.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f45.96.jpg" alt="Storyboard frame at 0:45: Sigmoid" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">0:45</span><span class="scene">Sigmoid</span></div>
+    <p class="vo">“It is an S shape. A sigmoid curve.”</p>
+    <p class="note">A dashed straight line appears as a foil, then the Hill-equation curve draws on (n 2.7, P₅₀ 26.8).</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f64.18.jpg" alt="Storyboard frame at 1:04: Reading the curve" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">1:04</span><span class="scene">Reading the curve</span></div>
+    <p class="vo">“So at rest, only about a quarter of the oxygen is unloaded.”</p>
+    <p class="note">Lungs at 100 mmHg / 97% and resting tissue at 40 mmHg / 75%, with dashed guides to both axes. The band between them is labelled ≈ 25% unloaded.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f76.4.jpg" alt="Storyboard frame at 1:16: P₅₀" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">1:16</span><span class="scene">P₅₀</span></div>
+    <p class="vo">“In a healthy adult, it is about 27 millimeters of mercury.”</p>
+    <p class="note">The 50% line runs across to the curve, then down to 26.8 on the x-axis.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f87.68.jpg" alt="Storyboard frame at 1:27: Flat top" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">1:27</span><span class="scene">Flat top</span></div>
+    <p class="vo">“Even if PO₂ falls from 100 to 60, saturation only drops to about 90%.”</p>
+    <p class="note">A marker slides down the curve from 100 to 60. The bars on each axis show a large x change against a small y change, and the card numbers count live.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f98.06.jpg" alt="Storyboard frame at 1:38: Steep middle" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">1:38</span><span class="scene">Steep middle</span></div>
+    <p class="vo">“In the tissues, a small drop in PO₂ releases a large amount of oxygen.”</p>
+    <p class="note">The marker slides from 40 to 30 mmHg and saturation falls from 75% to 58%: a short x bar against a long y bar.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f128.74.jpg" alt="Storyboard frame at 2:08: Right shift" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">2:08</span><span class="scene">Right shift</span></div>
+    <p class="vo">“The effect of acid and carbon dioxide is called the Bohr effect.”</p>
+    <p class="note">The red curve springs right to P₅₀ 36. The four factors build one at a time in the lower right, as in your reference graph, and a bracket groups pH and CO₂ as the Bohr effect.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f136.86.jpg" alt="Storyboard frame at 2:16: Right shift" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">2:16</span><span class="scene">Right shift</span></div>
+    <p class="vo">“That is exactly where oxygen needs to be released.”</p>
+    <p class="note">At 40 mmHg, saturation is 75% on the normal curve and 57% on the right-shifted curve. The extra O₂ released is marked on the graph.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f152.78.jpg" alt="Storyboard frame at 2:32: Left shift" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">2:32</span><span class="scene">Left shift</span></div>
+    <p class="vo">“A higher pH. Less carbon dioxide. Less 2,3-DPG. And a lower temperature.”</p>
+    <p class="note">The red curve dims and the blue curve springs left to P₅₀ 20. Its factors build in the upper left, as in your reference graph.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f166.64.jpg" alt="Storyboard frame at 2:46: Left shift" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">2:46</span><span class="scene">Left shift</span></div>
+    <p class="vo">“Carbon monoxide shifts the curve left too…”</p>
+    <p class="note">Cards for fetal hemoglobin (2α + 2γ chains) and carbon monoxide (binds 200–300× more than O₂), both from StatPearls.</p>
+  </figcaption>
+</figure>
+<figure class="frame">
+  <img src="f/f187.3.jpg" alt="Storyboard frame at 3:07: Summary" loading="lazy" width="1920" height="1080">
+  <figcaption>
+    <div class="meta"><span class="tc">3:07</span><span class="scene">Summary</span></div>
+    <p class="vo">“An easy way to remember it: right means release.”</p>
+    <p class="note">The final graph matches your reference: three curves, both factor lists, two summary cards and "Right means release". Source and Hill-equation footnote at the end.</p>
+  </figcaption>
+</figure>
+<footer>The hemoglobin tetramer is a labelled ribbon schematic (globin chains, hemes and the T to R rotation), not a structural model. Shifted curve positions are illustrative and are footnoted in the video. Captions are burned in at the bottom of every frame.</footer>
+</main>
+
+</body></html>
