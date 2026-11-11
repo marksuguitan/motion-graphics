@@ -1,0 +1,32 @@
+[
+ {
+  "id": "1 hand-off",
+  "start": 0,
+  "dur": 2.25,
+  "end": 2.25
+ },
+ {
+  "id": "2 paper",
+  "start": 2.25,
+  "dur": 3.55,
+  "end": 5.8
+ },
+ {
+  "id": "3 learn",
+  "start": 5.8,
+  "dur": 3.5,
+  "end": 9.3
+ },
+ {
+  "id": "4 practice",
+  "start": 9.3,
+  "dur": 3.0,
+  "end": 12.3
+ },
+ {
+  "id": "5 end card",
+  "start": 12.3,
+  "dur": 4.7,
+  "end": 17.0
+ }
+]
