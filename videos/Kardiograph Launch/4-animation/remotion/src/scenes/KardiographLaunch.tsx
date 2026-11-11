@@ -27,7 +27,7 @@ const CARD = '#FFFFFF';
 // ------------------------------------------------------------------ the hand-off: Normal Conduction's last frame
 const TITLE = 'Normal conduction';
 const TITLE_SIZE = 80;
-const TITLE_BASE = 568;
+let TITLE_BASE = 568;
 const DOT_R = 7;
 const DOT_GAP = 5;
 const ORB_R = 15;
@@ -40,25 +40,57 @@ export const TL = TIMELINE as {
 };
 
 // ------------------------------------------------------------------ layout
-const PEN_X = 1560;
-const BASE_Y = 590; // the strip's baseline
-const STRIP_L = 140; // left edge of the paper
-const PX_MM = 12; // paper at 12 px per mm: 25 mm/s = 300 px/s, 10 mm/mV = 120 px/mV
-const PX_S = 25 * PX_MM;
-const PX_MV = 10 * PX_MM;
-const PAPER_TOP = BASE_Y - 216;
-const PAPER_BOT = BASE_Y + 156;
-
-const CARD_C: [number, number] = [960, 600];
-const CARD_W = 1120;
-const CARD_H = 600;
+// Two layouts: 16:9 (1920x1080, the YouTube video) and 9:16 (1080x1920, Reels and Shorts). The vertical one
+// matches Normal Conduction's vertical cut (src/Vertical.tsx there), whose title sits 420 px lower and 420 px left.
+// setLayout() sets every value at the top of each render, so either layout can render after the other.
+let VERT = false;
+let FW = 1920; // frame
+let FH = 1080;
+let CX = 960; // centre
+let CY = 540;
+let PEN_X = 1560;
+let BASE_Y = 590; // the strip's baseline
+let STRIP_L = 140; // left edge of the paper
+let PX_MM = 12; // paper at 12 px per mm: 25 mm/s = 300 px/s, 10 mm/mV = 120 px/mV
+let PX_S = 25 * PX_MM;
+let PX_MV = 10 * PX_MM;
+let PAPER_TOP = BASE_Y - 216;
+let PAPER_BOT = BASE_Y + 156;
+let CARD_C: [number, number] = [960, 600];
+let CARD_W = 1120;
+let CARD_H = 600;
 const CARD_R = 28;
+let CAP_Y = 196; // caption kicker baseline
+let SLIDER_HALF = 300;
 
-const TILE = 168; // Kardiograph's mark at the end
-const TILE_R = 40;
+let TILE = 168; // Kardiograph's mark at the end
+let TILE_R = 40;
 const WORD_SIZE = 112;
 const WORD_FONT = `800 ${WORD_SIZE}px Manrope`;
-const END_Y = 470; // centre line of the mark and wordmark
+let END_Y = 470; // centre line of the mark and wordmark (16:9); the wordmark's centre line (9:16)
+
+function setLayout(vertical: boolean) {
+  VERT = vertical;
+  if (!vertical) {
+    FW = 1920; FH = 1080; CX = 960; CY = 540;
+    TITLE_BASE = 568;
+    PEN_X = 1560; BASE_Y = 590; STRIP_L = 140;
+    PX_MM = 12; PX_S = 25 * PX_MM; PX_MV = 10 * PX_MM;
+    PAPER_TOP = BASE_Y - 216; PAPER_BOT = BASE_Y + 156;
+    CARD_C = [960, 600]; CARD_W = 1120; CARD_H = 600;
+    CAP_Y = 196; SLIDER_HALF = 300;
+    TILE = 168; TILE_R = 40; END_Y = 470;
+    return;
+  }
+  FW = 1080; FH = 1920; CX = 540; CY = 960;
+  TITLE_BASE = 568 + 420;
+  PEN_X = 900; BASE_Y = 1010; STRIP_L = 80;
+  PX_MM = 10; PX_S = 25 * PX_MM; PX_MV = 10 * PX_MM;
+  PAPER_TOP = BASE_Y - 180; PAPER_BOT = BASE_Y + 130;
+  CARD_C = [540, 1090]; CARD_W = 980; CARD_H = 640;
+  CAP_Y = 560; SLIDER_HALF = 250;
+  TILE = 200; TILE_R = 48; END_Y = 1000;
+}
 
 // ------------------------------------------------------------------ helpers
 let ctx: CanvasRenderingContext2D | null = null;
@@ -132,14 +164,15 @@ const WAVE_D = 'M2 12h3l2-6 3 12 3-9 2 3h7';
 const WAVE_LEN = 3 + Math.hypot(2, 6) + Math.hypot(3, 12) + Math.hypot(3, 9) + Math.hypot(2, 3) + 7;
 
 // ------------------------------------------------------------------ the scene
-export const KardiographLaunch: React.FC<{at?: number}> = ({at}) => {
+export const KardiographLaunch: React.FC<{at?: number; vertical?: boolean}> = ({at, vertical}) => {
+  setLayout(!!vertical);
   const tNow = useTime();
   const t = at ?? tNow;
 
   // ---- title (beat 1)
   const titleFont = `600 ${TITLE_SIZE}px Manrope`;
   const fullW = textWidth(TITLE, titleFont);
-  const x0 = 960 - (fullW + DOT_GAP + 2 * DOT_R) / 2;
+  const x0 = CX - (fullW + DOT_GAP + 2 * DOT_R) / 2;
   const typed = typeOff(TITLE, t, TL.typeOff, 30, 4);
   const dotAt = (s: string) => ({x: x0 + (s ? textWidth(s, titleFont) : 0) + DOT_GAP + DOT_R, y: TITLE_BASE - DOT_R});
 
@@ -151,7 +184,7 @@ export const KardiographLaunch: React.FC<{at?: number}> = ({at}) => {
     if (t >= TL.grow) {
       const p0 = dotAt('');
       const k = progress(t, TL.grow, 0.6, 'snap');
-      p = {x: lerp(p0.x, 960, k), y: lerp(p0.y, 540, k)};
+      p = {x: lerp(p0.x, CX, k), y: lerp(p0.y, CY, k)};
       r = lerp(DOT_R, ORB_R, k);
     }
     if (t >= TL.jump) {
@@ -159,8 +192,8 @@ export const KardiographLaunch: React.FC<{at?: number}> = ({at}) => {
       const dur = TL.land - tj - 0.15;
       const k = progress(t, tj + 0.15, dur, 'cross');
       const lift = Math.sin(Math.PI * clamp((t - tj - 0.15) / dur, 0, 1)) * 150;
-      const dip = keys(t, [[tj, 540], [tj + 0.15, 556]], 'snap');
-      p = {x: lerp(960, PEN_X, k), y: (t < tj + 0.15 ? dip : lerp(556, BASE_Y, k)) - lift};
+      const dip = keys(t, [[tj, CY], [tj + 0.15, CY + 16]], 'snap');
+      p = {x: lerp(CX, PEN_X, k), y: (t < tj + 0.15 ? dip : lerp(CY + 16, BASE_Y, k)) - lift};
     }
     orb = {...p, r, sx: 1, sy: 1};
   } else if (t < TL.card) {
@@ -193,7 +226,8 @@ export const KardiographLaunch: React.FC<{at?: number}> = ({at}) => {
   const cClose = progress(t, TL.mark, 0.6, 'snap');
   const ws = textWidth('Kardiograph', WORD_FONT);
   const groupW = TILE + 48 + ws + DOT_GAP + 2 * 11;
-  const tileC: [number, number] = [960 - groupW / 2 + TILE / 2, END_Y];
+  // 16:9: mark and wordmark side by side; 9:16: the mark above the wordmark
+  const tileC: [number, number] = VERT ? [CX, END_Y - 210] : [CX - groupW / 2 + TILE / 2, END_Y];
   let cardD = '';
   let cardFill = CARD;
   if (showCard) {
@@ -220,7 +254,7 @@ export const KardiographLaunch: React.FC<{at?: number}> = ({at}) => {
   const sliderK = progress(t, TL.slider, 0.9, 'cross');
   const qrsMs = 90 + 60 * sliderK;
   const beatS = qrsBeat(qrsMs);
-  const figX0 = 960 - (beatS.length / FS) * 25 * F_MM / 2;
+  const figX0 = CX - (beatS.length / FS) * 25 * F_MM / 2;
   const figX = (i: number) => figX0 + (i / FS) * 25 * F_MM;
   const figD = inLesson ? tracePath(beatS, 0, beatS.length, figX, figBase, 10 * F_MM) : '';
   const qOn = figX(0.3 * FS);
@@ -248,27 +282,28 @@ export const KardiographLaunch: React.FC<{at?: number}> = ({at}) => {
   const capA = cut(t, TL.land + 0.45, TL.stripOut); // beat 2
   const capB = cut(t, TL.card + 0.35, TL.practice); // beat 3
   const capC = cut(t, TL.practice, TL.mark); // beat 4
-  const capY = 196;
+  const capY = CAP_Y;
 
   // ---- end card
   const wordTyped = typeOn('Kardiograph', t, TL.word, 30, 2);
-  const wordX = tileC[0] + TILE / 2 + 48;
+  const wordX = VERT ? CX - (ws + DOT_GAP + 22) / 2 : tileC[0] + TILE / 2 + 48;
   const wordBase = END_Y + WORD_SIZE * 0.36;
+  const lineY = VERT ? END_Y + 40 : END_Y;
   const periodPop = t >= TL.word ? overshoot(t, TL.word - 0.1, 0.3, 0, 1, 0.1) : 0;
   const periodX = wordX + (wordTyped ? textWidth(wordTyped, WORD_FONT) : 0) + DOT_GAP + 11;
   const iconK = progress(t, TL.icon, 0.55, 'snap');
 
   return (
     <AbsoluteFill style={{background: M.bg}}>
-      <svg width={1920} height={1080} viewBox="0 0 1920 1080">
+      <svg width={FW} height={FH} viewBox={`0 0 ${FW} ${FH}`}>
         <defs>
           <linearGradient id="fadeL" x1="0" x2="1" y1="0" y2="0">
             <stop offset="0" stopColor="#fff" stopOpacity="0" />
             <stop offset="0.12" stopColor="#fff" stopOpacity="1" />
             <stop offset="1" stopColor="#fff" stopOpacity="1" />
           </linearGradient>
-          <mask id="stripMask" maskUnits="userSpaceOnUse" x={0} y={0} width={1920} height={1080}>
-            <rect x={STRIP_L} y={0} width={PEN_X - STRIP_L + 40} height={1080} fill="url(#fadeL)" />
+          <mask id="stripMask" maskUnits="userSpaceOnUse" x={0} y={0} width={FW} height={FH}>
+            <rect x={STRIP_L} y={0} width={PEN_X - STRIP_L + 40} height={FH} fill="url(#fadeL)" />
           </mask>
           <filter id="soft" x="-20%" y="-20%" width="140%" height="160%">
             <feDropShadow dx="0" dy="8" stdDeviation="12" floodColor="#222" floodOpacity="0.10" />
@@ -296,7 +331,7 @@ export const KardiographLaunch: React.FC<{at?: number}> = ({at}) => {
 
         {inLesson ? (
           <g opacity={fadeSmall(t, TL.cardContent)}>
-            <Grid x0={figL} x1={figR} y0={figTop} y1={figBot} ox={960} oy={figBase} mm={F_MM} />
+            <Grid x0={figL} x1={figR} y0={figTop} y1={figBot} ox={CX} oy={figBase} mm={F_MM} />
             <path d={figD} fill="none" stroke={M.ink} strokeWidth={5} strokeLinejoin="round" strokeLinecap="round" />
             {/* QRS bracket */}
             <g stroke={M.ink} strokeWidth={3} fill="none">
@@ -305,7 +340,7 @@ export const KardiographLaunch: React.FC<{at?: number}> = ({at}) => {
             <Slider t={t} k={sliderK} ms={qrsMs} y={CARD_C[1] + CARD_H / 2 - 70} />
           </g>
         ) : null}
-        {capB ? <Caption y={capY} kicker="Learn" head="Every figure is a tracing you can move." /> : null}
+        {capB ? <Caption y={capY} kicker="Learn" head={VERT ? 'Every figure is a tracing\nyou can move.' : 'Every figure is a tracing you can move.'} /> : null}
 
         {inPractice && deal >= 0 ? (
           <g>
@@ -336,16 +371,16 @@ export const KardiographLaunch: React.FC<{at?: number}> = ({at}) => {
           </>
         ) : null}
         {t >= TL.line1 ? (
-          <text x={960} y={END_Y + 190} textAnchor="middle" fontFamily={FONT_HEAD} fontWeight={600} fontSize={52} fill={M.ink} opacity={fadeSmall(t, TL.line1)}>
+          <text x={CX} y={lineY + 190} textAnchor="middle" fontFamily={FONT_HEAD} fontWeight={600} fontSize={VERT ? 60 : 52} fill={M.ink} opacity={fadeSmall(t, TL.line1)}>
             Learn to read the EKG.
           </text>
         ) : null}
         {t >= TL.line2 ? (
           <g opacity={fadeSmall(t, TL.line2)}>
-            <text x={960} y={END_Y + 262} textAnchor="middle" fontFamily={FONT_BODY} fontWeight={400} fontSize={30} fill={M.ink2}>
+            <text x={CX} y={lineY + (VERT ? 272 : 262)} textAnchor="middle" fontFamily={FONT_BODY} fontWeight={400} fontSize={VERT ? 36 : 30} fill={M.ink2}>
               Course and practice, part of Medzcool Basic
             </text>
-            <text x={960} y={END_Y + 316} textAnchor="middle" fontFamily={FONT_BODY} fontWeight={600} fontSize={30} fill={M.ink}>
+            <text x={CX} y={lineY + (VERT ? 334 : 316)} textAnchor="middle" fontFamily={FONT_BODY} fontWeight={600} fontSize={VERT ? 36 : 30} fill={M.ink}>
               kardiograph.medzcool.com
             </text>
           </g>
@@ -365,18 +400,20 @@ export const KardiographLaunch: React.FC<{at?: number}> = ({at}) => {
 // ------------------------------------------------------------------ parts
 const Caption: React.FC<{y: number; kicker: string; head: string}> = ({y, kicker, head}) => (
   <g>
-    <text x={960} y={y} textAnchor="middle" fontFamily={FONT_HEAD} fontWeight={700} fontSize={23} letterSpacing={3} fill={M.ink2}>
+    <text x={CX} y={y} textAnchor="middle" fontFamily={FONT_HEAD} fontWeight={700} fontSize={23} letterSpacing={3} fill={M.ink2}>
       {kicker.toUpperCase()}
     </text>
-    <text x={960} y={y + 70} textAnchor="middle" fontFamily={FONT_HEAD} fontWeight={600} fontSize={56} fill={M.ink}>
-      {head}
+    <text x={CX} y={y + 70} textAnchor="middle" fontFamily={FONT_HEAD} fontWeight={600} fontSize={VERT ? 64 : 56} fill={M.ink}>
+      {head.split('\n').map((line, i) => (
+        <tspan key={i} x={CX} dy={i ? (VERT ? 78 : 68) : 0}>{line}</tspan>
+      ))}
     </text>
   </g>
 );
 
 const Slider: React.FC<{t: number; k: number; ms: number; y: number}> = ({k, ms, y}) => {
-  const x0 = 960 - 300;
-  const x1 = 960 + 300;
+  const x0 = CX - SLIDER_HALF;
+  const x1 = CX + SLIDER_HALF;
   const kx = lerp(x0, x1, k);
   return (
     <g>

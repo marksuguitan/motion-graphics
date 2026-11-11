@@ -19,6 +19,15 @@ export const RemotionRoot: React.FC = () => (
       height={1080}
       defaultProps={{review: false, label: ''}}
     />
+    <Composition
+      id="Vertical"
+      component={Video}
+      durationInFrames={Math.ceil((VIDEO.lead + VIDEO.trackDur + VIDEO.tail) * VIDEO.fps)}
+      fps={VIDEO.fps}
+      width={1080}
+      height={1920}
+      defaultProps={{review: false, label: '', vertical: true}}
+    />
     <Composition id="Thumbnail" component={Thumbnail} durationInFrames={1} fps={VIDEO.fps} width={1280} height={720} />
   </>
 );

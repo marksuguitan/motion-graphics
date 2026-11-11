@@ -5,9 +5,9 @@ import {ReviewOverlay} from './lib/ReviewOverlay';
 import {KardiographLaunch} from './scenes/KardiographLaunch';
 import {M} from './style/mono';
 
-export const Video: React.FC<{review: boolean; label: string}> = ({review, label}) => (
+export const Video: React.FC<{review: boolean; label: string; vertical?: boolean}> = ({review, label, vertical}) => (
   <AbsoluteFill style={{background: M.bg}}>
-    <KardiographLaunch />
+    <KardiographLaunch vertical={vertical} />
     <Audio src={staticFile('sfx/sfx.wav')} />
     {review ? <ReviewOverlay label={label} /> : null}
   </AbsoluteFill>

@@ -40,3 +40,4 @@ npm run render:final
 | Nov 11, 2026 | Storyboard v1 (stills from the Remotion build) for Mark's review |
 | Nov 11, 2026 | Mark approved the storyboard. SFX added; v1 final rendered, alone and joined to Normal Conduction (ffmpeg concat, re-encoded at CRF 16) |
 | Nov 11, 2026 | v2 (Mark's note: the hand-off was too long): the title starts deleting on the first frame (was 0.5 s in), 17.0 s total; the joined cut drops Normal Conduction's last 1.5 s of title hold. The Kardiograph motion now starts at 0:36.1 of the joined video (was 0:38.1) |
+| Nov 11, 2026 | Vertical cut for Reels and Shorts: composition `Vertical` (1080×1920), same scene with a 9:16 layout (`setLayout` in the scene); the joined short is Normal Conduction's Vertical cut to 35.3 s, then this, 52.3 s, in project files `kardiograph/launch-video/` |
