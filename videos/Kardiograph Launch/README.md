@@ -9,9 +9,11 @@ the orb as its period).
 | Style | Normal Conduction's monochrome Comma Clinical (`src/style/mono.ts`, `src/style/comma.ts`). Kardiograph amber #B97516 appears only on the app's mark. Manrope headings, Inter body |
 | Build | Remotion, in the cloud (`4-animation/remotion/`), 1920×1080, 30 fps |
 | Tracings | Every EKG is drawn by the Kardiograph engine (marksuguitan/medzcool-kardiograph `src/core`): `4-animation/build/engine_strips.ts` writes `src/data/engine.json` (lead II, 250 Hz). Nothing is hand-drawn |
+| Sound | Synthesized SFX only (`4-animation/build/sfx.py`, same voices as Normal Conduction): ticks as the title deletes and the name types, a beep and soft thump on each QRS, detents on the slider, a blip per practice strip, pops on the card and the mark |
+| Renders | Project files: `kardiograph/launch-video/` (the piece alone, and joined to Normal Conduction, 54.3 s) |
 | Copy | From the Kardiograph launch landing page: Basic only (course and practice); the editor (Pro) is not shown |
 
-## Beat map (storyboard v1)
+## Beat map
 
 | ID | Time | What happens | On screen |
 | --- | --- | --- | --- |
@@ -24,7 +26,7 @@ the orb as its period).
 ## Rebuild
 
 ```
-cd 4-animation && KARDIOGRAPH=/path/to/medzcool-kardiograph node --experimental-strip-types build/engine_strips.ts
+cd 4-animation && KARDIOGRAPH=/path/to/medzcool-kardiograph node --experimental-strip-types build/engine_strips.ts && python3 build/sfx.py
 cd remotion && npm install
 TIMES=1.7,5.5,9.3,12.6,17.2 npm run check
 npm run render:review -- 1
@@ -36,3 +38,4 @@ npm run render:final
 | Date | Change |
 | --- | --- |
 | Nov 11, 2026 | Storyboard v1 (stills from the Remotion build) for Mark's review |
+| Nov 11, 2026 | Mark approved the storyboard. SFX added; v1 final rendered, alone and joined to Normal Conduction (ffmpeg concat, re-encoded at CRF 16) |

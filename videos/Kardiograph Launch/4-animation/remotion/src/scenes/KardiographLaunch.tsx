@@ -12,6 +12,7 @@ import {roundRect} from '../lib/shapes';
 import {cut, ease, fadeSmall, keys, overshoot, progress, squash, typeOff, typeOn} from '../style/comma';
 import {M, FONT_HEAD, FONT_BODY} from '../style/mono';
 import ENGINE from '../data/engine.json';
+import TIMELINE from '../data/timeline.json';
 
 type Strip = {id: string; name: string; II: number[]; onsets: number[]};
 const E = ENGINE as unknown as {fs: number; strips: Record<string, Strip>; qrs: {qrsMs: number; II: number[]}[]};
@@ -32,24 +33,10 @@ const DOT_GAP = 5;
 const ORB_R = 15;
 
 // ------------------------------------------------------------------ timeline (seconds)
-export const TL = {
-  typeOff: 0.5, // the title deletes itself, the period riding the cursor
-  grow: 1.3, // the period grows into the orb at the centre
-  jump: 1.95, // anticipation, then a hop onto the pen position
-  land: 2.75,
-  paperStop: 5.75, // the paper slows to a stop (0.4 s)
-  stripOut: 6.3, // the strip slides away; the orb crosses to the centre
-  card: 6.85, // the orb opens into a lesson card
-  cardContent: 7.35,
-  slider: 8.0, // QRS width 90 -> 150 ms
-  practice: 9.8, // the card becomes a practice deck
-  deal: [9.85, 10.6, 11.35, 12.1],
-  mark: 12.8, // the card closes into Kardiograph's mark
-  icon: 13.3,
-  word: 13.75,
-  line1: 14.75,
-  line2: 15.25,
-  end: 17.5,
+export const TL = TIMELINE as {
+  typeOff: number; grow: number; jump: number; land: number; paperStop: number; stripOut: number; card: number;
+  cardContent: number; slider: number; practice: number; deal: number[]; mark: number; icon: number; word: number;
+  line1: number; line2: number; end: number;
 };
 
 // ------------------------------------------------------------------ layout
