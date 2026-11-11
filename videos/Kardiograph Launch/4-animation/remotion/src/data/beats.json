@@ -1,0 +1,7 @@
+[
+ {"id": "1 hand-off", "start": 0, "dur": 2.75, "end": 2.75},
+ {"id": "2 paper", "start": 2.75, "dur": 3.55, "end": 6.3},
+ {"id": "3 learn", "start": 6.3, "dur": 3.5, "end": 9.8},
+ {"id": "4 practice", "start": 9.8, "dur": 3.0, "end": 12.8},
+ {"id": "5 end card", "start": 12.8, "dur": 4.7, "end": 17.5}
+]
