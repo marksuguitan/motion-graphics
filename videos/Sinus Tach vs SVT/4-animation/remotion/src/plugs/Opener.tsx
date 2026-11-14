@@ -1,28 +1,67 @@
-// Opener.tsx: "This video is brought to you by Kardiograph", no VO, about 6 s.
+// Opener.tsx: "This video is brought to you by Kardiograph", no VO, 9.3 s, with simple sounds.
 // Cut into v8 after the title card (v8 frame 370, 0:12.33, inside the VO pause 11.91-12.43 s).
 // It starts on v8's frame 370, which shrinks into a point; it ends by growing that same frame back out of the
 // point, and v8 carries on from frame 371. Motion: Comma Clinical (snap and settle, grow from points, no fades).
 import React from 'react';
-import {AbsoluteFill, Img, staticFile} from 'remotion';
+import {AbsoluteFill, Audio, Img, Sequence, staticFile} from 'remotion';
 import {ease, overshoot, progress, stagger} from '../style/comma';
 import {C, FONT} from '../style/theme';
 import {BG, Card, CORAL, EcgStrip, kicker, heading, Mark, pill, useT, Wordmark} from './kit';
 
-export const OPENER_FRAMES = 189; // 6.3 s at 30 fps
+export const OPENER_FRAMES = 279; // 9.3 s at 30 fps
 
-// Beat times in seconds from the plug's first frame
+// Beat times in seconds from the plug's first frame.
+// v2 (Mark, Nov 14): the "brought to you by" lockup holds 1 s longer, the practice card 2 s longer,
+// with a cursor that clicks SVT, and simple sounds (landing hits, the click, a chime on the score).
 const T = {
   inShrink: 0, // v8's frame shrinks into the centre (accelerate)
   markGrow: 0.22, // the mark grows out of that point
   unfold: 0.7, // the mark slides left as the wordmark unfolds from its edge
   kicker: 0.95, // "This video is brought to you by" cuts on
-  toPractice: 1.65, // lockup text cuts off; the mark tracks to the corner; the practice card grows
-  pick: 2.95, // SVT is picked; the heading cuts to "Score your read."; the score grows
-  out1: 3.75, // the practice frame shrinks into the centre
-  regrow: 4.0, // the lockup grows back with the URL and "Try it free"
-  out2: 5.6, // the lockup shrinks into the centre
-  backIn: 5.85, // v8's frame grows back out of the point
-  end: 6.3,
+  toPractice: 2.65, // lockup text cuts off; the mark tracks to the corner; the practice card grows
+  cursorIn: 3.85, // the cursor grows from its tip, lower right
+  cursorMove: 4.05, // it tracks to the SVT chip
+  pick: 4.95, // click: SVT is picked; the heading cuts to "Score your read."; the score grows
+  out1: 6.75, // the practice frame shrinks into the centre
+  regrow: 7.0, // the lockup grows back with the URL and "Try it free"
+  out2: 8.6, // the lockup shrinks into the centre
+  backIn: 8.85, // v8's frame grows back out of the point
+  end: 9.3,
+};
+
+// Sounds, at the landing frames above (seconds). Files from scripts/make_sfx.py.
+const SFX: [number, string][] = [
+  [0.5, 'pop'], // the mark lands
+  [1.12, 'pop-soft'], // the wordmark finishes unfolding
+  [2.88, 'pop'], // the practice card lands
+  [3.27, 'pop-soft'], // the chips land
+  [T.pick, 'click'], // the cursor clicks SVT
+  [T.pick + 0.2, 'chime'], // the 100% score
+  [T.regrow + 0.28, 'pop'], // the mark lands again
+  [T.regrow + 0.95, 'pop-soft'], // URL and "Try it free" land
+];
+
+const SVT_CHIP = {x: 971, y: 793}; // centre of the SVT chip (measured from a still)
+const CURSOR_FROM = {x: 1390, y: 985};
+const CURSOR_TO = {x: SVT_CHIP.x + 48, y: SVT_CHIP.y + 12}; // the tip lands in the right of the chip, clear of its label
+
+/** A plain arrow pointer; its tip is at (0, 0). */
+const Cursor: React.FC<{t: number}> = ({t}) => {
+  const grow = progress(t, T.cursorIn, 0.4, 'snap');
+  const x = ease(t, T.cursorMove, 0.8, CURSOR_FROM.x, CURSOR_TO.x, 'cross');
+  const y = ease(t, T.cursorMove, 0.8, CURSOR_FROM.y, CURSOR_TO.y, 'cross');
+  const press = t < T.pick ? 1 : t < T.pick + 0.06 ? ease(t, T.pick - 0.02, 0.08, 1, 0.84, 'snap') : ease(t, T.pick + 0.06, 0.18, 0.84, 1, 'snap');
+  const ring = progress(t, T.pick, 0.3, 'snap');
+  return (
+    <>
+      {t >= T.pick && t < T.pick + 0.3 && (
+        <div style={{position: 'absolute', left: x - 26 * (1 + 0.6 * ring), top: y - 26 * (1 + 0.6 * ring), width: 52 * (1 + 0.6 * ring), height: 52 * (1 + 0.6 * ring), borderRadius: '50%', border: `4px solid ${CORAL}`, opacity: 1 - ring}} />
+      )}
+      <svg width={46} height={60} viewBox="0 0 23 30" style={{position: 'absolute', left: x - 1.5, top: y - 1.5, transform: `scale(${grow * press})`, transformOrigin: '1.5px 1.5px', overflow: 'visible'}}>
+        <path d="M1.5 1.5v22.5l6.2-5.6 4.1 9.4 4-1.8-4-9.2 8.4-.6z" fill={C.ink} stroke="#fff" strokeWidth={2} strokeLinejoin="round" />
+      </svg>
+    </>
+  );
 };
 
 const CX = 960;
@@ -86,6 +125,7 @@ const Practice: React.FC<{t: number}> = ({t}) => {
           <b style={{color: C.normal, fontWeight: 700}}>100%</b> Rhythm: SVT
         </span>
       </div>
+      {t >= T.cursorIn && <Cursor t={t} />}
     </>
   );
 };
@@ -138,6 +178,15 @@ export const Opener: React.FC = () => {
       </AbsoluteFill>
     );
   }
-  return <AbsoluteFill style={{background: BG, fontFamily: FONT.body}}>{body}</AbsoluteFill>;
+  return (
+    <AbsoluteFill style={{background: BG, fontFamily: FONT.body}}>
+      {body}
+      {SFX.map(([at, name]) => (
+        <Sequence key={`${name}-${at}`} from={Math.round(at * 30)} layout="none">
+          <Audio src={staticFile(`sfx/${name}.wav`)} />
+        </Sequence>
+      ))}
+    </AbsoluteFill>
+  );
 };
 
