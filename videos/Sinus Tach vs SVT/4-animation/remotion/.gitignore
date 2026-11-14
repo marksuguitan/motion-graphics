@@ -1,0 +1,5 @@
+node_modules/
+out/
+# made by `npm run prep` from the video's 3-board/ folder; the repo copy lives there
+public/art/
+public/audio/
