@@ -1,0 +1,170 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>SVT Kardiograph Plugs Storyboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
+<style>
+/* Layout: one column of 16:9 frames on a warm paper ground, each with timecode, narration and a build note beside it. */
+:root { --bg: #F3EEE5; --paper: #FBF8F2; --ink: #22201E; --ink2: #5E5850; --line: #E3DBCF; --teal: #0A6A82; --coral: #B22F2F;
+  --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #1C1A18; --paper: #262321; --ink: #F1ECE4; --ink2: #B7AEA3; --line: #3A3531; --teal: #7FC4D6; --coral: #E0796D; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #1C1A18; --paper: #262321; --ink: #F1ECE4; --ink2: #B7AEA3; --line: #3A3531; --teal: #7FC4D6; --coral: #E0796D; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 64px; }
+main { max-width: 1180px; margin: 0 auto; display: grid; gap: 36px; }
+header { display: grid; gap: 14px; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink2); font-weight: 500; }
+h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.1; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h1 em { font-style: normal; color: var(--ink2); font-weight: 400; }
+.lede { color: var(--ink2); max-width: 65ch; margin: 0; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--ink2); }
+.facts b { color: var(--ink); font-weight: 500; }
+.audio { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; display: grid; gap: 8px; }
+.audio label { font-weight: 700; font-size: 15px; }
+.audio audio { width: 100%; }
+.sec { padding-top: 12px; }
+.sec h2 { font-size: 24px; margin: 0 0 6px; letter-spacing: -0.01em; }
+.frame { margin: 0; display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: 22px; align-items: start; padding-top: 28px; border-top: 1px solid var(--line); }
+.frame img { width: 100%; max-width: 100%; height: auto; border-radius: 10px; display: block; box-shadow: 0 2px 14px rgba(34,32,30,.10); }
+figcaption { display: grid; gap: 10px; min-width: 0; }
+.meta { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.tc { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 15px; background: var(--ink); color: var(--bg); padding: 3px 10px; border-radius: 6px; }
+.scene { font-weight: 700; font-size: 19px; }
+.vo { margin: 0; font-size: 16px; font-style: italic; color: var(--ink); }
+.note { margin: 0; font-size: 15px; color: var(--ink2); }
+footer { font-size: 13px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 18px; }
+@media (max-width: 760px) { .frame { grid-template-columns: minmax(0, 1fr); } }
+</style>
+<main>
+<header>
+<div class="eyebrow">Storyboard · Kardiograph plugs · v9</div>
+<h1>Sinus tach vs SVT <em>· brought to you by Kardiograph</em></h1>
+<p class="lede">Two plugs for Kardiograph by Medzcool, cut into the finished v8. A quick opener with no voice-over right after the title card, and a voiced end plug before the Subscribe card. Both are Comma Clinical motion on v8's own warm paper, built in Remotion, and every strip is lead II from Kardiograph's own EKG engine. These frames are pulled from the v9 render itself, and timecodes are v9 times.</p>
+<div class="facts"><span><b>Format</b> 16:9, 1920×1080, 30 fps</span><span><b>Video</b> 3:28 (v8 was 2:58)</span><span><b>Opener</b> 0:12.3 to 0:21.6, 9.3 s, sounds only</span><span><b>End plug</b> 2:59.1 to 3:20.6, 21.5 s, voiced</span><span><b>Voice</b> markusguapo, v4 (IPA for Medzcool and EKG)</span><span><b>Palette</b> v8 warm paper, charcoal, Kardiograph coral</span></div>
+<div class="audio"><label for="op">Opener sound (no voice-over)</label><audio id="op" controls preload="none" src="opener-audio.mp3"></audio></div>
+<div class="audio"><label for="ep">End plug, voice-over and sound</label><audio id="ep" controls preload="none" src="end-plug-audio.mp3"></audio></div>
+</header>
+<section class="sec"><h2>Opener · 0:12, no voice-over</h2><p class="lede">After the title card, the frame folds into a point and Kardiograph unfolds out of it: who brought you the video, one feature (practice: read a strip, pick an answer, get scored), and the link. Then the title card grows back and the video carries on.</p></section>
+<figure class="frame">
+<img src="f/k01.jpg" alt="Storyboard frame k01 at 0:12.3: Title card (v8)" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">0:12.3</span><span class="scene">Title card (v8)</span></div>
+<p class="vo">(no narration; the pause after &quot;or stuck in a loop?&quot;)</p>
+<p class="note">The cut point. v8 holds its title card here, so the plug starts on this exact frame: the whole frame shrinks into the centre point on the accelerate curve (0.25 s).</p>
+</figcaption>
+</figure>
+<figure class="frame">
+<img src="f/k02.jpg" alt="Storyboard frame k02 at 0:14.5: Brought to you by" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">0:14.5</span><span class="scene">Brought to you by</span></div>
+<p class="vo">(no narration) Sound: a soft pop as the mark lands, a lighter one as the wordmark finishes.</p>
+<p class="note">The Kardiograph mark grows out of the point with a small overshoot, slides left, and the wordmark unfolds from its edge. &quot;This video is brought to you by&quot; cuts on. On screen about 2.4 s.</p>
+</figcaption>
+</figure>
+<figure class="frame">
+<img src="f/k03.jpg" alt="Storyboard frame k03 at 0:16.8: Read the tracing" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">0:16.8</span><span class="scene">Read the tracing</span></div>
+<p class="vo">(no narration) Sound: a pop on the card, a soft pop on the chips.</p>
+<p class="note">The mark tracks to the corner as the practice card grows from the centre. The strip is real SVT (183 bpm) from Kardiograph&#x27;s engine, scrolling at 25 mm/s. Three answer chips land in a stagger, then the cursor grows from its tip and travels to SVT.</p>
+</figcaption>
+</figure>
+<figure class="frame">
+<img src="f/k04.jpg" alt="Storyboard frame k04 at 0:18.3: Score your read" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">0:18.3</span><span class="scene">Score your read</span></div>
+<p class="vo">(no narration) Sound: a mouse click, then a two-note chime.</p>
+<p class="note">Click: the SVT chip turns coral with a check and pings, a coral ring pushes out from the cursor, the heading cuts to &quot;Score your read.&quot; and the 100% score grows on. The card holds about 1.8 s.</p>
+</figcaption>
+</figure>
+<figure class="frame">
+<img src="f/k05.jpg" alt="Storyboard frame k05 at 0:20.5: The link" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">0:20.5</span><span class="scene">The link</span></div>
+<p class="vo">(no narration) Sound: a pop on the mark, a soft pop on the pills.</p>
+<p class="note">The practice frame shrinks into the centre and the lockup grows back with kardiograph.medzcool.com and Try it free. On screen 1.6 s.</p>
+</figcaption>
+</figure>
+<figure class="frame">
+<img src="f/k06.jpg" alt="Storyboard frame k06 at 0:21.4: Back into the video" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">0:21.4</span><span class="scene">Back into the video</span></div>
+<p class="vo">(no narration)</p>
+<p class="note">The lockup shrinks into the point and the title card grows back out of it, so v8 carries on from its next frame. Every chapter after this moves 9.3 s later than in v8.</p>
+</figcaption>
+</figure>
+<section class="sec"><h2>End plug · 2:59, voiced</h2><p class="lede">What Kardiograph is and why it helps a student: true-scale tracings you can measure, and practice strips that are generated fresh every time. Every move lands on a measured word.</p></section>
+<figure class="frame">
+<img src="f/k07.jpg" alt="Storyboard frame k07 at 2:57.6: Last scene (v8)" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">2:57.6</span><span class="scene">Last scene (v8)</span></div>
+<p class="vo">(v8)</p>
+<p class="note">v8&#x27;s last scene clears to blank paper (v8 frames 5091-5100). The end plug starts and ends on that same paper, so neither cut shows.</p>
+</figcaption>
+</figure>
+<figure class="frame">
+<img src="f/k08.jpg" alt="Storyboard frame k08 at 3:03.0: Course and practice bench" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">3:03.0</span><span class="scene">Course and practice bench</span></div>
+<p class="vo">Kardiograph is Medzcool&#x27;s EKG course and practice bench.</p>
+<p class="note">The mark grows on &quot;Kardiograph&quot; and the wordmark unfolds. The Course tile (7 modules, 21 lessons) lands on &quot;course&quot; and the Practice tile (5 decks, scored) on &quot;practice&quot;.</p>
+</figcaption>
+</figure>
+<figure class="frame">
+<img src="f/k09.jpg" alt="Storyboard frame k09 at 3:05.5: Drawn at true scale" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">3:05.5</span><span class="scene">Drawn at true scale</span></div>
+<p class="vo">Every tracing is drawn at true scale,</p>
+<p class="note">On &quot;Every&quot; the lockup shrinks away and a sinus strip card grows; on &quot;true&quot; the heading and the paper speed cut on. Grid and trace are drawn at 25 mm/s and 10 mm/mV.</p>
+</figcaption>
+</figure>
+<figure class="frame">
+<img src="f/k10.jpg" alt="Storyboard frame k10 at 3:07.9: Calipers" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">3:07.9</span><span class="scene">Calipers</span></div>
+<p class="vo">so you can measure it with calipers, like on the wards.</p>
+<p class="note">On &quot;calipers&quot; the legs drop and open from one R wave to the next, then the readout grows on: 832 ms, 72 bpm.</p>
+</figcaption>
+</figure>
+<figure class="frame">
+<img src="f/k11.jpg" alt="Storyboard frame k11 at 3:09.3: A new tracing every time" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">3:09.3</span><span class="scene">A new tracing every time</span></div>
+<p class="vo">And every practice strip is procedurally generated,</p>
+<p class="note">On &quot;And&quot; the heading cuts to &quot;A new tracing every time.&quot; and the New tracing pill grows under the card.</p>
+</figcaption>
+</figure>
+<figure class="frame">
+<img src="f/k12.jpg" alt="Storyboard frame k12 at 3:10.6: Montage" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">3:10.6</span><span class="scene">Montage</span></div>
+<p class="vo">(continues) ...procedurally generated,</p>
+<p class="note">On &quot;procedurally&quot; the strip swaps every 0.3 s: atrial fibrillation, atrial flutter, 1st-degree AV block, Mobitz I, SVT, sinus. Each carries its name chip and a soft click, and the pill pings on every swap.</p>
+</figcaption>
+</figure>
+<figure class="frame">
+<img src="f/k13.jpg" alt="Storyboard frame k13 at 3:15.3: Endless" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">3:15.3</span><span class="scene">Endless</span></div>
+<p class="vo">so the variety of EKGs you&#x27;ll see in Kardiograph&#x27;s practice sessions is endless.</p>
+<p class="note">On &quot;variety&quot; six rhythms grow into a grid in a stagger, each a 3 s strip with its name. The New tracing pill pings on &quot;endless&quot;.</p>
+</figcaption>
+</figure>
+<figure class="frame">
+<img src="f/k14.jpg" alt="Storyboard frame k14 at 3:18.6: Try it free" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">3:18.6</span><span class="scene">Try it free</span></div>
+<p class="vo">Try it free at kardiograph.medzcool.com.</p>
+<p class="note">The lockup grows back on &quot;Try&quot;, Try it free lands on &quot;free&quot; and the link on &quot;Kardiograph&quot;. Holds 1 s after the last word, then shrinks into the centre and leaves blank paper.</p>
+</figcaption>
+</figure>
+<figure class="frame">
+<img src="f/k15.jpg" alt="Storyboard frame k15 at 3:22.1: Subscribe card (v8)" loading="lazy" width="1920" height="1080">
+<figcaption>
+<div class="meta"><span class="tc">3:22.1</span><span class="scene">Subscribe card (v8)</span></div>
+<p class="vo">(no narration)</p>
+<p class="note">v8&#x27;s silent Subscribe card follows as before, now at 3:20.6 to 3:28.5, with room for YouTube end-screen elements.</p>
+</figcaption>
+</figure>
+<footer>Built from the Remotion project in videos/Sinus Tach vs SVT/4-animation/remotion (src/plugs/Opener.tsx, EndPlug.tsx) and 3-board/kardiograph-plug/make_storyboard.py in the motion-graphics repo.</footer>
+</main>
+</body></html>

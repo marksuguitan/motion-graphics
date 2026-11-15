@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="132" viewBox="0.0 0.0 132.0 132.0">
+<title>Kardiograph mark</title>
+<g id="mark"><rect id="mark-tile" x="0" y="0" width="132" height="132" rx="33.0" fill="#E0574F"/><path id="mark-wave" transform="translate(25.08 25.08) scale(3.4100)" d="M2 12h3l2-6 3 12 3-9 2 3h7" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

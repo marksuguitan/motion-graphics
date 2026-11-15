@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="64" viewBox="-4.0 -4.0 50.0 64.0">
+<title>Cursor (tip at 0,0)</title>
+<path id="cursor" transform="translate(-1.5 -1.5) scale(2)" d="M1.5 1.5v22.5l6.2-5.6 4.1 9.4 4-1.8-4-9.2 8.4-.6z" fill="#222222" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>
+</svg>
