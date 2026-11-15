@@ -740,5 +740,45 @@
   "asset_id": "qFPXJBgZkvV5nPzBMr27",
   "source": "full.mp3 uploaded and transcribed with Scribe (eleven_scribe_v1); real speech-to-text, so it also checks the respellings read as the intended words",
   "words_file": "../timings/scribe_full_words.json"
+ },
+ "kardiograph_plug": {
+  "date": "2026-11-14",
+  "node_id": "2J4o9l4wysGq2XgPfOgi",
+  "takes": [
+   {
+    "take": 1,
+    "generation_id": "vm4FmqJWKLkEidrvudft",
+    "session_id": "NyM3bBTgI8zfKTk7Tby6",
+    "duration_s": 19.57,
+    "file": "takes/END_take1.mp3"
+   },
+   {
+    "take": 2,
+    "generation_id": "GnAPwOVGWMhvP0sabYxV",
+    "session_id": "lvg6ZpbRGAqLN7JwYtaM",
+    "duration_s": 19.64,
+    "file": "END.mp3"
+   }
+  ],
+  "saved_take": 2,
+  "saved_file": "END.mp3",
+  "transcript_generation_id": "U2sglnJDLzdGGTCbASXM",
+  "narration": "Kardiograph is Medzcool's EKG course and practice bench. Every tracing is drawn at true scale, so you can measure it with calipers, like on the wards. And every practice strip is procedurally generated, so the variety of EKGs you'll see in Kardiograph's practice sessions is endless. Try it free at kardiograph.medzcool.com.",
+  "tts_input_respelling": [
+   "Medzcool /ˈmɛdzkuːl/",
+   "EKG /ˌiːkeɪˈdʒiː/"
+  ],
+  "rejected_shorter_read": {
+   "node_id": "bZsB1UudZ7bsRTOmYvSh",
+   "generation_ids": [
+    "11UHqQKlDJGEFo3HIHxi",
+    "fho5KkiNw3DEHsl4rbzW"
+   ],
+   "files": [
+    "takes/ENDb_take1.mp3",
+    "takes/ENDb_take2.mp3"
+   ],
+   "note": "Mark chose his full wording (19.6 s) over this 13.5 s version, Nov 14, 2026"
+  }
  }
 }

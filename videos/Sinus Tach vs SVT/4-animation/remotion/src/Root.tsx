@@ -7,11 +7,13 @@ import {Composition} from 'remotion';
 import {FPS, H, W} from './style/theme';
 import {loadFonts} from './lib/Fonts';
 import {Opener, OPENER_FRAMES} from './plugs/Opener';
+import {EndPlug, END_FRAMES} from './plugs/EndPlug';
 
 loadFonts();
 
 export const RemotionRoot: React.FC = () => (
   <>
     <Composition id="Opener" component={Opener} durationInFrames={OPENER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="EndPlug" component={EndPlug} durationInFrames={END_FRAMES} fps={FPS} width={W} height={H} />
   </>
 );
