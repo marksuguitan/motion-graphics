@@ -1,0 +1,25 @@
+{
+ "note": "Hand-set timeline for Kardiograph Launch (no VO), seconds of video time. Read by src/scenes/KardiographLaunch.tsx and by 4-animation/build/sfx.py.",
+ "typeOff": 0.0,
+ "grow": 0.8,
+ "jump": 1.45,
+ "land": 2.25,
+ "paperStop": 5.25,
+ "stripOut": 5.8,
+ "card": 6.35,
+ "cardContent": 6.85,
+ "slider": 7.5,
+ "practice": 9.3,
+ "deal": [
+  9.35,
+  10.1,
+  10.85,
+  11.6
+ ],
+ "mark": 12.3,
+ "icon": 12.8,
+ "word": 13.25,
+ "line1": 14.25,
+ "line2": 14.75,
+ "end": 17.0
+}

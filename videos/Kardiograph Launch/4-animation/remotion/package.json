@@ -1,0 +1,25 @@
+{
+  "name": "medzcool-remotion",
+  "private": true,
+  "description": "Remotion build for a Medzcool explainer (Comma Clinical motion). Copy this folder to videos/<Short title>/4-animation/remotion/.",
+  "scripts": {
+    "studio": "remotion studio",
+    "check": "node scripts/check.mjs",
+    "render:review": "node scripts/render.mjs review",
+    "render:final": "node scripts/render.mjs final",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.539",
+    "@remotion/cli": "4.0.539",
+    "@remotion/paths": "4.0.539",
+    "@remotion/renderer": "4.0.539",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "typescript": "5.6.3"
+  }
+}

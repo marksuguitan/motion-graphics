@@ -3,6 +3,7 @@ import React from 'react';
 import {Composition} from 'remotion';
 import {Video} from './Video';
 import {Thumbnail} from './Thumbnail';
+import {Vertical} from './Vertical';
 import {VIDEO} from './lib/timing';
 import {FPS, H, W} from './style/theme';
 import {loadFonts} from './lib/Fonts';
@@ -18,6 +19,15 @@ export const RemotionRoot: React.FC = () => (
       fps={FPS}
       width={W}
       height={H}
+      defaultProps={{review: false, label: ''}}
+    />
+    <Composition
+      id="Vertical"
+      component={Vertical}
+      durationInFrames={Math.ceil((VIDEO.lead + VIDEO.trackDur + VIDEO.tail) * FPS)}
+      fps={FPS}
+      width={1080}
+      height={1920}
       defaultProps={{review: false, label: ''}}
     />
     <Composition id="Thumbnail" component={Thumbnail} durationInFrames={1} fps={FPS} width={1280} height={720} />
