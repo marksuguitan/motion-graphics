@@ -624,12 +624,13 @@ def b_5E_odds():
 
 @beat
 def b_5F_link():
-    card_ = G("Card", f'<rect x="1300" y="860" width="540" height="140" rx="12" fill="{CARD}" stroke="{ACC}" stroke-width="2"/>'
-                      + T(1340, 920, "WATCH", 24, DIM, 700, "start", 5) + T(1340, 970, "Pulsus Paradoxus", 40, FG, 700)
-                      + T(1820, 970, "↗", 40, ACC, 700, "end"))
+    # card sits bottom-left, clear of the breathing trace; the link arrow is drawn (no ↗ glyph in Helvetica)
+    card_ = G("Card", f'<rect x="120" y="885" width="540" height="130" rx="12" fill="{CARD}" stroke="{ACC}" stroke-width="2"/>'
+                      + T(160, 935, "WATCH", 24, DIM, 700, "start", 5) + T(160, 985, "Pulsus Paradoxus", 40, FG, 700)
+                      + arrow(598, 987, 628, 957, ACC, 4, 14))
     items = COMMON + [("Pulsus", "pulsus paradoxus", 0.82, "~8 / 10")]
     return (mini_heart(200, 190) + G("Dim", bars(items, x=120, y=420, w=420) + breath_and_gauge(), ' opacity="0.45"') + card_
-            + T(1840, 836, "link in the description", 26, FG, 400, "end"))
+            + T(120, 866, "link in the description", 26, FG, 400, "start"))
 
 
 # ---------- scene 6 ----------

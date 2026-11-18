@@ -1,0 +1,5346 @@
+{
+ "fps": 30,
+ "w": 1920,
+ "h": 1080,
+ "scenes": [
+  {
+   "name": "Scene 1",
+   "start": 0.0,
+   "dur": 17.7,
+   "beats": [
+    {
+     "id": "1A",
+     "key": "1A_strip",
+     "start": 0.0,
+     "dur": 11.933333333333334,
+     "vo": "../3-board/audio/1A.mp3",
+     "vo_at": 1.0,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "1A_strip",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "1A_strip",
+       "do": "static"
+      },
+      {
+       "layer": "Strip/Paper",
+       "src": "1A_strip",
+       "do": "enter",
+       "t": 0.0,
+       "synced": false,
+       "c": [
+        960.0,
+        540.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Strip/Trace",
+       "src": "1A_strip",
+       "do": "reveal",
+       "t": 1.0,
+       "synced": true,
+       "c": [
+        960.0,
+        535.5499877929688
+       ],
+       "d": 2.0,
+       "angle": 270,
+       "curve": "linear"
+      },
+      {
+       "layer": "Strip/Marks_tall",
+       "src": "1A_strip",
+       "do": "enter",
+       "t": 2.68,
+       "synced": true,
+       "c": [
+        966.0,
+        407.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Strip/Marks_short",
+       "src": "1A_strip",
+       "do": "enter",
+       "t": 3.8,
+       "synced": true,
+       "c": [
+        966.0,
+        407.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Caption",
+       "src": "1A_strip",
+       "do": "enter",
+       "t": 4.84,
+       "synced": true,
+       "c": [
+        960.0,
+        886.0
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Strip/Box",
+       "do": "morph",
+       "t0": 5.64,
+       "t1": 6.14,
+       "inAt": 4.84,
+       "cut_at": 7.08,
+       "curve": "snap",
+       "from": [
+        [
+         934,
+         436
+        ],
+        [
+         998,
+         436
+        ],
+        [
+         998,
+         634
+        ],
+        [
+         934,
+         634
+        ]
+       ],
+       "to": [
+        [
+         1133,
+         504
+        ],
+        [
+         1197,
+         504
+        ],
+        [
+         1197,
+         626
+        ],
+        [
+         1133,
+         626
+        ]
+       ],
+       "color": [
+        1.0,
+        0.251,
+        0.341
+       ],
+       "w0": 4,
+       "w1": 4
+      }
+     ]
+    },
+    {
+     "id": "1B",
+     "key": "1B_title",
+     "start": 11.933333333333334,
+     "dur": 5.766666666666667,
+     "vo": "../3-board/audio/1B.mp3",
+     "vo_at": 0.016,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "1B_title",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "1B_title",
+       "do": "static"
+      },
+      {
+       "layer": "Title",
+       "src": "1B_title",
+       "do": "enter",
+       "t": 0.576,
+       "synced": true,
+       "c": [
+        960.0,
+        356.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Strip/Paper",
+       "src": "1A_strip",
+       "do": "carry",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pivot": [
+        960,
+        540
+       ],
+       "to": [
+        960,
+        770
+       ],
+       "s": 0.82
+      },
+      {
+       "layer": "Strip/Trace",
+       "src": "1A_strip",
+       "do": "carry",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pivot": [
+        960,
+        540
+       ],
+       "to": [
+        960,
+        770
+       ],
+       "s": 0.82
+      },
+      {
+       "layer": "Strip/Marks_tall",
+       "src": "1A_strip",
+       "do": "carry",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pivot": [
+        960,
+        540
+       ],
+       "to": [
+        960,
+        770
+       ],
+       "s": 0.82
+      },
+      {
+       "layer": "Strip/Marks_short",
+       "src": "1A_strip",
+       "do": "carry",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pivot": [
+        960,
+        540
+       ],
+       "to": [
+        960,
+        770
+       ],
+       "s": 0.82
+      },
+      {
+       "layer": "Caption",
+       "src": "1A_strip",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      }
+     ],
+     "collapse": {
+      "t": 5.433333333333334,
+      "d": 0.3,
+      "centers": {
+       "Strip": [
+        960.0,
+        771.6
+       ]
+      },
+      "delays": {
+       "Strip": 0.0
+      },
+      "text": [
+       "Title"
+      ]
+     }
+    }
+   ],
+   "xfade_in": 0.0
+  },
+  {
+   "name": "Scene 2",
+   "start": 17.7,
+   "dur": 24.5,
+   "beats": [
+    {
+     "id": "2A",
+     "key": "2A_definition",
+     "start": 0.0,
+     "dur": 10.0,
+     "vo": "../3-board/audio/2A.mp3",
+     "vo_at": 0.5,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "2A_definition",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "2A_definition",
+       "do": "static"
+      },
+      {
+       "layer": "Pair/Other",
+       "src": "2A_definition",
+       "do": "enter",
+       "t": 0.0,
+       "synced": false,
+       "c": [
+        940.0,
+        760.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Pair/QRS_1",
+       "src": "2A_definition",
+       "do": "enter",
+       "t": 0.067,
+       "synced": false,
+       "c": [
+        548.0,
+        581.6500091552734
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Pair/QRS_2",
+       "src": "2A_definition",
+       "do": "enter",
+       "t": 7.14,
+       "synced": true,
+       "c": [
+        1328.0,
+        653.5499877929688
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Labels/Amplitude",
+       "src": "2A_definition",
+       "do": "enter",
+       "t": 5.06,
+       "synced": true,
+       "c": [
+        1051.5,
+        434.5
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Labels/Axis",
+       "src": "2A_definition",
+       "do": "enter",
+       "t": 6.1,
+       "synced": true,
+       "c": [
+        924.015625,
+        930.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Labels/Shape",
+       "src": "2A_definition",
+       "do": "enter",
+       "t": 0.133,
+       "synced": false,
+       "c": [
+        1171.0,
+        582.5
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Base",
+       "src": "2A_definition",
+       "do": "enter",
+       "t": 0.2,
+       "synced": false,
+       "c": [
+        291.8046875,
+        110.0
+       ],
+       "how": "cut"
+      }
+     ]
+    },
+    {
+     "id": "2B",
+     "key": "2B_total",
+     "start": 10.0,
+     "dur": 7.866666666666666,
+     "vo": "../3-board/audio/2B.mp3",
+     "vo_at": -0.014,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "2B_total",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "2B_total",
+       "do": "static"
+      },
+      {
+       "layer": "Title",
+       "src": "2B_total",
+       "do": "enter",
+       "t": 5.426,
+       "synced": true,
+       "c": [
+        960.0,
+        149.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Pair/Other",
+       "src": "2B_total",
+       "do": "move",
+       "prev": "2A_definition",
+       "prevLayer": "Pair/Other",
+       "t": 0.0,
+       "d": 0.6,
+       "curve": "snap",
+       "pc": [
+        940.0,
+        760.0
+       ],
+       "dx": -30.0,
+       "dy": -60.0,
+       "sx": 0.9931,
+       "sy": 0.9931,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "Pair/QRS_1",
+       "src": "2B_total",
+       "do": "move",
+       "prev": "2A_definition",
+       "prevLayer": "Pair/QRS_1",
+       "t": 0.0,
+       "d": 0.6,
+       "curve": "snap",
+       "pc": [
+        548.0,
+        581.7
+       ],
+       "dx": -20.0,
+       "dy": -9.0,
+       "sx": 1.0,
+       "sy": 0.7142,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "Pair/QRS_2",
+       "src": "2B_total",
+       "do": "move",
+       "prev": "2A_definition",
+       "prevLayer": "Pair/QRS_2",
+       "t": 0.0,
+       "d": 0.6,
+       "curve": "snap",
+       "pc": [
+        1328.0,
+        653.5
+       ],
+       "dx": -40.0,
+       "dy": -23.6,
+       "sx": 1.0,
+       "sy": 0.6924,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "Highlight",
+       "src": "2B_total",
+       "do": "enter",
+       "t": 0.946,
+       "synced": true,
+       "c": [
+        865.0,
+        571.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Labels",
+       "src": "2B_total",
+       "do": "enter",
+       "t": 0.0,
+       "synced": false,
+       "c": [
+        960.0,
+        886.0
+       ],
+       "how": "cut",
+       "keep": true
+      },
+      {
+       "layer": "Labels/Amplitude",
+       "src": "2A_definition",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        1016.5,
+        670.0
+       ]
+      },
+      {
+       "layer": "Labels/Axis",
+       "src": "2A_definition",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        1016.5,
+        670.0
+       ]
+      },
+      {
+       "layer": "Labels/Shape",
+       "src": "2A_definition",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        1016.5,
+        670.0
+       ]
+      },
+      {
+       "layer": "Base",
+       "src": "2A_definition",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      }
+     ]
+    },
+    {
+     "id": "2C",
+     "key": "2C_sign",
+     "start": 17.866666666666667,
+     "dur": 6.633333333333334,
+     "vo": "../3-board/audio/2C.mp3",
+     "vo_at": 0.011,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "2C_sign",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "2C_sign",
+       "do": "static"
+      },
+      {
+       "layer": "Card/Other",
+       "src": "2C_sign",
+       "do": "enter",
+       "t": 0.317,
+       "synced": false,
+       "c": [
+        800.0,
+        460.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Card/Label",
+       "src": "2C_sign",
+       "do": "enter",
+       "t": 1.211,
+       "synced": true,
+       "c": [
+        800.0,
+        743.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Question",
+       "src": "2C_sign",
+       "do": "enter",
+       "t": 4.211,
+       "synced": true,
+       "c": [
+        1500.0,
+        494.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Title",
+       "src": "2B_total",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      },
+      {
+       "layer": "Pair/Other",
+       "src": "2B_total",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.033,
+       "c": [
+        910.0,
+        572.6
+       ]
+      },
+      {
+       "layer": "Pair/QRS_1",
+       "src": "2B_total",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.033,
+       "c": [
+        910.0,
+        572.6
+       ]
+      },
+      {
+       "layer": "Pair/QRS_2",
+       "src": "2B_total",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.033,
+       "c": [
+        910.0,
+        572.6
+       ]
+      },
+      {
+       "layer": "Highlight",
+       "src": "2B_total",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.067,
+       "c": [
+        865.0,
+        571.0
+       ]
+      },
+      {
+       "layer": "Labels",
+       "src": "2B_total",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      }
+     ],
+     "collapse": {
+      "t": 6.3,
+      "d": 0.3,
+      "centers": {
+       "Card": [
+        800.0,
+        510.0
+       ]
+      },
+      "delays": {
+       "Card": 0.0
+      },
+      "text": [
+       "Card/Label",
+       "Question"
+      ]
+     }
+    }
+   ],
+   "xfade_in": 0.0
+  },
+  {
+   "name": "Scene 3",
+   "start": 42.2,
+   "dur": 43.93333333333333,
+   "beats": [
+    {
+     "id": "3A",
+     "key": "3A_two-buckets",
+     "start": 0.0,
+     "dur": 8.133333333333333,
+     "vo": "../3-board/audio/3A.mp3",
+     "vo_at": 0.491,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "3A_two-buckets",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "3A_two-buckets",
+       "do": "static"
+      },
+      {
+       "layer": "Cards/Electrics",
+       "src": "3A_two-buckets",
+       "do": "enter",
+       "t": 3.211,
+       "synced": true,
+       "c": [
+        520.0,
+        540.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Cards/Motion/Other",
+       "src": "3A_two-buckets",
+       "do": "enter",
+       "t": 0.0,
+       "synced": false,
+       "c": [
+        1400.0,
+        540.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Sac/Fluid",
+       "src": "3A_two-buckets",
+       "do": "enter",
+       "t": 0.067,
+       "synced": false,
+       "c": [
+        1389.449951171875,
+        596.4500122070312
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Cards/Motion/Sac",
+       "src": "3A_two-buckets",
+       "do": "enter",
+       "t": 0.133,
+       "synced": false,
+       "c": [
+        1389.449951171875,
+        596.4500122070312
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Heart",
+       "src": "3A_two-buckets",
+       "do": "enter",
+       "t": 0.2,
+       "synced": false,
+       "c": [
+        1375.4663696289062,
+        592.6543426513672
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Base",
+       "src": "3A_two-buckets",
+       "do": "enter",
+       "t": 0.267,
+       "synced": false,
+       "c": [
+        960.0,
+        177.5
+       ],
+       "how": "cut"
+      }
+     ]
+    },
+    {
+     "id": "3B",
+     "key": "3B_electrical",
+     "start": 8.133333333333333,
+     "dur": 12.566666666666666,
+     "vo": "../3-board/audio/3B.mp3",
+     "vo_at": 0.016,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "3B_electrical",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "3B_electrical",
+       "do": "static"
+      },
+      {
+       "layer": "Cards/Electrics/Other",
+       "src": "3B_electrical",
+       "do": "enter",
+       "t": 0.0,
+       "synced": false,
+       "c": [
+        519.9999694824219,
+        539.9999847412109
+       ],
+       "how": "cut",
+       "d": 0.6,
+       "keep": true
+      },
+      {
+       "layer": "Cards/Electrics/List",
+       "src": "3B_electrical",
+       "do": "enter",
+       "t": 2.576,
+       "synced": true,
+       "c": [
+        405.7931365966797,
+        547.4999542236328
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Cards/Motion/Other",
+       "src": "3B_electrical",
+       "do": "static",
+       "c": [
+        1400.0,
+        540.0
+       ]
+      },
+      {
+       "layer": "Sac/Fluid",
+       "src": "3B_electrical",
+       "do": "static",
+       "c": [
+        1389.449951171875,
+        596.4500122070312
+       ]
+      },
+      {
+       "layer": "Cards/Motion/Sac",
+       "src": "3B_electrical",
+       "do": "static",
+       "c": [
+        1389.449951171875,
+        596.4500122070312
+       ]
+      },
+      {
+       "layer": "Heart",
+       "src": "3B_electrical",
+       "do": "static",
+       "c": [
+        1375.4663696289062,
+        592.6543426513672
+       ]
+      },
+      {
+       "layer": "Base",
+       "src": "3B_electrical",
+       "do": "static",
+       "c": [
+        960.0,
+        177.5
+       ]
+      },
+      {
+       "layer": "Cards/Electrics",
+       "src": "3A_two-buckets",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        520.0,
+        540.0
+       ]
+      }
+     ]
+    },
+    {
+     "id": "3C",
+     "key": "3C_effusion",
+     "start": 20.7,
+     "dur": 7.333333333333333,
+     "vo": "../3-board/audio/3C.mp3",
+     "vo_at": -0.009,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "3C_effusion",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "3C_effusion",
+       "do": "static"
+      },
+      {
+       "layer": "Cross_section/Sac/Fluid",
+       "src": "3C_effusion",
+       "do": "enter",
+       "t": 3.551,
+       "synced": true,
+       "c": [
+        733.6999816894531,
+        461.3500061035156
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Cross_section/Sac",
+       "src": "3C_effusion",
+       "do": "enter",
+       "t": 0.317,
+       "synced": false,
+       "c": [
+        733.6999816894531,
+        461.3500061035156
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Cross_section/Heart",
+       "src": "3C_effusion",
+       "do": "enter",
+       "t": 0.384,
+       "synced": false,
+       "c": [
+        732.9499816894531,
+        459.4499816894531
+       ],
+       "how": "grow",
+       "d": 0.6,
+       "exprpos": "var tv = time + 62.900; var on = Math.min(1, Math.max(0, (time - 4.871) / 0.6)) * (time < 1000000000.000 ? 1 : 1); var k = (1 - Math.cos(2 * Math.PI * tv / 1.2)) / 2 * on; value + [82.9 * k, 11.2 * k];"
+      },
+      {
+       "layer": "Chest_wall",
+       "src": "3C_effusion",
+       "do": "enter",
+       "t": 4.871,
+       "synced": true,
+       "c": [
+        1063.09375,
+        136.5
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Electrode",
+       "src": "3C_effusion",
+       "do": "enter",
+       "t": 0.45,
+       "synced": false,
+       "c": [
+        1190.0,
+        82.99999618530273
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Electrode_label",
+       "src": "3C_effusion",
+       "do": "enter",
+       "t": 0.517,
+       "synced": false,
+       "c": [
+        1327.9375,
+        93.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Labels",
+       "src": "3C_effusion",
+       "do": "enter",
+       "t": 0.584,
+       "synced": false,
+       "c": [
+        1242.8203125,
+        518.5
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Base",
+       "src": "3C_effusion",
+       "do": "swap",
+       "prev": "3B_electrical",
+       "prevLayer": "Base",
+       "t": 0.0
+      },
+      {
+       "layer": "Cards/Electrics/Other",
+       "src": "3B_electrical",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        979.0,
+        540.0
+       ]
+      },
+      {
+       "layer": "Cards/Electrics/List",
+       "src": "3B_electrical",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      },
+      {
+       "layer": "Cards/Motion/Other",
+       "src": "3B_electrical",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        979.0,
+        540.0
+       ]
+      },
+      {
+       "layer": "Sac/Fluid",
+       "src": "3B_electrical",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.033,
+       "c": [
+        1389.4,
+        596.5
+       ]
+      },
+      {
+       "layer": "Cards/Motion/Sac",
+       "src": "3B_electrical",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        979.0,
+        540.0
+       ]
+      },
+      {
+       "layer": "Heart",
+       "src": "3B_electrical",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.067,
+       "c": [
+        1375.5,
+        592.7
+       ]
+      }
+     ]
+    },
+    {
+     "id": "3D",
+     "key": "3D_swing",
+     "start": 28.033333333333335,
+     "dur": 11.1,
+     "vo": "../3-board/audio/3D.mp3",
+     "vo_at": 0.002,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "3D_swing",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "3D_swing",
+       "do": "static"
+      },
+      {
+       "layer": "Cross_section/Sac/Fluid",
+       "src": "3D_swing",
+       "do": "static",
+       "c": [
+        733.6999816894531,
+        461.3500061035156
+       ]
+      },
+      {
+       "layer": "Cross_section/Sac",
+       "src": "3D_swing",
+       "do": "static",
+       "c": [
+        733.6999816894531,
+        461.3500061035156
+       ]
+      },
+      {
+       "layer": "Cross_section/Heart_ghost",
+       "src": "3D_swing",
+       "do": "enter",
+       "t": 0.002,
+       "synced": false,
+       "c": [
+        775.0090942382812,
+        460.7155303955078
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Cross_section/Heart",
+       "src": "3D_swing",
+       "do": "move",
+       "prev": "3C_effusion",
+       "prevLayer": "Cross_section/Heart",
+       "t": 1.122,
+       "d": 0.6,
+       "curve": "snap",
+       "pc": [
+        732.9,
+        459.4
+       ],
+       "dx": -40.9,
+       "dy": -10.0,
+       "sx": 1.1868,
+       "sy": 1.1868,
+       "op0": 1,
+       "op1": 1,
+       "exprpos": "var tv = time + 70.233; var on = 1 * (time < 1000000000.000 ? 1 : 1); var k = (1 - Math.cos(2 * Math.PI * tv / 1.2)) / 2 * on; value + [82.9 * k, 11.2 * k];"
+      },
+      {
+       "layer": "Chest_wall",
+       "src": "3D_swing",
+       "do": "static",
+       "c": [
+        1063.09375,
+        136.5
+       ]
+      },
+      {
+       "layer": "Electrode",
+       "src": "3D_swing",
+       "do": "static",
+       "c": [
+        1190.0,
+        82.99999618530273
+       ]
+      },
+      {
+       "layer": "Electrode_label",
+       "src": "3D_swing",
+       "do": "static",
+       "c": [
+        1327.9375,
+        93.5
+       ]
+      },
+      {
+       "layer": "Vector_arrow",
+       "src": "3D_swing",
+       "do": "enter",
+       "t": 0.069,
+       "synced": false,
+       "c": [
+        857.5,
+        351.5
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Labels/Beat1",
+       "src": "3D_swing",
+       "do": "enter",
+       "t": 4.242,
+       "synced": true,
+       "c": [
+        1381.3125,
+        458.0
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Labels/Beat2",
+       "src": "3D_swing",
+       "do": "enter",
+       "t": 6.522,
+       "synced": true,
+       "c": [
+        1367.21484375,
+        508.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Strip/Paper",
+       "src": "3D_swing",
+       "do": "enter",
+       "t": 0.135,
+       "synced": false,
+       "c": [
+        960.0,
+        965.2000122070312
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Strip/Trace",
+       "src": "3D_swing",
+       "do": "enter",
+       "t": 0.202,
+       "synced": false,
+       "c": [
+        960.0,
+        963.6499938964844
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Strip/Marks_tall",
+       "src": "3D_swing",
+       "do": "enter",
+       "t": 7.282,
+       "synced": true,
+       "c": [
+        798.0,
+        885.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Strip/Marks_short",
+       "src": "3D_swing",
+       "do": "enter",
+       "t": 7.349,
+       "synced": true,
+       "c": [
+        1058.0,
+        885.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Labels",
+       "src": "3C_effusion",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        1242.8,
+        518.5
+       ]
+      },
+      {
+       "layer": "Base",
+       "src": "3C_effusion",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      }
+     ]
+    },
+    {
+     "id": "3E",
+     "key": "3E_drain",
+     "start": 39.13333333333333,
+     "dur": 4.8,
+     "vo": "../3-board/audio/3E.mp3",
+     "vo_at": 0.011,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "3E_drain",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "3E_drain",
+       "do": "static"
+      },
+      {
+       "layer": "Cross_section/Sac/Fluid",
+       "src": "3E_drain",
+       "do": "drain",
+       "prev": "3D_swing",
+       "prevLayer": "Cross_section/Sac/Fluid",
+       "t": 0.491,
+       "d": 1.6,
+       "curve": "snap",
+       "pc": [
+        733.7,
+        461.4
+       ],
+       "dx": -0.6,
+       "dy": -1.6,
+       "sx": 0.7441,
+       "sy": 0.7441,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "Cross_section/Sac",
+       "src": "3E_drain",
+       "do": "move",
+       "prev": "3D_swing",
+       "prevLayer": "Cross_section/Sac",
+       "t": 0.0,
+       "d": 0.6,
+       "curve": "snap",
+       "pc": [
+        733.7,
+        461.4
+       ],
+       "dx": -0.6,
+       "dy": -1.6,
+       "sx": 0.7441,
+       "sy": 0.7441,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "Cross_section/Heart",
+       "src": "3E_drain",
+       "do": "move",
+       "prev": "3D_swing",
+       "prevLayer": "Cross_section/Heart",
+       "t": 0.0,
+       "d": 0.6,
+       "curve": "snap",
+       "pc": [
+        692.1,
+        449.5
+       ],
+       "dx": 40.9,
+       "dy": 10.0,
+       "sx": 0.8428,
+       "sy": 0.8428,
+       "op0": 1,
+       "op1": 1,
+       "exprpos": "var tv = time + 81.333; var on = 1 * (time < 1.851 ? 1 : Math.max(0, 1 - (time - 1.851) / 0.8)); var k = (1 - Math.cos(2 * Math.PI * tv / 1.2)) / 2 * on; value + [82.9 * k, 11.2 * k];"
+      },
+      {
+       "layer": "Chest_wall",
+       "src": "3E_drain",
+       "do": "static",
+       "c": [
+        1063.09375,
+        136.5
+       ]
+      },
+      {
+       "layer": "Electrode",
+       "src": "3E_drain",
+       "do": "static",
+       "c": [
+        1190.0,
+        82.99999618530273
+       ]
+      },
+      {
+       "layer": "Electrode_label",
+       "src": "3E_drain",
+       "do": "static",
+       "c": [
+        1327.9375,
+        93.5
+       ]
+      },
+      {
+       "layer": "Needle",
+       "src": "3E_drain",
+       "do": "enter",
+       "t": 0.011,
+       "synced": true,
+       "c": [
+        1118.722412109375,
+        732.2709350585938
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Strip/Paper",
+       "src": "3E_drain",
+       "do": "static",
+       "c": [
+        960.0,
+        965.2000122070312
+       ]
+      },
+      {
+       "layer": "Strip/Trace",
+       "src": "3E_drain",
+       "do": "redraw",
+       "prev": "3D_swing",
+       "prevLayer": "Strip/Trace",
+       "t": 3.491,
+       "d": 1.0
+      },
+      {
+       "layer": "Base",
+       "src": "3E_drain",
+       "do": "enter",
+       "t": 0.2,
+       "synced": false,
+       "c": [
+        1424.7421875,
+        458.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Cross_section/Heart_ghost",
+       "src": "3D_swing",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.2,
+       "delay": 0.0,
+       "c": [
+        775.0,
+        460.7
+       ]
+      },
+      {
+       "layer": "Vector_arrow",
+       "src": "3D_swing",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.2,
+       "delay": 0.0,
+       "c": [
+        857.5,
+        351.5
+       ]
+      },
+      {
+       "layer": "Labels/Beat1",
+       "src": "3D_swing",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      },
+      {
+       "layer": "Labels/Beat2",
+       "src": "3D_swing",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      },
+      {
+       "layer": "Strip/Marks_tall",
+       "src": "3D_swing",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.2,
+       "delay": 0.0,
+       "c": [
+        928.0,
+        885.0
+       ]
+      },
+      {
+       "layer": "Strip/Marks_short",
+       "src": "3D_swing",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.2,
+       "delay": 0.0,
+       "c": [
+        928.0,
+        885.0
+       ]
+      }
+     ],
+     "collapse": {
+      "t": 4.266666666666667,
+      "d": 0.3,
+      "centers": {
+       "Cross_section": [
+        733.1,
+        459.8
+       ],
+       "Chest_wall": [
+        1063.1,
+        136.5
+       ],
+       "Electrode": [
+        1190.0,
+        83.0
+       ],
+       "Needle": [
+        1118.7,
+        732.3
+       ],
+       "Strip": [
+        960.0,
+        965.2
+       ]
+      },
+      "delays": {
+       "Cross_section": 0.0,
+       "Chest_wall": 0.067,
+       "Electrode": 0.133,
+       "Needle": 0.2,
+       "Strip": 0.2
+      },
+      "text": [
+       "Electrode_label",
+       "Base"
+      ]
+     }
+    }
+   ],
+   "xfade_in": 0.0
+  },
+  {
+   "name": "Scene 4",
+   "start": 86.13333333333334,
+   "dur": 59.06666666666667,
+   "beats": [
+    {
+     "id": "4A",
+     "key": "4A_every-other",
+     "start": 0.0,
+     "dur": 11.833333333333334,
+     "vo": "../3-board/audio/4A.mp3",
+     "vo_at": 0.496,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "4A_every-other",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "4A_every-other",
+       "do": "static"
+      },
+      {
+       "layer": "ECG/Paper",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.0,
+       "synced": false,
+       "c": [
+        960.0,
+        570.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Other",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.029,
+       "synced": false,
+       "c": [
+        960.0,
+        466.5
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Leads/Lead_I",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.057,
+       "synced": false,
+       "c": [
+        300.0,
+        213.5
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Leads/Lead_aVR",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.086,
+       "synced": false,
+       "c": [
+        740.0,
+        220.5500030517578
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Leads/Lead_V1",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.114,
+       "synced": false,
+       "c": [
+        1180.0,
+        229.35000610351562
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Leads/Lead_V4",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.143,
+       "synced": false,
+       "c": [
+        1620.0,
+        216.4499969482422
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Leads/Lead_II",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.171,
+       "synced": false,
+       "c": [
+        300.0,
+        428.8500061035156
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Leads/Lead_aVL",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.2,
+       "synced": false,
+       "c": [
+        740.0,
+        427.8000030517578
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Leads/Lead_V2",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.229,
+       "synced": false,
+       "c": [
+        1180.0,
+        448.45001220703125
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Leads/Lead_V5",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.257,
+       "synced": false,
+       "c": [
+        1620.0,
+        428.6999969482422
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Leads/Lead_III",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.286,
+       "synced": false,
+       "c": [
+        300.0,
+        643.6499938964844
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Leads/Lead_aVF",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.314,
+       "synced": false,
+       "c": [
+        740.0,
+        643.3999938964844
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Leads/Lead_V3",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.343,
+       "synced": false,
+       "c": [
+        1180.0,
+        654.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Leads/Lead_V6",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 0.371,
+       "synced": false,
+       "c": [
+        1620.0,
+        642.8999938964844
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "ECG/Leads/Lead_II_strip",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 1.856,
+       "synced": true,
+       "c": [
+        960.0,
+        859.0499877929688
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Marks/Odd",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 2.976,
+       "synced": true,
+       "c": [
+        945.0,
+        819.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Marks/Even",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 6.816,
+       "synced": true,
+       "c": [
+        945.0,
+        845.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Brackets/Odd",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 5.056,
+       "synced": true,
+       "c": [
+        945.0,
+        819.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Brackets/Even",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 6.883,
+       "synced": true,
+       "c": [
+        945.0,
+        845.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Label",
+       "src": "4A_every-other",
+       "do": "enter",
+       "t": 10.616,
+       "synced": true,
+       "c": [
+        1517.78564453125,
+        82.5
+       ],
+       "how": "cut"
+      }
+     ]
+    },
+    {
+     "id": "4B",
+     "key": "4B_leads",
+     "start": 11.833333333333334,
+     "dur": 8.633333333333333,
+     "vo": "../3-board/audio/4B.mp3",
+     "vo_at": 0.002,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "4B_leads",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "4B_leads",
+       "do": "static"
+      },
+      {
+       "layer": "ECG/Paper",
+       "src": "4B_leads",
+       "do": "static",
+       "c": [
+        960.0,
+        570.0
+       ]
+      },
+      {
+       "layer": "ECG/Other",
+       "src": "4B_leads",
+       "do": "static",
+       "c": [
+        960.0,
+        466.5
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_I",
+       "src": "4B_leads",
+       "do": "move",
+       "prev": "4A_every-other",
+       "prevLayer": "ECG/Leads/Lead_I",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        300.0,
+        213.5
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 0.4,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_aVR",
+       "src": "4B_leads",
+       "do": "move",
+       "prev": "4A_every-other",
+       "prevLayer": "ECG/Leads/Lead_aVR",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        740.0,
+        220.6
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 0.4,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_V1",
+       "src": "4B_leads",
+       "do": "move",
+       "prev": "4A_every-other",
+       "prevLayer": "ECG/Leads/Lead_V1",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1180.0,
+        229.4
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 0.4,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_V4",
+       "src": "4B_leads",
+       "do": "move",
+       "prev": "4A_every-other",
+       "prevLayer": "ECG/Leads/Lead_V4",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1620.0,
+        216.4
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 0.4,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_II",
+       "src": "4B_leads",
+       "do": "move",
+       "prev": "4A_every-other",
+       "prevLayer": "ECG/Leads/Lead_II",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        300.0,
+        428.9
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 0.4,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_aVL",
+       "src": "4B_leads",
+       "do": "move",
+       "prev": "4A_every-other",
+       "prevLayer": "ECG/Leads/Lead_aVL",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        740.0,
+        427.8
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 0.4,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_V2",
+       "src": "4B_leads",
+       "do": "move",
+       "prev": "4A_every-other",
+       "prevLayer": "ECG/Leads/Lead_V2",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1180.0,
+        448.5
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 0.4,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_V5",
+       "src": "4B_leads",
+       "do": "move",
+       "prev": "4A_every-other",
+       "prevLayer": "ECG/Leads/Lead_V5",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1620.0,
+        428.7
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 0.4,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_III",
+       "src": "4B_leads",
+       "do": "move",
+       "prev": "4A_every-other",
+       "prevLayer": "ECG/Leads/Lead_III",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        300.0,
+        643.6
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 0.4,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_aVF",
+       "src": "4B_leads",
+       "do": "move",
+       "prev": "4A_every-other",
+       "prevLayer": "ECG/Leads/Lead_aVF",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        740.0,
+        643.4
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 0.4,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_V3",
+       "src": "4B_leads",
+       "do": "move",
+       "prev": "4A_every-other",
+       "prevLayer": "ECG/Leads/Lead_V3",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1180.0,
+        654.0
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 0.4,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_V6",
+       "src": "4B_leads",
+       "do": "move",
+       "prev": "4A_every-other",
+       "prevLayer": "ECG/Leads/Lead_V6",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1620.0,
+        642.9
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 0.4,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_II_strip",
+       "src": "4B_leads",
+       "do": "static",
+       "c": [
+        960.0,
+        859.0499877929688
+       ],
+       "bump": [
+        0.642,
+        1.04
+       ]
+      },
+      {
+       "layer": "Spotlight",
+       "src": "4B_leads",
+       "do": "enter",
+       "t": 4.162,
+       "synced": true,
+       "c": [
+        960.0,
+        567.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Labels/Leads",
+       "src": "4B_leads",
+       "do": "enter",
+       "t": 7.362,
+       "synced": true,
+       "c": [
+        1707.0625,
+        86.0
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Marks/Odd",
+       "src": "4A_every-other",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        945.0,
+        832.0
+       ]
+      },
+      {
+       "layer": "Marks/Even",
+       "src": "4A_every-other",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        945.0,
+        832.0
+       ]
+      },
+      {
+       "layer": "Brackets/Odd",
+       "src": "4A_every-other",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.033,
+       "c": [
+        945.0,
+        832.0
+       ]
+      },
+      {
+       "layer": "Brackets/Even",
+       "src": "4A_every-other",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.033,
+       "c": [
+        945.0,
+        832.0
+       ]
+      },
+      {
+       "layer": "Label",
+       "src": "4A_every-other",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      }
+     ]
+    },
+    {
+     "id": "4C",
+     "key": "4C_companions",
+     "start": 20.466666666666665,
+     "dur": 8.133333333333333,
+     "vo": "../3-board/audio/4C.mp3",
+     "vo_at": -0.007,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "4C_companions",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "4C_companions",
+       "do": "static"
+      },
+      {
+       "layer": "ECG/Paper",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Paper",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        960.0,
+        570.0
+       ],
+       "dx": -392.0,
+       "dy": -82.0,
+       "sx": 0.6,
+       "sy": 0.6,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Other",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Other",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        960.0,
+        466.5
+       ],
+       "dx": -392.0,
+       "dy": -40.6,
+       "sx": 0.6,
+       "sy": 0.6,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_I",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Leads/Lead_I",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        300.0,
+        213.5
+       ],
+       "dx": -128.0,
+       "dy": 60.5,
+       "sx": 0.6008,
+       "sy": 0.6008,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_aVR",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Leads/Lead_aVR",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        740.0,
+        220.6
+       ],
+       "dx": -304.0,
+       "dy": 57.7,
+       "sx": 0.6007,
+       "sy": 0.6007,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_V1",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Leads/Lead_V1",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        1180.0,
+        229.4
+       ],
+       "dx": -480.0,
+       "dy": 54.2,
+       "sx": 0.6006,
+       "sy": 0.6006,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_V4",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Leads/Lead_V4",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        1620.0,
+        216.4
+       ],
+       "dx": -656.0,
+       "dy": 59.3,
+       "sx": 0.6008,
+       "sy": 0.6008,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_II",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Leads/Lead_II",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        300.0,
+        428.9
+       ],
+       "dx": -128.0,
+       "dy": -25.6,
+       "sx": 0.6008,
+       "sy": 0.6008,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_aVL",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Leads/Lead_aVL",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        740.0,
+        427.8
+       ],
+       "dx": -304.0,
+       "dy": -25.2,
+       "sx": 0.6008,
+       "sy": 0.6008,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_V2",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Leads/Lead_V2",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        1180.0,
+        448.5
+       ],
+       "dx": -480.0,
+       "dy": -33.5,
+       "sx": 0.6006,
+       "sy": 0.6006,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_V5",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Leads/Lead_V5",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        1620.0,
+        428.7
+       ],
+       "dx": -656.0,
+       "dy": -25.6,
+       "sx": 0.6008,
+       "sy": 0.6008,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_III",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Leads/Lead_III",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        300.0,
+        643.6
+       ],
+       "dx": -128.0,
+       "dy": -111.6,
+       "sx": 0.6008,
+       "sy": 0.6008,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_aVF",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Leads/Lead_aVF",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        740.0,
+        643.4
+       ],
+       "dx": -304.0,
+       "dy": -111.5,
+       "sx": 0.6008,
+       "sy": 0.6008,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_V3",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Leads/Lead_V3",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        1180.0,
+        654.0
+       ],
+       "dx": -480.0,
+       "dy": -115.7,
+       "sx": 0.6007,
+       "sy": 0.6007,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_V6",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Leads/Lead_V6",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        1620.0,
+        642.9
+       ],
+       "dx": -656.0,
+       "dy": -111.3,
+       "sx": 0.6008,
+       "sy": 0.6008,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "ECG/Leads/Lead_II_strip",
+       "src": "4C_companions",
+       "do": "move",
+       "prev": "4B_leads",
+       "prevLayer": "ECG/Leads/Lead_II_strip",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        960.0,
+        859.0
+       ],
+       "dx": -392.0,
+       "dy": -197.7,
+       "sx": 0.6008,
+       "sy": 0.6008,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "Panel/Rate",
+       "src": "4C_companions",
+       "do": "enter",
+       "t": 2.313,
+       "synced": true,
+       "c": [
+        1510.0,
+        345.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Panel/Voltage",
+       "src": "4C_companions",
+       "do": "enter",
+       "t": 3.753,
+       "synced": true,
+       "c": [
+        1510.0,
+        615.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Panel/Arrow/Other",
+       "src": "4C_companions",
+       "do": "enter",
+       "t": 0.25,
+       "synced": false,
+       "c": [
+        1510.0,
+        810.0
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Sac/Fluid",
+       "src": "4C_companions",
+       "do": "enter",
+       "t": 0.317,
+       "synced": false,
+       "c": [
+        1503.6499633789062,
+        897.8999938964844
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Panel/Arrow/Sac",
+       "src": "4C_companions",
+       "do": "enter",
+       "t": 0.383,
+       "synced": false,
+       "c": [
+        1503.6499633789062,
+        897.8999938964844
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Heart",
+       "src": "4C_companions",
+       "do": "enter",
+       "t": 0.45,
+       "synced": false,
+       "c": [
+        1496.770751953125,
+        896.06689453125
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Panel/Arrow/Other 2",
+       "src": "4C_companions",
+       "do": "enter",
+       "t": 0.517,
+       "synced": false,
+       "c": [
+        1741.796875,
+        900.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Spotlight",
+       "src": "4B_leads",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        960.0,
+        567.0
+       ]
+      },
+      {
+       "layer": "Labels/Leads",
+       "src": "4B_leads",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      }
+     ]
+    },
+    {
+     "id": "4D",
+     "key": "4D_numbers",
+     "start": 28.6,
+     "dur": 14.8,
+     "vo": "../3-board/audio/4D.mp3",
+     "vo_at": -0.012,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "4D_numbers",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "4D_numbers",
+       "do": "static"
+      },
+      {
+       "layer": "Figures/Four",
+       "src": "4D_numbers",
+       "do": "enter",
+       "t": 4.948,
+       "synced": true,
+       "c": [
+        415.0,
+        371.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Figures/Other",
+       "src": "4D_numbers",
+       "do": "enter",
+       "t": 0.35,
+       "synced": false,
+       "c": [
+        414.5,
+        510.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Number/Sens",
+       "src": "4D_numbers",
+       "do": "enter",
+       "t": 7.428,
+       "synced": true,
+       "c": [
+        1276.5390625,
+        384.5
+       ],
+       "how": "cut",
+       "bump": 1.08
+      },
+      {
+       "layer": "Number/Spec",
+       "src": "4D_numbers",
+       "do": "enter",
+       "t": 12.948,
+       "synced": true,
+       "c": [
+        1276.5390625,
+        744.5
+       ],
+       "how": "cut",
+       "bump": 1.08
+      },
+      {
+       "layer": "Base",
+       "src": "4D_numbers",
+       "do": "enter",
+       "t": 0.417,
+       "synced": false,
+       "c": [
+        368.8828125,
+        1013.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "ECG/Paper",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Other",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_I",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_aVR",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_V1",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_V4",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_II",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_aVL",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_V2",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_V5",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_III",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_aVF",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_V3",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_V6",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "ECG/Leads/Lead_II_strip",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        568.0,
+        488.0
+       ]
+      },
+      {
+       "layer": "Panel/Rate",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.033,
+       "c": [
+        1510.0,
+        596.3
+       ]
+      },
+      {
+       "layer": "Panel/Voltage",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.033,
+       "c": [
+        1510.0,
+        596.3
+       ]
+      },
+      {
+       "layer": "Panel/Arrow/Other",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.033,
+       "c": [
+        1510.0,
+        596.3
+       ]
+      },
+      {
+       "layer": "Sac/Fluid",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.067,
+       "c": [
+        1503.6,
+        897.9
+       ]
+      },
+      {
+       "layer": "Panel/Arrow/Sac",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.033,
+       "c": [
+        1510.0,
+        596.3
+       ]
+      },
+      {
+       "layer": "Heart",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.1,
+       "c": [
+        1496.8,
+        896.1
+       ]
+      },
+      {
+       "layer": "Panel/Arrow/Other 2",
+       "src": "4C_companions",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      }
+     ]
+    },
+    {
+     "id": "4E",
+     "key": "4E_rule",
+     "start": 43.4,
+     "dur": 6.0,
+     "vo": "../3-board/audio/4E.mp3",
+     "vo_at": -0.001,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "4E_rule",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "4E_rule",
+       "do": "static"
+      },
+      {
+       "layer": "Rules/Rule_1",
+       "src": "4E_rule",
+       "do": "reveal",
+       "t": 0.879,
+       "synced": true,
+       "c": [
+        631.140625,
+        395.0
+       ],
+       "d": 0.6,
+       "angle": 270,
+       "curve": "snap"
+      },
+      {
+       "layer": "Rules/Rule_2",
+       "src": "4E_rule",
+       "do": "reveal",
+       "t": 3.039,
+       "synced": true,
+       "c": [
+        828.1796875,
+        665.0
+       ],
+       "d": 0.6,
+       "angle": 270,
+       "curve": "snap"
+      },
+      {
+       "layer": "Figures/Four",
+       "src": "4D_numbers",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.579,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        414.5,
+        409.0
+       ]
+      },
+      {
+       "layer": "Figures/Other",
+       "src": "4D_numbers",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.579
+      },
+      {
+       "layer": "Number/Sens",
+       "src": "4D_numbers",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.579
+      },
+      {
+       "layer": "Number/Spec",
+       "src": "4D_numbers",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.579
+      },
+      {
+       "layer": "Base",
+       "src": "4D_numbers",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.579
+      }
+     ]
+    },
+    {
+     "id": "4F",
+     "key": "4F_bigeminy",
+     "start": 49.4,
+     "dur": 9.666666666666666,
+     "vo": "../3-board/audio/4F.mp3",
+     "vo_at": -0.015,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "4F_bigeminy",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "4F_bigeminy",
+       "do": "static"
+      },
+      {
+       "layer": "Strips/Bigeminy/Paper",
+       "src": "4F_bigeminy",
+       "do": "enter",
+       "t": 0.25,
+       "synced": false,
+       "c": [
+        960.0,
+        355.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Strips/Bigeminy/Strip",
+       "src": "4F_bigeminy",
+       "do": "reveal",
+       "t": 1.185,
+       "synced": false,
+       "c": [
+        960.0,
+        352.8999938964844
+       ],
+       "d": 1.2,
+       "angle": 270,
+       "curve": "linear"
+      },
+      {
+       "layer": "Strips/Bigeminy/Calipers",
+       "src": "4F_bigeminy",
+       "do": "enter",
+       "t": 0.317,
+       "synced": false,
+       "c": [
+        950.0,
+        220.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Strips/Bigeminy/Other",
+       "src": "4F_bigeminy",
+       "do": "enter",
+       "t": 0.383,
+       "synced": false,
+       "c": [
+        960.0,
+        176.0
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Strips/Alternans",
+       "src": "4F_bigeminy",
+       "do": "reveal",
+       "t": 6.785,
+       "synced": true,
+       "c": [
+        960.0,
+        752.0
+       ],
+       "d": 1.2,
+       "angle": 270,
+       "curve": "linear"
+      },
+      {
+       "layer": "Rules/Rule_1",
+       "src": "4E_rule",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        828.2,
+        530.0
+       ]
+      },
+      {
+       "layer": "Rules/Rule_2",
+       "src": "4E_rule",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        828.2,
+        530.0
+       ]
+      }
+     ],
+     "collapse": {
+      "t": 9.333333333333334,
+      "d": 0.3,
+      "centers": {
+       "Strips": [
+        960.0,
+        532.0
+       ]
+      },
+      "delays": {
+       "Strips": 0.0
+      },
+      "text": [
+       "Strips/Bigeminy/Other"
+      ]
+     }
+    }
+   ],
+   "xfade_in": 0.0
+  },
+  {
+   "name": "Scene 5",
+   "start": 145.2,
+   "dur": 52.733333333333334,
+   "beats": [
+    {
+     "id": "5A",
+     "key": "5A_bedside",
+     "start": 0.0,
+     "dur": 8.3,
+     "vo": "../3-board/audio/5A.mp3",
+     "vo_at": 0.487,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "5A_bedside",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "5A_bedside",
+       "do": "static"
+      },
+      {
+       "layer": "Sac/Fluid",
+       "src": "5A_bedside",
+       "do": "enter",
+       "t": 0.0,
+       "synced": false,
+       "c": [
+        188.00000762939453,
+        186.00000762939453
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Heart_mini/Sac",
+       "src": "5A_bedside",
+       "do": "enter",
+       "t": 0.067,
+       "synced": false,
+       "c": [
+        188.00000762939453,
+        186.00000762939453
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Heart_mini/Heart",
+       "src": "5A_bedside",
+       "do": "enter",
+       "t": 0.133,
+       "synced": false,
+       "c": [
+        172.00090789794922,
+        181.66991424560547
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Patient",
+       "src": "5A_bedside",
+       "do": "enter",
+       "t": 1.207,
+       "synced": true,
+       "c": [
+        860.0,
+        560.0000305175781
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Base",
+       "src": "5A_bedside",
+       "do": "enter",
+       "t": 0.2,
+       "synced": false,
+       "c": [
+        1425.734375,
+        435.0
+       ],
+       "how": "cut"
+      }
+     ]
+    },
+    {
+     "id": "5B",
+     "key": "5B_beck",
+     "start": 8.3,
+     "dur": 7.333333333333333,
+     "vo": "../3-board/audio/5B.mp3",
+     "vo_at": 0.001,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "5B_beck",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "5B_beck",
+       "do": "static"
+      },
+      {
+       "layer": "Sac/Fluid",
+       "src": "5B_beck",
+       "do": "static",
+       "c": [
+        188.00000762939453,
+        186.00000762939453
+       ]
+      },
+      {
+       "layer": "Heart_mini/Sac",
+       "src": "5B_beck",
+       "do": "static",
+       "c": [
+        188.00000762939453,
+        186.00000762939453
+       ]
+      },
+      {
+       "layer": "Heart_mini/Heart",
+       "src": "5B_beck",
+       "do": "static",
+       "c": [
+        172.00090789794922,
+        181.66991424560547
+       ]
+      },
+      {
+       "layer": "Patient",
+       "src": "5B_beck",
+       "do": "static",
+       "c": [
+        860.0,
+        560.0000305175781
+       ]
+      },
+      {
+       "layer": "Icons/BP",
+       "src": "5B_beck",
+       "do": "enter",
+       "t": 2.721,
+       "synced": true,
+       "c": [
+        1102.2890625,
+        448.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Icons/JVD",
+       "src": "5B_beck",
+       "do": "enter",
+       "t": 3.961,
+       "synced": true,
+       "c": [
+        650.1292114257812,
+        230.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Icons/Sounds",
+       "src": "5B_beck",
+       "do": "enter",
+       "t": 5.441,
+       "synced": true,
+       "c": [
+        1123.1328125,
+        302.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Title",
+       "src": "5B_beck",
+       "do": "enter",
+       "t": 1.281,
+       "synced": true,
+       "c": [
+        1606.0,
+        100.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Base",
+       "src": "5A_bedside",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      }
+     ]
+    },
+    {
+     "id": "5C",
+     "key": "5C_common",
+     "start": 15.633333333333333,
+     "dur": 12.633333333333333,
+     "vo": "../3-board/audio/5C.mp3",
+     "vo_at": 0.012,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "5C_common",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "5C_common",
+       "do": "static"
+      },
+      {
+       "layer": "Sac/Fluid",
+       "src": "5C_common",
+       "do": "static",
+       "c": [
+        188.00000762939453,
+        186.00000762939453
+       ]
+      },
+      {
+       "layer": "Heart_mini/Sac",
+       "src": "5C_common",
+       "do": "static",
+       "c": [
+        188.00000762939453,
+        186.00000762939453
+       ]
+      },
+      {
+       "layer": "Heart_mini/Heart",
+       "src": "5C_common",
+       "do": "static",
+       "c": [
+        172.00090789794922,
+        181.66991424560547
+       ]
+      },
+      {
+       "layer": "Patient",
+       "src": "5C_common",
+       "do": "move",
+       "prev": "5B_beck",
+       "prevLayer": "Patient",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        860.0,
+        560.0
+       ],
+       "dx": -324.0,
+       "dy": 76.0,
+       "sx": 0.6,
+       "sy": 0.6,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Icons/BP",
+       "src": "5C_common",
+       "do": "move",
+       "prev": "5B_beck",
+       "prevLayer": "Icons/BP",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        1102.3,
+        448.0
+       ],
+       "dx": -420.9,
+       "dy": 120.8,
+       "sx": 0.5999,
+       "sy": 0.5999,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Icons/JVD",
+       "src": "5C_common",
+       "do": "move",
+       "prev": "5B_beck",
+       "prevLayer": "Icons/JVD",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        650.1,
+        230.0
+       ],
+       "dx": -240.0,
+       "dy": 208.1,
+       "sx": 0.5959,
+       "sy": 0.5959,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Icons/Sounds",
+       "src": "5C_common",
+       "do": "move",
+       "prev": "5B_beck",
+       "prevLayer": "Icons/Sounds",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        1123.1,
+        302.0
+       ],
+       "dx": -429.3,
+       "dy": 179.2,
+       "sx": 0.5999,
+       "sy": 0.5999,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Title",
+       "src": "5C_common",
+       "do": "move",
+       "prev": "5B_beck",
+       "prevLayer": "Title",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        1606.0,
+        100.5
+       ],
+       "dx": -1070.0,
+       "dy": 230.0,
+       "sx": 0.5936,
+       "sy": 0.5936,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Beck/Uncommon",
+       "src": "5C_common",
+       "do": "enter",
+       "t": 0.012,
+       "synced": false,
+       "c": [
+        535.9999847412109,
+        380.3999938964844
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Base",
+       "src": "5C_common",
+       "do": "enter",
+       "t": 0.079,
+       "synced": false,
+       "c": [
+        1239.4296875,
+        318.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Bars/Dyspnea",
+       "src": "5C_common",
+       "do": "reveal",
+       "t": 3.572,
+       "synced": true,
+       "c": [
+        1396.2890625,
+        436.5
+       ],
+       "d": 0.6,
+       "angle": 270,
+       "curve": "snap"
+      },
+      {
+       "layer": "Bars/Tachy",
+       "src": "5C_common",
+       "do": "reveal",
+       "t": 6.972,
+       "synced": true,
+       "c": [
+        1396.2890625,
+        556.5
+       ],
+       "d": 0.6,
+       "angle": 270,
+       "curve": "snap"
+      },
+      {
+       "layer": "Bars/JVP",
+       "src": "5C_common",
+       "do": "reveal",
+       "t": 9.372,
+       "synced": true,
+       "c": [
+        1388.1044921875,
+        676.5
+       ],
+       "d": 0.6,
+       "angle": 270,
+       "curve": "snap"
+      }
+     ]
+    },
+    {
+     "id": "5D",
+     "key": "5D_pulsus",
+     "start": 28.266666666666666,
+     "dur": 9.4,
+     "vo": "../3-board/audio/5D.mp3",
+     "vo_at": -0.001,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "5D_pulsus",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "5D_pulsus",
+       "do": "static"
+      },
+      {
+       "layer": "Sac/Fluid",
+       "src": "5D_pulsus",
+       "do": "static",
+       "c": [
+        188.00000762939453,
+        186.00000762939453
+       ]
+      },
+      {
+       "layer": "Heart_mini/Sac",
+       "src": "5D_pulsus",
+       "do": "static",
+       "c": [
+        188.00000762939453,
+        186.00000762939453
+       ]
+      },
+      {
+       "layer": "Heart_mini/Heart",
+       "src": "5D_pulsus",
+       "do": "static",
+       "c": [
+        172.00090789794922,
+        181.66991424560547
+       ]
+      },
+      {
+       "layer": "Bars/Dyspnea",
+       "src": "5D_pulsus",
+       "do": "move",
+       "prev": "5C_common",
+       "prevLayer": "Bars/Dyspnea",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        1396.3,
+        436.5
+       ],
+       "dx": -940.0,
+       "dy": -20.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "Bars/Tachy",
+       "src": "5D_pulsus",
+       "do": "move",
+       "prev": "5C_common",
+       "prevLayer": "Bars/Tachy",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        1396.3,
+        556.5
+       ],
+       "dx": -940.0,
+       "dy": -20.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "Bars/JVP",
+       "src": "5D_pulsus",
+       "do": "move",
+       "prev": "5C_common",
+       "prevLayer": "Bars/JVP",
+       "t": 0.0,
+       "d": 0.75,
+       "curve": "cross",
+       "pc": [
+        1388.1,
+        676.5
+       ],
+       "dx": -940.0,
+       "dy": -20.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 1
+      },
+      {
+       "layer": "Cuff/Gauge/Face",
+       "src": "5D_pulsus",
+       "do": "enter",
+       "t": 0.317,
+       "synced": false,
+       "c": [
+        1500.0,
+        360.0
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Cuff/Gauge/Major_ticks",
+       "src": "5D_pulsus",
+       "do": "enter",
+       "t": 0.353,
+       "synced": false,
+       "c": [
+        1500.0,
+        324.0
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Cuff/Gauge/Dial_numbers",
+       "src": "5D_pulsus",
+       "do": "enter",
+       "t": 0.39,
+       "synced": false,
+       "c": [
+        1503.61328125,
+        346.9499969482422
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Cuff/Gauge/Threshold_line",
+       "src": "5D_pulsus",
+       "do": "enter",
+       "t": 0.426,
+       "synced": false,
+       "c": [
+        1529.2471923828125,
+        319.0671081542969
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Cuff/Gauge/Needle",
+       "src": "5D_pulsus",
+       "do": "expr",
+       "synced": false,
+       "c": [
+        1491.9500122070312,
+        302.5500030517578
+       ],
+       "how": "grow",
+       "d": 0.6,
+       "pivot": [
+        1500,
+        360
+       ],
+       "expr": "var tv = time + 173.467; -14 * Math.max(0, Math.sin(2 * Math.PI * tv / 4.0)) + 1.5 * Math.sin(2 * Math.PI * tv / 0.6);",
+       "in_at": 0.617
+      },
+      {
+       "layer": "Cuff/Gauge/Hub",
+       "src": "5D_pulsus",
+       "do": "enter",
+       "t": 0.462,
+       "synced": false,
+       "c": [
+        1500.0,
+        360.0
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Cuff/Gauge/Readout",
+       "src": "5D_pulsus",
+       "do": "enter",
+       "t": 0.499,
+       "synced": false,
+       "c": [
+        1500.0,
+        439.0
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Caption",
+       "src": "5D_pulsus",
+       "do": "enter",
+       "t": 0.535,
+       "synced": false,
+       "c": [
+        1500.0,
+        561.0
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Cuff/Gauge/Caption_note",
+       "src": "5D_pulsus",
+       "do": "enter",
+       "t": 0.572,
+       "synced": false,
+       "c": [
+        1500.0,
+        590.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Pressure/Trace",
+       "src": "5D_pulsus",
+       "do": "enter",
+       "t": 0.608,
+       "synced": false,
+       "c": [
+        1510.0,
+        705.6499938964844
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Pressure/Other",
+       "src": "5D_pulsus",
+       "do": "enter",
+       "t": 0.644,
+       "synced": false,
+       "c": [
+        1758.078125,
+        642.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Threshold",
+       "src": "5D_pulsus",
+       "do": "enter",
+       "t": 5.999,
+       "synced": true,
+       "c": [
+        1510.0,
+        736.5
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Breath/Curve/Trace",
+       "src": "5D_pulsus",
+       "do": "reveal",
+       "t": 4.199,
+       "synced": false,
+       "c": [
+        1510.0,
+        930.0
+       ],
+       "d": 1.2,
+       "angle": 270,
+       "curve": "linear"
+      },
+      {
+       "layer": "Breath/Other",
+       "src": "5D_pulsus",
+       "do": "enter",
+       "t": 0.681,
+       "synced": false,
+       "c": [
+        1225.875,
+        1002.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Breath/Insp",
+       "src": "5D_pulsus",
+       "do": "enter",
+       "t": 8.079,
+       "synced": true,
+       "c": [
+        1400.0,
+        861.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Title",
+       "src": "5D_pulsus",
+       "do": "swap",
+       "prev": "5C_common",
+       "prevLayer": "Title",
+       "t": 2.199
+      },
+      {
+       "layer": "Patient",
+       "src": "5C_common",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        536.0,
+        636.0
+       ]
+      },
+      {
+       "layer": "Icons/BP",
+       "src": "5C_common",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.033,
+       "c": [
+        577.1,
+        504.5
+       ]
+      },
+      {
+       "layer": "Icons/JVD",
+       "src": "5C_common",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.033,
+       "c": [
+        577.1,
+        504.5
+       ]
+      },
+      {
+       "layer": "Icons/Sounds",
+       "src": "5C_common",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.033,
+       "c": [
+        577.1,
+        504.5
+       ]
+      },
+      {
+       "layer": "Beck/Uncommon",
+       "src": "5C_common",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.067,
+       "c": [
+        536.0,
+        380.4
+       ]
+      },
+      {
+       "layer": "Base",
+       "src": "5C_common",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      }
+     ]
+    },
+    {
+     "id": "5E",
+     "key": "5E_odds",
+     "start": 37.666666666666664,
+     "dur": 10.433333333333334,
+     "vo": "../3-board/audio/5E.mp3",
+     "vo_at": 0.006,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "5E_odds",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "5E_odds",
+       "do": "static"
+      },
+      {
+       "layer": "Sac/Fluid",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        188.00000762939453,
+        186.00000762939453
+       ]
+      },
+      {
+       "layer": "Heart_mini/Sac",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        188.00000762939453,
+        186.00000762939453
+       ]
+      },
+      {
+       "layer": "Heart_mini/Heart",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        172.00090789794922,
+        181.66991424560547
+       ]
+      },
+      {
+       "layer": "Bars/Dyspnea",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        386.2890625,
+        416.5
+       ]
+      },
+      {
+       "layer": "Bars/Tachy",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        386.2890625,
+        536.5
+       ]
+      },
+      {
+       "layer": "Bars/JVP",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        378.1044921875,
+        656.5
+       ]
+      },
+      {
+       "layer": "Bars/Pulsus",
+       "src": "5E_odds",
+       "do": "reveal",
+       "t": 1.086,
+       "synced": true,
+       "c": [
+        386.2890625,
+        776.5
+       ],
+       "d": 0.6,
+       "angle": 270,
+       "curve": "snap"
+      },
+      {
+       "layer": "Cuff/Gauge/Face",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1500.0,
+        360.0
+       ]
+      },
+      {
+       "layer": "Cuff/Gauge/Major_ticks",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1500.0,
+        324.0
+       ]
+      },
+      {
+       "layer": "Cuff/Gauge/Dial_numbers",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1503.61328125,
+        346.9499969482422
+       ]
+      },
+      {
+       "layer": "Cuff/Gauge/Threshold_line",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1529.2471923828125,
+        319.0671081542969
+       ]
+      },
+      {
+       "layer": "Cuff/Gauge/Needle",
+       "src": "5E_odds",
+       "do": "expr",
+       "c": [
+        1491.9500122070312,
+        302.5500030517578
+       ],
+       "pivot": [
+        1500,
+        360
+       ],
+       "expr": "var tv = time + 182.867; -14 * Math.max(0, Math.sin(2 * Math.PI * tv / 4.0)) + 1.5 * Math.sin(2 * Math.PI * tv / 0.6);"
+      },
+      {
+       "layer": "Cuff/Gauge/Hub",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1500.0,
+        360.0
+       ]
+      },
+      {
+       "layer": "Cuff/Gauge/Readout",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1500.0,
+        439.0
+       ]
+      },
+      {
+       "layer": "Caption",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1500.0,
+        561.0
+       ]
+      },
+      {
+       "layer": "Cuff/Gauge/Caption_note",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1500.0,
+        590.5
+       ]
+      },
+      {
+       "layer": "Pressure/Trace",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1510.0,
+        705.6499938964844
+       ]
+      },
+      {
+       "layer": "Pressure/Other",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1758.078125,
+        642.5
+       ]
+      },
+      {
+       "layer": "Threshold",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1510.0,
+        736.5
+       ]
+      },
+      {
+       "layer": "Breath/Curve/Trace",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1510.0,
+        930.0
+       ]
+      },
+      {
+       "layer": "Breath/Other",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1225.875,
+        1002.5
+       ]
+      },
+      {
+       "layer": "Breath/Insp",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1400.0,
+        861.5
+       ]
+      },
+      {
+       "layer": "Title",
+       "src": "5E_odds",
+       "do": "static",
+       "c": [
+        1475.5859375,
+        103.5
+       ]
+      },
+      {
+       "layer": "Odds/Up",
+       "src": "5E_odds",
+       "do": "enter",
+       "t": 5.526,
+       "synced": true,
+       "c": [
+        898.1174926757812,
+        545.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Odds/Down",
+       "src": "5E_odds",
+       "do": "enter",
+       "t": 7.726,
+       "synced": true,
+       "c": [
+        877.6604614257812,
+        795.0
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Base",
+       "src": "5E_odds",
+       "do": "enter",
+       "t": 0.006,
+       "synced": false,
+       "c": [
+        178.9453125,
+        1013.5
+       ],
+       "how": "cut"
+      }
+     ]
+    },
+    {
+     "id": "5F",
+     "key": "5F_link",
+     "start": 48.1,
+     "dur": 4.633333333333334,
+     "vo": "../3-board/audio/5F.mp3",
+     "vo_at": 0.013,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "5F_link",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "5F_link",
+       "do": "static"
+      },
+      {
+       "layer": "Sac/Fluid",
+       "src": "5F_link",
+       "do": "static",
+       "c": [
+        188.00000762939453,
+        186.00000762939453
+       ]
+      },
+      {
+       "layer": "Heart_mini/Sac",
+       "src": "5F_link",
+       "do": "static",
+       "c": [
+        188.00000762939453,
+        186.00000762939453
+       ]
+      },
+      {
+       "layer": "Heart_mini/Heart",
+       "src": "5F_link",
+       "do": "static",
+       "c": [
+        172.00090789794922,
+        181.66991424560547
+       ]
+      },
+      {
+       "layer": "Bars/Dyspnea",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Bars/Dyspnea",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        386.3,
+        416.5
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Bars/Tachy",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Bars/Tachy",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        386.3,
+        536.5
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Bars/JVP",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Bars/JVP",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        378.1,
+        656.5
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Bars/Pulsus",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Bars/Pulsus",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        386.3,
+        776.5
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Cuff/Gauge/Face",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Cuff/Gauge/Face",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1500.0,
+        360.0
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Cuff/Gauge/Major_ticks",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Cuff/Gauge/Major_ticks",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1500.0,
+        324.0
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Cuff/Gauge/Dial_numbers",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Cuff/Gauge/Dial_numbers",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1503.6,
+        346.9
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Cuff/Gauge/Threshold_line",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Cuff/Gauge/Threshold_line",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1529.2,
+        319.1
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Cuff/Gauge/Needle",
+       "src": "5F_link",
+       "do": "expr",
+       "prev": "5E_odds",
+       "prevLayer": "Cuff/Gauge/Needle",
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1492.0,
+        302.6
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45,
+       "pivot": [
+        1500,
+        360
+       ],
+       "expr": "var tv = time + 193.300; -14 * Math.max(0, Math.sin(2 * Math.PI * tv / 4.0)) + 1.5 * Math.sin(2 * Math.PI * tv / 0.6);"
+      },
+      {
+       "layer": "Cuff/Gauge/Hub",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Cuff/Gauge/Hub",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1500.0,
+        360.0
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Cuff/Gauge/Readout",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Cuff/Gauge/Readout",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1500.0,
+        439.0
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Caption",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Caption",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1500.0,
+        561.0
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Cuff/Gauge/Caption_note",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Cuff/Gauge/Caption_note",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1500.0,
+        590.5
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Pressure/Trace",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Pressure/Trace",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1510.0,
+        705.6
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Dim/Pressure/Other",
+       "src": "5F_link",
+       "do": "enter",
+       "t": 0.317,
+       "synced": false,
+       "c": [
+        1758.078125,
+        642.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Threshold",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Threshold",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1510.0,
+        736.5
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Breath/Curve/Trace",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Breath/Curve/Trace",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1510.0,
+        930.0
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Dim/Breath/Other",
+       "src": "5F_link",
+       "do": "enter",
+       "t": 0.384,
+       "synced": false,
+       "c": [
+        1225.875,
+        1002.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Breath/Insp",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Breath/Insp",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1400.0,
+        861.5
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Title",
+       "src": "5F_link",
+       "do": "move",
+       "prev": "5E_odds",
+       "prevLayer": "Title",
+       "t": 0.0,
+       "d": 0.3,
+       "curve": "snap",
+       "pc": [
+        1475.6,
+        103.5
+       ],
+       "dx": 0.0,
+       "dy": 0.0,
+       "sx": 1.0,
+       "sy": 1.0,
+       "op0": 1,
+       "op1": 0.45
+      },
+      {
+       "layer": "Card",
+       "src": "5F_link",
+       "do": "enter",
+       "t": 1.373,
+       "synced": true,
+       "c": [
+        390.0,
+        950.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Base",
+       "src": "5F_link",
+       "do": "swap",
+       "prev": "5E_odds",
+       "prevLayer": "Base",
+       "t": 0.0
+      },
+      {
+       "layer": "Pressure/Other",
+       "src": "5E_odds",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      },
+      {
+       "layer": "Breath/Other",
+       "src": "5E_odds",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      },
+      {
+       "layer": "Odds/Up",
+       "src": "5E_odds",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.067,
+       "c": [
+        898.1,
+        670.0
+       ]
+      },
+      {
+       "layer": "Odds/Down",
+       "src": "5E_odds",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.067,
+       "c": [
+        898.1,
+        670.0
+       ]
+      }
+     ],
+     "collapse": {
+      "t": 4.1,
+      "d": 0.3,
+      "centers": {
+       "Sac": [
+        188.0,
+        186.0
+       ],
+       "Heart_mini": [
+        188.0,
+        186.0
+       ],
+       "Bars": [
+        386.3,
+        596.5
+       ],
+       "Cuff": [
+        1506.9,
+        397.6
+       ],
+       "Pressure": [
+        1510.0,
+        705.6
+       ],
+       "Threshold": [
+        1510.0,
+        736.5
+       ],
+       "Breath": [
+        1510.0,
+        909.0
+       ],
+       "Card": [
+        390.0,
+        950.0
+       ]
+      },
+      "delays": {
+       "Sac": 0.0,
+       "Heart_mini": 0.067,
+       "Bars": 0.133,
+       "Cuff": 0.2,
+       "Pressure": 0.2,
+       "Threshold": 0.2,
+       "Breath": 0.2,
+       "Card": 0.2
+      },
+      "text": [
+       "Cuff/Gauge/Dial_numbers",
+       "Cuff/Gauge/Readout",
+       "Caption",
+       "Cuff/Gauge/Caption_note",
+       "Dim/Pressure/Other",
+       "Dim/Breath/Other",
+       "Breath/Insp",
+       "Title",
+       "Base"
+      ]
+     }
+    }
+   ],
+   "xfade_in": 0.0
+  },
+  {
+   "name": "Scene 6",
+   "start": 197.93333333333334,
+   "dur": 25.5,
+   "beats": [
+    {
+     "id": "6A",
+     "key": "6A_recap-strip",
+     "start": 0.0,
+     "dur": 8.7,
+     "vo": "../3-board/audio/6A.mp3",
+     "vo_at": 0.507,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "6A_recap-strip",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "6A_recap-strip",
+       "do": "static"
+      },
+      {
+       "layer": "Strip/Paper",
+       "src": "6A_recap-strip",
+       "do": "enter",
+       "t": 0.0,
+       "synced": false,
+       "c": [
+        960.0,
+        540.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Strip/Trace",
+       "src": "6A_recap-strip",
+       "do": "reveal",
+       "t": 0.0,
+       "synced": false,
+       "c": [
+        960.0,
+        535.5499877929688
+       ],
+       "d": 1.6,
+       "angle": 270,
+       "curve": "linear"
+      },
+      {
+       "layer": "Strip/Marks_tall",
+       "src": "6A_recap-strip",
+       "do": "enter",
+       "t": 0.067,
+       "synced": false,
+       "c": [
+        966.0,
+        407.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Strip/Marks_short",
+       "src": "6A_recap-strip",
+       "do": "enter",
+       "t": 0.133,
+       "synced": false,
+       "c": [
+        966.0,
+        407.0
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Caption",
+       "src": "6A_recap-strip",
+       "do": "enter",
+       "t": 5.267,
+       "synced": true,
+       "c": [
+        960.0,
+        886.0
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Base",
+       "src": "6A_recap-strip",
+       "do": "enter",
+       "t": 0.2,
+       "synced": false,
+       "c": [
+        960.0,
+        950.0
+       ],
+       "how": "cut"
+      }
+     ]
+    },
+    {
+     "id": "6B",
+     "key": "6B_checklist",
+     "start": 8.7,
+     "dur": 8.466666666666667,
+     "vo": "../3-board/audio/6B.mp3",
+     "vo_at": 0.013,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "6B_checklist",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "6B_checklist",
+       "do": "static"
+      },
+      {
+       "layer": "Sac/Fluid",
+       "src": "6B_checklist",
+       "do": "enter",
+       "t": 0.25,
+       "synced": false,
+       "c": [
+        496.75001525878906,
+        532.3500061035156
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Heart_mini/Sac",
+       "src": "6B_checklist",
+       "do": "enter",
+       "t": 0.317,
+       "synced": false,
+       "c": [
+        496.75001525878906,
+        532.3500061035156
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Heart_mini/Heart_ghost",
+       "src": "6B_checklist",
+       "do": "enter",
+       "t": 0.383,
+       "synced": false,
+       "c": [
+        533.349853515625,
+        531.7588653564453
+       ],
+       "how": "grow",
+       "d": 0.6
+      },
+      {
+       "layer": "Heart_mini/Heart",
+       "src": "6B_checklist",
+       "do": "enter",
+       "t": 0.45,
+       "synced": false,
+       "c": [
+        459.8946533203125,
+        521.8206939697266
+       ],
+       "how": "grow",
+       "d": 0.6,
+       "exprpos": "var tv = time + 206.633; var on = Math.min(1, Math.max(0, (time - 0.573) / 0.6)) * (time < 1000000000.000 ? 1 : 1); var k = (1 - Math.cos(2 * Math.PI * tv / 1.2)) / 2 * on; value + [73.5 * k, 9.9 * k];"
+      },
+      {
+       "layer": "Check/JVP",
+       "src": "6B_checklist",
+       "do": "enter",
+       "t": 2.333,
+       "synced": true,
+       "c": [
+        1193.203125,
+        360.5
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Check/Pulsus",
+       "src": "6B_checklist",
+       "do": "enter",
+       "t": 3.573,
+       "synced": true,
+       "c": [
+        1140.234375,
+        500.5
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Check/Echo",
+       "src": "6B_checklist",
+       "do": "enter",
+       "t": 4.893,
+       "synced": true,
+       "c": [
+        1115.3515625,
+        640.5
+       ],
+       "how": "wipe",
+       "d": 0.6
+      },
+      {
+       "layer": "Base",
+       "src": "6B_checklist",
+       "do": "swap",
+       "prev": "6A_recap-strip",
+       "prevLayer": "Base",
+       "t": 0.0
+      },
+      {
+       "layer": "Strip/Paper",
+       "src": "6A_recap-strip",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        960.0,
+        540.0
+       ]
+      },
+      {
+       "layer": "Strip/Trace",
+       "src": "6A_recap-strip",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        960.0,
+        540.0
+       ]
+      },
+      {
+       "layer": "Strip/Marks_tall",
+       "src": "6A_recap-strip",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        960.0,
+        540.0
+       ]
+      },
+      {
+       "layer": "Strip/Marks_short",
+       "src": "6A_recap-strip",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.25,
+       "delay": 0.0,
+       "c": [
+        960.0,
+        540.0
+       ]
+      },
+      {
+       "layer": "Caption",
+       "src": "6A_recap-strip",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      }
+     ]
+    },
+    {
+     "id": "6C",
+     "key": "6C_end",
+     "start": 17.166666666666668,
+     "dur": 8.333333333333334,
+     "vo": "../3-board/audio/6C.mp3",
+     "vo_at": 0.013,
+     "acts": [
+      {
+       "layer": "Background",
+       "src": "6C_end",
+       "do": "static"
+      },
+      {
+       "layer": "Grid",
+       "src": "6C_end",
+       "do": "static"
+      },
+      {
+       "layer": "Line_1",
+       "src": "6C_end",
+       "do": "enter",
+       "t": 0.253,
+       "synced": true,
+       "c": [
+        735.3515625,
+        396.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "Line_2",
+       "src": "6C_end",
+       "do": "enter",
+       "t": 3.013,
+       "synced": true,
+       "c": [
+        812.71875,
+        586.5
+       ],
+       "how": "cut"
+      },
+      {
+       "layer": "End_screen",
+       "src": "6C_end",
+       "do": "enter",
+       "t": 0.2,
+       "synced": false,
+       "c": [
+        1610.0,
+        930.0
+       ],
+       "how": "wipe",
+       "d": 0.6,
+       "hidden": true
+      },
+      {
+       "layer": "Sac/Fluid",
+       "src": "6B_checklist",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.2,
+       "delay": 0.0,
+       "c": [
+        496.8,
+        532.4
+       ]
+      },
+      {
+       "layer": "Heart_mini/Sac",
+       "src": "6B_checklist",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.2,
+       "delay": 0.0,
+       "c": [
+        496.8,
+        532.4
+       ]
+      },
+      {
+       "layer": "Heart_mini/Heart_ghost",
+       "src": "6B_checklist",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.2,
+       "delay": 0.0,
+       "c": [
+        496.8,
+        532.4
+       ]
+      },
+      {
+       "layer": "Heart_mini/Heart",
+       "src": "6B_checklist",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.2,
+       "delay": 0.0,
+       "c": [
+        496.8,
+        532.4
+       ]
+      },
+      {
+       "layer": "Check/JVP",
+       "src": "6B_checklist",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.2,
+       "delay": 0.0,
+       "c": [
+        1193.2,
+        500.5
+       ]
+      },
+      {
+       "layer": "Check/Pulsus",
+       "src": "6B_checklist",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.2,
+       "delay": 0.0,
+       "c": [
+        1193.2,
+        500.5
+       ]
+      },
+      {
+       "layer": "Check/Echo",
+       "src": "6B_checklist",
+       "do": "exit",
+       "how": "shrink",
+       "t": 0.0,
+       "d": 0.2,
+       "delay": 0.0,
+       "c": [
+        1193.2,
+        500.5
+       ]
+      },
+      {
+       "layer": "Base",
+       "src": "6B_checklist",
+       "do": "exit",
+       "how": "cut",
+       "t": 0.0
+      }
+     ],
+     "collapse": {
+      "t": 8.0,
+      "d": 0.3,
+      "centers": {
+       "End_screen": [
+        1610.0,
+        930.0
+       ]
+      },
+      "delays": {
+       "End_screen": 0.0
+      },
+      "text": [
+       "Line_1",
+       "Line_2"
+      ]
+     }
+    }
+   ],
+   "xfade_in": 0.0
+  }
+ ],
+ "layer_counts": {
+  "1A_strip": 7,
+  "1B_title": 7,
+  "2A_definition": 9,
+  "2B_total": 8,
+  "2C_sign": 5,
+  "3A_two-buckets": 8,
+  "3B_electrical": 9,
+  "3C_effusion": 10,
+  "3D_swing": 16,
+  "3E_drain": 12,
+  "4A_every-other": 22,
+  "4B_leads": 19,
+  "4C_companions": 24,
+  "4D_numbers": 7,
+  "4E_rule": 4,
+  "4F_bigeminy": 7,
+  "5A_bedside": 7,
+  "5B_beck": 10,
+  "5C_common": 15,
+  "5D_pulsus": 24,
+  "5E_odds": 28,
+  "5F_link": 27,
+  "6A_recap-strip": 8,
+  "6B_checklist": 10,
+  "6C_end": 5
+ }
+}

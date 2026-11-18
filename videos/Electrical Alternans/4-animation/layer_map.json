@@ -1,0 +1,12 @@
+{
+ "note": "2026-11-18: sync_points.csv layer names that don't match an id path in the beat SVG, mapped to the SVG group to animate. Every other sync layer resolves as written (nested id path, e.g. Sac/Fluid = Cross_section/Sac/Fluid).",
+ "2A": {"Axis/Vector_1+2": "Labels/Axis"},
+ "2B": {"Highlight/P": "Highlight", "Highlight/T": "Highlight", "Highlight/QRS": "Highlight"},
+ "3C": {"Cards/Motion": "Cross_section"},
+ "3D": {"Strip/Marks": "Strip/Marks_tall+Strip/Marks_short"},
+ "3E": {"Strip/Marks": "Strip/Trace"},
+ "4A": {"ECG/Strip_focus": "ECG/Leads/Lead_II_strip"},
+ "4B": {"ECG/Strip_focus": "ECG/Leads/Lead_II_strip"},
+ "5D": {"Labels/Insp": "Breath/Insp"},
+ "5E": {"Arrow/Up": "Odds/Up", "Arrow/Down": "Odds/Down"}
+}

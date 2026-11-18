@@ -45,7 +45,7 @@
      "tts_input_respelling": "QRS -> /ˌkjuːɑːrˈɛs/"
     }
    ],
-   "status": "scratch",
+   "status": "final",
    "change": "2026-10-24: regenerated with IPA respelling in the TTS input only (narration unchanged); Mark chose take 3"
   },
   {
@@ -69,7 +69,7 @@
      "duration_s": 5.251
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "2A",
@@ -110,7 +110,7 @@
      "tts_input_respelling": "QRS -> /ˌkjuːɑːrˈɛs/"
     }
    ],
-   "status": "scratch",
+   "status": "final",
    "change": "2026-10-24: regenerated with IPA respelling in the TTS input only (narration unchanged); Mark chose take 3"
   },
   {
@@ -134,7 +134,7 @@
      "duration_s": 7.393
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "2C",
@@ -157,7 +157,7 @@
      "duration_s": 6.113
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "3A",
@@ -180,7 +180,7 @@
      "duration_s": 7.158
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "3B",
@@ -221,7 +221,7 @@
      "tts_input_respelling": "QT -> /ˌkjuːˈtiː/"
     }
    ],
-   "status": "scratch",
+   "status": "final",
    "change": "2026-10-24: regenerated with IPA respelling in the TTS input only (narration unchanged); Mark chose take 3"
   },
   {
@@ -245,7 +245,7 @@
      "duration_s": 6.844
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "3D",
@@ -268,7 +268,7 @@
      "duration_s": 10.109
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "3E",
@@ -291,7 +291,7 @@
      "duration_s": 4.284
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "4A",
@@ -314,7 +314,7 @@
      "duration_s": 10.841
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "4B",
@@ -337,13 +337,13 @@
      "duration_s": 8.124
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "4C",
-   "node_id": "FTFzVty9ovJJmw2cOZje",
-   "saved_take": 2,
-   "saved_generation_id": "RdNb9ZIum8dkPLNYImDv",
+   "node_id": "t2lCDPEavOlFrUAkbX2f",
+   "saved_take": 3,
+   "saved_generation_id": "oh65YMd5SxsUgiDMHRpZ",
    "takes": [
     {
      "take": 1,
@@ -356,11 +356,20 @@
      "take": 2,
      "session_id": "Cv81QuXykEhhAyMQmW15",
      "generation_id": "RdNb9ZIum8dkPLNYImDv",
-     "file": "audio/4C.mp3",
+     "file": "audio/takes/4C_v1_take2.mp3",
      "duration_s": 8.516
+    },
+    {
+     "take": 3,
+     "node_id": "t2lCDPEavOlFrUAkbX2f",
+     "generation_id": "oh65YMd5SxsUgiDMHRpZ",
+     "file": "audio/4C.mp3",
+     "duration_s": 7.6,
+     "text": "Then look for its two companions: sinus tachycardia and low voltage. Together, they point at a large effusion."
     }
    ],
-   "status": "scratch"
+   "status": "final",
+   "change": "2026-11-18: dropped 'squeezing the heart' so the ECG-shows-swinging / bedside-shows-squeezing payoff stays clean; Mark chose this take"
   },
   {
    "beat": "4D",
@@ -383,7 +392,7 @@
      "duration_s": 14.211
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "4E",
@@ -406,13 +415,13 @@
      "duration_s": 5.486
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "4F",
-   "node_id": "WXHFn765J49rZ5mtlk5X",
-   "saved_take": 2,
-   "saved_generation_id": "LWRtiEdkVHjjitGGJE3G",
+   "node_id": "mWaAIkFnVIlWHCeUXhPm",
+   "saved_take": 3,
+   "saved_generation_id": "OLeeZkGErJUkrVdOqMA4",
    "takes": [
     {
      "take": 1,
@@ -425,11 +434,20 @@
      "take": 2,
      "session_id": "emnSmkAdYOyfFZunuwsg",
      "generation_id": "LWRtiEdkVHjjitGGJE3G",
-     "file": "audio/4F.mp3",
+     "file": "audio/takes/4F_v1_take2.mp3",
      "duration_s": 8.829
+    },
+    {
+     "take": 3,
+     "node_id": "mWaAIkFnVIlWHCeUXhPm",
+     "generation_id": "OLeeZkGErJUkrVdOqMA4",
+     "file": "audio/4F.mp3",
+     "duration_s": 9.12,
+     "text": "One trap. Bigeminy also gives you a tall-short pattern, but the beats come in uneven pairs. In electrical alternans, the rhythm stays regular."
     }
    ],
-   "status": "scratch"
+   "status": "final",
+   "change": "2026-11-18: 'alternans' was mispronounced; narration now says 'electrical alternans'; Mark chose this take"
   },
   {
    "beat": "5A",
@@ -470,7 +488,7 @@
      "tts_input_respelling": "ECG -> /ˌiːsiːˈdʒiː/"
     }
    ],
-   "status": "scratch",
+   "status": "final",
    "change": "2026-10-24: regenerated with IPA respelling in the TTS input only (narration unchanged); Mark chose take 3"
   },
   {
@@ -494,7 +512,7 @@
      "duration_s": 6.844
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "5C",
@@ -517,7 +535,7 @@
      "duration_s": 12.121
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "5D",
@@ -540,7 +558,7 @@
      "duration_s": 8.908
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "5E",
@@ -563,7 +581,7 @@
      "duration_s": 9.639
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "5F",
@@ -586,7 +604,7 @@
      "duration_s": 4.127
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "6A",
@@ -609,7 +627,7 @@
      "duration_s": 7.706
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "6B",
@@ -632,7 +650,7 @@
      "duration_s": 7.967
     }
    ],
-   "status": "scratch"
+   "status": "final"
   },
   {
    "beat": "6C",
@@ -673,8 +691,9 @@
      "tts_input_respelling": "ECG -> /ˌiːsiːˈdʒiː/"
     }
    ],
-   "status": "scratch",
+   "status": "final",
    "change": "2026-10-24: regenerated with IPA respelling in the TTS input only (narration unchanged); Mark chose take 3"
   }
- ]
+ ],
+ "locked": "2026-11-18: Mark approved script and VO; all 25 beats final"
 }

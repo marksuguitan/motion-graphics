@@ -1,0 +1,2600 @@
+{
+ "1A_strip": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Strip/Paper": {
+   "name": "Strip/Paper",
+   "x": 60,
+   "y": 382.5,
+   "w": 1800,
+   "h": 315,
+   "wrapOpacity": 1
+  },
+  "Strip/Trace": {
+   "name": "Strip/Trace",
+   "x": 80,
+   "y": 450.5,
+   "w": 1760,
+   "h": 170.0999755859375,
+   "wrapOpacity": 1
+  },
+  "Strip/Marks_tall": {
+   "name": "Strip/Marks_tall",
+   "x": 170,
+   "y": 390,
+   "w": 1592,
+   "h": 34,
+   "wrapOpacity": 1
+  },
+  "Strip/Marks_short": {
+   "name": "Strip/Marks_short",
+   "x": 369,
+   "y": 390,
+   "w": 1194,
+   "h": 34,
+   "wrapOpacity": 1
+  },
+  "Caption": {
+   "name": "Caption",
+   "x": 712.6171875,
+   "y": 864,
+   "w": 494.765625,
+   "h": 44,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "1B_title": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Title": {
+   "name": "Title",
+   "x": 613.9140625,
+   "y": 243,
+   "w": 692.171875,
+   "h": 227,
+   "wrapOpacity": 1
+  },
+  "Strip/Paper": {
+   "name": "Strip/Paper",
+   "x": 80,
+   "y": 667.75,
+   "w": 1760,
+   "h": 220.5,
+   "wrapOpacity": 1
+  },
+  "Strip/Trace": {
+   "name": "Strip/Trace",
+   "x": 100,
+   "y": 715.4000244140625,
+   "w": 1720,
+   "h": 119.39996337890625,
+   "wrapOpacity": 1
+  },
+  "Strip/Marks_tall": {
+   "name": "Strip/Marks_tall",
+   "x": 188,
+   "y": 655,
+   "w": 1555,
+   "h": 34,
+   "wrapOpacity": 1
+  },
+  "Strip/Marks_short": {
+   "name": "Strip/Marks_short",
+   "x": 382,
+   "y": 655,
+   "w": 1167,
+   "h": 34,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "2A_definition": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Pair/Other": {
+   "name": "Pair/Other",
+   "x": 220,
+   "y": 760,
+   "w": 1440,
+   "h": 0,
+   "wrapOpacity": 1
+  },
+  "Pair/QRS_1": {
+   "name": "Pair/QRS_1",
+   "x": 260,
+   "y": 345.1000061035156,
+   "w": 576,
+   "h": 473.1000061035156,
+   "wrapOpacity": 1
+  },
+  "Pair/QRS_2": {
+   "name": "Pair/QRS_2",
+   "x": 1040,
+   "y": 519.2999877929688,
+   "w": 576,
+   "h": 268.5,
+   "wrapOpacity": 1
+  },
+  "Labels/Amplitude": {
+   "name": "Labels/Amplitude",
+   "x": 473,
+   "y": 340,
+   "w": 1157,
+   "h": 189,
+   "wrapOpacity": 1
+  },
+  "Labels/Axis": {
+   "name": "Labels/Axis",
+   "x": 403,
+   "y": 860,
+   "w": 1042.03125,
+   "h": 140,
+   "wrapOpacity": 1
+  },
+  "Labels/Shape": {
+   "name": "Labels/Shape",
+   "x": 1023,
+   "y": 522,
+   "w": 296,
+   "h": 121,
+   "wrapOpacity": 1
+  },
+  "Base": {
+   "name": "Base",
+   "x": 80,
+   "y": 93,
+   "w": 423.609375,
+   "h": 34,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "2B_total": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Title": {
+   "name": "Title",
+   "x": 397.5546875,
+   "y": 116,
+   "w": 1124.890625,
+   "h": 67,
+   "wrapOpacity": 1
+  },
+  "Pair/Other": {
+   "name": "Pair/Other",
+   "x": 200,
+   "y": 700,
+   "w": 1420,
+   "h": 0,
+   "wrapOpacity": 1
+  },
+  "Pair/QRS_1": {
+   "name": "Pair/QRS_1",
+   "x": 240,
+   "y": 403.70001220703125,
+   "w": 576,
+   "h": 337.89996337890625,
+   "wrapOpacity": 1
+  },
+  "Pair/QRS_2": {
+   "name": "Pair/QRS_2",
+   "x": 1000,
+   "y": 537,
+   "w": 576,
+   "h": 185.9000244140625,
+   "wrapOpacity": 1
+  },
+  "Highlight": {
+   "name": "Highlight",
+   "x": 275,
+   "y": 376,
+   "w": 1180,
+   "h": 390,
+   "wrapOpacity": 1
+  },
+  "Labels": {
+   "name": "Labels",
+   "x": 823.2734375,
+   "y": 864,
+   "w": 273.453125,
+   "h": 44,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "2C_sign": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Card/Other": {
+   "name": "Card/Other",
+   "x": 420,
+   "y": 250,
+   "w": 760,
+   "h": 420,
+   "wrapOpacity": 1
+  },
+  "Card/Label": {
+   "name": "Card/Label",
+   "x": 548.3359375,
+   "y": 717,
+   "w": 503.328125,
+   "h": 53,
+   "wrapOpacity": 1
+  },
+  "Question": {
+   "name": "Question",
+   "x": 1371.71875,
+   "y": 260,
+   "w": 256.5625,
+   "h": 469,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "3A_two-buckets": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Cards/Electrics": {
+   "name": "Cards/Electrics",
+   "x": 140,
+   "y": 300,
+   "w": 760,
+   "h": 480,
+   "wrapOpacity": 1
+  },
+  "Cards/Motion/Other": {
+   "name": "Cards/Motion/Other",
+   "x": 1020,
+   "y": 300,
+   "w": 760,
+   "h": 480,
+   "wrapOpacity": 1
+  },
+  "Sac/Fluid": {
+   "name": "Sac/Fluid",
+   "x": 1278.699951171875,
+   "y": 492.70001220703125,
+   "w": 221.5,
+   "h": 207.5,
+   "wrapOpacity": 1
+  },
+  "Cards/Motion/Sac": {
+   "name": "Cards/Motion/Sac",
+   "x": 1278.699951171875,
+   "y": 492.70001220703125,
+   "w": 221.5,
+   "h": 207.5,
+   "wrapOpacity": 1
+  },
+  "Heart": {
+   "name": "Heart",
+   "x": 1283.6463623046875,
+   "y": 506.1879577636719,
+   "w": 183.6400146484375,
+   "h": 172.93276977539062,
+   "wrapOpacity": 1
+  },
+  "Base": {
+   "name": "Base",
+   "x": 765.9140625,
+   "y": 157,
+   "w": 388.171875,
+   "h": 41,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "3B_electrical": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Cards/Electrics/Other": {
+   "name": "Cards/Electrics/Other",
+   "x": 177.99996948242188,
+   "y": 323.9999694824219,
+   "w": 684,
+   "h": 432.0000305175781,
+   "wrapOpacity": 0.4
+  },
+  "Cards/Electrics/List": {
+   "name": "Cards/Electrics/List",
+   "x": 213.99996948242188,
+   "y": 466.9999694824219,
+   "w": 383.5863342285156,
+   "h": 160.99996948242188,
+   "wrapOpacity": 0.4
+  },
+  "Cards/Motion/Other": {
+   "name": "Cards/Motion/Other",
+   "x": 1020,
+   "y": 300,
+   "w": 760,
+   "h": 480,
+   "wrapOpacity": 1
+  },
+  "Sac/Fluid": {
+   "name": "Sac/Fluid",
+   "x": 1278.699951171875,
+   "y": 492.70001220703125,
+   "w": 221.5,
+   "h": 207.5,
+   "wrapOpacity": 1
+  },
+  "Cards/Motion/Sac": {
+   "name": "Cards/Motion/Sac",
+   "x": 1278.699951171875,
+   "y": 492.70001220703125,
+   "w": 221.5,
+   "h": 207.5,
+   "wrapOpacity": 1
+  },
+  "Heart": {
+   "name": "Heart",
+   "x": 1283.6463623046875,
+   "y": 506.1879577636719,
+   "w": 183.6400146484375,
+   "h": 172.93276977539062,
+   "wrapOpacity": 1
+  },
+  "Base": {
+   "name": "Base",
+   "x": 765.9140625,
+   "y": 157,
+   "w": 388.171875,
+   "h": 41,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "3C_effusion": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Cross_section/Sac/Fluid": {
+   "name": "Cross_section/Sac/Fluid",
+   "x": 449.79998779296875,
+   "y": 195.10000610351562,
+   "w": 567.7999877929688,
+   "h": 532.5,
+   "wrapOpacity": 1
+  },
+  "Cross_section/Sac": {
+   "name": "Cross_section/Sac",
+   "x": 449.79998779296875,
+   "y": 195.10000610351562,
+   "w": 567.7999877929688,
+   "h": 532.5,
+   "wrapOpacity": 1
+  },
+  "Cross_section/Heart": {
+   "name": "Cross_section/Heart",
+   "x": 532.2999877929688,
+   "y": 275.29998779296875,
+   "w": 401.29998779296875,
+   "h": 368.29998779296875,
+   "wrapOpacity": 1
+  },
+  "Chest_wall": {
+   "name": "Chest_wall",
+   "x": 818.1875,
+   "y": -81,
+   "w": 489.8125,
+   "h": 435,
+   "wrapOpacity": 1
+  },
+  "Electrode": {
+   "name": "Electrode",
+   "x": 1153.8729248046875,
+   "y": 45.688724517822266,
+   "w": 72.254150390625,
+   "h": 74.62254333496094,
+   "wrapOpacity": 1
+  },
+  "Electrode_label": {
+   "name": "Electrode_label",
+   "x": 1246,
+   "y": 63,
+   "w": 163.875,
+   "h": 61,
+   "wrapOpacity": 1
+  },
+  "Labels": {
+   "name": "Labels",
+   "x": 922,
+   "y": 399,
+   "w": 641.640625,
+   "h": 239,
+   "wrapOpacity": 1
+  },
+  "Base": {
+   "name": "Base",
+   "x": 80,
+   "y": 93,
+   "w": 430.296875,
+   "h": 34,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "3D_swing": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Cross_section/Sac/Fluid": {
+   "name": "Cross_section/Sac/Fluid",
+   "x": 449.79998779296875,
+   "y": 195.10000610351562,
+   "w": 567.7999877929688,
+   "h": 532.5,
+   "wrapOpacity": 1
+  },
+  "Cross_section/Sac": {
+   "name": "Cross_section/Sac",
+   "x": 449.79998779296875,
+   "y": 195.10000610351562,
+   "w": 567.7999877929688,
+   "h": 532.5,
+   "wrapOpacity": 1
+  },
+  "Cross_section/Heart_ghost": {
+   "name": "Cross_section/Heart_ghost",
+   "x": 540.4568481445312,
+   "y": 238.87217712402344,
+   "w": 469.1044921875,
+   "h": 443.68670654296875,
+   "wrapOpacity": 0.22
+  },
+  "Cross_section/Heart": {
+   "name": "Cross_section/Heart",
+   "x": 457.5208740234375,
+   "y": 227.6241455078125,
+   "w": 469.1044921875,
+   "h": 443.68670654296875,
+   "wrapOpacity": 1
+  },
+  "Chest_wall": {
+   "name": "Chest_wall",
+   "x": 818.1875,
+   "y": -81,
+   "w": 489.8125,
+   "h": 435,
+   "wrapOpacity": 1
+  },
+  "Electrode": {
+   "name": "Electrode",
+   "x": 1153.8729248046875,
+   "y": 45.688724517822266,
+   "w": 72.254150390625,
+   "h": 74.62254333496094,
+   "wrapOpacity": 1
+  },
+  "Electrode_label": {
+   "name": "Electrode_label",
+   "x": 1246,
+   "y": 63,
+   "w": 163.875,
+   "h": 61,
+   "wrapOpacity": 1
+  },
+  "Vector_arrow": {
+   "name": "Vector_arrow",
+   "x": 716,
+   "y": 238,
+   "w": 283,
+   "h": 227,
+   "wrapOpacity": 1
+  },
+  "Labels/Beat1": {
+   "name": "Labels/Beat1",
+   "x": 1250,
+   "y": 439,
+   "w": 262.625,
+   "h": 38,
+   "wrapOpacity": 1
+  },
+  "Labels/Beat2": {
+   "name": "Labels/Beat2",
+   "x": 1250,
+   "y": 489,
+   "w": 234.4296875,
+   "h": 39,
+   "wrapOpacity": 1
+  },
+  "Strip/Paper": {
+   "name": "Strip/Paper",
+   "x": 140,
+   "y": 900.0999755859375,
+   "w": 1640,
+   "h": 130.2000732421875,
+   "wrapOpacity": 1
+  },
+  "Strip/Trace": {
+   "name": "Strip/Trace",
+   "x": 160,
+   "y": 928.5999755859375,
+   "w": 1600,
+   "h": 70.10003662109375,
+   "wrapOpacity": 1
+  },
+  "Strip/Marks_tall": {
+   "name": "Strip/Marks_tall",
+   "x": 278,
+   "y": 868,
+   "w": 1040,
+   "h": 34,
+   "wrapOpacity": 1
+  },
+  "Strip/Marks_short": {
+   "name": "Strip/Marks_short",
+   "x": 538,
+   "y": 868,
+   "w": 1040,
+   "h": 34,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "3E_drain": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Cross_section/Sac/Fluid": {
+   "name": "Cross_section/Sac/Fluid",
+   "x": 520,
+   "y": 263.3999938964844,
+   "w": 426.20001220703125,
+   "h": 392.8000183105469,
+   "wrapOpacity": 1
+  },
+  "Cross_section/Sac": {
+   "name": "Cross_section/Sac",
+   "x": 520,
+   "y": 263.3999938964844,
+   "w": 426.20001220703125,
+   "h": 392.8000183105469,
+   "wrapOpacity": 1
+  },
+  "Cross_section/Heart": {
+   "name": "Cross_section/Heart",
+   "x": 532.2999877929688,
+   "y": 275.29998779296875,
+   "w": 401.29998779296875,
+   "h": 368.29998779296875,
+   "wrapOpacity": 1
+  },
+  "Chest_wall": {
+   "name": "Chest_wall",
+   "x": 818.1875,
+   "y": -81,
+   "w": 489.8125,
+   "h": 435,
+   "wrapOpacity": 1
+  },
+  "Electrode": {
+   "name": "Electrode",
+   "x": 1153.8729248046875,
+   "y": 45.688724517822266,
+   "w": 72.254150390625,
+   "h": 74.62254333496094,
+   "wrapOpacity": 1
+  },
+  "Electrode_label": {
+   "name": "Electrode_label",
+   "x": 1246,
+   "y": 63,
+   "w": 163.875,
+   "h": 61,
+   "wrapOpacity": 1
+  },
+  "Needle": {
+   "name": "Needle",
+   "x": 903,
+   "y": 590,
+   "w": 431.44482421875,
+   "h": 284.5418701171875,
+   "wrapOpacity": 1,
+   "needle": {
+    "tail": [
+     1203,
+     780
+    ],
+    "tip": [
+     903,
+     590
+    ],
+    "angle": -147.65255650055795
+   }
+  },
+  "Strip/Paper": {
+   "name": "Strip/Paper",
+   "x": 140,
+   "y": 900.0999755859375,
+   "w": 1640,
+   "h": 130.2000732421875,
+   "wrapOpacity": 1
+  },
+  "Strip/Trace": {
+   "name": "Strip/Trace",
+   "x": 160,
+   "y": 928.5999755859375,
+   "w": 1600,
+   "h": 70.10003662109375,
+   "wrapOpacity": 1
+  },
+  "Base": {
+   "name": "Base",
+   "x": 1250,
+   "y": 439,
+   "w": 349.484375,
+   "h": 39,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "4A_every-other": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "ECG/Paper": {
+   "name": "ECG/Paper",
+   "x": 80,
+   "y": 140,
+   "w": 1760,
+   "h": 860,
+   "wrapOpacity": 1
+  },
+  "ECG/Other": {
+   "name": "ECG/Other",
+   "x": 520,
+   "y": 160,
+   "w": 880,
+   "h": 613,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_I": {
+   "name": "ECG/Leads/Lead_I",
+   "x": 86,
+   "y": 150,
+   "w": 428,
+   "h": 127,
+   "wrapOpacity": 0.4
+  },
+  "ECG/Leads/Lead_aVR": {
+   "name": "ECG/Leads/Lead_aVR",
+   "x": 526,
+   "y": 150,
+   "w": 428,
+   "h": 141.10000610351562,
+   "wrapOpacity": 0.4
+  },
+  "ECG/Leads/Lead_V1": {
+   "name": "ECG/Leads/Lead_V1",
+   "x": 966,
+   "y": 150,
+   "w": 428,
+   "h": 158.70001220703125,
+   "wrapOpacity": 0.4
+  },
+  "ECG/Leads/Lead_V4": {
+   "name": "ECG/Leads/Lead_V4",
+   "x": 1406,
+   "y": 150,
+   "w": 428,
+   "h": 132.89999389648438,
+   "wrapOpacity": 0.4
+  },
+  "ECG/Leads/Lead_II": {
+   "name": "ECG/Leads/Lead_II",
+   "x": 86,
+   "y": 365,
+   "w": 428,
+   "h": 127.70001220703125,
+   "wrapOpacity": 0.4
+  },
+  "ECG/Leads/Lead_aVL": {
+   "name": "ECG/Leads/Lead_aVL",
+   "x": 526,
+   "y": 365,
+   "w": 428,
+   "h": 125.60000610351562,
+   "wrapOpacity": 0.4
+  },
+  "ECG/Leads/Lead_V2": {
+   "name": "ECG/Leads/Lead_V2",
+   "x": 966,
+   "y": 365,
+   "w": 428,
+   "h": 166.9000244140625,
+   "wrapOpacity": 0.4
+  },
+  "ECG/Leads/Lead_V5": {
+   "name": "ECG/Leads/Lead_V5",
+   "x": 1406,
+   "y": 365,
+   "w": 428,
+   "h": 127.39999389648438,
+   "wrapOpacity": 0.4
+  },
+  "ECG/Leads/Lead_III": {
+   "name": "ECG/Leads/Lead_III",
+   "x": 86,
+   "y": 580,
+   "w": 428,
+   "h": 127.29998779296875,
+   "wrapOpacity": 0.4
+  },
+  "ECG/Leads/Lead_aVF": {
+   "name": "ECG/Leads/Lead_aVF",
+   "x": 526,
+   "y": 580,
+   "w": 428,
+   "h": 126.79998779296875,
+   "wrapOpacity": 0.4
+  },
+  "ECG/Leads/Lead_V3": {
+   "name": "ECG/Leads/Lead_V3",
+   "x": 966,
+   "y": 580,
+   "w": 428,
+   "h": 148,
+   "wrapOpacity": 0.4
+  },
+  "ECG/Leads/Lead_V6": {
+   "name": "ECG/Leads/Lead_V6",
+   "x": 1406,
+   "y": 580,
+   "w": 428,
+   "h": 125.79998779296875,
+   "wrapOpacity": 0.4
+  },
+  "ECG/Leads/Lead_II_strip": {
+   "name": "ECG/Leads/Lead_II_strip",
+   "x": 86,
+   "y": 795,
+   "w": 1748,
+   "h": 128.0999755859375,
+   "wrapOpacity": 1
+  },
+  "Marks/Odd": {
+   "name": "Marks/Odd",
+   "x": 118,
+   "y": 810,
+   "w": 1654,
+   "h": 18,
+   "wrapOpacity": 1
+  },
+  "Marks/Even": {
+   "name": "Marks/Even",
+   "x": 209,
+   "y": 836,
+   "w": 1472,
+   "h": 18,
+   "wrapOpacity": 1
+  },
+  "Brackets/Odd": {
+   "name": "Brackets/Odd",
+   "x": 127,
+   "y": 819,
+   "w": 1636,
+   "h": 0,
+   "wrapOpacity": 1
+  },
+  "Brackets/Even": {
+   "name": "Brackets/Even",
+   "x": 218,
+   "y": 845,
+   "w": 1454,
+   "h": 0,
+   "wrapOpacity": 1
+  },
+  "Label": {
+   "name": "Label",
+   "x": 1194.796875,
+   "y": 49,
+   "w": 645.9775390625,
+   "h": 67,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "4B_leads": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "ECG/Paper": {
+   "name": "ECG/Paper",
+   "x": 80,
+   "y": 140,
+   "w": 1760,
+   "h": 860,
+   "wrapOpacity": 1
+  },
+  "ECG/Other": {
+   "name": "ECG/Other",
+   "x": 520,
+   "y": 160,
+   "w": 880,
+   "h": 613,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_I": {
+   "name": "ECG/Leads/Lead_I",
+   "x": 86,
+   "y": 150,
+   "w": 428,
+   "h": 127,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_aVR": {
+   "name": "ECG/Leads/Lead_aVR",
+   "x": 526,
+   "y": 150,
+   "w": 428,
+   "h": 141.10000610351562,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_V1": {
+   "name": "ECG/Leads/Lead_V1",
+   "x": 966,
+   "y": 150,
+   "w": 428,
+   "h": 158.70001220703125,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_V4": {
+   "name": "ECG/Leads/Lead_V4",
+   "x": 1406,
+   "y": 150,
+   "w": 428,
+   "h": 132.89999389648438,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_II": {
+   "name": "ECG/Leads/Lead_II",
+   "x": 86,
+   "y": 365,
+   "w": 428,
+   "h": 127.70001220703125,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_aVL": {
+   "name": "ECG/Leads/Lead_aVL",
+   "x": 526,
+   "y": 365,
+   "w": 428,
+   "h": 125.60000610351562,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_V2": {
+   "name": "ECG/Leads/Lead_V2",
+   "x": 966,
+   "y": 365,
+   "w": 428,
+   "h": 166.9000244140625,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_V5": {
+   "name": "ECG/Leads/Lead_V5",
+   "x": 1406,
+   "y": 365,
+   "w": 428,
+   "h": 127.39999389648438,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_III": {
+   "name": "ECG/Leads/Lead_III",
+   "x": 86,
+   "y": 580,
+   "w": 428,
+   "h": 127.29998779296875,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_aVF": {
+   "name": "ECG/Leads/Lead_aVF",
+   "x": 526,
+   "y": 580,
+   "w": 428,
+   "h": 126.79998779296875,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_V3": {
+   "name": "ECG/Leads/Lead_V3",
+   "x": 966,
+   "y": 580,
+   "w": 428,
+   "h": 148,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_V6": {
+   "name": "ECG/Leads/Lead_V6",
+   "x": 1406,
+   "y": 580,
+   "w": 428,
+   "h": 125.79998779296875,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_II_strip": {
+   "name": "ECG/Leads/Lead_II_strip",
+   "x": 86,
+   "y": 795,
+   "w": 1748,
+   "h": 128.0999755859375,
+   "wrapOpacity": 1
+  },
+  "Spotlight": {
+   "name": "Spotlight",
+   "x": 80,
+   "y": 140,
+   "w": 1760,
+   "h": 854,
+   "wrapOpacity": 1
+  },
+  "Labels/Leads": {
+   "name": "Labels/Leads",
+   "x": 1574.125,
+   "y": 64,
+   "w": 265.875,
+   "h": 44,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "4C_companions": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "ECG/Paper": {
+   "name": "ECG/Paper",
+   "x": 40,
+   "y": 230,
+   "w": 1056,
+   "h": 516,
+   "wrapOpacity": 1
+  },
+  "ECG/Other": {
+   "name": "ECG/Other",
+   "x": 304,
+   "y": 242,
+   "w": 528.0000610351562,
+   "h": 367.800048828125,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_I": {
+   "name": "ECG/Leads/Lead_I",
+   "x": 43.60000228881836,
+   "y": 235.8000030517578,
+   "w": 256.8000183105469,
+   "h": 76.40000915527344,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_aVR": {
+   "name": "ECG/Leads/Lead_aVR",
+   "x": 307.6000061035156,
+   "y": 235.8000030517578,
+   "w": 256.8000183105469,
+   "h": 84.86000061035156,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_V1": {
+   "name": "ECG/Leads/Lead_V1",
+   "x": 571.6000366210938,
+   "y": 235.8000030517578,
+   "w": 256.79998779296875,
+   "h": 95.41999816894531,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_V4": {
+   "name": "ECG/Leads/Lead_V4",
+   "x": 835.6000366210938,
+   "y": 235.8000030517578,
+   "w": 256.79998779296875,
+   "h": 79.93998718261719,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_II": {
+   "name": "ECG/Leads/Lead_II",
+   "x": 43.60000228881836,
+   "y": 364.79998779296875,
+   "w": 256.8000183105469,
+   "h": 76.82003784179688,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_aVL": {
+   "name": "ECG/Leads/Lead_aVL",
+   "x": 307.6000061035156,
+   "y": 364.79998779296875,
+   "w": 256.8000183105469,
+   "h": 75.56002807617188,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_V2": {
+   "name": "ECG/Leads/Lead_V2",
+   "x": 571.6000366210938,
+   "y": 364.79998779296875,
+   "w": 256.79998779296875,
+   "h": 100.34002685546875,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_V5": {
+   "name": "ECG/Leads/Lead_V5",
+   "x": 835.6000366210938,
+   "y": 364.79998779296875,
+   "w": 256.79998779296875,
+   "h": 76.6400146484375,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_III": {
+   "name": "ECG/Leads/Lead_III",
+   "x": 43.60000228881836,
+   "y": 493.8000183105469,
+   "w": 256.8000183105469,
+   "h": 76.57998657226562,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_aVF": {
+   "name": "ECG/Leads/Lead_aVF",
+   "x": 307.6000061035156,
+   "y": 493.8000183105469,
+   "w": 256.8000183105469,
+   "h": 76.27999877929688,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_V3": {
+   "name": "ECG/Leads/Lead_V3",
+   "x": 571.6000366210938,
+   "y": 493.8000183105469,
+   "w": 256.79998779296875,
+   "h": 88.99996948242188,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_V6": {
+   "name": "ECG/Leads/Lead_V6",
+   "x": 835.6000366210938,
+   "y": 493.8000183105469,
+   "w": 256.79998779296875,
+   "h": 75.67996215820312,
+   "wrapOpacity": 1
+  },
+  "ECG/Leads/Lead_II_strip": {
+   "name": "ECG/Leads/Lead_II_strip",
+   "x": 43.60000228881836,
+   "y": 622.800048828125,
+   "w": 1048.800048828125,
+   "h": 77.0599365234375,
+   "wrapOpacity": 1
+  },
+  "Panel/Rate": {
+   "name": "Panel/Rate",
+   "x": 1180,
+   "y": 230,
+   "w": 660,
+   "h": 230,
+   "wrapOpacity": 1
+  },
+  "Panel/Voltage": {
+   "name": "Panel/Voltage",
+   "x": 1180,
+   "y": 500,
+   "w": 660,
+   "h": 230,
+   "wrapOpacity": 1
+  },
+  "Panel/Arrow/Other": {
+   "name": "Panel/Arrow/Other",
+   "x": 1360,
+   "y": 740,
+   "w": 300,
+   "h": 140,
+   "wrapOpacity": 1
+  },
+  "Sac/Fluid": {
+   "name": "Sac/Fluid",
+   "x": 1434.699951171875,
+   "y": 833.2000122070312,
+   "w": 137.9000244140625,
+   "h": 129.39996337890625,
+   "wrapOpacity": 1
+  },
+  "Panel/Arrow/Sac": {
+   "name": "Panel/Arrow/Sac",
+   "x": 1434.699951171875,
+   "y": 833.2000122070312,
+   "w": 137.9000244140625,
+   "h": 129.39996337890625,
+   "wrapOpacity": 1
+  },
+  "Heart": {
+   "name": "Heart",
+   "x": 1442.2672119140625,
+   "y": 844.9677124023438,
+   "w": 109.007080078125,
+   "h": 102.1983642578125,
+   "wrapOpacity": 1
+  },
+  "Panel/Arrow/Other 2": {
+   "name": "Panel/Arrow/Other 2",
+   "x": 1650,
+   "y": 885,
+   "w": 183.59375,
+   "h": 31,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "4D_numbers": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Figures/Four": {
+   "name": "Figures/Four",
+   "x": 174,
+   "y": 292,
+   "w": 482,
+   "h": 158,
+   "wrapOpacity": 1
+  },
+  "Figures/Other": {
+   "name": "Figures/Other",
+   "x": 157.9375,
+   "y": 495,
+   "w": 513.125,
+   "h": 31,
+   "wrapOpacity": 1
+  },
+  "Number/Sens": {
+   "name": "Number/Sens",
+   "x": 1060,
+   "y": 249,
+   "w": 433.078125,
+   "h": 271,
+   "wrapOpacity": 1
+  },
+  "Number/Spec": {
+   "name": "Number/Spec",
+   "x": 1060,
+   "y": 609,
+   "w": 433.078125,
+   "h": 271,
+   "wrapOpacity": 1
+  },
+  "Base": {
+   "name": "Base",
+   "x": 80,
+   "y": 1002,
+   "w": 577.765625,
+   "h": 23,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "4E_rule": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Rules/Rule_1": {
+   "name": "Rules/Rule_1",
+   "x": 300,
+   "y": 300,
+   "w": 662.28125,
+   "h": 190,
+   "wrapOpacity": 1
+  },
+  "Rules/Rule_2": {
+   "name": "Rules/Rule_2",
+   "x": 300,
+   "y": 570,
+   "w": 1056.359375,
+   "h": 190,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "4F_bigeminy": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Strips/Bigeminy/Paper": {
+   "name": "Strips/Bigeminy/Paper",
+   "x": 120,
+   "y": 240,
+   "w": 1680,
+   "h": 230,
+   "wrapOpacity": 1
+  },
+  "Strips/Bigeminy/Strip": {
+   "name": "Strips/Bigeminy/Strip",
+   "x": 140,
+   "y": 290.29998779296875,
+   "w": 1640,
+   "h": 125.20001220703125,
+   "wrapOpacity": 1
+  },
+  "Strips/Bigeminy/Calipers": {
+   "name": "Strips/Bigeminy/Calipers",
+   "x": 163,
+   "y": 210,
+   "w": 1574,
+   "h": 20,
+   "wrapOpacity": 1
+  },
+  "Strips/Bigeminy/Other": {
+   "name": "Strips/Bigeminy/Other",
+   "x": 140,
+   "y": 154,
+   "w": 1640,
+   "h": 44,
+   "wrapOpacity": 1
+  },
+  "Strips/Alternans": {
+   "name": "Strips/Alternans",
+   "x": 120,
+   "y": 594,
+   "w": 1680,
+   "h": 316,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "5A_bedside": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Sac/Fluid": {
+   "name": "Sac/Fluid",
+   "x": 61.400001525878906,
+   "y": 67.4000015258789,
+   "w": 253.20001220703125,
+   "h": 237.20001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Sac": {
+   "name": "Heart_mini/Sac",
+   "x": 61.400001525878906,
+   "y": 67.4000015258789,
+   "w": 253.20001220703125,
+   "h": 237.20001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Heart": {
+   "name": "Heart_mini/Heart",
+   "x": 67.02362823486328,
+   "y": 82.81687927246094,
+   "w": 209.95455932617188,
+   "h": 197.70606994628906,
+   "wrapOpacity": 1
+  },
+  "Patient": {
+   "name": "Patient",
+   "x": 711.5,
+   "y": 110,
+   "w": 297,
+   "h": 900.0000610351562,
+   "wrapOpacity": 1
+  },
+  "Base": {
+   "name": "Base",
+   "x": 1180,
+   "y": 373,
+   "w": 491.46875,
+   "h": 124,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "5B_beck": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Sac/Fluid": {
+   "name": "Sac/Fluid",
+   "x": 61.400001525878906,
+   "y": 67.4000015258789,
+   "w": 253.20001220703125,
+   "h": 237.20001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Sac": {
+   "name": "Heart_mini/Sac",
+   "x": 61.400001525878906,
+   "y": 67.4000015258789,
+   "w": 253.20001220703125,
+   "h": 237.20001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Heart": {
+   "name": "Heart_mini/Heart",
+   "x": 67.02362823486328,
+   "y": 82.81687927246094,
+   "w": 209.95455932617188,
+   "h": 197.70606994628906,
+   "wrapOpacity": 1
+  },
+  "Patient": {
+   "name": "Patient",
+   "x": 711.5,
+   "y": 110,
+   "w": 297,
+   "h": 900.0000610351562,
+   "wrapOpacity": 1
+  },
+  "Icons/BP": {
+   "name": "Icons/BP",
+   "x": 932,
+   "y": 408,
+   "w": 340.578125,
+   "h": 80,
+   "wrapOpacity": 1
+  },
+  "Icons/JVD": {
+   "name": "Icons/JVD",
+   "x": 458.8125,
+   "y": 193,
+   "w": 382.6334228515625,
+   "h": 74,
+   "wrapOpacity": 1
+  },
+  "Icons/Sounds": {
+   "name": "Icons/Sounds",
+   "x": 848,
+   "y": 233,
+   "w": 550.265625,
+   "h": 138,
+   "wrapOpacity": 1
+  },
+  "Title": {
+   "name": "Title",
+   "x": 1372,
+   "y": 69,
+   "w": 468,
+   "h": 63,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "5C_common": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Sac/Fluid": {
+   "name": "Sac/Fluid",
+   "x": 61.400001525878906,
+   "y": 67.4000015258789,
+   "w": 253.20001220703125,
+   "h": 237.20001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Sac": {
+   "name": "Heart_mini/Sac",
+   "x": 61.400001525878906,
+   "y": 67.4000015258789,
+   "w": 253.20001220703125,
+   "h": 237.20001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Heart": {
+   "name": "Heart_mini/Heart",
+   "x": 67.02362823486328,
+   "y": 82.81687927246094,
+   "w": 209.95455932617188,
+   "h": 197.70606994628906,
+   "wrapOpacity": 1
+  },
+  "Patient": {
+   "name": "Patient",
+   "x": 446.9000244140625,
+   "y": 366,
+   "w": 178.20001220703125,
+   "h": 540.0000610351562,
+   "wrapOpacity": 0.45
+  },
+  "Icons/BP": {
+   "name": "Icons/BP",
+   "x": 579.2000122070312,
+   "y": 544.7999877929688,
+   "w": 204.284423828125,
+   "h": 48,
+   "wrapOpacity": 0.45
+  },
+  "Icons/JVD": {
+   "name": "Icons/JVD",
+   "x": 295.34375,
+   "y": 416.20001220703125,
+   "w": 229.5238037109375,
+   "h": 43.79998779296875,
+   "wrapOpacity": 0.45
+  },
+  "Icons/Sounds": {
+   "name": "Icons/Sounds",
+   "x": 528.800048828125,
+   "y": 439.8000183105469,
+   "w": 330.043701171875,
+   "h": 82.80001831054688,
+   "wrapOpacity": 0.45
+  },
+  "Title": {
+   "name": "Title",
+   "x": 395.6171875,
+   "y": 312,
+   "w": 280.765625,
+   "h": 37,
+   "wrapOpacity": 0.45
+  },
+  "Beck/Uncommon": {
+   "name": "Beck/Uncommon",
+   "x": 432.1755065917969,
+   "y": 347.06298828125,
+   "w": 207.64895629882812,
+   "h": 66.67401123046875,
+   "wrapOpacity": 0.45
+  },
+  "Base": {
+   "name": "Base",
+   "x": 1059,
+   "y": 299,
+   "w": 360.859375,
+   "h": 39,
+   "wrapOpacity": 1
+  },
+  "Bars/Dyspnea": {
+   "name": "Bars/Dyspnea",
+   "x": 1060,
+   "y": 399,
+   "w": 672.578125,
+   "h": 75,
+   "wrapOpacity": 1
+  },
+  "Bars/Tachy": {
+   "name": "Bars/Tachy",
+   "x": 1060,
+   "y": 519,
+   "w": 672.578125,
+   "h": 75,
+   "wrapOpacity": 1
+  },
+  "Bars/JVP": {
+   "name": "Bars/JVP",
+   "x": 1060,
+   "y": 639,
+   "w": 656.208984375,
+   "h": 75,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "5D_pulsus": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Sac/Fluid": {
+   "name": "Sac/Fluid",
+   "x": 61.400001525878906,
+   "y": 67.4000015258789,
+   "w": 253.20001220703125,
+   "h": 237.20001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Sac": {
+   "name": "Heart_mini/Sac",
+   "x": 61.400001525878906,
+   "y": 67.4000015258789,
+   "w": 253.20001220703125,
+   "h": 237.20001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Heart": {
+   "name": "Heart_mini/Heart",
+   "x": 67.02362823486328,
+   "y": 82.81687927246094,
+   "w": 209.95455932617188,
+   "h": 197.70606994628906,
+   "wrapOpacity": 1
+  },
+  "Bars/Dyspnea": {
+   "name": "Bars/Dyspnea",
+   "x": 120,
+   "y": 379,
+   "w": 532.578125,
+   "h": 75,
+   "wrapOpacity": 1
+  },
+  "Bars/Tachy": {
+   "name": "Bars/Tachy",
+   "x": 120,
+   "y": 499,
+   "w": 532.578125,
+   "h": 75,
+   "wrapOpacity": 1
+  },
+  "Bars/JVP": {
+   "name": "Bars/JVP",
+   "x": 120,
+   "y": 619,
+   "w": 516.208984375,
+   "h": 75,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Face": {
+   "name": "Cuff/Gauge/Face",
+   "x": 1350,
+   "y": 210,
+   "w": 300,
+   "h": 300,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Major_ticks": {
+   "name": "Cuff/Gauge/Major_ticks",
+   "x": 1356.0999755859375,
+   "y": 216,
+   "w": 287.800048828125,
+   "h": 216,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Dial_numbers": {
+   "name": "Cuff/Gauge/Dial_numbers",
+   "x": 1407.8656005859375,
+   "y": 269.8999938964844,
+   "w": 191.495361328125,
+   "h": 154.10000610351562,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Threshold_line": {
+   "name": "Cuff/Gauge/Threshold_line",
+   "x": 1394.5999755859375,
+   "y": 196.13421630859375,
+   "w": 269.29443359375,
+   "h": 245.86578369140625,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Needle": {
+   "name": "Cuff/Gauge/Needle",
+   "x": 1483.9000244140625,
+   "y": 245.10000610351562,
+   "w": 16.0999755859375,
+   "h": 114.89999389648438,
+   "wrapOpacity": 1,
+   "needle": {
+    "tail": [
+     1500,
+     360
+    ],
+    "tip": [
+     1483.9000244140625,
+     245.10000610351562
+    ],
+    "angle": -97.97644576580268
+   }
+  },
+  "Cuff/Gauge/Hub": {
+   "name": "Cuff/Gauge/Hub",
+   "x": 1488,
+   "y": 348,
+   "w": 24,
+   "h": 24,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Readout": {
+   "name": "Cuff/Gauge/Readout",
+   "x": 1428.125,
+   "y": 417,
+   "w": 143.75,
+   "h": 44,
+   "wrapOpacity": 1
+  },
+  "Caption": {
+   "name": "Caption",
+   "x": 1312.265625,
+   "y": 550,
+   "w": 375.46875,
+   "h": 22,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Caption_note": {
+   "name": "Cuff/Gauge/Caption_note",
+   "x": 1444.4765625,
+   "y": 582,
+   "w": 111.046875,
+   "h": 17,
+   "wrapOpacity": 1
+  },
+  "Pressure/Trace": {
+   "name": "Pressure/Trace",
+   "x": 1180,
+   "y": 682,
+   "w": 660,
+   "h": 47.29998779296875,
+   "wrapOpacity": 1
+  },
+  "Pressure/Other": {
+   "name": "Pressure/Other",
+   "x": 1676.15625,
+   "y": 630,
+   "w": 163.84375,
+   "h": 25,
+   "wrapOpacity": 1
+  },
+  "Threshold": {
+   "name": "Threshold",
+   "x": 1180,
+   "y": 682,
+   "w": 660,
+   "h": 109,
+   "wrapOpacity": 1
+  },
+  "Breath/Curve/Trace": {
+   "name": "Breath/Curve/Trace",
+   "x": 1180,
+   "y": 890,
+   "w": 660,
+   "h": 80,
+   "wrapOpacity": 1
+  },
+  "Breath/Other": {
+   "name": "Breath/Other",
+   "x": 1180,
+   "y": 990,
+   "w": 91.75,
+   "h": 25,
+   "wrapOpacity": 1
+  },
+  "Breath/Insp": {
+   "name": "Breath/Insp",
+   "x": 1338.6640625,
+   "y": 848,
+   "w": 122.671875,
+   "h": 27,
+   "wrapOpacity": 1
+  },
+  "Title": {
+   "name": "Title",
+   "x": 1180,
+   "y": 77,
+   "w": 591.171875,
+   "h": 53,
+   "wrapOpacity": 1
+  },
+  "__hubs": [
+   [
+    1500,
+    360
+   ]
+  ]
+ },
+ "5E_odds": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Sac/Fluid": {
+   "name": "Sac/Fluid",
+   "x": 61.400001525878906,
+   "y": 67.4000015258789,
+   "w": 253.20001220703125,
+   "h": 237.20001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Sac": {
+   "name": "Heart_mini/Sac",
+   "x": 61.400001525878906,
+   "y": 67.4000015258789,
+   "w": 253.20001220703125,
+   "h": 237.20001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Heart": {
+   "name": "Heart_mini/Heart",
+   "x": 67.02362823486328,
+   "y": 82.81687927246094,
+   "w": 209.95455932617188,
+   "h": 197.70606994628906,
+   "wrapOpacity": 1
+  },
+  "Bars/Dyspnea": {
+   "name": "Bars/Dyspnea",
+   "x": 120,
+   "y": 379,
+   "w": 532.578125,
+   "h": 75,
+   "wrapOpacity": 1
+  },
+  "Bars/Tachy": {
+   "name": "Bars/Tachy",
+   "x": 120,
+   "y": 499,
+   "w": 532.578125,
+   "h": 75,
+   "wrapOpacity": 1
+  },
+  "Bars/JVP": {
+   "name": "Bars/JVP",
+   "x": 120,
+   "y": 619,
+   "w": 516.208984375,
+   "h": 75,
+   "wrapOpacity": 1
+  },
+  "Bars/Pulsus": {
+   "name": "Bars/Pulsus",
+   "x": 120,
+   "y": 739,
+   "w": 532.578125,
+   "h": 75,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Face": {
+   "name": "Cuff/Gauge/Face",
+   "x": 1350,
+   "y": 210,
+   "w": 300,
+   "h": 300,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Major_ticks": {
+   "name": "Cuff/Gauge/Major_ticks",
+   "x": 1356.0999755859375,
+   "y": 216,
+   "w": 287.800048828125,
+   "h": 216,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Dial_numbers": {
+   "name": "Cuff/Gauge/Dial_numbers",
+   "x": 1407.8656005859375,
+   "y": 269.8999938964844,
+   "w": 191.495361328125,
+   "h": 154.10000610351562,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Threshold_line": {
+   "name": "Cuff/Gauge/Threshold_line",
+   "x": 1394.5999755859375,
+   "y": 196.13421630859375,
+   "w": 269.29443359375,
+   "h": 245.86578369140625,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Needle": {
+   "name": "Cuff/Gauge/Needle",
+   "x": 1483.9000244140625,
+   "y": 245.10000610351562,
+   "w": 16.0999755859375,
+   "h": 114.89999389648438,
+   "wrapOpacity": 1,
+   "needle": {
+    "tail": [
+     1500,
+     360
+    ],
+    "tip": [
+     1483.9000244140625,
+     245.10000610351562
+    ],
+    "angle": -97.97644576580268
+   }
+  },
+  "Cuff/Gauge/Hub": {
+   "name": "Cuff/Gauge/Hub",
+   "x": 1488,
+   "y": 348,
+   "w": 24,
+   "h": 24,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Readout": {
+   "name": "Cuff/Gauge/Readout",
+   "x": 1428.125,
+   "y": 417,
+   "w": 143.75,
+   "h": 44,
+   "wrapOpacity": 1
+  },
+  "Caption": {
+   "name": "Caption",
+   "x": 1312.265625,
+   "y": 550,
+   "w": 375.46875,
+   "h": 22,
+   "wrapOpacity": 1
+  },
+  "Cuff/Gauge/Caption_note": {
+   "name": "Cuff/Gauge/Caption_note",
+   "x": 1444.4765625,
+   "y": 582,
+   "w": 111.046875,
+   "h": 17,
+   "wrapOpacity": 1
+  },
+  "Pressure/Trace": {
+   "name": "Pressure/Trace",
+   "x": 1180,
+   "y": 682,
+   "w": 660,
+   "h": 47.29998779296875,
+   "wrapOpacity": 1
+  },
+  "Pressure/Other": {
+   "name": "Pressure/Other",
+   "x": 1676.15625,
+   "y": 630,
+   "w": 163.84375,
+   "h": 25,
+   "wrapOpacity": 1
+  },
+  "Threshold": {
+   "name": "Threshold",
+   "x": 1180,
+   "y": 682,
+   "w": 660,
+   "h": 109,
+   "wrapOpacity": 1
+  },
+  "Breath/Curve/Trace": {
+   "name": "Breath/Curve/Trace",
+   "x": 1180,
+   "y": 890,
+   "w": 660,
+   "h": 80,
+   "wrapOpacity": 1
+  },
+  "Breath/Other": {
+   "name": "Breath/Other",
+   "x": 1180,
+   "y": 990,
+   "w": 91.75,
+   "h": 25,
+   "wrapOpacity": 1
+  },
+  "Breath/Insp": {
+   "name": "Breath/Insp",
+   "x": 1338.6640625,
+   "y": 848,
+   "w": 122.671875,
+   "h": 27,
+   "wrapOpacity": 1
+  },
+  "Title": {
+   "name": "Title",
+   "x": 1180,
+   "y": 77,
+   "w": 591.171875,
+   "h": 53,
+   "wrapOpacity": 1
+  },
+  "Odds/Up": {
+   "name": "Odds/Up",
+   "x": 690.4000244140625,
+   "y": 470,
+   "w": 415.4349365234375,
+   "h": 150,
+   "wrapOpacity": 1
+  },
+  "Odds/Down": {
+   "name": "Odds/Down",
+   "x": 690.4000244140625,
+   "y": 720,
+   "w": 374.5208740234375,
+   "h": 150,
+   "wrapOpacity": 1
+  },
+  "Base": {
+   "name": "Base",
+   "x": 80,
+   "y": 1002,
+   "w": 197.890625,
+   "h": 23,
+   "wrapOpacity": 1
+  },
+  "__hubs": [
+   [
+    1500,
+    360
+   ]
+  ]
+ },
+ "5F_link": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Sac/Fluid": {
+   "name": "Sac/Fluid",
+   "x": 61.400001525878906,
+   "y": 67.4000015258789,
+   "w": 253.20001220703125,
+   "h": 237.20001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Sac": {
+   "name": "Heart_mini/Sac",
+   "x": 61.400001525878906,
+   "y": 67.4000015258789,
+   "w": 253.20001220703125,
+   "h": 237.20001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Heart": {
+   "name": "Heart_mini/Heart",
+   "x": 67.02362823486328,
+   "y": 82.81687927246094,
+   "w": 209.95455932617188,
+   "h": 197.70606994628906,
+   "wrapOpacity": 1
+  },
+  "Bars/Dyspnea": {
+   "name": "Bars/Dyspnea",
+   "x": 120,
+   "y": 379,
+   "w": 532.578125,
+   "h": 75,
+   "wrapOpacity": 0.45
+  },
+  "Bars/Tachy": {
+   "name": "Bars/Tachy",
+   "x": 120,
+   "y": 499,
+   "w": 532.578125,
+   "h": 75,
+   "wrapOpacity": 0.45
+  },
+  "Bars/JVP": {
+   "name": "Bars/JVP",
+   "x": 120,
+   "y": 619,
+   "w": 516.208984375,
+   "h": 75,
+   "wrapOpacity": 0.45
+  },
+  "Bars/Pulsus": {
+   "name": "Bars/Pulsus",
+   "x": 120,
+   "y": 739,
+   "w": 532.578125,
+   "h": 75,
+   "wrapOpacity": 0.45
+  },
+  "Cuff/Gauge/Face": {
+   "name": "Cuff/Gauge/Face",
+   "x": 1350,
+   "y": 210,
+   "w": 300,
+   "h": 300,
+   "wrapOpacity": 0.45
+  },
+  "Cuff/Gauge/Major_ticks": {
+   "name": "Cuff/Gauge/Major_ticks",
+   "x": 1356.0999755859375,
+   "y": 216,
+   "w": 287.800048828125,
+   "h": 216,
+   "wrapOpacity": 0.45
+  },
+  "Cuff/Gauge/Dial_numbers": {
+   "name": "Cuff/Gauge/Dial_numbers",
+   "x": 1407.8656005859375,
+   "y": 269.8999938964844,
+   "w": 191.495361328125,
+   "h": 154.10000610351562,
+   "wrapOpacity": 0.45
+  },
+  "Cuff/Gauge/Threshold_line": {
+   "name": "Cuff/Gauge/Threshold_line",
+   "x": 1394.5999755859375,
+   "y": 196.13421630859375,
+   "w": 269.29443359375,
+   "h": 245.86578369140625,
+   "wrapOpacity": 0.45
+  },
+  "Cuff/Gauge/Needle": {
+   "name": "Cuff/Gauge/Needle",
+   "x": 1483.9000244140625,
+   "y": 245.10000610351562,
+   "w": 16.0999755859375,
+   "h": 114.89999389648438,
+   "wrapOpacity": 0.45,
+   "needle": {
+    "tail": [
+     1500,
+     360
+    ],
+    "tip": [
+     1483.9000244140625,
+     245.10000610351562
+    ],
+    "angle": -97.97644576580268
+   }
+  },
+  "Cuff/Gauge/Hub": {
+   "name": "Cuff/Gauge/Hub",
+   "x": 1488,
+   "y": 348,
+   "w": 24,
+   "h": 24,
+   "wrapOpacity": 0.45
+  },
+  "Cuff/Gauge/Readout": {
+   "name": "Cuff/Gauge/Readout",
+   "x": 1428.125,
+   "y": 417,
+   "w": 143.75,
+   "h": 44,
+   "wrapOpacity": 0.45
+  },
+  "Caption": {
+   "name": "Caption",
+   "x": 1312.265625,
+   "y": 550,
+   "w": 375.46875,
+   "h": 22,
+   "wrapOpacity": 0.45
+  },
+  "Cuff/Gauge/Caption_note": {
+   "name": "Cuff/Gauge/Caption_note",
+   "x": 1444.4765625,
+   "y": 582,
+   "w": 111.046875,
+   "h": 17,
+   "wrapOpacity": 0.45
+  },
+  "Pressure/Trace": {
+   "name": "Pressure/Trace",
+   "x": 1180,
+   "y": 682,
+   "w": 660,
+   "h": 47.29998779296875,
+   "wrapOpacity": 0.45
+  },
+  "Dim/Pressure/Other": {
+   "name": "Dim/Pressure/Other",
+   "x": 1676.15625,
+   "y": 630,
+   "w": 163.84375,
+   "h": 25,
+   "wrapOpacity": 0.45
+  },
+  "Threshold": {
+   "name": "Threshold",
+   "x": 1180,
+   "y": 682,
+   "w": 660,
+   "h": 109,
+   "wrapOpacity": 0.45
+  },
+  "Breath/Curve/Trace": {
+   "name": "Breath/Curve/Trace",
+   "x": 1180,
+   "y": 890,
+   "w": 660,
+   "h": 80,
+   "wrapOpacity": 0.45
+  },
+  "Dim/Breath/Other": {
+   "name": "Dim/Breath/Other",
+   "x": 1180,
+   "y": 990,
+   "w": 91.75,
+   "h": 25,
+   "wrapOpacity": 0.45
+  },
+  "Breath/Insp": {
+   "name": "Breath/Insp",
+   "x": 1338.6640625,
+   "y": 848,
+   "w": 122.671875,
+   "h": 27,
+   "wrapOpacity": 0.45
+  },
+  "Title": {
+   "name": "Title",
+   "x": 1180,
+   "y": 77,
+   "w": 591.171875,
+   "h": 53,
+   "wrapOpacity": 0.45
+  },
+  "Card": {
+   "name": "Card",
+   "x": 120,
+   "y": 885,
+   "w": 540,
+   "h": 130,
+   "wrapOpacity": 1
+  },
+  "Base": {
+   "name": "Base",
+   "x": 120,
+   "y": 842,
+   "w": 242.8125,
+   "h": 30,
+   "wrapOpacity": 1
+  },
+  "__hubs": [
+   [
+    1500,
+    360
+   ]
+  ]
+ },
+ "6A_recap-strip": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Strip/Paper": {
+   "name": "Strip/Paper",
+   "x": 60,
+   "y": 382.5,
+   "w": 1800,
+   "h": 315,
+   "wrapOpacity": 1
+  },
+  "Strip/Trace": {
+   "name": "Strip/Trace",
+   "x": 80,
+   "y": 450.5,
+   "w": 1760,
+   "h": 170.0999755859375,
+   "wrapOpacity": 1
+  },
+  "Strip/Marks_tall": {
+   "name": "Strip/Marks_tall",
+   "x": 170,
+   "y": 390,
+   "w": 1592,
+   "h": 34,
+   "wrapOpacity": 1
+  },
+  "Strip/Marks_short": {
+   "name": "Strip/Marks_short",
+   "x": 369,
+   "y": 390,
+   "w": 1194,
+   "h": 34,
+   "wrapOpacity": 1
+  },
+  "Caption": {
+   "name": "Caption",
+   "x": 712.6171875,
+   "y": 864,
+   "w": 494.765625,
+   "h": 44,
+   "wrapOpacity": 1
+  },
+  "Base": {
+   "name": "Base",
+   "x": 847.796875,
+   "y": 933,
+   "w": 224.40625,
+   "h": 34,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "6B_checklist": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Sac/Fluid": {
+   "name": "Sac/Fluid",
+   "x": 245.3000030517578,
+   "y": 296.5,
+   "w": 502.9000244140625,
+   "h": 471.70001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Sac": {
+   "name": "Heart_mini/Sac",
+   "x": 245.3000030517578,
+   "y": 296.5,
+   "w": 502.9000244140625,
+   "h": 471.70001220703125,
+   "wrapOpacity": 1
+  },
+  "Heart_mini/Heart_ghost": {
+   "name": "Heart_mini/Heart_ghost",
+   "x": 325.61224365234375,
+   "y": 335.2281799316406,
+   "w": 415.4752197265625,
+   "h": 393.0613708496094,
+   "wrapOpacity": 0.22
+  },
+  "Heart_mini/Heart": {
+   "name": "Heart_mini/Heart",
+   "x": 252.15704345703125,
+   "y": 325.2900085449219,
+   "w": 415.4752197265625,
+   "h": 393.0613708496094,
+   "wrapOpacity": 1
+  },
+  "Check/JVP": {
+   "name": "Check/JVP",
+   "x": 1000,
+   "y": 329,
+   "w": 386.40625,
+   "h": 63,
+   "wrapOpacity": 1
+  },
+  "Check/Pulsus": {
+   "name": "Check/Pulsus",
+   "x": 1000,
+   "y": 469,
+   "w": 280.46875,
+   "h": 63,
+   "wrapOpacity": 1
+  },
+  "Check/Echo": {
+   "name": "Check/Echo",
+   "x": 1000,
+   "y": 609,
+   "w": 230.703125,
+   "h": 63,
+   "wrapOpacity": 1
+  },
+  "Base": {
+   "name": "Base",
+   "x": 1000,
+   "y": 169,
+   "w": 360.515625,
+   "h": 39,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ },
+ "6C_end": {
+  "Background": {
+   "name": "Background",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Grid": {
+   "name": "Grid",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "wrapOpacity": 1
+  },
+  "Line_1": {
+   "name": "Line_1",
+   "x": 240,
+   "y": 343,
+   "w": 990.703125,
+   "h": 107,
+   "wrapOpacity": 1
+  },
+  "Line_2": {
+   "name": "Line_2",
+   "x": 240,
+   "y": 533,
+   "w": 1145.4375,
+   "h": 107,
+   "wrapOpacity": 1
+  },
+  "End_screen": {
+   "name": "End_screen",
+   "x": 1380,
+   "y": 860,
+   "w": 460,
+   "h": 140,
+   "wrapOpacity": 1
+  },
+  "__hubs": []
+ }
+}

@@ -1,37 +1,87 @@
-"""Stage 6 planner: turn the 22 layered beats + measured word times into an AE build plan (plan.json).
+"""Electrical Alternans, Stage 4 planner (After Effects path).
 
-Per beat precomp, every layer gets one of:
-  static   same art as the previous beat in the scene: on for the whole beat
-  enter    new layer: fade (or fade + rise 20 px for text) on its sync word, else at the beat start
-  move     same art, new place/size/opacity: the previous beat's copy animates to the new state, then hands over
-  xfade    art changed: previous copy fades out while the new one fades in, on the sync word
-  exit     layer gone: previous copy fades out at the beat start
-plus overrides from the motion notes (needles, breath chip, flows, playhead, chest breath, bumps, readout snaps).
+Turns the 25 flattened beats (ai_src/layers.json, from library/scripts/adobe/flatten.py) and the measured word
+times into an After Effects build plan (ae_plan.json) and the generated build script (build_ae.jsx).
+Adapted on 2026-11-18 from the Pulsus Paradoxus planner. Inputs, all in this folder unless noted:
+
+  ai_src/layers.json       layer list per beat (python3 ../../../../library/scripts/adobe/flatten.py refs.json ai_src ../../3-board/art/*.svg)
+  geom.json                bbox, opacity and needle geometry per layer (node ae_geom.js ai_src geom.json, Playwright)
+  timeline.json            beat starts in the stitched track (build_animatic.py timeline)
+  ../../3-board/timings/sync_points.csv, word_timings.csv
+  ../layer_map.json        sync layer names that differ from the SVG ids
+
+Motion follows Comma Clinical (design.medzcool.com, Mark 2026-11-18: "let's tighten things up"): no crossfades or
+dissolves anywhere. Per beat precomp, every layer gets one of:
+  static   same art as the previous beat in the scene: on for the whole beat (a pulse if the notes sync it)
+  enter    new layer on its sync word, else at the beat start: text cuts on whole; a wide form unfolds from its left
+           edge; anything else grows from its centre (snap and settle, 0.6 s, no overshoot). Same-time entries stagger 2 frames.
+  move     art that is the same form at a new place, size or tone: the previous beat's copy travels and scales about its
+           centre (snap 0.6 s, or cross 0.75 s over 300 px), then hands over to this beat's art
+  swap     changed text: the old cuts off and the new cuts on, on the word
+  redraw   a trace that changes in place: it prints again from the left and the old one is erased by the same front
+  exit     text cuts off; a form shrinks into the centre of its group (accelerate, 0.3 s), groups 2 frames apart
+At the end of each scene everything collapses the same way (no scene crossfade), and the next scene builds from empty.
+All beat and scene times sit on whole frames (v1 had a blank frame at 0:11:28 where two beats missed a frame).
+Plus the overrides at the bottom (1A box, 1B strip carry, trace draw-ons, bar wipes, the swinging heart, the needle, the drain).
+
+Run: python3 ae_plan.py   ->   ae_plan.json, ae_check_times.json, build_ae.jsx
 """
-import json, re, hashlib, sys
+import csv, json, re, hashlib, pathlib
 import xml.etree.ElementTree as ET
 
-SRC = "/tmp/claude-0/ai/svg"
+HERE = pathlib.Path(__file__).resolve().parent
+VIDEO = HERE.parent.parent
+LIB = VIDEO.parent.parent / "library" / "scripts" / "adobe"
+SRC = HERE / "ai_src"
 NS = "{http://www.w3.org/2000/svg}"
-L = json.load(open(f"{SRC}/layers.json"))
-G = json.load(open("/tmp/claude-0/ae/geom.json"))
-TL = {b["id"]: b for b in json.load(open(sys.argv[1]))["beats"]}
-SYNC = json.load(open(sys.argv[2]))
-MK = json.load(open(sys.argv[3]))
-BEATS = sorted(L)                          # "1A_cuff", ...
+TITLE = "Electrical Alternans"
+AUDIO_REL = "../3-board/audio/"            # relative to 4-animation/ (the engine's root)
+
+L = json.load(open(SRC / "layers.json"))
+G = json.load(open(HERE / "geom.json"))
+TL = {b["id"]: b for b in json.load(open(HERE / "timeline.json"))["beats"]}
+LMAP = json.load(open(VIDEO / "4-animation" / "layer_map.json"))
+BEATS = sorted(L)
 bid = lambda k: k.split("_")[0]
-TEXTY = ("Label/", "Title/", "Card/", "Promise/", "Readout/", "Rule_", "Tag/")
+TEXTY = ("Title", "Caption", "Label", "Labels/", "Question", "Line_", "Card/Label", "Number/")
+FPS = 30
+fr = lambda x: round(x * FPS) / FPS                    # on a whole frame (full precision: 4 decimals left 1-frame gaps)
+SHAPES = ("path", "line", "rect", "circle", "ellipse", "polygon", "polyline", "image", "use")
+
+
+def is_text(key, name):
+    """True when the layer is only type (cuts on and off instead of growing or shrinking)."""
+    root = ET.parse(SRC / f"{key}.svg").getroot()
+    spec = next(x for x in L[key] if x["name"] == name)
+    g = root.find(f".//{NS}g[@id='{spec['id']}']")
+    tags = {e.tag.replace(NS, "") for e in g.iter()}
+    return "text" in tags and not (tags & set(SHAPES))
+
+
+def has_text(key, name):
+    root = ET.parse(SRC / f"{key}.svg").getroot()
+    spec = next(x for x in L[key] if x["name"] == name)
+    g = root.find(f".//{NS}g[@id='{spec['id']}']")
+    return any(e.tag == NS + "text" for e in g.iter())
+
+SYNC = []
+for r in csv.DictReader(open(VIDEO / "3-board/timings/sync_points.csv", newline="")):
+    lay = LMAP.get(r["beat"], {}).get(r["layer"], r["layer"])
+    for x in lay.split("+"):
+        SYNC.append({"beat": r["beat"], "layer": x, "t": float(r["start_in_beat_s"]), "word": r["sync"]})
+WORDS = {}
+for r in csv.DictReader(open(VIDEO / "3-board/timings/word_timings.csv", newline="")):
+    WORDS.setdefault(r["beat"], []).append({"text": r["word"], "start": float(r["start_in_beat_s"]), "end": float(r["end_in_beat_s"])})
 
 
 def layer_sigs(key):
-    root = ET.parse(f"{SRC}/{key}.svg").getroot()
+    root = ET.parse(SRC / f"{key}.svg").getroot()
     out = {}
     for spec in L[key]:
         g = root.find(f".//{NS}g[@id='{spec['id']}']")
-        w = g
-        while len(w) == 1 and w[0].tag == NS + "g" and not w[0].get("id"):
-            w = w[0]
-        inner = "".join(ET.tostring(c, encoding="unicode") for c in w)
+        inner = "".join(ET.tostring(c, encoding="unicode") for c in g)
+        inner = re.sub(r'\sid="[^"]*"', "", inner)
+        inner = re.sub(r'\sopacity="1(\.0)?"', "", inner)      # a no-op opacity is not a change (3E paper, 2026-11-18)
         out[spec["name"]] = hashlib.md5(inner.encode()).hexdigest()[:10]
     return out
 
@@ -39,22 +89,12 @@ def layer_sigs(key):
 SIG = {k: layer_sigs(k) for k in BEATS}
 
 
+def match(sync_layer, name):
+    return name == sync_layer or name.endswith("/" + sync_layer) or sync_layer.endswith("/" + name)
+
+
 def syncs(b, name):
-    """measured sync times (s into beat) for this layer, from the motion notes."""
-    ts = []
-    for r in SYNC:
-        if r["beat"] != b:
-            continue
-        pats = [p.strip() for p in r["layer"].split(",")]
-        for p in pats:
-            if p == name or (p.endswith("/*") and name.startswith(p[:-1])) or (p in ("Inflammation", "Lungs/Bronchi") and name.startswith(p.split("/")[0] + "/") and (p != "Lungs/Bronchi" or name.endswith("Bronchi"))) \
-               or (p == "Lungs/Vessels" and name.startswith("Lungs/") and name.endswith("Vessels")):
-                ts.append(r["start_in_beat_s"])
-    return sorted(set(ts))
-
-
-def alias(name):
-    return name[len("Arm_scene/"):] if name.startswith("Arm_scene/Gauge/") else name
+    return sorted({r["t"] for r in SYNC if r["beat"] == b and match(r["layer"], name)})
 
 
 def bbox(key, name):
@@ -62,224 +102,323 @@ def bbox(key, name):
     return dict(cx=g["x"] + g["w"] / 2, cy=g["y"] + g["h"] / 2, w=g["w"], h=g["h"], op=g["wrapOpacity"])
 
 
-plan = {"fps": 30, "w": 1920, "h": 1080, "scenes": []}
-for sc in "12345":
+GAP_SPLIT = 0.5                              # half of the 1.0 s scene gap before a scene, half after
+plan = {"fps": FPS, "w": 1920, "h": 1080, "scenes": [], "layer_counts": {k: len(v) for k, v in L.items()}}
+SCENES = sorted({k[0] for k in BEATS})
+STAG = 2 / FPS
+for sc in SCENES:
     keys = [k for k in BEATS if k[0] == sc]
     first, last = TL[bid(keys[0])], TL[bid(keys[-1])]
-    s_start = 0.0 if sc == "1" else first["start"] - 0.5     # half the inter-scene gap before, rest after
+    s_start = 0.0 if sc == SCENES[0] else fr(first["start"] - GAP_SPLIT)
     nxt = [TL[b]["start"] for b in TL if b[0] == str(int(sc) + 1)]
-    s_end = (min(nxt) - 0.5) if nxt else (last["end"] + 2.5)
-    scene = {"name": f"Scene {sc}", "start": round(s_start, 3), "dur": round(s_end - s_start, 3), "beats": []}
+    s_end = fr(min(nxt) - GAP_SPLIT) if nxt else fr(last["end"] + 3.0)
+    scene = {"name": f"Scene {sc}", "start": s_start, "dur": fr(s_end - s_start), "beats": []}
     for i, key in enumerate(keys):
         b = bid(key)
-        t0 = TL[b]["start"] - s_start if i else 0.0                 # precomp start inside the scene comp
-        t_end = (TL[bid(keys[i + 1])]["start"] - s_start) if i + 1 < len(keys) else scene["dur"]
-        dur = round(t_end - t0, 3)
-        vo_off = round(TL[b]["start"] - s_start - t0, 3)           # VO start inside the precomp
+        t0 = fr(TL[b]["start"] - s_start) if i else 0.0
+        t_end = fr(TL[bid(keys[i + 1])]["start"] - s_start) if i + 1 < len(keys) else scene["dur"]
+        dur = fr(t_end - t0)
+        vo_off = round(TL[b]["start"] - s_start - t0, 3)
         prev = keys[i - 1] if i else None
-        cur_names = [x["name"] for x in L[key]]
+        cur = [x["name"] for x in L[key]]
         hidden = {x["name"] for x in L[key] if x.get("hidden")}
-        prev_by_alias = {alias(x["name"]): x["name"] for x in L[prev]} if prev else {}
+        prev_names = {x["name"] for x in L[prev]} if prev else set()
         acts = []
-        for nm in cur_names:
+        for nm in cur:
             ts = [t + vo_off for t in syncs(b, nm)]
             a = {"layer": nm, "src": key}
             if nm in hidden:
                 a["hidden"] = True
-            pn = prev_by_alias.get(alias(nm)) if prev else None
+            cb = bbox(key, nm)
             if nm in ("Background", "Grid"):
                 a["do"] = "static"
-            elif pn is None:
-                a["do"] = "enter"; a["t"] = round(ts[0], 3) if ts else (0.0 if not prev else vo_off)
-                a["rise"] = nm.startswith(TEXTY)
-                if not prev and not ts:
-                    a["t"] = 0.0
-            elif SIG[prev][pn] == SIG[key][nm]:
-                pb, cb = bbox(prev, pn), bbox(key, nm)
-                same = abs(pb["cx"] - cb["cx"]) < 1 and abs(pb["cy"] - cb["cy"]) < 1 and abs(pb["w"] - cb["w"]) < 1 and abs(pb["op"] - cb["op"]) < 0.01
-                if same:
-                    a["do"] = "static"
+            elif nm not in prev_names:
+                a.update(do="enter", t=round(ts[0], 3) if ts else (0.0 if not prev else vo_off), synced=bool(ts), c=[cb["cx"], cb["cy"]])
+                if is_text(key, nm):
+                    a["how"] = "cut"
+                elif cb["w"] > 700 or (cb["h"] > 0 and cb["w"] > 2.5 * cb["h"]) or cb["h"] < 1:
+                    a.update(how="wipe", d=0.6)
                 else:
-                    a.update(do="move", prev=prev, prevLayer=pn, t=round(ts[0], 3) if ts else 0.0, d=0.6,
-                             s=cb["w"] / pb["w"] if pb["w"] else 1, dx=cb["cx"] - pb["cx"], dy=cb["cy"] - pb["cy"], op0=pb["op"], op1=cb["op"])
+                    a.update(how="grow", d=0.6)
+            elif SIG[prev][nm] == SIG[key][nm] and bbox(prev, nm) == cb:
+                a["do"] = "static"
+                a["c"] = [cb["cx"], cb["cy"]]
+                if ts:
+                    a["bump"] = [round(ts[0], 3), 1.04]
             else:
-                a.update(do="xfade", prev=prev, prevLayer=pn, t=round(ts[0], 3) if ts else 0.0, d=0.4)
+                pb = bbox(prev, nm)
+                t = round(ts[0], 3) if ts else 0.0
+                sx = cb["w"] / pb["w"] if pb["w"] > 0.5 else 1.0
+                sy = cb["h"] / pb["h"] if pb["h"] > 0.5 else 1.0
+                dx, dy = cb["cx"] - pb["cx"], cb["cy"] - pb["cy"]
+                same_box = abs(dx) < 1 and abs(dy) < 1 and abs(sx - 1) < 0.01 and abs(sy - 1) < 0.01
+                tone_only = same_box and abs(pb["op"] - cb["op"]) >= 0.01
+                if is_text(key, nm) and not tone_only and not (abs(sx - sy) < 0.04 * max(sx, sy) and not same_box):
+                    a.update(do="swap", prev=prev, prevLayer=nm, t=t)
+                elif same_box and abs(pb["op"] - cb["op"]) < 0.01:
+                    a.update(do="redraw", prev=prev, prevLayer=nm, t=t, d=1.0)
+                else:
+                    if abs(sx - sy) < 0.04 * max(sx, sy):
+                        sx = sy = (sx + sy) / 2
+                    elif has_text(key, nm):
+                        sx = sy = 1.0                # type inside: travel without squashing it (left edges aligned), the new art lands at the end
+                        dx = (cb["cx"] - cb["w"] / 2) - (pb["cx"] - pb["w"] / 2)
+                    far = (dx * dx + dy * dy) ** 0.5 > 300
+                    d = 0.3 if same_box else (0.75 if far else 0.6)
+                    a.update(do="move", prev=prev, prevLayer=nm, t=t, d=d, curve="cross" if far else "snap",
+                             pc=[round(pb["cx"], 1), round(pb["cy"], 1)], dx=round(dx, 1), dy=round(dy, 1),
+                             sx=round(sx, 4), sy=round(sy, 4), op0=pb["op"], op1=cb["op"])
             acts.append(a)
         if prev:
-            cur_alias = {alias(n) for n in cur_names}
-            gone = [x["name"] for x in L[prev] if alias(x["name"]) not in cur_alias]
+            gone = [x["name"] for x in L[prev] if x["name"] not in set(cur)]
+            groups = []
             for nm in gone:
-                acts.append({"layer": nm, "src": prev, "do": "exit", "t": 0.0, "d": 0.4, "z": "prev"})
-        scene["beats"].append({"id": b, "key": key, "start": round(t0, 3), "dur": dur, "vo": f"{b}.mp3", "vo_at": vo_off, "acts": acts})
+                g = nm.split("/")[0]
+                if g not in groups:
+                    groups.append(g)
+            for nm in gone:
+                if is_text(prev, nm):
+                    acts.append({"layer": nm, "src": prev, "do": "exit", "how": "cut", "t": 0.0})
+                    continue
+                g = nm.split("/")[0]
+                bs = [bbox(prev, x) for x in gone if x.split("/")[0] == g]
+                x0 = min(q["cx"] - q["w"] / 2 for q in bs); x1 = max(q["cx"] + q["w"] / 2 for q in bs)
+                y0 = min(q["cy"] - q["h"] / 2 for q in bs); y1 = max(q["cy"] + q["h"] / 2 for q in bs)
+                acts.append({"layer": nm, "src": prev, "do": "exit", "how": "shrink", "t": 0.0, "d": 0.25,
+                             "delay": round(min(groups.index(g) / FPS, 0.1), 3), "c": [round((x0 + x1) / 2, 1), round((y0 + y1) / 2, 1)]})
+        # forms that travel together share one curve: if any of them crosses the frame, they all use cross (4C leads, 5C figure)
+        mv = [a for a in acts if a["do"] == "move" and not (abs(a["dx"]) < 1 and abs(a["dy"]) < 1 and a["sx"] == 1 and a["sy"] == 1)]
+        if any(a["curve"] == "cross" for a in mv):
+            for a in mv:
+                a.update(curve="cross", d=0.75)
+        scene["beats"].append({"id": b, "key": key, "start": t0, "dur": dur, "vo": AUDIO_REL + f"{b}.mp3", "vo_at": vo_off, "acts": acts})
     plan["scenes"].append(scene)
 
 
-# ---------------- overrides from the motion notes ----------------
+# ---------------- overrides ----------------
 def beat(b):
     for s in plan["scenes"]:
         for x in s["beats"]:
             if x["id"] == b:
                 return s, x
+    raise KeyError(b)
 
 
 def act(b, layer):
-    s, x = beat(b)
+    _, x = beat(b)
     for a in x["acts"]:
         if a["layer"] == layer and a["do"] != "exit":
             return a
+    raise KeyError(f"{b} {layer}")
 
 
 def W(b, word, n=1):
-    """time of the n-th occurrence of a word in beat b, as precomp time."""
-    s, x = beat(b)
-    ws = [w for w in WORDS[b] if re.sub(r"[^a-z']", "", w["text"].lower()) == word]
+    """precomp time of the n-th occurrence of a word in beat b."""
+    _, x = beat(b)
+    ws = [w for w in WORDS[b] if re.sub(r"[^a-z0-9']", "", w["text"].lower()) == word]
     return round(ws[n - 1]["start"] + x["vo_at"], 3)
 
 
-WORDS = json.load(open(sys.argv[4]))
-DROP = 8.0  # deg per mmHg, drop gauge
+def reveal(b, layer, t, d, angle=270, curve="linear"):
+    a = act(b, layer)
+    a.update(do="reveal", t=round(t, 3), d=d, angle=angle, curve=curve)
+    a.pop("how", None)
 
 
-def needle(b, key):
-    n = G[key]["Gauge/Needle"]["needle"]; hubs = G[key]["__hubs"]
-    import math
-    tail, tip = n["tail"], n["tip"]
-    def dist(p):  # hub closest to the needle line
-        ax, ay = tip[0] - tail[0], tip[1] - tail[1]; L2 = ax * ax + ay * ay
-        u = max(0, min(1, ((p[0] - tail[0]) * ax + (p[1] - tail[1]) * ay) / L2))
-        return math.hypot(tail[0] + u * ax - p[0], tail[1] + u * ay - p[1])
-    piv = min(hubs, key=dist)
-    return piv, n["angle"]
+# ---- Mark's notes on v1 (2026-11-18), scene 1 ----
+# 1A: the caption cuts on at the second "Tall." (0:04:23), not at "every other QRS" (0:09:17)
+act("1A", "Caption")["t"] = W("1A", "tall", 2)
+# 1A: a box outlines the tall QRS on "Tall.", then snaps across to the short QRS on "Short.", and cuts off on "regular"
+TALL_X, SHORT_X = 966, 1165                  # R peaks of the 5th and 6th beats of the 1A strip (keyframes_gen.ecg, V5, amp 150)
+box = lambda x0, y0, x1, y1: [[x0, y0], [x1, y0], [x1, y1], [x0, y1]]
+_, b1a = beat("1A")
+b1a["acts"].append({"layer": "Strip/Box", "do": "morph", "t0": W("1A", "short", 2), "t1": round(W("1A", "short", 2) + 0.5, 3),
+                    "inAt": W("1A", "tall", 2), "cut_at": W("1A", "regular"), "curve": "snap",
+                    "from": box(TALL_X - 32, 436, TALL_X + 32, 634), "to": box(SHORT_X - 32, 504, SHORT_X + 32, 626),
+                    "color": [1.0, 0.251, 0.341], "w0": 4, "w1": 4})
+# 1B: the strip already on screen carries on: it shrinks a little and slides down under the title (no new strip, no fade)
+for nm in ("Strip/Paper", "Strip/Trace", "Strip/Marks_tall", "Strip/Marks_short"):
+    a = act("1B", nm)
+    a.clear()
+    a.update(layer=nm, src="1A_strip", do="carry", t=0.0, d=0.75, curve="cross", pivot=[960, 540], to=[960, 770], s=0.82)
 
 
-# needles: rotate from the previous beat's angle on the sync word (drop gauges, Scenes 2-4; Scene 1 static)
-for s in plan["scenes"]:
-    for i, x in enumerate(s["beats"]):
-        a = act(x["id"], "Gauge/Needle")
-        if not a or x["id"][0] in "15":
-            continue
-        piv, ang = needle(x["id"], x["key"])
-        if a["do"] in ("xfade", "move") or (i and a["do"] == "enter"):
-            pang = needle(s["beats"][i - 1]["id"], s["beats"][i - 1]["key"])[1] if i else ang
-            d = (ang - pang + 180) % 360 - 180
-            a.clear(); a.update(layer="Gauge/Needle", src=x["key"], do="rotate", pivot=piv, keys=[[0, -d], [ (syncs(x["id"], "Gauge/Needle") or [0])[0] + x["vo_at"], -d], [(syncs(x["id"], "Gauge/Needle") or [0])[0] + x["vo_at"] + 0.4, 0]])
-# 2D: needle dips 0 -> 8 mmHg on "dips", back to 0 on "back"
-a = act("2D", "Gauge/Needle"); _, x = beat("2D"); piv, _ = needle("2D", x["key"])
-a.clear(); a.update(layer="Gauge/Needle", src=x["key"], do="rotate", pivot=piv,
-                    keys=[[0, 0], [W("2D", "dips"), 0], [W("2D", "dips") + 0.4, 8 * DROP], [W("2D", "back"), 8 * DROP], [W("2D", "back") + 0.4, 0]])
+# ECG traces draw on left to right
+reveal("1A", "Strip/Trace", W("1A", "look"), 2.0)
+reveal("6A", "Strip/Trace", 0.0, 1.6)
+reveal("4F", "Strips/Bigeminy/Strip", W("4F", "bigeminy"), 1.2)
+reveal("4F", "Strips/Alternans", W("4F", "alternans"), 1.2)
+reveal("5D", "Breath/Curve/Trace", W("5D", "drop"), 1.2)
+# bars grow from their left end on their word; the rules wipe in
+for b, nm, w in (("5C", "Bars/Dyspnea", "shortness"), ("5C", "Bars/Tachy", "fast"), ("5C", "Bars/JVP", "raised"), ("5E", "Bars/Pulsus", "eight")):
+    reveal(b, nm, W(b, w), 0.6, curve="snap")
+reveal("4E", "Rules/Rule_1", W("4E", "see"), 0.6, curve="snap")
+reveal("4E", "Rules/Rule_2", W("4E", "don't"), 0.6, curve="snap")
+# the numbers land with a small bump
+for nm in ("Number/Sens", "Number/Spec"):
+    act("4D", nm)["bump"] = 1.08
 
-# Scene 5: one continuous deflation, needle by expression (notes): 144.5 mmHg at the 5B in-point, 2.0 mmHg/s, 1 deg per mmHg
-cb = MK["cueB"]
-art_val = {"5B": 142, "5C": 132, "5D": 116, "5E": 116}
-for b, v in art_val.items():
-    s, x = beat(b); a = act(b, "Gauge/Needle"); piv, _ = needle(b, x["key"])
-    vt0 = s["start"] + x["start"]          # video time of the precomp start
-    a.clear(); a.update(layer="Gauge/Needle", src=x["key"], do="expr", pivot=piv,
-                        expr=f"var rate = {cb['rate_mmHg_s']}; var v0 = {cb['start_cuff_mmHg']}; var tVideo = time + {vt0:.3f}; "
-                             f"(v0 - rate*(tVideo - {cb['starts_at_video_s']})) - {v};")
-# Scene 5 playhead: constant speed, left edge at cue 0 s, right edge at the end of 5E
-s5 = beat("5B")[0]
-end5E = TL["5E"]["end"]
-x_left, x_right = 160, 160 + 1600
-rate = 1600 / (end5E - cb["starts_at_video_s"])
-for b in ("5B", "5C", "5D"):
-    s, x = beat(b); a = act(b, "Waveform/Playhead"); g = G[x["key"]]["Waveform/Playhead"]
-    vt0 = s["start"] + x["start"]
-    def px(tv): return x_left + (tv - cb["starts_at_video_s"]) * rate
-    cx = g["x"] + g["w"] / 2
-    a.clear(); a.update(layer="Waveform/Playhead", src=x["key"], do="slide",
-                        keys=[[0, px(vt0) - cx], [x["dur"], px(vt0 + x["dur"]) - cx]])
-PLAYHEAD = dict(left_edge_cue_s=0.0, right_edge_cue_s=round(end5E - cb["starts_at_video_s"], 2), px_per_s=round(rate, 1))
+# the swinging heart: the heart travels to the ghost position and back, one swing every two beats
+HEART = "Cross_section/Heart"
+g3 = G["3D_swing"]
+SW_DX = round(g3["Cross_section/Heart_ghost"]["x"] - g3[HEART]["x"], 1)
+SW_DY = round(g3["Cross_section/Heart_ghost"]["y"] - g3[HEART]["y"], 1)
+PERIOD = 1.2                                 # s per swing (two beats at 100/min)
 
-# breath chip: Scene 1 swaps on "in"/"out" (1A); Scene 5 on the cue B breath bands
-CHIP = {"IN": "2A_inhale", "OUT": "1A_cuff"}
-def chip(b, segs):
-    """segs: [[t_from, t_to, 'IN'|'OUT'], ...] in precomp time."""
+
+def swing(b, layer, start, stop=None, dx=SW_DX, dy=SW_DY, video_t0=None, ramp=True):
+    """position expression: k goes 0 -> 1 -> 0 each PERIOD, phase locked to video time so the swing runs on across beats.
+    ramp=False when the heart is already swinging at the start of the beat (3D, 3E carry on from 3C)."""
     s, x = beat(b)
-    for a in list(x["acts"]):
-        if a["layer"] in ("Breath/Other",) and a["do"] != "exit":
-            x["acts"].remove(a)
-    for st in ("IN", "OUT"):
-        iv = [[max(0, f), min(x["dur"], t)] for f, t, ss in segs if ss == st and t > 0 and f < x["dur"]]
-        if iv:
-            x["acts"].append({"layer": "Breath/Other", "src": CHIP[st], "do": "intervals", "iv": iv, "as": f"Breath/Label_{st}"})
-_, x = beat("1A")
-chip("1A", [[0, W("1A", "in"), "OUT"], [W("1A", "in"), W("1A", "out"), "IN"], [W("1A", "out"), 99, "OUT"]])
-bands = [[cb["breath_t0_cue_s"] - 2 + 5 * k, cb["breath_t0_cue_s"] + 5 * k] for k in range(-1, 7)]
-BREATH5 = []
-for b in ("5B", "5C", "5D", "5E"):
-    s, x = beat(b); vt0 = s["start"] + x["start"]
-    segs, t = [], -99
-    marks = []
-    for f, e in bands:
-        marks += [(cb["starts_at_video_s"] + f - vt0, "IN"), (cb["starts_at_video_s"] + e - vt0, "OUT")]
-    marks.sort(); stt = "OUT"; t = -99
-    for m, st in marks:
-        segs.append([t, m, stt]); t, stt = m, st
-    segs.append([t, 99, stt])
-    chip(b, segs)
-BREATH5 = [[round(cb["starts_at_video_s"] + f, 2), round(cb["starts_at_video_s"] + e, 2)] for f, e in bands if cb["starts_at_video_s"] + e > cb["starts_at_video_s"] and f < 30]
-
-# Scene 5 readouts snap on the measured taps
-_, x = beat("5C"); a = act("5C", "Readout/Expiration_value")
-a.update(do="enter", t=round(cb["first_tap_expiration"]["video_s"] - (beat("5C")[0]["start"] + x["start"]), 3), rise=False, bump=1.10)
-whole = cb["starts_at_video_s"] + [e for f, e in bands if cb["starts_at_video_s"] + f <= cb["taps_every_beat_from"]["video_s"] <= cb["starts_at_video_s"] + e][0]
-_, x = beat("5D"); a = act("5D", "Readout/Both_value")
-a.update(do="enter", t=round(whole - (beat("5D")[0]["start"] + x["start"]), 3), rise=False, bump=1.10)
-READ5 = dict(first_tap_s=cb["first_tap_expiration"]["video_s"], whole_breath_s=round(whole, 2))
-
-# 1A trace draws left -> right across the beat (Cue A from 0 s)
-a = act("1A", "Waveform/Trace"); a.update(do="reveal", t=0.0, d=round(beat("1A")[1]["dur"], 3), angle=270)
-# flows draw on their sync word
-for b, nm, d in (("2B", "Flow/Venous_dots", 0.8), ("2C", "Flow/Pulmonary_dots", 1.2), ("3B", "Flow/Venous_dots", 0.8), ("3C", "Flow/Aortic_dots", 0.8)):
-    a = act(b, nm)
-    if a and a["do"] in ("enter", "xfade"):
-        a.update(do="reveal", d=d, angle=270)
-# 1B gap bracket on "gap"; definition after the title lands; Rule bars wipe in (5F)
-a = act("1B", "Waveform/Gap_bracket"); a.update(t=W("1B", "gap"))
-a = act("1B", "Title/Definition"); a.update(t=round(act("1B", "Title/Pulsus_paradoxus")["t"] + 0.9, 3))
-for r in ("Rule_1", "Rule_2", "Rule_3"):
-    a = act("5F", r); a.update(do="reveal", d=0.6, angle=270)
-# 3B RV free wall bump on "pinned"
-a = act("3B", "Heart/RV_free_wall"); a["bump"] = [W("3B", "pinned"), 1.04]
-# 2A: chest breathes in (scale 1/1.045 -> 1) on "breathe in", coronal lungs grow from the apex, diaphragm drops on "drops"
-_, x = beat("2A")
-axial = [a["layer"] for a in x["acts"] if a["layer"].split("/")[0] in ("Chest", "Lungs", "Hilum", "Pericardium", "Heart", "Inflammation")]
-x["groups"] = [
-    {"null": "Axial/Chest", "at": [560, 470], "layers": axial, "scale": [[0, 100 / 1.045], [W("2A", "breathe"), 100 / 1.045], [W("2A", "breathe") + 0.8, 100]]},
-]
-for nm in ("Coronal/Lungs/R", "Coronal/Lungs/L"):
-    g = G[x["key"]][nm]
-    act("2A", nm)["grow"] = {"anchor": [g["x"] + g["w"] / 2, g["y"]], "t": W("2A", "breathe"), "d": 1.2, "from": [100 / 1.06, 100 / 1.13]}
-dd = 58 * 0.46
-for nm in ("Coronal/Diaphragm", "Coronal/Abdomen"):
-    act("2A", nm)["drop"] = {"t": W("2A", "drops"), "d": 0.8, "dy": dd}
-act("2A", "Coronal/Diaphragm_arrows").update(t=W("2A", "drops"), rise=True)
+    a = act(b, layer)
+    vt0 = s["start"] + x["start"]
+    stop_expr = f"Math.max(0, 1 - (time - {stop:.3f}) / 0.8)" if stop is not None else "1"
+    ramp_expr = f"Math.min(1, Math.max(0, (time - {start:.3f}) / 0.6))" if ramp else "1"
+    a.update(exprpos=(f"var tv = time + {vt0:.3f}; var on = {ramp_expr} * "
+                      f"(time < {stop if stop is not None else 1e9:.3f} ? 1 : {stop_expr}); "
+                      f"var k = (1 - Math.cos(2 * Math.PI * tv / {PERIOD})) / 2 * on; value + [{dx} * k, {dy} * k];"))
 
 
-# timing fixes from the notes: 2C lungs come up on "stretch"; 2D chest relaxes on "out"; 3B heart changes on "push"
-for b, word, pref in (("2C", "stretch", ("Lungs/",)), ("2D", "out", ("Chest/", "Lungs/", "Hilum/", "Inflammation/")), ("3B", "pushing", ("Heart/", "Pericardium/"))):
-    _, x = beat(b)
-    for a in x["acts"]:
-        if a["do"] in ("move", "xfade") and a["layer"].startswith(pref) and a["layer"] != "Heart/RV_free_wall":
-            a["t"] = W(b, word)
-act("3B", "Heart/LV")["t"] = W("3B", "left")
-# 4A: Scene 3's effusion drains top -> bottom at the start (hidden layer switched on)
-act("4A", "Pericardium/Fluid").update(do="drain", t=0.0, d=0.6)
-# crossfades into Scenes 3 and 4 (notes): the outgoing scene runs 0.4 s longer, the new one fades up over it
-for sc in plan["scenes"]:
-    n = sc["name"][-1]
-    sc["xfade_in"] = 0.4 if n in "34" else 0.0
-for i, sc in enumerate(plan["scenes"][:-1]):
-    if plan["scenes"][i + 1]["xfade_in"]:
-        sc["dur"] = round(sc["dur"] + 0.4, 3); sc["beats"][-1]["dur"] = round(sc["beats"][-1]["dur"] + 0.4, 3)
-plan["scenes"][-1]["fade_out"] = 0.6
+swing("3C", HEART, W("3C", "swing"))
+swing("3D", HEART, 0.0, ramp=False)
+swing("3E", HEART, 0.0, stop=W("3E", "stops"), ramp=False)
+# 3E: the needle drains the fluid on "fluid"
+act("3E", "Cross_section/Sac/Fluid").update(do="drain", t=W("3E", "fluid"), d=1.6)
+# 6B "think swinging heart": the mini heart swings to its ghost
+g6 = G["6B_checklist"]
+swing("6B", "Heart_mini/Heart", W("6B", "swinging"),
+      dx=round(g6["Heart_mini/Heart_ghost"]["x"] - g6["Heart_mini/Heart"]["x"], 1),
+      dy=round(g6["Heart_mini/Heart_ghost"]["y"] - g6["Heart_mini/Heart"]["y"], 1))
 
-json.dump(plan, open("/tmp/claude-0/ae/plan.json", "w"), indent=1)
-json.dump(dict(playhead=PLAYHEAD, breath5=BREATH5, read5=READ5, cueA_bands=MK["cueA"]["breath_bands"]), open("/tmp/claude-0/ae/fill.json", "w"), indent=1)
-# summary
+# 5D-5F gauge: the needle dips with each breath in (pulsus paradoxus), 4 s breaths, phase from video time
+for b in ("5D", "5E", "5F"):
+    s, x = beat(b)
+    n = G[x["key"]]["Cuff/Gauge/Needle"]["needle"]
+    vt0 = s["start"] + x["start"]
+    a = act(b, "Cuff/Gauge/Needle")
+    a.update(do="expr", pivot=n["tail"],
+             expr=f"var tv = time + {vt0:.3f}; -14 * Math.max(0, Math.sin(2 * Math.PI * tv / 4.0)) + 1.5 * Math.sin(2 * Math.PI * tv / 0.6);")
+    a.pop("t", None)
+
+# a layer whose name only changed level between beats (3A "Cards/Electrics" -> 3B "Cards/Electrics/Other" + "/List") stays put:
+# the old cuts and the new cuts on at the same frame
+for s_ in plan["scenes"]:
+    for x in s_["beats"]:
+        ents = [a for a in x["acts"] if a["do"] == "enter"]
+        for e_ in [a for a in x["acts"] if a["do"] == "exit"]:
+            kids = [a for a in ents if a["layer"].startswith(e_["layer"] + "/") or e_["layer"].startswith(a["layer"] + "/")]
+            same = [a for a in kids if not a.get("synced")]
+            if kids:
+                e_.update(how="cut", t=0.0)
+                for a in same:
+                    a.update(how="cut", t=0.0, keep=True)
+
+# the end-screen placeholder stays out of the picture until the real end card is built
+act("6C", "End_screen")["hidden"] = True
+
+# entries wait for the exits of their beat to clear; entries at the same moment stagger 2 frames (under 0.4 s in all)
+for s_ in plan["scenes"]:
+    for x in s_["beats"]:
+        ex = [a for a in x["acts"] if a["do"] == "exit" and a.get("how") == "shrink"]
+        allex = [a for a in x["acts"] if a["do"] == "exit"]
+        rest = [a for a in x["acts"] if a["do"] != "exit" and a["layer"] not in ("Background", "Grid") and not a.get("hidden")]
+        if ex:
+            # a word that lands while the old forms are still leaving: they all leave at once, faster
+            if any(a["do"] in ("enter", "reveal") and a.get("t", 0) < 0.35 and (a.get("synced") or a["do"] == "reveal") for a in rest):
+                for a in ex:
+                    a.update(delay=0.0, d=0.2)
+            clear = max(a["delay"] + a["d"] for a in ex)
+            for a in x["acts"]:
+                if a["do"] == "enter" and not a.get("synced") and not a.get("keep") and a["t"] < clear:
+                    a["t"] = round(clear, 3)
+        # nothing else on screen until a later word (4E): the old forms wait and leave just before it, so the frame is never empty
+        if allex and rest and all(a["do"] in ("enter", "reveal", "morph") for a in rest):
+            first = min(a.get("t", a.get("t0", 0)) for a in rest)
+            if first > 0.5:
+                for a in allex:
+                    a["t"] = round(first - 0.3, 3)
+        by_t = {}
+        for a in x["acts"]:
+            if a["do"] == "enter" and not a.get("hidden"):
+                by_t.setdefault(round(a["t"], 2), []).append(a)
+        by_t = {k: [a for a in v if not a.get("keep")] for k, v in by_t.items()}
+        for t_, grp in by_t.items():
+            if not grp:
+                continue
+            step = min(STAG, 0.4 / len(grp))
+            for k, a in enumerate(grp):
+                a["t"] = round(a["t"] + k * step, 3)
+
+# 5D: the needle arrives once the gauge face has grown
+act("5D", "Cuff/Gauge/Needle")["in_at"] = round(act("5D", "Cuff/Gauge/Face")["t"] + 0.3, 3)
+
+# scene changes (no crossfade): the last beat of each scene collapses its forms into points and cuts its text, ending on the
+# scene's last frame; the next scene builds from the empty frame
+for s_ in plan["scenes"]:
+    x = s_["beats"][-1]
+    names = [a["layer"] for a in x["acts"] if a["do"] not in ("exit",) and a["layer"] not in ("Background", "Grid")]
+    texts = [nm for nm in names if nm in {q["name"] for q in L[x["key"]]} and is_text(x["key"], nm)]
+    gs, centers = [], {}
+    for nm in names:
+        g = nm.split("/")[0]
+        if nm in texts or g in gs:
+            continue
+        gs.append(g)
+    for g in gs:
+        bs = [bbox(x["key"], q["name"]) for q in L[x["key"]] if q["name"].split("/")[0] == g]
+        if not bs:
+            centers[g] = [960, 540]
+            continue
+        x0 = min(q["cx"] - q["w"] / 2 for q in bs); x1 = max(q["cx"] + q["w"] / 2 for q in bs)
+        y0 = min(q["cy"] - q["h"] / 2 for q in bs); y1 = max(q["cy"] + q["h"] / 2 for q in bs)
+        centers[g] = [round((x0 + x1) / 2, 1), round((y0 + y1) / 2, 1)]
+    delays = {g: round(min(k * STAG, 0.2), 3) for k, g in enumerate(gs)}
+    d = 0.3
+    t = fr(x["dur"] - d - max(delays.values() or [0]) - 1 / FPS)
+    x["collapse"] = {"t": t, "d": d, "centers": centers, "delays": delays, "text": texts}
+    s_["xfade_in"] = 0.0
+
+# check frames: every beat start and 0.9 s after every sync point (where the move has landed), in video time
+checks = []
+for s in plan["scenes"]:
+    for x in s["beats"]:
+        vt0 = s["start"] + x["start"]
+        checks.append({"t": round(vt0 + 0.3, 2), "file": f"{vt0 + 0.3:07.2f}_{x['id']}_start.png"})
+        for r in SYNC:
+            if r["beat"] == x["id"]:
+                tv = vt0 + x["vo_at"] + r["t"] + 0.9
+                checks.append({"t": round(tv, 2), "file": f"{tv:07.2f}_{x['id']}_{re.sub('[^A-Za-z0-9]+', '-', r['layer'])}.png"})
+# v2 extras: the 1A box on the tall and the short QRS, the 1B strip mid-carry, and every scene change mid-collapse
+_s1, _b1 = beat("1A")
+for tv, nm in ((W("1A", "tall", 2) + 0.3, "1A_box-tall"), (W("1A", "short", 2) + 0.7, "1A_box-short"),
+               (beat("1B")[1]["start"] + 0.35, "1B_strip-carry"), (beat("1B")[1]["start"] + 1.2, "1B_title")):
+    checks.append({"t": round(tv, 2), "file": f"{tv:07.2f}_{nm}.png"})
+for s in plan["scenes"]:
+    x = s["beats"][-1]
+    tv = s["start"] + x["start"] + x["collapse"]["t"] + 0.12
+    checks.append({"t": round(tv, 2), "file": f"{tv:07.2f}_{x['id']}_collapse.png"})
+    tv = s["start"] + 0.2
+    checks.append({"t": round(tv, 2), "file": f"{tv:07.2f}_{s['beats'][0]['id']}_build.png"})
+checks.sort(key=lambda c: c["t"])
+
+json.dump(plan, open(HERE / "ae_plan.json", "w"), indent=1)
+json.dump([[c["t"], c["file"]] for c in checks], open(HERE / "ae_check_times.json", "w"))
+
+# ---------------- build_ae.jsx from the library engine ----------------
+eng = (HERE / "ae_engine_comma.jsx").read_text(encoding="utf-8")      # the library engine with Comma Clinical motion
+eng = eng.replace("Pulsus Paradoxus", TITLE)
+eng = eng.replace('root + "/assets/" + key + ".ai"', 'root + "/ai/" + key + ".ai"')
+eng = eng.replace('Folder(root + "/assets/_fresh/" + key + "_" + stamp)', 'Folder(root + "/ai/_fresh/" + key + "_" + stamp)')
+eng = eng.replace('importAudio("audio/" + bt.vo)', "importAudio(bt.vo)")
+eng = re.sub(r'\n\s*if \(s === 0\) \{ var ca = importAudio\("audio/cues/cueA_1A.wav"\);[^\n]*', "", eng)
+eng = re.sub(r'\n\s*if \(S.name === "Scene 5"\) \{ var cbI[^\n]*', "", eng)
+eng = eng.replace('aep = File(root + "/' + TITLE + '.aep")', 'aep = File(root + "/' + TITLE + '.aep")')
+assert "__PLAN__" in eng and "__CHECKS__" in eng and "__ONLY__" in eng
+jsx = eng.replace("__PLAN__", json.dumps(plan, separators=(",", ":"))).replace("__CHECKS__", json.dumps(checks, separators=(",", ":"))).replace("__ONLY__", "null")
+(HERE / "build_ae.jsx").write_text(jsx, encoding="utf-8")
+
 from collections import Counter
-c = Counter(a["do"] for s in plan["scenes"] for x in s["beats"] for a in x["acts"])
-print(c)
+print(Counter(a["do"] for s in plan["scenes"] for x in s["beats"] for a in x["acts"]))
 for s in plan["scenes"]:
     print(s["name"], s["start"], s["dur"], [(x["id"], x["start"], x["dur"]) for x in s["beats"]])
+print("checks", len(checks))
