@@ -9,7 +9,7 @@ A fast, narrow, regular rhythm comes down to one question: is the heart answerin
 | Final cut | **v9**, 3:28, 1920x1080, 30 fps (`svt-vs-sinus-tach-final-v9.mp4`) |
 | What v9 adds | Two Kardiograph by Medzcool plugs cut into v8: a 9.3 s opener with no voice-over at 0:12, and a 21.5 s voiced end plug at 2:59 |
 | Build | Remotion. Voice-over by markusguapo (ElevenLabs v4) |
-| Shorts | Short 1, Answering or Looping, and Short 4, How Adenosine Stops SVT (9:16) |
+| Shorts | Short 1, Answering or Looping, and Short 4, How Adenosine Stops SVT (9:16). Shorts 2, 3 and 5 added Nov 22, 2026 (see `6-delivery/shorts-2-3-5.md` in the repo) |
 | Status (Nov 14, 2026) | v9 done, not on YouTube yet. Before uploading, kardiograph.medzcool.com must serve the new Kardiograph app |
 
 ## Chapters (v9)

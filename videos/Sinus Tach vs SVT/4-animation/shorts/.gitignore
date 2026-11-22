@@ -1,0 +1,7 @@
+node_modules/
+build/
+build2/
+out/
+check/
+public/maps/
+public/vo.mp3
