@@ -30,9 +30,9 @@ beat,sync_word,matched_spoken_word,time_in_beat,time_in_full,flag
 3H,inside,inside,5.92,98.6,
 3I,pseudo,pseudo,0.96,102.86,appears 2x in beat
 3I,prime,prime,6.32,108.22,
-3J,sixty,sixty,5.04,114.88,
-3J,young,young,7.84,117.68,
-3J,two,two,9.12,118.96,
+3J,sixty,sixty,5,114.84,
+3J,young,young,7.92,117.76,
+3J,two,two,9.16,119.0,
 4A,accessory,accessory,1.16,122.48,
 4A,crosses,crosses,3.68,125.0,
 4B,orthodromic,"orthodromic,",1.68,130.7,

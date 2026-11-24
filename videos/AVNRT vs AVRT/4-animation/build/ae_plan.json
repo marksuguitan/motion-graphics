@@ -7801,7 +7801,7 @@
       {
        "layer": "Cards/Stat1",
        "do": "unfold",
-       "t": 4.64,
+       "t": 4.6,
        "fx": {
         "shadow": true
        }
@@ -7809,12 +7809,12 @@
       {
        "layer": "Text/Stat1",
        "do": "cut",
-       "t": 5.04
+       "t": 5.0
       },
       {
        "layer": "Cards/Stat2",
        "do": "unfold",
-       "t": 7.44,
+       "t": 7.52,
        "fx": {
         "shadow": true
        }
@@ -7822,12 +7822,12 @@
       {
        "layer": "Text/Stat2",
        "do": "cut",
-       "t": 7.84
+       "t": 7.92
       },
       {
        "layer": "Cards/Stat3",
        "do": "unfold",
-       "t": 8.38,
+       "t": 8.473,
        "fx": {
         "shadow": true
        }
@@ -7835,7 +7835,7 @@
       {
        "layer": "Text/Stat3",
        "do": "cut",
-       "t": 8.78
+       "t": 8.873
       },
       {
        "layer": "Background",
@@ -16259,17 +16259,17 @@
    "cue": "prime"
   },
   {
-   "t": 114.873,
+   "t": 114.833,
    "beat": "3J",
    "cue": "sixty"
   },
   {
-   "t": 117.673,
+   "t": 117.753,
    "beat": "3J",
    "cue": "young"
   },
   {
-   "t": 118.953,
+   "t": 118.993,
    "beat": "3J",
    "cue": "two"
   },

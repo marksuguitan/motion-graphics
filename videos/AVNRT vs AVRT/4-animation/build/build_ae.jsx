@@ -17,7 +17,7 @@
     var videoDir = Folder(animDir).parent.fsName;
     var pf = File(buildDir + "/ae_plan.json"); pf.encoding = "UTF-8"; pf.open("r");
     var PLAN = eval("(" + pf.read() + ")"); pf.close();
-    var VERSION = 3;                                         // v1: first build; v2: 6C adenosine label, pulses under the labels; v3: glows not clipped to a box
+    var VERSION = 4;                                         // v1: first build; v2: 6C adenosine label, pulses under the labels; v3: glows not clipped to a box; v4: 3J re-voiced (AVNRT as letters)
     var report = { errors: [], missing: [], beats: [], checks: [] };
     function err(msg) { report.errors.push(msg); }
     if (app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") !== 1) {

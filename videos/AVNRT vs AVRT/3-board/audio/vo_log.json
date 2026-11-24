@@ -6,7 +6,7 @@
  "model": "eleven_v4",
  "pass": 1,
  "date": "2026-11-02",
- "notes": "Saved take = last take generated (the active one on each speech node). Durations are decoded lengths (ffmpeg), which run ~40 ms shorter than ffprobe's container duration. Downloaded directly into the cloud workspace (no Mac). 1D is a silent title card (2.0 s, agent's call) plus its 1 s hold. Nov 2, 2026: 4A, 4F and 6E re-voiced with IPA (AVRT /ˌeɪviːɑːrˈtiː/, AV /ˌeɪˈviː/) after Mark's review; earlier saved takes moved to takes/.",
+ "notes": "Saved take = last take generated (the active one on each speech node). Durations are decoded lengths (ffmpeg), which run ~40 ms shorter than ffprobe's container duration. Downloaded directly into the cloud workspace (no Mac). 1D is a silent title card (2.0 s, agent's call) plus its 1 s hold. Nov 2, 2026: 4A, 4F and 6E re-voiced with IPA (AVRT /ˌeɪviːɑːrˈtiː/, AV /ˌeɪˈviː/) after Mark's review; earlier saved takes moved to takes/. Nov 24, 2026: 3J re-voiced with IPA AVNRT /ˌeɪviːɛnɑːrˈtiː/ after Mark heard spaced letters as odd at 1:50; same 10.48 s length, so no other beat moved.",
  "beats": [
   {
    "beat": "1A",
@@ -478,7 +478,7 @@
   },
   {
    "beat": "3J",
-   "node_id": "JHuRNeNeE1InZcBvSvGQ",
+   "node_id": "bSWwFZEZpLYjQk9waH5b",
    "takes": [
     {
      "take": 1,
@@ -492,14 +492,30 @@
      "generation_id": "hG3rcmilv0MpzSqJgeF3",
      "session_id": "l11hjnn27eZ2H8j2EjPp",
      "duration_s": 10.48,
+     "file": "takes/3J_take2.mp3"
+    },
+    {
+     "take": 3,
+     "generation_id": "lbCqySR14ev9BVUrqVTV",
+     "session_id": "SUWFzxYLPVnt7fZTUf68",
+     "duration_s": 10.32,
+     "file": "takes/3J_take3.mp3"
+    },
+    {
+     "take": 4,
+     "generation_id": "EAnjV29o36za7TbLVmcY",
+     "session_id": "hKTLEuprBlZ2TVlhCouA",
+     "duration_s": 10.48,
      "file": "3J.mp3"
     }
    ],
-   "saved_take": 2,
+   "saved_take": 4,
    "saved_file": "3J.mp3",
-   "tts_input": "A V N R T is the most common paroxysmal S V T in adults, about half to sixty percent of cases. It usually shows up in young adults, and about two thirds are women.",
-   "tts_input_respelling": [],
-   "transcript_generation_id": "hML8JnA6KTPSibgdJCCP",
+   "tts_input": "/ˌeɪviːɛnɑːrˈtiː/ is the most common paroxysmal S V T in adults, about half to sixty percent of cases. It usually shows up in young adults, and about two thirds are women.",
+   "tts_input_respelling": [
+    "AVNRT -> /ˌeɪviːɛnɑːrˈtiː/ (IPA)"
+   ],
+   "transcript_generation_id": "JNMXoxPMJPxsftezwe3U",
    "start_in_full": 109.34,
    "hold_after": 1.0
   },

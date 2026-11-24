@@ -468,7 +468,7 @@ PLAN = {
 }
 
 # ---------------------------------------------------------------- timings
-IPA = {"/ˌkjuːɑːrˈɛs/": "qrs", "/ˌeɪviːɑːrˈtiː/": "avrt", "/ˌiːsiːˈdʒiː/": "ecg", "/ˌeɪˈviː/": "av", "hiss": "his",
+IPA = {"/ˌkjuːɑːrˈɛs/": "qrs", "/ˌeɪviːɑːrˈtiː/": "avrt", "/ˌeɪviːɛnɑːrˈtiː/": "avnrt", "/ˌiːsiːˈdʒiː/": "ecg", "/ˌeɪˈviː/": "av", "hiss": "his",
        "pur-kin-jee": "purkinje", "pro-kane-uh-mide": "procainamide"}
 
 
