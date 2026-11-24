@@ -11,7 +11,7 @@ Two things are not in git because of their size. Take them from `source-remotion
 
 ```sh
 npm ci
-./make_audio.sh                                   # public/short9-*.mp3 (already committed)
+./make_audio.sh && python3 make_beeps.py          # public/short9-*.mp3 (already committed): VO, then monitor beeps over the opening
 npx remotion bundle src/index.ts --out-dir=build
 node render.mjs Short2Narrow out/Short2Narrow.mp4  # also Short3Reason, Short5Tells
 node stills.mjs Short5Tells check 30 90 600       # stills at frames, half size
