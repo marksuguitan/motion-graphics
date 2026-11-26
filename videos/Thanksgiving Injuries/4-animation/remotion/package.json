@@ -8,6 +8,7 @@
     "check": "node scripts/check.mjs",
     "render:review": "node scripts/render.mjs review",
     "render:final": "node scripts/render.mjs final",
+    "render:reel": "node scripts/render.mjs reel",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
