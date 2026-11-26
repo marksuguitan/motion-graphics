@@ -8,7 +8,8 @@ import {C, FONT} from '../style/theme';
 import {CARD} from '../lib/tl';
 
 export type RowKind = 'kicker' | 'title' | 'heading' | 'tipHead' | 'big' | 'body' | 'bodyStrong' | 'tip' | 'note' | 'sub';
-export type Row = {kind: RowKind; text: React.ReactNode};
+/** `text` can be a function of the seconds since the row came on (a number that counts up). */
+export type Row = {kind: RowKind; text: React.ReactNode | ((u: number) => React.ReactNode)};
 
 const ROW: Record<RowKind, {h: number; gap?: number; style: React.CSSProperties}> = {
   kicker: {h: 34, gap: 14, style: {fontFamily: FONT.head, fontWeight: 700, fontSize: 23, letterSpacing: 3, textTransform: 'uppercase', color: C.ink2, lineHeight: '34px'}},
@@ -38,7 +39,7 @@ const RowView: React.FC<{t: number; tIn: number; tOut: number; i: number; row: R
   const yOut = -(spec.h + 4) * progress(t, tOut + lag * 0.5, OUT - lag * 0.5, 'accel');
   return (
     <div style={style}>
-      <div style={{...spec.style, transform: `translateY(${yIn + yOut}px)`, whiteSpace: 'nowrap', textAlign: align}}>{row.text}</div>
+      <div style={{...spec.style, transform: `translateY(${yIn + yOut}px)`, whiteSpace: 'nowrap', textAlign: align}}>{typeof row.text === 'function' ? row.text(t - start) : row.text}</div>
     </div>
   );
 };

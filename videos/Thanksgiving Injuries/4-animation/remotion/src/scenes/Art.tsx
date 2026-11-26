@@ -7,6 +7,8 @@ import {C, FONT} from '../style/theme';
 import {Curve, ease, fadeSmall, gravity, keys, overshoot, progress, squash} from '../style/comma';
 import {Corner, lerp, mixHex, rr4} from '../lib/geo';
 import {CARD, EV, TL} from '../lib/tl';
+import airway from '../data/airway.json';
+import strip from '../data/strip.json';
 
 const OUT = 0.25;
 const ev = EV as any;
@@ -51,19 +53,19 @@ const BLADE: Sh = {cx: 650, cy: 540, w: 440, h: 92, tl: r4(6), tr: r4(0.01), br:
 const CHOP = 46; // the blade drops this far onto the board
 const BLADE_DOWN: Sh = {...BLADE, cy: BLADE.cy + CHOP};
 const POT: Sh = {cx: 600, cy: 420, w: 380, h: 230, tl: r4(8), tr: r4(8), br: r4(70), bl: r4(70), fill: C.bg, stroke: C.ink, sw: 6};
-const PLATE2 = disc(380, 830, 110);
+const PLATE2 = disc(125, 720, 85);
 const DISH: Sh = {cx: 600, cy: 640, w: 480, h: 120, tl: r4(16), tr: r4(16), br: [110, 90], bl: [110, 90], fill: C.board, stroke: C.line, sw: 5};
 const GLASS: Sh = {cx: 600, cy: 470, w: 150, h: 220, tl: r4(4), tr: r4(4), br: r4(36), bl: r4(36), fill: C.bg, stroke: C.line, sw: 5};
 const LINE: Sh = {cx: 580, cy: 560, w: 880, h: 6, tl: r4(3), tr: r4(3), br: r4(3), bl: r4(3), fill: C.signal, stroke: C.signal, sw: 0};
 const P3 = disc(960, 410, 190);
 
-const T_ECG_ON = ev.s6.line + 0.47; // the trace takes over from the hero baseline
+const T_ECG_ON = ev.s6.write; // the trace takes over from the hero baseline
 const T_ECG_OFF = ev.s7.grow; // the hero baseline takes back over
 const SEGS: {at: number; dur: number; curve: Curve; to: Sh}[] = [
   {at: ev.s2.move, dur: 0.75, curve: 'cross', to: BLADE},
   {at: ev.s2.chop - 0.2, dur: 0.2, curve: 'accel', to: BLADE_DOWN},
   {at: ev.s3.morph, dur: 0.6, curve: 'snap', to: POT},
-  {at: ev.s4.clear, dur: 0.7, curve: 'cross', to: PLATE2},
+  {at: ev.s4.clear, dur: 0.55, curve: 'cross', to: PLATE2},
   {at: ev.s5.dish, dur: 0.75, curve: 'cross', to: DISH},
   {at: ev.s6.glass, dur: 0.6, curve: 'snap', to: GLASS},
   {at: ev.s6.line, dur: 0.45, curve: 'snap', to: LINE},
@@ -123,7 +125,7 @@ const Hero: React.FC<{t: number}> = ({t}) => {
 const Knife: React.FC<{t: number; part: 'board' | 'handle'}> = ({t, part}) => {
   if (!vis(t, ev.s2.move, ev.s3.morph + OUT)) return null;
   const dy = heroAt(t).cy - BLADE.cy;
-  const sx = t < ev.s3.morph ? (t < ev.s2.board - 0.05 ? 0 : progress(t, ev.s2.board - 0.05, 0.45, 'snap')) : 1 - progress(t, ev.s3.morph, OUT, 'accel');
+  const sx = t < ev.s3.morph ? (t < ev.s2.move + 0.5 ? 0 : progress(t, ev.s2.move + 0.5, 0.4, 'snap')) : 1 - progress(t, ev.s3.morph, OUT, 'accel');
   const chop = ev.s2.chop;
   const tick = t >= chop ? fadeSmall(t, chop, 0.08) * (1 - progress(t, chop + 0.3, 0.2, 'linear')) : 0;
   const tl = 8 + 14 * progress(t, chop, 0.3, 'snap');
@@ -274,86 +276,151 @@ const Water: React.FC<{t: number}> = ({t}) => {
 };
 
 // ---------- scene 4: choking and food bolus ----------
-const AIR_X = 630;
-const ESO_X = 770;
-const ESO_PATH = 'M728 260 L812 260 L812 772 C812 790 798 792 798 805 C798 818 812 820 812 838 L812 916 Q812 940 788 940 L752 940 Q728 940 728 916 L728 838 C728 820 742 818 742 805 C742 792 728 790 728 772 Z';
-const CAP_OUTLINE = 'M582 292 L582 250 A80 60 0 0 1 662 190 L738 190 A80 60 0 0 1 818 250 L818 292 M678 292 L728 292';
+// The anatomy is Mark's own illustration (3-board/art/airways original.svg), cleaned and put in this video's palette
+// by build/airway_prep.cjs. It sits in a card; A() maps a point in the illustration to the frame.
+const AW = {x: 270, y: 60, w: 640, h: 960, vx: 440, vy: 700, vw: 733.33, vh: 1100};
+const AK = AW.w / AW.vw;
+type Pt = [number, number];
+const A = (x: number, y: number): Pt => [AW.x + (x - AW.vx) * AK, AW.y + (y - AW.vy) * AK];
 
-const biteAt = (t: number): [number, number] => {
-  const s = ev.s4;
-  if (t < s.toss) return [380, 826];
-  if (t < s.biteLand) {
-    const u = (t - s.toss) / (s.biteLand - s.toss);
-    return [lerp(380, AIR_X, u), lerp(826, 335, u) - 380 * 4 * u * (1 - u)];
+/** A smooth path through points (Catmull-Rom), walked at constant speed: u 0..1 -> point. */
+function spline(pts: Pt[], n = 20): {at: (u: number) => Pt; pts: Pt[]} {
+  const out: Pt[] = [];
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p0 = pts[Math.max(0, i - 1)], p1 = pts[i], p2 = pts[i + 1], p3 = pts[Math.min(pts.length - 1, i + 2)];
+    for (let j = 0; j < n; j++) {
+      const u = j / n, u2 = u * u, u3 = u2 * u;
+      out.push([0, 1].map((k) => 0.5 * (2 * p1[k] + (-p0[k] + p2[k]) * u + (2 * p0[k] - 5 * p1[k] + 4 * p2[k] - p3[k]) * u2 + (-p0[k] + 3 * p1[k] - 3 * p2[k] + p3[k]) * u3)) as Pt);
+    }
   }
-  const t2 = s.thrust2 + 0.08;
-  if (t < s.thrust1) return [AIR_X, 335];
-  if (t < t2) return [AIR_X, keys(t, [[s.thrust1, 335], [s.thrust1 + 0.15, 318], [s.thrust1 + 0.45, 335]], 'snap')];
-  if (t < s.fall) return overshoot(t, t2, 0.5, [AIR_X, 335], [700, 248], 0.06) as [number, number];
-  return [ease(t, s.fall, 0.25, 700, ESO_X, 'snap'), ease(t, s.fall, s.lodge - s.fall, 248, 775, 'accel')];
+  out.push(pts[pts.length - 1]);
+  const len = [0];
+  for (let i = 1; i < out.length; i++) len.push(len[i - 1] + Math.hypot(out[i][0] - out[i - 1][0], out[i][1] - out[i - 1][1]));
+  const at = (u: number): Pt => {
+    const L = len[len.length - 1] * clamp01(u);
+    let i = 1;
+    while (i < len.length - 1 && len[i] < L) i++;
+    const f = (L - len[i - 1]) / Math.max(1e-6, len[i] - len[i - 1]);
+    return [lerp(out[i - 1][0], out[i][0], f), lerp(out[i - 1][1], out[i][1], f)];
+  };
+  return {at, pts: out};
+}
+// Routes in the illustration's own coordinates: lips, over the tongue, down the pharynx, then either forward into
+// the larynx and trachea (choking) or back into the esophagus (swallowed, then stuck lower down).
+const SHARED: Pt[] = [[505, 893], [600, 866], [700, 842], [810, 848], [882, 915], [920, 1040]];
+const TO_AIRWAY = spline([...SHARED, [895, 1130], [872, 1240], [890, 1300], [910, 1350]].map(([x, y]) => A(x, y)));
+// The illustration's esophagus disappears behind the lung, so it is carried on down here, with a narrowing low in it.
+const ESO_LINE: Pt[] = [[1040, 1375], [1062, 1425], [1085, 1490], [1103, 1570], [1115, 1650], [1122, 1730], [1126, 1810]];
+const LODGE: Pt = [1113, 1634];
+const NARROW_Y = 1692;
+const TO_ESO = spline([...SHARED, [975, 1140], [992, 1250], [1014, 1320], ...ESO_LINE.slice(0, 4), LODGE].map(([x, y]) => A(x, y)));
+const ESO_EXT = (() => {
+  const c = spline(ESO_LINE, 12).pts;
+  const side = (grow: number, from = 0) => {
+    const L: string[] = [], R: string[] = [];
+    c.forEach(([x, y], i) => {
+      if (i < from) return;
+      const [x2, y2] = c[Math.min(c.length - 1, i + 1)], [x1, y1] = c[Math.max(0, i - 1)];
+      const d = Math.hypot(x2 - x1, y2 - y1) || 1;
+      const nx = -(y2 - y1) / d, ny = (x2 - x1) / d;
+      const hw = 17 + 6 * Math.exp(-(((y - 1375) / 45) ** 2)) - 12 * Math.exp(-(((y - NARROW_Y) / 26) ** 2)) + grow; // flares to meet the drawing above; pinches at the narrowing
+      L.push(`${(x + nx * hw).toFixed(1)},${(y + ny * hw).toFixed(1)}`);
+      R.unshift(`${(x - nx * hw).toFixed(1)},${(y - ny * hw).toFixed(1)}`);
+    });
+    return `M${L.join(' L')} L${R.join(' L')} Z`;
+  };
+  return {wall: side(9, 1), lumen: side(0)};
+})();
+const PLATE_C: Pt = [125, 720];
+const MOUTH = TO_AIRWAY.at(0);
+const arc = (a: Pt, b: Pt, u: number, h: number): Pt => [lerp(a[0], b[0], u), lerp(a[1], b[1], u) - h * 4 * u * (1 - u)];
+
+const biteAt = (t: number): Pt => {
+  const s = ev.s4;
+  const onPlate: Pt = [PLATE_C[0], PLATE_C[1] - 4];
+  if (t < s.toss) return onPlate;
+  if (t < s.mouth) return arc(onPlate, MOUTH, (t - s.toss) / (s.mouth - s.toss), 90);
+  if (t < s.thrust1) return TO_AIRWAY.at(progress(t, s.mouth, s.biteLand - s.mouth, 'cross'));
+  if (t < s.expel) return TO_AIRWAY.at(keys(t, [[s.thrust1, 1], [s.thrust1 + 0.15, 0.965], [s.thrust1 + 0.45, 1]], 'snap'));
+  if (t < s.out) return TO_AIRWAY.at(1 - progress(t, s.expel, s.out - s.expel, 'cross'));
+  if (t < s.back) return arc(MOUTH, onPlate, (t - s.out) / (s.back - s.out), 60);
+  if (t < s.toss2) return onPlate;
+  if (t < s.mouth2) return arc(onPlate, MOUTH, (t - s.toss2) / (s.mouth2 - s.toss2), 90);
+  return TO_ESO.at(progress(t, s.mouth2, s.lodge - s.mouth2, 'cross'));
 };
+
+const Chip: React.FC<{x: number; y: number; w: number; children: React.ReactNode}> = ({x, y, w, children}) => (
+  <g>
+    <rect x={x} y={y - 19} width={w} height={38} rx={10} fill={C.bg} stroke={C.divider} strokeWidth={2} />
+    <text x={x + w / 2} y={y + 8} textAnchor="middle" fontFamily={FONT.body} fontSize={22} fontWeight={500} fill={C.ink2}>{children}</text>
+  </g>
+);
 
 const Airways: React.FC<{t: number}> = ({t}) => {
   const s = ev.s4;
-  if (!vis(t, s.tubes, ev.s5.clear + OUT)) return null;
-  const grow = ease(t, s.tubes, 0.7, 0, 790, 'snap');
-  const out = t >= ev.s5.clear ? 1 - progress(t, ev.s5.clear, OUT, 'accel') : 1;
-  if (out <= 0.0005) return null;
-  const g = progress(t, s.fall, 0.3, 'snap'); // 4C: the airway is no longer the story
-  const airStroke = mixHex(C.line, C.divider, g);
-  const ringFill = mixHex(C.divider, '#F1EFEB', g);
-  const rings = [] as number[];
-  for (let y = 312; y <= 912; y += 46) rings.push(y);
+  const k = popK(t, s.card, ev.s5.clear, 0.55, 0.03);
+  if (k <= 0.0005) return null;
+  const [tx, ty] = A(893, 1480);
+  const [ex, ey] = A(1128, 1560);
+  const labels = t >= s.card + 0.45 && t < ev.s5.clear;
   return (
-    <g transform={`translate(700 560) scale(${out}) translate(-700 -560)`}>
+    <g transform={`translate(590 540) scale(${k}) translate(-590 -540)`}>
       <defs>
-        <clipPath id="tubeClip"><rect x={560} y={182} width={280} height={grow} /></clipPath>
+        <clipPath id="airCard"><rect x={AW.x} y={AW.y} width={AW.w} height={AW.h} rx={28} /></clipPath>
       </defs>
-      <g clipPath="url(#tubeClip)">
-        <path d={rr4(AIR_X, 600, 96, 680, r4(0.01), r4(0.01), r4(24), r4(24))} fill={C.soft} stroke={airStroke} strokeWidth={4} />
-        {rings.map((y) => <path key={y} d={rr(AIR_X, y, 78, 10, 5)} fill={ringFill} />)}
-        <path d={ESO_PATH} fill={C.epi} stroke="#E2A592" strokeWidth={4} />
-        <path d={rr4(700, 240, 236, 104, [80, 60], [80, 60], r4(0.01), r4(0.01))} fill={C.epi} />
-        <path d={CAP_OUTLINE} fill="none" stroke="#E2A592" strokeWidth={4} strokeLinejoin="round" />
+      <g clipPath="url(#airCard)">
+        <rect x={AW.x} y={AW.y} width={AW.w} height={AW.h} fill={C.soft} />
+        <svg x={AW.x} y={AW.y} width={AW.w} height={AW.h} viewBox={`${AW.vx} ${AW.vy} ${AW.vw} ${AW.vh}`}>
+          <g dangerouslySetInnerHTML={{__html: (airway as {markup: string}).markup}} />
+          <path d={ESO_EXT.wall} fill="#F0C4B5" />
+          <path d={ESO_EXT.lumen} fill="#FFFFFF" />
+        </svg>
       </g>
-      {t >= s.tubes + 0.5 ? (
+      <rect x={AW.x} y={AW.y} width={AW.w} height={AW.h} rx={28} fill="none" stroke={C.divider} strokeWidth={2} />
+      {labels ? (
         <g>
-          <Label x={AIR_X} y={985} anchor="middle" color={mixHex(C.ink2, C.inactive, g)}>Airway</Label>
-          <Label x={ESO_X + 18} y={985} anchor="middle">Esophagus</Label>
+          <line x1={tx - 34} y1={ty} x2={tx - 4} y2={ty} stroke={C.ink2} strokeWidth={2} />
+          <Chip x={tx - 34 - 112} y={ty} w={112}>Trachea</Chip>
+          <line x1={ex + 4} y1={ey} x2={AW.x + AW.w + 12} y2={ey} stroke={C.ink2} strokeWidth={2} />
+          <Label x={AW.x + AW.w + 20} y={ey + 8}>Esophagus</Label>
         </g>
       ) : null}
     </g>
   );
 };
 
+const BITE_R = 20;
 const Bite: React.FC<{t: number}> = ({t}) => {
   const s = ev.s4;
-  const k = popK(t, ev.s4.clear + 0.4, ev.s5.clear, 0.45);
+  const k = popK(t, s.bite, ev.s5.clear, 0.4);
   if (k <= 0.0005) return null;
   const [x, y] = biteAt(t);
-  const sq1 = squash(t, s.biteLand, 'y', 0.14);
-  const sq2 = squash(t, s.lodge, 'y', 0.14);
-  const rx = 30 * k * sq1.sx * sq2.sx;
-  const ry = 30 * k * sq1.sy * sq2.sy;
-  // ring A: red on the blocked airway, teal once the thrusts clear it, gone when it falls
-  const t2 = s.thrust2 + 0.08;
-  const ringA = t >= s.biteLand && t < s.fall + OUT ? (t < s.fall ? overshoot(t, s.biteLand, 0.45, 0, 1, 0.08) : 1 - progress(t, s.fall, OUT, 'accel')) : 0;
-  const ringAc = mixHex(C.alert, C.normal, progress(t, t2, 0.3, 'snap'));
+  const sq = [s.biteLand, s.back, s.lodge].map((tt) => squash(t, tt, 'y', 0.14));
+  const rx = BITE_R * k * sq[0].sx * sq[1].sx * sq[2].sx;
+  const ry = BITE_R * k * sq[0].sy * sq[1].sy * sq[2].sy;
+  // ring A: red on the blocked airway, teal as the thrusts clear it, gone once the bite is out
+  const ringA = t >= s.biteLand && t < s.out + OUT ? (t < s.out ? overshoot(t, s.biteLand, 0.45, 0, 1, 0.08) : 1 - progress(t, s.out, OUT, 'accel')) : 0;
+  const ringAc = mixHex(C.alert, C.normal, progress(t, s.expel, 0.3, 'snap'));
   const ringB = popK(t, s.lodge, ev.s5.clear, 0.45, 0.08);
-  // abdominal thrusts: two pulses of upward chevrons below the bite
-  const chev = [s.thrust1, s.thrust2].flatMap((tp) => [0, 1].map((j) => ({tp: tp + j * 0.07, y0: 520 + j * 52})));
+  const [lx, ly] = A(LODGE[0], LODGE[1]);
+  // abdominal thrusts: two pulses of chevrons driving air up the trachea, under the bite
+  const chev = [s.thrust1, s.thrust2].flatMap((tp) => [0, 1].map((j) => ({tp: tp + j * 0.07, at: A(928 + j * 10, 1480 + j * 70)})));
   return (
     <g>
-      {chev.map(({tp, y0}, i) => {
+      {chev.map(({tp, at}, i) => {
         if (t < tp || t > tp + 0.55) return null;
-        const yy = ease(t, tp, 0.45, y0, y0 - 70, 'snap');
+        const d = ease(t, tp, 0.45, 0, -64, 'snap');
         const o = fadeSmall(t, tp, 0.1) * (1 - progress(t, tp + 0.35, 0.2, 'linear'));
-        return <polyline key={i} points={`${AIR_X - 24},${yy + 12} ${AIR_X},${yy - 10} ${AIR_X + 24},${yy + 12}`} fill="none" stroke={C.normal} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" opacity={o} />;
+        return (
+          <g key={i} transform={`translate(${at[0]} ${at[1]}) rotate(-8) translate(0 ${d})`} opacity={o}>
+            <polyline points="-22,11 0,-9 22,11" fill="none" stroke={C.normal} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" />
+          </g>
+        );
       })}
-      <ellipse cx={x} cy={y} rx={rx} ry={ry} fill={C.food} stroke="#C2A27E" strokeWidth={3} />
-      <path d={`M${x - 12 * k} ${y - 6 * k} q ${8 * k} ${-6 * k} ${16 * k} 0`} fill="none" stroke="#C2A27E" strokeWidth={3} strokeLinecap="round" />
-      {ringA > 0.001 ? <circle cx={x} cy={y} r={48 * ringA} fill="none" stroke={ringAc} strokeWidth={5} /> : null}
-      {ringB > 0.001 ? <circle cx={ESO_X} cy={792} r={56 * ringB} fill="none" stroke={C.alert} strokeWidth={5} /> : null}
+      <ellipse cx={x} cy={y} rx={rx} ry={ry} fill={C.food} stroke="#B8946C" strokeWidth={3} />
+      <path d={`M${x - 8 * k} ${y - 4 * k} q ${6 * k} ${-5 * k} ${12 * k} 0`} fill="none" stroke="#B8946C" strokeWidth={2.5} strokeLinecap="round" />
+      {ringA > 0.001 ? <circle cx={x} cy={y} r={40 * ringA} fill="none" stroke={ringAc} strokeWidth={5} /> : null}
+      {ringB > 0.001 ? <circle cx={lx} cy={ly} r={40 * ringB} fill="none" stroke={C.alert} strokeWidth={5} /> : null}
     </g>
   );
 };
@@ -387,7 +454,7 @@ const parentOf = (i: number) => [0, 5, 10, 20][genOf(i)];
 const Dish: React.FC<{t: number}> = ({t}) => {
   const s = ev.s5;
   const clr = ev.s6.clear;
-  const lidT = s.dish + 0.45;
+  const lidT = s.cover;
   const lift = progress(t, s.lid, 0.6, 'snap');
   const lidOut = t >= clr ? 1 - progress(t, clr, OUT, 'accel') : 1;
   const lidIn = popK(t, lidT, Infinity, 0.45);
@@ -478,46 +545,88 @@ const Clock: React.FC<{t: number; t0: number}> = ({t, t0}) => {
 };
 
 // ---------- scene 6: holiday heart ----------
-const X0 = 140, X1 = 1020, BASE = 560, SPEED = 260;
-const g = (x: number, s: number) => Math.exp(-(x * x) / (s * s));
-function ecg(tau: number): number {
-  const s = ev.s6;
-  if (tau < s.write) return 0;
-  let v = 0;
-  const af = tau < s.convert ? clamp01((tau - s.write) / 0.25) * (1 - clamp01((tau - s.convert + 0.15) / 0.15)) : 0;
-  if (af > 0) v += af * (4.5 * Math.sin(2 * Math.PI * 6.3 * tau) + 3 * Math.sin(2 * Math.PI * 8.9 * tau + 1.3) + 2.2 * Math.sin(2 * Math.PI * 4.7 * tau + 2.1));
-  for (const q of s.qrs as {t: number; kind: string}[]) {
-    const d = tau - q.t;
-    if (d < -0.3 || d > 0.6) continue;
-    v += -10 * g(d + 0.026, 0.009) + 118 * g(d, 0.011) - 30 * g(d - 0.027, 0.01) + 20 * g(d - 0.29, 0.055);
-    if (q.kind === 'sinus') v += 11 * g(d + 0.17, 0.034);
-  }
-  return v;
+// The rhythm strip is lead II from Kardiograph's engine (build/kardiograph_strip.ts -> data/strip.json): atrial
+// fibrillation, then conversion to sinus rhythm. It is drawn at true scale on ECG paper, 25 mm/s and 10 mm/mV,
+// and it only ever scrolls: paper and trace move together under a fixed write head.
+const STRIP = strip as {hz: number; mv: number[]; qrs: {t: number; kind: string}[]; mmPerS: number; mmPerMv: number};
+const X0 = 140, X1 = 1020, BASE = 560;
+const PX_MM = 10.4;
+const SPEED = STRIP.mmPerS * PX_MM; // 260 px/s
+const PX_MV = STRIP.mmPerMv * PX_MM; // 104 px/mV
+const PAPER_TOP = BASE - 20 * PX_MM, PAPER_BOT = BASE + 10 * PX_MM;
+const FIRST_SINUS = ev.s6.write + (STRIP.qrs.find((q) => q.kind === 'sinus')?.t ?? 1e9);
+function mvAt(tau: number): number {
+  if (tau <= 0) return 0;
+  const f = tau * STRIP.hz, i = Math.floor(f);
+  if (i >= STRIP.mv.length - 1) return 0;
+  return STRIP.mv[i] + (STRIP.mv[i + 1] - STRIP.mv[i]) * (f - i);
 }
 const Ecg: React.FC<{t: number}> = ({t}) => {
   const s = ev.s6;
   if (!vis(t, s.line, T_ECG_OFF)) return null;
-  const amp = t >= ev.s7.clear ? 1 - progress(t, ev.s7.clear, 0.3, 'accel') : 1;
+  const out = t >= ev.s7.clear;
+  const amp = out ? 1 - progress(t, ev.s7.clear, 0.3, 'accel') : 1;
+  // the paper opens out from the baseline, and folds back into it at the end
+  const open = out ? 1 - progress(t, ev.s7.clear, OUT, 'accel') : progress(t, s.line + 0.2, 0.5, 'snap');
+  const ts = t - s.write;
+  const shift = ts > 0 ? (ts * SPEED) % (5 * PX_MM) : 0;
+  const lines: React.ReactNode[] = [];
+  for (let i = -1; i * PX_MM < X1 - X0 + 5 * PX_MM; i++) {
+    const x = X1 - i * PX_MM + shift - 5 * PX_MM;
+    const big = ((i % 5) + 5) % 5 === 0;
+    lines.push(<line key={`v${i}`} x1={x} x2={x} y1={PAPER_TOP} y2={PAPER_BOT} stroke={big ? '#E3E0DA' : '#F0EEEA'} strokeWidth={big ? 2 : 1} />);
+  }
+  for (let j = -20; j <= 10; j++) {
+    const y = BASE + j * PX_MM;
+    const big = j % 5 === 0;
+    lines.push(<line key={`h${j}`} x1={X0} x2={X1} y1={y} y2={y} stroke={big ? '#E3E0DA' : '#F0EEEA'} strokeWidth={big ? 2 : 1} />);
+  }
   const pts: string[] = [];
-  for (let x = X0; x <= X1; x += 2) pts.push(`${x},${(BASE - amp * ecg(t - (X1 - x) / SPEED)).toFixed(1)}`);
-  const head = BASE - amp * ecg(t);
-  const sinus = t >= s.qrs.find((q: any) => q.kind === 'sinus').t;
+  for (let x = X0; x <= X1; x += 1) pts.push(`${x},${(BASE - amp * PX_MV * mvAt(ts - (X1 - x) / SPEED)).toFixed(1)}`);
+  const head = BASE - amp * PX_MV * mvAt(ts);
+  const h = (PAPER_BOT - PAPER_TOP) * open;
   return (
     <g>
+      <defs>
+        <clipPath id="paperClip"><rect x={X0} y={BASE - (BASE - PAPER_TOP) * open} width={X1 - X0} height={Math.max(0.01, h)} rx={Math.min(16, h / 2)} /></clipPath>
+      </defs>
+      {open > 0.001 ? (
+        <g clipPath="url(#paperClip)">
+          <rect x={X0} y={PAPER_TOP} width={X1 - X0} height={PAPER_BOT - PAPER_TOP} fill="#FCFBF9" />
+          {lines}
+          {vis(t, CARD('6A').on, ev.s7.clear) ? (
+            <g>
+              <Label x={X0 + 26} y={PAPER_TOP + 46} size={26} weight={600} color={C.ink}>{t >= FIRST_SINUS ? 'Sinus rhythm' : 'Atrial fibrillation'}</Label>
+              <Label x={X0 + 26} y={PAPER_BOT - 24}>Lead II · 25 mm/s</Label>
+            </g>
+          ) : null}
+        </g>
+      ) : null}
+      {/* what to check: potassium and magnesium */}
+      {['K', 'Mg'].map((el, i) => {
+        const cx = X0 + 75 + i * 174;
+        return (
+          <Pop key={el} t={t} tIn={s.chips + i * (2 / 30)} tOut={ev.s7.clear} cx={cx} cy={742} dIn={0.45}>
+            <rect x={cx - 75} y={710} width={150} height={64} rx={12} fill={C.bg} stroke={C.normal} strokeWidth={3} />
+            <text x={cx} y={754} textAnchor="middle" fontFamily={FONT.body} fontSize={32} fontWeight={600} fill={C.normal}>
+              {el}<tspan dy={-12} fontSize={21}>{i ? '2+' : '+'}</tspan>
+            </text>
+          </Pop>
+        );
+      })}
       {vis(t, T_ECG_ON, T_ECG_OFF) ? (
         <g>
           <polyline points={pts.join(' ')} fill="none" stroke={C.signal} strokeWidth={5} strokeLinejoin="round" strokeLinecap="round" />
           <circle cx={X1} cy={head} r={8} fill={C.signal} />
         </g>
       ) : null}
-      {vis(t, CARD('6A').on, ev.s7.clear) ? <Label x={X0} y={400} size={26} weight={600}>{sinus ? 'Sinus rhythm' : 'Atrial fibrillation'}</Label> : null}
     </g>
   );
 };
 const GlassDrink: React.FC<{t: number}> = ({t}) => {
   const s = ev.s6;
   if (!vis(t, s.glass + 0.2, s.line)) return null;
-  const top = ease(t, s.glass + 0.3, 0.5, 582, 432);
+  const top = ease(t, s.glass + 0.3, 0.4, 582, 432);
   const out = 1 - progress(t, s.line - OUT, OUT, 'accel'); // drains just before the glass flattens into the baseline
   const gl = heroAt(t);
   return (
@@ -600,6 +709,7 @@ export const ArtLayer: React.FC<{t: number}> = ({t}) => (
     <Knife t={t} part="board" />
     <Airways t={t} />
     <Dish t={t} />
+    <Ecg t={t} />
     <Hero t={t} />
     <Knife t={t} part="handle" />
     {t < ev.s4.clear + OUT ? <Oil t={t} /> : null}
@@ -608,7 +718,6 @@ export const ArtLayer: React.FC<{t: number}> = ({t}) => (
     <Skin t={t} />
     <Water t={t} />
     <Bite t={t} />
-    <Ecg t={t} />
     <Icons t={t} />
   </g>
 );
