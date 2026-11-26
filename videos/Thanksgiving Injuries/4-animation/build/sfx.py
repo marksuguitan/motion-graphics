@@ -95,7 +95,7 @@ thud = lambda: mix(tone(110, 55, 0.35, 0.09), 0.3 * noise(0.05, 80, 400, 0.001, 
 knock = lambda: mix(tone(230, 170, 0.2, 0.05), 0.5 * noise(0.05, 300, 1800, 0.001, 0.015))
 chop = lambda: mix(tone(170, 90, 0.25, 0.06), 0.7 * noise(0.06, 250, 2500, 0.0005, 0.018), 0.15 * tone(3100, 3000, 0.1, 0.02))
 huff = lambda: mix(noise(0.22, 180, 1400, 0.01, 0.06), 0.5 * tone(120, 80, 0.15, 0.04))
-beep = lambda: tone(960, 960, 0.1, 0.06, attack=0.004)
+beep = lambda: tone(880, 880, 0.1, 0.06, attack=0.004)  # A5, in key with the music bed (music.py)
 whoosh = lambda d=0.6: swell(d, 250, 2200)
 swish = lambda: swell(0.28, 1200, 6000)
 
@@ -224,7 +224,7 @@ for i in range(5):
 
 # normalize to -1 dBFS peak and write
 peak = np.max(np.abs(out))
-out *= 0.89 / peak
+out *= 0.75 / peak  # -2.5 dBFS, leaves room for the music bed
 pcm = (out * 32767).astype(np.int16)
 os.makedirs(os.path.join(RM, 'public/sfx'), exist_ok=True)
 with wave.open(os.path.join(RM, 'public/sfx/sfx.wav'), 'wb') as w:
@@ -232,4 +232,4 @@ with wave.open(os.path.join(RM, 'public/sfx/sfx.wav'), 'wb') as w:
     w.setsampwidth(2)
     w.setframerate(SR)
     w.writeframes(pcm.tobytes())
-print(f'sfx.wav {len(out) / SR:.1f} s, raw peak {20 * np.log10(max(peak, 1e-9)):.1f} dBFS, normalized to -1 dBFS')
+print(f'sfx.wav {len(out) / SR:.1f} s, raw peak {20 * np.log10(max(peak, 1e-9)):.1f} dBFS, normalized to -2.5 dBFS')

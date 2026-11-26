@@ -306,31 +306,13 @@ function spline(pts: Pt[], n = 20): {at: (u: number) => Pt; pts: Pt[]} {
   return {at, pts: out};
 }
 // Routes in the illustration's own coordinates: lips, over the tongue, down the pharynx, then either forward into
-// the larynx and trachea (choking) or back into the esophagus (swallowed, then stuck lower down).
+// the larynx and trachea (choking) or back into the esophagus (swallowed, then stuck).
 const SHARED: Pt[] = [[505, 893], [600, 866], [700, 842], [810, 848], [882, 915], [920, 1040]];
 const TO_AIRWAY = spline([...SHARED, [895, 1130], [872, 1240], [890, 1300], [910, 1350]].map(([x, y]) => A(x, y)));
-// The illustration's esophagus disappears behind the lung, so it is carried on down here, with a narrowing low in it.
-const ESO_LINE: Pt[] = [[1040, 1375], [1062, 1425], [1085, 1490], [1103, 1570], [1115, 1650], [1122, 1730], [1126, 1810]];
-const LODGE: Pt = [1113, 1634];
-const NARROW_Y = 1692;
-const TO_ESO = spline([...SHARED, [975, 1140], [992, 1250], [1014, 1320], ...ESO_LINE.slice(0, 4), LODGE].map(([x, y]) => A(x, y)));
-const ESO_EXT = (() => {
-  const c = spline(ESO_LINE, 12).pts;
-  const side = (grow: number, from = 0) => {
-    const L: string[] = [], R: string[] = [];
-    c.forEach(([x, y], i) => {
-      if (i < from) return;
-      const [x2, y2] = c[Math.min(c.length - 1, i + 1)], [x1, y1] = c[Math.max(0, i - 1)];
-      const d = Math.hypot(x2 - x1, y2 - y1) || 1;
-      const nx = -(y2 - y1) / d, ny = (x2 - x1) / d;
-      const hw = 17 + 6 * Math.exp(-(((y - 1375) / 45) ** 2)) - 12 * Math.exp(-(((y - NARROW_Y) / 26) ** 2)) + grow; // flares to meet the drawing above; pinches at the narrowing
-      L.push(`${(x + nx * hw).toFixed(1)},${(y + ny * hw).toFixed(1)}`);
-      R.unshift(`${(x - nx * hw).toFixed(1)},${(y - ny * hw).toFixed(1)}`);
-    });
-    return `M${L.join(' L')} L${R.join(' L')} Z`;
-  };
-  return {wall: side(9, 1), lumen: side(0)};
-})();
+// The esophagus is the back channel of Mark's drawing, behind the larynx and trachea, as drawn: it runs down from the
+// pharynx and passes behind the lung. Nothing is added to the illustration. The bolus lodges in the upper esophagus.
+const LODGE: Pt = [1008, 1305];
+const TO_ESO = spline([...SHARED, [955, 1120], [983, 1200], [1000, 1262], LODGE].map(([x, y]) => A(x, y)));
 const PLATE_C: Pt = [125, 720];
 const MOUTH = TO_AIRWAY.at(0);
 const arc = (a: Pt, b: Pt, u: number, h: number): Pt => [lerp(a[0], b[0], u), lerp(a[1], b[1], u) - h * 4 * u * (1 - u)];
@@ -361,7 +343,7 @@ const Airways: React.FC<{t: number}> = ({t}) => {
   const k = popK(t, s.card, ev.s5.clear, 0.55, 0.03);
   if (k <= 0.0005) return null;
   const [tx, ty] = A(893, 1480);
-  const [ex, ey] = A(1128, 1560);
+  const [ex, ey] = A(1066, 1395);
   const labels = t >= s.card + 0.45 && t < ev.s5.clear;
   return (
     <g transform={`translate(590 540) scale(${k}) translate(-590 -540)`}>
@@ -372,8 +354,6 @@ const Airways: React.FC<{t: number}> = ({t}) => {
         <rect x={AW.x} y={AW.y} width={AW.w} height={AW.h} fill={C.soft} />
         <svg x={AW.x} y={AW.y} width={AW.w} height={AW.h} viewBox={`${AW.vx} ${AW.vy} ${AW.vw} ${AW.vh}`}>
           <g dangerouslySetInnerHTML={{__html: (airway as {markup: string}).markup}} />
-          <path d={ESO_EXT.wall} fill="#F0C4B5" />
-          <path d={ESO_EXT.lumen} fill="#FFFFFF" />
         </svg>
       </g>
       <rect x={AW.x} y={AW.y} width={AW.w} height={AW.h} rx={28} fill="none" stroke={C.divider} strokeWidth={2} />

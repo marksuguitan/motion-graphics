@@ -5,7 +5,7 @@ Thanksgiving injuries and illnesses, for medical students. Requested by Mark on 
 
 | | |
 | --- | --- |
-| Status | Final v2 rendered Nov 26, 2026 (1:13.9 with the end screen), at Mark's review. v1 was 1:27.1. Mark waived the gates ("build this all in the cloud, use your discretion") |
+| Status | Final v3 rendered Nov 25, 2026 (1:13.9 with the end screen), at Mark's review. v1 was 1:27.1. Mark waived the gates ("build this all in the cloud, use your discretion") |
 | Production doc | Claude doc, the only copy: https://claude.ai/artifact/WD4yGKrwK7zGuhUimm2CeM |
 | Style | Comma Clinical; one plate that morphs into each hazard and back |
 | Sound | SFX only, no VO and no music. Timing comes from on-screen reading time and measured SFX hits instead of word timings |
@@ -17,7 +17,7 @@ impaction · 5 after dinner, C. perfringens · 6 late night, holiday heart · 7 
 
 Rebuild, in this order: `cd 4-animation/build && python3 timeline.py` (don't pipe it into `head`, it stops before
 the last files are written), `node --experimental-strip-types kardiograph_strip.ts <path to a medzcool/kardiograph clone>`,
-`python3 sfx.py`, then in `4-animation/remotion`: `npm ci && npm run render:final`. Only when the airway art changes:
+`python3 sfx.py`, `python3 music.py`, then in `4-animation/remotion`: `npm ci && npm run render:final`. Only when the airway art changes:
 `NODE_PATH=$(npm root -g) node airway_prep.cjs` (needs Playwright). Renders also go to the project files, `videos/Thanksgiving Injuries/delivery/`.
 
 Changes from script v1 made while building (at my discretion, per Mark): 6A reads "after heavy drinking" instead of
@@ -33,8 +33,17 @@ Changes from script v1 made while building (at my discretion, per Mark): 6A read
   card rolls out. Cards with more to read keep more time. Total went from 1:27.1 to 1:13.9.
 - Scene 4 uses Mark's airway vector (`3-board/art/airways original.svg`), cleaned and recoloured into the palette by
   `airway_prep.cjs`. The bite goes plate, mouth, top of the trachea; thrusts send it back to the plate; the second
-  bite goes down the esophagus and lodges. The drawing's esophagus is hidden behind the lung, so it is continued
-  downward in the same pink (`ESO_EXT` in `Art.tsx`).
+  bite goes down the esophagus and lodges.
 - Scene 6 strip is lead II from the Kardiograph engine (`synthesizeCalibrated`): the `afib` preset, about 113/min,
   then the `normal` preset at 78/min, spliced on the baseline. Drawn at true scale (25 mm/s, 10 mm/mV) on scrolling
   ECG paper, with K+ and Mg2+ chips for "check potassium and magnesium".
+
+## v3 (Nov 25, 2026), from Mark's notes on v2
+
+- "The esophagus appears cut off ... stick with the SVG I gave you": the esophagus I had drawn on below the lung is
+  gone. The illustration is used exactly as drawn (recoloured only) and the bolus lodges in its own esophagus, the
+  back channel behind the larynx and trachea (`LODGE`, `TO_ESO` in `Art.tsx`).
+- Music bed, low, in the feel of a laid-back downtempo lounge breakbeat (Mark's reference was a film scene; the
+  piece is original). `build/music.py` synthesizes it to the picture: first chord on the plate landing, beat in on
+  the chop, thinner under the rhythm strip, fading under the end screen. Level is `MUSIC_GAIN` in `src/Video.tsx`.
+  The monitor beep moved to 880 Hz to sit in key. Balanced by measurement, not by ear.
