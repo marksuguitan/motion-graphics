@@ -1,0 +1,28 @@
+{
+  "fps": 30,
+  "t0": 0.2,
+  "beat": 0.5,
+  "k": {
+    "hook": 0,
+    "row": 8,
+    "rowRegular": 9,
+    "rowFast": 11,
+    "rowHeading": 13,
+    "title": 20,
+    "titleAlternate": 22,
+    "titleSub": 23,
+    "cause": 29,
+    "swing": 32,
+    "causeSwings": 35,
+    "causeReadout": 43,
+    "drain": 51,
+    "steady": 53,
+    "drainStops": 56,
+    "recap": 63,
+    "recapThink": 67,
+    "recapEcho": 69,
+    "logo": 74
+  },
+  "lastBeep": 73,
+  "end": 39.4
+}
