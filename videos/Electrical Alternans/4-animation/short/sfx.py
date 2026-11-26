@@ -88,16 +88,19 @@ for k in range(0, TL['lastBeep'] + 1):
 
 # hook: each word lands with a soft thud under its beep; tall words land heavier
 for i in range(4):
-    place(thud(), B(K['hook'] + i), -17 if i % 2 == 0 else -23)
+    place(thud(), B(K['hook'] + i), -21 if i % 2 == 0 else -27)
     place(thud(), B(K['recap'] + i), -20 if i % 2 == 0 else -26)
 
 # scene changes: the old scene zips into the point, the next one pops out of it
-for name in ('row', 'title', 'cause', 'recap', 'logo'):
+for name in ('recap', 'logo'):
     place(zip_in(), B(K[name]) - 0.25, -27)
     place(pop(), B(K[name]), -21)
+# the strip slides down, then the heart grows out of a point
+place(swell(0.7, 300, 1500), B(K['cause']), -27)
+place(pop(), B(K['cause']) + 0.4, -20)
 
 # text that cuts on gets a small tick
-for name in ('rowRegular', 'rowFast', 'rowHeading', 'titleSub', 'causeSwings', 'causeReadout', 'drainStops', 'recapThink', 'recapEcho'):
+for name in ('rowRegular', 'rowFast', 'rowHeading', 'title', 'titleSub', 'cause', 'causeSwings', 'causeReadout', 'drainStops', 'recapThink', 'recapEcho'):
     place(tick(), B(K[name]), -27)
 
 # the swing: a soft whoosh on each pass through the middle (twice per swing), from the swing's start to the drain
