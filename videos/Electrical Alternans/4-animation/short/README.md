@@ -4,6 +4,7 @@ A 39 s vertical short (1080×1920, 30 fps) in Comma Clinical, made in Remotion: 
 
 - v1 (Nov 25, 2026) was type only. Mark: "no i want anatomy art, not just text".
 - v2 (Nov 25, 2026) adds Mark's heart (`heart-exterior.svg` from the design repo), a pericardial sac full of fluid, a chest wall with an electrode, and a rhythm strip that scrolls through the whole short. Sent for review.
+- v3 (Nov 25, 2026): Mark found the hand-drawn strip "too jittery" and asked for the Kardiograph engine. The strip is now lead V5 from the engine (`kardiograph_strip.ts` -> `src/data/strip.json`), drawn from its own samples at true scale (25 mm/s, 10 mm/mV) on scrolling ECG paper. The engine has no electrical alternans, so two recordings that differ only in QRS voltage (full and half) are joined beat by beat on the baseline. v2's jitter came from resampling a narrow QRS at a different pixel offset on every frame.
 
 ## The idea
 
@@ -42,9 +43,10 @@ Simplifications in the art: the sac is an ellipse, the effusion uses the blue fr
 
 ```sh
 npm ci
+node --experimental-strip-types kardiograph_strip.ts <path to a medzcool/kardiograph clone>   # the strip; after any timeline change
 python3 sfx.py                    # writes public/sfx.wav (not in git); re-run after any timeline change
 node stills.mjs out/check 3.5 12 22.2 35.5
-node render.mjs review 3          # timecode burned in -> out/
+node render.mjs review 4          # timecode burned in -> out/
 node render.mjs final             # clean -> out/
 ```
 

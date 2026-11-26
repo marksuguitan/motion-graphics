@@ -3,11 +3,12 @@
 // Every on-screen line comes from the approved script (Gate 2, Oct 23, 2026): beats 1A, 1B, 2C, 3C, 3D, 3E, 6A, 6B.
 // One metronome runs under the whole short: a beat every 0.5 s (120/min, regular and fast). Even beats are
 // "tall", odd beats are "short". The picture and sfx.py both read src/data/timeline.json, so they stay in step.
-// The rhythm strip only ever scrolls: the paper moves left at a constant speed and each QRS is written at the pen.
+// The rhythm strip comes from Kardiograph's engine and only ever scrolls (v3, Mark: "too jittery, use the kardiograph engine").
 import React from 'react';
 import {AbsoluteFill, Audio, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import TL from './data/timeline.json';
 import {HEART_ART} from './data/heartArt';
+import strip from './data/strip.json';
 import {C, FONT} from './style/theme';
 import {cut, ease, fadeSmall, overshoot, progress} from './style/comma';
 
@@ -62,61 +63,84 @@ const Line: React.FC<{t: number; at: number; top: number; size?: number; color?:
   ) : null;
 
 // ---------------------------------------------------------------- the rhythm strip
+// Lead V5 from Kardiograph's engine (kardiograph_strip.ts -> data/strip.json), drawn at true scale on ECG paper:
+// 25 mm/s and 10 mm/mV. It only ever scrolls: paper and trace move together under a fixed pen, and the trace is
+// drawn from the recording's own samples, so its shape is identical on every frame.
 
-const HEAD = 900; // the pen: every QRS is written here, on its beat
-const SPEED = 400; // paper speed, px per second (constant: the strip only scrolls)
+const STRIP = strip as {hz: number; mv: number[]; rPeakS: number; lead: string; mmPerS: number; mmPerMv: number};
+const HEAD = 930; // the pen: every QRS is written here, on its beat
 const STRIP_L = 50;
 const STRIP_R = 1030;
-
-/** Height of the R wave of beat k, as a share of the tallest: alternating until the fluid is drained. */
-const rOf = (k: number) => (k >= K.steady || k % 2 === 0 ? 1 : 0.5);
-const g = (x: number, mu: number, sigma: number) => Math.exp(-((x - mu) ** 2) / (2 * sigma * sigma));
-/** The lead at time tau: P, QRS and T of the beats around it. Only the QRS changes height from beat to beat. */
-function ecg(tau: number): number {
-  if (tau < 0) return 0;
-  const k0 = Math.round((tau - TL.t0) / TL.beat);
-  let v = 0;
-  for (let k = Math.max(0, k0 - 1); k <= Math.min(TL.lastBeep, k0 + 1); k++) {
-    const x = tau - B(k);
-    const r = rOf(k);
-    v += 0.1 * g(x, -0.125, 0.018) - 0.07 * r * g(x, -0.02, 0.006) + r * g(x, 0, 0.0085) - 0.2 * r * g(x, 0.022, 0.008) + 0.17 * g(x, 0.17, 0.034);
-  }
-  return v;
+const MM_BIG = 15.6; // px per mm while the strip is the subject: 390 px/s, 13 px a frame
+const MM_SMALL = 10.8; // px per mm under the heart: 270 px/s, 9 px a frame
+const MM_UP = 19; // paper above the baseline, mm
+const MM_DOWN = 5;
+const GRID_MAJOR = '#E3E0DA';
+const GRID_MINOR = '#F0EEEA';
+/** The recording at strip time ts (seconds), between samples. */
+function mvAt(ts: number): number {
+  if (ts <= 0) return 0;
+  const f = ts * STRIP.hz, i = Math.floor(f);
+  if (i >= STRIP.mv.length - 1) return 0;
+  return STRIP.mv[i] + (STRIP.mv[i + 1] - STRIP.mv[i]) * (f - i);
 }
 
 const Strip: React.FC<{t: number}> = ({t}) => {
   // big and centred while it is the subject; it moves down and gets smaller when the heart arrives
   const tMove = B(K.cause);
-  const top = ease(t, tMove, 0.75, 700, 1255, 'cross');
-  const h = ease(t, tMove, 0.75, 400, 230, 'cross');
-  const base = top + h * (ease(t, tMove, 0.75, 0.74, 0.76, 'cross'));
-  const amp = ease(t, tMove, 0.75, 235, 135, 'cross');
-  const x0 = Math.max(STRIP_L + 24, HEAD - SPEED * t);
-  let d = '';
-  for (let x = x0; x <= HEAD; x += 2) {
-    const y = base - amp * ecg(t - (HEAD - x) / SPEED);
-    d += `${d ? 'L' : 'M'}${x.toFixed(1)} ${y.toFixed(1)}`;
+  const mm = ease(t, tMove, 0.75, MM_BIG, MM_SMALL, 'cross');
+  const top = ease(t, tMove, 0.75, 690, 1230, 'cross');
+  const h = (MM_UP + MM_DOWN) * mm;
+  const base = top + MM_UP * mm;
+  const speed = STRIP.mmPerS * mm;
+  const pxMv = STRIP.mmPerMv * mm;
+  const ts = t - TL.t0 + STRIP.rPeakS; // strip time: the R peak of beat k is under the pen at B(k)
+  // paper grid, 1 mm and 5 mm, riding with the trace
+  const lines: React.ReactNode[] = [];
+  const shift = (ts * speed) % (5 * mm);
+  for (let i = -5; HEAD - i * mm + 5 * mm > STRIP_L; i++) {
+    const x = HEAD + (STRIP_R - HEAD) - i * mm - shift;
+    if (x < STRIP_L || x > STRIP_R) continue;
+    const big = ((i % 5) + 5) % 5 === 0;
+    lines.push(<line key={`v${i}`} x1={x} x2={x} y1={top} y2={top + h} stroke={big ? GRID_MAJOR : GRID_MINOR} strokeWidth={big ? 2 : 1} />);
   }
-  const yHead = base - amp * ecg(t);
+  for (let j = -MM_UP; j <= MM_DOWN; j++) {
+    const y = base + j * mm;
+    const big = j % 5 === 0;
+    lines.push(<line key={`h${j}`} x1={STRIP_L} x2={STRIP_R} y1={y} y2={y} stroke={big ? GRID_MAJOR : GRID_MINOR} strokeWidth={big ? 2 : 1} />);
+  }
+  // the trace: one point per recorded sample, placed by the sample's own time
+  const i0 = Math.max(0, Math.ceil((ts - (HEAD - STRIP_L) / speed) * STRIP.hz));
+  const i1 = Math.min(STRIP.mv.length - 1, Math.floor(ts * STRIP.hz));
+  const pts: string[] = [];
+  for (let i = i0; i <= i1; i++) pts.push(`${(HEAD - speed * (ts - i / STRIP.hz)).toFixed(2)},${(base - pxMv * STRIP.mv[i]).toFixed(2)}`);
+  const yHead = base - pxMv * mvAt(ts);
+  pts.push(`${HEAD},${yHead.toFixed(2)}`);
   // hook: "Tall." and "Short." are written above the first eight beats and ride away with the paper
   const labels: React.ReactNode[] = [];
   for (let k = K.hook; k < K.row; k++) {
-    const x = HEAD - SPEED * (t - B(k));
+    const x = HEAD - speed * (t - B(k));
     if (t < B(k) || x < -160) continue;
     const tall = k % 2 === 0;
     labels.push(
       <div key={k} style={{position: 'absolute', left: x - 200, width: 400, top: top - 150, height: 130, display: 'flex', justifyContent: 'center', alignItems: 'flex-end'}}>
-        <Word t={t} t0={B(k)} size={tall ? 104 : 54}>{tall ? 'Tall.' : 'Short.'}</Word>
+        <Word t={t} t0={B(k)} size={tall ? 100 : 52}>{tall ? 'Tall.' : 'Short.'}</Word>
       </div>,
     );
   }
   return (
     <>
-      <div style={{position: 'absolute', left: STRIP_L, width: STRIP_R - STRIP_L, top, height: h, borderRadius: 24, background: C.soft}} />
       <svg width={1080} height={1920} style={{position: 'absolute', inset: 0}}>
-        <line x1={STRIP_L + 24} x2={STRIP_R - 24} y1={base} y2={base} stroke={C.divider} strokeWidth={3} />
-        <path d={d} fill="none" stroke={C.signal} strokeWidth={7} strokeLinejoin="round" strokeLinecap="round" />
-        <circle cx={HEAD} cy={yHead} r={11} fill={C.signal} />
+        <defs>
+          <clipPath id="paperClip"><rect x={STRIP_L} y={top} width={STRIP_R - STRIP_L} height={h} rx={20} /></clipPath>
+        </defs>
+        <g clipPath="url(#paperClip)">
+          <rect x={STRIP_L} y={top} width={STRIP_R - STRIP_L} height={h} fill="#FCFBF9" />
+          {lines}
+          <polyline points={pts.join(' ')} fill="none" stroke={C.signal} strokeWidth={6} strokeLinejoin="round" strokeLinecap="round" />
+          <circle cx={HEAD} cy={yHead} r={9} fill={C.signal} />
+        </g>
+        <rect x={STRIP_L} y={top} width={STRIP_R - STRIP_L} height={h} rx={20} fill="none" stroke={GRID_MAJOR} strokeWidth={2} />
       </svg>
       {labels}
     </>
@@ -192,7 +216,7 @@ const Main: React.FC<{t: number}> = ({t}) => (
     />
     <Roll
       t={t}
-      top={1180}
+      top={1110}
       height={230}
       until={B(K.cause)}
       lines={[
