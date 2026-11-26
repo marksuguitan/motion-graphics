@@ -121,16 +121,38 @@ def water(dur):
     return x * np.clip(am, 0.2, 1.3) * fade
 
 
-# ---- scene 1: the plate grows, hops, lands
+STRIP = json.load(open(os.path.join(RM, 'src/data/strip.json')))
+
+
+def count_ticks(t0, dur=0.9, gain=-36):
+    """A number counting up: ticks that slow down as it settles."""
+    k = 0
+    while True:
+        tt = dur * (1 - (1 - k / 12) ** 2) if k < 12 else None
+        if tt is None:
+            break
+        place(tick(), t0 + tt * 0.8, gain)
+        k += 1
+
+
+# ---- scene 1: the plate grows, hops, lands; the title types on, then is erased as the plate leaves
 s = EV['s1']
 place(tone(300, 600, 0.25, 0.08), s['grow'], -28)
 place(clink(), s['land'], -17)
+for i, ch in enumerate(s['title']):
+    if ch != ' ':
+        place(tick(), s['type'] + i * s['charDur'], -31 + rng.uniform(-2, 1))
+n_ch = len(s['title'])
+for i in range(0, n_ch, 2):  # erased from the end, speeding up
+    place(tick(), s['erase'] + (s['erased'] - s['erase']) * (i / n_ch) ** (1 / 1.5), -34)
+place(swell(s['erased'] - s['erase'], 1500, 7000), s['erase'], -36)
 # ---- scene 2: the plate becomes the knife; board; swing and chop
 s = EV['s2']
 place(whoosh(0.7), s['move'] - 0.05, -30)
 place(knock(), s['board'] + 0.25, -24)
-place(swish(), s['swish'] + 0.25, -28)
+place(swish(), s['swish'] + 0.2, -28)
 place(chop(), s['chop'], -13)
+count_ticks(CARDS['2A']['on'] + 0.05)
 # ---- scene 3: pot, sizzle, the pop of oil, running water
 s = EV['s3']
 place(whoosh(0.5), s['morph'] - 0.05, -32)
@@ -139,26 +161,31 @@ place(crackle(EV['s4']['clear'] - s['bubbles'], 22), s['bubbles'], -30)
 place(mix(noise(0.03, 1500, 8000, 0.0003, 0.008), 0.6 * tone(900, 500, 0.08, 0.02)), s['pop'], -16)
 place(crackle(0.6, 60, 3000, 10000), s['drop'], -24)
 place(water(EV['s4']['clear'] - s['water'] + 0.1), s['water'], -27)
+count_ticks(CARDS['3B']['on'] + 0.1, 0.8)
 # ---- scene 4: choking, abdominal thrusts, food stuck in the esophagus
 s = EV['s4']
 place(swell(0.45, 400, 3000, rise=False), s['clear'], -32)
-place(clink_low(), s['clear'] + 0.62, -24)
-place(pop(), s['clear'] + 0.45, -28)
-place(swell(0.7, 200, 1500), s['tubes'], -34)
+place(clink_low(), s['clear'] + 0.6, -24)
+place(swell(0.5, 200, 1500), s['card'], -34)
+place(pop(), s['bite'] + 0.1, -28)
 place(swish(), s['toss'], -32)
 place(thud(), s['biteLand'], -18)
 place(blip(660), s['biteLand'] + 0.05, -28)
+count_ticks(CARDS['4A']['on'] + 0.05)
 for tp in (s['thrust1'], s['thrust2']):
     place(huff(), tp, -20)
-place(pop(), s['thrust2'] + 0.12, -20)
-place(blip(1320), s['thrust2'] + 0.3, -28)
-place(swish(), s['fall'] + 0.25, -34)
+place(pop(), s['expel'] + 0.05, -20)
+place(blip(1320), s['out'], -28)
+place(tick(), s['back'], -26)
+place(pop(), s['back'], -30)
+place(swish(), s['toss2'], -34)
 place(thud(), s['lodge'], -15)
+count_ticks(CARDS['4C']['on'] + 0.35, 0.8, -38)
 # ---- scene 5: C. perfringens
 s = EV['s5']
 place(swell(0.45, 400, 3000, rise=False), s['clear'], -32)
 place(whoosh(0.6), s['dish'] - 0.05, -32)
-place(clink_low(), s['dish'] + 0.7, -22)
+place(clink_low(), s['dish'] + 0.65, -22)
 place(glass(), s['lid'] + 0.1, -30)
 for i in range(5):
     place(tick(), s['spores'] + i * 2 / 30 + 0.1, -32)
@@ -175,13 +202,16 @@ for i in range(12):
     place(tick(), s['months'] + i * 2 / 30 + 0.12, -36)
 place(pop(), s['peak'] + 0.1, -22)
 place(blip(1320), s['peak'] + 0.18, -28)
-# ---- scene 6: holiday heart
+# ---- scene 6: holiday heart. One monitor beep per QRS of the Kardiograph strip (R peak ~40 ms after onset)
 s = EV['s6']
 place(swell(0.45, 400, 3000, rise=False), s['clear'], -32)
 place(glass(), s['glass'] + 0.3, -24)
 place(swell(0.5, 600, 4000), s['line'] - 0.05, -32)
-for q in s['qrs']:
-    place(beep(), q['t'], -26)
+for q in STRIP['qrs']:
+    tq = s['write'] + q['t'] + 0.04
+    if tq < EV['s7']['clear']:
+        place(beep(), tq, -26)
+count_ticks(CARDS['6B']['on'] + 0.05, 0.8, -38)
 for i in range(2):
     place(pop(), s['chips'] + i * 2 / 30 + 0.15, -26)
 # ---- scene 7: back to the plate
