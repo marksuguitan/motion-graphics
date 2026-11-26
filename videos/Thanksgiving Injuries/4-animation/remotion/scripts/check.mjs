@@ -43,7 +43,7 @@ if (fs.existsSync(PW)) {
 
 const serveUrl = await bundle({entryPoint: path.join(HERE, 'src/index.ts'), publicDir: path.join(HERE, 'public')});
 const inputProps = {review: true, label: 'check'};
-const composition = await selectComposition({serveUrl, id: 'Video', inputProps, browserExecutable});
+const composition = await selectComposition({serveUrl, id: process.env.COMP || 'Video', inputProps, browserExecutable}); // COMP=Reel checks the reel
 const lines = [];
 for (let i = 0; i < marks.length; i++) {
   const frame = Math.min(composition.durationInFrames - 1, Math.round((marks[i].t + video.lead) * video.fps));
@@ -53,5 +53,5 @@ for (let i = 0; i < marks.length; i++) {
 }
 fs.writeFileSync(path.join(outDir, 'index.txt'), lines.join('\n') + '\n');
 execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-framerate', '1', '-i', path.join(outDir, 'f%03d.jpeg'),
-  '-vf', 'scale=640:-1,tile=3x3:padding=8:color=white', path.join(outDir, 'sheet%02d.jpg')]);
+  '-vf', process.env.COMP === 'Reel' ? 'scale=360:-1,tile=6x2:padding=8:color=white' : 'scale=640:-1,tile=3x3:padding=8:color=white', path.join(outDir, 'sheet%02d.jpg')]);
 console.log(`${marks.length} stills; sheets and index.txt in ${path.relative(process.cwd(), outDir)}/`);

@@ -31,7 +31,14 @@ if (mode === 'review') {
   run('render', 'Video', out, '--props={"review":false,"label":""}', '--codec=h264', '--crf=16', '--audio-codec=aac', '--audio-bitrate=320k');
   run('still', 'Thumbnail', path.join(d, `${video.title} thumbnail.png`));
   console.log(out);
+} else if (mode === 'reel') {
+  // the 9:16 Instagram reel and its cover -> ../../6-delivery/<Short title> reel.mp4 and reel cover.png
+  const d = dir('6-delivery');
+  const out = path.join(d, `${video.title} reel.mp4`);
+  run('render', 'Reel', out, '--props={"review":false,"label":""}', '--codec=h264', '--crf=16', '--audio-codec=aac', '--audio-bitrate=320k');
+  run('still', 'ReelCover', path.join(d, `${video.title} reel cover.png`));
+  console.log(out);
 } else {
-  console.error('usage: render.mjs review <N> | final');
+  console.error('usage: render.mjs review <N> | final | reel');
   process.exit(1);
 }

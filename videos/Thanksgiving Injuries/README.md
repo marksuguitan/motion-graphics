@@ -47,3 +47,12 @@ Changes from script v1 made while building (at my discretion, per Mark): 6A read
   piece is original). `build/music.py` synthesizes it to the picture: first chord on the plate landing, beat in on
   the chop, thinner under the rhythm strip, fading under the end screen. Level is `MUSIC_GAIN` in `src/Video.tsx`.
   The monitor beep moved to 880 Hz to sit in key. Balanced by measurement, not by ear.
+
+## Instagram reel (Nov 25, 2026)
+
+`npm run render:reel` renders the 9:16 cut (1080x1920, 1:00.5) and its cover to `6-delivery/`. Same timeline, art,
+words, sound effects and music bed (`src/Reel.tsx`). A camera frames the wide art: centred on the plate for the
+open and close, the art band (wide x 0-1080) for scenes 2-6, panning with the plate's own moves. Card positions per
+format are in `src/lib/layout.ts`; cards sit above the bottom ~350 px where Instagram puts its caption. No YouTube
+end screen: the reel holds on "Happy Thanksgiving" and the music fades over the last 2.2 s.
+`COMP=Reel TIMES=... npm run check` makes reel contact sheets.

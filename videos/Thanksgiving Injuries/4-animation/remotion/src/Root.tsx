@@ -1,8 +1,9 @@
-// Root.tsx: the compositions. "Video" is the whole piece (picture + sfx.wav); "Thumbnail" is a still.
+// Root.tsx: the compositions. "Video" is the whole piece (picture + sfx.wav); "Thumbnail" is a still. "Reel" is the 9:16 Instagram cut, "ReelCover" its cover still.
 import React from 'react';
 import {Composition} from 'remotion';
 import {Video} from './Video';
 import {Thumbnail} from './Thumbnail';
+import {Reel, ReelCover, REEL_DUR, RH, RW} from './Reel';
 import {VIDEO} from './lib/timing';
 import {FPS, H, W} from './style/theme';
 import {loadFonts} from './lib/Fonts';
@@ -20,6 +21,8 @@ export const RemotionRoot: React.FC = () => (
       height={H}
       defaultProps={{review: false, label: ''}}
     />
+    <Composition id="Reel" component={Reel} durationInFrames={Math.ceil(REEL_DUR * FPS)} fps={FPS} width={RW} height={RH} defaultProps={{review: false, label: ''}} />
+    <Composition id="ReelCover" component={ReelCover} durationInFrames={1} fps={FPS} width={RW} height={RH} />
     <Composition id="Thumbnail" component={Thumbnail} durationInFrames={1} fps={FPS} width={1280} height={720} />
   </>
 );
